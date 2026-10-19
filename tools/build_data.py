@@ -17,6 +17,7 @@ DERIVATIONS (the only things not copied 1:1)
   2. town   : OSM has no town tag for most places, so the town is the nearest
               village centre to the place's coordinates. Approximate by design;
               the page says so.
+  4. website: four dead website links are dropped (see DEAD_WEBSITES).
   3. phone  : three tuk tuk entries carry their number inside the OSM *name*
               ("Niul - Tuk Tuk 4120 0757"). The number is moved into `phone`
               and removed from the display name. Value is unchanged.
@@ -47,6 +48,16 @@ TOWNS = {
     "San Juan La Laguna": (14.6960, -91.2840),
     "San Pedro La Laguna": (14.6910, -91.2720),
     "Santiago Atitlán": (14.6380, -91.2310),
+}
+
+# Website links from OSM that did not resolve when checked on 2026-10-19 (DNS failure, TLS
+# hostname mismatch, or HTTP 404 on the home page). They are left out so the site never links
+# to a dead page. The place itself stays in the list. Re-check with qa/check_links.py.
+DEAD_WEBSITES = {
+    "http://www.imagenchocolate.com/",
+    "https://eaglesretreats.com/",
+    "https://lax-travel-panajachel.business.site/",
+    "https://www.tekoaspaces.com/",
 }
 
 # raw OSM category -> browsing group
@@ -95,7 +106,7 @@ def main():
             "lat": round(r["lat"], 6),
             "lon": round(r["lon"], 6),
             "phone": phone,
-            "website": clean(r.get("website")),
+            "website": None if r.get("website") in DEAD_WEBSITES else clean(r.get("website")),
             "facebook": clean(r.get("facebook")),
             "instagram": clean(r.get("instagram")),
             "hours": clean(r.get("hours")),
