@@ -64,3 +64,7 @@ ORDER OF WORK, QA + commit + push + live check after EACH:
  3. AC, then AD, then CD.
  4. F, G, H with Hallmark.
  5. Variants index with all entries and thumbnails, final live QA of everything, HANDOFF.md final.
+
+## UPDATE 5 (Tomek, 2026-10-19 17:20) QUEUE, do after STEP 1B, not during it
+- Two photos supplied by Tomek, saved in source-archive/tomek-supplied/: tuktuk-bitcoin-lake-road.jpg (orange tuk tuk with a big white bitcoin logo on the canopy, lake and volcanoes behind; 940x627; Tomek: "especially the tuk tuk one") and pier-to-pier-bitcoin-boat.jpg (orange and blue "PIER TO PIER" bitcoin boat on the lake; 1058x543). Add both to ALL finished designs and the baseline as real imagery (the tuk tuk is a hero-grade image; use it in the boat/tuk tuk section and in at least one big visual per design), optimised WebP+JPG like the press photos. Credit line: "Photo: community archive (source to confirm)" and list in HANDOFF.md under "photo credits to confirm". Do not invent a photographer.
+- Photos from the X account https://x.com/LakeBitcoin: Tomek wants them but LATER, after one leading design is picked. Do NOT start this now. Note for later: X needs a login, so it needs Tomek's logged-in browser session or his export, not a logged-out fetch.
