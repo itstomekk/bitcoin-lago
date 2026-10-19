@@ -43,3 +43,24 @@ Tomek wants FIVE distinct design variants of the same site (same content, same d
   3. Design F (Hallmark), then G, then H, each: build, QA, commit, push, check live.
   4. /variants/ index and top bar list updated to all 9 entries, thumbnails.
   5. Final live QA of everything, HANDOFF.md updated.
+
+## UPDATE 4 (Tomek, 2026-10-19 evening). FINAL, overrides UPDATE 3 where they differ. Steps 1 and 2 of UPDATE 3 (top bar, press photos + Press section) are DONE and pushed (commits 898e57c, 950ad1f). F and G drafts exist uncommitted: tools/variants/f.html, g.html, v/f.css, v/g.css (continue from them, or restart if weak).
+
+FINAL DESIGN SET: Baseline, A, C, D, AC, AD, CD, F, G, H  (9 designs + baseline).
+- REMOVE B and E completely: build config, top bar, /variants/ index, QA runner lists, thumbnails, v/b*, v/e*, tools/variants/b.html, e.html. Update HANDOFF.md.
+- Keep A and D as they are, except the logo and the top bar colours below.
+- C: KEEP the dark volcano-night concept, make it MUCH MORE MAYA: stepped-pyramid and step-fret geometry, woven textile bands, original glyph-like marks and section numerals, jade/cinnabar/indigo/gold accents, carved-stone feel in panels and cards, still fully readable (WCAG AA). Original abstract motifs only, no copied real glyphs, no fake Maya text, no sacred-symbol misuse.
+- NEW "AC": between A and C. A's Maya 1500/2100 minimal structure and light/space with C's dark cinematic mood. Folder v/ac/.
+- NEW "AD": merge of A and D (A's restraint and glyph/geometry with D's woven textile colour blocks and arch frames). Folder v/ad/.
+- NEW "CD": merge of C and D (C's night drama with D's textile colour blocks and arch frames). Folder v/cd/.
+- F, G, H: the three Hallmark designs from UPDATE 3 (structurally different from each other and from all others, Hallmark pre-emit critique stamp, locked tokens, mobile checks 320/375/414/768, no invented metrics).
+- LOGO: Tomek's logo is brand/lago-bitcoin-logo-original.jpg (navy wordmark "Lago Bitcoin", the "g" is a green and red quetzal-bird figure, the B of Bitcoin is the bitcoin symbol, white background). Use it in every design's header and footer (and favicon from the quetzal "g" if clean). Make clean web versions: transparent PNG/WebP, plus a light variant with the navy turned white for dark designs (C, AC, CD and any dark one). Keep proportions, do not redraw it. The logo is the Lago Bitcoin brand mark, so keep the page text saying this is an independent community site, and the word "official" stays banned.
+- COLOURS borrowed from the logo where they fit the design: navy approx #0a2850 (sampled #002040 to #001848), quetzal green approx #20a060, red approx #d03040. They are close to the jade, cinnabar and indigo already used in A, C, D; unify those tokens to the logo values where the look allows. Contrast AA must still pass.
+- SWITCHER / TOP BAR: make it clearly MORE COLOURFUL: navy bar (logo navy), one coloured chip per design using that design's own accent (logo green for A, etc.), active chip filled and with a bright underline, hover glow, the EN/ES toggle in logo red/green. Labels: Base, A, C, D, AC, AD, CD, F, G, H. Still slim, readable (AA), works at 390 px (scrollable chip row is fine, no wrapping into two lines).
+
+ORDER OF WORK, QA + commit + push + live check after EACH:
+ 1. Remove B and E, add logo assets, colourful top bar, put the logo into the baseline, A, C, D headers. Update /variants/ index.
+ 2. C more Maya.
+ 3. AC, then AD, then CD.
+ 4. F, G, H with Hallmark.
+ 5. Variants index with all entries and thumbnails, final live QA of everything, HANDOFF.md final.

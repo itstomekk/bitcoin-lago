@@ -1,0 +1,101 @@
+<header class="mast" id="top">
+  <a class="brand" href="#hero" aria-label="{{brand}}"><img src="{{p}}favicon.svg" alt="" width="34" height="34"><span>{{brand}}</span></a>
+  <div class="lang" role="group" aria-label="{{lang_label}}">
+    <a href="{{p_en}}" lang="en" hreflang="en" data-lang="en" title="{{lang_en_name}}" {{cur_en}}>EN</a>
+    <a href="{{p_es}}" lang="es" hreflang="es" data-lang="es" title="{{lang_es_name}}" {{cur_es}}>ES</a>
+  </div>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-open="{{menu_open}}" data-close="{{menu_close}}"><span class="sr-only">{{menu_open}}</span>{{icon:list}}</button>
+</header>
+<nav class="nav" id="nav" aria-label="{{nav_label}}">
+  <a href="#lake">{{nav_lake}}</a><a href="#bitcoin">{{nav_bitcoin}}</a><a href="#transport">{{nav_transport}}</a><a href="#community">{{nav_community}}</a><a href="#tours">{{nav_tours}}</a><a href="#expats">{{nav_expats}}</a><a href="#about">{{nav_about}}</a>
+</nav>
+
+<main id="main">
+
+<section class="scr hero" id="hero" aria-labelledby="hero-h1">
+  <figure class="hero-bleed">{{fig:hero|100vw|bleed|eager}}</figure>
+  <div class="hero-overlay">
+    <h1 id="hero-h1">{{hero_h1}}</h1>
+    <p class="lede">{{hero_sub}}</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#community" data-config-link="whatsapp" data-placeholder="whatsapp-invite-url">{{icon:whatsapp-logo}}{{cta_whatsapp}}</a>
+      <a class="btn btn-ghost" href="#bitcoin">{{icon:map-pin}}{{cta_merchants}}</a>
+    </div>
+  </div>
+</section>
+
+<div class="band reveal">{{fig:panorama|100vw|pano}}</div>
+
+<section class="scr lake" id="lake" aria-labelledby="lake-h2">
+  <div class="lake-split">
+    <div class="lake-text reveal">
+      <h2 id="lake-h2">{{lake_h2}}</h2>
+      <p>{{lake_p1}}</p><p>{{lake_p2}}</p><p>{{lake_p3}}</p>
+      <h3 class="towns-h">{{lake_towns_h}}</h3>
+      <ul class="towns">{{@towns_bars}}</ul>
+      <p class="note">{{lake_towns_note}}</p>
+    </div>
+    <div class="lake-media reveal">
+      {{fig:lake-view|(min-width: 1000px) 50vw, 94vw|p1}}
+      {{fig:sunrise|(min-width: 1000px) 25vw, 46vw|p2}}
+      {{fig:street|(min-width: 1000px) 25vw, 46vw|p3}}
+    </div>
+  </div>
+</section>
+
+<section class="scr bitcoin" id="bitcoin" aria-labelledby="btc-h2">
+  <div class="btc-head reveal">
+    <h2 id="btc-h2">{{btc_h2}}</h2>
+    <p class="lead">{{btc_lead}}</p>
+    {{@stats}}
+    <p class="datanote"><strong>{{btc_listed}}</strong></p>
+  </div>
+  {{@finder}}
+</section>
+
+<section class="scr transport" id="transport" aria-labelledby="transport-h2">
+  <div class="transport-main reveal">
+    <h2 id="transport-h2">{{transport_h2}}</h2>
+    <p class="lead">{{transport_p}}</p>
+    <ul class="rides">{{@rides}}</ul>
+  </div>
+  {{@atm}}
+</section>
+
+<section class="scr community" id="community" aria-labelledby="community-h2">
+  <h2 id="community-h2" class="reveal">{{community_h2}}</h2>
+  <div class="bento">{{@community}}</div>
+</section>
+
+<section class="scr tours" id="tours" aria-labelledby="tours-h2">
+  <div class="tours-photo reveal">{{fig:tours|100vw|bleed}}</div>
+  <div class="tours-text reveal">
+    <h2 id="tours-h2">{{tours_h2}}</h2>
+    <p class="lead">{{tours_p}}</p>
+    <ol class="points">{{@tour_points}}</ol>
+    <p><a class="btn btn-primary" href="#tours" data-config-link="tourBooking" data-placeholder="tour-booking">{{tours_cta}}</a></p>
+    <p class="muted" data-placeholder="tour-booking-details" data-hide-if="tourBooking">{{tours_note}}</p>
+  </div>
+</section>
+
+<section class="scr expats" id="expats" aria-labelledby="expats-h2">
+  <figure class="expats-bleed reveal">{{fig:lake-12|100vw|bleed}}</figure>
+  <div class="expats-inner reveal">
+    <h2 id="expats-h2">{{expats_h2}}</h2>
+    <p class="lead">{{expats_p}}</p>
+    <a class="btn btn-primary" href="#expats" data-config-link="expatContact" data-placeholder="expat-contact">{{expats_cta}}</a>
+  </div>
+</section>
+
+<section class="scr about" id="about" aria-labelledby="about-h2">
+  <div class="about-text reveal">
+    <h2 id="about-h2">{{about_h2}}</h2>
+    <p class="lead">{{about_p_html}}</p>
+    <p><a class="link-arrow" href="{{x_lakebitcoin}}" rel="noopener">{{about_x}}{{icon:arrow-up-right}}</a></p>
+  </div>
+  <div class="press reveal"><h3>{{press_h}}</h3><ul>{{@press}}</ul></div>
+</section>
+
+</main>
+
+<footer class="site-footer"><div class="foot">{{@footer_text}}</div></footer>
