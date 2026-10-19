@@ -98,4 +98,13 @@ python qa/check_links.py
 
 ## Deployment
 
-(filled in at the end of the build)
+* Live URL (English): https://itstomekk.github.io/lago-bitcoin-community/
+* Live URL (Spanish): https://itstomekk.github.io/lago-bitcoin-community/es/
+* GitHub Pages from `main` (root). The repo was created **private** as planned, but the account plan does not allow Pages on
+  private repositories (GitHub API: HTTP 422), so, as the brief's addendum allows, the repo was made **public** with
+  `noindex,nofollow` in both pages and `Disallow: /` in `robots.txt`. Nothing private is in the repo (see `.gitignore`).
+  The site is not hidden from people who have the link; it is only kept out of search engines until Tomek says go public.
+* Verified from the live URL on 2026-10-19: `qa/report-live.md` (82 of 82 gates), screenshots in `qa/screenshots/live/`.
+* An unrelated file `DESIGN-VARIANTS-BRIEF.md` (five design variants) appeared in the project folder during the build. It conflicts
+  with the brief's addendum ("do NOT show variants, build one strong design"), so it was left untouched, untracked and not implemented.
+  Tell the builder if variants are wanted after all.

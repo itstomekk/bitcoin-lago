@@ -1,0 +1,586 @@
+{
+ "base": "https://itstomekk.github.io/lago-bitcoin-community/",
+ "pass": 82,
+ "fail": 0,
+ "gates": [
+  {
+   "gate": "HTTP 200 https://itstomekk.github.io/lago-bitcoin-community/",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "[en] title + meta description",
+   "result": "PASS",
+   "evidence": {
+    "title": "Lago Bitcoin Community | Bitcoin on Lake Atitlán, Guatemala",
+    "title_len": 59,
+    "desc_len": 158
+   }
+  },
+  {
+   "gate": "[en] meta robots noindex,nofollow",
+   "result": "PASS",
+   "evidence": "present"
+  },
+  {
+   "gate": "[en] hreflang alternates en/es/x-default",
+   "result": "PASS",
+   "evidence": [
+    [
+     "en",
+     "https://itstomekk.github.io/lago-bitcoin-community/"
+    ],
+    [
+     "es",
+     "https://itstomekk.github.io/lago-bitcoin-community/es/"
+    ],
+    [
+     "x-default",
+     "https://itstomekk.github.io/lago-bitcoin-community/"
+    ]
+   ]
+  },
+  {
+   "gate": "[en] html lang attribute",
+   "result": "PASS",
+   "evidence": "en"
+  },
+  {
+   "gate": "HTTP 200 https://itstomekk.github.io/lago-bitcoin-community/es/",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "[es] title + meta description",
+   "result": "PASS",
+   "evidence": {
+    "title": "Lago Bitcoin Community | Bitcoin en el Lago de Atitlán, Guatemala",
+    "title_len": 65,
+    "desc_len": 179
+   }
+  },
+  {
+   "gate": "[es] meta robots noindex,nofollow",
+   "result": "PASS",
+   "evidence": "present"
+  },
+  {
+   "gate": "[es] hreflang alternates en/es/x-default",
+   "result": "PASS",
+   "evidence": [
+    [
+     "en",
+     "https://itstomekk.github.io/lago-bitcoin-community/"
+    ],
+    [
+     "es",
+     "https://itstomekk.github.io/lago-bitcoin-community/es/"
+    ],
+    [
+     "x-default",
+     "https://itstomekk.github.io/lago-bitcoin-community/"
+    ]
+   ]
+  },
+  {
+   "gate": "[es] html lang attribute",
+   "result": "PASS",
+   "evidence": "es"
+  },
+  {
+   "gate": "robots.txt Disallow while private",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "asset 200 style.css",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "asset 200 script.js",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "asset 200 config.js",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "asset 200 icons.svg",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "asset 200 favicon.svg",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "asset 200 data/merchants.json",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "asset 200 vendor/leaflet/leaflet.js",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "asset 200 vendor/leaflet/leaflet.css",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "asset 200 fonts/geist-latin-wght-normal.woff2",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "[en] no console errors/warnings, no failed requests",
+   "result": "PASS",
+   "evidence": {
+    "console": [],
+    "failed": []
+   }
+  },
+  {
+   "gate": "[en] page weight under 3 MB excluding map tiles",
+   "result": "PASS",
+   "evidence": "648 KB (tiles excluded: 258 KB)"
+  },
+  {
+   "gate": "[en] no horizontal overflow at 1440",
+   "result": "PASS",
+   "evidence": {
+    "sw": 1440,
+    "cw": 1440
+   }
+  },
+  {
+   "gate": "[en] map ready and renders 117 markers (SVG paths in DOM)",
+   "result": "PASS",
+   "evidence": {
+    "state": "ready",
+    "svg_markers": 117,
+    "tiles_loaded": 16
+   }
+  },
+  {
+   "gate": "[en] list count == marker count == 117",
+   "result": "PASS",
+   "evidence": {
+    "cards": 117,
+    "markers": 117,
+    "hook": {
+     "m": 117,
+     "c": 117,
+     "v": 117,
+     "p": 117
+    }
+   }
+  },
+  {
+   "gate": "[en] count text",
+   "result": "PASS",
+   "evidence": "Showing 117 of 117 places"
+  },
+  {
+   "gate": "[en] search filters list and map together",
+   "result": "PASS",
+   "evidence": {
+    "c": 6,
+    "m": 6,
+    "paths": 6
+   }
+  },
+  {
+   "gate": "[en] category chip filters (stay)",
+   "result": "PASS",
+   "evidence": {
+    "c": 16,
+    "m": 16,
+    "pressed": "stay"
+   }
+  },
+  {
+   "gate": "[en] village filter (San Marcos La Laguna)",
+   "result": "PASS",
+   "evidence": {
+    "c": 10,
+    "m": 10
+   }
+  },
+  {
+   "gate": "[en] empty state",
+   "result": "PASS",
+   "evidence": {
+    "c": 0,
+    "m": 0,
+    "empty": true
+   }
+  },
+  {
+   "gate": "[en] reset restores 117",
+   "result": "PASS",
+   "evidence": {
+    "c": 117,
+    "m": 117
+   }
+  },
+  {
+   "gate": "[en] ride 'Show on map' opens a popup",
+   "result": "PASS",
+   "evidence": true
+  },
+  {
+   "gate": "[en] every image has alt text",
+   "result": "PASS",
+   "evidence": {
+    "images": 8,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[en] every photo has a credit line (Commons page + licence links)",
+   "result": "PASS",
+   "evidence": {
+    "photos": 7,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[en] no broken images",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[en] no 'official'/'oficial' claim",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[en] no em or en dashes in visible text",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[en] 'Always check with the merchant' note present",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[en] 117 places + 50+ claim + data date",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[en] OSM/ODbL, BTC Map and Commons credits in footer",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[en] axe-core WCAG A/AA violations (1440)",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[en] no horizontal overflow at 390",
+   "result": "PASS",
+   "evidence": {
+    "sw": 390,
+    "cw": 390
+   }
+  },
+  {
+   "gate": "[en] no console errors at 390",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[en] 117 markers at 390",
+   "result": "PASS",
+   "evidence": 117
+  },
+  {
+   "gate": "[en] mobile menu opens",
+   "result": "PASS",
+   "evidence": true
+  },
+  {
+   "gate": "[es] no console errors/warnings, no failed requests",
+   "result": "PASS",
+   "evidence": {
+    "console": [],
+    "failed": []
+   }
+  },
+  {
+   "gate": "[es] page weight under 3 MB excluding map tiles",
+   "result": "PASS",
+   "evidence": "649 KB (tiles excluded: 258 KB)"
+  },
+  {
+   "gate": "[es] no horizontal overflow at 1440",
+   "result": "PASS",
+   "evidence": {
+    "sw": 1440,
+    "cw": 1440
+   }
+  },
+  {
+   "gate": "[es] map ready and renders 117 markers (SVG paths in DOM)",
+   "result": "PASS",
+   "evidence": {
+    "state": "ready",
+    "svg_markers": 117,
+    "tiles_loaded": 16
+   }
+  },
+  {
+   "gate": "[es] list count == marker count == 117",
+   "result": "PASS",
+   "evidence": {
+    "cards": 117,
+    "markers": 117,
+    "hook": {
+     "m": 117,
+     "c": 117,
+     "v": 117,
+     "p": 117
+    }
+   }
+  },
+  {
+   "gate": "[es] count text",
+   "result": "PASS",
+   "evidence": "Mostrando 117 de 117 lugares"
+  },
+  {
+   "gate": "[es] search filters list and map together",
+   "result": "PASS",
+   "evidence": {
+    "c": 17,
+    "m": 17,
+    "paths": 17
+   }
+  },
+  {
+   "gate": "[es] category chip filters (stay)",
+   "result": "PASS",
+   "evidence": {
+    "c": 16,
+    "m": 16,
+    "pressed": "stay"
+   }
+  },
+  {
+   "gate": "[es] village filter (San Marcos La Laguna)",
+   "result": "PASS",
+   "evidence": {
+    "c": 10,
+    "m": 10
+   }
+  },
+  {
+   "gate": "[es] empty state",
+   "result": "PASS",
+   "evidence": {
+    "c": 0,
+    "m": 0,
+    "empty": true
+   }
+  },
+  {
+   "gate": "[es] reset restores 117",
+   "result": "PASS",
+   "evidence": {
+    "c": 117,
+    "m": 117
+   }
+  },
+  {
+   "gate": "[es] ride 'Show on map' opens a popup",
+   "result": "PASS",
+   "evidence": true
+  },
+  {
+   "gate": "[es] every image has alt text",
+   "result": "PASS",
+   "evidence": {
+    "images": 8,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[es] every photo has a credit line (Commons page + licence links)",
+   "result": "PASS",
+   "evidence": {
+    "photos": 7,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[es] no broken images",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[es] no 'official'/'oficial' claim",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[es] no em or en dashes in visible text",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[es] 'Always check with the merchant' note present",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[es] 117 places + 50+ claim + data date",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[es] OSM/ODbL, BTC Map and Commons credits in footer",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[es] axe-core WCAG A/AA violations (1440)",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[es] no horizontal overflow at 390",
+   "result": "PASS",
+   "evidence": {
+    "sw": 390,
+    "cw": 390
+   }
+  },
+  {
+   "gate": "[es] no console errors at 390",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[es] 117 markers at 390",
+   "result": "PASS",
+   "evidence": 117
+  },
+  {
+   "gate": "[es] mobile menu opens",
+   "result": "PASS",
+   "evidence": true
+  },
+  {
+   "gate": "EN/ES parity: same section ids in same order",
+   "result": "PASS",
+   "evidence": [
+    "hero",
+    "lake",
+    "bitcoin",
+    "transport",
+    "community",
+    "tours",
+    "expats",
+    "about"
+   ]
+  },
+  {
+   "gate": "EN/ES parity: same placeholders, nav targets, h2 and image counts",
+   "result": "PASS",
+   "evidence": {
+    "placeholders": [
+     "atm-locations",
+     "contact-email",
+     "expat-contact",
+     "facebook",
+     "meetup-dates",
+     "meetup-venues",
+     "school-list",
+     "tomek-bio-photo",
+     "tour-booking",
+     "tour-booking-details",
+     "whatsapp-invite-url"
+    ],
+    "h2": 7,
+    "imgs": 24
+   }
+  },
+  {
+   "gate": "browser language es: opening / redirects to /es/",
+   "result": "PASS",
+   "evidence": "https://itstomekk.github.io/lago-bitcoin-community/es/"
+  },
+  {
+   "gate": "switcher EN: goes to English page and stores choice",
+   "result": "PASS",
+   "evidence": {
+    "url": "https://itstomekk.github.io/lago-bitcoin-community/",
+    "stored": "en"
+   }
+  },
+  {
+   "gate": "stored choice (en) beats browser language (es) on reload",
+   "result": "PASS",
+   "evidence": "https://itstomekk.github.io/lago-bitcoin-community/"
+  },
+  {
+   "gate": "switcher ES: goes to /es/ and stores choice",
+   "result": "PASS",
+   "evidence": "https://itstomekk.github.io/lago-bitcoin-community/es/"
+  },
+  {
+   "gate": "browser language en: opening /es/ redirects to /",
+   "result": "PASS",
+   "evidence": "https://itstomekk.github.io/lago-bitcoin-community/"
+  },
+  {
+   "gate": "placeholder button shows 'coming soon' toast",
+   "result": "PASS",
+   "evidence": true
+  },
+  {
+   "gate": "placeholder badge visible in preview",
+   "result": "PASS",
+   "evidence": "\"Placeholder: whatsapp-invite-url\""
+  },
+  {
+   "gate": "[en] axe-core WCAG A/AA violations in dark mode",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[es] axe-core WCAG A/AA violations in dark mode",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "every data-placeholder is listed in HANDOFF.md",
+   "result": "PASS",
+   "evidence": {
+    "placeholders": [
+     "atm-locations",
+     "contact-email",
+     "expat-contact",
+     "facebook",
+     "meetup-dates",
+     "meetup-venues",
+     "school-list",
+     "tomek-bio-photo",
+     "tour-booking",
+     "tour-booking-details",
+     "whatsapp-invite-url"
+    ],
+    "missing": []
+   }
+  }
+ ]
+}

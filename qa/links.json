@@ -158,9 +158,9 @@
  },
  {
   "url": "https://itstomekk.github.io/lago-bitcoin-community/",
-  "status": 404,
+  "status": 200,
   "final": "https://itstomekk.github.io/lago-bitcoin-community/",
-  "result": "http-error",
+  "result": "ok",
   "where": [
    "es/index.html",
    "index.html"
@@ -168,9 +168,9 @@
  },
  {
   "url": "https://itstomekk.github.io/lago-bitcoin-community/es/",
-  "status": 404,
+  "status": 200,
   "final": "https://itstomekk.github.io/lago-bitcoin-community/es/",
-  "result": "http-error",
+  "result": "ok",
   "where": [
    "es/index.html",
    "index.html"
