@@ -1,0 +1,154 @@
+{
+ "base": "http://127.0.0.1:18431/",
+ "variants": [
+  "a"
+ ],
+ "pass": 19,
+ "fail": 0,
+ "gates": [
+  {
+   "gate": "robots.txt Disallow while private",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "[index/en] HTTP 200 http://127.0.0.1:18431/variants/",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "[index/en] noindex,nofollow",
+   "result": "PASS",
+   "evidence": "present"
+  },
+  {
+   "gate": "[index/en] every referenced asset and link returns 200",
+   "result": "PASS",
+   "evidence": {
+    "checked": 22,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[index/en] 1440: six cards, six loaded thumbnails, no console errors, no overflow",
+   "result": "PASS",
+   "evidence": {
+    "info": {
+     "cards": 6,
+     "thumbs": 6
+    },
+    "errs": [],
+    "ov": {
+     "sw": 1440,
+     "cw": 1440
+    }
+   }
+  },
+  {
+   "gate": "[index/en] 1440 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[index/en] 390: six cards, six loaded thumbnails, no console errors, no overflow",
+   "result": "PASS",
+   "evidence": {
+    "info": {
+     "cards": 6,
+     "thumbs": 6
+    },
+    "errs": [],
+    "ov": {
+     "sw": 390,
+     "cw": 390
+    }
+   }
+  },
+  {
+   "gate": "[index/en] 390 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[index/en] card A opens /v/a/ in en",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18431/v/a/"
+  },
+  {
+   "gate": "[index/es] HTTP 200 http://127.0.0.1:18431/variants/es/",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "[index/es] noindex,nofollow",
+   "result": "PASS",
+   "evidence": "present"
+  },
+  {
+   "gate": "[index/es] every referenced asset and link returns 200",
+   "result": "PASS",
+   "evidence": {
+    "checked": 23,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[index/es] 1440: six cards, six loaded thumbnails, no console errors, no overflow",
+   "result": "PASS",
+   "evidence": {
+    "info": {
+     "cards": 6,
+     "thumbs": 6
+    },
+    "errs": [],
+    "ov": {
+     "sw": 1440,
+     "cw": 1440
+    }
+   }
+  },
+  {
+   "gate": "[index/es] 1440 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[index/es] 390: six cards, six loaded thumbnails, no console errors, no overflow",
+   "result": "PASS",
+   "evidence": {
+    "info": {
+     "cards": 6,
+     "thumbs": 6
+    },
+    "errs": [],
+    "ov": {
+     "sw": 390,
+     "cw": 390
+    }
+   }
+  },
+  {
+   "gate": "[index/es] 390 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[index/es] card A opens /v/a/ in es",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18431/v/a/es/"
+  },
+  {
+   "gate": "HTTP 200 http://127.0.0.1:18431/v/",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "every data-placeholder is listed in HANDOFF.md",
+   "result": "PASS",
+   "evidence": {
+    "placeholders": [],
+    "missing": []
+   }
+  }
+ ]
+}

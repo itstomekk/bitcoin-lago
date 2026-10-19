@@ -3,8 +3,8 @@
  "variants": [
   "a"
  ],
- "pass": 92,
- "fail": 2,
+ "pass": 96,
+ "fail": 0,
  "gates": [
   {
    "gate": "robots.txt Disallow while private",
@@ -54,23 +54,10 @@
   },
   {
    "gate": "[a/en] every referenced asset and link returns 200",
-   "result": "FAIL",
+   "result": "PASS",
    "evidence": {
     "checked": 44,
-    "bad": [
-     [
-      "http://127.0.0.1:18431/v/c/",
-      404
-     ],
-     [
-      "http://127.0.0.1:18431/v/d/",
-      404
-     ],
-     [
-      "http://127.0.0.1:18431/v/e/",
-      404
-     ]
-    ]
+    "bad": []
    }
   },
   {
@@ -314,7 +301,7 @@
    "result": "PASS",
    "evidence": {
     "checked": 3,
-    "lowest_ratio": 5.96,
+    "lowest_ratio": 6.04,
     "failures": []
    }
   },
@@ -335,6 +322,16 @@
    "gate": "[a/en] no console errors at 390",
    "result": "PASS",
    "evidence": []
+  },
+  {
+   "gate": "[a/en] brand text does not run into the language switch or menu button at 390",
+   "result": "PASS",
+   "evidence": {
+    "brandRight": 215,
+    "langLeft": 235,
+    "overlapLang": false,
+    "overlapMenu": false
+   }
   },
   {
    "gate": "[a/en] 117 markers at 390",
@@ -370,7 +367,7 @@
    "result": "PASS",
    "evidence": {
     "checked": 3,
-    "lowest_ratio": 5.89,
+    "lowest_ratio": 6.04,
     "failures": []
    }
   },
@@ -417,27 +414,10 @@
   },
   {
    "gate": "[a/es] every referenced asset and link returns 200",
-   "result": "FAIL",
+   "result": "PASS",
    "evidence": {
     "checked": 44,
-    "bad": [
-     [
-      "http://127.0.0.1:18431/v/b/es/",
-      404
-     ],
-     [
-      "http://127.0.0.1:18431/v/c/es/",
-      404
-     ],
-     [
-      "http://127.0.0.1:18431/v/d/es/",
-      404
-     ],
-     [
-      "http://127.0.0.1:18431/v/e/es/",
-      404
-     ]
-    ]
+    "bad": []
    }
   },
   {
@@ -681,7 +661,7 @@
    "result": "PASS",
    "evidence": {
     "checked": 3,
-    "lowest_ratio": 5.81,
+    "lowest_ratio": 6.04,
     "failures": []
    }
   },
@@ -702,6 +682,16 @@
    "gate": "[a/es] no console errors at 390",
    "result": "PASS",
    "evidence": []
+  },
+  {
+   "gate": "[a/es] brand text does not run into the language switch or menu button at 390",
+   "result": "PASS",
+   "evidence": {
+    "brandRight": 215,
+    "langLeft": 235,
+    "overlapLang": false,
+    "overlapMenu": false
+   }
   },
   {
    "gate": "[a/es] 117 markers at 390",

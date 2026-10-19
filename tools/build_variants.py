@@ -17,7 +17,8 @@ PAGE TEMPLATE SYNTAX (same idea as tools/page.template.html)
   {{key}}                    a string from tools/content.py
   {{@block}}                 a generated block (see blocks() below)
   {{icon:name}}              an icon from icons.svg
-  {{fig:slug|sizes|cls|eager}}  a Commons photo with caption and credit (sizes, cls and eager are optional)
+  {{fig:slug|sizes|cls|eager}}  a Commons photo with caption and credit (sizes, cls and the loading flag are optional;
+                             flag: eager = load first with high priority, load = load straight away)
   {{maya:N|cls}}             the number N (1 to 19) written in dot-and-bar notation, as decoration
 """
 import json
@@ -64,7 +65,10 @@ def maya(n, cls="maya"):
 
 def fig(slug, T, sizes="100vw", cls="", eager=False):
     cap = escape(C.PHOTOS[T["lang"]][slug][0])
-    return (f'<figure class="photo {cls}">{BP.picture(slug, T, sizes, eager)}'
+    pic = BP.picture(slug, T, sizes, eager == "eager")
+    if eager == "load":  # eager loading without high priority: for photos inside sideways scrolling strips
+        pic = pic.replace('loading="lazy"', 'loading="eager"')
+    return (f'<figure class="photo {cls}">{pic}'
             f'<figcaption>{cap}. {BP.credit(slug, T)}</figcaption></figure>')
 
 
@@ -75,24 +79,24 @@ def towns_bars():
     return "".join(f'<li style="--w:{n / top:.3f}"><span>{escape(t)}</span><i aria-hidden="true"></i><b>{n}</b></li>' for t, n in counts)
 
 
-def finder(T):
-    """The merchant map + list. Ids and classes are what v/app.js and the QA runner rely on."""
-    return f'''<div class="finder" id="finder">
-  <div class="filters">
+def finder(T, console=False):
+    """The merchant map + list. Ids and classes are what v/app.js and the QA runner rely on.
+    console=True (design E) puts search, chips and the list in a side panel next to the map instead of above it."""
+    filters = f"""<div class="filters">
     <div class="field grow"><label for="q">{T["search_label"]}</label><div class="input-ico">{BP.icon("magnifying-glass")}<input id="q" type="search" placeholder="{T["search_ph"]}" autocomplete="off"></div></div>
     <div class="field"><label for="town">{T["town_label"]}</label><select id="town"><option value="">{T["town_all"]}</option></select></div>
     <button class="btn btn-quiet" id="reset" type="button">{T["reset"]}</button>
   </div>
   <div class="chips" id="chips" role="group" aria-label="{T["chips_label"]}"></div>
-  <p class="count" id="count" role="status" aria-live="polite"></p>
-  <div class="split">
-    <div class="map-col"><div id="map" role="region" aria-label="{T["map_label"]}" data-loading="{T["map_loading"]}" data-error="{T["map_error"]}"></div></div>
-    <ul class="cards" id="cards" aria-label="{T["list_label"]}"></ul>
-  </div>
-  <noscript><p class="note">{T["noscript"]} <a href="https://btcmap.org/community/lago-bitcoin/merchants">BTC Map</a></p></noscript>
+  <p class="count" id="count" role="status" aria-live="polite"></p>"""
+    mapbox = f'<div class="map-col"><div id="map" role="region" aria-label="{T["map_label"]}" data-loading="{T["map_loading"]}" data-error="{T["map_error"]}"></div></div>'
+    cards = f'<ul class="cards" id="cards" aria-label="{T["list_label"]}"></ul>'
+    tail = f"""<noscript><p class="note">{T["noscript"]} <a href="https://btcmap.org/community/lago-bitcoin/merchants">BTC Map</a></p></noscript>
   <p class="note check-note">{T["check_note"]}</p>
-  <p><a class="link-arrow" href="https://btcmap.org/community/lago-bitcoin/merchants" rel="noopener">{T["btc_open_btcmap"]}{BP.icon("arrow-up-right")}</a></p>
-</div>'''
+  <p><a class="link-arrow" href="https://btcmap.org/community/lago-bitcoin/merchants" rel="noopener">{T["btc_open_btcmap"]}{BP.icon("arrow-up-right")}</a></p>"""
+    if console:
+        return f'<div class="finder console" id="finder"><div class="console-grid"><div class="side">{filters}{cards}</div>{mapbox}</div>{tail}</div>'
+    return f'<div class="finder" id="finder">{filters}<div class="split">{mapbox}{cards}</div>{tail}</div>'
 
 
 def community(T):
@@ -238,6 +242,7 @@ def render(vid, lang):
         "rides": BP.ride_html(T),
         "press": BP.press_html(T),
         "finder": finder(T),
+        "finder_console": finder(T, console=True),
         "community": community(T),
         "tour_points": tour_points(T),
         "stats": stats(T, ln, chain),
@@ -255,7 +260,7 @@ def fill(html, T, blocks, lang, label):
     html = re.sub(r"\{\{@(\w+)\}\}", lambda m: blocks[m.group(1)], html)
     html = re.sub(r"\{\{icon:([\w-]+)\}\}", lambda m: BP.icon(m.group(1)), html)
     html = re.sub(r"\{\{fig:([\w-]+)((?:\|[^|}]*){0,3})\}\}",
-                  lambda m: fig(m.group(1), T, *(lambda a: (a[0] or "100vw", a[1] or "", a[2] == "eager"))(
+                  lambda m: fig(m.group(1), T, *(lambda a: (a[0] or "100vw", a[1] or "", a[2]))(
                       (m.group(2).lstrip("|").split("|") + ["", "", ""])[:3])), html)
     html = re.sub(r"\{\{maya:(\d+)(?:\|([\w -]+))?\}\}", lambda m: maya(int(m.group(1)), m.group(2) or "maya"), html)
 

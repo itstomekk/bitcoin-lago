@@ -2,7 +2,7 @@
 
 Base URL: http://127.0.0.1:18431/
 Variants: a
-PASS 92 / FAIL 2
+PASS 96 / FAIL 0
 
 | Result | Gate | Evidence |
 |---|---|---|
@@ -12,7 +12,7 @@ PASS 92 / FAIL 2
 | PASS | [a/en] meta robots noindex,nofollow | "present" |
 | PASS | [a/en] hreflang en/es/x-default | [["en", "https://itstomekk.github.io/lago-bitcoin-community/v/a/"], ["es", "https://itstomekk.github.io/lago-bitcoin-community/v/a/es/"], ["x-default", "https://itstomekk.github.io/lago-bitcoin-community/v/a/"]] |
 | PASS | [a/en] html lang + data-design | "en" |
-| FAIL | [a/en] every referenced asset and link returns 200 | {"checked": 44, "bad": [["http://127.0.0.1:18431/v/c/", 404], ["http://127.0.0.1:18431/v/d/", 404], ["http://127.0.0.1:18431/v/e/", 404]]} |
+| PASS | [a/en] every referenced asset and link returns 200 | {"checked": 44, "bad": []} |
 | PASS | [a/en] no console errors/warnings, no failed requests | {"console": [], "failed": []} |
 | PASS | [a/en] page weight under 3 MB excluding map tiles | "687 KB" |
 | PASS | [a/en] no horizontal overflow at 1440 | {"sw": 1440, "cw": 1440} |
@@ -39,22 +39,23 @@ PASS 92 / FAIL 2
 | PASS | [a/en] floating Design switcher: A B C D E, current marked, fixed, in view | {"letters": ["A", "B", "C", "D", "E"], "cur": ["A"], "hrefs": ["./", "../b/", "../c/", "../d/", "../e/", "../../variants/"], "inView": true, "fixed": "fixed"} |
 | PASS | [a/en] switcher goes to design B in the same language and remembers it | {"url": "http://127.0.0.1:18431/v/b/", "stored": "b"} |
 | PASS | [a/en] 1440 axe-core WCAG A/AA violations | [] |
-| PASS | [a/en] 1440 text over photos/gradients: contrast >= AA (pixel check) | {"checked": 3, "lowest_ratio": 5.96, "failures": []} |
+| PASS | [a/en] 1440 text over photos/gradients: contrast >= AA (pixel check) | {"checked": 3, "lowest_ratio": 6.04, "failures": []} |
 | PASS | [a/en] no horizontal overflow at 390 | {"sw": 390, "cw": 390} |
 | PASS | [a/en] no text leaves the screen at 390 | [] |
 | PASS | [a/en] no console errors at 390 | [] |
+| PASS | [a/en] brand text does not run into the language switch or menu button at 390 | {"brandRight": 215, "langLeft": 235, "overlapLang": false, "overlapMenu": false} |
 | PASS | [a/en] 117 markers at 390 | "ok" |
 | PASS | [a/en] switcher fits at 390 | {"right": 382, "vw": 390, "h": 44} |
 | PASS | [a/en] mobile menu opens | true |
 | PASS | [a/en] menu link scrolls to the merchants section | -0.0 |
 | PASS | [a/en] 390 axe-core WCAG A/AA violations | [] |
-| PASS | [a/en] 390 text over photos/gradients: contrast >= AA (pixel check) | {"checked": 3, "lowest_ratio": 5.89, "failures": []} |
+| PASS | [a/en] 390 text over photos/gradients: contrast >= AA (pixel check) | {"checked": 3, "lowest_ratio": 6.04, "failures": []} |
 | PASS | [a/es] HTTP 200 http://127.0.0.1:18431/v/a/es/ | 200 |
 | PASS | [a/es] title + meta description | {"title": "Lago Bitcoin Community / Bitcoin en el Lago de Atitlán, Guatemala", "desc_len": 179} |
 | PASS | [a/es] meta robots noindex,nofollow | "present" |
 | PASS | [a/es] hreflang en/es/x-default | [["en", "https://itstomekk.github.io/lago-bitcoin-community/v/a/"], ["es", "https://itstomekk.github.io/lago-bitcoin-community/v/a/es/"], ["x-default", "https://itstomekk.github.io/lago-bitcoin-community/v/a/"]] |
 | PASS | [a/es] html lang + data-design | "es" |
-| FAIL | [a/es] every referenced asset and link returns 200 | {"checked": 44, "bad": [["http://127.0.0.1:18431/v/b/es/", 404], ["http://127.0.0.1:18431/v/c/es/", 404], ["http://127.0.0.1:18431/v/d/es/", 404], ["http://127.0.0.1:18431/v/e/es/", 404]]} |
+| PASS | [a/es] every referenced asset and link returns 200 | {"checked": 44, "bad": []} |
 | PASS | [a/es] no console errors/warnings, no failed requests | {"console": [], "failed": []} |
 | PASS | [a/es] page weight under 3 MB excluding map tiles | "688 KB" |
 | PASS | [a/es] no horizontal overflow at 1440 | {"sw": 1440, "cw": 1440} |
@@ -81,10 +82,11 @@ PASS 92 / FAIL 2
 | PASS | [a/es] floating Design switcher: A B C D E, current marked, fixed, in view | {"letters": ["A", "B", "C", "D", "E"], "cur": ["A"], "hrefs": ["./", "../../b/es/", "../../c/es/", "../../d/es/", "../../e/es/", "../../../variants/es/"], "inView": true, "fixed": "fixed"} |
 | PASS | [a/es] switcher goes to design B in the same language and remembers it | {"url": "http://127.0.0.1:18431/v/b/es/", "stored": "b"} |
 | PASS | [a/es] 1440 axe-core WCAG A/AA violations | [] |
-| PASS | [a/es] 1440 text over photos/gradients: contrast >= AA (pixel check) | {"checked": 3, "lowest_ratio": 5.81, "failures": []} |
+| PASS | [a/es] 1440 text over photos/gradients: contrast >= AA (pixel check) | {"checked": 3, "lowest_ratio": 6.04, "failures": []} |
 | PASS | [a/es] no horizontal overflow at 390 | {"sw": 390, "cw": 390} |
 | PASS | [a/es] no text leaves the screen at 390 | [] |
 | PASS | [a/es] no console errors at 390 | [] |
+| PASS | [a/es] brand text does not run into the language switch or menu button at 390 | {"brandRight": 215, "langLeft": 235, "overlapLang": false, "overlapMenu": false} |
 | PASS | [a/es] 117 markers at 390 | "ok" |
 | PASS | [a/es] switcher fits at 390 | {"right": 382, "vw": 390, "h": 44} |
 | PASS | [a/es] mobile menu opens | true |

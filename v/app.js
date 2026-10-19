@@ -93,7 +93,7 @@
       $('.sr-only', menuBtn).textContent = menuBtn.getAttribute(open ? 'data-close' : 'data-open');
     });
     nav.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+      if (e.target.closest && e.target.closest('a')) { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); $('.sr-only', menuBtn).textContent = menuBtn.getAttribute('data-open'); }
     });
   }
 

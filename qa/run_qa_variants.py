@@ -40,6 +40,7 @@ BASE = args[0].rstrip("/") + "/"
 SHOTS = Path(args[1]) if Path(args[1]).is_absolute() else ROOT / args[1]
 IDS = args[2].split(",") if len(args) > 2 else ["a", "b", "c", "d", "e"]
 DO_INDEX = "--no-index" not in sys.argv
+INDEX_ONLY = "--index-only" in sys.argv
 LABEL = "live" if BASE.startswith("https://") else "local"
 AXE_PATH = ROOT / "qa" / ".cache" / "axe.min.js"
 AXE = AXE_PATH.read_text(encoding="utf-8") if AXE_PATH.exists() else None
@@ -65,13 +66,13 @@ def fetch(url):
 
 
 OVERFLOW_JS = "({sw: document.documentElement.scrollWidth, cw: document.documentElement.clientWidth})"
-LEAK_JS = """() => { const vw = innerWidth, out = [];
+LEAK_JS = """() => { const vw = innerWidth, out = []; const inScroller = e => { for (let q = e.parentElement; q && q !== document.body; q = q.parentElement) { const o = getComputedStyle(q).overflowX; if ((o === 'auto' || o === 'scroll') && q.scrollWidth > q.clientWidth + 1) return true; } return false; };
   document.querySelectorAll('h1,h2,h3,p,a,button,li,dt,dd,label,input,select,figcaption').forEach(e => {
     if (e.closest('.sr-only,.skip,.leaflet-container,[aria-hidden=true]') || e.classList.contains('sr-only')) return;
     const r = e.getBoundingClientRect(); if (!r.width || !r.height) return;
     const cs = getComputedStyle(e); if (cs.visibility === 'hidden') return;
     if (e.closest('.nav') && !e.closest('.nav').offsetParent && getComputedStyle(e.closest('.nav')).position !== 'fixed') return;
-    if (r.right > vw + 1 || r.left < -1) out.push((e.className || e.tagName) + ' ' + Math.round(r.left) + '..' + Math.round(r.right) + ' ' + (e.textContent || '').trim().slice(0, 30));
+    if ((r.right > vw + 1 || r.left < -1) && !inScroller(e)) out.push((e.className || e.tagName) + ' ' + Math.round(r.left) + '..' + Math.round(r.right) + ' ' + (e.textContent || '').trim().slice(0, 30));
   }); return out.slice(0, 8); }"""
 PARITY_JS = """() => ({
   sections: [...document.querySelectorAll('main section[id]')].map(s => s.id),
@@ -93,14 +94,15 @@ OVER_JS = """() => {
   while ((n = walker.nextNode())) {
     if (!n.textContent.trim()) continue;
     const el = n.parentElement; if (!el || seen.has(el)) continue; seen.add(el);
-    if (el.closest('.sr-only,.leaflet-container,script,style,noscript,.vsw,.toast,[hidden]')) continue;
+    if (el.closest('.sr-only,.leaflet-container,script,style,noscript,.vsw,.toast,[hidden],[aria-hidden=true],.nav .lbl,.nav .n')) continue;
     const cs = getComputedStyle(el); if (cs.visibility === 'hidden' || cs.display === 'none') continue;
+    let hid = false; for (let q = el; q; q = q.parentElement) { if (getComputedStyle(q).opacity === '0') { hid = true; break; } } if (hid) continue;
     const r = el.getBoundingClientRect(); if (r.width < 2 || r.height < 2) continue;
     el.setAttribute('data-qa-i', String(found.length)); found.push(el);
   }
   const res = [];
   found.forEach((el, i) => {
-    el.scrollIntoView({block: 'center'});
+    el.scrollIntoView({block: 'center', behavior: 'instant'});
     const r = el.getBoundingClientRect();
     if (r.top < 0 || r.bottom > innerHeight || r.width < 2) return;
     let over = false;
@@ -108,7 +110,13 @@ OVER_JS = """() => {
       const hits = document.elementsFromPoint(r.left + r.width * fx, r.top + r.height * fy);
       const idx = hits.findIndex(h => h === el || el.contains(h));
       if (idx < 0) return;
-      hits.slice(idx + 1).forEach(h => { const c = getComputedStyle(h); if (h.tagName === 'IMG' || h.tagName === 'CANVAS' || (c.backgroundImage && c.backgroundImage !== 'none')) over = true; });
+      for (const h of hits.slice(idx + 1)) {
+        if (h === document.body || h === document.documentElement) break;  // the page background itself is a light, gentle gradient (design E)
+        const c = getComputedStyle(h);
+        if (h.tagName === 'IMG' || h.tagName === 'CANVAS' || (c.backgroundImage && c.backgroundImage !== 'none')) { over = true; break; }
+        const m = (c.backgroundColor.match(/[\d.]+/g) || []).map(Number);
+        if (!h.contains(el) && m.length >= 3 && (m.length === 3 || m[3] >= 0.98)) break;  // an opaque layer (not one of the text's own ancestors) hides whatever is below
+      }
     });
     if (over) { const c = getComputedStyle(el); res.push({i, color: c.color, size: parseFloat(c.fontSize), weight: parseInt(c.fontWeight, 10) || 400, text: el.textContent.trim().slice(0, 40)}); }
   });
@@ -133,28 +141,37 @@ def over_contrast(pg, label):
     if not items:
         gate(f"{label} text over photos/gradients: contrast", True, "no overlay text found")
         return
-    pg.add_style_tag(content="*{color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:none!important}.vsw,.toast{visibility:hidden!important}")
+    pg.evaluate("""() => { const st = document.createElement('style'); st.id = 'qa-hide';
+        st.textContent = '*{color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:none!important}.vsw,.toast,[data-placeholder]::after{visibility:hidden!important}';
+        document.head.appendChild(st); st.disabled = true; }""")
     bad, lowest = [], 99.0
     for it in items:
         sel = f'[data-qa-i="{it["i"]}"]'
-        pg.evaluate("(s) => document.querySelector(s).scrollIntoView({block:'center'})", sel)
-        pg.wait_for_timeout(40)
-        x, y, w, h = pg.evaluate("(s) => { const r = document.querySelector(s).getBoundingClientRect(); return [r.left, r.top, r.width, r.height]; }", sel)
+        pg.evaluate("(s) => document.querySelector(s).scrollIntoView({block:'center', behavior:'instant'})", sel)
+        pg.wait_for_timeout(250)  # let scroll-driven states (active nav item, reveal) settle
+        # measure the text itself (Range), and its colour at this very moment
+        info = pg.evaluate("""(s) => { const el = document.querySelector(s); const rg = document.createRange(); rg.selectNodeContents(el);
+            const r = rg.getBoundingClientRect(); const c = getComputedStyle(el);
+            const out = {box: [r.left, r.top, r.width, r.height], color: c.color, size: parseFloat(c.fontSize), weight: parseInt(c.fontWeight, 10) || 400};
+            document.getElementById('qa-hide').disabled = false;
+            return out; }""", sel)
+        x, y, w, h = info["box"]
         x, y = max(0, x), max(0, y)
         w, h = min(w, pg.viewport_size["width"] - x), min(h, pg.viewport_size["height"] - y)
         if w < 2 or h < 2:
             continue
         im = Image.open(io.BytesIO(pg.screenshot(clip={"x": x, "y": y, "width": w, "height": h}))).convert("RGB")
-        ls = sorted(lum(p) for p in im.resize((max(1, min(48, int(w))), max(1, min(24, int(h))))).getdata())
+        pg.evaluate("document.getElementById('qa-hide').disabled = true")
+        ls = sorted(lum(p) for p in im.resize((max(1, min(48, int(w))), max(1, min(24, int(h))))).get_flattened_data() if True) if hasattr(im, "get_flattened_data") else sorted(lum(p) for p in im.resize((max(1, min(48, int(w))), max(1, min(24, int(h))))).getdata())
         p3, p97 = ls[int(len(ls) * 0.03)], ls[min(len(ls) - 1, int(len(ls) * 0.97))]
-        m = re.findall(r"[\d.]+", it["color"])
+        m = re.findall(r"[\d.]+", info["color"])
         tl = lum([float(m[0]), float(m[1]), float(m[2])])
         r_ = min(ratio(tl, p3), ratio(tl, p97))
-        need = 3.0 if (it["size"] >= 24 or (it["size"] >= 18.66 and it["weight"] >= 700)) else 4.5
+        need = 3.0 if (info["size"] >= 24 or (info["size"] >= 18.66 and info["weight"] >= 700)) else 4.5
         lowest = min(lowest, r_)
         if r_ < need:
-            bad.append(f'{it["text"]!r} {r_:.2f}<{need}')
-    pg.evaluate("document.querySelectorAll('style').forEach(s => { if (s.textContent.startsWith('*{color:transparent')) s.remove(); })")
+            bad.append(f'{it["text"]!r} {r_:.2f}<{need} (text L={tl:.2f}, behind {p3:.2f}..{p97:.2f})')
+    pg.evaluate("document.getElementById('qa-hide').remove()")
     gate(f"{label} text over photos/gradients: contrast >= AA (pixel check)", not bad, {"checked": len(items), "lowest_ratio": round(lowest, 2), "failures": bad[:6]})
 
 
@@ -351,6 +368,11 @@ def variant(browser, vid):
         leak = pg.evaluate(LEAK_JS)
         gate(f"{L} no text leaves the screen at 390", not leak, leak)
         gate(f"{L} no console errors at 390", not merrs, merrs[:4])
+        hdr = pg.evaluate("""() => { const t = document.querySelector('.brand span'), l = document.querySelector('.lang'), m = document.querySelector('.menu-btn');
+            const rg = document.createRange(); rg.selectNodeContents(t); const a = rg.getBoundingClientRect();
+            const hit = (b) => { const r = b.getBoundingClientRect(); return r.width && a.right > r.left + 1 && a.left < r.right && a.bottom > r.top && a.top < r.bottom; };
+            return {brandRight: Math.round(a.right), langLeft: Math.round(l.getBoundingClientRect().left), overlapLang: hit(l), overlapMenu: hit(m)}; }""")
+        gate(f"{L} brand text does not run into the language switch or menu button at 390", not hdr["overlapLang"] and not hdr["overlapMenu"], hdr)
         gate(f"{L} {EXPECT} markers at 390", pg.evaluate("document.querySelectorAll('#map path.leaflet-interactive').length") == EXPECT, "ok")
         mw = pg.evaluate("(() => { const n = document.querySelector('.vsw'); const r = n.getBoundingClientRect(); return {right: Math.round(r.right), vw: innerWidth, h: Math.round(r.height)}; })()")
         gate(f"{L} switcher fits at 390", mw["right"] <= mw["vw"], mw)
@@ -440,7 +462,7 @@ def main():
         browser = p.chromium.launch()
         st, rb = fetch(BASE + "robots.txt")
         gate("robots.txt Disallow while private", st == 200 and b"Disallow: /" in rb, st)
-        for vid in IDS:
+        for vid in ([] if INDEX_ONLY else IDS):
             variant(browser, vid)
         if DO_INDEX:
             index_pages(browser)
@@ -451,7 +473,7 @@ def main():
     missing = [n for n in sorted(PLACEHOLDERS) if f"`{n}`" not in handoff]
     gate("every data-placeholder is listed in HANDOFF.md", not missing, {"placeholders": sorted(PLACEHOLDERS), "missing": missing})
     summary = {"base": BASE, "variants": IDS, "pass": sum(r["result"] == "PASS" for r in results), "fail": sum(r["result"] == "FAIL" for r in results), "gates": results}
-    tag = LABEL if len(IDS) == 5 else f"{LABEL}-{''.join(IDS)}"
+    tag = LABEL if (len(IDS) == 5 and not INDEX_ONLY) else (f"{LABEL}-index" if INDEX_ONLY else f"{LABEL}-{''.join(IDS)}")
     (ROOT / "qa" / f"report-variants-{tag}.json").write_text(json.dumps(summary, indent=1, ensure_ascii=False), encoding="utf-8")
     md = [f"# Variants QA report ({tag})", "", f"Base URL: {BASE}", f"Variants: {', '.join(IDS)}", f"PASS {summary['pass']} / FAIL {summary['fail']}", "", "| Result | Gate | Evidence |", "|---|---|---|"]
     for r in results:

@@ -16,13 +16,14 @@ URL = f"{BASE}/v/{VID}/" + ("" if LANG == "en" else "es/")
 
 PROBE = """() => {
   const vw = innerWidth, vh = innerHeight;
+  const inScroller = e => { for (let q = e.parentElement; q && q !== document.body; q = q.parentElement) { const o = getComputedStyle(q).overflowX; if ((o === 'auto' || o === 'scroll') && q.scrollWidth > q.clientWidth + 1) return true; } return false; };
   const out = {sw: document.documentElement.scrollWidth, cw: document.documentElement.clientWidth, sections: [], leaks: [], tiny: [], broken: []};
   document.querySelectorAll('main section[id]').forEach(s => { const r = s.getBoundingClientRect(); out.sections.push([s.id, Math.round(r.height), (r.height / vh).toFixed(2)]); });
   document.querySelectorAll('h1,h2,h3,p,a,button,li,dt,dd,label,input,select,figcaption').forEach(e => {
     if (e.closest('.sr-only,.skip,.leaflet-container,[aria-hidden=true]') || e.classList.contains('sr-only')) return;
     const r = e.getBoundingClientRect(); if (!r.width || !r.height) return;
     const cs = getComputedStyle(e); if (cs.visibility === 'hidden' || cs.opacity === '0') return;
-    if (r.right > vw + 1 || r.left < -1) out.leaks.push((e.className || e.tagName) + ' ' + Math.round(r.left) + '..' + Math.round(r.right) + ' ' + (e.textContent || '').trim().slice(0, 30));
+    if ((r.right > vw + 1 || r.left < -1) && !inScroller(e)) out.leaks.push((e.className || e.tagName) + ' ' + Math.round(r.left) + '..' + Math.round(r.right) + ' ' + (e.textContent || '').trim().slice(0, 30));
     const fs = parseFloat(cs.fontSize); if (fs < 11.5 && (e.textContent || '').trim()) out.tiny.push(fs + ' ' + (e.className || e.tagName) + ' ' + (e.textContent || '').trim().slice(0, 25));
   });
   document.querySelectorAll('img').forEach(i => { if (!i.closest('.leaflet-container') && (!i.complete || !i.naturalWidth)) out.broken.push(i.src.slice(-40)); });

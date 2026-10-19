@@ -1,0 +1,7 @@
+Fonts added for the design variants (/v/...). All are licensed under the SIL Open Font License 1.1
+(https://openfontlicense.org), self-hosted as Latin subsets from the Fontsource packages (npm, same licence):
+  newsreader-latin-wght-normal.woff2            Newsreader, Production Type          (design B)
+  bebas-neue-latin-400-normal.woff2             Bebas Neue, Ryoichi Tsunekawa         (design C)
+  bricolage-grotesque-latin-wght-normal.woff2   Bricolage Grotesque, Mathieu Triay    (design D)
+  sora-latin-wght-normal.woff2                  Sora, Jonathan Barnbrook, Julian Moncada (design E)
+  geist-mono-latin-wght-normal.woff2            Geist Mono, Vercel and Basement Studio (design A; Geist itself: see LICENSE-Geist-OFL.txt)

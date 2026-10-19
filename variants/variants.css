@@ -1,0 +1,42 @@
+/*
+  variants/variants.css: the look of the /variants/ index (EN and ES). Neutral on purpose, so it does not
+  favour any of the five designs it links to.
+*/
+@font-face { font-family: "Geist"; src: url("../fonts/geist-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+:root { --bg: #f4f5f6; --ink: #101418; --muted: #4a5560; --line: #d5dbdf; --accent: #f7931a; --pad: clamp(1rem, 4vw, 2.5rem); color-scheme: light; }
+*, *::before, *::after { box-sizing: border-box; }
+html { overflow-x: clip; }
+body { margin: 0; font-family: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size: 1.0625rem; line-height: 1.6; color: var(--ink); background: var(--bg); overflow-x: clip; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: #0b5563; text-underline-offset: 0.2em; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.skip { position: absolute; left: 1rem; top: -4rem; background: var(--ink); color: #fff; padding: 0.6rem 1rem; border-radius: 999px; z-index: 50; }
+.skip:focus { top: 0.6rem; }
+.vx-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem var(--pad); border-bottom: 1px solid var(--line); background: #fff; }
+.vx-brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--ink); text-decoration: none; font-weight: 700; letter-spacing: -0.02em; min-width: 0; }
+.vx-brand span { overflow: hidden; text-overflow: ellipsis; }
+.lang { display: inline-flex; border: 1.5px solid var(--line); border-radius: 999px; padding: 3px; background: #fff; }
+.lang a { text-decoration: none; color: var(--muted); font-weight: 700; font-size: 0.82rem; padding: 0.3rem 0.7rem; border-radius: 999px; min-width: 40px; text-align: center; }
+.lang a[aria-current] { background: var(--ink); color: #fff; }
+.vx-intro { padding: clamp(2.5rem, 6vw, 4.5rem) var(--pad) 1.5rem; max-width: 62rem; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.04; letter-spacing: -0.04em; margin: 0 0 0.5em; }
+.vx-intro p { font-size: 1.15rem; max-width: 56ch; color: var(--muted); }
+.vgrid { list-style: none; margin: 0; padding: 0 var(--pad) 3rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 1.4rem; }
+.vcard { background: #fff; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; box-shadow: 0 20px 40px -30px rgb(16 20 24 / 0.4); }
+.vcard.is-last { border-color: var(--ink); box-shadow: 0 0 0 2px var(--ink); }
+.thumb { display: block; background: #e4e7ea; }
+.thumb img { width: 100%; aspect-ratio: 8 / 5; object-fit: cover; }
+.vbody { padding: 1.2rem 1.3rem 1.4rem; display: grid; gap: 0.2rem; position: relative; }
+.vletter { position: absolute; top: -1.6rem; right: 1.1rem; margin: 0; width: 3rem; height: 3rem; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: #fff; font-weight: 750; font-size: 1.2rem; border: 3px solid #fff; }
+.vbody h2 { font-size: 1.45rem; letter-spacing: -0.03em; margin: 0; line-height: 1.15; padding-right: 2.6rem; }
+.vbody p { margin: 0 0 0.4rem; color: var(--muted); font-size: 0.98rem; }
+.vlast { color: var(--ink) !important; font-weight: 650; font-size: 0.86rem !important; }
+.vlinks { display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem !important; }
+.btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0.5rem 1.2rem; border-radius: 999px; font-weight: 650; font-size: 0.95rem; text-decoration: none; white-space: nowrap; }
+.btn-primary { background: var(--accent); color: var(--ink); } .btn-primary:hover { filter: brightness(1.08); }
+.btn-quiet { background: #e6e9ec; color: var(--ink); }
+.alt { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; border: 1.5px solid var(--line); border-radius: 999px; color: var(--ink); font-weight: 700; font-size: 0.82rem; text-decoration: none; }
+.alt:hover { border-color: var(--ink); }
+.vx-foot { padding: 1.5rem var(--pad) 3rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); }
+.vx-foot p { max-width: 80ch; margin: 0 0 0.5rem; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
