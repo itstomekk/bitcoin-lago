@@ -1,0 +1,64 @@
+<!doctype html>
+<!--
+  GENERATED FILE (variants/index.html and variants/es/index.html). Edit tools/variants/index.html,
+  variants/variants.css or tools/content.py, then run python tools/build_variants.py.
+-->
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#101418">
+<link rel="icon" href="{{p}}favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="{{canonical}}">
+<link rel="alternate" hreflang="en" href="{{url_en}}">
+<link rel="alternate" hreflang="es" href="{{url_es}}">
+<link rel="alternate" hreflang="x-default" href="{{url_en}}">
+<link rel="preload" href="{{p}}fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{p}}variants/variants.css">
+<script>
+(function () {
+  var d = document.documentElement; d.className += ' js';
+  var here = d.lang, stored = null;
+  try { stored = localStorage.getItem('lbc-lang'); } catch (e) {}
+  var want = stored || (/^es/i.test(navigator.language || '') ? 'es' : 'en');
+  if (want !== here && (want === 'en' || want === 'es')) { location.replace('{{alt_lang_href}}' + location.hash); }
+})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">{{skip}}</a>
+<header class="vx-head">
+  <a class="vx-brand" href="{{p}}"><img src="{{p}}favicon.svg" alt="" width="32" height="32"><span>{{brand}}</span></a>
+  <div class="lang" role="group" aria-label="{{lang_label}}">
+    <a href="{{alt_lang_href}}" lang="{{lang}}" data-lang="{{lang}}" aria-current="true" hidden>{{lang}}</a>
+    <a href="{{p}}variants/" lang="en" hreflang="en" data-lang="en" title="{{lang_en_name}}">EN</a>
+    <a href="{{p}}variants/es/" lang="es" hreflang="es" data-lang="es" title="{{lang_es_name}}">ES</a>
+  </div>
+</header>
+<main id="main">
+  <section class="vx-intro">
+    <h1>{{vx_h1}}</h1>
+    <p>{{vx_p}}</p>
+  </section>
+  <ul class="vgrid">{{@cards}}</ul>
+</main>
+<footer class="vx-foot"><p>{{vx_note}}</p><p>{{foot_legal}}</p></footer>
+<script>
+(function () {
+  var last = null;
+  try { last = localStorage.getItem('lbc-design'); } catch (e) {}
+  document.querySelectorAll('.lang a[data-lang]').forEach(function (a) {
+    a.addEventListener('click', function () { try { localStorage.setItem('lbc-lang', a.getAttribute('data-lang')); } catch (e) {} });
+    if (a.getAttribute('data-lang') === document.documentElement.lang) a.setAttribute('aria-current', 'true');
+  });
+  if (last) {
+    var c = document.querySelector('.vcard[data-design="' + last + '"]');
+    if (c) { c.classList.add('is-last'); var n = c.querySelector('.vlast'); if (n) n.hidden = false; }
+  }
+})();
+</script>
+</body>
+</html>

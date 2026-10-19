@@ -78,5 +78,45 @@
   "page": "https://commons.wikimedia.org/wiki/File:Panajachel_lake_atitlan.JPG",
   "width": 1600,
   "height": 1062
+ },
+ "bw-1": {
+  "file": "commons_07.jpg",
+  "title": "Panajachel, view of Lake Atitlán in black and white 01.JPG",
+  "artist": "Simon Burchell",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Panajachel,_view_of_Lake_Atitl%C3%A1n_in_black_and_white_01.JPG",
+  "width": 1600,
+  "height": 1200
+ },
+ "bw-2": {
+  "file": "commons_08.jpg",
+  "title": "Panajachel, view of Lake Atitlán in black and white 02.JPG",
+  "artist": "Simon Burchell",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Panajachel,_view_of_Lake_Atitl%C3%A1n_in_black_and_white_02.JPG",
+  "width": 1600,
+  "height": 1200
+ },
+ "lake-5": {
+  "file": "commons_05.jpg",
+  "title": "Lake Atitlán & Panajachel Guatemala.jpg",
+  "artist": "Chad Davis",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Lake_Atitl%C3%A1n_%26_Panajachel_Guatemala.jpg",
+  "width": 1600,
+  "height": 1067
+ },
+ "lake-12": {
+  "file": "commons_12.jpg",
+  "title": "Panajachel lake atitlan 2009r.JPG",
+  "artist": "chensiyuan",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Panajachel_lake_atitlan_2009r.JPG",
+  "width": 1600,
+  "height": 868
  }
 }

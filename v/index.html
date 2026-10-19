@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<title>Designs | Lago Bitcoin Community</title>
+<script>
+/* Sends the visitor to the design they looked at last (default A), keeping the language choice. */
+(function () {
+  var d = 'a', l = /^es/i.test(navigator.language || '') ? 'es' : 'en';
+  try { d = localStorage.getItem('lbc-design') || 'a'; l = localStorage.getItem('lbc-lang') || l; } catch (e) {}
+  if (!/^[a-e]$/.test(d)) d = 'a';
+  location.replace(d + '/' + (l === 'es' ? 'es/' : ''));
+})();
+</script></head>
+<body><p><a href="a/">Design A</a> · <a href="../variants/">All designs</a></p></body></html>

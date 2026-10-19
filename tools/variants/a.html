@@ -1,0 +1,114 @@
+<header class="rail" id="top">
+  <a class="brand" href="#hero" aria-label="{{brand}}"><img src="{{p}}favicon.svg" alt="" width="36" height="36"><span class="brand-t">{{brand}}</span></a>
+  <nav class="nav" id="nav" aria-label="{{nav_label}}">
+    <a href="#lake"><span class="num">{{maya:1}}</span><span class="lbl">{{nav_lake}}</span></a>
+    <a href="#bitcoin"><span class="num">{{maya:2}}</span><span class="lbl">{{nav_bitcoin}}</span></a>
+    <a href="#transport"><span class="num">{{maya:3}}</span><span class="lbl">{{nav_transport}}</span></a>
+    <a href="#community"><span class="num">{{maya:4}}</span><span class="lbl">{{nav_community}}</span></a>
+    <a href="#tours"><span class="num">{{maya:5}}</span><span class="lbl">{{nav_tours}}</span></a>
+    <a href="#expats"><span class="num">{{maya:6}}</span><span class="lbl">{{nav_expats}}</span></a>
+    <a href="#about"><span class="num">{{maya:7}}</span><span class="lbl">{{nav_about}}</span></a>
+  </nav>
+  <div class="lang" role="group" aria-label="{{lang_label}}">
+    <a href="{{p_en}}" lang="en" hreflang="en" data-lang="en" title="{{lang_en_name}}" {{cur_en}}>EN</a>
+    <a href="{{p_es}}" lang="es" hreflang="es" data-lang="es" title="{{lang_es_name}}" {{cur_es}}>ES</a>
+  </div>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-open="{{menu_open}}" data-close="{{menu_close}}"><span class="sr-only">{{menu_open}}</span>{{icon:list}}</button>
+</header>
+
+<main id="main">
+
+<section class="scr hero" id="hero" aria-labelledby="hero-h1">
+  <svg class="gridlines" aria-hidden="true" focusable="false" preserveAspectRatio="none" viewBox="0 0 1000 600">
+    <path class="gl" d="M0 100H1000M0 500H1000M250 0V600M750 0V600" pathLength="1"/>
+  </svg>
+  <div class="hero-copy">
+    <span class="hero-num" aria-hidden="true">{{maya:19|maya maya-xl}}</span>
+    <h1 id="hero-h1">{{hero_h1}}</h1>
+    <p class="lede">{{hero_sub}}</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#community" data-config-link="whatsapp" data-placeholder="whatsapp-invite-url">{{icon:whatsapp-logo}}{{cta_whatsapp}}</a>
+      <a class="btn btn-ghost" href="#bitcoin">{{icon:map-pin}}{{cta_merchants}}</a>
+    </div>
+  </div>
+  <div class="hero-frame">{{fig:hero|(min-width: 1100px) 52vw, 96vw|stair|eager}}</div>
+</section>
+
+<div class="fret" aria-hidden="true"></div>
+<div class="band reveal">{{fig:panorama|100vw|pano}}</div>
+
+<section class="scr lake" id="lake" aria-labelledby="lake-h2">
+  <div class="lake-text reveal">
+    <div class="sec-head"><span class="sec-num">{{maya:1|maya maya-lg}}</span><h2 id="lake-h2">{{lake_h2}}</h2></div>
+    <p>{{lake_p1}}</p><p>{{lake_p2}}</p><p>{{lake_p3}}</p>
+    <h3 class="towns-h">{{lake_towns_h}}</h3>
+    <ul class="towns">{{@towns_bars}}</ul>
+    <p class="note">{{lake_towns_note}}</p>
+  </div>
+  <div class="lake-photos">
+    {{fig:lake-view|(min-width: 1100px) 38vw, 94vw|p1 reveal}}
+    {{fig:sunrise|(min-width: 1100px) 20vw, 46vw|p2 reveal}}
+    {{fig:street|(min-width: 1100px) 20vw, 46vw|p3 reveal}}
+    {{fig:history-1975|(min-width: 1100px) 24vw, 94vw|p4 reveal}}
+  </div>
+</section>
+
+<div class="fret" aria-hidden="true"></div>
+
+<section class="scr bitcoin" id="bitcoin" aria-labelledby="btc-h2">
+  <div class="btc-head reveal">
+    <div class="sec-head"><span class="sec-num">{{maya:2|maya maya-lg}}</span><h2 id="btc-h2">{{btc_h2}}</h2></div>
+    <p class="lead">{{btc_lead}}</p>
+    {{@stats}}
+    <p class="datanote"><strong>{{btc_listed}}</strong></p>
+  </div>
+  {{@finder}}
+</section>
+
+<section class="scr transport" id="transport" aria-labelledby="transport-h2">
+  <div class="transport-main reveal">
+    <div class="sec-head"><span class="sec-num">{{maya:3|maya maya-lg}}</span><h2 id="transport-h2">{{transport_h2}}</h2></div>
+    <p class="lead">{{transport_p}}</p>
+    <ul class="rides">{{@rides}}</ul>
+  </div>
+  {{@atm}}
+</section>
+
+<section class="scr community" id="community" aria-labelledby="community-h2">
+  <div class="sec-head reveal"><span class="sec-num">{{maya:4|maya maya-lg}}</span><h2 id="community-h2">{{community_h2}}</h2></div>
+  <div class="bento">{{@community}}</div>
+</section>
+
+<section class="scr tours" id="tours" aria-labelledby="tours-h2">
+  <div class="tours-photo reveal">{{fig:tours|(min-width: 1100px) 46vw, 94vw|stair}}</div>
+  <div class="tours-text reveal">
+    <div class="sec-head"><span class="sec-num">{{maya:5|maya maya-lg}}</span><h2 id="tours-h2">{{tours_h2}}</h2></div>
+    <p class="lead">{{tours_p}}</p>
+    <ul class="points">{{@tour_points}}</ul>
+    <p><a class="btn btn-primary" href="#tours" data-config-link="tourBooking" data-placeholder="tour-booking">{{tours_cta}}</a></p>
+    <p class="muted" data-placeholder="tour-booking-details" data-hide-if="tourBooking">{{tours_note}}</p>
+  </div>
+</section>
+
+<section class="scr expats" id="expats" aria-labelledby="expats-h2">
+  <div class="weave" aria-hidden="true"></div>
+  <div class="expats-inner reveal">
+    <span class="sec-num">{{maya:6|maya maya-lg}}</span>
+    <h2 id="expats-h2">{{expats_h2}}</h2>
+    <p class="lead">{{expats_p}}</p>
+    <a class="btn btn-primary" href="#expats" data-config-link="expatContact" data-placeholder="expat-contact">{{expats_cta}}</a>
+  </div>
+</section>
+
+<section class="scr about" id="about" aria-labelledby="about-h2">
+  <div class="about-text reveal">
+    <div class="sec-head"><span class="sec-num">{{maya:7|maya maya-lg}}</span><h2 id="about-h2">{{about_h2}}</h2></div>
+    <p class="lead">{{about_p_html}}</p>
+    <p><a class="link-arrow" href="{{x_lakebitcoin}}" rel="noopener">{{about_x}}{{icon:arrow-up-right}}</a></p>
+  </div>
+  <div class="press reveal"><h3>{{press_h}}</h3><ul>{{@press}}</ul></div>
+</section>
+
+</main>
+
+<footer class="site-footer"><div class="fret" aria-hidden="true"></div><div class="foot">{{@footer_text}}</div></footer>

@@ -30,6 +30,14 @@ PICKS = {
     "shore": "commons_06.jpg",
     "tours": "commons_11.jpg",
 }
+# Extra photos used only by the design variants (/v/...). Run  python tools/optimize_images.py --extra
+# to add just these to images/ and data/photos.json without re-encoding the original eight.
+EXTRA_PICKS = {
+    "bw-1": "commons_07.jpg",
+    "bw-2": "commons_08.jpg",
+    "lake-5": "commons_05.jpg",
+    "lake-12": "commons_12.jpg",
+}
 WIDTHS = (800, 1600)
 LICENCE_URLS = {
     "CC BY 2.0": "https://creativecommons.org/licenses/by/2.0/",
@@ -41,10 +49,14 @@ LICENCE_URLS = {
 
 
 def main():
+    import sys
+    extra_only = "--extra" in sys.argv
     OUT.mkdir(exist_ok=True)
     attr = {a["file"]: a for a in json.loads((SRC / "_attribution.json").read_text(encoding="utf-8"))}
-    photos = {}
-    for slug, fname in PICKS.items():
+    photos_path = ROOT / "data" / "photos.json"
+    photos = json.loads(photos_path.read_text(encoding="utf-8")) if extra_only else {}
+    picks = EXTRA_PICKS if extra_only else {**PICKS, **EXTRA_PICKS}
+    for slug, fname in picks.items():
         im = Image.open(SRC / fname).convert("RGB")
         for w in WIDTHS:
             h = round(im.height * w / im.width)
@@ -64,7 +76,7 @@ def main():
             "height": round(im.height * 1600 / im.width) if im.width > 1600 else im.height,
         }
         print(slug, fname, im.size, "->", photos[slug]["height"])
-    (ROOT / "data" / "photos.json").write_text(json.dumps(photos, ensure_ascii=False, indent=1), encoding="utf-8")
+    photos_path.write_text(json.dumps(photos, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
 if __name__ == "__main__":

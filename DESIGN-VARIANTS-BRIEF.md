@@ -19,3 +19,14 @@ Tomek wants FIVE distinct design variants of the same site (same content, same d
 - Variant A = this Maya 1500/2100 minimal direction (Tomek's first choice). B to E: four other directions, each also full-screen and modern.
 - Deliver at the same GitHub Pages site: /v/a/ ... /v/e/ (+ /es/), floating switcher, /variants/ index. Root stays the current baseline until Tomek picks.
 - Report the live URLs, verified from the live site, with screenshots.
+
+## UPDATE 2 from Tomek (voice note 3, 2026-10-19). These CHANGE earlier rules. Read before continuing.
+1. NO URLs list needed. Add a FIXED TOP BAR on every page of every variant AND on the root baseline, with the variant switcher (Baseline, A, B, C, D, E) and the EN/ES toggle. It is a testing bar: slim, always visible, must not cover content (push the page down or use a sticky offset) and must work on 390px. Keep it visually separate from each variant's own design (neutral dark strip, small type).
+2. Press articles and photos are NOT private any more. Tomek instructed: use all scraped photos as normal site imagery. The curated set is ready: `images/press/` (30 raw files, 28 MB, too heavy) with credits in `data/press-photos.json` (publisher, article title, article URL, rights note). Reference-only logos/avatars/ads/charts/stock are NOT included and stay out.
+   - Resize/convert them with tools/optimize_images.py to WebP + JPG (800 and 1600 px), keep originals out of the deployed pages.
+   - Every press photo used on a page must show a visible credit line "Photo: <publisher>, via <article title>" linking to the article URL. alt text required. Keep the rights note in HANDOFF.md.
+   - Use them as real imagery in the variants (people, merchants, tuk tuk, mining, school shirts), not only in the press section. Faces: use group/event shots as supplied, do not crop to single identifiable faces for marketing.
+   - Update .gitignore so images/press (optimised versions) and data/press-photos.json are committed. source-archive/ stays ignored (raw research). Update HANDOFF.md "private material" section accordingly.
+3. Add a Press section (all variants) with headline, publisher, date if known, and a short quote of at most one sentence per article, each linking to the original. Articles to cover: see data/press-photos.json plus source-archive/articles/*.txt (read-only reference).
+4. USE THE HALLMARK SKILL (webdev profile skills/hallmark/SKILL.md and its references) for at least two of the variants, with its pre-emit critique stamp, locked tokens, structural variety, no fabricated metrics, mobile checks at 320/375/414/768. Say in HANDOFF.md which variants used Hallmark.
+5. Do not invent facts from the press articles. Quotes must be verbatim from source-archive/articles/*.txt.
