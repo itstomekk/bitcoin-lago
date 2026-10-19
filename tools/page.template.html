@@ -1,0 +1,263 @@
+<!doctype html>
+<!--
+  GENERATED FILE. Do not edit index.html or es/index.html by hand.
+  Edit tools/page.template.html (layout) or tools/content.py (words), then run
+  python tools/build_pages.py. See HANDOFF.md.
+-->
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0A3047">
+<link rel="icon" href="{{p}}favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="{{canonical}}">
+<link rel="alternate" hreflang="en" href="{{url_en}}">
+<link rel="alternate" hreflang="es" href="{{url_es}}">
+<link rel="alternate" hreflang="x-default" href="{{url_en}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lago Bitcoin Community">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:locale" content="{{og_locale}}">
+<meta property="og:image" content="{{og_image}}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="{{p}}fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{p}}style.css">
+<link rel="stylesheet" href="{{p}}vendor/leaflet/leaflet.css">
+<script>
+/* Language: remember the visitor's choice (localStorage "lbc-lang"); with no choice yet, follow the browser language. */
+(function () {
+  var d = document.documentElement; d.className += ' js';
+  var here = d.lang, other = here === 'en' ? 'es' : 'en', stored = null;
+  try { stored = localStorage.getItem('lbc-lang'); } catch (e) {}
+  var want = stored || (/^es/i.test(navigator.language || '') ? 'es' : 'en');
+  if (want !== here && (want === 'en' || want === 'es')) { location.replace('{{alt_lang_href}}' + location.hash); }
+})();
+</script>
+</head>
+<body class="show-placeholders" data-base="{{p}}">
+<a class="skip" href="#main">{{skip}}</a>
+
+<header class="site-header" id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#hero" aria-label="{{brand}}"><img src="{{p}}favicon.svg" alt="" width="34" height="34"><span>{{brand}}</span></a>
+    <nav class="nav" id="nav" aria-label="{{nav_label}}">
+      <a href="#lake">{{nav_lake}}</a>
+      <a href="#bitcoin">{{nav_bitcoin}}</a>
+      <a href="#transport">{{nav_transport}}</a>
+      <a href="#community">{{nav_community}}</a>
+      <a href="#tours">{{nav_tours}}</a>
+      <a href="#expats">{{nav_expats}}</a>
+      <a href="#about">{{nav_about}}</a>
+    </nav>
+    <div class="lang" role="group" aria-label="{{lang_label}}">
+      <a href="{{p_en}}" lang="en" hreflang="en" data-lang="en" title="{{lang_en_name}}" {{cur_en}}>EN</a>
+      <a href="{{p_es}}" lang="es" hreflang="es" data-lang="es" title="{{lang_es_name}}" {{cur_es}}>ES</a>
+    </div>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-open="{{menu_open}}" data-close="{{menu_close}}">
+      <span class="sr-only">{{menu_open}}</span>{{icon:list}}
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="hero" aria-labelledby="hero-h1">
+  <div class="wrap hero-grid">
+    <h1 id="hero-h1">{{hero_h1}}</h1>
+    <div class="hero-copy">
+      <p class="lede">{{hero_sub}}</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#community" data-config-link="whatsapp" data-placeholder="whatsapp-invite-url">{{icon:whatsapp-logo}}{{cta_whatsapp}}</a>
+        <a class="btn btn-ghost" href="#bitcoin">{{icon:map-pin}}{{cta_merchants}}</a>
+      </div>
+    </div>
+    {{@fig_hero}}
+  </div>
+</section>
+
+<div class="band reveal">{{@fig_panorama}}</div>
+
+<section class="section lake" id="lake" aria-labelledby="lake-h2">
+  <div class="wrap">
+    <div class="lake-grid">
+      <div class="lake-text reveal">
+        <h2 id="lake-h2">{{lake_h2}}</h2>
+        <p>{{lake_p1}}</p>
+        <p>{{lake_p2}}</p>
+        <p>{{lake_p3}}</p>
+        <h3 class="towns-h">{{lake_towns_h}}</h3>
+        <ul class="towns">{{@towns}}</ul>
+        <p class="note">{{lake_towns_note}}</p>
+      </div>
+      <div class="mosaic">
+        {{@fig_lake_view}}
+        {{@fig_sunrise}}
+        {{@fig_street}}
+        {{@fig_history}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bitcoin" id="bitcoin" aria-labelledby="btc-h2">
+  <div class="wrap">
+    <div class="btc-head reveal">
+      <h2 id="btc-h2">{{btc_h2}}</h2>
+      <p class="lead">{{btc_lead}}</p>
+      <dl class="stats">
+        <div><dt>{{btc_stat_places}}</dt><dd>{{n_places}}</dd></div>
+        <div><dt>{{btc_stat_ln}}</dt><dd>{{n_ln}}</dd></div>
+        <div><dt>{{btc_stat_chain}}</dt><dd>{{n_chain}}</dd></div>
+      </dl>
+      <p class="datanote"><strong>{{btc_listed}}</strong></p>
+    </div>
+
+    <div class="finder" id="finder">
+      <div class="filters">
+        <div class="field grow">
+          <label for="q">{{search_label}}</label>
+          <div class="input-ico">{{icon:magnifying-glass}}<input id="q" type="search" placeholder="{{search_ph}}" autocomplete="off"></div>
+        </div>
+        <div class="field">
+          <label for="town">{{town_label}}</label>
+          <select id="town"><option value="">{{town_all}}</option></select>
+        </div>
+        <button class="btn btn-quiet" id="reset" type="button">{{reset}}</button>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="{{chips_label}}"></div>
+      <p class="count" id="count" role="status" aria-live="polite"></p>
+      <div class="split">
+        <div class="map-col">
+          <div id="map" role="region" aria-label="{{map_label}}" data-loading="{{map_loading}}" data-error="{{map_error}}"></div>
+        </div>
+        <ul class="cards" id="cards" aria-label="{{list_label}}"></ul>
+      </div>
+      <noscript><p class="note">{{noscript}} <a href="https://btcmap.org/community/lago-bitcoin/merchants">BTC Map</a></p></noscript>
+      <p class="note check-note">{{check_note}}</p>
+      <p><a class="link-arrow" href="https://btcmap.org/community/lago-bitcoin/merchants" rel="noopener">{{btc_open_btcmap}}{{icon:arrow-up-right}}</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section transport" id="transport" aria-labelledby="transport-h2">
+  <div class="wrap transport-grid">
+    <div class="transport-main reveal">
+      <h2 id="transport-h2">{{transport_h2}}</h2>
+      <p class="lead">{{transport_p}}</p>
+      <ul class="rides">{{@rides}}</ul>
+    </div>
+    <aside class="atm reveal" id="atm" aria-labelledby="atm-h3">
+      <span class="atm-ico">{{icon:bank}}</span>
+      <h3 id="atm-h3">{{atm_h3}}</h3>
+      <p>{{atm_p}}</p>
+      <p class="muted" data-placeholder="atm-locations">{{atm_loc}}</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section community" id="community" aria-labelledby="community-h2">
+  <div class="wrap">
+    <h2 id="community-h2" class="reveal">{{community_h2}}</h2>
+    <div class="bento">
+      <article class="tile tile-wa reveal">
+        {{icon:whatsapp-logo}}
+        <h3>{{wa_h}}</h3>
+        <p>{{wa_p}}</p>
+        <a class="btn btn-primary" href="#community" data-config-link="whatsapp" data-placeholder="whatsapp-invite-url">{{cta_whatsapp}}</a>
+      </article>
+      <article class="tile tile-meet reveal">
+        {{icon:calendar-blank}}
+        <h3>{{meet_h}}</h3>
+        <p>{{meet_p}}</p>
+        <ul class="plain">
+          <li data-placeholder="meetup-dates">{{meet_when}}</li>
+          <li data-placeholder="meetup-venues">{{meet_where}}</li>
+        </ul>
+      </article>
+      <article class="tile tile-school reveal">
+        {{icon:graduation-cap}}
+        <h3>{{school_h}}</h3>
+        <p>{{school_p}}</p>
+        <p class="muted" data-placeholder="school-list">{{school_list}}</p>
+      </article>
+      <article class="tile tile-follow reveal">
+        {{icon:envelope-simple}}
+        <h3>{{follow_h}}</h3>
+        <ul class="plain">
+          <li><a class="link-arrow" href="#community" data-config-link="facebook" data-placeholder="facebook">{{icon:facebook-logo}}{{facebook}}</a></li>
+          <li><a class="link-arrow" href="#community" data-config-link="email" data-placeholder="contact-email">{{icon:envelope-simple}}{{email}}</a></li>
+        </ul>
+      </article>
+      <article class="tile tile-who reveal">
+        {{icon:users-three}}
+        <h3>{{who_h}}</h3>
+        <p>{{who_p}}</p>
+        <p class="muted" data-placeholder="tomek-bio-photo">{{who_bio}}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section tours" id="tours" aria-labelledby="tours-h2">
+  <div class="wrap tours-grid">
+    <div class="reveal">{{@fig_tours}}</div>
+    <div class="tours-text reveal">
+      <h2 id="tours-h2">{{tours_h2}}</h2>
+      <p class="lead">{{tours_p}}</p>
+      <ul class="points">
+        <li>{{icon:handshake}}<div><h3>{{tours_1_h}}</h3><p>{{tours_1_p}}</p></div></li>
+        <li>{{icon:compass}}<div><h3>{{tours_2_h}}</h3><p>{{tours_2_p}}</p></div></li>
+        <li>{{icon:currency-btc}}<div><h3>{{tours_3_h}}</h3><p>{{tours_3_p}}</p></div></li>
+      </ul>
+      <p><a class="btn btn-primary" href="#tours" data-config-link="tourBooking" data-placeholder="tour-booking">{{tours_cta}}</a></p>
+      <p class="muted" data-placeholder="tour-booking-details" data-hide-if="tourBooking">{{tours_note}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section expats" id="expats" aria-labelledby="expats-h2">
+  <div class="wrap expats-inner reveal">
+    <h2 id="expats-h2">{{expats_h2}}</h2>
+    <p class="lead">{{expats_p}}</p>
+    <a class="btn btn-primary" href="#expats" data-config-link="expatContact" data-placeholder="expat-contact">{{expats_cta}}</a>
+  </div>
+</section>
+
+<section class="section about" id="about" aria-labelledby="about-h2">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <h2 id="about-h2">{{about_h2}}</h2>
+      <p class="lead">{{about_p_html}}</p>
+      <p><a class="link-arrow" href="{{x_lakebitcoin}}" rel="noopener">{{about_x}}{{icon:arrow-up-right}}</a></p>
+    </div>
+    <div class="press reveal">
+      <h3>{{press_h}}</h3>
+      <ul>{{@press}}</ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <p class="legal">{{foot_legal}}</p>
+    <p>{{foot_data_html}}</p>
+    <p>{{foot_photos}}</p>
+    <p class="muted">{{foot_updated}}</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" data-msg="{{toast_soon}}"></div>
+
+<script type="application/json" id="i18n">{{@i18n_json}}</script>
+<script src="{{p}}config.js"></script>
+<script src="{{p}}vendor/leaflet/leaflet.js"></script>
+<script src="{{p}}script.js" defer></script>
+</body>
+</html>

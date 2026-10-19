@@ -1,0 +1,357 @@
+"""All visible copy for the site, in English (EN) and Guatemalan-neutral Spanish (ES).
+
+HOW THIS FILE IS USED
+  tools/build_pages.py fills tools/page.template.html with the strings below and writes
+  index.html (EN) and es/index.html (ES). Both languages must define exactly the same keys;
+  the build stops with an error if one is missing, which keeps EN and ES in step.
+
+HOW TO EDIT
+  Change the text here, then run:  python tools/build_pages.py
+  Rules of the house: never write "official" (this is an independent community site);
+  no invented facts, prices, hours or testimonials; no em dashes; Maya communities are
+  described in plain terms (education, onboarding merchants, cooperatives), never exoticized.
+
+Strings ending in _html may contain simple inline HTML (links, <strong>).
+"""
+
+SITE_URL = "https://itstomekk.github.io/lago-bitcoin-community/"
+LAST_UPDATED = "2026-10-19"
+DATA_DATE = "2026-10-19"
+BTCMAP_COMMUNITY = "https://btcmap.org/community/lago-bitcoin/merchants"
+X_LAKEBITCOIN = "https://x.com/LakeBitcoin"
+
+PRESS = [
+    # (outlet, month key, title, url)
+    ("Bloomberg Línea", "2022-03", "Bitcoin Lake: Guatemala’s Crypto Enclave Launches",
+     "https://www.bloomberglinea.com/english/bitcoin-lake-guatemalas-crypto-enclave-launches/"),
+    ("Bitcoin Magazine", "2022-09", "Visit The Guatemalan Lake Town Mining Bitcoin With Used Cooking Oil",
+     "https://bitcoinmagazine.com/culture/guatemala-town-mining-bitcoin-with-used-oil"),
+    ("El Faro", "2022-03", "Bitcoin Believers Look for New Paradise at Mayan Lake",
+     "https://elfaro.net/en/central-america-en/bitcoin-believers-look-for-new-paradise-at-mayan-lake"),
+]
+
+MONTHS = {
+    "en": {"2022-03": "March 2022", "2022-09": "September 2022"},
+    "es": {"2022-03": "marzo de 2022", "2022-09": "septiembre de 2022"},
+}
+
+# Photo captions and alt text. Credit lines are generated from data/photos.json (never typed by hand).
+PHOTOS = {
+    "en": {
+        "hero": ("Lake Atitlán seen from Panajachel", "Lake Atitlán seen from Panajachel"),
+        "lake-view": ("View over the lake from Panajachel, Sololá", "View over Lake Atitlán from Panajachel in Sololá"),
+        "sunrise": ("Sunrise on Lake Atitlán", "Sunrise over Lake Atitlán"),
+        "street": ("Calle Santander, Panajachel", "Calle Santander, a street in Panajachel"),
+        "history-1975": ("Panajachel and the lake in April 1975", "Panajachel and Lake Atitlán in April 1975"),
+        "panorama": ("Panajachel and the lake", "Panoramic view of Panajachel and the lake"),
+        "shore": ("Panajachel on the shore of the lake", "Panajachel on the shore of Lake Atitlán"),
+        "tours": ("Lake Atitlán at Panajachel", "Lake Atitlán at Panajachel"),
+    },
+    "es": {
+        "hero": ("El Lago de Atitlán visto desde Panajachel", "El Lago de Atitlán visto desde Panajachel"),
+        "lake-view": ("Vista del lago desde Panajachel, Sololá", "Vista del Lago de Atitlán desde Panajachel, Sololá"),
+        "sunrise": ("Amanecer en el Lago de Atitlán", "Amanecer sobre el Lago de Atitlán"),
+        "street": ("Calle Santander, Panajachel", "Calle Santander, una calle de Panajachel"),
+        "history-1975": ("Panajachel y el lago en abril de 1975", "Panajachel y el Lago de Atitlán en abril de 1975"),
+        "panorama": ("Panajachel y el lago", "Vista panorámica de Panajachel y el lago"),
+        "shore": ("Panajachel a la orilla del lago", "Panajachel a la orilla del Lago de Atitlán"),
+        "tours": ("El Lago de Atitlán en Panajachel", "El Lago de Atitlán en Panajachel"),
+    },
+}
+
+EN = {
+    "lang": "en",
+    "og_locale": "en_US",
+    "title": "Lago Bitcoin Community | Bitcoin on Lake Atitlán, Guatemala",
+    "description": "Our Bitcoin community on Lake Atitlán, Guatemala: 117 listed places on a live map, Bitcoin boats and tuk tuks, meetups, VIP tours and a welcome for newcomers.",
+    "skip": "Skip to content",
+    "brand": "Lago Bitcoin Community",
+    "nav_label": "Main",
+    "nav_lake": "The lake",
+    "nav_bitcoin": "Merchants",
+    "nav_transport": "Getting around",
+    "nav_community": "Community",
+    "nav_tours": "VIP tours",
+    "nav_expats": "Newcomers",
+    "nav_about": "History",
+    "menu_open": "Menu",
+    "menu_close": "Close menu",
+    "lang_label": "Language",
+    "lang_en_name": "English",
+    "lang_es_name": "Español",
+
+    "hero_h1": "Lake Atitlán, and the Bitcoin community that lives here",
+    "hero_sub": "Three volcanoes, Maya villages along the shore, and a strong group of people who pay, teach and welcome with Bitcoin.",
+    "cta_whatsapp": "Join WhatsApp",
+    "cta_merchants": "Find a merchant",
+
+    "lake_h2": "A lake ringed by three volcanoes",
+    "lake_p1": "Lake Atitlán fills a volcanic basin in the highlands of Sololá, Guatemala. The volcanoes Atitlán, Tolimán and San Pedro rise along its south shore.",
+    "lake_p2": "Maya villages sit along the water. Kaqchikel and Tz’utujil are the main Maya languages spoken around the lake, and every village has its own character.",
+    "lake_p3": "Panajachel is the busiest gateway. From its docks, public boats cross to San Marcos La Laguna, San Pedro La Laguna, Santiago Atitlán and other villages.",
+    "lake_towns_h": "Bitcoin places on the map, by village",
+    "lake_towns_note": "Village is assigned from each place’s map position, so it is approximate.",
+    "photo_credit": "Photo",
+    "photo_via": "Wikimedia Commons",
+
+    "btc_h2": "Bitcoin on the lake",
+    "btc_lead": "More than 50 merchants in the network accept Bitcoin around Lake Atitlán, from cafes and hotels to pharmacies and boat taxis.",
+    "btc_listed": "117 places listed on BTC Map / OpenStreetMap, data of 2026-10-19.",
+    "btc_stat_places": "places listed",
+    "btc_stat_ln": "tagged Lightning",
+    "btc_stat_chain": "tagged on-chain",
+    "search_label": "Search places",
+    "search_ph": "Name, type or village",
+    "town_label": "Village",
+    "town_all": "All villages",
+    "chips_label": "Type of place",
+    "group_all": "All",
+    "group_eat": "Eat and drink",
+    "group_stay": "Stay",
+    "group_tours": "Tours and transport",
+    "group_shops": "Shops",
+    "group_services": "Services",
+    "group_other": "Other",
+    "reset": "Reset filters",
+    "showing": "Showing {n} of {total} places",
+    "map_label": "Map of places that accept Bitcoin around Lake Atitlán",
+    "list_label": "List of places that accept Bitcoin",
+    "empty": "No places match these filters.",
+    "show_on_map": "Show on map",
+    "survey": "Survey: {d}",
+    "survey_none": "No survey date listed",
+    "hours": "Hours",
+    "ln": "Lightning",
+    "chain": "On-chain",
+    "unnamed": "Unnamed place",
+    "check_note": "Always check with the merchant: payment options and opening hours change. Each card shows the date of the last survey on OpenStreetMap, where one is listed.",
+    "btc_open_btcmap": "Open this community on BTC Map",
+    "noscript": "The merchant map and list need JavaScript. You can browse the same places on BTC Map:",
+    "map_loading": "Loading map",
+    "map_error": "The map could not load. Open it on BTC Map instead.",
+
+    "transport_h2": "Getting around with Bitcoin",
+    "transport_p": "A Bitcoin boat, a boat taxi and three tuk tuks are listed in Panajachel. Contact details are copied from the listings. Ask about the fare before you go.",
+    "transport_boat": "Boat",
+    "transport_tuk": "Tuk tuk",
+    "operator": "Operator on the listing",
+    "phone": "Phone",
+    "atm_h3": "Bitcoin ATMs",
+    "atm_p": "There are Bitcoin ATMs in the area.",
+    "atm_loc": "Locations to be added.",
+
+    "community_h2": "A community that meets, teaches and welcomes",
+    "wa_h": "Our WhatsApp group",
+    "wa_p": "The easiest way to meet the community, ask a question or hear about the next meetup.",
+    "meet_h": "Meetups",
+    "meet_p": "We meet in person around the lake.",
+    "meet_when": "Dates to be announced.",
+    "meet_where": "Venues to be announced.",
+    "school_h": "School visits",
+    "school_p": "We go to different schools and teach Bitcoin.",
+    "school_list": "Schools to be listed.",
+    "follow_h": "Follow and write to us",
+    "facebook": "Facebook",
+    "email": "Email",
+    "who_h": "Who we are",
+    "who_p": "A community of people who live on the lake and believe in Bitcoin.",
+    "who_bio": "Bio and photo to be added.",
+
+    "tours_h2": "VIP tours around Atitlán",
+    "tours_p": "We organize VIP tours around the lake for people who want more than a viewpoint. You come as a guest and spend your time with the people who live here.",
+    "tours_1_h": "Meet locals",
+    "tours_1_p": "Time with the people who live and work around the lake.",
+    "tours_2_h": "Culture and Maya communities",
+    "tours_2_p": "You integrate with the culture, together with the Maya communities of the lake.",
+    "tours_3_h": "Bitcoin, in plain terms",
+    "tours_3_p": "We onboard Maya merchants to Bitcoin through education, and we work with cooperatives that accept Bitcoin.",
+    "tours_cta": "Request a tour",
+    "tours_note": "Booking details to be added.",
+
+    "expats_h2": "New on the lake?",
+    "expats_p": "There is a group of expats on the lake and we serve them. We help anyone integrate into the Bitcoin community here, whether you are visiting, staying for a season or settling.",
+    "expats_cta": "Talk to us",
+
+    "about_h2": "Where the merchant network started",
+    "about_p_html": "The first Bitcoin merchant network around the lake was started by <strong>Bitcoin Lake</strong> (Lago Bitcoin), founded by Patrick Melder in Panajachel in 2021 and rooted in years of volunteering at Centro Educativo Josué. We are a separate, independent community and this site is not run by Bitcoin Lake.",
+    "about_x": "Bitcoin Lake on X: @LakeBitcoin",
+    "press_h": "In the press",
+    "press_read": "Read",
+
+    "foot_legal": "© 2026 Lago Bitcoin Community. An independent community site, not run by Bitcoin Lake.",
+    "foot_data_html": "Merchant data © <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap contributors</a> (ODbL), as shown on <a href=\"https://btcmap.org/community/lago-bitcoin/merchants\">BTC Map</a>. Map tiles © OpenStreetMap contributors.",
+    "foot_photos": "Photos from Wikimedia Commons under Creative Commons licences, credited under each photo.",
+    "foot_updated": "Last updated {d}",
+
+    "toast_soon": "This link is coming soon.",
+    "alt_lang_href": "es/",
+    "alt_lang_code": "ES",
+    "cur_lang_code": "EN",
+}
+
+ES = {
+    "lang": "es",
+    "og_locale": "es_GT",
+    "title": "Lago Bitcoin Community | Bitcoin en el Lago de Atitlán, Guatemala",
+    "description": "Nuestra comunidad Bitcoin en el Lago de Atitlán, Guatemala: 117 lugares en un mapa en vivo, lanchas y tuc tucs con Bitcoin, encuentros, tours VIP y bienvenida para quienes llegan.",
+    "skip": "Saltar al contenido",
+    "brand": "Lago Bitcoin Community",
+    "nav_label": "Principal",
+    "nav_lake": "El lago",
+    "nav_bitcoin": "Comercios",
+    "nav_transport": "Cómo moverse",
+    "nav_community": "Comunidad",
+    "nav_tours": "Tours VIP",
+    "nav_expats": "Recién llegados",
+    "nav_about": "Historia",
+    "menu_open": "Menú",
+    "menu_close": "Cerrar menú",
+    "lang_label": "Idioma",
+    "lang_en_name": "English",
+    "lang_es_name": "Español",
+
+    "hero_h1": "El Lago de Atitlán y la comunidad Bitcoin que vive aquí",
+    "hero_sub": "Tres volcanes, pueblos mayas a la orilla y un grupo fuerte de personas que pagan, enseñan y reciben con Bitcoin.",
+    "cta_whatsapp": "Únete a WhatsApp",
+    "cta_merchants": "Encuentra un comercio",
+
+    "lake_h2": "Un lago rodeado por tres volcanes",
+    "lake_p1": "El Lago de Atitlán llena una cuenca volcánica en el altiplano de Sololá, Guatemala. Los volcanes Atitlán, Tolimán y San Pedro se levantan en su orilla sur.",
+    "lake_p2": "Los pueblos mayas están a la orilla del agua. El kaqchikel y el tz’utujil son los principales idiomas mayas que se hablan alrededor del lago, y cada pueblo tiene su propio carácter.",
+    "lake_p3": "Panajachel es la entrada más concurrida. Desde sus muelles salen lanchas públicas hacia San Marcos La Laguna, San Pedro La Laguna, Santiago Atitlán y otros pueblos.",
+    "lake_towns_h": "Lugares con Bitcoin en el mapa, por pueblo",
+    "lake_towns_note": "El pueblo se asigna según la posición de cada lugar en el mapa, por lo que es aproximado.",
+    "photo_credit": "Foto",
+    "photo_via": "Wikimedia Commons",
+
+    "btc_h2": "Bitcoin en el lago",
+    "btc_lead": "Más de 50 comercios de la red aceptan Bitcoin alrededor del Lago de Atitlán, desde cafés y hoteles hasta farmacias y lanchas.",
+    "btc_listed": "117 lugares registrados en BTC Map / OpenStreetMap, datos del 2026-10-19.",
+    "btc_stat_places": "lugares registrados",
+    "btc_stat_ln": "marcados con Lightning",
+    "btc_stat_chain": "marcados on-chain",
+    "search_label": "Buscar lugares",
+    "search_ph": "Nombre, tipo o pueblo",
+    "town_label": "Pueblo",
+    "town_all": "Todos los pueblos",
+    "chips_label": "Tipo de lugar",
+    "group_all": "Todos",
+    "group_eat": "Comer y beber",
+    "group_stay": "Hospedaje",
+    "group_tours": "Tours y transporte",
+    "group_shops": "Tiendas",
+    "group_services": "Servicios",
+    "group_other": "Otros",
+    "reset": "Borrar filtros",
+    "showing": "Mostrando {n} de {total} lugares",
+    "map_label": "Mapa de lugares que aceptan Bitcoin alrededor del Lago de Atitlán",
+    "list_label": "Lista de lugares que aceptan Bitcoin",
+    "empty": "Ningún lugar coincide con estos filtros.",
+    "show_on_map": "Ver en el mapa",
+    "survey": "Verificado: {d}",
+    "survey_none": "Sin fecha de verificación",
+    "hours": "Horario",
+    "ln": "Lightning",
+    "chain": "On-chain",
+    "unnamed": "Lugar sin nombre",
+    "check_note": "Confirma siempre con el comercio: las formas de pago y los horarios cambian. Cada tarjeta muestra la fecha de la última verificación en OpenStreetMap, cuando existe.",
+    "btc_open_btcmap": "Abrir esta comunidad en BTC Map",
+    "noscript": "El mapa y la lista de comercios necesitan JavaScript. Puedes ver los mismos lugares en BTC Map:",
+    "map_loading": "Cargando el mapa",
+    "map_error": "No se pudo cargar el mapa. Ábrelo mejor en BTC Map.",
+
+    "transport_h2": "Cómo moverse con Bitcoin",
+    "transport_p": "En Panajachel hay registrados una lancha Bitcoin, un taxi acuático y tres tuc tucs. Los datos de contacto están copiados de los registros. Pregunta la tarifa antes de salir.",
+    "transport_boat": "Lancha",
+    "transport_tuk": "Tuc tuc",
+    "operator": "Operador según el registro",
+    "phone": "Teléfono",
+    "atm_h3": "Cajeros automáticos de Bitcoin",
+    "atm_p": "Hay cajeros automáticos de Bitcoin en la zona.",
+    "atm_loc": "Las ubicaciones se agregarán.",
+
+    "community_h2": "Una comunidad que se reúne, enseña y da la bienvenida",
+    "wa_h": "Nuestro grupo de WhatsApp",
+    "wa_p": "La forma más fácil de conocer a la comunidad, hacer una pregunta o enterarte del próximo encuentro.",
+    "meet_h": "Encuentros",
+    "meet_p": "Nos reunimos en persona alrededor del lago.",
+    "meet_when": "Fechas por anunciar.",
+    "meet_where": "Lugares por anunciar.",
+    "school_h": "Visitas a escuelas",
+    "school_p": "Visitamos distintas escuelas y enseñamos Bitcoin.",
+    "school_list": "Las escuelas se agregarán a la lista.",
+    "follow_h": "Síguenos y escríbenos",
+    "facebook": "Facebook",
+    "email": "Correo",
+    "who_h": "Quiénes somos",
+    "who_p": "Una comunidad de personas que viven en el lago y creen en Bitcoin.",
+    "who_bio": "La biografía y la foto se agregarán.",
+
+    "tours_h2": "Tours VIP por Atitlán",
+    "tours_p": "Organizamos tours VIP por el lago para quienes quieren algo más que un mirador. Llegas como invitado y pasas tu tiempo con las personas que viven aquí.",
+    "tours_1_h": "Conoce a la gente local",
+    "tours_1_p": "Tiempo con las personas que viven y trabajan alrededor del lago.",
+    "tours_2_h": "Cultura y comunidades mayas",
+    "tours_2_p": "Te integras a la cultura junto con las comunidades mayas del lago.",
+    "tours_3_h": "Bitcoin, en palabras sencillas",
+    "tours_3_p": "Incorporamos a comerciantes mayas a Bitcoin por medio de la educación, y trabajamos con cooperativas que aceptan Bitcoin.",
+    "tours_cta": "Solicita un tour",
+    "tours_note": "Los datos para reservar se agregarán.",
+
+    "expats_h2": "¿Recién llegaste al lago?",
+    "expats_p": "Hay un grupo de extranjeros que viven en el lago y los atendemos. Ayudamos a cualquier persona a integrarse a la comunidad Bitcoin de aquí, ya sea que estés de visita, pases una temporada o te quedes a vivir.",
+    "expats_cta": "Escríbenos",
+
+    "about_h2": "De dónde viene la red de comercios",
+    "about_p_html": "La primera red de comercios con Bitcoin alrededor del lago la inició <strong>Bitcoin Lake</strong> (Lago Bitcoin), fundado por Patrick Melder en Panajachel en 2021 a partir de años de voluntariado en el Centro Educativo Josué. Somos una comunidad aparte e independiente, y este sitio no lo administra Bitcoin Lake.",
+    "about_x": "Bitcoin Lake en X: @LakeBitcoin",
+    "press_h": "En la prensa",
+    "press_read": "Leer",
+
+    "foot_legal": "© 2026 Lago Bitcoin Community. Un sitio comunitario independiente, no administrado por Bitcoin Lake.",
+    "foot_data_html": "Datos de comercios © <a href=\"https://www.openstreetmap.org/copyright\">colaboradores de OpenStreetMap</a> (ODbL), tal como se muestran en <a href=\"https://btcmap.org/community/lago-bitcoin/merchants\">BTC Map</a>. Mosaicos del mapa © colaboradores de OpenStreetMap.",
+    "foot_photos": "Fotos de Wikimedia Commons con licencias Creative Commons, con crédito debajo de cada foto.",
+    "foot_updated": "Última actualización {d}",
+
+    "toast_soon": "Este enlace estará disponible pronto.",
+    "alt_lang_href": "../",
+    "alt_lang_code": "EN",
+    "cur_lang_code": "ES",
+}
+
+# Names of the OpenStreetMap place types shown on the merchant cards.
+CATEGORIES = {
+    "en": {
+        "restaurant": "Restaurant", "cafe": "Cafe", "hotel": "Hotel", "hostel": "Hostel", "travel_agency": "Travel agency",
+        "boat_rental": "Boat", "taxi": "Taxi or tuk tuk", "guide": "Tour guide", "canoe_hire": "Kayak and canoe hire",
+        "attraction": "Attraction", "parking": "Parking", "fast_food": "Fast food", "ice_cream": "Ice cream", "pastry": "Bakery",
+        "bar": "Bar", "gift": "Gifts and souvenirs", "clothes": "Clothing", "convenience": "Convenience store",
+        "supermarket": "Supermarket", "shoes": "Shoes", "second_hand": "Second-hand shop", "florist": "Florist", "pottery": "Pottery",
+        "craft": "Crafts", "art": "Art", "gallery": "Gallery", "artwork": "Artwork", "hardware": "Hardware store",
+        "electronics": "Electronics", "pharmacy": "Pharmacy", "beauty": "Beauty", "hairdresser": "Hairdresser",
+        "wellness_centre": "Wellness centre", "massage": "Massage", "fitness_centre": "Gym", "computer": "Computers",
+        "internet_cafe": "Internet cafe", "mobile_phone": "Mobile phones", "repair": "Repairs", "laundry": "Laundry",
+        "copyshop": "Copy shop", "electrician": "Electrician", "motorcycle": "Motorcycles", "school": "School", "yes": "Business",
+    },
+    "es": {
+        "restaurant": "Restaurante", "cafe": "Café", "hotel": "Hotel", "hostel": "Hostal", "travel_agency": "Agencia de viajes",
+        "boat_rental": "Lancha", "taxi": "Taxi o tuc tuc", "guide": "Guía turístico", "canoe_hire": "Alquiler de kayaks y canoas",
+        "attraction": "Atracción", "parking": "Parqueo", "fast_food": "Comida rápida", "ice_cream": "Helados", "pastry": "Pastelería",
+        "bar": "Bar", "gift": "Regalos y recuerdos", "clothes": "Ropa", "convenience": "Tienda de conveniencia",
+        "supermarket": "Supermercado", "shoes": "Calzado", "second_hand": "Tienda de artículos usados", "florist": "Florería",
+        "pottery": "Cerámica", "craft": "Artesanías", "art": "Arte", "gallery": "Galería", "artwork": "Obra de arte",
+        "hardware": "Ferretería", "electronics": "Electrónica", "pharmacy": "Farmacia", "beauty": "Belleza",
+        "hairdresser": "Peluquería", "wellness_centre": "Centro de bienestar", "massage": "Masajes", "fitness_centre": "Gimnasio",
+        "computer": "Computación", "internet_cafe": "Café internet", "mobile_phone": "Celulares", "repair": "Reparaciones",
+        "laundry": "Lavandería", "copyshop": "Copistería", "electrician": "Electricista", "motorcycle": "Motocicletas",
+        "school": "Escuela", "yes": "Negocio",
+    },
+}
+
+# Keys copied into the page for script.js (the merchant finder).
+I18N_KEYS = [
+    "group_all", "group_eat", "group_stay", "group_tours", "group_shops", "group_services", "group_other",
+    "showing", "empty", "show_on_map", "survey", "survey_none", "hours", "ln", "chain", "unnamed", "phone",
+]
+
+LANGS = {"en": EN, "es": ES}
