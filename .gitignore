@@ -1,0 +1,12 @@
+# Private research and planning material: never published.
+source-archive/
+plans/
+BUILD-BRIEF.md
+build-run.log
+# Local noise
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+qa/.cache/

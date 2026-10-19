@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lago Bitcoin Community">
+  <rect width="64" height="64" rx="14" fill="#0A3047"/>
+  <circle cx="44" cy="19" r="8" fill="#F7931A"/>
+  <path d="M3 54 22 25l10 14 7-9 22 24z" fill="#1C7C8A"/>
+  <path d="M3 54 22 25l7 10-14 19z" fill="#14606C"/>
+  <path d="M0 54h64v10H0z" fill="#0A3047"/>
+</svg>

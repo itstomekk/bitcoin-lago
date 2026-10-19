@@ -1,0 +1,82 @@
+{
+ "hero": {
+  "file": "commons_04.jpg",
+  "title": "Lago de Atitlán seen from Panajachel.jpg",
+  "artist": "Vikulinkaaa",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Lago_de_Atitl%C3%A1n_seen_from_Panajachel.jpg",
+  "width": 1600,
+  "height": 1200
+ },
+ "lake-view": {
+  "file": "commons_01.jpg",
+  "title": "2010.05.02.074448 Sololá Panajachel vista lago Atitlán Guatemala.jpg",
+  "artist": "Hermann Luyken",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:2010.05.02.074448_Solol%C3%A1_Panajachel_vista_lago_Atitl%C3%A1n_Guatemala.jpg",
+  "width": 1600,
+  "height": 1067
+ },
+ "sunrise": {
+  "file": "commons_14.jpg",
+  "title": "Sunrise on Lake Atitlan (6849876450).jpg",
+  "artist": "Murray Foubister",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Sunrise_on_Lake_Atitlan_(6849876450).jpg",
+  "width": 1600,
+  "height": 1067
+ },
+ "street": {
+  "file": "commons_15.jpg",
+  "title": "Panajachel Calle Santander 1.jpg",
+  "artist": "Simon Burchell",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Panajachel_Calle_Santander_1.jpg",
+  "width": 1600,
+  "height": 1200
+ },
+ "history-1975": {
+  "file": "commons_03.jpg",
+  "title": "Lago de Atitlan en Panajachel, Abril 1975.jpg",
+  "artist": "Infrogmation",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Lago_de_Atitlan_en_Panajachel,_Abril_1975.jpg",
+  "width": 1600,
+  "height": 1264
+ },
+ "panorama": {
+  "file": "commons_16.jpg",
+  "title": "Panajachel banner 1.jpg",
+  "artist": "Chensiyuan",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Panajachel_banner_1.jpg",
+  "width": 1600,
+  "height": 229
+ },
+ "shore": {
+  "file": "commons_06.jpg",
+  "title": "Panajachel, Lake Atitlan, Guatemala.jpg",
+  "artist": "lamblukas",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Panajachel,_Lake_Atitlan,_Guatemala.jpg",
+  "width": 1600,
+  "height": 900
+ },
+ "tours": {
+  "file": "commons_11.jpg",
+  "title": "Panajachel lake atitlan.JPG",
+  "artist": "chensiyuan",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Panajachel_lake_atitlan.JPG",
+  "width": 1600,
+  "height": 1062
+ }
+}
