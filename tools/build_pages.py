@@ -105,7 +105,7 @@ def press_html(T):
     for outlet, month, title, url in C.PRESS:
         out.append(
             f'<li><a href="{url}" rel="noopener"><span class="outlet">{outlet}, {C.MONTHS[T["lang"]][month]}</span>'
-            f'<span class="ptitle">{escape(title)}</span>'
+            f'<span class="ptitle" lang="en">{escape(title)}</span>'
             f'<span class="read">{T["press_read"]}{icon("arrow-up-right")}</span></a></li>'
         )
     return "".join(out)

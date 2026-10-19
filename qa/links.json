@@ -1,0 +1,344 @@
+[
+ {
+  "url": "https://amarantopana.com/",
+  "status": 403,
+  "final": "https://amarantopana.com/",
+  "result": "blocked",
+  "where": [
+   "data:Amaranto Panajachel"
+  ]
+ },
+ {
+  "url": "https://bitcoinmagazine.com/culture/guatemala-town-mining-bitcoin-with-used-oil",
+  "status": 200,
+  "final": "https://bitcoinmagazine.com/culture/guatemala-town-mining-bitcoin-with-used-oil",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://btcmap.org/community/lago-bitcoin/merchants",
+  "status": 200,
+  "final": "https://btcmap.org/community/lago-bitcoin/merchants",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://commons.wikimedia.org/wiki/File:2010.05.02.074448_Solol%C3%A1_Panajachel_vista_lago_Atitl%C3%A1n_Guatemala.jpg",
+  "status": 200,
+  "final": "https://commons.wikimedia.org/wiki/File:2010.05.02.074448_Solol%C3%A1_Panajachel_vista_lago_Atitl%C3%A1n_Guatemala.jpg",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://commons.wikimedia.org/wiki/File:Lago_de_Atitl%C3%A1n_seen_from_Panajachel.jpg",
+  "status": 200,
+  "final": "https://commons.wikimedia.org/wiki/File:Lago_de_Atitl%C3%A1n_seen_from_Panajachel.jpg",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://commons.wikimedia.org/wiki/File:Lago_de_Atitlan_en_Panajachel,_Abril_1975.jpg",
+  "status": 200,
+  "final": "https://commons.wikimedia.org/wiki/File:Lago_de_Atitlan_en_Panajachel,_Abril_1975.jpg",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://commons.wikimedia.org/wiki/File:Panajachel_Calle_Santander_1.jpg",
+  "status": 200,
+  "final": "https://commons.wikimedia.org/wiki/File:Panajachel_Calle_Santander_1.jpg",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://commons.wikimedia.org/wiki/File:Panajachel_banner_1.jpg",
+  "status": 200,
+  "final": "https://commons.wikimedia.org/wiki/File:Panajachel_banner_1.jpg",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://commons.wikimedia.org/wiki/File:Panajachel_lake_atitlan.JPG",
+  "status": 200,
+  "final": "https://commons.wikimedia.org/wiki/File:Panajachel_lake_atitlan.JPG",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://commons.wikimedia.org/wiki/File:Sunrise_on_Lake_Atitlan_(6849876450).jpg",
+  "status": 200,
+  "final": "https://commons.wikimedia.org/wiki/File:Sunrise_on_Lake_Atitlan_(6849876450).jpg",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "status": 200,
+  "final": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "status": 200,
+  "final": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "status": 200,
+  "final": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://eaglesnestatitlan.com/cafe/",
+  "status": 200,
+  "final": "https://eaglesnestatitlan.com/cafe",
+  "result": "ok",
+  "where": [
+   "data:Eagle's Nest Cafe"
+  ]
+ },
+ {
+  "url": "https://elfaro.net/en/central-america-en/bitcoin-believers-look-for-new-paradise-at-mayan-lake",
+  "status": 200,
+  "final": "https://elfaro.net/en/central-america-en/bitcoin-believers-look-for-new-paradise-at-mayan-lake",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://grand.guatemalacity-hotels.com/en/",
+  "status": 200,
+  "final": "https://grand.guatemalacity-hotels.com/en/",
+  "result": "ok",
+  "where": [
+   "data:Grand Hotel Panajachel"
+  ]
+ },
+ {
+  "url": "https://itstomekk.github.io/lago-bitcoin-community/",
+  "status": 404,
+  "final": "https://itstomekk.github.io/lago-bitcoin-community/",
+  "result": "http-error",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://itstomekk.github.io/lago-bitcoin-community/es/",
+  "status": 404,
+  "final": "https://itstomekk.github.io/lago-bitcoin-community/es/",
+  "result": "http-error",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://kayakguatemala.com/",
+  "status": 200,
+  "final": "https://kayakguatemala.com/",
+  "result": "ok",
+  "where": [
+   "data:Kayak Guatemala - Los Elementos Adventure Center"
+  ]
+ },
+ {
+  "url": "https://realworldparagliding.jimdofree.com/",
+  "status": 200,
+  "final": "https://realworldparagliding.jimdofree.com/",
+  "result": "ok",
+  "where": [
+   "data:Realworld Paragliding"
+  ]
+ },
+ {
+  "url": "https://www.bambuguesthouse.com/",
+  "status": 200,
+  "final": "https://bambuguesthouse.com/",
+  "result": "ok",
+  "where": [
+   "data:Bambu Guest House"
+  ]
+ },
+ {
+  "url": "https://www.bloomberglinea.com/english/bitcoin-lake-guatemalas-crypto-enclave-launches/",
+  "status": 200,
+  "final": "https://www.bloomberglinea.com/english/bitcoin-lake-guatemalas-crypto-enclave-launches/",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://www.facebook.com/BenjyTours",
+  "status": 400,
+  "final": "https://www.facebook.com/BenjyTours",
+  "result": "blocked",
+  "where": [
+   "data:Benjy Travel"
+  ]
+ },
+ {
+  "url": "https://www.facebook.com/HotelLosManantialesPanajachel",
+  "status": 400,
+  "final": "https://www.facebook.com/HotelLosManantialesPanajachel",
+  "result": "blocked",
+  "where": [
+   "data:Hotel Los Manantiales"
+  ]
+ },
+ {
+  "url": "https://www.facebook.com/Multiservicios-Yax%C3%B3n-299907600397260/",
+  "status": 400,
+  "final": "https://www.facebook.com/Multiservicios-Yax%C3%B3n-299907600397260/",
+  "result": "blocked",
+  "where": [
+   "data:Multiservicios Yaxón"
+  ]
+ },
+ {
+  "url": "https://www.facebook.com/emporium.atitlan",
+  "status": 400,
+  "final": "https://www.facebook.com/emporium.atitlan",
+  "result": "blocked",
+  "where": [
+   "data:The Emporium"
+  ]
+ },
+ {
+  "url": "https://www.facebook.com/people/Hotel-Ahavah/100063754175278/",
+  "status": 400,
+  "final": "https://www.facebook.com/people/Hotel-Ahavah/100063754175278/",
+  "result": "blocked",
+  "where": [
+   "data:Hotel Ahavah"
+  ]
+ },
+ {
+  "url": "https://www.facebook.com/restcofeArt/",
+  "status": 400,
+  "final": "https://www.facebook.com/restcofeArt/",
+  "result": "blocked",
+  "where": [
+   "data:Coffee Art"
+  ]
+ },
+ {
+  "url": "https://www.facebook.com/share/1EqYfvcMcZ/?mibextid=wwXIfr",
+  "status": 400,
+  "final": "https://www.facebook.com/share/1EqYfvcMcZ/?mibextid=wwXIfr",
+  "result": "blocked",
+  "where": [
+   "data:Mi Farmacia"
+  ]
+ },
+ {
+  "url": "https://www.hannaresort.com/es/",
+  "status": 200,
+  "final": "https://www.hannaresort.com/es/",
+  "result": "ok",
+  "where": [
+   "data:Hanna Resort"
+  ]
+ },
+ {
+  "url": "https://www.instagram.com/chinajulcafe/",
+  "status": 200,
+  "final": "https://www.instagram.com/chinajulcafe/",
+  "result": "ok",
+  "where": [
+   "data:Chinajul Panajachel"
+  ]
+ },
+ {
+  "url": "https://www.openstreetmap.org/copyright",
+  "status": 200,
+  "final": "https://www.openstreetmap.org/copyright",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://www.smilecentergt.com/",
+  "status": 200,
+  "final": "https://www.smilecentergt.com/",
+  "result": "ok",
+  "where": [
+   "data:Holistic Smile Center Massage & Therapy"
+  ]
+ },
+ {
+  "url": "https://www.tripadvisor.com/Restaurant_Review-g292008-d6600940-Reviews-Atlantis-Panajachel_Lake_Atitlan_Solola_Department_Western_Highlands.html",
+  "status": 403,
+  "final": "https://www.tripadvisor.com/Restaurant_Review-g292008-d6600940-Reviews-Atlantis-Panajachel_Lake_Atitlan_Solola_Department_Western_Highlands.html",
+  "result": "blocked",
+  "where": [
+   "data:Restaurante Lena’s Atlantis"
+  ]
+ },
+ {
+  "url": "https://www.tripadvisor.es/Restaurant_Review-g292009-d12218421-Reviews-Pasteleria_y_Cafe_Lolita-Santiago_Atitlan_Lake_Atitlan_Solola_Department_Western.html",
+  "status": 403,
+  "final": "https://www.tripadvisor.es/Restaurant_Review-g292009-d12218421-Reviews-Pasteleria_y_Cafe_Lolita-Santiago_Atitlan_Lake_Atitlan_Solola_Department_Western.html",
+  "result": "blocked",
+  "where": [
+   "data:Pasteleria y Café Lolita"
+  ]
+ },
+ {
+  "url": "https://x.com/LakeBitcoin",
+  "status": 200,
+  "final": "https://x.com/LakeBitcoin",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ }
+]

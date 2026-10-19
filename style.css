@@ -33,7 +33,7 @@
   --muted: #4b6270;
   --line: #d3dfe4;
   --teal: #14606c;
-  --teal-fill: #1c7c8a;
+  --teal-fill: #14606c;
   --lake: #0a3047;
   --accent: #f7931a;
   --on-accent: #0c2433;
@@ -278,7 +278,7 @@ input::placeholder { color: var(--muted); opacity: 1; }
 .tile p:last-child { margin-bottom: 0; }
 .tile-wa { background: var(--teal-fill); border-color: transparent; color: var(--on-teal); }
 .tile-wa > .ico { color: var(--on-teal); }
-.tile-wa p { color: #e8f6f8; }
+.tile-wa p { color: #f1fbfc; }
 .tile-school { background: var(--tint); border-color: transparent; }
 .plain { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
 @media (min-width: 900px) {
@@ -308,7 +308,7 @@ input::placeholder { color: var(--muted); opacity: 1; }
 
 /* EXPATS */
 .expats { background: var(--tint); }
-.expats-inner { max-width: 62rem; }
+.expats-inner > * { max-width: 62rem; }
 .expats-inner h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
 .expats-inner .btn { margin-top: 0.6rem; }
 
