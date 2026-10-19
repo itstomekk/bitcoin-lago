@@ -21,18 +21,39 @@ BTCMAP_COMMUNITY = "https://btcmap.org/community/lago-bitcoin/merchants"
 X_LAKEBITCOIN = "https://x.com/LakeBitcoin"
 
 PRESS = [
-    # (outlet, month key, title, url)
-    ("Bloomberg Línea", "2022-03", "Bitcoin Lake: Guatemala’s Crypto Enclave Launches",
-     "https://www.bloomberglinea.com/english/bitcoin-lake-guatemalas-crypto-enclave-launches/"),
+    # (outlet, month key, title, url, quote)
+    ("Bloomberg Línea", "2022-03", "Bitcoin Lake: Guatemala's Crypto Enclave Launches",
+     "https://www.bloomberglinea.com/english/bitcoin-lake-guatemalas-crypto-enclave-launches/",
+     "Bitcoin offers an economic freedom that is not found in current fiat currencies or other cryptocurrencies."),
     ("Bitcoin Magazine", "2022-09", "Visit The Guatemalan Lake Town Mining Bitcoin With Used Cooking Oil",
-     "https://bitcoinmagazine.com/culture/guatemala-town-mining-bitcoin-with-used-oil"),
+     "https://bitcoinmagazine.com/culture/guatemala-town-mining-bitcoin-with-used-oil",
+     "We don't have any major endowment or donations to do what we are doing. Bitcoin mining was a way to get bitcoin flowing into the community."),
     ("El Faro", "2022-03", "Bitcoin Believers Look for New Paradise at Mayan Lake",
-     "https://elfaro.net/en/central-america-en/bitcoin-believers-look-for-new-paradise-at-mayan-lake"),
+     "https://elfaro.net/en/central-america-en/bitcoin-believers-look-for-new-paradise-at-mayan-lake",
+     "We're trying to create a circular bitcoin economy like they did in El Zonte, but with a twist: we're using formal school training versus community training."),
+    ("Gizmodo", "2022-09", "Christian Missionaries Are Turning to the Gospel of Bitcoin in Latin America",
+     "https://gizmodo.com/christian-crypto-missionaries-bitcoin-lake-guatemala-1849508562",
+     "Bitcoin evangelism is no different than Christian evangelism. It's the same."),
+    ("Kayak Guatemala", "2022", "Discovering the Bitcoin Community at Lake Atitlán",
+     "https://kayakguatemala.com/faqs/bitcoin-lake-atitlan-lago-de-bitcoin",
+     "More and more visitors are asking us about how they can spend bitcoin in Lake Atitlán, and I'm excited to share that our region has truly become a part of the global bitcoin movement."),
+    ("Bitcoin Magazine", "2023-03", "Inside Bitcoin Lake: Lessons From My Months As A Volunteer With Guatemala's Groundbreaking Project",
+     "https://bitcoinmagazine.com/culture/inside-guatemalas-bitcoin-lake",
+     "I have seen firsthand that this project has successfully onboarded more than 60 merchants, of whom 90% are unbanked and solely accept cash and bitcoin."),
+    ("Bloomberg Línea", "2022-06", "Trabajadores en San Marcos La Laguna se capacitan para recibir pagos en bitcoin",
+     "https://www.bloomberglinea.com/2022/06/07/trabajadores-en-san-marcos-la-laguna-se-capacitan-para-recibir-pagos-en-bitcoin",
+     "No todos necesitan entender cómo funcionan las billeteras HD, o los beneficios de taproot. De hecho, la mayoría simplemente necesita ver que funciona, que es rápido, seguro, barato, y fácil."),
+    ("Cointelegraph", "2022-04", "Why is a Guatemalan mayor mining Bitcoin? Tackling FUD with biogas and BTC",
+     "https://cointelegraph.com/news/why-is-a-guatemalan-mayor-mining-bitcoin-tackling-fud-with-biogas-and-btc",
+     "The goal of this proof-of-concept is to capture the wasted fuel and convert the biogas into electricity/Bitcoin."),
+    ("Adopting Bitcoin 2022", "2022", "Patrick Melder, speaker page",
+     "https://sv22.adoptingbitcoin.org/speaker/PatrickMelder/",
+     "Patrick Melder is a Bitcoin missionary and a Christian one, in Guatemala."),
 ]
 
 MONTHS = {
-    "en": {"2022-03": "March 2022", "2022-09": "September 2022"},
-    "es": {"2022-03": "marzo de 2022", "2022-09": "septiembre de 2022"},
+    "en": {"2022-03": "March 2022", "2022-06": "June 2022", "2022-09": "September 2022", "2022-04": "April 2022", "2023-03": "March 2023", "2022": "2022"},
+    "es": {"2022-03": "marzo de 2022", "2022-06": "junio de 2022", "2022-09": "septiembre de 2022", "2022-04": "abril de 2022", "2023-03": "marzo de 2023", "2022": "2022"},
 }
 
 # Photo captions and alt text. Credit lines are generated from data/photos.json (never typed by hand).

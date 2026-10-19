@@ -102,10 +102,12 @@ def ride_html(T):
 
 def press_html(T):
     out = []
-    for outlet, month, title, url in C.PRESS:
+    for item in C.PRESS:
+        outlet, month, title, url, quote = item
         out.append(
             f'<li><a href="{url}" rel="noopener"><span class="outlet">{outlet}, {C.MONTHS[T["lang"]][month]}</span>'
             f'<span class="ptitle" lang="en">{escape(title)}</span>'
+            f'<span class="pquote">{escape(quote)}</span>'
             f'<span class="read">{T["press_read"]}{icon("arrow-up-right")}</span></a></li>'
         )
     return "".join(out)

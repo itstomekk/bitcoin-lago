@@ -164,6 +164,7 @@ h3 { font-family: var(--font-body); font-size: 1.15rem; font-weight: 650; letter
 .press a:hover { background: #241d1a; }
 .press .outlet { font-size: 0.85rem; color: var(--muted); }
 .press .ptitle { font-weight: 650; line-height: 1.3; }
+.press .pquote { font-size: 0.9rem; line-height: 1.45; color: var(--muted); font-style: italic; }
 .press .read { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.88rem; color: var(--link); font-weight: 650; }
 
 .site-footer { background: #080707; padding: 3rem var(--pad) 7rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); }
