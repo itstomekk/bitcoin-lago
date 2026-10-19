@@ -148,6 +148,27 @@ a:hover { color: var(--ink); }
 }
 @media (max-width: 420px) { .brand span { font-size: 0.88rem; } .brand img { width: 30px; height: 30px; } .bar { gap: 0.5rem; } }
 
+/* TOP BAR: fixed variant switcher + EN/ES toggle above the header */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: #0f1417; color: #fff;
+  font-family: "Geist", system-ui, sans-serif; font-size: 0.75rem; font-weight: 650;
+  line-height: 1; border-bottom: 1px solid #1e262c;
+}
+.topbar-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1240px; margin: 0 auto; padding: 0.35rem clamp(1rem, 4vw, 2rem); }
+.topbar-variants { display: flex; align-items: center; gap: 0.25rem; flex-wrap: wrap; }
+.topbar-link { color: #fff; text-decoration: none; padding: 0.25rem 0.5rem; border-radius: 4px; white-space: nowrap; transition: background-color 0.15s, color 0.15s; }
+.topbar-link:hover { background: rgba(255,255,255,0.12); }
+.topbar-link.topbar-current { background: #fff; color: #0f1417; }
+.topbar-lang { display: inline-flex; border: 1.5px solid #1e262c; border-radius: 999px; padding: 2px; background: #151d25; }
+.topbar-lang a { text-decoration: none; color: #8b9aa6; font-weight: 700; font-size: 0.7rem; padding: 0.2rem 0.55rem; border-radius: 999px; min-width: 36px; text-align: center; }
+.topbar-lang a[aria-current] { background: #fff; color: #0f1417; }
+.topbar-lang a:not([aria-current]):hover { color: #fff; }
+
+/* Push header down to make room for topbar */
+.site-header { top: 28px; }
+@media (max-width: 420px) { .topbar { font-size: 0.68rem; } .topbar-in { padding: 0.3rem 0.75rem; } .site-header { top: 26px; } }
+
 /* HERO: headline full width, then words + CTAs beside the photo */
 .hero { padding-block: clamp(1.5rem, 4vw, 3rem) clamp(2.5rem, 5vw, 4rem); }
 .hero-grid {

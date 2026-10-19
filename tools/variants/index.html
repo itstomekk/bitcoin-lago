@@ -30,6 +30,25 @@
 </head>
 <body>
 <a class="skip" href="#main">{{skip}}</a>
+
+<!-- Fixed top bar: variant switcher + EN/ES toggle. Neutral dark strip, stays above content. -->
+<div class="topbar" role="navigation" aria-label="Design and language switcher">
+  <div class="topbar-in">
+    <nav class="topbar-variants" aria-label="Design variants">
+      <a href="{{p}}" class="topbar-link {{topbar_baseline}}" data-design="baseline" title="First design (baseline)">Baseline</a>
+      <a href="{{p}}v/a/" class="topbar-link {{topbar_a}}" data-design="a" title="{{vsw_label}} A: {{VARIANTS.a.[lang].0}}">A</a>
+      <a href="{{p}}v/b/" class="topbar-link {{topbar_b}}" data-design="b" title="{{vsw_label}} B: {{VARIANTS.b.[lang].0}}">B</a>
+      <a href="{{p}}v/c/" class="topbar-link {{topbar_c}}" data-design="c" title="{{vsw_label}} C: {{VARIANTS.c.[lang].0}}">C</a>
+      <a href="{{p}}v/d/" class="topbar-link {{topbar_d}}" data-design="d" title="{{vsw_label}} D: {{VARIANTS.d.[lang].0}}">D</a>
+      <a href="{{p}}v/e/" class="topbar-link {{topbar_e}}" data-design="e" title="{{vsw_label}} E: {{VARIANTS.e.[lang].0}}">E</a>
+    </nav>
+    <div class="topbar-lang" role="group" aria-label="{{lang_label}}">
+      <a href="{{p_en}}" lang="en" hreflang="en" data-lang="en" title="{{lang_en_name}}" {{cur_en}}>EN</a>
+      <a href="{{p_es}}" lang="es" hreflang="es" data-lang="es" title="{{lang_es_name}}" {{cur_es}}>ES</a>
+    </div>
+  </div>
+</div>
+
 <header class="vx-head">
   <a class="vx-brand" href="{{p}}"><img src="{{p}}favicon.svg" alt="" width="32" height="32"><span>{{brand}}</span></a>
   <div class="lang" role="group" aria-label="{{lang_label}}">

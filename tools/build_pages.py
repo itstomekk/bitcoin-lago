@@ -130,6 +130,13 @@ def render(lang):
         n_places=str(len(PLACES)),
         n_ln=str(ln),
         n_chain=str(chain),
+        # Top bar active states: baseline is current on root pages
+        topbar_baseline="topbar-current",
+        topbar_a="",
+        topbar_b="",
+        topbar_c="",
+        topbar_d="",
+        topbar_e="",
     )
     T["foot_updated"] = T["foot_updated"].format(d=C.LAST_UPDATED)
     blocks = {

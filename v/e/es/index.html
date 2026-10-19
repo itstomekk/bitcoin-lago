@@ -42,6 +42,24 @@
 </head>
 <body class="show-placeholders v-e" data-base="../../../" data-design="e">
 <a class="skip" href="#main">Saltar al contenido</a>
+
+<!-- Fixed top bar: variant switcher + EN/ES toggle. Neutral dark strip, stays above content. -->
+<div class="topbar" role="navigation" aria-label="Design and language switcher">
+  <div class="topbar-in">
+    <nav class="topbar-variants" aria-label="Design variants">
+      <a href="../../../" class="topbar-link " data-design="baseline" title="First design (baseline)">Baseline</a>
+      <a href="../../../v/a/" class="topbar-link " data-design="a" title="Diseño A: {{VARIANTS.a.[lang].0}}">A</a>
+      <a href="../../../v/b/" class="topbar-link " data-design="b" title="Diseño B: {{VARIANTS.b.[lang].0}}">B</a>
+      <a href="../../../v/c/" class="topbar-link " data-design="c" title="Diseño C: {{VARIANTS.c.[lang].0}}">C</a>
+      <a href="../../../v/d/" class="topbar-link " data-design="d" title="Diseño D: {{VARIANTS.d.[lang].0}}">D</a>
+      <a href="../../../v/e/" class="topbar-link topbar-current" data-design="e" title="Diseño E: {{VARIANTS.e.[lang].0}}">E</a>
+    </nav>
+    <div class="topbar-lang" role="group" aria-label="Idioma">
+      <a href="../" lang="en" hreflang="en" data-lang="en" title="English" >EN</a>
+      <a href="./" lang="es" hreflang="es" data-lang="es" title="Español" aria-current="true">ES</a>
+    </div>
+  </div>
+</div>
 <header class="pill" id="top">
   <a class="brand" href="#hero" aria-label="Lago Bitcoin Community"><img src="../../../favicon.svg" alt="" width="36" height="36"><span>Lago Bitcoin Community</span></a>
   <nav class="nav" id="nav" aria-label="Principal">

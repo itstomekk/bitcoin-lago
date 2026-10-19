@@ -139,49 +139,70 @@ def footer_text(T):
 def head_html(vid):
     m = META[vid]
     pre = "".join(f'<link rel="preload" href="{{{{p}}}}fonts/{f}" as="font" type="font/woff2" crossorigin>\n' for f in m["fonts"])
-    return f'''<!doctype html>
-<!--
-  GENERATED FILE. Do not edit by hand. Edit tools/variants/{vid}.html (layout), v/{vid}.css (look)
-  or tools/content.py (words), then run python tools/build_variants.py. See HANDOFF.md.
--->
-<html lang="{{{{lang}}}}" data-design="{vid}">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{{{title}}}}</title>
-<meta name="description" content="{{{{description}}}}">
-<meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="{m["theme"]}">
-<link rel="icon" href="{{{{p}}}}favicon.svg" type="image/svg+xml">
-<link rel="canonical" href="{{{{canonical}}}}">
-<link rel="alternate" hreflang="en" href="{{{{url_en}}}}">
-<link rel="alternate" hreflang="es" href="{{{{url_es}}}}">
-<link rel="alternate" hreflang="x-default" href="{{{{url_en}}}}">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Lago Bitcoin Community">
-<meta property="og:title" content="{{{{title}}}}">
-<meta property="og:description" content="{{{{description}}}}">
-<meta property="og:url" content="{{{{canonical}}}}">
-<meta property="og:locale" content="{{{{og_locale}}}}">
-<meta property="og:image" content="{{{{og_image}}}}">
-<meta name="twitter:card" content="summary_large_image">
-{pre}<link rel="stylesheet" href="{{{{p}}}}v/base.css">
-<link rel="stylesheet" href="{{{{p}}}}v/{vid}.css">
-<link rel="stylesheet" href="{{{{p}}}}vendor/leaflet/leaflet.css">
-<script>
-/* Language: remember the visitor's choice (localStorage "lbc-lang"); with no choice yet, follow the browser language. */
-(function () {{
-  var d = document.documentElement; d.className += ' js';
-  var here = d.lang, stored = null;
-  try {{ stored = localStorage.getItem('lbc-lang'); }} catch (e) {{}}
-  var want = stored || (/^es/i.test(navigator.language || '') ? 'es' : 'en');
-  if (want !== here && (want === 'en' || want === 'es')) {{ location.replace('{{{{alt_lang_href}}}}' + location.hash); }}
-}})();
-</script>
-</head>
-<body class="show-placeholders v-{vid}" data-base="{{{{p}}}}" data-design="{vid}">
-<a class="skip" href="#main">{{{{skip}}}}</a>
-'''
+    theme = m["theme"]
+    # f-string with all template/JS braces doubled; only vid, theme, pre are Python expressions
+    return (
+        f'<!doctype html>\n'
+        f'<!--\n'
+        f'  GENERATED FILE. Do not edit by hand. Edit tools/variants/{vid}.html (layout), v/{vid}.css (look)\n'
+        f'  or tools/content.py (words), then run python tools/build_variants.py. See HANDOFF.md.\n'
+        f'-->\n'
+        f'<html lang="{{{{lang}}}}" data-design="{vid}">\n'
+        f'<head>\n'
+        f'<meta charset="utf-8">\n'
+        f'<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+        f'<title>{{{{title}}}}</title>\n'
+        f'<meta name="description" content="{{{{description}}}}">\n'
+        f'<meta name="robots" content="noindex,nofollow">\n'
+        f'<meta name="theme-color" content="{theme}">\n'
+        f'<link rel="icon" href="{{{{p}}}}favicon.svg" type="image/svg+xml">\n'
+        f'<link rel="canonical" href="{{{{canonical}}}}">\n'
+        f'<link rel="alternate" hreflang="en" href="{{{{url_en}}}}">\n'
+        f'<link rel="alternate" hreflang="es" href="{{{{url_es}}}}">\n'
+        f'<link rel="alternate" hreflang="x-default" href="{{{{url_en}}}}">\n'
+        f'<meta property="og:type" content="website">\n'
+        f'<meta property="og:site_name" content="Lago Bitcoin Community">\n'
+        f'<meta property="og:title" content="{{{{title}}}}">\n'
+        f'<meta property="og:description" content="{{{{description}}}}">\n'
+        f'<meta property="og:url" content="{{{{canonical}}}}">\n'
+        f'<meta property="og:locale" content="{{{{og_locale}}}}">\n'
+        f'<meta property="og:image" content="{{{{og_image}}}}">\n'
+        f'<meta name="twitter:card" content="summary_large_image">\n'
+        f'{pre}<link rel="stylesheet" href="{{{{p}}}}v/base.css">\n'
+        f'<link rel="stylesheet" href="{{{{p}}}}v/{vid}.css">\n'
+        f'<link rel="stylesheet" href="{{{{p}}}}vendor/leaflet/leaflet.css">\n'
+        f'<script>\n'
+        f'/* Language: remember the visitor\'s choice (localStorage "lbc-lang"); with no choice yet, follow the browser language. */\n'
+        f'(function () {{\n'
+        f'  var d = document.documentElement; d.className += \' js\';\n'
+        f'  var here = d.lang, stored = null;\n'
+        f'  try {{ stored = localStorage.getItem(\'lbc-lang\'); }} catch (e) {{}}\n'
+        f'  var want = stored || (/^es/i.test(navigator.language || \'\') ? \'es\' : \'en\');\n'
+        f'  if (want !== here && (want === \'en\' || want === \'es\')) {{ location.replace(\'{{{{alt_lang_href}}}}\' + location.hash); }}\n'
+        f'}})();\n'
+        f'</script>\n'
+        f'</head>\n'
+        f'<body class="show-placeholders v-{vid}" data-base="{{{{p}}}}" data-design="{vid}">\n'
+        f'<a class="skip" href="#main">{{{{skip}}}}</a>\n'
+        f'\n'
+        f'<!-- Fixed top bar: variant switcher + EN/ES toggle. Neutral dark strip, stays above content. -->\n'
+        f'<div class="topbar" role="navigation" aria-label="Design and language switcher">\n'
+        f'  <div class="topbar-in">\n'
+        f'    <nav class="topbar-variants" aria-label="Design variants">\n'
+        f'      <a href="{{{{p}}}}" class="topbar-link {{{{topbar_baseline}}}}" data-design="baseline" title="First design (baseline)">Baseline</a>\n'
+        f'      <a href="{{{{p}}}}v/a/" class="topbar-link {{{{topbar_a}}}}" data-design="a" title="{{{{vsw_label}}}} A: {{{{VARIANTS.a.[lang].0}}}}">A</a>\n'
+        f'      <a href="{{{{p}}}}v/b/" class="topbar-link {{{{topbar_b}}}}" data-design="b" title="{{{{vsw_label}}}} B: {{{{VARIANTS.b.[lang].0}}}}">B</a>\n'
+        f'      <a href="{{{{p}}}}v/c/" class="topbar-link {{{{topbar_c}}}}" data-design="c" title="{{{{vsw_label}}}} C: {{{{VARIANTS.c.[lang].0}}}}">C</a>\n'
+        f'      <a href="{{{{p}}}}v/d/" class="topbar-link {{{{topbar_d}}}}" data-design="d" title="{{{{vsw_label}}}} D: {{{{VARIANTS.d.[lang].0}}}}">D</a>\n'
+        f'      <a href="{{{{p}}}}v/e/" class="topbar-link {{{{topbar_e}}}}" data-design="e" title="{{{{vsw_label}}}} E: {{{{VARIANTS.e.[lang].0}}}}">E</a>\n'
+        f'    </nav>\n'
+        f'    <div class="topbar-lang" role="group" aria-label="{{{{lang_label}}}}">\n'
+        f'      <a href="{{{{p_en}}}}" lang="en" hreflang="en" data-lang="en" title="{{{{lang_en_name}}}}" {{{{cur_en}}}}>EN</a>\n'
+        f'      <a href="{{{{p_es}}}}" lang="es" hreflang="es" data-lang="es" title="{{{{lang_es_name}}}}" {{{{cur_es}}}}>ES</a>\n'
+        f'    </div>\n'
+        f'  </div>\n'
+        f'</div>\n'
+    )
 
 
 FOOT = '''
@@ -218,6 +239,15 @@ def render(vid, lang):
     ln = sum(1 for p in BP.PLACES if p["lightning"] == "yes")
     chain = sum(1 for p in BP.PLACES if p["onchain"] == "yes")
     path = f"v/{vid}/" + ("" if lang == "en" else "es/")
+    # Top bar active states: current variant gets topbar-current
+    topbar_states = {
+        "topbar_baseline": "",
+        "topbar_a": "topbar-current" if vid == "a" else "",
+        "topbar_b": "topbar-current" if vid == "b" else "",
+        "topbar_c": "topbar-current" if vid == "c" else "",
+        "topbar_d": "topbar-current" if vid == "d" else "",
+        "topbar_e": "topbar-current" if vid == "e" else "",
+    }
     T.update(
         p=prefix,
         vid=vid,
@@ -234,6 +264,7 @@ def render(vid, lang):
         n_ln=str(ln),
         n_chain=str(chain),
         vname=C.VARIANTS[vid][lang][0],
+        **topbar_states,
     )
     T["foot_updated"] = T["foot_updated"].format(d=C.LAST_UPDATED)
     blocks = {
@@ -293,14 +324,28 @@ def build_index(lang):
     cards.append(f'''<li class="vcard vbase"><a class="thumb" href="{root_href}" tabindex="-1" aria-hidden="true"><img src="{prefix}variants/thumbs/root.webp" width="640" height="400" alt="" loading="lazy"></a>
   <div class="vbody"><p class="vletter" aria-hidden="true">0</p><h2>{T["vx_baseline_h"]}</h2><p>{T["vx_baseline_p"]}</p>
   <p class="vlinks"><a class="btn btn-quiet" href="{root_href}">{T["vx_open"]}</a></p></div></li>''')
+    # Top bar active states: on variants index, no variant is current (could highlight baseline)
+    topbar_states = {
+        "topbar_baseline": "topbar-current",
+        "topbar_a": "",
+        "topbar_b": "",
+        "topbar_c": "",
+        "topbar_d": "",
+        "topbar_e": "",
+    }
     T.update(
-        p=prefix, lang=lang,
-        title=T["vx_title"], description=T["vx_description"],
-        canonical=C.SITE_URL + "variants/" + ("" if lang == "en" else "es/"),
-        url_en=C.SITE_URL + "variants/", url_es=C.SITE_URL + "variants/es/",
-        alt_lang_href="es/" if lang == "en" else "../",
-        other_name=T["vx_lang_other"],
-    )
+                p=prefix, lang=lang,
+                p_en="./" if lang == "en" else "../",
+                p_es="es/" if lang == "en" else "./",
+                cur_en='aria-current="true"' if lang == "en" else "",
+                cur_es='aria-current="true"' if lang == "es" else "",
+                title=T["vx_title"], description=T["vx_description"],
+                canonical=C.SITE_URL + "variants/" + ("" if lang == "en" else "es/"),
+                url_en=C.SITE_URL + "variants/", url_es=C.SITE_URL + "variants/es/",
+                alt_lang_href="es/" if lang == "en" else "../",
+                other_name=T["vx_lang_other"],
+                **topbar_states,
+            )
     T["foot_updated"] = T["foot_updated"].format(d=C.LAST_UPDATED)
     blocks = {"cards": "".join(cards)}
     html = (VDIR / "index.html").read_text(encoding="utf-8")
