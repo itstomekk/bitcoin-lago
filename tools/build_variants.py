@@ -22,6 +22,8 @@ PAGE TEMPLATE SYNTAX (same idea as tools/page.template.html)
   {{maya:N|cls}}             the number N (1 to 19) written in dot-and-bar notation, as decoration
 """
 import json
+import sys as _s, pathlib as _p; _s.path.insert(0,str(_p.Path(__file__).resolve().parent))
+from topbar_prune import prune
 import re
 import sys
 from html import escape
@@ -33,16 +35,20 @@ import build_pages as BP  # noqa: E402
 
 ROOT = BP.ROOT
 VDIR = ROOT / "tools" / "variants"
-IDS = ["a", "b", "c", "d", "e"]
+IDS = ["a", "c", "d", "ac", "ad", "cd", "f", "g", "h"]
 SECTIONS = ["lake", "bitcoin", "transport", "community", "tours", "expats", "about"]
 
 # Per-variant head settings: browser theme colour and the fonts to preload (files in /fonts).
 META = {
     "a": {"theme": "#EEF0EB", "fonts": ["geist-latin-wght-normal.woff2", "geist-mono-latin-wght-normal.woff2"]},
-    "b": {"theme": "#F4F4F1", "fonts": ["newsreader-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
     "c": {"theme": "#0C0B0B", "fonts": ["bebas-neue-latin-400-normal.woff2", "geist-latin-wght-normal.woff2"]},
     "d": {"theme": "#1E2760", "fonts": ["bricolage-grotesque-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
-    "e": {"theme": "#EAF2FF", "fonts": ["sora-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
+    "ac": {"theme": "#0F1417", "fonts": ["geist-latin-wght-normal.woff2", "geist-mono-latin-wght-normal.woff2"]},
+    "ad": {"theme": "#1E2760", "fonts": ["geist-latin-wght-normal.woff2", "geist-mono-latin-wght-normal.woff2"]},
+    "cd": {"theme": "#0C0B0B", "fonts": ["bebas-neue-latin-400-normal.woff2", "geist-latin-wght-normal.woff2"]},
+    "f": {"theme": "#FAFAF8", "fonts": ["coral-coral-latin-wght-normal.woff2", "space-grotesk-latin-wght-normal.woff2"]},
+    "g": {"theme": "#FDFDFB", "fonts": ["newsreader-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
+    "h": {"theme": "#F2F6FF", "fonts": ["sora-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
 }
 
 
@@ -189,12 +195,16 @@ def head_html(vid):
         f'<div class="topbar" role="navigation" aria-label="Design and language switcher">\n'
         f'  <div class="topbar-in">\n'
         f'    <nav class="topbar-variants" aria-label="Design variants">\n'
-        f'      <a href="{{{{p}}}}" class="topbar-link {{{{topbar_baseline}}}}" data-design="baseline" title="First design (baseline)">Baseline</a>\n'
-        f'      <a href="{{{{p}}}}v/a/" class="topbar-link {{{{topbar_a}}}}" data-design="a" title="{{{{vsw_label}}}} A: {{{{VARIANTS.a.[lang].0}}}}">A</a>\n'
-        f'      <a href="{{{{p}}}}v/b/" class="topbar-link {{{{topbar_b}}}}" data-design="b" title="{{{{vsw_label}}}} B: {{{{VARIANTS.b.[lang].0}}}}">B</a>\n'
-        f'      <a href="{{{{p}}}}v/c/" class="topbar-link {{{{topbar_c}}}}" data-design="c" title="{{{{vsw_label}}}} C: {{{{VARIANTS.c.[lang].0}}}}">C</a>\n'
-        f'      <a href="{{{{p}}}}v/d/" class="topbar-link {{{{topbar_d}}}}" data-design="d" title="{{{{vsw_label}}}} D: {{{{VARIANTS.d.[lang].0}}}}">D</a>\n'
-        f'      <a href="{{{{p}}}}v/e/" class="topbar-link {{{{topbar_e}}}}" data-design="e" title="{{{{vsw_label}}}} E: {{{{VARIANTS.e.[lang].0}}}}">E</a>\n'
+        f'      <a href="{{{{p}}}}" class="topbar-chip {{{{topbar_baseline}}}}" data-design="baseline" title="First design (baseline)">Base</a>\n'
+        f'      <a href="{{{{p}}}}v/a/" class="topbar-chip {{{{topbar_a}}}}" data-design="a" title="{{{{vsw_label}}}} A: {{{{VARIANTS.a.[lang].0}}}}">A</a>\n'
+        f'      <a href="{{{{p}}}}v/c/" class="topbar-chip {{{{topbar_c}}}}" data-design="c" title="{{{{vsw_label}}}} C: {{{{VARIANTS.c.[lang].0}}}}">C</a>\n'
+        f'      <a href="{{{{p}}}}v/d/" class="topbar-chip {{{{topbar_d}}}}" data-design="d" title="{{{{vsw_label}}}} D: {{{{VARIANTS.d.[lang].0}}}}">D</a>\n'
+        f'      <a href="{{{{p}}}}v/ac/" class="topbar-chip {{{{topbar_ac}}}}" data-design="ac" title="{{{{vsw_label}}}} AC: {{{{VARIANTS.ac.[lang].0}}}}">AC</a>\n'
+        f'      <a href="{{{{p}}}}v/ad/" class="topbar-chip {{{{topbar_ad}}}}" data-design="ad" title="{{{{vsw_label}}}} AD: {{{{VARIANTS.ad.[lang].0}}}}">AD</a>\n'
+        f'      <a href="{{{{p}}}}v/cd/" class="topbar-chip {{{{topbar_cd}}}}" data-design="cd" title="{{{{vsw_label}}}} CD: {{{{VARIANTS.cd.[lang].0}}}}">CD</a>\n'
+        f'      <a href="{{{{p}}}}v/f/" class="topbar-chip {{{{topbar_f}}}}" data-design="f" title="{{{{vsw_label}}}} F: {{{{VARIANTS.f.[lang].0}}}}">F</a>\n'
+        f'      <a href="{{{{p}}}}v/g/" class="topbar-chip {{{{topbar_g}}}}" data-design="g" title="{{{{vsw_label}}}} G: {{{{VARIANTS.g.[lang].0}}}}">G</a>\n'
+        f'      <a href="{{{{p}}}}v/h/" class="topbar-chip {{{{topbar_h}}}}" data-design="h" title="{{{{vsw_label}}}} H: {{{{VARIANTS.h.[lang].0}}}}">H</a>\n'
         f'    </nav>\n'
         f'    <div class="topbar-lang" role="group" aria-label="{{{{lang_label}}}}">\n'
         f'      <a href="{{{{p_en}}}}" lang="en" hreflang="en" data-lang="en" title="{{{{lang_en_name}}}}" {{{{cur_en}}}}>EN</a>\n'
@@ -243,10 +253,14 @@ def render(vid, lang):
     topbar_states = {
         "topbar_baseline": "",
         "topbar_a": "topbar-current" if vid == "a" else "",
-        "topbar_b": "topbar-current" if vid == "b" else "",
         "topbar_c": "topbar-current" if vid == "c" else "",
         "topbar_d": "topbar-current" if vid == "d" else "",
-        "topbar_e": "topbar-current" if vid == "e" else "",
+        "topbar_ac": "topbar-current" if vid == "ac" else "",
+        "topbar_ad": "topbar-current" if vid == "ad" else "",
+        "topbar_cd": "topbar-current" if vid == "cd" else "",
+        "topbar_f": "topbar-current" if vid == "f" else "",
+        "topbar_g": "topbar-current" if vid == "g" else "",
+        "topbar_h": "topbar-current" if vid == "h" else "",
     }
     T.update(
         p=prefix,
@@ -310,7 +324,7 @@ def build_index(lang):
     T = dict(C.LANGS[lang])
     prefix = "../" if lang == "en" else "../../"
     cards = []
-    for x in IDS:
+    for x in [i for i in IDS if (VDIR / f"{i}.html").exists()]:
         name, desc = C.VARIANTS[x][lang]
         en_href = f"{prefix}v/{x}/"
         es_href = f"{prefix}v/{x}/es/"
@@ -328,10 +342,14 @@ def build_index(lang):
     topbar_states = {
         "topbar_baseline": "topbar-current",
         "topbar_a": "",
-        "topbar_b": "",
         "topbar_c": "",
         "topbar_d": "",
-        "topbar_e": "",
+        "topbar_ac": "",
+        "topbar_ad": "",
+        "topbar_cd": "",
+        "topbar_f": "",
+        "topbar_g": "",
+        "topbar_h": "",
     }
     T.update(
                 p=prefix, lang=lang,
@@ -363,14 +381,14 @@ def main():
         for lang in ("en", "es"):
             out = ROOT / "v" / vid / ("" if lang == "en" else "es") / "index.html"
             out.parent.mkdir(parents=True, exist_ok=True)
-            out.write_text(render(vid, lang), encoding="utf-8")
+            out.write_text(prune(render(vid, lang)), encoding="utf-8")
             print("wrote", out.relative_to(ROOT))
     # /v/ : send visitors to the design they looked at last (default A).
     (ROOT / "v" / "index.html").write_text((VDIR / "v-redirect.html").read_text(encoding="utf-8"), encoding="utf-8")
     for lang in ("en", "es"):
         out = ROOT / "variants" / ("" if lang == "en" else "es") / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(build_index(lang), encoding="utf-8")
+        out.write_text(prune(build_index(lang)), encoding="utf-8")
         print("wrote", out.relative_to(ROOT))
 
 

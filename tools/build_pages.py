@@ -12,6 +12,8 @@ WRITES  index.html, es/index.html
 RUN     python tools/build_pages.py
 """
 import json
+import sys as _s, pathlib as _p; _s.path.insert(0,str(_p.Path(__file__).resolve().parent))
+from topbar_prune import prune
 import re
 import sys
 from collections import Counter
@@ -135,10 +137,14 @@ def render(lang):
         # Top bar active states: baseline is current on root pages
         topbar_baseline="topbar-current",
         topbar_a="",
-        topbar_b="",
         topbar_c="",
         topbar_d="",
-        topbar_e="",
+        topbar_ac="",
+        topbar_ad="",
+        topbar_cd="",
+        topbar_f="",
+        topbar_g="",
+        topbar_h="",
     )
     T["foot_updated"] = T["foot_updated"].format(d=C.LAST_UPDATED)
     blocks = {
@@ -177,7 +183,7 @@ def main():
     assert set(C.EN) == set(C.ES), set(C.EN) ^ set(C.ES)
     for lang, path in (("en", ROOT / "index.html"), ("es", ROOT / "es" / "index.html")):
         path.parent.mkdir(exist_ok=True)
-        path.write_text(render(lang), encoding="utf-8")
+        path.write_text(prune(render(lang)), encoding="utf-8")
         print("wrote", path)
 
 

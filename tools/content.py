@@ -380,17 +380,25 @@ ES = {
     "cur_lang_code": "ES",
 }
 
-# The five design variants (/v/a/ ... /v/e/). Same content, different look. Names and one-liners per language.
+# The design variants (A, C, D, AC, AD, CD, F, G, H). Same content, different look. Names and one-liners per language.
 VARIANTS = {
     "a": {"en": ("Maya 1500 / 2100", "Restrained and luminous: jade, cinnabar and stone, step-fret lines and dot-and-bar numerals."),
           "es": ("Maya 1500 / 2100", "Sobrio y luminoso: jade, cinabrio y piedra, líneas escalonadas y numerales de puntos y barras.")},
-    "b": {"en": ("Editorial", "A magazine spread: large serif headlines, black and white photography and a column directory."),
-          "es": ("Editorial", "Una revista abierta: titulares serif grandes, fotografía en blanco y negro y un directorio en columnas.")},
     "c": {"en": ("Volcano night", "Dark and cinematic: ember light, full-screen scenes and a map with a side drawer."),
           "es": ("Noche de volcán", "Oscuro y cinematográfico: luz de brasa, escenas a pantalla completa y un mapa con panel lateral.")},
     "d": {"en": ("Textile and craft", "Woven colour blocks in indigo, cinnabar, marigold and jade, with arched photo frames."),
           "es": ("Textil y artesanía", "Bloques de color tejido en índigo, cinabrio, caléndula y jade, con fotos en marcos de arco.")},
-    "e": {"en": ("Lake fintech", "Bright and precise: glass panels over the lake, big numbers and a map console."),
+    "ac": {"en": ("A + C", "Maya 1500/2100 structure with C's dark cinematic mood: jade/cinnabar/indigo on near-black."),
+           "es": ("A + C", "Estructura Maya 1500/2100 con el tono nocturno de C: jade/cinabrio/índigo sobre casi negro.")},
+    "ad": {"en": ("A + D", "A's restraint and glyph geometry with D's woven textile colour blocks and arch frames."),
+           "es": ("A + D", "La contención y geometría glífica de A con los bloques de color textil y marcos de arco de D.")},
+    "cd": {"en": ("C + D", "C's night drama with D's textile colour blocks and arch frames: ember, indigo, jade."),
+           "es": ("C + D", "El drama nocturno de C con los bloques de color textil y marcos de arco de D: brasa, índigo, jade.")},
+    "f": {"en": ("Stat-Led", "Data-driven hero with giant numbers; clean, precise, modern-minimal."),
+          "es": ("Stat-Led", "Hero centrado en datos con números gigantes; limpio, preciso, modern-minimal.")},
+    "g": {"en": ("Marquee Hero", "Full-screen hero as the marquee statement; editorial serif voice."),
+          "es": ("Marquee Hero", "Hero a pantalla completa como declaración; voz editorial con serif.")},
+    "h": {"en": ("Lake fintech", "Bright and precise: glass panels over the lake, big numbers and a map console."),
           "es": ("Lago fintech", "Claro y preciso: paneles de vidrio sobre el lago, cifras grandes y una consola con mapa.")},
 }
 

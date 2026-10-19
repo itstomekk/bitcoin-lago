@@ -46,12 +46,16 @@
 <div class="topbar" role="navigation" aria-label="Design and language switcher">
   <div class="topbar-in">
     <nav class="topbar-variants" aria-label="Design variants">
-      <a href="{{p}}" class="topbar-link {{topbar_baseline}}" data-design="baseline" title="First design (baseline)">Baseline</a>
-      <a href="{{p}}v/a/" class="topbar-link {{topbar_a}}" data-design="a" title="{{vsw_label}} A: {{VARIANTS.a.[lang].0}}">A</a>
-      <a href="{{p}}v/b/" class="topbar-link {{topbar_b}}" data-design="b" title="{{vsw_label}} B: {{VARIANTS.b.[lang].0}}">B</a>
-      <a href="{{p}}v/c/" class="topbar-link {{topbar_c}}" data-design="c" title="{{vsw_label}} C: {{VARIANTS.c.[lang].0}}">C</a>
-      <a href="{{p}}v/d/" class="topbar-link {{topbar_d}}" data-design="d" title="{{vsw_label}} D: {{VARIANTS.d.[lang].0}}">D</a>
-      <a href="{{p}}v/e/" class="topbar-link {{topbar_e}}" data-design="e" title="{{vsw_label}} E: {{VARIANTS.e.[lang].0}}">E</a>
+      <a href="{{p}}" class="topbar-chip {{topbar_baseline}}" data-design="baseline" title="First design (baseline)">Base</a>
+      <a href="{{p}}v/a/" class="topbar-chip {{topbar_a}}" data-design="a" title="{{vsw_label}} A: {{VARIANTS.a.[lang].0}}">A</a>
+      <a href="{{p}}v/c/" class="topbar-chip {{topbar_c}}" data-design="c" title="{{vsw_label}} C: {{VARIANTS.c.[lang].0}}">C</a>
+      <a href="{{p}}v/d/" class="topbar-chip {{topbar_d}}" data-design="d" title="{{vsw_label}} D: {{VARIANTS.d.[lang].0}}">D</a>
+      <a href="{{p}}v/ac/" class="topbar-chip {{topbar_ac}}" data-design="ac" title="{{vsw_label}} AC: {{VARIANTS.ac.[lang].0}}">AC</a>
+      <a href="{{p}}v/ad/" class="topbar-chip {{topbar_ad}}" data-design="ad" title="{{vsw_label}} AD: {{VARIANTS.ad.[lang].0}}">AD</a>
+      <a href="{{p}}v/cd/" class="topbar-chip {{topbar_cd}}" data-design="cd" title="{{vsw_label}} CD: {{VARIANTS.cd.[lang].0}}">CD</a>
+      <a href="{{p}}v/f/" class="topbar-chip {{topbar_f}}" data-design="f" title="{{vsw_label}} F: {{VARIANTS.f.[lang].0}}">F</a>
+      <a href="{{p}}v/g/" class="topbar-chip {{topbar_g}}" data-design="g" title="{{vsw_label}} G: {{VARIANTS.g.[lang].0}}">G</a>
+      <a href="{{p}}v/h/" class="topbar-chip {{topbar_h}}" data-design="h" title="{{vsw_label}} H: {{VARIANTS.h.[lang].0}}">H</a>
     </nav>
     <div class="topbar-lang" role="group" aria-label="{{lang_label}}">
       <a href="{{p_en}}" lang="en" hreflang="en" data-lang="en" title="{{lang_en_name}}" {{cur_en}}>EN</a>
@@ -62,7 +66,7 @@
 
 <header class="site-header" id="top">
   <div class="wrap bar">
-    <a class="brand" href="#hero" aria-label="{{brand}}"><img src="{{p}}favicon.svg" alt="" width="34" height="34"><span>{{brand}}</span></a>
+    <a class="brand" href="#hero" aria-label="{{brand}}"><img src="{{p}}images/logo/lago-bitcoin-logo.png" alt="" width="120" height="34"><span class="brand-text">{{brand}}</span></a>
     <nav class="nav" id="nav" aria-label="{{nav_label}}">
       <a href="#lake">{{nav_lake}}</a>
       <a href="#bitcoin">{{nav_bitcoin}}</a>
