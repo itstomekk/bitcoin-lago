@@ -105,37 +105,38 @@ python qa/check_links.py
   `noindex,nofollow` in both pages and `Disallow: /` in `robots.txt`. Nothing private is in the repo (see `.gitignore`).
   The site is not hidden from people who have the link; it is only kept out of search engines until Tomek says go public.
 * Verified from the live URL on 2026-10-19: `qa/report-live.md` (82 of 82 gates), screenshots in `qa/screenshots/live/`.
-* `DESIGN-VARIANTS-BRIEF.md` (Tomek's voice notes) asked for five designs. They were built afterwards, see "Design variants" below.
+* `DESIGN-VARIANTS-BRIEF.md` (Tomek's voice notes) was expanded; see the current set and build status below.
   The root pages stay the baseline until Tomek picks.
 
-## Design variants (five looks, same content)
+## Design variants (six current looks, same content)
 
-Live (noindex, like the rest of the preview): `/v/a/` ... `/v/e/` and `/v/a/es/` ... `/v/e/es/`, the index `/variants/` (and `/variants/es/`),
-and `/v/` (sends you to the design you looked at last). Every variant page has the floating "Design A B C D E" switcher
+Live (noindex, like the rest of the preview): `/v/a/`, `/v/c/`, `/v/d/`, `/v/ac/`, `/v/ad/`, `/v/cd/` and their `/es/` pages, the index `/variants/` (and `/variants/es/`),
+and `/v/` (sends you to the design you looked at last). Every variant page has the fixed switcher and language bar plus the floating design switcher.
 (it keeps the language and remembers the choice in `localStorage` key `lbc-design`).
 
 | Design | Idea |
 |---|---|
 | A | Maya 1500 / 2100: stone, jade, cinnabar; step-fret lines, dot-and-bar section numerals, a rail that opens on hover. Tomek's first choice. |
-| B | Editorial: Newsreader serif, black and white photos, columns, the merchant list printed as a directory under a full-width map. |
-| C | Volcano night: dark and cinematic, ember orange, Bebas Neue titles, film strips, map console with a side drawer. |
+| C | Volcano night: dark and cinematic, logo cinnabar and jade accents, Bebas Neue titles, film strips, map console with a side drawer. |
 | D | Textile and craft: woven colour blocks (indigo, cinnabar, marigold, jade), arch photo frames, pill controls. |
-| E | Lake fintech: bright, frosted glass over photos, azure, Sora numbers, map console with a side panel. |
+| AC | C's night palette with A-inspired restraint, stepped details and more open spacing. |
+| AD | A's restraint and stepped motifs combined with D's woven colour blocks and arch frames. |
+| CD | C's night scenes combined with D's woven colour blocks and arch frames. |
 
-How they are built: one content source, five looks.
+All designs share one content source and merchant dataset. Designs B and E were removed; F, G and H are still in progress and are not linked in the switcher or index.
 
 | File | What it is | Edit here? |
 |---|---|---|
 | `tools/content.py` | The same words as the root pages, plus the names of the variants and the switcher / index strings. | **Yes, for wording (all six pages follow).** |
-| `tools/variants/a.html` ... `e.html` | The page layout of each design (section order, wrappers, decoration). | Yes, for structure. |
+| `tools/variants/a.html`, `c.html`, `d.html` | The page layouts of A, C and D. AC/CD use C's layout base, AD uses D's; their visual treatments are in their own CSS files. | Yes, for structure. |
 | `v/base.css` | Shared floor: buttons, merchant finder, switcher, placeholders, toast. Colours come from tokens. | Rarely. |
-| `v/a.css` ... `v/e.css` | The look of each design (tokens first, then layout). | **Yes, for look.** |
-| `v/app.js` | Behaviour shared by the five designs (copy of `script.js` plus marker colours, design memory, count-up). | Rarely. |
+| `v/a.css`, `c.css`, `d.css`, `ac.css`, `ad.css`, `cd.css` | The look of each current design (tokens and layout). | **Yes, for look.** |
+| `v/app.js` | Behaviour shared by the designs (copy of `script.js` plus marker colours, design memory, count-up and click-to-play AB23 embed). | Rarely. |
 | `tools/build_variants.py` | Builds all `v/*/index.html`, `v/*/es/index.html` and `variants/` pages. `python tools/build_variants.py` (or `... a c` for some). | Run after any edit. |
 | `tools/variants/index.html`, `variants/variants.css` | The `/variants/` page and its look. Thumbnails: `variants/thumbs/*.webp` (made by `qa/make_thumbs.py`). | Yes. |
 | `fonts/` (new files) | Newsreader, Bebas Neue, Bricolage Grotesque, Sora, Geist Mono (all SIL OFL, self-hosted). | No. |
 | `images/bw-*.jpg/webp`, `lake-5-*`, `lake-12-*` | Four more Commons photos used only by the variants (credits in `data/photos.json`; `python tools/optimize_images.py --extra`). | Via the script. |
-| `images/community-tuktuk-*`, `community-boat-*` | Optimized Tomek-supplied tuk tuk and boat photos, used in the transport section on the baseline and finished A/C/D pages. Source originals stay in ignored `source-archive/tomek-supplied/`. | `python tools/optimize_community_photos.py`. |
+| `images/community-tuktuk-*`, `community-boat-*` | Optimized Tomek-supplied tuk tuk and boat photos, used in the transport section on the baseline and all six current designs. Source originals stay in ignored `source-archive/tomek-supplied/`. | `python tools/optimize_community_photos.py`. |
 
 Rules that hold in every variant: same 8 sections and ids, same 117 places and the same data file, every placeholder keeps its
 `data-placeholder` badge (so the table above still applies), photo credits stay visible, `noindex,nofollow`, WCAG AA text.
@@ -146,8 +147,8 @@ Each design has one fixed theme (no automatic dark mode); C is dark by design.
 The supplied `tuktuk-bitcoin-lake-road.jpg` and `pier-to-pier-bitcoin-boat.jpg` are credited on-page as exactly
 "Photo: community archive (source to confirm)". Do not invent a photographer; replace this provisional credit only when Tomek confirms the source.
 
-QA for the variants: `python qa/run_qa_variants.py <site URL> <screenshot dir> [a,b,c,d,e]`. Reports: `qa/report-variants-local.md`
-and `qa/report-variants-live.md`; live screenshots in `qa/screenshots/<a-e>/` and `qa/screenshots/variants/`.
+QA for the variants: `python qa/run_qa_variants.py <site URL> <screenshot dir> [a,c,d,ac,ad,cd]`. Reports: `qa/report-variants-local.md`
+and `qa/report-variants-live.md`; live screenshots are stored under `qa/screenshots/`.
 The runner also measures contrast of text that sits over photos or patterns with a pixel check (axe cannot do that).
 It needs `qa/.cache/axe.min.js` (download command is at the top of the script).
 

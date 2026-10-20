@@ -1,0 +1,9 @@
+/* CD · C's volcanic night staging, accented by D's woven colour blocks and arches. */
+@import url("./c.css");
+:root { --jade:#20a060; --ember:#d03040; --indigo:#6878bd; --gold:#f2b632; --accent:#d03040; --on-accent:#fff; --link:#ff9aa3; --marker-fill:#d03040; --vsw-cur-bg:#d03040; --vsw-cur-fg:#fff; }
+.scr:not(.hero)::after { width:5.5rem; height:2.6rem; opacity:.82; background:linear-gradient(var(--jade),var(--jade)) 0 0/100% 2px no-repeat,linear-gradient(var(--jade),var(--jade)) 0 0/2px 100% no-repeat,linear-gradient(var(--ember),var(--ember)) 1.1rem 0/2px 100% no-repeat,linear-gradient(var(--gold),var(--gold)) 2.2rem 0/2px 100% no-repeat,linear-gradient(var(--indigo),var(--indigo)) 3.3rem 0/2px 100% no-repeat,linear-gradient(var(--jade),var(--jade)) 0 100%/4.4rem 2px no-repeat; }
+.tile { background:#151312; border:1px solid var(--jade); box-shadow:inset 0 0 0 1px rgba(104,120,189,.24); }
+.tile-wa { background:#20a060; border-color:#20a060; color:#0c0b0b; }
+.tile-wa > .ico { color:#0c0b0b; }
+.tile-wa .btn-primary { background:#0c0b0b; border-color:#0c0b0b; color:#fff; box-shadow:none; }
+.arch img,.frame img { border:1px solid rgba(242,182,50,.6); }

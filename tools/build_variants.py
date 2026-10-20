@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the three design variants (each in English and Spanish) and the /variants/ index.
+"""Build the finished design variants (each in English and Spanish) and the /variants/ index.
 
 WHAT IT DOES
   One content source (tools/content.py) and one data set (data/merchants.json, data/photos.json)
@@ -36,6 +36,7 @@ import build_pages as BP  # noqa: E402
 ROOT = BP.ROOT
 VDIR = ROOT / "tools" / "variants"
 IDS = ["a", "c", "d", "ac", "ad", "cd", "f", "g", "h"]
+LAYOUT_FALLBACKS = {"ac": "c", "ad": "d", "cd": "c"}
 SECTIONS = ["lake", "bitcoin", "transport", "community", "tours", "expats", "about"]
 
 # Per-variant head settings: browser theme colour and the fonts to preload (files in /fonts).
@@ -43,8 +44,8 @@ META = {
     "a": {"theme": "#EEF0EB", "fonts": ["geist-latin-wght-normal.woff2", "geist-mono-latin-wght-normal.woff2"]},
     "c": {"theme": "#0C0B0B", "fonts": ["bebas-neue-latin-400-normal.woff2", "geist-latin-wght-normal.woff2"]},
     "d": {"theme": "#1E2760", "fonts": ["bricolage-grotesque-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
-    "ac": {"theme": "#0F1417", "fonts": ["geist-latin-wght-normal.woff2", "geist-mono-latin-wght-normal.woff2"]},
-    "ad": {"theme": "#1E2760", "fonts": ["geist-latin-wght-normal.woff2", "geist-mono-latin-wght-normal.woff2"]},
+    "ac": {"theme": "#EEF0EB", "fonts": ["bebas-neue-latin-400-normal.woff2", "geist-latin-wght-normal.woff2"]},
+    "ad": {"theme": "#1E2760", "fonts": ["bricolage-grotesque-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
     "cd": {"theme": "#0C0B0B", "fonts": ["bebas-neue-latin-400-normal.woff2", "geist-latin-wght-normal.woff2"]},
     "f": {"theme": "#FAFAF8", "fonts": ["coral-coral-latin-wght-normal.woff2", "space-grotesk-latin-wght-normal.woff2"]},
     "g": {"theme": "#FDFDFB", "fonts": ["newsreader-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
@@ -299,7 +300,8 @@ def render(vid, lang):
         "i18n_json": json.dumps({**{k: T[k] for k in C.I18N_KEYS}, "categories": C.CATEGORIES[lang]},
                                 ensure_ascii=False).replace("</", "<\\/"),
     }
-    html = head_html(vid) + (VDIR / f"{vid}.html").read_text(encoding="utf-8") + FOOT
+    layout_id = vid if (VDIR / f"{vid}.html").exists() else LAYOUT_FALLBACKS.get(vid, vid)
+    html = head_html(vid) + (VDIR / f"{layout_id}.html").read_text(encoding="utf-8") + FOOT
     return fill(html, T, blocks, lang, f"{vid}/{lang}")
 
 
@@ -326,7 +328,7 @@ def build_index(lang):
     T = dict(C.LANGS[lang])
     prefix = "../" if lang == "en" else "../../"
     cards = []
-    for x in [i for i in IDS if (VDIR / f"{i}.html").exists()]:
+    for x in [i for i in IDS if (VDIR / f"{i}.html").exists() or i in LAYOUT_FALLBACKS]:
         name, desc = C.VARIANTS[x][lang]
         en_href = f"{prefix}v/{x}/"
         es_href = f"{prefix}v/{x}/es/"
@@ -377,7 +379,7 @@ def main():
     assert set(C.VARIANTS) == set(IDS)
     ids = [a for a in sys.argv[1:] if a in IDS] or IDS  # optional: python tools/build_variants.py a c
     for vid in ids:
-        if not (VDIR / f"{vid}.html").exists():
+        if not (VDIR / f"{vid}.html").exists() and vid not in LAYOUT_FALLBACKS:
             print("skip (no layout file yet):", vid)
             continue
         for lang in ("en", "es"):

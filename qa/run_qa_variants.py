@@ -19,7 +19,7 @@ GATES PER VARIANT (EN and ES unless noted)
   map shows 117 markers in the design's own colour and the list shows 117 cards; search, chip, village, empty and reset
   filters; ride "Show on map"; every image has alt text; local Commons photos have Commons/licence links and community-archive
   photos use the approved provisional credit; only local images are used;
-  no "official", no dashes; footer credits; Design switcher (three links, current marked, keeps language, remembers the
+  no "official", no dashes; footer credits; Design switcher (all finished designs, current marked, keeps language, remembers the
   choice); mobile menu; EN/ES parity; WCAG A/AA with axe-core at 1440 and 390; and a pixel contrast check of every piece
   of text that sits over a photo, gradient or pattern (axe cannot measure those).
 """
@@ -40,6 +40,9 @@ args = [a for a in sys.argv[1:] if not a.startswith("--")]
 BASE = args[0].rstrip("/") + "/"
 SHOTS = Path(args[1]) if Path(args[1]).is_absolute() else ROOT / args[1]
 IDS = args[2].split(",") if len(args) > 2 else ["a", "c", "d"]
+ALL_VARIANTS = ["a", "c", "d", "ac", "ad", "cd", "f", "g", "h"]
+LAYOUT_FALLBACKS = {"ac": "c", "ad": "d", "cd": "c"}
+EXPECTED_SWITCHER = [v.upper() for v in ALL_VARIANTS if (ROOT / "tools" / "variants" / f"{v}.html").exists() or v in LAYOUT_FALLBACKS]
 DO_INDEX = "--no-index" not in sys.argv
 INDEX_ONLY = "--index-only" in sys.argv
 LABEL = "live" if BASE.startswith("https://") else "local"
@@ -323,8 +326,8 @@ def variant(browser, vid):
         sw = pg.evaluate("""() => { const n = document.querySelector('.vsw'); if (!n) return null; const r = n.getBoundingClientRect();
           return {letters: [...n.querySelectorAll('.vsw-links a')].map(a => a.textContent), cur: [...n.querySelectorAll('a[aria-current]')].map(a => a.textContent),
                   hrefs: [...n.querySelectorAll('a')].map(a => a.getAttribute('href')), inView: r.bottom <= innerHeight && r.right <= innerWidth && r.top >= 0, fixed: getComputedStyle(n).position } }""")
-        gate(f"{L} floating Design switcher: A C D, current marked, fixed, in view",
-             bool(sw) and sw["letters"] == list("ACD") and sw["cur"] == [vid.upper()] and sw["fixed"] == "fixed" and sw["inView"], sw)
+        gate(f"{L} floating Design switcher: all finished designs, current marked, fixed, in view",
+             bool(sw) and sw["letters"] == EXPECTED_SWITCHER and sw["cur"] == [vid.upper()] and sw["fixed"] == "fixed" and sw["inView"], sw)
         other = "c" if vid != "c" else "d"
         pg.evaluate("window.scrollTo(0, 1200)")
         pg.wait_for_timeout(300)
@@ -444,7 +447,8 @@ def index_pages(browser):
             reveal_all(pg, 500)
             ov = pg.evaluate(OVERFLOW_JS)
             info = pg.evaluate("""() => ({cards: document.querySelectorAll('.vcard').length, thumbs: [...document.querySelectorAll('.vcard img')].filter(i => i.naturalWidth > 100).length})""")
-            gate(f"{L} {tag}: four cards, four loaded thumbnails, no console errors, no overflow", info["cards"] == 4 and info["thumbs"] == 4 and not errs and ov["sw"] <= ov["cw"], {"info": info, "errs": errs[:3], "ov": ov})
+            expected_cards = len(EXPECTED_SWITCHER) + 1
+            gate(f"{L} {tag}: {expected_cards} cards and loaded thumbnails, no console errors or overflow", info["cards"] == expected_cards and info["thumbs"] == expected_cards and not errs and ov["sw"] <= ov["cw"], {"info": info, "errs": errs[:3], "ov": ov})
             run_axe(pg, f"{L} {tag}")
             shot(pg, SHOTS / "variants" / f"{lang}-{tag}.jpg", full=True)
             ctx.close()

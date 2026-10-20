@@ -2,7 +2,7 @@
 """Makes the thumbnails for the /variants/ index: a screenshot of the first screen of each design and of the root page.
 
 USAGE  python qa/make_thumbs.py http://127.0.0.1:18431/
-WRITES variants/thumbs/{a,c,d,root}.webp  (640x400)
+WRITES variants/thumbs/{a,c,d,ac,ad,cd,root}.webp  (640x400)
 """
 import io
 import sys
@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = sys.argv[1].rstrip("/") + "/"
 OUT = ROOT / "variants" / "thumbs"
 OUT.mkdir(parents=True, exist_ok=True)
-targets = {x: f"{BASE}v/{x}/" for x in "acd"}
+targets = {x: f"{BASE}v/{x}/" for x in ("a", "c", "d", "ac", "ad", "cd")}
 targets["root"] = BASE
 with sync_playwright() as p:
     b = p.chromium.launch()

@@ -1,0 +1,13 @@
+/* AD · A's restrained stepped geometry on D's woven palette and arch frames. */
+@import url("./d.css");
+:root { --jade:#20a060; --cinnabar:#d03040; --indigo:#002040; --gold:#f2b632; --accent:#20a060; --link:#005c3a; --marker-fill:#20a060; --vsw-cur-bg:#20a060; --vsw-cur-fg:#071a17; }
+.scr:not(.hero) { border-top:2px solid rgba(32,160,96,.72); }
+.scr:not(.hero)::after { content:""; position:absolute; inset:auto var(--pad) 1rem auto; width:4.5rem; height:2.2rem; opacity:.75; pointer-events:none; background:linear-gradient(var(--jade),var(--jade)) 0 0/100% 2px no-repeat,linear-gradient(var(--jade),var(--jade)) 0 0/2px 100% no-repeat,linear-gradient(var(--cinnabar),var(--cinnabar)) 1.1rem 0/2px 100% no-repeat,linear-gradient(var(--gold),var(--gold)) 2.2rem 0/2px 100% no-repeat,linear-gradient(var(--jade),var(--jade)) 0 100%/3.3rem 2px no-repeat; }
+.lake .lake-text,.lake .lake-text h2,.lake .lake-text h3,.lake .lake-text p,.lake .lake-text li,.lake .lake-text b { color:#071a17; }
+.lake .photo figcaption,.lake .photo figcaption a { color:#071a17; }
+.transport { --ink:#fff; --muted:#fff; --link:#fff; background:#9f1e2a; }
+.tile,.atm,.card { box-shadow:inset 0 0 0 1px rgba(0,32,64,.12); }
+.tile-wa { background:#20a060; color:#071a17; border-color:#20a060; }
+.tile-wa .btn-primary { background:#002040; border-color:#002040; color:#fff; }
+.nav a.active { border-color:#20a060; }
+@media (max-width:640px) { .sec-head,.lake-grid,.transport-grid { min-width:0; } }

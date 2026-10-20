@@ -1,5 +1,5 @@
 {
- "base": "http://127.0.0.1:18431/",
+ "base": "http://127.0.0.1:18432/",
  "variants": [
   "a"
  ],
@@ -12,7 +12,7 @@
    "evidence": 200
   },
   {
-   "gate": "[index/en] HTTP 200 http://127.0.0.1:18431/variants/",
+   "gate": "[index/en] HTTP 200 http://127.0.0.1:18432/variants/",
    "result": "PASS",
    "evidence": 200
   },
@@ -25,17 +25,17 @@
    "gate": "[index/en] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 22,
+    "checked": 25,
     "bad": []
    }
   },
   {
-   "gate": "[index/en] 1440: six cards, six loaded thumbnails, no console errors, no overflow",
+   "gate": "[index/en] 1440: 7 cards and loaded thumbnails, no console errors or overflow",
    "result": "PASS",
    "evidence": {
     "info": {
-     "cards": 6,
-     "thumbs": 6
+     "cards": 7,
+     "thumbs": 7
     },
     "errs": [],
     "ov": {
@@ -50,12 +50,12 @@
    "evidence": []
   },
   {
-   "gate": "[index/en] 390: six cards, six loaded thumbnails, no console errors, no overflow",
+   "gate": "[index/en] 390: 7 cards and loaded thumbnails, no console errors or overflow",
    "result": "PASS",
    "evidence": {
     "info": {
-     "cards": 6,
-     "thumbs": 6
+     "cards": 7,
+     "thumbs": 7
     },
     "errs": [],
     "ov": {
@@ -72,10 +72,10 @@
   {
    "gate": "[index/en] card A opens /v/a/ in en",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18431/v/a/"
+   "evidence": "http://127.0.0.1:18432/v/a/"
   },
   {
-   "gate": "[index/es] HTTP 200 http://127.0.0.1:18431/variants/es/",
+   "gate": "[index/es] HTTP 200 http://127.0.0.1:18432/variants/es/",
    "result": "PASS",
    "evidence": 200
   },
@@ -88,17 +88,17 @@
    "gate": "[index/es] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 23,
+    "checked": 26,
     "bad": []
    }
   },
   {
-   "gate": "[index/es] 1440: six cards, six loaded thumbnails, no console errors, no overflow",
+   "gate": "[index/es] 1440: 7 cards and loaded thumbnails, no console errors or overflow",
    "result": "PASS",
    "evidence": {
     "info": {
-     "cards": 6,
-     "thumbs": 6
+     "cards": 7,
+     "thumbs": 7
     },
     "errs": [],
     "ov": {
@@ -113,12 +113,12 @@
    "evidence": []
   },
   {
-   "gate": "[index/es] 390: six cards, six loaded thumbnails, no console errors, no overflow",
+   "gate": "[index/es] 390: 7 cards and loaded thumbnails, no console errors or overflow",
    "result": "PASS",
    "evidence": {
     "info": {
-     "cards": 6,
-     "thumbs": 6
+     "cards": 7,
+     "thumbs": 7
     },
     "errs": [],
     "ov": {
@@ -135,10 +135,10 @@
   {
    "gate": "[index/es] card A opens /v/a/ in es",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18431/v/a/es/"
+   "evidence": "http://127.0.0.1:18432/v/a/es/"
   },
   {
-   "gate": "HTTP 200 http://127.0.0.1:18431/v/",
+   "gate": "HTTP 200 http://127.0.0.1:18432/v/",
    "result": "PASS",
    "evidence": 200
   },
