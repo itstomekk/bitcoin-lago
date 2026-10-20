@@ -8,19 +8,20 @@
   LAYOUT  Transparent top bar, bottom-left dock (mobile: full-screen menu), every section a "scene".
   FONTS   Bebas Neue (titles and big numbers), Geist (everything you read).
   SHAPES  Square corners. One dark theme, no light sections.
-  ONE ACCENT  ember #FF5B1F. Text on ember is always near-black.
+  ACCENTS  Logo cinnabar, jade, indigo and gold; abstract geometry is original decoration only.
 */
 @font-face { font-family: "Bebas Neue"; src: url("../fonts/bebas-neue-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
 
 :root {
   --bg: #0c0b0b; --surface: #151312; --tint: #211d1b; --ink: #efe9e2; --muted: #bbb1a7; --line: #342d2a;
-  --ember: #ff5b1f; --accent: var(--ember); --on-accent: #120d0b; --link: #ff9466; --focus: #ffb08a;
+  --ember: #d03040; --jade: #20a060; --indigo: #6878bd; --gold: #f2b632;
+  --accent: var(--ember); --on-accent: #fff; --link: #ff9aa3; --focus: #f2b632;
   --radius: 0; --btn-radius: 0;
   --bebas: "Bebas Neue", Impact, "Arial Narrow", sans-serif; --font-display: var(--bebas);
   --field-bg: #151312; --field-line: #8a7f76;
   --badge-bg: #efe9e2; --badge-fg: #0c0b0b;
-  --marker-fill: #ff5b1f; --marker-stroke: #120d0b; --marker-r: 8;
-  --vsw-bg: #efe9e2; --vsw-fg: #0c0b0b; --vsw-cur-bg: #ff5b1f; --vsw-cur-fg: #120d0b;
+  --marker-fill: #d03040; --marker-stroke: #120d0b; --marker-r: 8;
+  --vsw-bg: #efe9e2; --vsw-fg: #0c0b0b; --vsw-cur-bg: #d03040; --vsw-cur-fg: #fff;
   color-scheme: dark;
 }
 h1, h2 { font-weight: 400; letter-spacing: 0.01em; line-height: 0.92; text-transform: none; }
@@ -28,7 +29,7 @@ h2 { font-size: clamp(2.8rem, 6.4vw, 6rem); }
 h3 { font-family: var(--font-body); font-size: 1.15rem; font-weight: 650; letter-spacing: -0.01em; line-height: 1.25; }
 .lead { font-size: clamp(1.1rem, 1.5vw, 1.3rem); line-height: 1.55; }
 .btn { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; font-weight: 700; }
-.btn-primary { box-shadow: 0 0 28px -6px rgb(255 91 31 / 0.55); }
+.btn-primary { box-shadow: 0 0 28px -6px rgb(208 48 64 / 0.5); }
 .btn-ghost { color: var(--ink); border-color: var(--ink); } .btn-ghost:hover { background: var(--ink); color: var(--bg); }
 .btn-quiet { border: 1px solid var(--line); }
 .link-arrow { color: var(--link); }
@@ -46,7 +47,7 @@ h3 { font-family: var(--font-body); font-size: 1.15rem; font-weight: 650; letter
 .nav { position: fixed; inset: 0; z-index: 75; display: none; flex-direction: column; justify-content: center; gap: 0.2rem; padding: 5.5rem var(--pad) 6rem; background: rgb(12 11 11 / 0.97); overflow: auto; }
 .nav.open { display: flex; }
 .nav a { display: flex; align-items: baseline; gap: 1rem; padding: 0.4rem 0; color: var(--ink); text-decoration: none; font-family: var(--bebas); font-size: clamp(2.4rem, 11vw, 3.4rem); line-height: 1; border-bottom: 1px solid var(--line); }
-.nav .n { color: var(--ember); font-size: 1.4rem; min-width: 2.2rem; }
+.nav .n { color: var(--jade); font-size: 1.4rem; min-width: 2.2rem; }
 .nav a.active .lbl { color: var(--ember); }
 @media (min-width: 900px) {
   .menu-btn { display: none; }
@@ -55,13 +56,15 @@ h3 { font-family: var(--font-body); font-size: 1.15rem; font-weight: 650; letter
   .nav .n { min-width: 0; font-size: 1.2rem; color: inherit; }
   .nav .lbl { font-family: var(--font-body); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; max-width: 0; overflow: hidden; white-space: nowrap; opacity: 0; transition: max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s; }
   .nav a:hover, .nav a:focus-visible, .nav a.active { color: var(--ink); }
-  .nav a.active { background: var(--ember); color: #120d0b; }
+  .nav a.active { background: var(--jade); color: #0c0b0b; }
   .nav a.active .lbl, .nav a:hover .lbl, .nav a:focus-visible .lbl { max-width: 190px; opacity: 1; }
-  .nav a.active .lbl { color: #120d0b; }
+  .nav a.active .lbl { color: #0c0b0b; }
 }
 
 /* SCENES */
 .scr { position: relative; min-height: 100svh; padding: clamp(5rem, 9vw, 7.5rem) var(--pad) clamp(5rem, 8vw, 7rem); display: grid; align-content: center; gap: clamp(1.8rem, 3vw, 2.6rem); overflow: clip; }
+.scr:not(.hero) { border-top: 1px solid rgb(32 160 96 / 0.45); }
+.scr:not(.hero)::after { content: ""; position: absolute; inset: auto var(--pad) 1rem auto; width: 4.5rem; height: 2.2rem; opacity: .7; pointer-events: none; background: linear-gradient(var(--jade),var(--jade)) 0 0/100% 2px no-repeat, linear-gradient(var(--jade),var(--jade)) 0 0/2px 100% no-repeat, linear-gradient(var(--ember),var(--ember)) 1.1rem 0/2px 100% no-repeat, linear-gradient(var(--gold),var(--gold)) 2.2rem 0/2px 100% no-repeat, linear-gradient(var(--jade),var(--jade)) 0 100%/3.3rem 2px no-repeat; }
 .scr > *:not(.ghost):not(.bleed) { position: relative; z-index: 2; min-width: 0; }
 .ghost { position: absolute; right: var(--pad); top: clamp(3.5rem, 7vw, 5.5rem); z-index: 1; font-family: var(--bebas); font-size: clamp(8rem, 22vw, 19rem); line-height: 0.8; color: var(--ink); -webkit-text-fill-color: transparent; -webkit-text-stroke: 1.5px rgb(239 233 226 / 0.16); pointer-events: none; user-select: none; }
 .bleed { position: absolute; inset: 0; margin: 0; z-index: 0; }
@@ -139,9 +142,9 @@ h3 { font-family: var(--font-body); font-size: 1.15rem; font-weight: 650; letter
 .tile > .ico { width: 2.2rem; height: 2.2rem; margin-bottom: 1rem; color: var(--ember); }
 .tile h3 { font-family: var(--bebas); font-weight: 400; font-size: 2rem; letter-spacing: 0.01em; line-height: 1; }
 .tile p:last-child { margin-bottom: 0; }
-.tile-wa { background: var(--ember); border-color: var(--ember); color: #120d0b; }
-.tile-wa > .ico { color: #120d0b; }
-.tile-wa .btn-primary { background: #120d0b; color: var(--ink); box-shadow: none; }
+.tile-wa { background: var(--jade); border-color: var(--jade); color: #0c0b0b; }
+.tile-wa > .ico { color: #0c0b0b; }
+.tile-wa .btn-primary { background: #0c0b0b; border-color: #0c0b0b; color: #fff; box-shadow: none; }
 .bento:focus-visible { outline-offset: 4px; }
 
 /* TOURS and EXPATS: full-screen photo scenes */
