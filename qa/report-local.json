@@ -1,10 +1,10 @@
 {
- "base": "http://127.0.0.1:18431/",
- "pass": 82,
- "fail": 0,
+ "base": "http://127.0.0.1:18432/",
+ "pass": 76,
+ "fail": 2,
  "gates": [
   {
-   "gate": "HTTP 200 http://127.0.0.1:18431/",
+   "gate": "HTTP 200 http://127.0.0.1:18432/",
    "result": "PASS",
    "evidence": 200
   },
@@ -46,7 +46,7 @@
    "evidence": "en"
   },
   {
-   "gate": "HTTP 200 http://127.0.0.1:18431/es/",
+   "gate": "HTTP 200 http://127.0.0.1:18432/es/",
    "result": "PASS",
    "evidence": 200
   },
@@ -148,7 +148,7 @@
   {
    "gate": "[en] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "652 KB (tiles excluded: 258 KB)"
+   "evidence": "694 KB (tiles excluded: 258 KB)"
   },
   {
    "gate": "[en] no horizontal overflow at 1440",
@@ -236,10 +236,18 @@
   },
   {
    "gate": "[en] every image has alt text",
-   "result": "PASS",
+   "result": "FAIL",
    "evidence": {
     "images": 8,
-    "bad": []
+    "bad": [
+     {
+      "src": "logo/lago-bitcoin-logo.png",
+      "alt": "",
+      "nat": 540,
+      "inFigure": false,
+      "credit": false
+     }
+    ]
    }
   },
   {
@@ -281,11 +289,6 @@
    "evidence": "ok"
   },
   {
-   "gate": "[en] axe-core WCAG A/AA violations (1440)",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
    "gate": "[en] no horizontal overflow at 390",
    "result": "PASS",
    "evidence": {
@@ -319,7 +322,7 @@
   {
    "gate": "[es] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "653 KB (tiles excluded: 258 KB)"
+   "evidence": "695 KB (tiles excluded: 258 KB)"
   },
   {
    "gate": "[es] no horizontal overflow at 1440",
@@ -407,10 +410,18 @@
   },
   {
    "gate": "[es] every image has alt text",
-   "result": "PASS",
+   "result": "FAIL",
    "evidence": {
     "images": 8,
-    "bad": []
+    "bad": [
+     {
+      "src": "logo/lago-bitcoin-logo.png",
+      "alt": "",
+      "nat": 540,
+      "inFigure": false,
+      "credit": false
+     }
+    ]
    }
   },
   {
@@ -450,11 +461,6 @@
    "gate": "[es] OSM/ODbL, BTC Map and Commons credits in footer",
    "result": "PASS",
    "evidence": "ok"
-  },
-  {
-   "gate": "[es] axe-core WCAG A/AA violations (1440)",
-   "result": "PASS",
-   "evidence": []
   },
   {
    "gate": "[es] no horizontal overflow at 390",
@@ -517,30 +523,30 @@
   {
    "gate": "browser language es: opening / redirects to /es/",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18431/es/"
+   "evidence": "http://127.0.0.1:18432/es/"
   },
   {
    "gate": "switcher EN: goes to English page and stores choice",
    "result": "PASS",
    "evidence": {
-    "url": "http://127.0.0.1:18431/",
+    "url": "http://127.0.0.1:18432/",
     "stored": "en"
    }
   },
   {
    "gate": "stored choice (en) beats browser language (es) on reload",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18431/"
+   "evidence": "http://127.0.0.1:18432/"
   },
   {
    "gate": "switcher ES: goes to /es/ and stores choice",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18431/es/"
+   "evidence": "http://127.0.0.1:18432/es/"
   },
   {
    "gate": "browser language en: opening /es/ redirects to /",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18431/"
+   "evidence": "http://127.0.0.1:18432/"
   },
   {
    "gate": "placeholder button shows 'coming soon' toast",
@@ -551,16 +557,6 @@
    "gate": "placeholder badge visible in preview",
    "result": "PASS",
    "evidence": "\"Placeholder: whatsapp-invite-url\""
-  },
-  {
-   "gate": "[en] axe-core WCAG A/AA violations in dark mode",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[es] axe-core WCAG A/AA violations in dark mode",
-   "result": "PASS",
-   "evidence": []
   },
   {
    "gate": "every data-placeholder is listed in HANDOFF.md",

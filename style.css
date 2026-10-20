@@ -148,26 +148,62 @@ a:hover { color: var(--ink); }
 }
 @media (max-width: 420px) { .brand span { font-size: 0.88rem; } .brand img { width: 30px; height: 30px; } .bar { gap: 0.5rem; } }
 
-/* TOP BAR: fixed variant switcher + EN/ES toggle above the header */
+/* TOP BAR: fixed variant switcher + EN/ES toggle above the header (shared by all pages) */
+/* Navy bar (#002040 from logo), coloured chip per design, active chip filled + underline, hover glow, EN/ES in logo red/green */
 .topbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: #0f1417; color: #fff;
-  font-family: "Geist", system-ui, sans-serif; font-size: 0.75rem; font-weight: 650;
-  line-height: 1; border-bottom: 1px solid #1e262c;
+  background: #002040; color: #fff;
+  font-family: "Geist", system-ui, sans-serif; font-size: 0.7rem; font-weight: 650;
+  line-height: 1; border-bottom: 1px solid #003060;
 }
-.topbar-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1240px; margin: 0 auto; padding: 0.35rem clamp(1rem, 4vw, 2rem); }
-.topbar-variants { display: flex; align-items: center; gap: 0.25rem; flex-wrap: wrap; }
-.topbar-link { color: #fff; text-decoration: none; padding: 0.25rem 0.5rem; border-radius: 4px; white-space: nowrap; transition: background-color 0.15s, color 0.15s; }
-.topbar-link:hover { background: rgba(255,255,255,0.12); }
-.topbar-link.topbar-current { background: #fff; color: #0f1417; }
-.topbar-lang { display: inline-flex; border: 1.5px solid #1e262c; border-radius: 999px; padding: 2px; background: #151d25; }
-.topbar-lang a { text-decoration: none; color: #8b9aa6; font-weight: 700; font-size: 0.7rem; padding: 0.2rem 0.55rem; border-radius: 999px; min-width: 36px; text-align: center; }
-.topbar-lang a[aria-current] { background: #fff; color: #0f1417; }
-.topbar-lang a:not([aria-current]):hover { color: #fff; }
+.topbar-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1400px; margin: 0 auto; padding: 0.3rem clamp(1rem, 4vw, 2rem); }
+.topbar-variants { display: flex; align-items: center; gap: 0.2rem; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; scrollbar-width: none; -ms-overflow-style: none; }
+.topbar-variants::-webkit-scrollbar { display: none; }
+.topbar-chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 36px; height: 30px; padding: 0 0.55rem;
+  border-radius: 999px; border: 1.5px solid transparent;
+  background: transparent; color: #fff;
+  text-decoration: none; white-space: nowrap;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s, transform 0.1s;
+  position: relative;
+}
+.topbar-chip::after {
+  content: ""; position: absolute; left: 50%; bottom: -2px; width: 0; height: 2px;
+  background: currentColor; transform: translateX(-50%);
+  transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.topbar-chip:hover {
+  background: rgba(255,255,255,0.12); box-shadow: 0 0 12px -2px currentColor;
+}
+.topbar-chip.topbar-current {
+  background: currentColor; color: #002040;
+  border-color: currentColor;
+}
+.topbar-chip.topbar-current::after { width: 80%; }
+
+/* Per-design accent colours on navy bar */
+.topbar-chip[data-design="baseline"] { color: #f7931a; }      /* bitcoin orange */
+.topbar-chip[data-design="a"]      { color: #20a060; }      /* logo green / jade */
+.topbar-chip[data-design="c"]      { color: #ff5b1f; }      /* ember / cinnabar */
+.topbar-chip[data-design="d"]      { color: #f2b632; }      /* marigold */
+.topbar-chip[data-design="ac"]     { color: #60c0a0; }
+.topbar-chip[data-design="ad"]     { color: #80c060; }
+.topbar-chip[data-design="cd"]     { color: #ff8040; }
+.topbar-chip[data-design="f"]      { color: #006b6b; }
+.topbar-chip[data-design="g"]      { color: #8b5e00; }
+.topbar-chip[data-design="h"]      { color: #1d5cff; }
+
+.topbar-lang { display: inline-flex; border: 1.5px solid #003060; border-radius: 999px; padding: 2px; background: #001838; }
+.topbar-lang a { text-decoration: none; font-weight: 700; font-size: 0.65rem; padding: 0.18rem 0.5rem; border-radius: 999px; min-width: 34px; text-align: center; transition: background-color 0.15s, color 0.15s; }
+.topbar-lang a[data-lang="en"] { color: #d03040; }
+.topbar-lang a[data-lang="es"] { color: #20a060; }
+.topbar-lang a[aria-current] { background: #fff; color: #002040; }
+.topbar-lang a:not([aria-current]):hover { background: rgba(255,255,255,0.12); color: #fff; }
 
 /* Push header down to make room for topbar */
 .site-header { top: 28px; }
-@media (max-width: 420px) { .topbar { font-size: 0.68rem; } .topbar-in { padding: 0.3rem 0.75rem; } .site-header { top: 26px; } }
+@media (max-width: 420px) { .topbar { font-size: 0.65rem; } .topbar-in { padding: 0.25rem 0.75rem; } .site-header { top: 26px; } .topbar-chip { min-width: 32px; height: 28px; padding: 0 0.45rem; } }
 
 /* HERO: headline full width, then words + CTAs beside the photo */
 .hero { padding-block: clamp(1.5rem, 4vw, 3rem) clamp(2.5rem, 5vw, 4rem); }

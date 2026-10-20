@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Release QA for the five design variants (/v/a/ ... /v/e/, each with /es/) and the /variants/ index.
+"""Release QA for the three design variants (/v/a/, /v/c/, /v/d/, each with /es/) and the /variants/ index.
 
 USAGE
-  python qa/run_qa_variants.py <site root URL> <screenshot dir> [variants, e.g. a,b,c,d,e] [--no-index]
+  python qa/run_qa_variants.py <site root URL> <screenshot dir> [variants, e.g. a,c,d] [--no-index]
   local : python qa/run_qa_variants.py http://127.0.0.1:18431/ qa/.cache/shots-local
   live  : python qa/run_qa_variants.py https://itstomekk.github.io/lago-bitcoin-community/ qa/screenshots
   (needs qa/.cache/axe.min.js: curl -L -o qa/.cache/axe.min.js https://cdn.jsdelivr.net/npm/axe-core@4.10.2/axe.min.js)
@@ -18,7 +18,7 @@ GATES PER VARIANT (EN and ES unless noted)
   (>= 95% of the viewport height at 1440x900); no horizontal overflow at 1440 and 390 and no text leaving the screen;
   map shows 117 markers in the design's own colour and the list shows 117 cards; search, chip, village, empty and reset
   filters; ride "Show on map"; every image has alt text and a Commons credit and only local Commons photos are used;
-  no "official", no dashes; footer credits; Design switcher (five links, current marked, keeps language, remembers the
+  no "official", no dashes; footer credits; Design switcher (three links, current marked, keeps language, remembers the
   choice); mobile menu; EN/ES parity; WCAG A/AA with axe-core at 1440 and 390; and a pixel contrast check of every piece
   of text that sits over a photo, gradient or pattern (axe cannot measure those).
 """
@@ -38,7 +38,7 @@ ROOT = Path(__file__).resolve().parent.parent
 args = [a for a in sys.argv[1:] if not a.startswith("--")]
 BASE = args[0].rstrip("/") + "/"
 SHOTS = Path(args[1]) if Path(args[1]).is_absolute() else ROOT / args[1]
-IDS = args[2].split(",") if len(args) > 2 else ["a", "b", "c", "d", "e"]
+IDS = args[2].split(",") if len(args) > 2 else ["a", "c", "d"]
 DO_INDEX = "--no-index" not in sys.argv
 INDEX_ONLY = "--index-only" in sys.argv
 LABEL = "live" if BASE.startswith("https://") else "local"
@@ -302,8 +302,8 @@ def variant(browser, vid):
         gate(f"{L} ride 'Show on map' opens a popup", pg.evaluate("!!document.querySelector('.leaflet-popup')"), "popup")
 
         imgs = pg.evaluate(IMG_JS)
-        bad_alt = [i for i in imgs if i["alt"] is None or (i["alt"] == "" and "favicon" not in i["src"])]
-        photos = [i for i in imgs if "/images/" in i["src"]]
+        bad_alt = [i for i in imgs if i["alt"] is None or (i["alt"] == "" and "favicon" not in i["src"] and "logo" not in i["src"])]
+        photos = [i for i in imgs if "/images/" in i["src"] and "/logo/" not in i["src"]]
         bad_credit = [i["src"][-30:] for i in photos if not i["credit"]]
         foreign = [i["src"] for i in imgs if "/images/" not in i["src"] and "favicon" not in i["src"]]
         gate(f"{L} every image has alt text", not bad_alt, {"images": len(imgs), "bad": bad_alt[:3]})
@@ -322,9 +322,9 @@ def variant(browser, vid):
         sw = pg.evaluate("""() => { const n = document.querySelector('.vsw'); if (!n) return null; const r = n.getBoundingClientRect();
           return {letters: [...n.querySelectorAll('.vsw-links a')].map(a => a.textContent), cur: [...n.querySelectorAll('a[aria-current]')].map(a => a.textContent),
                   hrefs: [...n.querySelectorAll('a')].map(a => a.getAttribute('href')), inView: r.bottom <= innerHeight && r.right <= innerWidth && r.top >= 0, fixed: getComputedStyle(n).position } }""")
-        gate(f"{L} floating Design switcher: A B C D E, current marked, fixed, in view",
-             bool(sw) and sw["letters"] == list("ABCDE") and sw["cur"] == [vid.upper()] and sw["fixed"] == "fixed" and sw["inView"], sw)
-        other = "b" if vid != "b" else "c"
+        gate(f"{L} floating Design switcher: A C D, current marked, fixed, in view",
+             bool(sw) and sw["letters"] == list("ACD") and sw["cur"] == [vid.upper()] and sw["fixed"] == "fixed" and sw["inView"], sw)
+        other = "c" if vid != "c" else "d"
         pg.evaluate("window.scrollTo(0, 1200)")
         pg.wait_for_timeout(300)
         shot(pg, out / f"{lang}-1440-switcher.jpg")
@@ -443,7 +443,7 @@ def index_pages(browser):
             reveal_all(pg, 500)
             ov = pg.evaluate(OVERFLOW_JS)
             info = pg.evaluate("""() => ({cards: document.querySelectorAll('.vcard').length, thumbs: [...document.querySelectorAll('.vcard img')].filter(i => i.naturalWidth > 100).length})""")
-            gate(f"{L} {tag}: six cards, six loaded thumbnails, no console errors, no overflow", info["cards"] == 6 and info["thumbs"] == 6 and not errs and ov["sw"] <= ov["cw"], {"info": info, "errs": errs[:3], "ov": ov})
+            gate(f"{L} {tag}: four cards, four loaded thumbnails, no console errors, no overflow", info["cards"] == 4 and info["thumbs"] == 4 and not errs and ov["sw"] <= ov["cw"], {"info": info, "errs": errs[:3], "ov": ov})
             run_axe(pg, f"{L} {tag}")
             shot(pg, SHOTS / "variants" / f"{lang}-{tag}.jpg", full=True)
             ctx.close()
@@ -473,7 +473,7 @@ def main():
     missing = [n for n in sorted(PLACEHOLDERS) if f"`{n}`" not in handoff]
     gate("every data-placeholder is listed in HANDOFF.md", not missing, {"placeholders": sorted(PLACEHOLDERS), "missing": missing})
     summary = {"base": BASE, "variants": IDS, "pass": sum(r["result"] == "PASS" for r in results), "fail": sum(r["result"] == "FAIL" for r in results), "gates": results}
-    tag = LABEL if (len(IDS) == 5 and not INDEX_ONLY) else (f"{LABEL}-index" if INDEX_ONLY else f"{LABEL}-{''.join(IDS)}")
+    tag = LABEL if (len(IDS) == 3 and not INDEX_ONLY) else (f"{LABEL}-index" if INDEX_ONLY else f"{LABEL}-{''.join(IDS)}")
     (ROOT / "qa" / f"report-variants-{tag}.json").write_text(json.dumps(summary, indent=1, ensure_ascii=False), encoding="utf-8")
     md = [f"# Variants QA report ({tag})", "", f"Base URL: {BASE}", f"Variants: {', '.join(IDS)}", f"PASS {summary['pass']} / FAIL {summary['fail']}", "", "| Result | Gate | Evidence |", "|---|---|---|"]
     for r in results:

@@ -38,7 +38,7 @@ h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.015em; }
 /* RAIL (desktop) / TOP BAR (mobile) */
 .rail { position: sticky; top: 0; z-index: 60; height: 60px; display: flex; align-items: center; gap: 0.8rem; padding: 0 var(--pad); background: var(--bg); border-bottom: 1px solid var(--line); }
 .brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--ink); text-decoration: none; font-weight: 650; letter-spacing: -0.02em; margin-right: auto; white-space: nowrap; }
-.brand img { width: 34px; height: 34px; border-radius: 2px; }
+.brand img { height: 22px; width: auto; }
 .nav { position: absolute; left: 0; right: 0; top: 60px; display: none; flex-direction: column; background: var(--bg); border-bottom: 1px solid var(--line); padding: 0.4rem var(--pad) 1rem; }
 .nav.open { display: flex; }
 .nav a { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 0.2rem; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 550; }
@@ -182,7 +182,7 @@ h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.015em; }
 .press .read { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.88rem; color: var(--jade); font-weight: 600; }
 
 .site-footer { padding-bottom: 6rem; color: var(--muted); font-size: 0.9rem; }
-.site-footer .foot { padding: 2rem var(--pad) 0; } .site-footer p { max-width: 80ch; margin-bottom: 0.6rem; }
+.site-footer .foot { padding: 2rem var(--pad) 0; } .foot-brand { display: inline-block; margin-bottom: 1.2rem; } .foot-brand img { height: 22px; width: auto; } .site-footer p { max-width: 80ch; margin-bottom: 0.6rem; }
 .site-footer .legal { color: var(--ink); font-weight: 600; } .site-footer a { color: var(--ink); }
 
 /* MOTION: lines that draw themselves (progressive enhancement) */

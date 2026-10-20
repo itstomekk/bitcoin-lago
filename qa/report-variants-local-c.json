@@ -1,10 +1,10 @@
 {
- "base": "http://127.0.0.1:18431/",
+ "base": "http://127.0.0.1:18433/",
  "variants": [
   "c"
  ],
- "pass": 96,
- "fail": 0,
+ "pass": 111,
+ "fail": 2,
  "gates": [
   {
    "gate": "robots.txt Disallow while private",
@@ -12,7 +12,7 @@
    "evidence": 200
   },
   {
-   "gate": "[c/en] HTTP 200 http://127.0.0.1:18431/v/c/",
+   "gate": "[c/en] HTTP 200 http://127.0.0.1:18433/v/c/",
    "result": "PASS",
    "evidence": 200
   },
@@ -71,7 +71,7 @@
   {
    "gate": "[c/en] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "986 KB"
+   "evidence": "1023 KB"
   },
   {
    "gate": "[c/en] no horizontal overflow at 1440",
@@ -120,7 +120,7 @@
     ],
     [
      "about",
-     1
+     1.99
     ]
    ]
   },
@@ -214,7 +214,7 @@
    "gate": "[c/en] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 9,
+    "images": 10,
     "bad": []
    }
   },
@@ -258,25 +258,21 @@
    "evidence": "ok"
   },
   {
-   "gate": "[c/en] floating Design switcher: A B C D E, current marked, fixed, in view",
+   "gate": "[c/en] floating Design switcher: A C D, current marked, fixed, in view",
    "result": "PASS",
    "evidence": {
     "letters": [
      "A",
-     "B",
      "C",
-     "D",
-     "E"
+     "D"
     ],
     "cur": [
      "C"
     ],
     "hrefs": [
      "../a/",
-     "../b/",
      "./",
      "../d/",
-     "../e/",
      "../../variants/"
     ],
     "inView": true,
@@ -284,11 +280,11 @@
    }
   },
   {
-   "gate": "[c/en] switcher goes to design B in the same language and remembers it",
+   "gate": "[c/en] switcher goes to design D in the same language and remembers it",
    "result": "PASS",
    "evidence": {
-    "url": "http://127.0.0.1:18431/v/b/",
-    "stored": "b"
+    "url": "http://127.0.0.1:18433/v/d/",
+    "stored": "d"
    }
   },
   {
@@ -372,7 +368,7 @@
    }
   },
   {
-   "gate": "[c/es] HTTP 200 http://127.0.0.1:18431/v/c/es/",
+   "gate": "[c/es] HTTP 200 http://127.0.0.1:18433/v/c/es/",
    "result": "PASS",
    "evidence": 200
   },
@@ -416,7 +412,7 @@
    "gate": "[c/es] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 48,
+    "checked": 50,
     "bad": []
    }
   },
@@ -431,7 +427,7 @@
   {
    "gate": "[c/es] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "987 KB"
+   "evidence": "1024 KB"
   },
   {
    "gate": "[c/es] no horizontal overflow at 1440",
@@ -480,7 +476,7 @@
     ],
     [
      "about",
-     1
+     1.99
     ]
    ]
   },
@@ -574,7 +570,7 @@
    "gate": "[c/es] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 9,
+    "images": 10,
     "bad": []
    }
   },
@@ -618,25 +614,21 @@
    "evidence": "ok"
   },
   {
-   "gate": "[c/es] floating Design switcher: A B C D E, current marked, fixed, in view",
+   "gate": "[c/es] floating Design switcher: A C D, current marked, fixed, in view",
    "result": "PASS",
    "evidence": {
     "letters": [
      "A",
-     "B",
      "C",
-     "D",
-     "E"
+     "D"
     ],
     "cur": [
      "C"
     ],
     "hrefs": [
      "../../a/es/",
-     "../../b/es/",
      "./",
      "../../d/es/",
-     "../../e/es/",
      "../../../variants/es/"
     ],
     "inView": true,
@@ -644,11 +636,11 @@
    }
   },
   {
-   "gate": "[c/es] switcher goes to design B in the same language and remembers it",
+   "gate": "[c/es] switcher goes to design D in the same language and remembers it",
    "result": "PASS",
    "evidence": {
-    "url": "http://127.0.0.1:18431/v/b/es/",
-    "stored": "b"
+    "url": "http://127.0.0.1:18433/v/d/es/",
+    "stored": "d"
    }
   },
   {
@@ -749,7 +741,7 @@
      "whatsapp-invite-url"
     ],
     "h2": 7,
-    "imgs": 25,
+    "imgs": 26,
     "nav": [
      "#lake",
      "#bitcoin",
@@ -782,22 +774,22 @@
   {
    "gate": "[c] browser language es: opening EN redirects to /es/",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18431/v/c/es/"
+   "evidence": "http://127.0.0.1:18433/v/c/es/"
   },
   {
    "gate": "[c] EN switch stays in this design and stores the choice",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18431/v/c/"
+   "evidence": "http://127.0.0.1:18433/v/c/"
   },
   {
    "gate": "[c] ES switch stays in this design",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18431/v/c/es/"
+   "evidence": "http://127.0.0.1:18433/v/c/es/"
   },
   {
    "gate": "[c] browser language en: opening /es/ redirects to EN",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18431/v/c/"
+   "evidence": "http://127.0.0.1:18433/v/c/"
   },
   {
    "gate": "[c] placeholder button shows 'coming soon' toast",
@@ -808,6 +800,155 @@
    "gate": "[c] placeholder badge visible in preview",
    "result": "PASS",
    "evidence": "\"Placeholder: whatsapp-invite-url\""
+  },
+  {
+   "gate": "[index/en] HTTP 200 http://127.0.0.1:18433/variants/",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "[index/en] noindex,nofollow",
+   "result": "PASS",
+   "evidence": "present"
+  },
+  {
+   "gate": "[index/en] every referenced asset and link returns 200",
+   "result": "PASS",
+   "evidence": {
+    "checked": 16,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[index/en] 1440: four cards, four loaded thumbnails, no console errors, no overflow",
+   "result": "PASS",
+   "evidence": {
+    "info": {
+     "cards": 4,
+     "thumbs": 4
+    },
+    "errs": [],
+    "ov": {
+     "sw": 1440,
+     "cw": 1440
+    }
+   }
+  },
+  {
+   "gate": "[index/en] 1440 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[index/en] 390: four cards, four loaded thumbnails, no console errors, no overflow",
+   "result": "PASS",
+   "evidence": {
+    "info": {
+     "cards": 4,
+     "thumbs": 4
+    },
+    "errs": [],
+    "ov": {
+     "sw": 390,
+     "cw": 390
+    }
+   }
+  },
+  {
+   "gate": "[index/en] 390 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[index/en] card C opens /v/c/ in en",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18433/v/c/"
+  },
+  {
+   "gate": "[index/es] HTTP 200 http://127.0.0.1:18433/variants/es/",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "[index/es] noindex,nofollow",
+   "result": "PASS",
+   "evidence": "present"
+  },
+  {
+   "gate": "[index/es] every referenced asset and link returns 200",
+   "result": "PASS",
+   "evidence": {
+    "checked": 17,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[index/es] 1440: four cards, four loaded thumbnails, no console errors, no overflow",
+   "result": "PASS",
+   "evidence": {
+    "info": {
+     "cards": 4,
+     "thumbs": 4
+    },
+    "errs": [],
+    "ov": {
+     "sw": 1440,
+     "cw": 1440
+    }
+   }
+  },
+  {
+   "gate": "[index/es] 1440 axe-core WCAG A/AA violations",
+   "result": "FAIL",
+   "evidence": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "n": 1,
+     "sample": [
+      "a[href=\"../\"][data-lang=\"en\"][title=\"English\"] :: Element has insufficient color contrast of 3.51 (foreground color: #d03040, background color: #001838, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+     ]
+    }
+   ]
+  },
+  {
+   "gate": "[index/es] 390: four cards, four loaded thumbnails, no console errors, no overflow",
+   "result": "PASS",
+   "evidence": {
+    "info": {
+     "cards": 4,
+     "thumbs": 4
+    },
+    "errs": [],
+    "ov": {
+     "sw": 390,
+     "cw": 390
+    }
+   }
+  },
+  {
+   "gate": "[index/es] 390 axe-core WCAG A/AA violations",
+   "result": "FAIL",
+   "evidence": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "n": 1,
+     "sample": [
+      "a[href=\"../\"][data-lang=\"en\"][title=\"English\"] :: Element has insufficient color contrast of 3.51 (foreground color: #d03040, background color: #001838, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+     ]
+    }
+   ]
+  },
+  {
+   "gate": "[index/es] card C opens /v/c/ in es",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18433/v/c/es/"
+  },
+  {
+   "gate": "HTTP 200 http://127.0.0.1:18433/v/",
+   "result": "PASS",
+   "evidence": 200
   },
   {
    "gate": "every data-placeholder is listed in HANDOFF.md",

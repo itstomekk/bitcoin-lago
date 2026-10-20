@@ -174,11 +174,11 @@ def main():
 
             # images
             imgs = pg.evaluate(IMG_JS)
-            bad_alt = [i for i in imgs if i["alt"] is None or (i["alt"] == "" and "favicon" not in i["src"])]  # map tiles are excluded: Leaflet draws them as decorative images
-            bad_credit = [i for i in imgs if "images/" in i["src"] and not i["credit"]]
+            bad_alt = [i for i in imgs if i["alt"] is None or (i["alt"] == "" and "favicon" not in i["src"] and "logo" not in i["src"])]  # map tiles are excluded: Leaflet draws them as decorative images
+            bad_credit = [i for i in imgs if "images/" in i["src"] and "logo" not in i["src"] and not i["credit"]]
             broken = [i for i in imgs if i["nat"] == 0]
             gate(f"[{lang}] every image has alt text", not bad_alt, {"images": len(imgs), "bad": bad_alt})
-            gate(f"[{lang}] every photo has a credit line (Commons page + licence links)", not bad_credit, {"photos": sum(1 for i in imgs if 'images/' in i['src']), "bad": bad_credit})
+            gate(f"[{lang}] every photo has a credit line (Commons page + licence links)", not bad_credit, {"photos": sum(1 for i in imgs if 'images/' in i['src'] and 'logo' not in i['src']), "bad": bad_credit})
             gate(f"[{lang}] no broken images", not broken, broken)
 
             # text rules

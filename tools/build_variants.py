@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Build the five design variants (each in English and Spanish) and the /variants/ index.
+"""Build the three design variants (each in English and Spanish) and the /variants/ index.
 
 WHAT IT DOES
   One content source (tools/content.py) and one data set (data/merchants.json, data/photos.json)
-  feed five different page designs. Only the look differs: each variant has its own layout file
-  (tools/variants/a.html ... e.html) and its own stylesheet (v/a.css ... v/e.css). Shared behaviour
+  feed three different page designs. Only the look differs: each variant has its own layout file
+  (tools/variants/a.html, c.html, d.html) and its own stylesheet (v/a.css, c.css, d.css). Shared behaviour
   lives in v/app.js, shared base styles in v/base.css.
 
 READS   tools/variants/*.html, tools/content.py, data/merchants.json, data/photos.json
-WRITES  v/<a-e>/index.html, v/<a-e>/es/index.html, v/index.html (redirect to the last chosen design),
+WRITES  v/ac/index.html, v/ad/index.html, v/cd/index.html, v/f/index.html, v/g/index.html, v/h/index.html, v/a/es/index.html, v/c/es/index.html, v/d/es/index.html,
         variants/index.html, variants/es/index.html
 RUN     python tools/build_variants.py
         (the root index.html and es/index.html are NOT touched; build those with tools/build_pages.py)
@@ -191,7 +191,7 @@ def head_html(vid):
         f'<body class="show-placeholders v-{vid}" data-base="{{{{p}}}}" data-design="{vid}">\n'
         f'<a class="skip" href="#main">{{{{skip}}}}</a>\n'
         f'\n'
-        f'<!-- Fixed top bar: variant switcher + EN/ES toggle. Neutral dark strip, stays above content. -->\n'
+        f'<!-- Fixed top bar: variant switcher + EN/ES toggle. Navy bar with coloured per-design chips. -->\n'
         f'<div class="topbar" role="navigation" aria-label="Design and language switcher">\n'
         f'  <div class="topbar-in">\n'
         f'    <nav class="topbar-variants" aria-label="Design variants">\n'
