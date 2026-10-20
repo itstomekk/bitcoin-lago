@@ -74,6 +74,36 @@ def figure(slug, T, sizes, eager=False, cls="", fig_cls=""):
     )
 
 
+COMMUNITY_PHOTO_WIDTHS = {"community-tuktuk": (800, 940), "community-boat": (800, 1058)}
+COMMUNITY_PHOTO_DIMENSIONS = {"community-tuktuk": (940, 627), "community-boat": (1058, 543)}
+
+
+def community_photo(slug, T, sizes, fig_cls):
+    """Responsive picture and provisional credit for Tomek-supplied, private-source photos."""
+    widths = COMMUNITY_PHOTO_WIDTHS[slug]
+    width, height = COMMUNITY_PHOTO_DIMENSIONS[slug]
+    srcset_webp = ", ".join(f"{{{{p}}}}images/{slug}-{w}.webp {w}w" for w in widths)
+    srcset_jpg = ", ".join(f"{{{{p}}}}images/{slug}-{w}.jpg {w}w" for w in widths)
+    alt = escape(C.PHOTOS[T["lang"]][slug][1], quote=True)
+    caption = escape(C.PHOTOS[T["lang"]][slug][0])
+    return (
+        f'<figure class="photo community-photo {fig_cls}"><picture>'
+        f'<source type="image/webp" srcset="{srcset_webp}" sizes="{sizes}">'
+        f'<img src="{{{{p}}}}images/{slug}-{widths[0]}.jpg" srcset="{srcset_jpg}" sizes="{sizes}" '
+        f'width="{width}" height="{height}" alt="{alt}" loading="lazy" decoding="async">'
+        f'</picture><figcaption>{caption}. <span class="credit">Photo: community archive (source to confirm)</span></figcaption></figure>'
+    )
+
+
+def community_transport_photos(T):
+    return (
+        '<div class="community-transport-photos">'
+        + community_photo("community-tuktuk", T, "(min-width: 900px) 38vw, 92vw", "community-tuktuk")
+        + community_photo("community-boat", T, "(min-width: 900px) 25vw, 92vw", "community-boat")
+        + '</div>'
+    )
+
+
 def towns_html():
     counts = Counter(p["town"] for p in PLACES).most_common()
     return "".join(f'<li><span>{escape(t)}</span><b>{n}</b></li>' for t, n in counts)
@@ -157,6 +187,7 @@ def render(lang):
         "fig_tours": figure("tours", T, "(min-width: 900px) 44vw, 92vw", fig_cls="tours-photo"),
         "towns": towns_html(),
         "rides": ride_html(T),
+        "community_transport_photos": community_transport_photos(T),
         "press": press_html(T),
         "i18n_json": json.dumps(
             {**{k: T[k] for k in C.I18N_KEYS}, "categories": C.CATEGORIES[lang]}, ensure_ascii=False

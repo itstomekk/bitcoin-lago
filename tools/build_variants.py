@@ -285,6 +285,7 @@ def render(vid, lang):
         "towns": BP.towns_html(),
         "towns_bars": towns_bars(),
         "rides": BP.ride_html(T),
+        "community_transport_photos": BP.community_transport_photos(T),
         "press": BP.press_html(T),
         "finder": finder(T),
         "finder_console": finder(T, console=True),

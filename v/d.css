@@ -130,6 +130,11 @@ html { scroll-padding-top: 84px; }
 .ride-ico { width: 2.3rem; height: 2.3rem; color: var(--cinnabar); }
 .ride h3 { margin: 0; font-size: 1.25rem; } .ride .kind { margin: 0; color: var(--muted); font-size: 0.88rem; font-weight: 600; }
 .ride .meta { margin: 0.35rem 0 0; font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.2rem 1.2rem; }
+.community-transport-photos { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.8fr); align-items: start; gap: 1rem; margin-top: 1.5rem; }
+.community-photo img { display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: cover; }
+.community-photo figcaption { color: var(--muted); font-size: 0.8rem; line-height: 1.45; margin-top: 0.55rem; }
+.community-photo .credit { display: block; }
+@media (max-width: 599px) { .community-transport-photos { grid-template-columns: 1fr; } }
 @media (max-width: 599px) { .ride { grid-template-columns: auto 1fr; } .ride .show-btn { grid-column: 1 / -1; justify-self: start; } }
 .atm { padding: clamp(1.4rem, 3vw, 2.2rem); background: var(--marigold); color: #1b1410; border: 2px solid #1b1410; border-radius: 24px; box-shadow: 6px 6px 0 #1b1410; --ink: #1b1410; --muted: #1b1410; }
 .atm-ico .ico { width: 2.4rem; height: 2.4rem; margin-bottom: 0.8rem; }

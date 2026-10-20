@@ -56,7 +56,7 @@ MONTHS = {
     "es": {"2022-03": "marzo de 2022", "2022-06": "junio de 2022", "2022-09": "septiembre de 2022", "2022-04": "abril de 2022", "2023-03": "marzo de 2023", "2022": "2022"},
 }
 
-# Photo captions and alt text. Credit lines are generated from data/photos.json (never typed by hand).
+# Photo captions and alt text. Wikimedia credits come from data/photos.json; provisional community credits stay explicit below.
 PHOTOS = {
     "en": {
         "hero": ("Lake Atitlán seen from Panajachel", "Lake Atitlán seen from Panajachel"),
@@ -71,6 +71,8 @@ PHOTOS = {
         "bw-2": ("Panajachel and the lake, in black and white, second view", "Second black and white view of Panajachel and Lake Atitlán"),
         "lake-5": ("Lake Atitlán and Panajachel", "Lake Atitlán and Panajachel"),
         "lake-12": ("Lake Atitlán at Panajachel, 2009", "Lake Atitlán at Panajachel in 2009"),
+        "community-tuktuk": ("A Bitcoin tuk tuk on the road beside Lake Atitlán", "Orange tuk tuk with a large white Bitcoin canopy on a road beside Lake Atitlán and volcanoes"),
+        "community-boat": ("A PIER TO PIER Bitcoin boat on Lake Atitlán", "Orange and blue PIER TO PIER Bitcoin boat on Lake Atitlán"),
     },
     "es": {
         "hero": ("El Lago de Atitlán visto desde Panajachel", "El Lago de Atitlán visto desde Panajachel"),
@@ -85,6 +87,8 @@ PHOTOS = {
         "bw-2": ("Panajachel y el lago, en blanco y negro, segunda vista", "Segunda vista en blanco y negro de Panajachel y el Lago de Atitlán"),
         "lake-5": ("El Lago de Atitlán y Panajachel", "El Lago de Atitlán y Panajachel"),
         "lake-12": ("El Lago de Atitlán en Panajachel, 2009", "El Lago de Atitlán en Panajachel en 2009"),
+        "community-tuktuk": ("Un tuk tuk de Bitcoin en el camino junto al Lago de Atitlán", "Tuk tuk naranja con un gran logotipo blanco de Bitcoin en el toldo, en un camino junto al Lago de Atitlán y los volcanes"),
+        "community-boat": ("Una lancha de Bitcoin PIER TO PIER en el Lago de Atitlán", "Lancha naranja y azul de Bitcoin PIER TO PIER en el Lago de Atitlán"),
     },
 }
 

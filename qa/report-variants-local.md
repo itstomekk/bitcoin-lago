@@ -12,12 +12,12 @@ PASS 305 / FAIL 0
 | PASS | [a/en] meta robots noindex,nofollow | "present" |
 | PASS | [a/en] hreflang en/es/x-default | [["en", "https://itstomekk.github.io/lago-bitcoin-community/v/a/"], ["es", "https://itstomekk.github.io/lago-bitcoin-community/v/a/es/"], ["x-default", "https://itstomekk.github.io/lago-bitcoin-community/v/a/"]] |
 | PASS | [a/en] html lang + data-design | "en" |
-| PASS | [a/en] every referenced asset and link returns 200 | {"checked": 44, "bad": []} |
+| PASS | [a/en] every referenced asset and link returns 200 | {"checked": 52, "bad": []} |
 | PASS | [a/en] no console errors/warnings, no failed requests | {"console": [], "failed": []} |
-| PASS | [a/en] page weight under 3 MB excluding map tiles | "730 KB" |
+| PASS | [a/en] page weight under 3 MB excluding map tiles | "820 KB" |
 | PASS | [a/en] no horizontal overflow at 1440 | {"sw": 1440, "cw": 1440} |
 | PASS | [a/en] no text leaves the screen at 1440 | [] |
-| PASS | [a/en] every section fills the screen (>=0.95 of viewport height) | [["hero", 1], ["lake", 1.16], ["bitcoin", 1.8], ["transport", 1.01], ["community", 1], ["tours", 1], ["expats", 1], ["about", 1.85]] |
+| PASS | [a/en] every section fills the screen (>=0.95 of viewport height) | [["hero", 1], ["lake", 1.16], ["bitcoin", 1.8], ["transport", 1.44], ["community", 1], ["tours", 1], ["expats", 1], ["about", 1.85]] |
 | PASS | [a/en] map ready and renders 117 markers | {"state": "ready", "markers": 117, "tiles": 16} |
 | PASS | [a/en] list count == marker count == 117 | {"cards": 117, "markers": 117, "hook": {"m": 117, "c": 117, "v": 117, "p": 117}} |
 | PASS | [a/en] count text shows 117 | "Showing 117 of 117 places" |
@@ -28,8 +28,8 @@ PASS 305 / FAIL 0
 | PASS | [a/en] empty state | {"c": 0, "m": 0, "empty": true} |
 | PASS | [a/en] reset restores 117 | {"c": 117, "m": 117} |
 | PASS | [a/en] ride 'Show on map' opens a popup | "popup" |
-| PASS | [a/en] every image has alt text | {"images": 9, "bad": []} |
-| PASS | [a/en] only local Commons photos, each with Commons + licence credit | {"photos": 7, "no_credit": [], "other_images": []} |
+| PASS | [a/en] every image has alt text | {"images": 11, "bad": []} |
+| PASS | [a/en] only local photos, each with a Commons or approved community-archive credit | {"photos": 9, "no_credit": [], "other_images": []} |
 | PASS | [a/en] no broken images | "ok" |
 | PASS | [a/en] no 'official'/'oficial' claim | "none" |
 | PASS | [a/en] no em or en dashes in visible text | [] |
@@ -55,12 +55,12 @@ PASS 305 / FAIL 0
 | PASS | [a/es] meta robots noindex,nofollow | "present" |
 | PASS | [a/es] hreflang en/es/x-default | [["en", "https://itstomekk.github.io/lago-bitcoin-community/v/a/"], ["es", "https://itstomekk.github.io/lago-bitcoin-community/v/a/es/"], ["x-default", "https://itstomekk.github.io/lago-bitcoin-community/v/a/"]] |
 | PASS | [a/es] html lang + data-design | "es" |
-| PASS | [a/es] every referenced asset and link returns 200 | {"checked": 46, "bad": []} |
+| PASS | [a/es] every referenced asset and link returns 200 | {"checked": 54, "bad": []} |
 | PASS | [a/es] no console errors/warnings, no failed requests | {"console": [], "failed": []} |
-| PASS | [a/es] page weight under 3 MB excluding map tiles | "731 KB" |
+| PASS | [a/es] page weight under 3 MB excluding map tiles | "821 KB" |
 | PASS | [a/es] no horizontal overflow at 1440 | {"sw": 1440, "cw": 1440} |
 | PASS | [a/es] no text leaves the screen at 1440 | [] |
-| PASS | [a/es] every section fills the screen (>=0.95 of viewport height) | [["hero", 1], ["lake", 1.19], ["bitcoin", 1.8], ["transport", 1.05], ["community", 1], ["tours", 1], ["expats", 1], ["about", 1.85]] |
+| PASS | [a/es] every section fills the screen (>=0.95 of viewport height) | [["hero", 1], ["lake", 1.19], ["bitcoin", 1.8], ["transport", 1.48], ["community", 1], ["tours", 1], ["expats", 1], ["about", 1.85]] |
 | PASS | [a/es] map ready and renders 117 markers | {"state": "ready", "markers": 117, "tiles": 16} |
 | PASS | [a/es] list count == marker count == 117 | {"cards": 117, "markers": 117, "hook": {"m": 117, "c": 117, "v": 117, "p": 117}} |
 | PASS | [a/es] count text shows 117 | "Mostrando 117 de 117 lugares" |
@@ -71,8 +71,8 @@ PASS 305 / FAIL 0
 | PASS | [a/es] empty state | {"c": 0, "m": 0, "empty": true} |
 | PASS | [a/es] reset restores 117 | {"c": 117, "m": 117} |
 | PASS | [a/es] ride 'Show on map' opens a popup | "popup" |
-| PASS | [a/es] every image has alt text | {"images": 9, "bad": []} |
-| PASS | [a/es] only local Commons photos, each with Commons + licence credit | {"photos": 7, "no_credit": [], "other_images": []} |
+| PASS | [a/es] every image has alt text | {"images": 11, "bad": []} |
+| PASS | [a/es] only local photos, each with a Commons or approved community-archive credit | {"photos": 9, "no_credit": [], "other_images": []} |
 | PASS | [a/es] no broken images | "ok" |
 | PASS | [a/es] no 'official'/'oficial' claim | "none" |
 | PASS | [a/es] no em or en dashes in visible text | [] |
@@ -106,12 +106,12 @@ PASS 305 / FAIL 0
 | PASS | [c/en] meta robots noindex,nofollow | "present" |
 | PASS | [c/en] hreflang en/es/x-default | [["en", "https://itstomekk.github.io/lago-bitcoin-community/v/c/"], ["es", "https://itstomekk.github.io/lago-bitcoin-community/v/c/es/"], ["x-default", "https://itstomekk.github.io/lago-bitcoin-community/v/c/"]] |
 | PASS | [c/en] html lang + data-design | "en" |
-| PASS | [c/en] every referenced asset and link returns 200 | {"checked": 48, "bad": []} |
+| PASS | [c/en] every referenced asset and link returns 200 | {"checked": 56, "bad": []} |
 | PASS | [c/en] no console errors/warnings, no failed requests | {"console": [], "failed": []} |
-| PASS | [c/en] page weight under 3 MB excluding map tiles | "1023 KB" |
+| PASS | [c/en] page weight under 3 MB excluding map tiles | "1114 KB" |
 | PASS | [c/en] no horizontal overflow at 1440 | {"sw": 1440, "cw": 1440} |
 | PASS | [c/en] no text leaves the screen at 1440 | [] |
-| PASS | [c/en] every section fills the screen (>=0.95 of viewport height) | [["hero", 1], ["lake", 1.12], ["bitcoin", 1.89], ["transport", 1.26], ["community", 1], ["tours", 1.13], ["expats", 1], ["about", 1.99]] |
+| PASS | [c/en] every section fills the screen (>=0.95 of viewport height) | [["hero", 1], ["lake", 1.12], ["bitcoin", 1.89], ["transport", 1.71], ["community", 1], ["tours", 1.13], ["expats", 1], ["about", 1.99]] |
 | PASS | [c/en] map ready and renders 117 markers | {"state": "ready", "markers": 117, "tiles": 16} |
 | PASS | [c/en] list count == marker count == 117 | {"cards": 117, "markers": 117, "hook": {"m": 117, "c": 117, "v": 117, "p": 117}} |
 | PASS | [c/en] count text shows 117 | "Showing 117 of 117 places" |
@@ -122,8 +122,8 @@ PASS 305 / FAIL 0
 | PASS | [c/en] empty state | {"c": 0, "m": 0, "empty": true} |
 | PASS | [c/en] reset restores 117 | {"c": 117, "m": 117} |
 | PASS | [c/en] ride 'Show on map' opens a popup | "popup" |
-| PASS | [c/en] every image has alt text | {"images": 10, "bad": []} |
-| PASS | [c/en] only local Commons photos, each with Commons + licence credit | {"photos": 8, "no_credit": [], "other_images": []} |
+| PASS | [c/en] every image has alt text | {"images": 12, "bad": []} |
+| PASS | [c/en] only local photos, each with a Commons or approved community-archive credit | {"photos": 10, "no_credit": [], "other_images": []} |
 | PASS | [c/en] no broken images | "ok" |
 | PASS | [c/en] no 'official'/'oficial' claim | "none" |
 | PASS | [c/en] no em or en dashes in visible text | [] |
@@ -149,12 +149,12 @@ PASS 305 / FAIL 0
 | PASS | [c/es] meta robots noindex,nofollow | "present" |
 | PASS | [c/es] hreflang en/es/x-default | [["en", "https://itstomekk.github.io/lago-bitcoin-community/v/c/"], ["es", "https://itstomekk.github.io/lago-bitcoin-community/v/c/es/"], ["x-default", "https://itstomekk.github.io/lago-bitcoin-community/v/c/"]] |
 | PASS | [c/es] html lang + data-design | "es" |
-| PASS | [c/es] every referenced asset and link returns 200 | {"checked": 50, "bad": []} |
+| PASS | [c/es] every referenced asset and link returns 200 | {"checked": 58, "bad": []} |
 | PASS | [c/es] no console errors/warnings, no failed requests | {"console": [], "failed": []} |
-| PASS | [c/es] page weight under 3 MB excluding map tiles | "1024 KB" |
+| PASS | [c/es] page weight under 3 MB excluding map tiles | "1115 KB" |
 | PASS | [c/es] no horizontal overflow at 1440 | {"sw": 1440, "cw": 1440} |
 | PASS | [c/es] no text leaves the screen at 1440 | [] |
-| PASS | [c/es] every section fills the screen (>=0.95 of viewport height) | [["hero", 1], ["lake", 1.24], ["bitcoin", 1.89], ["transport", 1.17], ["community", 1], ["tours", 1.1], ["expats", 1], ["about", 1.99]] |
+| PASS | [c/es] every section fills the screen (>=0.95 of viewport height) | [["hero", 1], ["lake", 1.24], ["bitcoin", 1.89], ["transport", 1.62], ["community", 1], ["tours", 1.1], ["expats", 1], ["about", 1.99]] |
 | PASS | [c/es] map ready and renders 117 markers | {"state": "ready", "markers": 117, "tiles": 16} |
 | PASS | [c/es] list count == marker count == 117 | {"cards": 117, "markers": 117, "hook": {"m": 117, "c": 117, "v": 117, "p": 117}} |
 | PASS | [c/es] count text shows 117 | "Mostrando 117 de 117 lugares" |
@@ -165,8 +165,8 @@ PASS 305 / FAIL 0
 | PASS | [c/es] empty state | {"c": 0, "m": 0, "empty": true} |
 | PASS | [c/es] reset restores 117 | {"c": 117, "m": 117} |
 | PASS | [c/es] ride 'Show on map' opens a popup | "popup" |
-| PASS | [c/es] every image has alt text | {"images": 10, "bad": []} |
-| PASS | [c/es] only local Commons photos, each with Commons + licence credit | {"photos": 8, "no_credit": [], "other_images": []} |
+| PASS | [c/es] every image has alt text | {"images": 12, "bad": []} |
+| PASS | [c/es] only local photos, each with a Commons or approved community-archive credit | {"photos": 10, "no_credit": [], "other_images": []} |
 | PASS | [c/es] no broken images | "ok" |
 | PASS | [c/es] no 'official'/'oficial' claim | "none" |
 | PASS | [c/es] no em or en dashes in visible text | [] |
@@ -200,12 +200,12 @@ PASS 305 / FAIL 0
 | PASS | [d/en] meta robots noindex,nofollow | "present" |
 | PASS | [d/en] hreflang en/es/x-default | [["en", "https://itstomekk.github.io/lago-bitcoin-community/v/d/"], ["es", "https://itstomekk.github.io/lago-bitcoin-community/v/d/es/"], ["x-default", "https://itstomekk.github.io/lago-bitcoin-community/v/d/"]] |
 | PASS | [d/en] html lang + data-design | "en" |
-| PASS | [d/en] every referenced asset and link returns 200 | {"checked": 48, "bad": []} |
+| PASS | [d/en] every referenced asset and link returns 200 | {"checked": 56, "bad": []} |
 | PASS | [d/en] no console errors/warnings, no failed requests | {"console": [], "failed": []} |
-| PASS | [d/en] page weight under 3 MB excluding map tiles | "799 KB" |
+| PASS | [d/en] page weight under 3 MB excluding map tiles | "890 KB" |
 | PASS | [d/en] no horizontal overflow at 1440 | {"sw": 1440, "cw": 1440} |
 | PASS | [d/en] no text leaves the screen at 1440 | [] |
-| PASS | [d/en] every section fills the screen (>=0.95 of viewport height) | [["hero", 1], ["lake", 1.29], ["bitcoin", 1.78], ["transport", 1.09], ["community", 1.06], ["tours", 1], ["expats", 1], ["about", 1.99]] |
+| PASS | [d/en] every section fills the screen (>=0.95 of viewport height) | [["hero", 1], ["lake", 1.29], ["bitcoin", 1.78], ["transport", 1.55], ["community", 1.06], ["tours", 1], ["expats", 1], ["about", 1.99]] |
 | PASS | [d/en] map ready and renders 117 markers | {"state": "ready", "markers": 117, "tiles": 16} |
 | PASS | [d/en] list count == marker count == 117 | {"cards": 117, "markers": 117, "hook": {"m": 117, "c": 117, "v": 117, "p": 117}} |
 | PASS | [d/en] count text shows 117 | "Showing 117 of 117 places" |
@@ -216,8 +216,8 @@ PASS 305 / FAIL 0
 | PASS | [d/en] empty state | {"c": 0, "m": 0, "empty": true} |
 | PASS | [d/en] reset restores 117 | {"c": 117, "m": 117} |
 | PASS | [d/en] ride 'Show on map' opens a popup | "popup" |
-| PASS | [d/en] every image has alt text | {"images": 10, "bad": []} |
-| PASS | [d/en] only local Commons photos, each with Commons + licence credit | {"photos": 8, "no_credit": [], "other_images": []} |
+| PASS | [d/en] every image has alt text | {"images": 12, "bad": []} |
+| PASS | [d/en] only local photos, each with a Commons or approved community-archive credit | {"photos": 10, "no_credit": [], "other_images": []} |
 | PASS | [d/en] no broken images | "ok" |
 | PASS | [d/en] no 'official'/'oficial' claim | "none" |
 | PASS | [d/en] no em or en dashes in visible text | [] |
@@ -243,12 +243,12 @@ PASS 305 / FAIL 0
 | PASS | [d/es] meta robots noindex,nofollow | "present" |
 | PASS | [d/es] hreflang en/es/x-default | [["en", "https://itstomekk.github.io/lago-bitcoin-community/v/d/"], ["es", "https://itstomekk.github.io/lago-bitcoin-community/v/d/es/"], ["x-default", "https://itstomekk.github.io/lago-bitcoin-community/v/d/"]] |
 | PASS | [d/es] html lang + data-design | "es" |
-| PASS | [d/es] every referenced asset and link returns 200 | {"checked": 50, "bad": []} |
+| PASS | [d/es] every referenced asset and link returns 200 | {"checked": 58, "bad": []} |
 | PASS | [d/es] no console errors/warnings, no failed requests | {"console": [], "failed": []} |
-| PASS | [d/es] page weight under 3 MB excluding map tiles | "800 KB" |
+| PASS | [d/es] page weight under 3 MB excluding map tiles | "891 KB" |
 | PASS | [d/es] no horizontal overflow at 1440 | {"sw": 1440, "cw": 1440} |
 | PASS | [d/es] no text leaves the screen at 1440 | [] |
-| PASS | [d/es] every section fills the screen (>=0.95 of viewport height) | [["hero", 1], ["lake", 1.29], ["bitcoin", 1.78], ["transport", 1.09], ["community", 1.07], ["tours", 1], ["expats", 1], ["about", 1.99]] |
+| PASS | [d/es] every section fills the screen (>=0.95 of viewport height) | [["hero", 1], ["lake", 1.29], ["bitcoin", 1.78], ["transport", 1.55], ["community", 1.07], ["tours", 1], ["expats", 1], ["about", 1.99]] |
 | PASS | [d/es] map ready and renders 117 markers | {"state": "ready", "markers": 117, "tiles": 16} |
 | PASS | [d/es] list count == marker count == 117 | {"cards": 117, "markers": 117, "hook": {"m": 117, "c": 117, "v": 117, "p": 117}} |
 | PASS | [d/es] count text shows 117 | "Mostrando 117 de 117 lugares" |
@@ -259,8 +259,8 @@ PASS 305 / FAIL 0
 | PASS | [d/es] empty state | {"c": 0, "m": 0, "empty": true} |
 | PASS | [d/es] reset restores 117 | {"c": 117, "m": 117} |
 | PASS | [d/es] ride 'Show on map' opens a popup | "popup" |
-| PASS | [d/es] every image has alt text | {"images": 10, "bad": []} |
-| PASS | [d/es] only local Commons photos, each with Commons + licence credit | {"photos": 8, "no_credit": [], "other_images": []} |
+| PASS | [d/es] every image has alt text | {"images": 12, "bad": []} |
+| PASS | [d/es] only local photos, each with a Commons or approved community-archive credit | {"photos": 10, "no_credit": [], "other_images": []} |
 | PASS | [d/es] no broken images | "ok" |
 | PASS | [d/es] no 'official'/'oficial' claim | "none" |
 | PASS | [d/es] no em or en dashes in visible text | [] |

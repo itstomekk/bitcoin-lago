@@ -22,7 +22,7 @@ link to https://x.com/LakeBitcoin.
 | `config.js` | **Switches placeholder links on** (WhatsApp, Facebook, email, tour booking, newcomers contact). | **Yes. Start here.** |
 | `data/merchants.json` | The 117 places (trimmed OpenStreetMap export, dated 2026-10-19). | Rebuild with `tools/build_data.py`. |
 | `data/photos.json` | Credit line for each photo (artist, licence, Commons page). | Via `tools/optimize_images.py`. |
-| `images/` | Wikimedia Commons photos only (CC BY / CC BY-SA), WebP + JPG, 800 and 1600 px. | Via `tools/optimize_images.py`. |
+| `images/` | Optimized Wikimedia Commons and Tomek-supplied community photos, WebP + JPG. | Via `tools/optimize_images.py` and `tools/optimize_community_photos.py`. |
 | `vendor/leaflet/`, `fonts/`, `icons.svg` | Leaflet map library (BSD), Geist font (OFL), Phosphor icons (MIT). | No. |
 | `qa/` | QA scripts, reports and screenshots. | No. |
 | `robots.txt` | `Disallow: /` while private. | At go-live. |
@@ -135,10 +135,16 @@ How they are built: one content source, five looks.
 | `tools/variants/index.html`, `variants/variants.css` | The `/variants/` page and its look. Thumbnails: `variants/thumbs/*.webp` (made by `qa/make_thumbs.py`). | Yes. |
 | `fonts/` (new files) | Newsreader, Bebas Neue, Bricolage Grotesque, Sora, Geist Mono (all SIL OFL, self-hosted). | No. |
 | `images/bw-*.jpg/webp`, `lake-5-*`, `lake-12-*` | Four more Commons photos used only by the variants (credits in `data/photos.json`; `python tools/optimize_images.py --extra`). | Via the script. |
+| `images/community-tuktuk-*`, `community-boat-*` | Optimized Tomek-supplied tuk tuk and boat photos, used in the transport section on the baseline and finished A/C/D pages. Source originals stay in ignored `source-archive/tomek-supplied/`. | `python tools/optimize_community_photos.py`. |
 
 Rules that hold in every variant: same 8 sections and ids, same 117 places and the same data file, every placeholder keeps its
-`data-placeholder` badge (so the table above still applies), only Commons photos with credits, `noindex,nofollow`, WCAG AA text.
+`data-placeholder` badge (so the table above still applies), photo credits stay visible, `noindex,nofollow`, WCAG AA text.
 Each design has one fixed theme (no automatic dark mode); C is dark by design.
+
+### Photo credits to confirm
+
+The supplied `tuktuk-bitcoin-lake-road.jpg` and `pier-to-pier-bitcoin-boat.jpg` are credited on-page as exactly
+"Photo: community archive (source to confirm)". Do not invent a photographer; replace this provisional credit only when Tomek confirms the source.
 
 QA for the variants: `python qa/run_qa_variants.py <site URL> <screenshot dir> [a,b,c,d,e]`. Reports: `qa/report-variants-local.md`
 and `qa/report-variants-live.md`; live screenshots in `qa/screenshots/<a-e>/` and `qa/screenshots/variants/`.

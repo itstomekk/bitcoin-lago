@@ -17,7 +17,8 @@ GATES PER VARIANT (EN and ES unless noted)
   noindex,nofollow; hreflang; no console errors/warnings or failed requests; page weight; every section fills the screen
   (>= 95% of the viewport height at 1440x900); no horizontal overflow at 1440 and 390 and no text leaving the screen;
   map shows 117 markers in the design's own colour and the list shows 117 cards; search, chip, village, empty and reset
-  filters; ride "Show on map"; every image has alt text and a Commons credit and only local Commons photos are used;
+  filters; ride "Show on map"; every image has alt text; local Commons photos have Commons/licence links and community-archive
+  photos use the approved provisional credit; only local images are used;
   no "official", no dashes; footer credits; Design switcher (three links, current marked, keeps language, remembers the
   choice); mobile menu; EN/ES parity; WCAG A/AA with axe-core at 1440 and 390; and a pixel contrast check of every piece
   of text that sits over a photo, gradient or pattern (axe cannot measure those).
@@ -83,7 +84,7 @@ PARITY_JS = """() => ({
   imgs: document.querySelectorAll('img').length })"""
 IMG_JS = """() => [...document.querySelectorAll('img')].filter(i => !i.closest('.leaflet-container')).map(i => ({
   src: i.currentSrc, alt: i.getAttribute('alt'), nat: i.naturalWidth, inFigure: !!i.closest('figure'),
-  credit: !!(i.closest('figure') && i.closest('figure').querySelector('.credit a[href*="commons.wikimedia.org"]') && i.closest('figure').querySelector('.credit a[href*="creativecommons.org"]')) }))"""
+  credit: !!(i.closest('figure') && ((i.closest('figure').querySelector('.credit a[href*="commons.wikimedia.org"]') && i.closest('figure').querySelector('.credit a[href*="creativecommons.org"]')) || i.closest('figure').querySelector('.credit')?.textContent.includes('Photo: community archive (source to confirm)'))) }))"""
 FILL_JS = """() => [...document.querySelectorAll('main section[id]')].map(s => [s.id, +(s.getBoundingClientRect().height / innerHeight).toFixed(2)])"""
 
 # Text that sits over a photo, gradient or pattern: found by looking at what is painted below each text element.
@@ -307,7 +308,7 @@ def variant(browser, vid):
         bad_credit = [i["src"][-30:] for i in photos if not i["credit"]]
         foreign = [i["src"] for i in imgs if "/images/" not in i["src"] and "favicon" not in i["src"]]
         gate(f"{L} every image has alt text", not bad_alt, {"images": len(imgs), "bad": bad_alt[:3]})
-        gate(f"{L} only local Commons photos, each with Commons + licence credit", bool(photos) and not bad_credit and not foreign, {"photos": len(photos), "no_credit": bad_credit, "other_images": foreign})
+        gate(f"{L} only local photos, each with a Commons or approved community-archive credit", bool(photos) and not bad_credit and not foreign, {"photos": len(photos), "no_credit": bad_credit, "other_images": foreign})
         gate(f"{L} no broken images", not [i for i in imgs if i["nat"] == 0], "ok")
         text = pg.evaluate("document.body.innerText")
         gate(f"{L} no 'official'/'oficial' claim", not re.search(r"\b(official|oficial)\b", text, re.I), "none")

@@ -123,6 +123,11 @@ h3 { font-family: var(--font-body); font-size: 1.15rem; font-weight: 650; letter
 .ride-ico { width: 2.1rem; height: 2.1rem; color: var(--ember); }
 .ride h3 { margin: 0; font-size: 1.2rem; } .ride .kind { margin: 0; color: var(--muted); font-size: 0.85rem; }
 .ride .meta { margin: 0.35rem 0 0; font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.2rem 1.2rem; }
+.community-transport-photos { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.8fr); align-items: start; gap: 1rem; margin-top: 1.5rem; }
+.community-photo img { display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: cover; }
+.community-photo figcaption { color: var(--muted); font-size: 0.8rem; line-height: 1.45; margin-top: 0.55rem; }
+.community-photo .credit { display: block; }
+@media (max-width: 599px) { .community-transport-photos { grid-template-columns: 1fr; } }
 @media (max-width: 599px) { .ride { grid-template-columns: auto 1fr; } .ride .show-btn { grid-column: 1 / -1; justify-self: start; } }
 .atm { padding: clamp(1.4rem, 3vw, 2.2rem); border: 1px solid var(--ember); box-shadow: 0 0 48px -14px rgb(255 91 31 / 0.5), inset 0 0 40px -24px rgb(255 91 31 / 0.5); background: var(--surface); }
 .atm-ico .ico { width: 2.4rem; height: 2.4rem; color: var(--ember); margin-bottom: 0.8rem; }

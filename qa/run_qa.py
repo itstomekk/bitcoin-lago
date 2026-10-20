@@ -60,7 +60,7 @@ PARITY_JS = """() => ({
 })"""
 IMG_JS = """() => [...document.querySelectorAll('img')].filter(i => !i.closest('.leaflet-container')).map(i => ({
   src: i.currentSrc.split('/').slice(-2).join('/'), alt: i.getAttribute('alt'), nat: i.naturalWidth,
-  inFigure: !!i.closest('figure'), credit: !!(i.closest('figure') && i.closest('figure').querySelector('.credit a[href*="commons.wikimedia.org"]') && i.closest('figure').querySelector('.credit a[href*="creativecommons.org"]'))
+  inFigure: !!i.closest('figure'), credit: !!(i.closest('figure') && ((i.closest('figure').querySelector('.credit a[href*="commons.wikimedia.org"]') && i.closest('figure').querySelector('.credit a[href*="creativecommons.org"]')) || i.closest('figure').querySelector('.credit')?.textContent.includes('Photo: community archive (source to confirm)')))
 }))"""
 TEXT_JS = "() => document.body.innerText"
 
@@ -178,7 +178,7 @@ def main():
             bad_credit = [i for i in imgs if "images/" in i["src"] and "logo" not in i["src"] and not i["credit"]]
             broken = [i for i in imgs if i["nat"] == 0]
             gate(f"[{lang}] every image has alt text", not bad_alt, {"images": len(imgs), "bad": bad_alt})
-            gate(f"[{lang}] every photo has a credit line (Commons page + licence links)", not bad_credit, {"photos": sum(1 for i in imgs if 'images/' in i['src'] and 'logo' not in i['src']), "bad": bad_credit})
+            gate(f"[{lang}] every photo has its Commons or approved community-archive credit", not bad_credit, {"photos": sum(1 for i in imgs if 'images/' in i['src'] and 'logo' not in i['src']), "bad": bad_credit})
             gate(f"[{lang}] no broken images", not broken, broken)
 
             # text rules
