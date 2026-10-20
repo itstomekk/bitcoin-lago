@@ -58,7 +58,7 @@
    "gate": "[a/en] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 52,
+    "checked": 53,
     "bad": []
    }
   },
@@ -73,7 +73,7 @@
   {
    "gate": "[a/en] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "820 KB"
+   "evidence": "835 KB"
   },
   {
    "gate": "[a/en] no horizontal overflow at 1440",
@@ -122,7 +122,7 @@
     ],
     [
      "about",
-     1.85
+     2.54
     ]
    ]
   },
@@ -216,7 +216,7 @@
    "gate": "[a/en] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 11,
+    "images": 12,
     "bad": []
    }
   },
@@ -224,7 +224,7 @@
    "gate": "[a/en] only local photos, each with a Commons or approved community-archive credit",
    "result": "PASS",
    "evidence": {
-    "photos": 9,
+    "photos": 10,
     "no_credit": [],
     "other_images": []
    }
@@ -414,7 +414,7 @@
    "gate": "[a/es] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 54,
+    "checked": 55,
     "bad": []
    }
   },
@@ -429,7 +429,7 @@
   {
    "gate": "[a/es] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "821 KB"
+   "evidence": "837 KB"
   },
   {
    "gate": "[a/es] no horizontal overflow at 1440",
@@ -478,7 +478,7 @@
     ],
     [
      "about",
-     1.85
+     2.54
     ]
    ]
   },
@@ -572,7 +572,7 @@
    "gate": "[a/es] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 11,
+    "images": 12,
     "bad": []
    }
   },
@@ -580,7 +580,7 @@
    "gate": "[a/es] only local photos, each with a Commons or approved community-archive credit",
    "result": "PASS",
    "evidence": {
-    "photos": 9,
+    "photos": 10,
     "no_credit": [],
     "other_images": []
    }
@@ -743,7 +743,7 @@
      "whatsapp-invite-url"
     ],
     "h2": 7,
-    "imgs": 27,
+    "imgs": 28,
     "nav": [
      "#lake",
      "#bitcoin",
@@ -848,7 +848,7 @@
    "gate": "[c/en] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 56,
+    "checked": 57,
     "bad": []
    }
   },
@@ -863,7 +863,7 @@
   {
    "gate": "[c/en] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "1114 KB"
+   "evidence": "1129 KB"
   },
   {
    "gate": "[c/en] no horizontal overflow at 1440",
@@ -912,7 +912,7 @@
     ],
     [
      "about",
-     1.99
+     2.73
     ]
    ]
   },
@@ -1006,7 +1006,7 @@
    "gate": "[c/en] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 12,
+    "images": 13,
     "bad": []
    }
   },
@@ -1014,7 +1014,7 @@
    "gate": "[c/en] only local photos, each with a Commons or approved community-archive credit",
    "result": "PASS",
    "evidence": {
-    "photos": 10,
+    "photos": 11,
     "no_credit": [],
     "other_images": []
    }
@@ -1204,7 +1204,7 @@
    "gate": "[c/es] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 58,
+    "checked": 59,
     "bad": []
    }
   },
@@ -1219,7 +1219,7 @@
   {
    "gate": "[c/es] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "1115 KB"
+   "evidence": "1130 KB"
   },
   {
    "gate": "[c/es] no horizontal overflow at 1440",
@@ -1268,7 +1268,7 @@
     ],
     [
      "about",
-     1.99
+     2.73
     ]
    ]
   },
@@ -1362,7 +1362,7 @@
    "gate": "[c/es] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 12,
+    "images": 13,
     "bad": []
    }
   },
@@ -1370,7 +1370,7 @@
    "gate": "[c/es] only local photos, each with a Commons or approved community-archive credit",
    "result": "PASS",
    "evidence": {
-    "photos": 10,
+    "photos": 11,
     "no_credit": [],
     "other_images": []
    }
@@ -1533,7 +1533,7 @@
      "whatsapp-invite-url"
     ],
     "h2": 7,
-    "imgs": 28,
+    "imgs": 29,
     "nav": [
      "#lake",
      "#bitcoin",
@@ -1638,7 +1638,7 @@
    "gate": "[d/en] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 56,
+    "checked": 57,
     "bad": []
    }
   },
@@ -1653,7 +1653,7 @@
   {
    "gate": "[d/en] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "890 KB"
+   "evidence": "905 KB"
   },
   {
    "gate": "[d/en] no horizontal overflow at 1440",
@@ -1702,7 +1702,7 @@
     ],
     [
      "about",
-     1.99
+     2.72
     ]
    ]
   },
@@ -1796,7 +1796,7 @@
    "gate": "[d/en] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 12,
+    "images": 13,
     "bad": []
    }
   },
@@ -1804,7 +1804,7 @@
    "gate": "[d/en] only local photos, each with a Commons or approved community-archive credit",
    "result": "PASS",
    "evidence": {
-    "photos": 10,
+    "photos": 11,
     "no_credit": [],
     "other_images": []
    }
@@ -1994,7 +1994,7 @@
    "gate": "[d/es] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 58,
+    "checked": 59,
     "bad": []
    }
   },
@@ -2009,7 +2009,7 @@
   {
    "gate": "[d/es] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "891 KB"
+   "evidence": "906 KB"
   },
   {
    "gate": "[d/es] no horizontal overflow at 1440",
@@ -2058,7 +2058,7 @@
     ],
     [
      "about",
-     1.99
+     2.72
     ]
    ]
   },
@@ -2152,7 +2152,7 @@
    "gate": "[d/es] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 12,
+    "images": 13,
     "bad": []
    }
   },
@@ -2160,7 +2160,7 @@
    "gate": "[d/es] only local photos, each with a Commons or approved community-archive credit",
    "result": "PASS",
    "evidence": {
-    "photos": 10,
+    "photos": 11,
     "no_credit": [],
     "other_images": []
    }
@@ -2323,7 +2323,7 @@
      "whatsapp-invite-url"
     ],
     "h2": 7,
-    "imgs": 28,
+    "imgs": 29,
     "nav": [
      "#lake",
      "#bitcoin",

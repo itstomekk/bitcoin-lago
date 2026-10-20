@@ -104,6 +104,28 @@ def community_transport_photos(T):
     )
 
 
+def ab23_video(T):
+    """Privacy-first, click-to-play facade for the AB23 community-history talk."""
+    video_id = "79cIKf_T3N0"
+    title = escape(T["video_title"], quote=True)
+    button_label = escape(T["video_play_label"], quote=True)
+    thumbnail_alt = escape(T["video_thumbnail_alt"], quote=True)
+    return (
+        f'<article class="history-video" aria-labelledby="ab23-title">'
+        f'<div class="video-details"><h3 id="ab23-title" lang="en">{title}</h3>'
+        f'<p>{escape(T["video_summary"])}</p>'
+        f'<p class="video-channel"><span>{escape(T["video_channel_label"])}:</span> <strong>Adopting Bitcoin</strong></p>'
+        f'<p class="video-privacy">{escape(T["video_privacy"])}</p>'
+        f'<p><a class="video-watch" href="https://www.youtube.com/watch?v={video_id}" rel="noopener">{escape(T["video_watch"])}</a></p>'
+        f'<noscript><p><a href="https://www.youtube.com/watch?v={video_id}" rel="noopener">{escape(T["video_watch"])}</a></p></noscript>'
+        f'</div><figure class="video-poster"><div class="video-facade" data-youtube-facade="{video_id}">'
+        f'<button class="video-play" type="button" data-youtube-play="{video_id}" data-youtube-title="{title}" aria-label="{button_label}">'
+        f'<img src="{{{{p}}}}images/ab23-talk-poster.webp" alt="{thumbnail_alt}" width="480" height="360" loading="lazy" decoding="async">'
+        f'<span class="video-play-mark" aria-hidden="true">▶</span></button></div>'
+        f'<figcaption><a href="https://www.youtube.com/watch?v={video_id}" rel="noopener">{escape(T["video_channel_label"])}: Adopting Bitcoin</a></figcaption></figure></article>'
+    )
+
+
 def towns_html():
     counts = Counter(p["town"] for p in PLACES).most_common()
     return "".join(f'<li><span>{escape(t)}</span><b>{n}</b></li>' for t, n in counts)
@@ -188,6 +210,7 @@ def render(lang):
         "towns": towns_html(),
         "rides": ride_html(T),
         "community_transport_photos": community_transport_photos(T),
+        "ab23_video": ab23_video(T),
         "press": press_html(T),
         "i18n_json": json.dumps(
             {**{k: T[k] for k in C.I18N_KEYS}, "categories": C.CATEGORIES[lang]}, ensure_ascii=False

@@ -22,6 +22,21 @@
   var GROUPS = ['eat', 'stay', 'tours', 'shops', 'services', 'other'];
   var BBOX = [[14.598, -91.326], [14.762, -91.097]]; // Lago Bitcoin community area on BTC Map
 
+  /* Load the privacy-enhanced YouTube player only after an explicit, keyboard-accessible click. */
+  doc.addEventListener('click', function (event) {
+    var button = event.target.closest && event.target.closest('[data-youtube-play]');
+    if (!button) return;
+    var id = button.getAttribute('data-youtube-play');
+    var title = button.getAttribute('data-youtube-title') || '';
+    var frame = doc.createElement('iframe');
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1';
+    frame.title = title;
+    frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    frame.allowFullscreen = true;
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';
+    button.parentNode.replaceChild(frame, button);
+  });
+
   /* ---------- helpers ---------- */
   function $(sel, root) { return (root || doc).querySelector(sel); }
   function $all(sel, root) { return Array.prototype.slice.call((root || doc).querySelectorAll(sel)); }

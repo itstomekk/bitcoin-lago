@@ -148,7 +148,7 @@
   {
    "gate": "[en] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "784 KB (tiles excluded: 258 KB)"
+   "evidence": "800 KB (tiles excluded: 258 KB)"
   },
   {
    "gate": "[en] no horizontal overflow at 1440",
@@ -238,7 +238,7 @@
    "gate": "[en] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 10,
+    "images": 11,
     "bad": []
    }
   },
@@ -246,7 +246,7 @@
    "gate": "[en] every photo has its Commons or approved community-archive credit",
    "result": "PASS",
    "evidence": {
-    "photos": 9,
+    "photos": 10,
     "bad": []
    }
   },
@@ -314,7 +314,7 @@
   {
    "gate": "[es] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "786 KB (tiles excluded: 258 KB)"
+   "evidence": "801 KB (tiles excluded: 258 KB)"
   },
   {
    "gate": "[es] no horizontal overflow at 1440",
@@ -404,7 +404,7 @@
    "gate": "[es] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 10,
+    "images": 11,
     "bad": []
    }
   },
@@ -412,7 +412,7 @@
    "gate": "[es] every photo has its Commons or approved community-archive credit",
    "result": "PASS",
    "evidence": {
-    "photos": 9,
+    "photos": 10,
     "bad": []
    }
   },
@@ -501,7 +501,7 @@
      "whatsapp-invite-url"
     ],
     "h2": 7,
-    "imgs": 26
+    "imgs": 27
    }
   },
   {
