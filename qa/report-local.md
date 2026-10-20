@@ -1,7 +1,7 @@
 # QA report (local)
 
 Base URL: http://127.0.0.1:18432/
-PASS 76 / FAIL 2
+PASS 78 / FAIL 0
 
 | Result | Gate | Evidence |
 |---|---|---|
@@ -37,7 +37,7 @@ PASS 76 / FAIL 2
 | PASS | [en] empty state | {"c": 0, "m": 0, "empty": true} |
 | PASS | [en] reset restores 117 | {"c": 117, "m": 117} |
 | PASS | [en] ride 'Show on map' opens a popup | true |
-| FAIL | [en] every image has alt text | {"images": 8, "bad": [{"src": "logo/lago-bitcoin-logo.png", "alt": "", "nat": 540, "inFigure": false, "credit": false}]} |
+| PASS | [en] every image has alt text | {"images": 8, "bad": []} |
 | PASS | [en] every photo has a credit line (Commons page + licence links) | {"photos": 7, "bad": []} |
 | PASS | [en] no broken images | [] |
 | PASS | [en] no 'official'/'oficial' claim | [] |
@@ -61,7 +61,7 @@ PASS 76 / FAIL 2
 | PASS | [es] empty state | {"c": 0, "m": 0, "empty": true} |
 | PASS | [es] reset restores 117 | {"c": 117, "m": 117} |
 | PASS | [es] ride 'Show on map' opens a popup | true |
-| FAIL | [es] every image has alt text | {"images": 8, "bad": [{"src": "logo/lago-bitcoin-logo.png", "alt": "", "nat": 540, "inFigure": false, "credit": false}]} |
+| PASS | [es] every image has alt text | {"images": 8, "bad": []} |
 | PASS | [es] every photo has a credit line (Commons page + licence links) | {"photos": 7, "bad": []} |
 | PASS | [es] no broken images | [] |
 | PASS | [es] no 'official'/'oficial' claim | [] |

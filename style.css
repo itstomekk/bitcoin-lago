@@ -124,7 +124,7 @@ a:hover { color: var(--ink); }
 }
 .bar { height: 100%; display: flex; align-items: center; gap: 1rem; }
 .brand { display: inline-flex; align-items: center; gap: 0.65rem; text-decoration: none; color: var(--ink); font-weight: 750; letter-spacing: -0.02em; margin-right: auto; white-space: nowrap; }
-.brand img { border-radius: 9px; }
+.brand img { width: auto; height: 32px; border-radius: 0; object-fit: contain; }
 .nav { display: flex; align-items: center; gap: clamp(0.6rem, 1.4vw, 1.4rem); }
 .nav a { color: var(--ink); text-decoration: none; font-weight: 550; font-size: 0.95rem; padding: 0.4rem 0.1rem; white-space: nowrap; border-bottom: 2px solid transparent; }
 .nav a:hover, .nav a.active { border-bottom-color: var(--accent); }
@@ -146,7 +146,7 @@ a:hover { color: var(--ink); }
   .nav.open { display: flex; }
   .nav a { padding: 0.9rem 0.2rem; font-size: 1.05rem; border-bottom: 1px solid var(--line); }
 }
-@media (max-width: 420px) { .brand span { font-size: 0.88rem; } .brand img { width: 30px; height: 30px; } .bar { gap: 0.5rem; } }
+@media (max-width: 420px) { .brand span { font-size: 0.88rem; } .brand img { width: auto; height: 24px; } .bar { gap: 0.5rem; } }
 
 /* TOP BAR: fixed variant switcher + EN/ES toggle above the header (shared by all pages) */
 /* Navy bar (#002040 from logo), coloured chip per design, active chip filled + underline, hover glow, EN/ES in logo red/green */
@@ -176,28 +176,28 @@ a:hover { color: var(--ink); }
 .topbar-chip:hover {
   background: rgba(255,255,255,0.12); box-shadow: 0 0 12px -2px currentColor;
 }
-.topbar-chip.topbar-current {
-  background: currentColor; color: #002040;
-  border-color: currentColor;
+.topbar-chip.topbar-current[data-design] {
+  background: var(--chip-color); color: #002040;
+  border-color: var(--chip-color);
 }
-.topbar-chip.topbar-current::after { width: 80%; }
+.topbar-chip.topbar-current::after { width: 80%; background: #fff; }
 
 /* Per-design accent colours on navy bar */
-.topbar-chip[data-design="baseline"] { color: #f7931a; }      /* bitcoin orange */
-.topbar-chip[data-design="a"]      { color: #20a060; }      /* logo green / jade */
-.topbar-chip[data-design="c"]      { color: #ff5b1f; }      /* ember / cinnabar */
-.topbar-chip[data-design="d"]      { color: #f2b632; }      /* marigold */
-.topbar-chip[data-design="ac"]     { color: #60c0a0; }
-.topbar-chip[data-design="ad"]     { color: #80c060; }
-.topbar-chip[data-design="cd"]     { color: #ff8040; }
-.topbar-chip[data-design="f"]      { color: #006b6b; }
-.topbar-chip[data-design="g"]      { color: #8b5e00; }
-.topbar-chip[data-design="h"]      { color: #1d5cff; }
+.topbar-chip[data-design="baseline"] { --chip-color: #f7931a; color: #ffb44d; } /* bitcoin orange */
+.topbar-chip[data-design="a"]      { --chip-color: #20a060; color: #65d99a; } /* logo green / jade */
+.topbar-chip[data-design="c"]      { --chip-color: #ff5b1f; color: #ff9a70; } /* ember / cinnabar */
+.topbar-chip[data-design="d"]      { --chip-color: #f2b632; color: #ffd875; } /* marigold */
+.topbar-chip[data-design="ac"]     { --chip-color: #60c0a0; color: #85e0c0; }
+.topbar-chip[data-design="ad"]     { --chip-color: #80c060; color: #a8df88; }
+.topbar-chip[data-design="cd"]     { --chip-color: #ff8040; color: #ffad80; }
+.topbar-chip[data-design="f"]      { --chip-color: #006b6b; color: #6bd0d0; }
+.topbar-chip[data-design="g"]      { --chip-color: #8b5e00; color: #ffce58; }
+.topbar-chip[data-design="h"]      { --chip-color: #1d5cff; color: #8daeff; }
 
 .topbar-lang { display: inline-flex; border: 1.5px solid #003060; border-radius: 999px; padding: 2px; background: #001838; }
 .topbar-lang a { text-decoration: none; font-weight: 700; font-size: 0.65rem; padding: 0.18rem 0.5rem; border-radius: 999px; min-width: 34px; text-align: center; transition: background-color 0.15s, color 0.15s; }
-.topbar-lang a[data-lang="en"] { color: #d03040; }
-.topbar-lang a[data-lang="es"] { color: #20a060; }
+.topbar-lang a[data-lang="en"] { color: #ff8088; }
+.topbar-lang a[data-lang="es"] { color: #65d99a; }
 .topbar-lang a[aria-current] { background: #fff; color: #002040; }
 .topbar-lang a:not([aria-current]):hover { background: rgba(255,255,255,0.12); color: #fff; }
 

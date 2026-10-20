@@ -60,7 +60,7 @@ h3 { font-family: var(--bric); font-size: 1.2rem; font-weight: 700; letter-spaci
 }
 html { scroll-padding-top: 84px; }
 .brand { min-width: 0; } .brand span { overflow: hidden; text-overflow: ellipsis; }
-@media (max-width: 520px) { .bar-in { gap: 0.5rem; } .brand { gap: 0.5rem; font-size: 0.9rem; } .brand img { width: 32px; height: 32px; } .lang a { padding: 0.3rem 0.5rem; min-width: 34px; } }
+@media (max-width: 520px) { .bar-in { gap: 0.5rem; } .brand { gap: 0.5rem; font-size: 0.9rem; } .brand img { width: auto; height: 20px; } .lang a { padding: 0.3rem 0.5rem; min-width: 34px; } }
 
 /* PANELS */
 .scr { position: relative; min-height: 100svh; padding: clamp(3rem, 6vw, 5.5rem) var(--pad); display: grid; align-content: center; gap: clamp(1.8rem, 3vw, 2.6rem); }

@@ -1,7 +1,7 @@
 {
  "base": "http://127.0.0.1:18432/",
- "pass": 76,
- "fail": 2,
+ "pass": 78,
+ "fail": 0,
  "gates": [
   {
    "gate": "HTTP 200 http://127.0.0.1:18432/",
@@ -236,18 +236,10 @@
   },
   {
    "gate": "[en] every image has alt text",
-   "result": "FAIL",
+   "result": "PASS",
    "evidence": {
     "images": 8,
-    "bad": [
-     {
-      "src": "logo/lago-bitcoin-logo.png",
-      "alt": "",
-      "nat": 540,
-      "inFigure": false,
-      "credit": false
-     }
-    ]
+    "bad": []
    }
   },
   {
@@ -410,18 +402,10 @@
   },
   {
    "gate": "[es] every image has alt text",
-   "result": "FAIL",
+   "result": "PASS",
    "evidence": {
     "images": 8,
-    "bad": [
-     {
-      "src": "logo/lago-bitcoin-logo.png",
-      "alt": "",
-      "nat": 540,
-      "inFigure": false,
-      "credit": false
-     }
-    ]
+    "bad": []
    }
   },
   {

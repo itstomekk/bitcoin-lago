@@ -177,28 +177,28 @@ input::placeholder { color: var(--muted); opacity: 1; }
   background: rgba(255,255,255,0.12);
   box-shadow: 0 0 12px -2px currentColor;
 }
-.topbar-chip.topbar-current {
-  background: currentColor; color: #002040;
-  border-color: currentColor;
+.topbar-chip.topbar-current[data-design] {
+  background: var(--chip-color); color: #002040;
+  border-color: var(--chip-color);
 }
-.topbar-chip.topbar-current::after { width: 80%; }
+.topbar-chip.topbar-current::after { width: 80%; background: #fff; }
 
 /* Per-design accent colours (logo navy #002040, green #20a060, red #d03040, plus design accents) */
-.topbar-chip[data-design="baseline"] { color: #f7931a; }      /* bitcoin orange */
-.topbar-chip[data-design="a"]      { color: #20a060; }      /* logo green / jade */
-.topbar-chip[data-design="c"]      { color: #ff5b1f; }      /* ember / cinnabar */
-.topbar-chip[data-design="d"]      { color: #f2b632; }      /* marigold */
-.topbar-chip[data-design="ac"]     { color: #60c0a0; }      /* jade + indigo blend */
-.topbar-chip[data-design="ad"]     { color: #80c060; }      /* jade + marigold blend */
-.topbar-chip[data-design="cd"]     { color: #ff8040; }      /* ember + marigold blend */
-.topbar-chip[data-design="f"]      { color: #006b6b; }      /* teal / coral theme */
-.topbar-chip[data-design="g"]      { color: #8b5e00; }      /* gold / specimen theme */
-.topbar-chip[data-design="h"]      { color: #1d5cff; }      /* azure / fintech theme */
+.topbar-chip[data-design="baseline"] { --chip-color: #f7931a; color: #ffb44d; } /* bitcoin orange */
+.topbar-chip[data-design="a"]      { --chip-color: #20a060; color: #65d99a; } /* logo green / jade */
+.topbar-chip[data-design="c"]      { --chip-color: #ff5b1f; color: #ff9a70; } /* ember / cinnabar */
+.topbar-chip[data-design="d"]      { --chip-color: #f2b632; color: #ffd875; } /* marigold */
+.topbar-chip[data-design="ac"]     { --chip-color: #60c0a0; color: #85e0c0; }
+.topbar-chip[data-design="ad"]     { --chip-color: #80c060; color: #a8df88; }
+.topbar-chip[data-design="cd"]     { --chip-color: #ff8040; color: #ffad80; }
+.topbar-chip[data-design="f"]      { --chip-color: #006b6b; color: #6bd0d0; }
+.topbar-chip[data-design="g"]      { --chip-color: #8b5e00; color: #ffce58; }
+.topbar-chip[data-design="h"]      { --chip-color: #1d5cff; color: #8daeff; }
 
 .topbar-lang { display: inline-flex; border: 1.5px solid #003060; border-radius: 999px; padding: 2px; background: #001838; }
 .topbar-lang a { text-decoration: none; font-weight: 700; font-size: 0.65rem; padding: 0.18rem 0.5rem; border-radius: 999px; min-width: 34px; text-align: center; transition: background-color 0.15s, color 0.15s; }
-.topbar-lang a[data-lang="en"] { color: #d03040; }   /* logo red */
-.topbar-lang a[data-lang="es"] { color: #20a060; }   /* logo green */
+.topbar-lang a[data-lang="en"] { color: #ff8088; }   /* logo red */
+.topbar-lang a[data-lang="es"] { color: #65d99a; }   /* logo green */
 .topbar-lang a[aria-current] { background: #fff; color: #002040; }
 .topbar-lang a:not([aria-current]):hover { background: rgba(255,255,255,0.12); color: #fff; }
 
