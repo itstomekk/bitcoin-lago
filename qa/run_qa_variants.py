@@ -428,7 +428,7 @@ def variant(browser, vid):
     pg = ctx.new_page()
     pg.goto(f"{BASE}v/{vid}/es/", wait_until="networkidle")
     gate(f"[{vid}] browser language en: opening /es/ redirects to EN", not pg.url.rstrip("/").endswith("/es"), pg.url)
-    pg.click("#hero .btn-primary")
+    pg.click('#hero [data-config-link="whatsapp"]')
     pg.wait_for_timeout(300)
     gate(f"[{vid}] placeholder button shows 'coming soon' toast", pg.evaluate("document.getElementById('toast').classList.contains('show')"), "toast")
     badge = pg.evaluate("getComputedStyle(document.querySelector('[data-placeholder]'), '::after').content")

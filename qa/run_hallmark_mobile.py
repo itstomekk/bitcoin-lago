@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import functools
 import http.server
+import sys
 import threading
 from pathlib import Path
 
@@ -12,8 +13,8 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parent.parent
 WIDTHS = (320, 375, 414, 768)
 LANGS = (("en", ""), ("es", "es/"))
-VARIANTS = ("f",)
-SHOT_DIR = ROOT / "qa" / "screenshots" / "f-split-studio"
+VARIANTS = tuple(sys.argv[1].split(",")) if len(sys.argv) > 1 else ("f",)
+SHOT_DIR = ROOT / "qa" / "screenshots"
 
 
 class QuietHandler(http.server.SimpleHTTPRequestHandler):
@@ -128,7 +129,7 @@ def main() -> int:
                             failures.append(f"{variant}-{lang}-{width}: clickable text wrapped: {result['wrapped']}")
                         if result["overflow"]:
                             failures.append(f"{variant}-{lang}-{width}: off-screen visible elements: {result['overflow']}")
-                        if not result["heroProof"] or not result["heroPhoto"] or not result["heroLoading"]:
+                        if variant == "f" and (not result["heroProof"] or not result["heroPhoto"] or not result["heroLoading"]):
                             failures.append(f"{variant}-{lang}-{width}: Split Studio hero needs the eager, accessible, credited tuk-tuk photo and supporting figures")
                         if result["heroTrackCount"] != 1:
                             failures.append(f"{variant}-{lang}-{width}: mobile hero should use one track, got {result['heroTrackCount']}")
@@ -140,7 +141,7 @@ def main() -> int:
                         passed += not any(f"{variant}-{lang}-{width}:" in failure for failure in failures)
                         print(f"{'FAIL' if any(f'{variant}-{lang}-{width}:' in x for x in failures) else 'PASS'} {variant} {lang.upper()} {width}px :: cards={result['cards']} root={result['rootWidth']} document={result['documentWidth']} clickable_wraps={len(result['wrapped'])} offscreen={len(result['overflow'])} page_errors={len(errors)} screenshot={shot.relative_to(ROOT)}", flush=True)
                         page.close()
-            for lang, route in LANGS:
+            for lang, route in (LANGS if "f" in VARIANTS else ()):
                 page = browser.new_page(viewport={"width": 1280, "height": 800}, device_scale_factor=1)
                 page.add_init_script(f"localStorage.setItem('lbc-lang', '{lang}')")
                 page.goto(f"{base}v/f/{route}", wait_until="domcontentloaded", timeout=60000)

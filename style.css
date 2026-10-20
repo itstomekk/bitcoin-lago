@@ -191,7 +191,7 @@ a:hover { color: var(--ink); }
 .topbar-chip[data-design="ad"]     { --chip-color: #80c060; color: #a8df88; }
 .topbar-chip[data-design="cd"]     { --chip-color: #ff8040; color: #ffad80; }
 .topbar-chip[data-design="f"]      { --chip-color: #006b6b; color: #6bd0d0; }
-.topbar-chip[data-design="g"]      { --chip-color: #8b5e00; color: #ffce58; }
+.topbar-chip[data-design="g"]      { --chip-color: oklch(40% 0.12 145); color: oklch(82% 0.08 145); }
 .topbar-chip[data-design="h"]      { --chip-color: #1d5cff; color: #8daeff; }
 
 .topbar-lang { display: inline-flex; border: 1.5px solid #003060; border-radius: 999px; padding: 2px; background: #001838; }

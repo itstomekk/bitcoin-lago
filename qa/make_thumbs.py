@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Makes the thumbnails for the /variants/ index: a screenshot of the first screen of each design and of the root page.
+"""Makes thumbnails for finished designs in the /variants/ index.
 
 USAGE  python qa/make_thumbs.py http://127.0.0.1:18431/
-WRITES variants/thumbs/{a,c,d,ac,ad,cd,f,root}.webp  (640x400)
+       python qa/make_thumbs.py http://127.0.0.1:18431/ g
+WRITES variants/thumbs/{a,c,d,ac,ad,cd,f,g,h,root}.webp  (640x400)
 """
 import io
 import sys
@@ -15,8 +16,13 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = sys.argv[1].rstrip("/") + "/"
 OUT = ROOT / "variants" / "thumbs"
 OUT.mkdir(parents=True, exist_ok=True)
-targets = {x: f"{BASE}v/{x}/" for x in ("a", "c", "d", "ac", "ad", "cd", "f")}
-targets["root"] = BASE
+variants = ("a", "c", "d", "ac", "ad", "cd", "f", "g", "h")
+fallbacks = {"ac", "ad", "cd"}
+finished = [x for x in variants if (ROOT / "tools" / "variants" / f"{x}.html").is_file() or x in fallbacks]
+selected = [x for x in sys.argv[2:] if x in finished] or finished
+targets = {x: f"{BASE}v/{x}/" for x in selected}
+if not sys.argv[2:] or "root" in sys.argv[2:]:
+    targets["root"] = BASE
 with sync_playwright() as p:
     b = p.chromium.launch()
     for name, url in targets.items():

@@ -1,9 +1,16 @@
 {
- "base": "http://127.0.0.1:18432/",
+ "base": "http://127.0.0.1:18435/",
  "variants": [
-  "a"
+  "a",
+  "c",
+  "d",
+  "ac",
+  "ad",
+  "cd",
+  "f",
+  "g"
  ],
- "pass": 19,
+ "pass": 33,
  "fail": 0,
  "gates": [
   {
@@ -12,7 +19,7 @@
    "evidence": 200
   },
   {
-   "gate": "[index/en] HTTP 200 http://127.0.0.1:18432/variants/",
+   "gate": "[index/en] HTTP 200 http://127.0.0.1:18435/variants/",
    "result": "PASS",
    "evidence": 200
   },
@@ -25,17 +32,17 @@
    "gate": "[index/en] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 25,
+    "checked": 31,
     "bad": []
    }
   },
   {
-   "gate": "[index/en] 1440: 7 cards and loaded thumbnails, no console errors or overflow",
+   "gate": "[index/en] 1440: 9 cards and loaded thumbnails, no console errors or overflow",
    "result": "PASS",
    "evidence": {
     "info": {
-     "cards": 7,
-     "thumbs": 7
+     "cards": 9,
+     "thumbs": 9
     },
     "errs": [],
     "ov": {
@@ -50,12 +57,12 @@
    "evidence": []
   },
   {
-   "gate": "[index/en] 390: 7 cards and loaded thumbnails, no console errors or overflow",
+   "gate": "[index/en] 390: 9 cards and loaded thumbnails, no console errors or overflow",
    "result": "PASS",
    "evidence": {
     "info": {
-     "cards": 7,
-     "thumbs": 7
+     "cards": 9,
+     "thumbs": 9
     },
     "errs": [],
     "ov": {
@@ -72,10 +79,45 @@
   {
    "gate": "[index/en] card A opens /v/a/ in en",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/a/"
+   "evidence": "http://127.0.0.1:18435/v/a/"
   },
   {
-   "gate": "[index/es] HTTP 200 http://127.0.0.1:18432/variants/es/",
+   "gate": "[index/en] card C opens /v/c/ in en",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/c/"
+  },
+  {
+   "gate": "[index/en] card D opens /v/d/ in en",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/d/"
+  },
+  {
+   "gate": "[index/en] card AC opens /v/ac/ in en",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/ac/"
+  },
+  {
+   "gate": "[index/en] card AD opens /v/ad/ in en",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/ad/"
+  },
+  {
+   "gate": "[index/en] card CD opens /v/cd/ in en",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/cd/"
+  },
+  {
+   "gate": "[index/en] card F opens /v/f/ in en",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/f/"
+  },
+  {
+   "gate": "[index/en] card G opens /v/g/ in en",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/g/"
+  },
+  {
+   "gate": "[index/es] HTTP 200 http://127.0.0.1:18435/variants/es/",
    "result": "PASS",
    "evidence": 200
   },
@@ -88,17 +130,17 @@
    "gate": "[index/es] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 26,
+    "checked": 32,
     "bad": []
    }
   },
   {
-   "gate": "[index/es] 1440: 7 cards and loaded thumbnails, no console errors or overflow",
+   "gate": "[index/es] 1440: 9 cards and loaded thumbnails, no console errors or overflow",
    "result": "PASS",
    "evidence": {
     "info": {
-     "cards": 7,
-     "thumbs": 7
+     "cards": 9,
+     "thumbs": 9
     },
     "errs": [],
     "ov": {
@@ -113,12 +155,12 @@
    "evidence": []
   },
   {
-   "gate": "[index/es] 390: 7 cards and loaded thumbnails, no console errors or overflow",
+   "gate": "[index/es] 390: 9 cards and loaded thumbnails, no console errors or overflow",
    "result": "PASS",
    "evidence": {
     "info": {
-     "cards": 7,
-     "thumbs": 7
+     "cards": 9,
+     "thumbs": 9
     },
     "errs": [],
     "ov": {
@@ -135,10 +177,45 @@
   {
    "gate": "[index/es] card A opens /v/a/ in es",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/a/es/"
+   "evidence": "http://127.0.0.1:18435/v/a/es/"
   },
   {
-   "gate": "HTTP 200 http://127.0.0.1:18432/v/",
+   "gate": "[index/es] card C opens /v/c/ in es",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/c/es/"
+  },
+  {
+   "gate": "[index/es] card D opens /v/d/ in es",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/d/es/"
+  },
+  {
+   "gate": "[index/es] card AC opens /v/ac/ in es",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/ac/es/"
+  },
+  {
+   "gate": "[index/es] card AD opens /v/ad/ in es",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/ad/es/"
+  },
+  {
+   "gate": "[index/es] card CD opens /v/cd/ in es",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/cd/es/"
+  },
+  {
+   "gate": "[index/es] card F opens /v/f/ in es",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/f/es/"
+  },
+  {
+   "gate": "[index/es] card G opens /v/g/ in es",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18435/v/g/es/"
+  },
+  {
+   "gate": "HTTP 200 http://127.0.0.1:18435/v/",
    "result": "PASS",
    "evidence": 200
   },

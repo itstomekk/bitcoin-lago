@@ -1,0 +1,76 @@
+<header class="masthead" id="top">
+  <p class="mast-line">{{g_mastline}}</p>
+  <a class="brand mast-brand" href="#hero" aria-label="{{brand}}"><img src="{{p}}images/logo/lago-bitcoin-logo.png" alt="Lago Bitcoin" width="540" height="370"></a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-open="{{menu_open}}" data-close="{{menu_close}}"><span class="sr-only">{{menu_open}}</span>{{icon:list}}</button>
+  <nav class="nav mast-nav" id="nav" aria-label="{{nav_label}}">
+    <a href="#lake">{{nav_lake}}</a><a href="#bitcoin">{{nav_bitcoin}}</a><a href="#transport">{{nav_transport}}</a><a href="#community">{{nav_community}}</a><a href="#tours">{{nav_tours}}</a><a href="#expats">{{nav_expats}}</a><a href="#about">{{nav_about}}</a>
+  </nav>
+  <div class="mast-rule" aria-hidden="true"></div>
+</header>
+
+<main id="main" class="longread">
+  <section class="scr hero" id="hero" aria-labelledby="hero-h1">
+    <div class="reading-column hero-copy">
+      <h1 id="hero-h1">{{hero_h1}}</h1>
+      <p class="lede">{{hero_sub}}</p>
+      <p class="hero-actions"><a class="text-cta" href="#community" data-config-link="whatsapp" data-placeholder="whatsapp-invite-url">{{cta_whatsapp}}</a> <span aria-hidden="true">·</span> <a class="text-cta" href="#bitcoin">{{cta_merchants}}</a></p>
+      <div class="hero-image">{{@community_tuktuk_hero}}</div>
+      <p class="note">{{btc_listed}}</p>
+    </div>
+  </section>
+
+  <section class="scr lake" id="lake" aria-labelledby="lake-h2">
+    <article class="reading-column">
+      <h2 id="lake-h2">{{lake_h2}}</h2>
+      <p class="lead">{{lake_p1}}</p><p>{{lake_p2}}</p><p>{{lake_p3}}</p>
+      <div class="inline-photos">{{fig:lake-view|(min-width: 1000px) 48vw, 94vw|p1}}{{fig:sunrise|(min-width: 1000px) 24vw, 46vw|p2}}{{fig:street|(min-width: 1000px) 24vw, 46vw|p3}}</div>
+      <h3 class="towns-h">{{lake_towns_h}}</h3><ul class="towns">{{@towns_bars}}</ul><p class="note">{{lake_towns_note}}</p>
+      <div class="historic-photo">{{fig:history-1975|100vw|p4}}</div>
+    </article>
+  </section>
+
+  <section class="scr bitcoin" id="bitcoin" aria-labelledby="btc-h2">
+    <article class="reading-column btc-head"><h2 id="btc-h2">{{btc_h2}}</h2><p class="lead">{{btc_lead}}</p><p class="datanote"><strong>{{btc_listed}}</strong></p></article>
+    <div class="finder-wrap">{{@finder}}</div>
+  </section>
+
+  <section class="scr transport" id="transport" aria-labelledby="transport-h2">
+    <article class="reading-column">
+      <h2 id="transport-h2">{{transport_h2}}</h2><p class="lead">{{transport_p}}</p>
+      <ul class="rides">{{@rides}}</ul>{{@community_transport_photos}}{{@atm}}
+    </article>
+  </section>
+
+  <section class="scr community" id="community" aria-labelledby="community-h2">
+    <article class="reading-column">
+      <h2 id="community-h2">{{community_h2}}</h2>
+      <div class="community-list">{{@community}}</div>
+      {{@press_highlights}}
+    </article>
+  </section>
+
+  <section class="scr tours" id="tours" aria-labelledby="tours-h2">
+    <article class="reading-column"><div class="inline-photo">{{fig:tours|100vw|plate}}</div>
+      <h2 id="tours-h2">{{tours_h2}}</h2><p class="lead">{{tours_p}}</p><ol class="points">{{@tour_points}}</ol>
+      <p><a class="text-cta" href="#tours" data-config-link="tourBooking" data-placeholder="tour-booking">{{tours_cta}}</a></p>
+      <p class="muted" data-placeholder="tour-booking-details" data-hide-if="tourBooking">{{tours_note}}</p>
+    </article>
+  </section>
+
+  <section class="scr expats" id="expats" aria-labelledby="expats-h2">
+    <article class="reading-column"><h2 id="expats-h2">{{expats_h2}}</h2><p class="lead">{{expats_p}}</p>
+      <p><a class="text-cta" href="#expats" data-config-link="expatContact" data-placeholder="expat-contact">{{expats_cta}}</a></p>
+      <div class="inline-photo">{{fig:lake-12|100vw|bleed}}</div>
+    </article>
+  </section>
+
+  <section class="scr about" id="about" aria-labelledby="about-h2">
+    <article class="reading-column"><h2 id="about-h2">{{about_h2}}</h2><p class="lead">{{about_p_html}}</p>
+      <p><a class="link-arrow" href="{{x_lakebitcoin}}" rel="noopener">{{about_x}}{{icon:arrow-up-right}}</a></p>
+      <div class="press"><h3>{{press_h}}</h3><ol>{{@press}}</ol></div>
+      {{@ab23_video}}
+    </article>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="foot-dense"><a class="foot-brand" href="#top"><img src="{{p}}images/logo/lago-bitcoin-logo.png" alt="Lago Bitcoin" width="540" height="370"></a>{{@footer_text}}</div></footer>

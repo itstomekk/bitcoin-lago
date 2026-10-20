@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-10-20",
+    "macrostructure": "Long Document",
+    "theme": "Garden",
+    "theme_axes": "light paper / roman-serif / chromatic-green accent",
+    "enrichment": "none",
+    "nav": "N6 newspaper masthead",
+    "footer": "Ft4 dense typographic",
+    "variation_knobs": "S4 inline section heads; one 68ch reading column; short, credited photo plates; prose and lists instead of cards",
+    "brief": "G: editorial long-form route into Lake Atitlán places and community data."
+  },
+  {
+    "date": "2026-10-20",
     "macrostructure": "Split Studio",
     "theme": "Coral",
     "theme_axes": "light paper / grotesque sans / warm-red accent",
