@@ -34,10 +34,10 @@ if ret.stdout: print(ret.stdout[-500:], flush=True)
 if ret.stderr: print("STDERR:", ret.stderr[-300:], flush=True)
 
 # 2) Run variant QA for all finished designs
-print("=== Running variant QA (a,c,d,ac,ad,cd) ===", flush=True)
+print("=== Running variant QA (a,c,d,ac,ad,cd,f) ===", flush=True)
 ret = subprocess.run(
-    [sys.executable, "qa/run_qa_variants.py", f"http://127.0.0.1:{PORT}/", "qa/.cache/shots-local", "a,c,d,ac,ad,cd"],
-    cwd=ROOT, capture_output=True, text=True, timeout=300
+    [sys.executable, "qa/run_qa_variants.py", f"http://127.0.0.1:{PORT}/", "qa/.cache/shots-local", "a,c,d,ac,ad,cd,f"],
+    cwd=ROOT, capture_output=True, text=True, timeout=900
 )
 print(f"run_qa_variants exit: {ret.returncode}", flush=True)
 if ret.stdout: print(ret.stdout[-2000:], flush=True)
@@ -47,7 +47,7 @@ if ret.stderr: print("STDERR:", ret.stderr[-500:], flush=True)
 print("=== Running baseline QA ===", flush=True)
 ret = subprocess.run(
     [sys.executable, "qa/run_qa.py", f"http://127.0.0.1:{PORT}/", "qa/.cache/shots-qa"],
-    cwd=ROOT, capture_output=True, text=True, timeout=300
+    cwd=ROOT, capture_output=True, text=True, timeout=900
 )
 print(f"run_qa exit: {ret.returncode}", flush=True)
 if ret.stdout: print(ret.stdout[-2000:], flush=True)

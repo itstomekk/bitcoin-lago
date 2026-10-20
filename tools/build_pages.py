@@ -28,6 +28,7 @@ TEMPLATE = (ROOT / "tools" / "page.template.html").read_text(encoding="utf-8")
 DATA = json.loads((ROOT / "data" / "merchants.json").read_text(encoding="utf-8"))
 PLACES = DATA["places"]
 PHOTOS = json.loads((ROOT / "data" / "photos.json").read_text(encoding="utf-8"))
+PRESS_PHOTOS = json.loads((ROOT / "data" / "press-photos.json").read_text(encoding="utf-8"))
 
 # The five Bitcoin boat / tuk tuk listings the brief asks for (names as cleaned in data/merchants.json).
 RIDES = [
@@ -78,7 +79,7 @@ COMMUNITY_PHOTO_WIDTHS = {"community-tuktuk": (800, 940), "community-boat": (800
 COMMUNITY_PHOTO_DIMENSIONS = {"community-tuktuk": (940, 627), "community-boat": (1058, 543)}
 
 
-def community_photo(slug, T, sizes, fig_cls):
+def community_photo(slug, T, sizes, fig_cls, eager=False):
     """Responsive picture and provisional credit for Tomek-supplied, private-source photos."""
     widths = COMMUNITY_PHOTO_WIDTHS[slug]
     width, height = COMMUNITY_PHOTO_DIMENSIONS[slug]
@@ -86,11 +87,12 @@ def community_photo(slug, T, sizes, fig_cls):
     srcset_jpg = ", ".join(f"{{{{p}}}}images/{slug}-{w}.jpg {w}w" for w in widths)
     alt = escape(C.PHOTOS[T["lang"]][slug][1], quote=True)
     caption = escape(C.PHOTOS[T["lang"]][slug][0])
+    load = 'loading="eager" fetchpriority="high" decoding="async"' if eager else 'loading="lazy" decoding="async"'
     return (
         f'<figure class="photo community-photo {fig_cls}"><picture>'
         f'<source type="image/webp" srcset="{srcset_webp}" sizes="{sizes}">'
         f'<img src="{{{{p}}}}images/{slug}-{widths[0]}.jpg" srcset="{srcset_jpg}" sizes="{sizes}" '
-        f'width="{width}" height="{height}" alt="{alt}" loading="lazy" decoding="async">'
+        f'width="{width}" height="{height}" alt="{alt}" {load}>'
         f'</picture><figcaption>{caption}. <span class="credit">Photo: community archive (source to confirm)</span></figcaption></figure>'
     )
 
@@ -154,17 +156,78 @@ def ride_html(T):
     return "".join(out)
 
 
+def press_groups():
+    """Match every curated press photo to its quoted article; fail closed on omissions."""
+    groups = []
+    used = set()
+    for outlet, month, title, url, quote in C.PRESS:
+        if len(re.findall(r"[.!?](?=\s|$)", quote)) != 1:
+            raise ValueError(f"Press quote must be exactly one sentence: {outlet} / {title}")
+        photos = [photo for photo in PRESS_PHOTOS if photo["url"].rstrip("/").casefold() == url.rstrip("/").casefold()]
+        if not photos:
+            title_key = re.sub(r"[^a-z0-9]+", "", title.casefold())
+            photos = [
+                photo for photo in PRESS_PHOTOS
+                if photo["publisher"].casefold() == outlet.casefold()
+                and (lambda key: key in title_key or title_key in key)(re.sub(r"[^a-z0-9]+", "", photo["article"].casefold()))
+            ]
+        if not photos:
+            raise ValueError(f"No press photos match article: {outlet} / {title}")
+        slugs = {photo["slug"] for photo in photos}
+        if used.intersection(slugs):
+            raise ValueError(f"Press photos assigned to more than one article: {sorted(used.intersection(slugs))}")
+        used.update(slugs)
+        groups.append((outlet, month, title, url, quote, photos))
+    expected = {photo["slug"] for photo in PRESS_PHOTOS}
+    if used != expected or len(expected) != 30:
+        raise ValueError(f"Press archive must map all 30 photos exactly once; mapped {len(used)} of {len(expected)}")
+    return groups
+
+
+def press_photo_figure(photo, lang, sizes):
+    slug = escape(photo["slug"], quote=True)
+    article_url = escape(photo["url"], quote=True)
+    publisher = escape(photo["publisher"])
+    article = escape(photo["article"])
+    width = int(photo["width_1600"])
+    height = int(photo["height_1600"])
+    alt = (
+        f"Photograph accompanying the article {photo['article']} by {photo['publisher']}"
+        if lang == "en" else
+        f"Fotografía del artículo {photo['article']} de {photo['publisher']}"
+    )
+    return (
+        f'<figure class="press-photo" data-press-slug="{slug}" data-press-url="{article_url}">'
+        f'<picture><source type="image/webp" srcset="{{{{p}}}}images/press/{slug}-800.webp 800w" sizes="{sizes}">'
+        f'<img src="{{{{p}}}}images/press/{slug}-800.jpg" srcset="{{{{p}}}}images/press/{slug}-800.jpg 800w" '
+        f'sizes="{sizes}" width="{width}" height="{height}" alt="{escape(alt, quote=True)}" loading="lazy" decoding="async"></picture>'
+        f'<figcaption><a class="credit press-photo-credit" href="{article_url}" rel="noopener">Photo: {publisher}, via {article}</a></figcaption>'
+        f'</figure>'
+    )
+
+
 def press_html(T):
     out = []
-    for item in C.PRESS:
-        outlet, month, title, url, quote = item
+    for outlet, month, title, url, quote, photos in press_groups():
         out.append(
-            f'<li><a href="{url}" rel="noopener"><span class="outlet">{outlet}, {C.MONTHS[T["lang"]][month]}</span>'
-            f'<span class="ptitle" lang="en">{escape(title)}</span>'
-            f'<span class="pquote">{escape(quote)}</span>'
-            f'<span class="read">{T["press_read"]}{icon("arrow-up-right")}</span></a></li>'
+            f'<li class="press-item"><article class="press-entry"><div class="press-copy">'
+            f'<span class="outlet">{escape(outlet)}, {C.MONTHS[T["lang"]][month]}</span>'
+            f'<h4 class="ptitle" lang="en">{escape(title)}</h4>'
+            f'<p class="pquote">{escape(quote)}</p>'
+            f'<a class="read" href="{escape(url, quote=True)}" rel="noopener">{escape(T["press_read"])}{icon("arrow-up-right")}</a>'
+            f'</div><div class="press-photos">'
+            f'{"".join(press_photo_figure(photo, T["lang"], "(min-width: 1100px) 18vw, (min-width: 700px) 30vw, 44vw") for photo in photos)}'
+            f'</div></article></li>'
         )
     return "".join(out)
+
+
+def press_highlights_html(T):
+    figures = "".join(
+        press_photo_figure(photos[0], T["lang"], "(min-width: 1100px) 18vw, (min-width: 700px) 28vw, 72vw")
+        for _outlet, _month, _title, _url, _quote, photos in press_groups()
+    )
+    return f'<div class="press-highlights reveal"><h3>{escape(T["press_highlights_h"])}</h3><div class="press-highlights-grid">{figures}</div></div>'
 
 
 def render(lang):
@@ -212,13 +275,22 @@ def render(lang):
         "community_transport_photos": community_transport_photos(T),
         "ab23_video": ab23_video(T),
         "press": press_html(T),
+        "press_highlights": press_highlights_html(T),
         "i18n_json": json.dumps(
             {**{k: T[k] for k in C.I18N_KEYS}, "categories": C.CATEGORIES[lang]}, ensure_ascii=False
-        ).replace("</", "<\/"),
+        ).replace("</", "<\\/"),
     }
     html = TEMPLATE
     html = re.sub(r"\{\{@(\w+)\}\}", lambda m: blocks[m.group(1)], html)
     html = re.sub(r"\{\{icon:([\w-]+)\}\}", lambda m: icon(m.group(1)), html)
+
+    def variant_sub(m):
+        name = m.group(1)
+        if name not in C.VARIANTS:
+            raise KeyError(f"[{lang}] missing variant: {name}")
+        return escape(C.VARIANTS[name][lang][0], quote=True)
+
+    html = re.sub(r"\{\{VARIANTS\.(\w+)\.\[lang\]\.0\}\}", variant_sub, html)
 
     def sub(m):
         k = m.group(1)

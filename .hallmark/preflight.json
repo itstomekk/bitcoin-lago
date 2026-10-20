@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-19",
+  "project": "Lago Bitcoin Community",
+  "framework": "Vanilla HTML, CSS and JavaScript; Python build scripts",
+  "fonts": "Local Geist family assets are present; no framework font loader is used.",
+  "palette": "Existing variants use design-specific CSS tokens. No project-wide design.md was found; Hallmark variants will carry separate named OKLCH token sheets.",
+  "motion": "No animation package is involved. Shared interaction code is in v/app.js; it uses IntersectionObserver and honors prefers-reduced-motion for number counters.",
+  "spacing": "No shared Hallmark spacing scale was found. Each Hallmark variant adds its own named 4-point spacing scale.",
+  "mobile": "Hallmark pages are explicitly checked at 320, 375, 414 and 768 CSS pixels.",
+  "data_contract": "Preserve the shared tools/content.py strings, merchant dataset, photo credits, bilingual parity, and privacy-first AB23 facade.",
+  "design_system": "No design.md present; existing designs A/C/D/AC/AD/CD are not being retrofitted."
+}

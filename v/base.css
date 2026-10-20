@@ -1,5 +1,5 @@
 /*
-  v/base.css: the shared floor under all five design variants (A to E).
+  v/base.css: the shared floor under every finished design variant (A to H, excluding removed B/E).
 
   WHAT IS HERE
     Reset, accessibility helpers, buttons, the merchant finder (search, chips, map, list cards),
@@ -191,7 +191,8 @@ input::placeholder { color: var(--muted); opacity: 1; }
 .topbar-chip[data-design="ac"]     { --chip-color: #60c0a0; color: #85e0c0; }
 .topbar-chip[data-design="ad"]     { --chip-color: #80c060; color: #a8df88; }
 .topbar-chip[data-design="cd"]     { --chip-color: #ff8040; color: #ffad80; }
-.topbar-chip[data-design="f"]      { --chip-color: #006b6b; color: #6bd0d0; }
+.topbar-chip[data-design="f"]      { --chip-color: var(--color-accent); color: var(--color-accent-soft); }
+.topbar-chip.topbar-current[data-design="f"] { color: var(--color-accent-ink); }
 .topbar-chip[data-design="g"]      { --chip-color: #8b5e00; color: #ffce58; }
 .topbar-chip[data-design="h"]      { --chip-color: #1d5cff; color: #8daeff; }
 
@@ -225,3 +226,18 @@ body { padding-top: 28px; }
 .video-details h3 { overflow-wrap: anywhere; }
 .video-privacy, .video-channel { font-size: .9em; }
 @media (max-width: 640px) { .history-video { grid-template-columns: minmax(0, 1fr); } }
+
+/* Press article imagery and linked photo credits, shared across every design. */
+.press .press-entry { min-width: 0; display: grid; gap: 1rem; }
+.press .press-copy { min-width: 0; display: grid; gap: 0.35rem; }
+.press .press-photos { min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); gap: 0.65rem; }
+.press-highlights { width: min(100% - 2rem, var(--content-max, 76rem)); margin: 1.5rem auto 0; }
+.press-highlights h3 { margin: 0 0 0.75rem; font-size: 1rem; color: var(--muted); }
+.press-highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: 0.75rem; }
+.press-photo { min-width: 0; margin: 0; }
+.press-photo picture { display: block; }
+.press-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.press-photo figcaption { margin-top: 0.3rem; font-size: 0.76rem; line-height: 1.35; overflow-wrap: anywhere; }
+.press .press-photo-credit, .press-highlights .press-photo-credit { color: var(--ink); text-decoration: underline; }
+.press-photo-credit:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+@media (min-width: 52rem) { .press .press-photos { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

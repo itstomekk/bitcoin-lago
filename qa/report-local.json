@@ -1,10 +1,10 @@
 {
- "base": "http://127.0.0.1:18432/",
- "pass": 78,
+ "base": "http://127.0.0.1:18435/",
+ "pass": 80,
  "fail": 0,
  "gates": [
   {
-   "gate": "HTTP 200 http://127.0.0.1:18432/",
+   "gate": "HTTP 200 http://127.0.0.1:18435/",
    "result": "PASS",
    "evidence": 200
   },
@@ -46,7 +46,7 @@
    "evidence": "en"
   },
   {
-   "gate": "HTTP 200 http://127.0.0.1:18432/es/",
+   "gate": "HTTP 200 http://127.0.0.1:18435/es/",
    "result": "PASS",
    "evidence": 200
   },
@@ -148,7 +148,7 @@
   {
    "gate": "[en] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "800 KB (tiles excluded: 258 KB)"
+   "evidence": "2250 KB (tiles excluded: 258 KB)"
   },
   {
    "gate": "[en] no horizontal overflow at 1440",
@@ -238,16 +238,26 @@
    "gate": "[en] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 11,
+    "images": 50,
     "bad": []
    }
   },
   {
-   "gate": "[en] every photo has its Commons or approved community-archive credit",
+   "gate": "[en] every photo has a linked source credit",
    "result": "PASS",
    "evidence": {
-    "photos": 10,
+    "photos": 49,
     "bad": []
+   }
+  },
+  {
+   "gate": "[en] all 30 press photos appear once with visible linked credits",
+   "result": "PASS",
+   "evidence": {
+    "count": 30,
+    "unique": 30,
+    "missing": [],
+    "bad_credit": []
    }
   },
   {
@@ -314,7 +324,7 @@
   {
    "gate": "[es] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "801 KB (tiles excluded: 258 KB)"
+   "evidence": "2251 KB (tiles excluded: 258 KB)"
   },
   {
    "gate": "[es] no horizontal overflow at 1440",
@@ -404,16 +414,26 @@
    "gate": "[es] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 11,
+    "images": 50,
     "bad": []
    }
   },
   {
-   "gate": "[es] every photo has its Commons or approved community-archive credit",
+   "gate": "[es] every photo has a linked source credit",
    "result": "PASS",
    "evidence": {
-    "photos": 10,
+    "photos": 49,
     "bad": []
+   }
+  },
+  {
+   "gate": "[es] all 30 press photos appear once with visible linked credits",
+   "result": "PASS",
+   "evidence": {
+    "count": 30,
+    "unique": 30,
+    "missing": [],
+    "bad_credit": []
    }
   },
   {
@@ -501,36 +521,36 @@
      "whatsapp-invite-url"
     ],
     "h2": 7,
-    "imgs": 27
+    "imgs": 66
    }
   },
   {
    "gate": "browser language es: opening / redirects to /es/",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/es/"
+   "evidence": "http://127.0.0.1:18435/es/"
   },
   {
    "gate": "switcher EN: goes to English page and stores choice",
    "result": "PASS",
    "evidence": {
-    "url": "http://127.0.0.1:18432/",
+    "url": "http://127.0.0.1:18435/",
     "stored": "en"
    }
   },
   {
    "gate": "stored choice (en) beats browser language (es) on reload",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/"
+   "evidence": "http://127.0.0.1:18435/"
   },
   {
    "gate": "switcher ES: goes to /es/ and stores choice",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/es/"
+   "evidence": "http://127.0.0.1:18435/es/"
   },
   {
    "gate": "browser language en: opening /es/ redirects to /",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/"
+   "evidence": "http://127.0.0.1:18435/"
   },
   {
    "gate": "placeholder button shows 'coming soon' toast",

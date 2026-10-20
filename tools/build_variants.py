@@ -3,9 +3,8 @@
 
 WHAT IT DOES
   One content source (tools/content.py) and one data set (data/merchants.json, data/photos.json)
-  feed three different page designs. Only the look differs: each variant has its own layout file
-  (tools/variants/a.html, c.html, d.html) and its own stylesheet (v/a.css, c.css, d.css). Shared behaviour
-  lives in v/app.js, shared base styles in v/base.css.
+  feed every finished design variant. Layouts live in tools/variants/*.html, visual treatments in
+  v/*.css, shared behaviour in v/app.js, and shared component styles in v/base.css.
 
 READS   tools/variants/*.html, tools/content.py, data/merchants.json, data/photos.json
 WRITES  v/ac/index.html, v/ad/index.html, v/cd/index.html, v/f/index.html, v/g/index.html, v/h/index.html, v/a/es/index.html, v/c/es/index.html, v/d/es/index.html,
@@ -47,7 +46,7 @@ META = {
     "ac": {"theme": "#EEF0EB", "fonts": ["bebas-neue-latin-400-normal.woff2", "geist-latin-wght-normal.woff2"]},
     "ad": {"theme": "#1E2760", "fonts": ["bricolage-grotesque-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
     "cd": {"theme": "#0C0B0B", "fonts": ["bebas-neue-latin-400-normal.woff2", "geist-latin-wght-normal.woff2"]},
-    "f": {"theme": "#FAFAF8", "fonts": ["coral-coral-latin-wght-normal.woff2", "space-grotesk-latin-wght-normal.woff2"]},
+    "f": {"theme": "#FAF6F3", "fonts": ["geist-latin-wght-normal.woff2"]},
     "g": {"theme": "#FDFDFB", "fonts": ["newsreader-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
     "h": {"theme": "#F2F6FF", "fonts": ["sora-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
 }
@@ -146,6 +145,8 @@ def footer_text(T):
 def head_html(vid):
     m = META[vid]
     pre = "".join(f'<link rel="preload" href="{{{{p}}}}fonts/{f}" as="font" type="font/woff2" crossorigin>\n' for f in m["fonts"])
+    tokens_path = ROOT / "v" / f"{vid}.tokens.css"
+    tokens = f'<link rel="stylesheet" href="{{{{p}}}}v/{vid}.tokens.css">\n' if tokens_path.is_file() else ""
     theme = m["theme"]
     # f-string with all template/JS braces doubled; only vid, theme, pre are Python expressions
     return (
@@ -176,6 +177,7 @@ def head_html(vid):
         f'<meta property="og:image" content="{{{{og_image}}}}">\n'
         f'<meta name="twitter:card" content="summary_large_image">\n'
         f'{pre}<link rel="stylesheet" href="{{{{p}}}}v/base.css">\n'
+        f'{tokens}'
         f'<link rel="stylesheet" href="{{{{p}}}}v/{vid}.css">\n'
         f'<link rel="stylesheet" href="{{{{p}}}}vendor/leaflet/leaflet.css">\n'
         f'<script>\n'
@@ -273,7 +275,7 @@ def render(vid, lang):
         canonical=C.SITE_URL + path,
         url_en=C.SITE_URL + f"v/{vid}/",
         url_es=C.SITE_URL + f"v/{vid}/es/",
-        og_image=C.SITE_URL + "images/hero-1600.jpg",
+        og_image=C.SITE_URL + ("images/community-tuktuk-940.jpg" if vid == "f" else "images/hero-1600.jpg"),
         x_lakebitcoin=C.X_LAKEBITCOIN,
         n_places=str(len(BP.PLACES)),
         n_ln=str(ln),
@@ -287,8 +289,10 @@ def render(vid, lang):
         "towns_bars": towns_bars(),
         "rides": BP.ride_html(T),
         "community_transport_photos": BP.community_transport_photos(T),
+        "community_tuktuk_hero": BP.community_photo("community-tuktuk", T, "(min-width: 900px) 46vw, 94vw", "hero-visual", eager=True),
         "ab23_video": BP.ab23_video(T),
         "press": BP.press_html(T),
+        "press_highlights": BP.press_highlights_html(T),
         "finder": finder(T),
         "finder_console": finder(T, console=True),
         "community": community(T),
@@ -312,6 +316,14 @@ def fill(html, T, blocks, lang, label):
                   lambda m: fig(m.group(1), T, *(lambda a: (a[0] or "100vw", a[1] or "", a[2]))(
                       (m.group(2).lstrip("|").split("|") + ["", "", ""])[:3])), html)
     html = re.sub(r"\{\{maya:(\d+)(?:\|([\w -]+))?\}\}", lambda m: maya(int(m.group(1)), m.group(2) or "maya"), html)
+
+    def variant_sub(m):
+        name = m.group(1)
+        if name not in C.VARIANTS:
+            raise KeyError(f"[{label}] missing variant: {name}")
+        return escape(C.VARIANTS[name][lang][0], quote=True)
+
+    html = re.sub(r"\{\{VARIANTS\.(\w+)\.\[lang\]\.0\}\}", variant_sub, html)
 
     def sub(m):
         k = m.group(1)

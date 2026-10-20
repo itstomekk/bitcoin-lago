@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Release QA for the three design variants (/v/a/, /v/c/, /v/d/, each with /es/) and the /variants/ index.
+"""Release QA for the finished design variants (each with /es/) and the /variants/ index.
 
 USAGE
   python qa/run_qa_variants.py <site root URL> <screenshot dir> [variants, e.g. a,c,d] [--no-index]
@@ -36,13 +36,14 @@ from PIL import Image
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parent.parent
+PRESS_SLUGS = {item["slug"] for item in json.loads((ROOT / "data" / "press-photos.json").read_text(encoding="utf-8"))}
 args = [a for a in sys.argv[1:] if not a.startswith("--")]
 BASE = args[0].rstrip("/") + "/"
 SHOTS = Path(args[1]) if Path(args[1]).is_absolute() else ROOT / args[1]
-IDS = args[2].split(",") if len(args) > 2 else ["a", "c", "d"]
 ALL_VARIANTS = ["a", "c", "d", "ac", "ad", "cd", "f", "g", "h"]
 LAYOUT_FALLBACKS = {"ac": "c", "ad": "d", "cd": "c"}
 EXPECTED_SWITCHER = [v.upper() for v in ALL_VARIANTS if (ROOT / "tools" / "variants" / f"{v}.html").exists() or v in LAYOUT_FALLBACKS]
+IDS = args[2].split(",") if len(args) > 2 else [v.lower() for v in EXPECTED_SWITCHER]
 DO_INDEX = "--no-index" not in sys.argv
 INDEX_ONLY = "--index-only" in sys.argv
 LABEL = "live" if BASE.startswith("https://") else "local"
@@ -87,7 +88,12 @@ PARITY_JS = """() => ({
   imgs: document.querySelectorAll('img').length })"""
 IMG_JS = """() => [...document.querySelectorAll('img')].filter(i => !i.closest('.leaflet-container')).map(i => ({
   src: i.currentSrc, alt: i.getAttribute('alt'), nat: i.naturalWidth, inFigure: !!i.closest('figure'),
-  credit: !!(i.closest('figure') && ((i.closest('figure').querySelector('.credit a[href*="commons.wikimedia.org"]') && i.closest('figure').querySelector('.credit a[href*="creativecommons.org"]')) || i.closest('figure').querySelector('.credit')?.textContent.includes('Photo: community archive (source to confirm)') || (i.closest('.history-video') && i.closest('figure').querySelector('figcaption a[href*="youtube.com/watch"]')))) }))"""
+  credit: !!(i.closest('figure') && ((i.closest('figure').querySelector('.credit a[href*="commons.wikimedia.org"]') && i.closest('figure').querySelector('.credit a[href*="creativecommons.org"]')) || i.closest('figure').querySelector('.credit')?.textContent.includes('Photo: community archive (source to confirm)') || i.closest('figure').querySelector('.press-photo-credit[href]') || (i.closest('.history-video') && i.closest('figure').querySelector('figcaption a[href*="youtube.com/watch"]')))) }))"""
+PRESS_JS = """() => { const fs = [...document.querySelectorAll('.press .press-photo')];
+  return {slugs: fs.map(f => f.dataset.pressSlug), bad: fs.filter(f => {
+    const c = f.querySelector('.press-photo-credit[href]');
+    return !f.dataset.pressUrl || !c || c.getAttribute('href') !== f.dataset.pressUrl || !c.textContent.startsWith('Photo:');
+  }).map(f => f.dataset.pressSlug || 'missing-slug')}; }"""
 FILL_JS = """() => [...document.querySelectorAll('main section[id]')].map(s => [s.id, +(s.getBoundingClientRect().height / innerHeight).toFixed(2)])"""
 
 # Text that sits over a photo, gradient or pattern: found by looking at what is painted below each text element.
@@ -311,7 +317,9 @@ def variant(browser, vid):
         bad_credit = [i["src"][-30:] for i in photos if not i["credit"]]
         foreign = [i["src"] for i in imgs if "/images/" not in i["src"] and "favicon" not in i["src"]]
         gate(f"{L} every image has alt text", not bad_alt, {"images": len(imgs), "bad": bad_alt[:3]})
-        gate(f"{L} only local photos, each with a Commons or approved community-archive credit", bool(photos) and not bad_credit and not foreign, {"photos": len(photos), "no_credit": bad_credit, "other_images": foreign})
+        gate(f"{L} only local photos, each with a Commons, approved community-archive, or linked press credit", bool(photos) and not bad_credit and not foreign, {"photos": len(photos), "no_credit": bad_credit, "other_images": foreign})
+        press = pg.evaluate(PRESS_JS)
+        gate(f"{L} all 30 press photos appear once with visible linked credits", len(press["slugs"]) == 30 and set(press["slugs"]) == PRESS_SLUGS and not press["bad"], {"count": len(press["slugs"]), "unique": len(set(press["slugs"])), "missing": sorted(PRESS_SLUGS - set(press["slugs"])), "bad_credit": press["bad"]})
         gate(f"{L} no broken images", not [i for i in imgs if i["nat"] == 0], "ok")
         text = pg.evaluate("document.body.innerText")
         gate(f"{L} no 'official'/'oficial' claim", not re.search(r"\b(official|oficial)\b", text, re.I), "none")
@@ -372,11 +380,11 @@ def variant(browser, vid):
         leak = pg.evaluate(LEAK_JS)
         gate(f"{L} no text leaves the screen at 390", not leak, leak)
         gate(f"{L} no console errors at 390", not merrs, merrs[:4])
-        hdr = pg.evaluate("""() => { const t = document.querySelector('.brand span'), l = document.querySelector('.lang'), m = document.querySelector('.menu-btn');
-            const rg = document.createRange(); rg.selectNodeContents(t); const a = rg.getBoundingClientRect();
-            const hit = (b) => { const r = b.getBoundingClientRect(); return r.width && a.right > r.left + 1 && a.left < r.right && a.bottom > r.top && a.top < r.bottom; };
-            return {brandRight: Math.round(a.right), langLeft: Math.round(l.getBoundingClientRect().left), overlapLang: hit(l), overlapMenu: hit(m)}; }""")
-        gate(f"{L} brand text does not run into the language switch or menu button at 390", not hdr["overlapLang"] and not hdr["overlapMenu"], hdr)
+        hdr = pg.evaluate("""() => { const brand = document.querySelector('.brand'), cta = document.querySelector('.nav-cta'), m = document.querySelector('.menu-btn');
+            const a = brand.getBoundingClientRect();
+            const hit = (b) => { if (!b) return false; const r = b.getBoundingClientRect(); return r.width && a.right > r.left + 1 && a.left < r.right && a.bottom > r.top && a.top < r.bottom; };
+            return {brandRight: Math.round(a.right), overlapCta: hit(cta), overlapMenu: hit(m)}; }""")
+        gate(f"{L} brand does not overlap its CTA or menu button at 390", not hdr["overlapCta"] and not hdr["overlapMenu"], hdr)
         gate(f"{L} {EXPECT} markers at 390", pg.evaluate("document.querySelectorAll('#map path.leaflet-interactive').length") == EXPECT, "ok")
         mw = pg.evaluate("(() => { const n = document.querySelector('.vsw'); const r = n.getBoundingClientRect(); return {right: Math.round(r.right), vw: innerWidth, h: Math.round(r.height)}; })()")
         gate(f"{L} switcher fits at 390", mw["right"] <= mw["vw"], mw)
@@ -409,10 +417,10 @@ def variant(browser, vid):
     pg = ctx.new_page()
     pg.goto(f"{BASE}v/{vid}/", wait_until="networkidle")
     gate(f"[{vid}] browser language es: opening EN redirects to /es/", pg.url.rstrip("/").endswith("/es"), pg.url)
-    pg.click('.lang a[data-lang="en"]')
+    pg.click('.topbar-lang a[data-lang="en"]')
     pg.wait_for_load_state("networkidle")
     gate(f"[{vid}] EN switch stays in this design and stores the choice", pg.url.rstrip("/").endswith(f"/v/{vid}") and pg.evaluate("localStorage.getItem('lbc-lang')") == "en", pg.url)
-    pg.click('.lang a[data-lang="es"]')
+    pg.click('.topbar-lang a[data-lang="es"]')
     pg.wait_for_load_state("networkidle")
     gate(f"[{vid}] ES switch stays in this design", pg.url.rstrip("/").endswith(f"/v/{vid}/es"), pg.url)
     ctx.close()

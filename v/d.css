@@ -177,8 +177,9 @@ html { scroll-padding-top: 84px; }
 @media (min-width: 1000px) { .about { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 3.5rem; } }
 .press h3 { font-size: 1.05rem; }
 .press ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem; }
-.press a { display: grid; gap: 0.15rem; padding: 1rem 1.2rem; background: var(--paper); border: 2px solid #1b1410; border-radius: 20px; box-shadow: 5px 5px 0 var(--marigold); text-decoration: none; color: #1b1410; }
-.press a:hover { box-shadow: 7px 7px 0 var(--marigold); }
+.press .press-entry { display: grid; gap: 1rem; padding: 1rem 1.2rem; background: var(--paper); border: 2px solid #1b1410; border-radius: 20px; box-shadow: 5px 5px 0 var(--marigold); color: #1b1410; }
+.press .press-entry:hover { box-shadow: 7px 7px 0 var(--marigold); }
+.press .press-photo-credit { color: #1b1410; }
 .press .outlet { font-size: 0.85rem; color: #5a4a40; font-weight: 600; }
 .press .ptitle { font-family: var(--bric); font-weight: 700; line-height: 1.25; font-size: 1.1rem; }
 .press .pquote { font-size: 0.9rem; line-height: 1.45; color: #5a4a40; font-style: italic; }

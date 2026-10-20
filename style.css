@@ -379,12 +379,22 @@ input::placeholder { color: var(--muted); opacity: 1; }
 @media (min-width: 960px) { .about-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); } }
 .press h3 { font-size: 1.05rem; color: var(--muted); font-weight: 650; }
 .press ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; }
-.press a { display: grid; gap: 0.15rem; padding: 1rem 1.2rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: var(--ink); transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s; }
-.press a:hover { transform: translateY(-2px); border-color: var(--ink); }
+.press .press-entry { display: grid; gap: 1rem; padding: 1rem 1.2rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s; }
+.press .press-entry:hover { transform: translateY(-2px); border-color: var(--ink); }
 .press .outlet { font-size: 0.85rem; color: var(--muted); }
 .press .ptitle { font-weight: 650; line-height: 1.3; }
 .press .pquote { font-size: 0.9rem; line-height: 1.45; color: var(--muted); font-style: italic; }
 .press .read { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.88rem; color: var(--teal); font-weight: 600; }
+.press .press-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); gap: 0.7rem; }
+.press-highlights { margin-top: 2rem; }
+.press-highlights h3 { margin: 0 0 0.8rem; font-size: 1rem; color: var(--muted); }
+.press-highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: 0.8rem; }
+.press-photo { min-width: 0; margin: 0; }
+.press-photo picture { display: block; }
+.press-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.press-photo figcaption { margin-top: 0.3rem; font-size: 0.76rem; line-height: 1.35; overflow-wrap: anywhere; }
+.press .press-photo-credit, .press-highlights .press-photo-credit { color: var(--ink); text-decoration: underline; }
+.press-photo-credit:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 
 /* FOOTER */
 .site-footer { border-top: 1px solid var(--line); padding-block: 2.5rem 3rem; font-size: 0.9rem; color: var(--muted); }

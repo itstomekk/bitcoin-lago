@@ -66,7 +66,7 @@
   }
 
   /* ---------- 1. language memory ---------- */
-  $all('.lang a[data-lang]').forEach(function (a) {
+  $all('.lang a[data-lang], .topbar-lang a[data-lang]').forEach(function (a) {
     a.addEventListener('click', function () {
       try { localStorage.setItem('lbc-lang', a.getAttribute('data-lang')); } catch (e) {}
     });
@@ -137,7 +137,7 @@
 
   /* ---------- VARIANTS: count-up for big numbers ---------- */
   var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if ('IntersectionObserver' in window && !still) {
+  if ('IntersectionObserver' in window && !still && document.body.dataset.design !== 'f') {
     var co = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;

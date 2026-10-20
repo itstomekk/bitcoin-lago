@@ -27,11 +27,17 @@ link to https://x.com/LakeBitcoin.
 | `qa/` | QA scripts, reports and screenshots. | No. |
 | `robots.txt` | `Disallow: /` while private. | At go-live. |
 
-Private material is **not** in the repo (see `.gitignore`): `source-archive/` (press articles, curated
-press photos and logos, raw research), `plans/`, `BUILD-BRIEF.md`. Press and logo images are never used on the site.
+Private material is **not** in the repo (see `.gitignore`): `source-archive/` (raw press articles and photos,
+research originals), `plans/`, `BUILD-BRIEF.md`. Approved, optimized press-photo derivatives and the approved
+brand logo are copied into `images/` with credits and are used on the site; unrelated reference images and raw sources stay private.
 
 Data and rights: merchant data © OpenStreetMap contributors (ODbL), as shown on BTC Map; credited in the footer.
-Every photo carries its Commons credit and licence under the picture. Map tiles © OpenStreetMap contributors (Leaflet attribution).
+Wikimedia photos carry their Commons credit and licence; community-supplied photos use the provisional source credit shown in the page.
+`data/press-photos.json` retains the publisher, article title, source URL and rights note for each of the 30 curated press photos.
+Publisher/photographer copyrights remain; some source articles credit images as "courtesy Bitcoin Lake". These optimized
+derivatives are used at Tomek's direction on this noindex preview, with a visible "Photo: <publisher>, via <article title>"
+credit linked to the article; remove on request. Raw press photos and research originals remain in ignored `source-archive/`.
+Map tiles © OpenStreetMap contributors (Leaflet attribution).
 
 ## Placeholders (all visibly badged in preview, all carry `data-placeholder`)
 
@@ -83,6 +89,8 @@ The Spanish was written for natural Guatemalan usage ("tuc tuc", "lancha", "come
 
 `qa/report-local.md` and `qa/report-live.md` list every gate with the measured evidence. Screenshots: `qa/screenshots/` (local) and `qa/screenshots/live/` (from the live URL). Re-run:
 
+Local F + press-photo phase on 2026-10-20: baseline 80/80; A, C, D, AC, AD, CD and F 703/703 in `qa/report-variants-local-acdacadcdf.md`, including the exact 30-photo set and linked credits. Hallmark F mobile 10/10 at 320/375/414/768; AB23 privacy and keyboard activation 16/16. The last full browser QA preceded the final quote shortening; the builders were rerun and now reject any press quote that is not exactly one sentence.
+
 ```
 python qa/run_qa.py http://127.0.0.1:18431/ qa/screenshots      # local, after: python -m http.server 18431
 python qa/run_qa.py https://itstomekk.github.io/lago-bitcoin-community/ qa/screenshots/live
@@ -108,7 +116,7 @@ python qa/check_links.py
 * `DESIGN-VARIANTS-BRIEF.md` (Tomek's voice notes) was expanded; see the current set and build status below.
   The root pages stay the baseline until Tomek picks.
 
-## Design variants (six current looks, same content)
+## Design variants (seven current looks, same content)
 
 Live (noindex, like the rest of the preview): `/v/a/`, `/v/c/`, `/v/d/`, `/v/ac/`, `/v/ad/`, `/v/cd/` and their `/es/` pages, the index `/variants/` (and `/variants/es/`),
 and `/v/` (sends you to the design you looked at last). Every variant page has the fixed switcher and language bar plus the floating design switcher.
@@ -121,22 +129,23 @@ and `/v/` (sends you to the design you looked at last). Every variant page has t
 | D | Textile and craft: woven colour blocks (indigo, cinnabar, marigold, jade), arch photo frames, pill controls. |
 | AC | C's night palette with A-inspired restraint, stepped details and more open spacing. |
 | AD | A's restraint and stepped motifs combined with D's woven colour blocks and arch frames. |
-| CD | C's night scenes combined with D's woven colour blocks and arch frames. |
+| CD | C's night scenes combined with D's textile colour blocks and arch frames. |
+| F | Split Studio: a credited community tuk-tuk portrait paired with the dated merchant map and alternating evidence-led sections. Hallmark: Coral tokens. |
 
-All designs share one content source and merchant dataset. Designs B and E were removed; F, G and H are still in progress and are not linked in the switcher or index.
+All designs share one content source and merchant dataset. Designs B and E were removed. F's local build and QA are complete; G and H remain in progress and are not linked until their pages are finished.
 
 | File | What it is | Edit here? |
 |---|---|---|
-| `tools/content.py` | The same words as the root pages, plus the names of the variants and the switcher / index strings. | **Yes, for wording (all six pages follow).** |
-| `tools/variants/a.html`, `c.html`, `d.html` | The page layouts of A, C and D. AC/CD use C's layout base, AD uses D's; their visual treatments are in their own CSS files. | Yes, for structure. |
+| `tools/content.py` | The same words as the root pages, plus the names of the variants and the switcher / index strings. | **Yes, for wording (all current variants follow).** |
+| `tools/variants/a.html`, `c.html`, `d.html`, `f.html` | The page layouts of A, C, D and F. AC/CD use C's layout base, AD uses D's; each design has its own visual treatment. | Yes, for structure. |
 | `v/base.css` | Shared floor: buttons, merchant finder, switcher, placeholders, toast. Colours come from tokens. | Rarely. |
-| `v/a.css`, `c.css`, `d.css`, `ac.css`, `ad.css`, `cd.css` | The look of each current design (tokens and layout). | **Yes, for look.** |
+| `v/a.css`, `c.css`, `d.css`, `ac.css`, `ad.css`, `cd.css`, `f.css`, `f.tokens.css` | The look and locked Hallmark tokens for each current design. | **Yes, for look.** |
 | `v/app.js` | Behaviour shared by the designs (copy of `script.js` plus marker colours, design memory, count-up and click-to-play AB23 embed). | Rarely. |
 | `tools/build_variants.py` | Builds all `v/*/index.html`, `v/*/es/index.html` and `variants/` pages. `python tools/build_variants.py` (or `... a c` for some). | Run after any edit. |
 | `tools/variants/index.html`, `variants/variants.css` | The `/variants/` page and its look. Thumbnails: `variants/thumbs/*.webp` (made by `qa/make_thumbs.py`). | Yes. |
 | `fonts/` (new files) | Newsreader, Bebas Neue, Bricolage Grotesque, Sora, Geist Mono (all SIL OFL, self-hosted). | No. |
 | `images/bw-*.jpg/webp`, `lake-5-*`, `lake-12-*` | Four more Commons photos used only by the variants (credits in `data/photos.json`; `python tools/optimize_images.py --extra`). | Via the script. |
-| `images/community-tuktuk-*`, `community-boat-*` | Optimized Tomek-supplied tuk tuk and boat photos, used in the transport section on the baseline and all six current designs. Source originals stay in ignored `source-archive/tomek-supplied/`. | `python tools/optimize_community_photos.py`. |
+| `images/community-tuktuk-*`, `community-boat-*` | Optimized Tomek-supplied tuk tuk and boat photos, used in the transport section on the baseline and all current designs. Source originals stay in ignored `source-archive/tomek-supplied/`. | `python tools/optimize_community_photos.py`. |
 
 Rules that hold in every variant: same 8 sections and ids, same 117 places and the same data file, every placeholder keeps its
 `data-placeholder` badge (so the table above still applies), photo credits stay visible, `noindex,nofollow`, WCAG AA text.
@@ -147,7 +156,7 @@ Each design has one fixed theme (no automatic dark mode); C is dark by design.
 The supplied `tuktuk-bitcoin-lake-road.jpg` and `pier-to-pier-bitcoin-boat.jpg` are credited on-page as exactly
 "Photo: community archive (source to confirm)". Do not invent a photographer; replace this provisional credit only when Tomek confirms the source.
 
-QA for the variants: `python qa/run_qa_variants.py <site URL> <screenshot dir> [a,c,d,ac,ad,cd]`. Reports: `qa/report-variants-local.md`
+QA for the variants: `python qa/run_qa_variants.py <site URL> <screenshot dir> [a,c,d,ac,ad,cd,f]`. Reports: `qa/report-variants-local.md`
 and `qa/report-variants-live.md`; live screenshots are stored under `qa/screenshots/`.
 The runner also measures contrast of text that sits over photos or patterns with a pixel check (axe cannot do that).
 It needs `qa/.cache/axe.min.js` (download command is at the top of the script).

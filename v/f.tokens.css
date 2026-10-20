@@ -1,0 +1,100 @@
+/* Hallmark · genre: modern-minimal · macrostructure: Split Studio · theme: Coral · locked tokens · pre-emit critique: P5 H5 E5 S4 R5 V5 */
+:root {
+  /* Warm Coral paper and ink; one restrained cinnabar-red signal. */
+  --color-paper: oklch(97% 0.008 35);
+  --color-paper-2: oklch(99% 0.004 35);
+  --color-paper-3: oklch(93% 0.012 35);
+  --color-paper-4: oklch(90% 0.014 35);
+  --color-neutral: oklch(56% 0.008 35);
+  --color-muted: oklch(42% 0.012 35);
+  --color-rule: oklch(83% 0.01 35);
+  --color-ink: oklch(20% 0.015 35);
+  --color-accent: oklch(48% 0.16 25);
+  --color-accent-hover: oklch(42% 0.16 25);
+  --color-accent-soft: oklch(82% 0.1 25);
+  --color-accent-ink: oklch(99% 0.004 35);
+  --color-focus: oklch(48% 0.16 25);
+  --color-shadow: oklch(20% 0.015 35);
+  --color-video-frame: oklch(16% 0.02 240);
+
+
+  /* Modern-minimal discipline: Geist carries body and display; the brand wordmark is an image. */
+  --font-body: "Geist", system-ui, sans-serif;
+  --font-display: var(--font-body);
+
+  /* Four-point spacing scale. */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+  --space-gutter: clamp(var(--space-sm), 4vw, var(--space-xl));
+  --space-section: clamp(var(--space-xl), 8vw, var(--space-3xl));
+
+  /* Major-third type scale; headings remain roman. */
+  --text-xs: 0.64rem;
+  --text-sm: 0.8rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5625rem;
+  --text-xl: 1.9531rem;
+  --text-2xl: 2.4414rem;
+  --text-3xl: 3.0518rem;
+  --text-4xl: 3.8147rem;
+  --text-display: clamp(2.5rem, 5vw, 4rem);
+  --text-display-s: clamp(2.75rem, 3.75vw, 3rem);
+
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 200ms;
+  --dur-long: 420ms;
+
+  --radius-square: 0;
+  --radius-pill: 999px;
+  --shadow-soft: 0 4px 14px color-mix(in oklch, var(--color-shadow) 16%, transparent);
+  --shadow-nav: 0 10px 28px -18px color-mix(in oklch, var(--color-shadow) 42%, transparent);
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-sticky-nav: 220;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+
+  /* Existing project components consume these semantic aliases. */
+  --bg: var(--color-paper);
+  --surface: var(--color-paper-2);
+  --tint: var(--color-paper-3);
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --line: var(--color-rule);
+  --link: var(--color-accent);
+  --accent: var(--color-accent);
+  --on-accent: var(--color-accent-ink);
+  --focus: var(--color-focus);
+  --field-bg: var(--color-paper-2);
+  --field-line: var(--color-rule);
+  --radius: var(--radius-square);
+  --btn-radius: var(--radius-square);
+  --marker-fill: var(--color-accent);
+  --marker-stroke: var(--color-ink);
+  --marker-r: 6;
+  --map-h: clamp(440px, 74svh, 820px);
+  --vsw-bg: var(--color-ink);
+  --vsw-fg: var(--color-paper);
+  --vsw-cur-bg: var(--color-paper);
+  --vsw-cur-fg: var(--color-ink);
+  --pad: var(--space-gutter);
+  --content-max: 1400px;
+  --topbar-h: 28px;
+  color-scheme: light;
+}

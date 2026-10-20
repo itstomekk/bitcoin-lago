@@ -26,6 +26,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parent.parent
+PRESS_SLUGS = {item["slug"] for item in json.loads((ROOT / "data" / "press-photos.json").read_text(encoding="utf-8"))}
 BASE = sys.argv[1].rstrip("/") + "/"
 SHOTS = ROOT / sys.argv[2] if not Path(sys.argv[2]).is_absolute() else Path(sys.argv[2])
 LABEL = "live" if BASE.startswith("https://") else "local"
@@ -59,9 +60,14 @@ PARITY_JS = """() => ({
   imgs: document.querySelectorAll('img').length
 })"""
 IMG_JS = """() => [...document.querySelectorAll('img')].filter(i => !i.closest('.leaflet-container')).map(i => ({
-  src: i.currentSrc.split('/').slice(-2).join('/'), alt: i.getAttribute('alt'), nat: i.naturalWidth,
-  inFigure: !!i.closest('figure'), credit: !!(i.closest('figure') && ((i.closest('figure').querySelector('.credit a[href*="commons.wikimedia.org"]') && i.closest('figure').querySelector('.credit a[href*="creativecommons.org"]')) || i.closest('figure').querySelector('.credit')?.textContent.includes('Photo: community archive (source to confirm)') || (i.closest('.history-video') && i.closest('figure').querySelector('figcaption a[href*="youtube.com/watch"]'))))
+  src: new URL(i.currentSrc || i.src, location.href).pathname, alt: i.getAttribute('alt'), nat: i.naturalWidth,
+  inFigure: !!i.closest('figure'), credit: !!(i.closest('figure') && ((i.closest('figure').querySelector('.credit a[href*="commons.wikimedia.org"]') && i.closest('figure').querySelector('.credit a[href*="creativecommons.org"]')) || i.closest('figure').querySelector('.credit')?.textContent.includes('Photo: community archive (source to confirm)') || i.closest('figure').querySelector('.press-photo-credit[href]') || (i.closest('.history-video') && i.closest('figure').querySelector('figcaption a[href*="youtube.com/watch"]'))))
 }))"""
+PRESS_JS = """() => { const fs = [...document.querySelectorAll('.press .press-photo')];
+  return {slugs: fs.map(f => f.dataset.pressSlug), bad: fs.filter(f => {
+    const c = f.querySelector('.press-photo-credit[href]');
+    return !f.dataset.pressUrl || !c || c.getAttribute('href') !== f.dataset.pressUrl || !c.textContent.startsWith('Photo:');
+  }).map(f => f.dataset.pressSlug || 'missing-slug')}; }"""
 TEXT_JS = "() => document.body.innerText"
 
 
@@ -178,7 +184,9 @@ def main():
             bad_credit = [i for i in imgs if "images/" in i["src"] and "logo" not in i["src"] and not i["credit"]]
             broken = [i for i in imgs if i["nat"] == 0]
             gate(f"[{lang}] every image has alt text", not bad_alt, {"images": len(imgs), "bad": bad_alt})
-            gate(f"[{lang}] every photo has its Commons or approved community-archive credit", not bad_credit, {"photos": sum(1 for i in imgs if 'images/' in i['src'] and 'logo' not in i['src']), "bad": bad_credit})
+            gate(f"[{lang}] every photo has a linked source credit", not bad_credit, {"photos": sum(1 for i in imgs if 'images/' in i['src'] and 'logo' not in i['src']), "bad": bad_credit})
+            press = pg.evaluate(PRESS_JS)
+            gate(f"[{lang}] all 30 press photos appear once with visible linked credits", len(press["slugs"]) == 30 and set(press["slugs"]) == PRESS_SLUGS and not press["bad"], {"count": len(press["slugs"]), "unique": len(set(press["slugs"])), "missing": sorted(PRESS_SLUGS - set(press["slugs"])), "bad_credit": press["bad"]})
             gate(f"[{lang}] no broken images", not broken, broken)
 
             # text rules
