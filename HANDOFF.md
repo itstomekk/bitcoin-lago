@@ -89,6 +89,8 @@ The Spanish was written for natural Guatemalan usage ("tuc tuc", "lancha", "come
 
 `qa/report-local.md` and `qa/report-live.md` list every gate with the measured evidence. Screenshots: `qa/screenshots/` (local) and `qa/screenshots/live/` (from the live URL). Re-run:
 
+Final live QA on 2026-10-21 (https://itstomekk.github.io/lago-bitcoin-community/): baseline 80/80; nine designs 893/899 on the first pass, the 6 misses were lazy photos still downloading on a slow link (all assets 200), so the runner now scrolls and waits up to 25 s for images; D, F and G rerun 290/290 (`qa/report-variants-live-dfg.md`).
+
 Final local QA on 2026-10-21 (all nine designs): baseline 80/80 (`qa/report-local.md`); A, C, D, AC, AD, CD, F, G and H 899/899 in `qa/report-variants-local-acdacadcdfgh.md`; Hallmark F/G/H mobile 28/28 at 320/375/414/768 plus the 1280x800 fold. Fixed on 2026-10-21: the hidden "coming soon" toast no longer peeks above the bottom edge, and H's node arrows no longer touch the next label.
 
 Local F + press-photo phase on 2026-10-20: baseline 80/80; A, C, D, AC, AD, CD and F 703/703 in `qa/report-variants-local-acdacadcdf.md`, including the exact 30-photo set and linked credits. Hallmark F mobile 10/10 at 320/375/414/768; AB23 privacy and keyboard activation 16/16. The last full browser QA preceded the final quote shortening; the builders were rerun and now reject any press quote that is not exactly one sentence.

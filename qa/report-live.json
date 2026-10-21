@@ -1,6 +1,6 @@
 {
  "base": "https://itstomekk.github.io/lago-bitcoin-community/",
- "pass": 82,
+ "pass": 80,
  "fail": 0,
  "gates": [
   {
@@ -148,7 +148,7 @@
   {
    "gate": "[en] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "648 KB (tiles excluded: 258 KB)"
+   "evidence": "2247 KB (tiles excluded: 258 KB)"
   },
   {
    "gate": "[en] no horizontal overflow at 1440",
@@ -238,16 +238,26 @@
    "gate": "[en] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 8,
+    "images": 50,
     "bad": []
    }
   },
   {
-   "gate": "[en] every photo has a credit line (Commons page + licence links)",
+   "gate": "[en] every photo has a linked source credit",
    "result": "PASS",
    "evidence": {
-    "photos": 7,
+    "photos": 49,
     "bad": []
+   }
+  },
+  {
+   "gate": "[en] all 30 press photos appear once with visible linked credits",
+   "result": "PASS",
+   "evidence": {
+    "count": 30,
+    "unique": 30,
+    "missing": [],
+    "bad_credit": []
    }
   },
   {
@@ -279,11 +289,6 @@
    "gate": "[en] OSM/ODbL, BTC Map and Commons credits in footer",
    "result": "PASS",
    "evidence": "ok"
-  },
-  {
-   "gate": "[en] axe-core WCAG A/AA violations (1440)",
-   "result": "PASS",
-   "evidence": []
   },
   {
    "gate": "[en] no horizontal overflow at 390",
@@ -319,7 +324,7 @@
   {
    "gate": "[es] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "649 KB (tiles excluded: 258 KB)"
+   "evidence": "2248 KB (tiles excluded: 258 KB)"
   },
   {
    "gate": "[es] no horizontal overflow at 1440",
@@ -409,16 +414,26 @@
    "gate": "[es] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 8,
+    "images": 50,
     "bad": []
    }
   },
   {
-   "gate": "[es] every photo has a credit line (Commons page + licence links)",
+   "gate": "[es] every photo has a linked source credit",
    "result": "PASS",
    "evidence": {
-    "photos": 7,
+    "photos": 49,
     "bad": []
+   }
+  },
+  {
+   "gate": "[es] all 30 press photos appear once with visible linked credits",
+   "result": "PASS",
+   "evidence": {
+    "count": 30,
+    "unique": 30,
+    "missing": [],
+    "bad_credit": []
    }
   },
   {
@@ -450,11 +465,6 @@
    "gate": "[es] OSM/ODbL, BTC Map and Commons credits in footer",
    "result": "PASS",
    "evidence": "ok"
-  },
-  {
-   "gate": "[es] axe-core WCAG A/AA violations (1440)",
-   "result": "PASS",
-   "evidence": []
   },
   {
    "gate": "[es] no horizontal overflow at 390",
@@ -511,7 +521,7 @@
      "whatsapp-invite-url"
     ],
     "h2": 7,
-    "imgs": 24
+    "imgs": 66
    }
   },
   {
@@ -551,16 +561,6 @@
    "gate": "placeholder badge visible in preview",
    "result": "PASS",
    "evidence": "\"Placeholder: whatsapp-invite-url\""
-  },
-  {
-   "gate": "[en] axe-core WCAG A/AA violations in dark mode",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[es] axe-core WCAG A/AA violations in dark mode",
-   "result": "PASS",
-   "evidence": []
   },
   {
    "gate": "every data-placeholder is listed in HANDOFF.md",

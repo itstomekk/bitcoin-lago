@@ -323,6 +323,12 @@ def variant(browser, vid):
         pg.wait_for_timeout(900)
         gate(f"{L} ride 'Show on map' opens a popup", pg.evaluate("!!document.querySelector('.leaflet-popup')"), "popup")
 
+        # live sites on a slow link: scroll every lazy image into range and give them up to 25 s to arrive
+        pg.evaluate("async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { scrollTo(0, y); await new Promise(r => setTimeout(r, 80)); } }")
+        try:
+            pg.wait_for_function("[...document.images].every(i => i.complete && i.naturalWidth > 0)", timeout=25000)
+        except Exception:
+            pass  # the gates below report whatever is still missing
         imgs = pg.evaluate(IMG_JS)
         bad_alt = [i for i in imgs if i["alt"] is None or (i["alt"] == "" and "favicon" not in i["src"] and "logo" not in i["src"])]
         photos = [i for i in imgs if "/images/" in i["src"] and "/logo/" not in i["src"]]
