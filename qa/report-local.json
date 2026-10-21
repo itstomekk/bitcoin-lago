@@ -1,10 +1,10 @@
 {
- "base": "http://127.0.0.1:18435/",
+ "base": "http://127.0.0.1:18431/",
  "pass": 80,
  "fail": 0,
  "gates": [
   {
-   "gate": "HTTP 200 http://127.0.0.1:18435/",
+   "gate": "HTTP 200 http://127.0.0.1:18431/",
    "result": "PASS",
    "evidence": 200
   },
@@ -46,7 +46,7 @@
    "evidence": "en"
   },
   {
-   "gate": "HTTP 200 http://127.0.0.1:18435/es/",
+   "gate": "HTTP 200 http://127.0.0.1:18431/es/",
    "result": "PASS",
    "evidence": 200
   },
@@ -148,7 +148,7 @@
   {
    "gate": "[en] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "2250 KB (tiles excluded: 258 KB)"
+   "evidence": "2251 KB (tiles excluded: 258 KB)"
   },
   {
    "gate": "[en] no horizontal overflow at 1440",
@@ -324,7 +324,7 @@
   {
    "gate": "[es] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "2251 KB (tiles excluded: 258 KB)"
+   "evidence": "2252 KB (tiles excluded: 258 KB)"
   },
   {
    "gate": "[es] no horizontal overflow at 1440",
@@ -527,30 +527,30 @@
   {
    "gate": "browser language es: opening / redirects to /es/",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18435/es/"
+   "evidence": "http://127.0.0.1:18431/es/"
   },
   {
    "gate": "switcher EN: goes to English page and stores choice",
    "result": "PASS",
    "evidence": {
-    "url": "http://127.0.0.1:18435/",
+    "url": "http://127.0.0.1:18431/",
     "stored": "en"
    }
   },
   {
    "gate": "stored choice (en) beats browser language (es) on reload",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18435/"
+   "evidence": "http://127.0.0.1:18431/"
   },
   {
    "gate": "switcher ES: goes to /es/ and stores choice",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18435/es/"
+   "evidence": "http://127.0.0.1:18431/es/"
   },
   {
    "gate": "browser language en: opening /es/ redirects to /",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18435/"
+   "evidence": "http://127.0.0.1:18431/"
   },
   {
    "gate": "placeholder button shows 'coming soon' toast",

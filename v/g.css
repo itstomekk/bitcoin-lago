@@ -104,6 +104,7 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 .history-video .video-facade { background: var(--color-video-frame); }
 .history-video .video-play { color: var(--color-accent-ink); }
 .history-video .video-play-mark { background: var(--color-accent); color: var(--color-accent-ink); }
+.topbar-chip.topbar-current[data-design="g"] { color: var(--color-accent-ink); }
 
 /* Preview controls stay legible and single-line. */
 .btn, .chip, .mast-nav a, .site-footer a { white-space: nowrap; }

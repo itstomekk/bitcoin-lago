@@ -1,0 +1,96 @@
+/* Hallmark H tokens · Grid / ultramarine / Archivo · locked before emit */
+:root {
+  /* Near-white paper, deep ink, hairline rules; ultramarine is the single accent. */
+  --color-paper: oklch(99% 0.003 255);
+  --color-paper-2: oklch(97.2% 0.005 255);
+  --color-paper-3: oklch(94.5% 0.007 255);
+  --color-paper-4: oklch(90% 0.012 255);
+  --color-neutral: oklch(58% 0.008 255);
+  --color-muted: oklch(39% 0.009 255);
+  --color-rule: oklch(86% 0.008 255);
+  --color-ink: oklch(16% 0.01 255);
+  --color-accent: oklch(45% 0.19 264);
+  --color-accent-hover: oklch(38% 0.17 264);
+  --color-accent-soft: oklch(83% 0.08 264);
+  --color-accent-ink: oklch(99% 0.003 255);
+  --color-focus: oklch(43% 0.19 264);
+  --color-shadow: oklch(16% 0.01 255);
+  --color-video-frame: oklch(18% 0.02 264);
+  --color-photo-paper: oklch(94.5% 0.007 255);
+
+  /* Archivo variable: one family carries body and display text. */
+  --font-body: "Archivo", system-ui, sans-serif;
+  --font-display: var(--font-body);
+  --display-weight: 800;
+  --tracking-display: -0.045em;
+  --line-height-display: 0.9;
+
+  /* Four-point spacing scale with fluid page gutter and section rhythm. */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+  --space-5xl: 10rem;
+  --space-gutter: clamp(var(--space-sm), 4vw, var(--space-2xl));
+  --space-section: clamp(var(--space-2xl), 10vw, var(--space-5xl));
+
+  /* Major-third text scale; display sizes are locked for the Grid theme. */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5625rem;
+  --text-xl: 1.9531rem;
+  --text-2xl: 2.4414rem;
+  --text-3xl: 3.0518rem;
+  --text-4xl: 3.8147rem;
+  --text-display: clamp(3.25rem, 10.5vw, 8.5rem);
+  --text-display-s: var(--text-display);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 200ms;
+  --dur-long: 420ms;
+  --rule-hair: 1px;
+
+  --radius-square: 0;
+  --radius-pill: 0;
+  --shadow-soft: none;
+
+  /* Shared project-component aliases and map/switcher settings. */
+  --bg: var(--color-paper);
+  --surface: var(--color-paper-2);
+  --tint: var(--color-paper-3);
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --line: var(--color-rule);
+  --link: var(--color-ink);
+  --accent: var(--color-accent);
+  --on-accent: var(--color-accent-ink);
+  --focus: var(--color-focus);
+  --field-bg: var(--color-paper-2);
+  --field-line: var(--color-neutral);
+  --radius: var(--radius-square);
+  --btn-radius: var(--radius-square);
+  --marker-fill: var(--color-accent);
+  --marker-stroke: var(--color-ink);
+  --marker-r: 7;
+  --map-h: clamp(440px, 74svh, 820px);
+  --vsw-bg: var(--color-ink);
+  --vsw-fg: var(--color-paper);
+  --vsw-cur-bg: var(--color-paper);
+  --vsw-cur-fg: var(--color-ink);
+  --pad: var(--space-gutter);
+  --content-max: 1280px;
+  --topbar-h: 28px;
+  --header-h: 4rem;
+  color-scheme: light;
+}

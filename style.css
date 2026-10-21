@@ -36,6 +36,12 @@
   --teal-fill: #14606c;
   --lake: #0a3047;
   --accent: #f7931a;
+  --chip-f: oklch(48% 0.16 25);
+  --chip-f-label: oklch(82% 0.1 25);
+  --chip-g: oklch(40% 0.12 145);
+  --chip-g-label: oklch(82% 0.08 145);
+  --chip-h: oklch(45% 0.19 264);
+  --chip-h-label: oklch(83% 0.08 264);
   --on-accent: #0c2433;
   --on-teal: #ffffff;
   --shadow: 0 18px 40px -22px rgb(10 48 71 / 0.35);
@@ -190,9 +196,9 @@ a:hover { color: var(--ink); }
 .topbar-chip[data-design="ac"]     { --chip-color: #60c0a0; color: #85e0c0; }
 .topbar-chip[data-design="ad"]     { --chip-color: #80c060; color: #a8df88; }
 .topbar-chip[data-design="cd"]     { --chip-color: #ff8040; color: #ffad80; }
-.topbar-chip[data-design="f"]      { --chip-color: #006b6b; color: #6bd0d0; }
-.topbar-chip[data-design="g"]      { --chip-color: oklch(40% 0.12 145); color: oklch(82% 0.08 145); }
-.topbar-chip[data-design="h"]      { --chip-color: #1d5cff; color: #8daeff; }
+.topbar-chip[data-design="f"]      { --chip-color: var(--chip-f); color: var(--chip-f-label); }
+.topbar-chip[data-design="g"]      { --chip-color: var(--chip-g); color: var(--chip-g-label); }
+.topbar-chip[data-design="h"]      { --chip-color: var(--chip-h); color: var(--chip-h-label); }
 
 .topbar-lang { display: inline-flex; border: 1.5px solid #003060; border-radius: 999px; padding: 2px; background: #001838; }
 .topbar-lang a { text-decoration: none; font-weight: 700; font-size: 0.65rem; padding: 0.18rem 0.5rem; border-radius: 999px; min-width: 34px; text-align: center; transition: background-color 0.15s, color 0.15s; }
@@ -405,6 +411,7 @@ input::placeholder { color: var(--muted); opacity: 1; }
 /* TOAST */
 .toast { position: fixed; left: 50%; bottom: 1.4rem; transform: translate(-50%, 140%); background: var(--ink); color: var(--bg); padding: 0.75rem 1.3rem; border-radius: var(--pill); font-weight: 600; font-size: 0.95rem; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); z-index: 60; max-width: 92vw; text-align: center; }
 .toast.show { transform: translate(-50%, 0); }
+.toast:not(.show) { visibility: hidden; }
 
 /* 5. PLACEHOLDER BADGES (preview only) -----------------------------------
    Every element with data-placeholder="..." shows a small badge while <body> has the

@@ -1,0 +1,982 @@
+{
+ "base": "https://itstomekk.github.io/lago-bitcoin-community/",
+ "variants": [
+  "g"
+ ],
+ "pass": 115,
+ "fail": 0,
+ "gates": [
+  {
+   "gate": "robots.txt Disallow while private",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "[g/en] HTTP 200 https://itstomekk.github.io/lago-bitcoin-community/v/g/",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "[g/en] title + meta description",
+   "result": "PASS",
+   "evidence": {
+    "title": "Lago Bitcoin Community | Bitcoin on Lake Atitlán, Guatemala",
+    "desc_len": 158
+   }
+  },
+  {
+   "gate": "[g/en] meta robots noindex,nofollow",
+   "result": "PASS",
+   "evidence": "present"
+  },
+  {
+   "gate": "[g/en] hreflang en/es/x-default",
+   "result": "PASS",
+   "evidence": [
+    [
+     "en",
+     "https://itstomekk.github.io/lago-bitcoin-community/v/g/"
+    ],
+    [
+     "es",
+     "https://itstomekk.github.io/lago-bitcoin-community/v/g/es/"
+    ],
+    [
+     "x-default",
+     "https://itstomekk.github.io/lago-bitcoin-community/v/g/"
+    ]
+   ]
+  },
+  {
+   "gate": "[g/en] html lang + data-design",
+   "result": "PASS",
+   "evidence": "en"
+  },
+  {
+   "gate": "[g/en] every referenced asset and link returns 200",
+   "result": "PASS",
+   "evidence": {
+    "checked": 115,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[g/en] no console errors/warnings, no failed requests",
+   "result": "PASS",
+   "evidence": {
+    "console": [],
+    "failed": []
+   }
+  },
+  {
+   "gate": "[g/en] page weight under 3 MB excluding map tiles",
+   "result": "PASS",
+   "evidence": "2538 KB"
+  },
+  {
+   "gate": "[g/en] no horizontal overflow at 1440",
+   "result": "PASS",
+   "evidence": {
+    "sw": 1440,
+    "cw": 1440
+   }
+  },
+  {
+   "gate": "[g/en] no text leaves the screen at 1440",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[g/en] every section fills the screen (>=0.95 of viewport height)",
+   "result": "PASS",
+   "evidence": [
+    [
+     "hero",
+     1.44
+    ],
+    [
+     "lake",
+     2.54
+    ],
+    [
+     "bitcoin",
+     1.65
+    ],
+    [
+     "transport",
+     2.28
+    ],
+    [
+     "community",
+     3.46
+    ],
+    [
+     "tours",
+     1.82
+    ],
+    [
+     "expats",
+     1.23
+    ],
+    [
+     "about",
+     6.96
+    ]
+   ]
+  },
+  {
+   "gate": "[g/en] map ready and renders 117 markers",
+   "result": "PASS",
+   "evidence": {
+    "state": "ready",
+    "markers": 117,
+    "tiles": 16
+   }
+  },
+  {
+   "gate": "[g/en] list count == marker count == 117",
+   "result": "PASS",
+   "evidence": {
+    "cards": 117,
+    "markers": 117,
+    "hook": {
+     "m": 117,
+     "c": 117,
+     "v": 117,
+     "p": 117
+    }
+   }
+  },
+  {
+   "gate": "[g/en] count text shows 117",
+   "result": "PASS",
+   "evidence": "Showing 117 of 117 places"
+  },
+  {
+   "gate": "[g/en] markers use the design's own colour token",
+   "result": "PASS",
+   "evidence": {
+    "fills": [
+     "oklch(40% 0.12 145)"
+    ],
+    "token": "oklch(40% 0.12 145)"
+   }
+  },
+  {
+   "gate": "[g/en] search filters list and map together",
+   "result": "PASS",
+   "evidence": {
+    "c": 6,
+    "m": 6,
+    "paths": 6
+   }
+  },
+  {
+   "gate": "[g/en] category chip filters (stay)",
+   "result": "PASS",
+   "evidence": {
+    "c": 16,
+    "m": 16,
+    "pressed": "stay"
+   }
+  },
+  {
+   "gate": "[g/en] village filter",
+   "result": "PASS",
+   "evidence": {
+    "c": 10,
+    "m": 10
+   }
+  },
+  {
+   "gate": "[g/en] empty state",
+   "result": "PASS",
+   "evidence": {
+    "c": 0,
+    "m": 0,
+    "empty": true
+   }
+  },
+  {
+   "gate": "[g/en] reset restores 117",
+   "result": "PASS",
+   "evidence": {
+    "c": 117,
+    "m": 117
+   }
+  },
+  {
+   "gate": "[g/en] ride 'Show on map' opens a popup",
+   "result": "PASS",
+   "evidence": "popup"
+  },
+  {
+   "gate": "[g/en] every image has alt text",
+   "result": "PASS",
+   "evidence": {
+    "images": 51,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[g/en] only local photos, each with a Commons, approved community-archive, or linked press credit",
+   "result": "PASS",
+   "evidence": {
+    "photos": 49,
+    "no_credit": [],
+    "other_images": []
+   }
+  },
+  {
+   "gate": "[g/en] all 30 press photos appear once with visible linked credits",
+   "result": "PASS",
+   "evidence": {
+    "count": 30,
+    "unique": 30,
+    "missing": [],
+    "bad_credit": []
+   }
+  },
+  {
+   "gate": "[g/en] no broken images",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[g/en] no 'official'/'oficial' claim",
+   "result": "PASS",
+   "evidence": "none"
+  },
+  {
+   "gate": "[g/en] no em or en dashes in visible text",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[g/en] merchant check note present",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[g/en] 117 places + 50+ claim + data date",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[g/en] OSM/ODbL, BTC Map and Commons credits in footer",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[g/en] floating Design switcher: all finished designs, current marked, fixed, in view",
+   "result": "PASS",
+   "evidence": {
+    "letters": [
+     "A",
+     "C",
+     "D",
+     "AC",
+     "AD",
+     "CD",
+     "F",
+     "G"
+    ],
+    "cur": [
+     "G"
+    ],
+    "hrefs": [
+     "../a/",
+     "../c/",
+     "../d/",
+     "../ac/",
+     "../ad/",
+     "../cd/",
+     "../f/",
+     "./",
+     "../../variants/"
+    ],
+    "inView": true,
+    "fixed": "fixed"
+   }
+  },
+  {
+   "gate": "[g/en] switcher goes to design C in the same language and remembers it",
+   "result": "PASS",
+   "evidence": {
+    "url": "https://itstomekk.github.io/lago-bitcoin-community/v/c/",
+    "stored": "c"
+   }
+  },
+  {
+   "gate": "[g/en] 1440 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[g/en] 1440 text over photos/gradients: contrast",
+   "result": "PASS",
+   "evidence": "no overlay text found"
+  },
+  {
+   "gate": "[g/en] no horizontal overflow at 390",
+   "result": "PASS",
+   "evidence": {
+    "sw": 390,
+    "cw": 390
+   }
+  },
+  {
+   "gate": "[g/en] no text leaves the screen at 390",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[g/en] no console errors at 390",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[g/en] brand does not overlap its CTA or menu button at 390",
+   "result": "PASS",
+   "evidence": {
+    "brandRight": 311,
+    "overlapCta": false,
+    "overlapMenu": false
+   }
+  },
+  {
+   "gate": "[g/en] 117 markers at 390",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[g/en] switcher fits at 390",
+   "result": "PASS",
+   "evidence": {
+    "right": 382,
+    "vw": 390,
+    "h": 44
+   }
+  },
+  {
+   "gate": "[g/en] mobile menu opens",
+   "result": "PASS",
+   "evidence": true
+  },
+  {
+   "gate": "[g/en] menu link scrolls to the merchants section",
+   "result": "PASS",
+   "evidence": 0
+  },
+  {
+   "gate": "[g/en] 390 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[g/en] 390 text over photos/gradients: contrast",
+   "result": "PASS",
+   "evidence": "no overlay text found"
+  },
+  {
+   "gate": "[g/es] HTTP 200 https://itstomekk.github.io/lago-bitcoin-community/v/g/es/",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "[g/es] title + meta description",
+   "result": "PASS",
+   "evidence": {
+    "title": "Lago Bitcoin Community | Bitcoin en el Lago de Atitlán, Guatemala",
+    "desc_len": 179
+   }
+  },
+  {
+   "gate": "[g/es] meta robots noindex,nofollow",
+   "result": "PASS",
+   "evidence": "present"
+  },
+  {
+   "gate": "[g/es] hreflang en/es/x-default",
+   "result": "PASS",
+   "evidence": [
+    [
+     "en",
+     "https://itstomekk.github.io/lago-bitcoin-community/v/g/"
+    ],
+    [
+     "es",
+     "https://itstomekk.github.io/lago-bitcoin-community/v/g/es/"
+    ],
+    [
+     "x-default",
+     "https://itstomekk.github.io/lago-bitcoin-community/v/g/"
+    ]
+   ]
+  },
+  {
+   "gate": "[g/es] html lang + data-design",
+   "result": "PASS",
+   "evidence": "es"
+  },
+  {
+   "gate": "[g/es] every referenced asset and link returns 200",
+   "result": "PASS",
+   "evidence": {
+    "checked": 122,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[g/es] no console errors/warnings, no failed requests",
+   "result": "PASS",
+   "evidence": {
+    "console": [],
+    "failed": []
+   }
+  },
+  {
+   "gate": "[g/es] page weight under 3 MB excluding map tiles",
+   "result": "PASS",
+   "evidence": "2539 KB"
+  },
+  {
+   "gate": "[g/es] no horizontal overflow at 1440",
+   "result": "PASS",
+   "evidence": {
+    "sw": 1440,
+    "cw": 1440
+   }
+  },
+  {
+   "gate": "[g/es] no text leaves the screen at 1440",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[g/es] every section fills the screen (>=0.95 of viewport height)",
+   "result": "PASS",
+   "evidence": [
+    [
+     "hero",
+     1.44
+    ],
+    [
+     "lake",
+     2.57
+    ],
+    [
+     "bitcoin",
+     1.65
+    ],
+    [
+     "transport",
+     2.31
+    ],
+    [
+     "community",
+     3.49
+    ],
+    [
+     "tours",
+     1.82
+    ],
+    [
+     "expats",
+     1.23
+    ],
+    [
+     "about",
+     7.01
+    ]
+   ]
+  },
+  {
+   "gate": "[g/es] map ready and renders 117 markers",
+   "result": "PASS",
+   "evidence": {
+    "state": "ready",
+    "markers": 117,
+    "tiles": 16
+   }
+  },
+  {
+   "gate": "[g/es] list count == marker count == 117",
+   "result": "PASS",
+   "evidence": {
+    "cards": 117,
+    "markers": 117,
+    "hook": {
+     "m": 117,
+     "c": 117,
+     "v": 117,
+     "p": 117
+    }
+   }
+  },
+  {
+   "gate": "[g/es] count text shows 117",
+   "result": "PASS",
+   "evidence": "Mostrando 117 de 117 lugares"
+  },
+  {
+   "gate": "[g/es] markers use the design's own colour token",
+   "result": "PASS",
+   "evidence": {
+    "fills": [
+     "oklch(40% 0.12 145)"
+    ],
+    "token": "oklch(40% 0.12 145)"
+   }
+  },
+  {
+   "gate": "[g/es] search filters list and map together",
+   "result": "PASS",
+   "evidence": {
+    "c": 17,
+    "m": 17,
+    "paths": 17
+   }
+  },
+  {
+   "gate": "[g/es] category chip filters (stay)",
+   "result": "PASS",
+   "evidence": {
+    "c": 16,
+    "m": 16,
+    "pressed": "stay"
+   }
+  },
+  {
+   "gate": "[g/es] village filter",
+   "result": "PASS",
+   "evidence": {
+    "c": 10,
+    "m": 10
+   }
+  },
+  {
+   "gate": "[g/es] empty state",
+   "result": "PASS",
+   "evidence": {
+    "c": 0,
+    "m": 0,
+    "empty": true
+   }
+  },
+  {
+   "gate": "[g/es] reset restores 117",
+   "result": "PASS",
+   "evidence": {
+    "c": 117,
+    "m": 117
+   }
+  },
+  {
+   "gate": "[g/es] ride 'Show on map' opens a popup",
+   "result": "PASS",
+   "evidence": "popup"
+  },
+  {
+   "gate": "[g/es] every image has alt text",
+   "result": "PASS",
+   "evidence": {
+    "images": 51,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[g/es] only local photos, each with a Commons, approved community-archive, or linked press credit",
+   "result": "PASS",
+   "evidence": {
+    "photos": 49,
+    "no_credit": [],
+    "other_images": []
+   }
+  },
+  {
+   "gate": "[g/es] all 30 press photos appear once with visible linked credits",
+   "result": "PASS",
+   "evidence": {
+    "count": 30,
+    "unique": 30,
+    "missing": [],
+    "bad_credit": []
+   }
+  },
+  {
+   "gate": "[g/es] no broken images",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[g/es] no 'official'/'oficial' claim",
+   "result": "PASS",
+   "evidence": "none"
+  },
+  {
+   "gate": "[g/es] no em or en dashes in visible text",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[g/es] merchant check note present",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[g/es] 117 places + 50+ claim + data date",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[g/es] OSM/ODbL, BTC Map and Commons credits in footer",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[g/es] floating Design switcher: all finished designs, current marked, fixed, in view",
+   "result": "PASS",
+   "evidence": {
+    "letters": [
+     "A",
+     "C",
+     "D",
+     "AC",
+     "AD",
+     "CD",
+     "F",
+     "G"
+    ],
+    "cur": [
+     "G"
+    ],
+    "hrefs": [
+     "../../a/es/",
+     "../../c/es/",
+     "../../d/es/",
+     "../../ac/es/",
+     "../../ad/es/",
+     "../../cd/es/",
+     "../../f/es/",
+     "./",
+     "../../../variants/es/"
+    ],
+    "inView": true,
+    "fixed": "fixed"
+   }
+  },
+  {
+   "gate": "[g/es] switcher goes to design C in the same language and remembers it",
+   "result": "PASS",
+   "evidence": {
+    "url": "https://itstomekk.github.io/lago-bitcoin-community/v/c/es/",
+    "stored": "c"
+   }
+  },
+  {
+   "gate": "[g/es] 1440 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[g/es] 1440 text over photos/gradients: contrast",
+   "result": "PASS",
+   "evidence": "no overlay text found"
+  },
+  {
+   "gate": "[g/es] no horizontal overflow at 390",
+   "result": "PASS",
+   "evidence": {
+    "sw": 390,
+    "cw": 390
+   }
+  },
+  {
+   "gate": "[g/es] no text leaves the screen at 390",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[g/es] no console errors at 390",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[g/es] brand does not overlap its CTA or menu button at 390",
+   "result": "PASS",
+   "evidence": {
+    "brandRight": 311,
+    "overlapCta": false,
+    "overlapMenu": false
+   }
+  },
+  {
+   "gate": "[g/es] 117 markers at 390",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[g/es] switcher fits at 390",
+   "result": "PASS",
+   "evidence": {
+    "right": 382,
+    "vw": 390,
+    "h": 44
+   }
+  },
+  {
+   "gate": "[g/es] mobile menu opens",
+   "result": "PASS",
+   "evidence": true
+  },
+  {
+   "gate": "[g/es] menu link scrolls to the merchants section",
+   "result": "PASS",
+   "evidence": 0
+  },
+  {
+   "gate": "[g] EN/ES parity: same section ids in same order",
+   "result": "PASS",
+   "evidence": [
+    "hero",
+    "lake",
+    "bitcoin",
+    "transport",
+    "community",
+    "tours",
+    "expats",
+    "about"
+   ]
+  },
+  {
+   "gate": "[g] EN/ES parity: placeholders, nav targets, h2 and image counts",
+   "result": "PASS",
+   "evidence": {
+    "placeholders": [
+     "atm-locations",
+     "contact-email",
+     "expat-contact",
+     "facebook",
+     "meetup-dates",
+     "meetup-venues",
+     "school-list",
+     "tomek-bio-photo",
+     "tour-booking",
+     "tour-booking-details",
+     "whatsapp-invite-url"
+    ],
+    "h2": 7,
+    "imgs": 67,
+    "nav": [
+     "#lake",
+     "#bitcoin",
+     "#transport",
+     "#community",
+     "#tours",
+     "#expats",
+     "#about"
+    ]
+   }
+  },
+  {
+   "gate": "[g] every nav link targets an existing section",
+   "result": "PASS",
+   "evidence": [
+    "#lake",
+    "#bitcoin",
+    "#transport",
+    "#community",
+    "#tours",
+    "#expats",
+    "#about"
+   ]
+  },
+  {
+   "gate": "[g] no section dropped (map, merchants, community, tours, expats, boat/tuk tuk, ATM, history)",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[g] browser language es: opening EN redirects to /es/",
+   "result": "PASS",
+   "evidence": "https://itstomekk.github.io/lago-bitcoin-community/v/g/es/"
+  },
+  {
+   "gate": "[g] EN switch stays in this design and stores the choice",
+   "result": "PASS",
+   "evidence": "https://itstomekk.github.io/lago-bitcoin-community/v/g/"
+  },
+  {
+   "gate": "[g] ES switch stays in this design",
+   "result": "PASS",
+   "evidence": "https://itstomekk.github.io/lago-bitcoin-community/v/g/es/"
+  },
+  {
+   "gate": "[g] browser language en: opening /es/ redirects to EN",
+   "result": "PASS",
+   "evidence": "https://itstomekk.github.io/lago-bitcoin-community/v/g/"
+  },
+  {
+   "gate": "[g] placeholder button shows 'coming soon' toast",
+   "result": "PASS",
+   "evidence": "toast"
+  },
+  {
+   "gate": "[g] placeholder badge visible in preview",
+   "result": "PASS",
+   "evidence": "\"Placeholder: whatsapp-invite-url\""
+  },
+  {
+   "gate": "[index/en] HTTP 200 https://itstomekk.github.io/lago-bitcoin-community/variants/",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "[index/en] noindex,nofollow",
+   "result": "PASS",
+   "evidence": "present"
+  },
+  {
+   "gate": "[index/en] every referenced asset and link returns 200",
+   "result": "PASS",
+   "evidence": {
+    "checked": 31,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[index/en] 1440: 9 cards and loaded thumbnails, no console errors or overflow",
+   "result": "PASS",
+   "evidence": {
+    "info": {
+     "cards": 9,
+     "thumbs": 9
+    },
+    "errs": [],
+    "ov": {
+     "sw": 1440,
+     "cw": 1440
+    }
+   }
+  },
+  {
+   "gate": "[index/en] 1440 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[index/en] 390: 9 cards and loaded thumbnails, no console errors or overflow",
+   "result": "PASS",
+   "evidence": {
+    "info": {
+     "cards": 9,
+     "thumbs": 9
+    },
+    "errs": [],
+    "ov": {
+     "sw": 390,
+     "cw": 390
+    }
+   }
+  },
+  {
+   "gate": "[index/en] 390 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[index/en] card G opens /v/g/ in en",
+   "result": "PASS",
+   "evidence": "https://itstomekk.github.io/lago-bitcoin-community/v/g/"
+  },
+  {
+   "gate": "[index/es] HTTP 200 https://itstomekk.github.io/lago-bitcoin-community/variants/es/",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "[index/es] noindex,nofollow",
+   "result": "PASS",
+   "evidence": "present"
+  },
+  {
+   "gate": "[index/es] every referenced asset and link returns 200",
+   "result": "PASS",
+   "evidence": {
+    "checked": 32,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[index/es] 1440: 9 cards and loaded thumbnails, no console errors or overflow",
+   "result": "PASS",
+   "evidence": {
+    "info": {
+     "cards": 9,
+     "thumbs": 9
+    },
+    "errs": [],
+    "ov": {
+     "sw": 1440,
+     "cw": 1440
+    }
+   }
+  },
+  {
+   "gate": "[index/es] 1440 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[index/es] 390: 9 cards and loaded thumbnails, no console errors or overflow",
+   "result": "PASS",
+   "evidence": {
+    "info": {
+     "cards": 9,
+     "thumbs": 9
+    },
+    "errs": [],
+    "ov": {
+     "sw": 390,
+     "cw": 390
+    }
+   }
+  },
+  {
+   "gate": "[index/es] 390 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[index/es] card G opens /v/g/ in es",
+   "result": "PASS",
+   "evidence": "https://itstomekk.github.io/lago-bitcoin-community/v/g/es/"
+  },
+  {
+   "gate": "HTTP 200 https://itstomekk.github.io/lago-bitcoin-community/v/",
+   "result": "PASS",
+   "evidence": 200
+  },
+  {
+   "gate": "every data-placeholder is listed in HANDOFF.md",
+   "result": "PASS",
+   "evidence": {
+    "placeholders": [
+     "atm-locations",
+     "contact-email",
+     "expat-contact",
+     "facebook",
+     "meetup-dates",
+     "meetup-venues",
+     "school-list",
+     "tomek-bio-photo",
+     "tour-booking",
+     "tour-booking-details",
+     "whatsapp-invite-url"
+    ],
+    "missing": []
+   }
+  }
+ ]
+}

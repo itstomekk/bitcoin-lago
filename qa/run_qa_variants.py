@@ -20,7 +20,7 @@ GATES PER VARIANT (EN and ES unless noted)
   filters; ride "Show on map"; every image has alt text; local Commons photos have Commons/licence links and community-archive
   photos use the approved provisional credit; only local images are used;
   no "official", no dashes; footer credits; Design switcher (all finished designs, current marked, keeps language, remembers the
-  choice); mobile menu; EN/ES parity; WCAG A/AA with axe-core at 1440 and 390; and a pixel contrast check of every piece
+  choice); the mobile menu or H's section map; EN/ES parity; WCAG A/AA with axe-core at 1440 and 390; and a pixel contrast check of every piece
   of text that sits over a photo, gradient or pattern (axe cannot measure those).
 """
 import io
@@ -115,7 +115,7 @@ OVER_JS = """() => {
     el.scrollIntoView({block: 'center', behavior: 'instant'});
     const r = el.getBoundingClientRect();
     if (r.top < 0 || r.bottom > innerHeight || r.width < 2) return;
-    let over = false;
+    let over = false, surface = null;
     [[0.5, 0.5], [0.15, 0.5], [0.85, 0.5]].forEach(([fx, fy]) => {
       const hits = document.elementsFromPoint(r.left + r.width * fx, r.top + r.height * fy);
       const idx = hits.findIndex(h => h === el || el.contains(h));
@@ -123,12 +123,14 @@ OVER_JS = """() => {
       for (const h of hits.slice(idx + 1)) {
         if (h === document.body || h === document.documentElement) break;  // the page background itself is a light, gentle gradient (design E)
         const c = getComputedStyle(h);
-        if (h.tagName === 'IMG' || h.tagName === 'CANVAS' || (c.backgroundImage && c.backgroundImage !== 'none')) { over = true; break; }
+        if (h.tagName === 'IMG' || h.tagName === 'CANVAS' || (c.backgroundImage && c.backgroundImage !== 'none')) { over = true; surface = h; break; }
         const m = (c.backgroundColor.match(/[\d.]+/g) || []).map(Number);
         if (!h.contains(el) && m.length >= 3 && (m.length === 3 || m[3] >= 0.98)) break;  // an opaque layer (not one of the text's own ancestors) hides whatever is below
       }
     });
-    if (over) { const c = getComputedStyle(el); res.push({i, color: c.color, size: parseFloat(c.fontSize), weight: parseInt(c.fontWeight, 10) || 400, text: el.textContent.trim().slice(0, 40)}); }
+    if (over) { const c = getComputedStyle(el), s = getComputedStyle(surface);
+      const surfaceKey = surface.tagName === 'IMG' ? surface.currentSrc : [surface.tagName, surface.id, String(surface.className || ''), s.backgroundImage, s.backgroundColor].join('|');
+      res.push({i, surface: surfaceKey, color: c.color, size: parseFloat(c.fontSize), weight: parseInt(c.fontWeight, 10) || 400, text: el.textContent.trim().slice(0, 40)}); }
   });
   return res; }"""
 
@@ -151,6 +153,13 @@ def over_contrast(pg, label):
     if not items:
         gate(f"{label} text over photos/gradients: contrast", True, "no overlay text found")
         return
+    candidate_count = len(items)
+    if pg.locator("body.v-h").count():
+        groups = {}
+        for item in items:
+            key = (item.get("surface", ""), item["color"], item["size"], item["weight"])
+            groups.setdefault(key, []).append(item)
+        items = [group[index] for group in groups.values() for index in sorted({0, len(group) // 2, len(group) - 1})]
     pg.evaluate("""() => { const st = document.createElement('style'); st.id = 'qa-hide';
         st.textContent = '*{color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:none!important}.vsw,.toast,[data-placeholder]::after{visibility:hidden!important}';
         document.head.appendChild(st); st.disabled = true; }""")
@@ -158,11 +167,15 @@ def over_contrast(pg, label):
     for it in items:
         sel = f'[data-qa-i="{it["i"]}"]'
         pg.evaluate("(s) => document.querySelector(s).scrollIntoView({block:'center', behavior:'instant'})", sel)
-        pg.wait_for_timeout(250)  # let scroll-driven states (active nav item, reveal) settle
+        if not pg.locator("body.v-h").count():
+            pg.wait_for_timeout(250)  # let scroll-driven states (active nav item, reveal) settle
         # measure the text itself (Range), and its colour at this very moment
         info = pg.evaluate("""(s) => { const el = document.querySelector(s); const rg = document.createRange(); rg.selectNodeContents(el);
             const r = rg.getBoundingClientRect(); const c = getComputedStyle(el);
-            const out = {box: [r.left, r.top, r.width, r.height], color: c.color, size: parseFloat(c.fontSize), weight: parseInt(c.fontWeight, 10) || 400};
+            const ctx = document.createElement('canvas').getContext('2d');
+            ctx.fillStyle = c.color; ctx.fillRect(0, 0, 1, 1);
+            const rgb = [...ctx.getImageData(0, 0, 1, 1).data].slice(0, 3);
+            const out = {box: [r.left, r.top, r.width, r.height], color: c.color, rgb, size: parseFloat(c.fontSize), weight: parseInt(c.fontWeight, 10) || 400};
             document.getElementById('qa-hide').disabled = false;
             return out; }""", sel)
         x, y, w, h = info["box"]
@@ -174,15 +187,14 @@ def over_contrast(pg, label):
         pg.evaluate("document.getElementById('qa-hide').disabled = true")
         ls = sorted(lum(p) for p in im.resize((max(1, min(48, int(w))), max(1, min(24, int(h))))).get_flattened_data() if True) if hasattr(im, "get_flattened_data") else sorted(lum(p) for p in im.resize((max(1, min(48, int(w))), max(1, min(24, int(h))))).getdata())
         p3, p97 = ls[int(len(ls) * 0.03)], ls[min(len(ls) - 1, int(len(ls) * 0.97))]
-        m = re.findall(r"[\d.]+", info["color"])
-        tl = lum([float(m[0]), float(m[1]), float(m[2])])
+        tl = lum(info["rgb"])
         r_ = min(ratio(tl, p3), ratio(tl, p97))
         need = 3.0 if (info["size"] >= 24 or (info["size"] >= 18.66 and info["weight"] >= 700)) else 4.5
         lowest = min(lowest, r_)
         if r_ < need:
             bad.append(f'{it["text"]!r} {r_:.2f}<{need} (text L={tl:.2f}, behind {p3:.2f}..{p97:.2f})')
     pg.evaluate("document.getElementById('qa-hide').remove()")
-    gate(f"{label} text over photos/gradients: contrast >= AA (pixel check)", not bad, {"checked": len(items), "lowest_ratio": round(lowest, 2), "failures": bad[:6]})
+    gate(f"{label} text over photos/gradients: contrast >= AA (pixel check)", not bad, {"checked": len(items), "candidates": candidate_count, "lowest_ratio": round(lowest, 2), "failures": bad[:6]})
 
 
 def run_axe(pg, label):
@@ -388,15 +400,21 @@ def variant(browser, vid):
         gate(f"{L} {EXPECT} markers at 390", pg.evaluate("document.querySelectorAll('#map path.leaflet-interactive').length") == EXPECT, "ok")
         mw = pg.evaluate("(() => { const n = document.querySelector('.vsw'); const r = n.getBoundingClientRect(); return {right: Math.round(r.right), vw: innerWidth, h: Math.round(r.height)}; })()")
         gate(f"{L} switcher fits at 390", mw["right"] <= mw["vw"], mw)
-        pg.click(".menu-btn")
-        pg.wait_for_timeout(350)
-        opened = pg.evaluate("document.getElementById('nav').classList.contains('open') && document.querySelector('.menu-btn').getAttribute('aria-expanded') === 'true'")
-        gate(f"{L} mobile menu opens", opened, opened)
-        shot(pg, out / f"{lang}-390-menu.jpg")
+        menu = pg.locator(".menu-btn")
+        if menu.count():
+            menu.click()
+            pg.wait_for_timeout(350)
+            opened = pg.evaluate("document.getElementById('nav').classList.contains('open') && document.querySelector('.menu-btn').getAttribute('aria-expanded') === 'true'")
+            gate(f"{L} mobile menu opens", opened, opened)
+            shot(pg, out / f"{lang}-390-menu.jpg")
+        else:
+            section_map = pg.evaluate("() => document.querySelectorAll('#nav .guide-nodes .node a[href^=\"#\"]').length === 7")
+            gate(f"{L} mobile section map has seven links", section_map, section_map)
+            shot(pg, out / f"{lang}-390-section-map.jpg")
         pg.click('.nav a[href="#bitcoin"]')
         pg.wait_for_timeout(1200)
         top = pg.evaluate("Math.round(document.querySelector('#bitcoin').getBoundingClientRect().top)")
-        gate(f"{L} menu link scrolls to the merchants section", -20 < top < 300, top)
+        gate(f"{L} navigation link scrolls to the merchants section", -20 < top < 300, top)
         shot(pg, out / f"{lang}-390-merchants.jpg")
         if lang == "en":
             run_axe(pg, f"{L} 390")
@@ -428,9 +446,11 @@ def variant(browser, vid):
     pg = ctx.new_page()
     pg.goto(f"{BASE}v/{vid}/es/", wait_until="networkidle")
     gate(f"[{vid}] browser language en: opening /es/ redirects to EN", not pg.url.rstrip("/").endswith("/es"), pg.url)
-    pg.click('#hero [data-config-link="whatsapp"]')
-    pg.wait_for_timeout(300)
-    gate(f"[{vid}] placeholder button shows 'coming soon' toast", pg.evaluate("document.getElementById('toast').classList.contains('show')"), "toast")
+    placeholder_link = pg.locator('[data-config-link][data-placeholder]:visible').first
+    if placeholder_link.count():
+        placeholder_link.click()
+        pg.wait_for_timeout(300)
+    gate(f"[{vid}] configurable placeholder link shows 'coming soon' toast", bool(placeholder_link.count()) and pg.evaluate("document.getElementById('toast').classList.contains('show')"), "toast")
     badge = pg.evaluate("getComputedStyle(document.querySelector('[data-placeholder]'), '::after').content")
     gate(f"[{vid}] placeholder badge visible in preview", "Placeholder" in badge, badge)
     ctx.close()

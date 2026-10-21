@@ -1,11 +1,11 @@
 {
- "base": "http://127.0.0.1:18432/",
+ "base": "http://127.0.0.1:18500/",
  "variants": [
-  "a",
-  "c",
-  "d"
+  "ac",
+  "ad",
+  "cd"
  ],
- "pass": 305,
+ "pass": 290,
  "fail": 0,
  "gates": [
   {
@@ -14,12 +14,12 @@
    "evidence": 200
   },
   {
-   "gate": "[a/en] HTTP 200 http://127.0.0.1:18432/v/a/",
+   "gate": "[ac/en] HTTP 200 http://127.0.0.1:18500/v/ac/",
    "result": "PASS",
    "evidence": 200
   },
   {
-   "gate": "[a/en] title + meta description",
+   "gate": "[ac/en] title + meta description",
    "result": "PASS",
    "evidence": {
     "title": "Lago Bitcoin Community | Bitcoin on Lake Atitlán, Guatemala",
@@ -27,43 +27,43 @@
    }
   },
   {
-   "gate": "[a/en] meta robots noindex,nofollow",
+   "gate": "[ac/en] meta robots noindex,nofollow",
    "result": "PASS",
    "evidence": "present"
   },
   {
-   "gate": "[a/en] hreflang en/es/x-default",
+   "gate": "[ac/en] hreflang en/es/x-default",
    "result": "PASS",
    "evidence": [
     [
      "en",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/a/"
+     "https://itstomekk.github.io/lago-bitcoin-community/v/ac/"
     ],
     [
      "es",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/a/es/"
+     "https://itstomekk.github.io/lago-bitcoin-community/v/ac/es/"
     ],
     [
      "x-default",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/a/"
+     "https://itstomekk.github.io/lago-bitcoin-community/v/ac/"
     ]
    ]
   },
   {
-   "gate": "[a/en] html lang + data-design",
+   "gate": "[ac/en] html lang + data-design",
    "result": "PASS",
    "evidence": "en"
   },
   {
-   "gate": "[a/en] every referenced asset and link returns 200",
+   "gate": "[ac/en] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 53,
+    "checked": 123,
     "bad": []
    }
   },
   {
-   "gate": "[a/en] no console errors/warnings, no failed requests",
+   "gate": "[ac/en] no console errors/warnings, no failed requests",
    "result": "PASS",
    "evidence": {
     "console": [],
@@ -71,368 +71,12 @@
    }
   },
   {
-   "gate": "[a/en] page weight under 3 MB excluding map tiles",
+   "gate": "[ac/en] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "835 KB"
+   "evidence": "2584 KB"
   },
   {
-   "gate": "[a/en] no horizontal overflow at 1440",
-   "result": "PASS",
-   "evidence": {
-    "sw": 1440,
-    "cw": 1440
-   }
-  },
-  {
-   "gate": "[a/en] no text leaves the screen at 1440",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[a/en] every section fills the screen (>=0.95 of viewport height)",
-   "result": "PASS",
-   "evidence": [
-    [
-     "hero",
-     1
-    ],
-    [
-     "lake",
-     1.16
-    ],
-    [
-     "bitcoin",
-     1.8
-    ],
-    [
-     "transport",
-     1.44
-    ],
-    [
-     "community",
-     1
-    ],
-    [
-     "tours",
-     1
-    ],
-    [
-     "expats",
-     1
-    ],
-    [
-     "about",
-     2.54
-    ]
-   ]
-  },
-  {
-   "gate": "[a/en] map ready and renders 117 markers",
-   "result": "PASS",
-   "evidence": {
-    "state": "ready",
-    "markers": 117,
-    "tiles": 16
-   }
-  },
-  {
-   "gate": "[a/en] list count == marker count == 117",
-   "result": "PASS",
-   "evidence": {
-    "cards": 117,
-    "markers": 117,
-    "hook": {
-     "m": 117,
-     "c": 117,
-     "v": 117,
-     "p": 117
-    }
-   }
-  },
-  {
-   "gate": "[a/en] count text shows 117",
-   "result": "PASS",
-   "evidence": "Showing 117 of 117 places"
-  },
-  {
-   "gate": "[a/en] markers use the design's own colour token",
-   "result": "PASS",
-   "evidence": {
-    "fills": [
-     "#b03a24"
-    ],
-    "token": "#b03a24"
-   }
-  },
-  {
-   "gate": "[a/en] search filters list and map together",
-   "result": "PASS",
-   "evidence": {
-    "c": 6,
-    "m": 6,
-    "paths": 6
-   }
-  },
-  {
-   "gate": "[a/en] category chip filters (stay)",
-   "result": "PASS",
-   "evidence": {
-    "c": 16,
-    "m": 16,
-    "pressed": "stay"
-   }
-  },
-  {
-   "gate": "[a/en] village filter",
-   "result": "PASS",
-   "evidence": {
-    "c": 10,
-    "m": 10
-   }
-  },
-  {
-   "gate": "[a/en] empty state",
-   "result": "PASS",
-   "evidence": {
-    "c": 0,
-    "m": 0,
-    "empty": true
-   }
-  },
-  {
-   "gate": "[a/en] reset restores 117",
-   "result": "PASS",
-   "evidence": {
-    "c": 117,
-    "m": 117
-   }
-  },
-  {
-   "gate": "[a/en] ride 'Show on map' opens a popup",
-   "result": "PASS",
-   "evidence": "popup"
-  },
-  {
-   "gate": "[a/en] every image has alt text",
-   "result": "PASS",
-   "evidence": {
-    "images": 12,
-    "bad": []
-   }
-  },
-  {
-   "gate": "[a/en] only local photos, each with a Commons or approved community-archive credit",
-   "result": "PASS",
-   "evidence": {
-    "photos": 10,
-    "no_credit": [],
-    "other_images": []
-   }
-  },
-  {
-   "gate": "[a/en] no broken images",
-   "result": "PASS",
-   "evidence": "ok"
-  },
-  {
-   "gate": "[a/en] no 'official'/'oficial' claim",
-   "result": "PASS",
-   "evidence": "none"
-  },
-  {
-   "gate": "[a/en] no em or en dashes in visible text",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[a/en] merchant check note present",
-   "result": "PASS",
-   "evidence": "ok"
-  },
-  {
-   "gate": "[a/en] 117 places + 50+ claim + data date",
-   "result": "PASS",
-   "evidence": "ok"
-  },
-  {
-   "gate": "[a/en] OSM/ODbL, BTC Map and Commons credits in footer",
-   "result": "PASS",
-   "evidence": "ok"
-  },
-  {
-   "gate": "[a/en] floating Design switcher: A C D, current marked, fixed, in view",
-   "result": "PASS",
-   "evidence": {
-    "letters": [
-     "A",
-     "C",
-     "D"
-    ],
-    "cur": [
-     "A"
-    ],
-    "hrefs": [
-     "./",
-     "../c/",
-     "../d/",
-     "../../variants/"
-    ],
-    "inView": true,
-    "fixed": "fixed"
-   }
-  },
-  {
-   "gate": "[a/en] switcher goes to design C in the same language and remembers it",
-   "result": "PASS",
-   "evidence": {
-    "url": "http://127.0.0.1:18432/v/c/",
-    "stored": "c"
-   }
-  },
-  {
-   "gate": "[a/en] 1440 axe-core WCAG A/AA violations",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[a/en] 1440 text over photos/gradients: contrast >= AA (pixel check)",
-   "result": "PASS",
-   "evidence": {
-    "checked": 3,
-    "lowest_ratio": 6.04,
-    "failures": []
-   }
-  },
-  {
-   "gate": "[a/en] no horizontal overflow at 390",
-   "result": "PASS",
-   "evidence": {
-    "sw": 390,
-    "cw": 390
-   }
-  },
-  {
-   "gate": "[a/en] no text leaves the screen at 390",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[a/en] no console errors at 390",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[a/en] brand text does not run into the language switch or menu button at 390",
-   "result": "PASS",
-   "evidence": {
-    "brandRight": 213,
-    "langLeft": 235,
-    "overlapLang": false,
-    "overlapMenu": false
-   }
-  },
-  {
-   "gate": "[a/en] 117 markers at 390",
-   "result": "PASS",
-   "evidence": "ok"
-  },
-  {
-   "gate": "[a/en] switcher fits at 390",
-   "result": "PASS",
-   "evidence": {
-    "right": 382,
-    "vw": 390,
-    "h": 44
-   }
-  },
-  {
-   "gate": "[a/en] mobile menu opens",
-   "result": "PASS",
-   "evidence": true
-  },
-  {
-   "gate": "[a/en] menu link scrolls to the merchants section",
-   "result": "PASS",
-   "evidence": -0.0
-  },
-  {
-   "gate": "[a/en] 390 axe-core WCAG A/AA violations",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[a/en] 390 text over photos/gradients: contrast >= AA (pixel check)",
-   "result": "PASS",
-   "evidence": {
-    "checked": 3,
-    "lowest_ratio": 6.04,
-    "failures": []
-   }
-  },
-  {
-   "gate": "[a/es] HTTP 200 http://127.0.0.1:18432/v/a/es/",
-   "result": "PASS",
-   "evidence": 200
-  },
-  {
-   "gate": "[a/es] title + meta description",
-   "result": "PASS",
-   "evidence": {
-    "title": "Lago Bitcoin Community | Bitcoin en el Lago de Atitlán, Guatemala",
-    "desc_len": 179
-   }
-  },
-  {
-   "gate": "[a/es] meta robots noindex,nofollow",
-   "result": "PASS",
-   "evidence": "present"
-  },
-  {
-   "gate": "[a/es] hreflang en/es/x-default",
-   "result": "PASS",
-   "evidence": [
-    [
-     "en",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/a/"
-    ],
-    [
-     "es",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/a/es/"
-    ],
-    [
-     "x-default",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/a/"
-    ]
-   ]
-  },
-  {
-   "gate": "[a/es] html lang + data-design",
-   "result": "PASS",
-   "evidence": "es"
-  },
-  {
-   "gate": "[a/es] every referenced asset and link returns 200",
-   "result": "PASS",
-   "evidence": {
-    "checked": 55,
-    "bad": []
-   }
-  },
-  {
-   "gate": "[a/es] no console errors/warnings, no failed requests",
-   "result": "PASS",
-   "evidence": {
-    "console": [],
-    "failed": []
-   }
-  },
-  {
-   "gate": "[a/es] page weight under 3 MB excluding map tiles",
-   "result": "PASS",
-   "evidence": "837 KB"
-  },
-  {
-   "gate": "[a/es] no horizontal overflow at 1440",
+   "gate": "[ac/en] no horizontal overflow at 1440",
    "result": "PASS",
    "evidence": {
     "sw": 1440,
@@ -440,446 +84,12 @@
    }
   },
   {
-   "gate": "[a/es] no text leaves the screen at 1440",
+   "gate": "[ac/en] no text leaves the screen at 1440",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[a/es] every section fills the screen (>=0.95 of viewport height)",
-   "result": "PASS",
-   "evidence": [
-    [
-     "hero",
-     1
-    ],
-    [
-     "lake",
-     1.19
-    ],
-    [
-     "bitcoin",
-     1.8
-    ],
-    [
-     "transport",
-     1.48
-    ],
-    [
-     "community",
-     1
-    ],
-    [
-     "tours",
-     1
-    ],
-    [
-     "expats",
-     1
-    ],
-    [
-     "about",
-     2.54
-    ]
-   ]
-  },
-  {
-   "gate": "[a/es] map ready and renders 117 markers",
-   "result": "PASS",
-   "evidence": {
-    "state": "ready",
-    "markers": 117,
-    "tiles": 16
-   }
-  },
-  {
-   "gate": "[a/es] list count == marker count == 117",
-   "result": "PASS",
-   "evidence": {
-    "cards": 117,
-    "markers": 117,
-    "hook": {
-     "m": 117,
-     "c": 117,
-     "v": 117,
-     "p": 117
-    }
-   }
-  },
-  {
-   "gate": "[a/es] count text shows 117",
-   "result": "PASS",
-   "evidence": "Mostrando 117 de 117 lugares"
-  },
-  {
-   "gate": "[a/es] markers use the design's own colour token",
-   "result": "PASS",
-   "evidence": {
-    "fills": [
-     "#b03a24"
-    ],
-    "token": "#b03a24"
-   }
-  },
-  {
-   "gate": "[a/es] search filters list and map together",
-   "result": "PASS",
-   "evidence": {
-    "c": 17,
-    "m": 17,
-    "paths": 17
-   }
-  },
-  {
-   "gate": "[a/es] category chip filters (stay)",
-   "result": "PASS",
-   "evidence": {
-    "c": 16,
-    "m": 16,
-    "pressed": "stay"
-   }
-  },
-  {
-   "gate": "[a/es] village filter",
-   "result": "PASS",
-   "evidence": {
-    "c": 10,
-    "m": 10
-   }
-  },
-  {
-   "gate": "[a/es] empty state",
-   "result": "PASS",
-   "evidence": {
-    "c": 0,
-    "m": 0,
-    "empty": true
-   }
-  },
-  {
-   "gate": "[a/es] reset restores 117",
-   "result": "PASS",
-   "evidence": {
-    "c": 117,
-    "m": 117
-   }
-  },
-  {
-   "gate": "[a/es] ride 'Show on map' opens a popup",
-   "result": "PASS",
-   "evidence": "popup"
-  },
-  {
-   "gate": "[a/es] every image has alt text",
-   "result": "PASS",
-   "evidence": {
-    "images": 12,
-    "bad": []
-   }
-  },
-  {
-   "gate": "[a/es] only local photos, each with a Commons or approved community-archive credit",
-   "result": "PASS",
-   "evidence": {
-    "photos": 10,
-    "no_credit": [],
-    "other_images": []
-   }
-  },
-  {
-   "gate": "[a/es] no broken images",
-   "result": "PASS",
-   "evidence": "ok"
-  },
-  {
-   "gate": "[a/es] no 'official'/'oficial' claim",
-   "result": "PASS",
-   "evidence": "none"
-  },
-  {
-   "gate": "[a/es] no em or en dashes in visible text",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[a/es] merchant check note present",
-   "result": "PASS",
-   "evidence": "ok"
-  },
-  {
-   "gate": "[a/es] 117 places + 50+ claim + data date",
-   "result": "PASS",
-   "evidence": "ok"
-  },
-  {
-   "gate": "[a/es] OSM/ODbL, BTC Map and Commons credits in footer",
-   "result": "PASS",
-   "evidence": "ok"
-  },
-  {
-   "gate": "[a/es] floating Design switcher: A C D, current marked, fixed, in view",
-   "result": "PASS",
-   "evidence": {
-    "letters": [
-     "A",
-     "C",
-     "D"
-    ],
-    "cur": [
-     "A"
-    ],
-    "hrefs": [
-     "./",
-     "../../c/es/",
-     "../../d/es/",
-     "../../../variants/es/"
-    ],
-    "inView": true,
-    "fixed": "fixed"
-   }
-  },
-  {
-   "gate": "[a/es] switcher goes to design C in the same language and remembers it",
-   "result": "PASS",
-   "evidence": {
-    "url": "http://127.0.0.1:18432/v/c/es/",
-    "stored": "c"
-   }
-  },
-  {
-   "gate": "[a/es] 1440 axe-core WCAG A/AA violations",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[a/es] 1440 text over photos/gradients: contrast >= AA (pixel check)",
-   "result": "PASS",
-   "evidence": {
-    "checked": 3,
-    "lowest_ratio": 6.04,
-    "failures": []
-   }
-  },
-  {
-   "gate": "[a/es] no horizontal overflow at 390",
-   "result": "PASS",
-   "evidence": {
-    "sw": 390,
-    "cw": 390
-   }
-  },
-  {
-   "gate": "[a/es] no text leaves the screen at 390",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[a/es] no console errors at 390",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[a/es] brand text does not run into the language switch or menu button at 390",
-   "result": "PASS",
-   "evidence": {
-    "brandRight": 213,
-    "langLeft": 235,
-    "overlapLang": false,
-    "overlapMenu": false
-   }
-  },
-  {
-   "gate": "[a/es] 117 markers at 390",
-   "result": "PASS",
-   "evidence": "ok"
-  },
-  {
-   "gate": "[a/es] switcher fits at 390",
-   "result": "PASS",
-   "evidence": {
-    "right": 382,
-    "vw": 390,
-    "h": 44
-   }
-  },
-  {
-   "gate": "[a/es] mobile menu opens",
-   "result": "PASS",
-   "evidence": true
-  },
-  {
-   "gate": "[a/es] menu link scrolls to the merchants section",
-   "result": "PASS",
-   "evidence": 0
-  },
-  {
-   "gate": "[a] EN/ES parity: same section ids in same order",
-   "result": "PASS",
-   "evidence": [
-    "hero",
-    "lake",
-    "bitcoin",
-    "transport",
-    "community",
-    "tours",
-    "expats",
-    "about"
-   ]
-  },
-  {
-   "gate": "[a] EN/ES parity: placeholders, nav targets, h2 and image counts",
-   "result": "PASS",
-   "evidence": {
-    "placeholders": [
-     "atm-locations",
-     "contact-email",
-     "expat-contact",
-     "facebook",
-     "meetup-dates",
-     "meetup-venues",
-     "school-list",
-     "tomek-bio-photo",
-     "tour-booking",
-     "tour-booking-details",
-     "whatsapp-invite-url"
-    ],
-    "h2": 7,
-    "imgs": 28,
-    "nav": [
-     "#lake",
-     "#bitcoin",
-     "#transport",
-     "#community",
-     "#tours",
-     "#expats",
-     "#about"
-    ]
-   }
-  },
-  {
-   "gate": "[a] every nav link targets an existing section",
-   "result": "PASS",
-   "evidence": [
-    "#lake",
-    "#bitcoin",
-    "#transport",
-    "#community",
-    "#tours",
-    "#expats",
-    "#about"
-   ]
-  },
-  {
-   "gate": "[a] no section dropped (map, merchants, community, tours, expats, boat/tuk tuk, ATM, history)",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[a] browser language es: opening EN redirects to /es/",
-   "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/a/es/"
-  },
-  {
-   "gate": "[a] EN switch stays in this design and stores the choice",
-   "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/a/"
-  },
-  {
-   "gate": "[a] ES switch stays in this design",
-   "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/a/es/"
-  },
-  {
-   "gate": "[a] browser language en: opening /es/ redirects to EN",
-   "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/a/"
-  },
-  {
-   "gate": "[a] placeholder button shows 'coming soon' toast",
-   "result": "PASS",
-   "evidence": "toast"
-  },
-  {
-   "gate": "[a] placeholder badge visible in preview",
-   "result": "PASS",
-   "evidence": "\"Placeholder: whatsapp-invite-url\""
-  },
-  {
-   "gate": "[c/en] HTTP 200 http://127.0.0.1:18432/v/c/",
-   "result": "PASS",
-   "evidence": 200
-  },
-  {
-   "gate": "[c/en] title + meta description",
-   "result": "PASS",
-   "evidence": {
-    "title": "Lago Bitcoin Community | Bitcoin on Lake Atitlán, Guatemala",
-    "desc_len": 158
-   }
-  },
-  {
-   "gate": "[c/en] meta robots noindex,nofollow",
-   "result": "PASS",
-   "evidence": "present"
-  },
-  {
-   "gate": "[c/en] hreflang en/es/x-default",
-   "result": "PASS",
-   "evidence": [
-    [
-     "en",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/c/"
-    ],
-    [
-     "es",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/c/es/"
-    ],
-    [
-     "x-default",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/c/"
-    ]
-   ]
-  },
-  {
-   "gate": "[c/en] html lang + data-design",
-   "result": "PASS",
-   "evidence": "en"
-  },
-  {
-   "gate": "[c/en] every referenced asset and link returns 200",
-   "result": "PASS",
-   "evidence": {
-    "checked": 57,
-    "bad": []
-   }
-  },
-  {
-   "gate": "[c/en] no console errors/warnings, no failed requests",
-   "result": "PASS",
-   "evidence": {
-    "console": [],
-    "failed": []
-   }
-  },
-  {
-   "gate": "[c/en] page weight under 3 MB excluding map tiles",
-   "result": "PASS",
-   "evidence": "1129 KB"
-  },
-  {
-   "gate": "[c/en] no horizontal overflow at 1440",
-   "result": "PASS",
-   "evidence": {
-    "sw": 1440,
-    "cw": 1440
-   }
-  },
-  {
-   "gate": "[c/en] no text leaves the screen at 1440",
-   "result": "PASS",
-   "evidence": []
-  },
-  {
-   "gate": "[c/en] every section fills the screen (>=0.95 of viewport height)",
+   "gate": "[ac/en] every section fills the screen (>=0.95 of viewport height)",
    "result": "PASS",
    "evidence": [
     [
@@ -900,7 +110,7 @@
     ],
     [
      "community",
-     1
+     1.56
     ],
     [
      "tours",
@@ -912,12 +122,12 @@
     ],
     [
      "about",
-     2.73
+     6.1
     ]
    ]
   },
   {
-   "gate": "[c/en] map ready and renders 117 markers",
+   "gate": "[ac/en] map ready and renders 117 markers",
    "result": "PASS",
    "evidence": {
     "state": "ready",
@@ -926,7 +136,7 @@
    }
   },
   {
-   "gate": "[c/en] list count == marker count == 117",
+   "gate": "[ac/en] list count == marker count == 117",
    "result": "PASS",
    "evidence": {
     "cards": 117,
@@ -940,22 +150,22 @@
    }
   },
   {
-   "gate": "[c/en] count text shows 117",
+   "gate": "[ac/en] count text shows 117",
    "result": "PASS",
    "evidence": "Showing 117 of 117 places"
   },
   {
-   "gate": "[c/en] markers use the design's own colour token",
+   "gate": "[ac/en] markers use the design's own colour token",
    "result": "PASS",
    "evidence": {
     "fills": [
-     "#ff5b1f"
+     "#20a060"
     ],
-    "token": "#ff5b1f"
+    "token": "#20a060"
    }
   },
   {
-   "gate": "[c/en] search filters list and map together",
+   "gate": "[ac/en] search filters list and map together",
    "result": "PASS",
    "evidence": {
     "c": 6,
@@ -964,7 +174,7 @@
    }
   },
   {
-   "gate": "[c/en] category chip filters (stay)",
+   "gate": "[ac/en] category chip filters (stay)",
    "result": "PASS",
    "evidence": {
     "c": 16,
@@ -973,7 +183,7 @@
    }
   },
   {
-   "gate": "[c/en] village filter",
+   "gate": "[ac/en] village filter",
    "result": "PASS",
    "evidence": {
     "c": 10,
@@ -981,7 +191,7 @@
    }
   },
   {
-   "gate": "[c/en] empty state",
+   "gate": "[ac/en] empty state",
    "result": "PASS",
    "evidence": {
     "c": 0,
@@ -990,7 +200,7 @@
    }
   },
   {
-   "gate": "[c/en] reset restores 117",
+   "gate": "[ac/en] reset restores 117",
    "result": "PASS",
    "evidence": {
     "c": 117,
@@ -998,73 +208,95 @@
    }
   },
   {
-   "gate": "[c/en] ride 'Show on map' opens a popup",
+   "gate": "[ac/en] ride 'Show on map' opens a popup",
    "result": "PASS",
    "evidence": "popup"
   },
   {
-   "gate": "[c/en] every image has alt text",
+   "gate": "[ac/en] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 13,
+    "images": 52,
     "bad": []
    }
   },
   {
-   "gate": "[c/en] only local photos, each with a Commons or approved community-archive credit",
+   "gate": "[ac/en] only local photos, each with a Commons, approved community-archive, or linked press credit",
    "result": "PASS",
    "evidence": {
-    "photos": 11,
+    "photos": 50,
     "no_credit": [],
     "other_images": []
    }
   },
   {
-   "gate": "[c/en] no broken images",
+   "gate": "[ac/en] all 30 press photos appear once with visible linked credits",
+   "result": "PASS",
+   "evidence": {
+    "count": 30,
+    "unique": 30,
+    "missing": [],
+    "bad_credit": []
+   }
+  },
+  {
+   "gate": "[ac/en] no broken images",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[c/en] no 'official'/'oficial' claim",
+   "gate": "[ac/en] no 'official'/'oficial' claim",
    "result": "PASS",
    "evidence": "none"
   },
   {
-   "gate": "[c/en] no em or en dashes in visible text",
+   "gate": "[ac/en] no em or en dashes in visible text",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[c/en] merchant check note present",
+   "gate": "[ac/en] merchant check note present",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[c/en] 117 places + 50+ claim + data date",
+   "gate": "[ac/en] 117 places + 50+ claim + data date",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[c/en] OSM/ODbL, BTC Map and Commons credits in footer",
+   "gate": "[ac/en] OSM/ODbL, BTC Map and Commons credits in footer",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[c/en] floating Design switcher: A C D, current marked, fixed, in view",
+   "gate": "[ac/en] floating Design switcher: all finished designs, current marked, fixed, in view",
    "result": "PASS",
    "evidence": {
     "letters": [
      "A",
      "C",
-     "D"
+     "D",
+     "AC",
+     "AD",
+     "CD",
+     "F",
+     "G",
+     "H"
     ],
     "cur": [
-     "C"
+     "AC"
     ],
     "hrefs": [
      "../a/",
-     "./",
+     "../c/",
      "../d/",
+     "./",
+     "../ad/",
+     "../cd/",
+     "../f/",
+     "../g/",
+     "../h/",
      "../../variants/"
     ],
     "inView": true,
@@ -1072,29 +304,29 @@
    }
   },
   {
-   "gate": "[c/en] switcher goes to design D in the same language and remembers it",
+   "gate": "[ac/en] switcher goes to design C in the same language and remembers it",
    "result": "PASS",
    "evidence": {
-    "url": "http://127.0.0.1:18432/v/d/",
-    "stored": "d"
+    "url": "http://127.0.0.1:18500/v/c/",
+    "stored": "c"
    }
   },
   {
-   "gate": "[c/en] 1440 axe-core WCAG A/AA violations",
+   "gate": "[ac/en] 1440 axe-core WCAG A/AA violations",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[c/en] 1440 text over photos/gradients: contrast >= AA (pixel check)",
+   "gate": "[ac/en] 1440 text over photos/gradients: contrast >= AA (pixel check)",
    "result": "PASS",
    "evidence": {
-    "checked": 32,
-    "lowest_ratio": 6.22,
+    "checked": 29,
+    "lowest_ratio": 5.35,
     "failures": []
    }
   },
   {
-   "gate": "[c/en] no horizontal overflow at 390",
+   "gate": "[ac/en] no horizontal overflow at 390",
    "result": "PASS",
    "evidence": {
     "sw": 390,
@@ -1102,70 +334,69 @@
    }
   },
   {
-   "gate": "[c/en] no text leaves the screen at 390",
+   "gate": "[ac/en] no text leaves the screen at 390",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[c/en] no console errors at 390",
+   "gate": "[ac/en] no console errors at 390",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[c/en] brand text does not run into the language switch or menu button at 390",
+   "gate": "[ac/en] brand does not overlap its CTA or menu button at 390",
    "result": "PASS",
    "evidence": {
     "brandRight": 197,
-    "langLeft": 240,
-    "overlapLang": false,
+    "overlapCta": false,
     "overlapMenu": false
    }
   },
   {
-   "gate": "[c/en] 117 markers at 390",
+   "gate": "[ac/en] 117 markers at 390",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[c/en] switcher fits at 390",
+   "gate": "[ac/en] switcher fits at 390",
    "result": "PASS",
    "evidence": {
     "right": 382,
     "vw": 390,
-    "h": 44
+    "h": 40
    }
   },
   {
-   "gate": "[c/en] mobile menu opens",
+   "gate": "[ac/en] mobile menu opens",
    "result": "PASS",
    "evidence": true
   },
   {
-   "gate": "[c/en] menu link scrolls to the merchants section",
+   "gate": "[ac/en] navigation link scrolls to the merchants section",
    "result": "PASS",
    "evidence": -0.0
   },
   {
-   "gate": "[c/en] 390 axe-core WCAG A/AA violations",
+   "gate": "[ac/en] 390 axe-core WCAG A/AA violations",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[c/en] 390 text over photos/gradients: contrast >= AA (pixel check)",
+   "gate": "[ac/en] 390 text over photos/gradients: contrast >= AA (pixel check)",
    "result": "PASS",
    "evidence": {
-    "checked": 32,
-    "lowest_ratio": 6.22,
+    "checked": 29,
+    "lowest_ratio": 5.35,
     "failures": []
    }
   },
   {
-   "gate": "[c/es] HTTP 200 http://127.0.0.1:18432/v/c/es/",
+   "gate": "[ac/es] HTTP 200 http://127.0.0.1:18500/v/ac/es/",
    "result": "PASS",
    "evidence": 200
   },
   {
-   "gate": "[c/es] title + meta description",
+   "gate": "[ac/es] title + meta description",
    "result": "PASS",
    "evidence": {
     "title": "Lago Bitcoin Community | Bitcoin en el Lago de Atitlán, Guatemala",
@@ -1173,43 +404,43 @@
    }
   },
   {
-   "gate": "[c/es] meta robots noindex,nofollow",
+   "gate": "[ac/es] meta robots noindex,nofollow",
    "result": "PASS",
    "evidence": "present"
   },
   {
-   "gate": "[c/es] hreflang en/es/x-default",
+   "gate": "[ac/es] hreflang en/es/x-default",
    "result": "PASS",
    "evidence": [
     [
      "en",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/c/"
+     "https://itstomekk.github.io/lago-bitcoin-community/v/ac/"
     ],
     [
      "es",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/c/es/"
+     "https://itstomekk.github.io/lago-bitcoin-community/v/ac/es/"
     ],
     [
      "x-default",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/c/"
+     "https://itstomekk.github.io/lago-bitcoin-community/v/ac/"
     ]
    ]
   },
   {
-   "gate": "[c/es] html lang + data-design",
+   "gate": "[ac/es] html lang + data-design",
    "result": "PASS",
    "evidence": "es"
   },
   {
-   "gate": "[c/es] every referenced asset and link returns 200",
+   "gate": "[ac/es] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 59,
+    "checked": 131,
     "bad": []
    }
   },
   {
-   "gate": "[c/es] no console errors/warnings, no failed requests",
+   "gate": "[ac/es] no console errors/warnings, no failed requests",
    "result": "PASS",
    "evidence": {
     "console": [],
@@ -1217,12 +448,12 @@
    }
   },
   {
-   "gate": "[c/es] page weight under 3 MB excluding map tiles",
+   "gate": "[ac/es] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "1130 KB"
+   "evidence": "2586 KB"
   },
   {
-   "gate": "[c/es] no horizontal overflow at 1440",
+   "gate": "[ac/es] no horizontal overflow at 1440",
    "result": "PASS",
    "evidence": {
     "sw": 1440,
@@ -1230,12 +461,12 @@
    }
   },
   {
-   "gate": "[c/es] no text leaves the screen at 1440",
+   "gate": "[ac/es] no text leaves the screen at 1440",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[c/es] every section fills the screen (>=0.95 of viewport height)",
+   "gate": "[ac/es] every section fills the screen (>=0.95 of viewport height)",
    "result": "PASS",
    "evidence": [
     [
@@ -1256,7 +487,7 @@
     ],
     [
      "community",
-     1
+     1.57
     ],
     [
      "tours",
@@ -1268,12 +499,12 @@
     ],
     [
      "about",
-     2.73
+     6.1
     ]
    ]
   },
   {
-   "gate": "[c/es] map ready and renders 117 markers",
+   "gate": "[ac/es] map ready and renders 117 markers",
    "result": "PASS",
    "evidence": {
     "state": "ready",
@@ -1282,7 +513,7 @@
    }
   },
   {
-   "gate": "[c/es] list count == marker count == 117",
+   "gate": "[ac/es] list count == marker count == 117",
    "result": "PASS",
    "evidence": {
     "cards": 117,
@@ -1296,22 +527,22 @@
    }
   },
   {
-   "gate": "[c/es] count text shows 117",
+   "gate": "[ac/es] count text shows 117",
    "result": "PASS",
    "evidence": "Mostrando 117 de 117 lugares"
   },
   {
-   "gate": "[c/es] markers use the design's own colour token",
+   "gate": "[ac/es] markers use the design's own colour token",
    "result": "PASS",
    "evidence": {
     "fills": [
-     "#ff5b1f"
+     "#20a060"
     ],
-    "token": "#ff5b1f"
+    "token": "#20a060"
    }
   },
   {
-   "gate": "[c/es] search filters list and map together",
+   "gate": "[ac/es] search filters list and map together",
    "result": "PASS",
    "evidence": {
     "c": 17,
@@ -1320,7 +551,7 @@
    }
   },
   {
-   "gate": "[c/es] category chip filters (stay)",
+   "gate": "[ac/es] category chip filters (stay)",
    "result": "PASS",
    "evidence": {
     "c": 16,
@@ -1329,7 +560,7 @@
    }
   },
   {
-   "gate": "[c/es] village filter",
+   "gate": "[ac/es] village filter",
    "result": "PASS",
    "evidence": {
     "c": 10,
@@ -1337,7 +568,7 @@
    }
   },
   {
-   "gate": "[c/es] empty state",
+   "gate": "[ac/es] empty state",
    "result": "PASS",
    "evidence": {
     "c": 0,
@@ -1346,7 +577,7 @@
    }
   },
   {
-   "gate": "[c/es] reset restores 117",
+   "gate": "[ac/es] reset restores 117",
    "result": "PASS",
    "evidence": {
     "c": 117,
@@ -1354,73 +585,95 @@
    }
   },
   {
-   "gate": "[c/es] ride 'Show on map' opens a popup",
+   "gate": "[ac/es] ride 'Show on map' opens a popup",
    "result": "PASS",
    "evidence": "popup"
   },
   {
-   "gate": "[c/es] every image has alt text",
+   "gate": "[ac/es] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 13,
+    "images": 52,
     "bad": []
    }
   },
   {
-   "gate": "[c/es] only local photos, each with a Commons or approved community-archive credit",
+   "gate": "[ac/es] only local photos, each with a Commons, approved community-archive, or linked press credit",
    "result": "PASS",
    "evidence": {
-    "photos": 11,
+    "photos": 50,
     "no_credit": [],
     "other_images": []
    }
   },
   {
-   "gate": "[c/es] no broken images",
+   "gate": "[ac/es] all 30 press photos appear once with visible linked credits",
+   "result": "PASS",
+   "evidence": {
+    "count": 30,
+    "unique": 30,
+    "missing": [],
+    "bad_credit": []
+   }
+  },
+  {
+   "gate": "[ac/es] no broken images",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[c/es] no 'official'/'oficial' claim",
+   "gate": "[ac/es] no 'official'/'oficial' claim",
    "result": "PASS",
    "evidence": "none"
   },
   {
-   "gate": "[c/es] no em or en dashes in visible text",
+   "gate": "[ac/es] no em or en dashes in visible text",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[c/es] merchant check note present",
+   "gate": "[ac/es] merchant check note present",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[c/es] 117 places + 50+ claim + data date",
+   "gate": "[ac/es] 117 places + 50+ claim + data date",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[c/es] OSM/ODbL, BTC Map and Commons credits in footer",
+   "gate": "[ac/es] OSM/ODbL, BTC Map and Commons credits in footer",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[c/es] floating Design switcher: A C D, current marked, fixed, in view",
+   "gate": "[ac/es] floating Design switcher: all finished designs, current marked, fixed, in view",
    "result": "PASS",
    "evidence": {
     "letters": [
      "A",
      "C",
-     "D"
+     "D",
+     "AC",
+     "AD",
+     "CD",
+     "F",
+     "G",
+     "H"
     ],
     "cur": [
-     "C"
+     "AC"
     ],
     "hrefs": [
      "../../a/es/",
-     "./",
+     "../../c/es/",
      "../../d/es/",
+     "./",
+     "../../ad/es/",
+     "../../cd/es/",
+     "../../f/es/",
+     "../../g/es/",
+     "../../h/es/",
      "../../../variants/es/"
     ],
     "inView": true,
@@ -1428,29 +681,29 @@
    }
   },
   {
-   "gate": "[c/es] switcher goes to design D in the same language and remembers it",
+   "gate": "[ac/es] switcher goes to design C in the same language and remembers it",
    "result": "PASS",
    "evidence": {
-    "url": "http://127.0.0.1:18432/v/d/es/",
-    "stored": "d"
+    "url": "http://127.0.0.1:18500/v/c/es/",
+    "stored": "c"
    }
   },
   {
-   "gate": "[c/es] 1440 axe-core WCAG A/AA violations",
+   "gate": "[ac/es] 1440 axe-core WCAG A/AA violations",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[c/es] 1440 text over photos/gradients: contrast >= AA (pixel check)",
+   "gate": "[ac/es] 1440 text over photos/gradients: contrast >= AA (pixel check)",
    "result": "PASS",
    "evidence": {
-    "checked": 32,
-    "lowest_ratio": 6.22,
+    "checked": 29,
+    "lowest_ratio": 5.35,
     "failures": []
    }
   },
   {
-   "gate": "[c/es] no horizontal overflow at 390",
+   "gate": "[ac/es] no horizontal overflow at 390",
    "result": "PASS",
    "evidence": {
     "sw": 390,
@@ -1458,51 +711,50 @@
    }
   },
   {
-   "gate": "[c/es] no text leaves the screen at 390",
+   "gate": "[ac/es] no text leaves the screen at 390",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[c/es] no console errors at 390",
+   "gate": "[ac/es] no console errors at 390",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[c/es] brand text does not run into the language switch or menu button at 390",
+   "gate": "[ac/es] brand does not overlap its CTA or menu button at 390",
    "result": "PASS",
    "evidence": {
     "brandRight": 197,
-    "langLeft": 240,
-    "overlapLang": false,
+    "overlapCta": false,
     "overlapMenu": false
    }
   },
   {
-   "gate": "[c/es] 117 markers at 390",
+   "gate": "[ac/es] 117 markers at 390",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[c/es] switcher fits at 390",
+   "gate": "[ac/es] switcher fits at 390",
    "result": "PASS",
    "evidence": {
     "right": 382,
     "vw": 390,
-    "h": 44
+    "h": 40
    }
   },
   {
-   "gate": "[c/es] mobile menu opens",
+   "gate": "[ac/es] mobile menu opens",
    "result": "PASS",
    "evidence": true
   },
   {
-   "gate": "[c/es] menu link scrolls to the merchants section",
+   "gate": "[ac/es] navigation link scrolls to the merchants section",
    "result": "PASS",
    "evidence": -0.0
   },
   {
-   "gate": "[c] EN/ES parity: same section ids in same order",
+   "gate": "[ac] EN/ES parity: same section ids in same order",
    "result": "PASS",
    "evidence": [
     "hero",
@@ -1516,7 +768,7 @@
    ]
   },
   {
-   "gate": "[c] EN/ES parity: placeholders, nav targets, h2 and image counts",
+   "gate": "[ac] EN/ES parity: placeholders, nav targets, h2 and image counts",
    "result": "PASS",
    "evidence": {
     "placeholders": [
@@ -1533,7 +785,7 @@
      "whatsapp-invite-url"
     ],
     "h2": 7,
-    "imgs": 29,
+    "imgs": 68,
     "nav": [
      "#lake",
      "#bitcoin",
@@ -1546,7 +798,7 @@
    }
   },
   {
-   "gate": "[c] every nav link targets an existing section",
+   "gate": "[ac] every nav link targets an existing section",
    "result": "PASS",
    "evidence": [
     "#lake",
@@ -1559,47 +811,47 @@
    ]
   },
   {
-   "gate": "[c] no section dropped (map, merchants, community, tours, expats, boat/tuk tuk, ATM, history)",
+   "gate": "[ac] no section dropped (map, merchants, community, tours, expats, boat/tuk tuk, ATM, history)",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[c] browser language es: opening EN redirects to /es/",
+   "gate": "[ac] browser language es: opening EN redirects to /es/",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/c/es/"
+   "evidence": "http://127.0.0.1:18500/v/ac/es/"
   },
   {
-   "gate": "[c] EN switch stays in this design and stores the choice",
+   "gate": "[ac] EN switch stays in this design and stores the choice",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/c/"
+   "evidence": "http://127.0.0.1:18500/v/ac/"
   },
   {
-   "gate": "[c] ES switch stays in this design",
+   "gate": "[ac] ES switch stays in this design",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/c/es/"
+   "evidence": "http://127.0.0.1:18500/v/ac/es/"
   },
   {
-   "gate": "[c] browser language en: opening /es/ redirects to EN",
+   "gate": "[ac] browser language en: opening /es/ redirects to EN",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/c/"
+   "evidence": "http://127.0.0.1:18500/v/ac/"
   },
   {
-   "gate": "[c] placeholder button shows 'coming soon' toast",
+   "gate": "[ac] placeholder button shows 'coming soon' toast",
    "result": "PASS",
    "evidence": "toast"
   },
   {
-   "gate": "[c] placeholder badge visible in preview",
+   "gate": "[ac] placeholder badge visible in preview",
    "result": "PASS",
    "evidence": "\"Placeholder: whatsapp-invite-url\""
   },
   {
-   "gate": "[d/en] HTTP 200 http://127.0.0.1:18432/v/d/",
+   "gate": "[ad/en] HTTP 200 http://127.0.0.1:18500/v/ad/",
    "result": "PASS",
    "evidence": 200
   },
   {
-   "gate": "[d/en] title + meta description",
+   "gate": "[ad/en] title + meta description",
    "result": "PASS",
    "evidence": {
     "title": "Lago Bitcoin Community | Bitcoin on Lake Atitlán, Guatemala",
@@ -1607,43 +859,43 @@
    }
   },
   {
-   "gate": "[d/en] meta robots noindex,nofollow",
+   "gate": "[ad/en] meta robots noindex,nofollow",
    "result": "PASS",
    "evidence": "present"
   },
   {
-   "gate": "[d/en] hreflang en/es/x-default",
+   "gate": "[ad/en] hreflang en/es/x-default",
    "result": "PASS",
    "evidence": [
     [
      "en",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/d/"
+     "https://itstomekk.github.io/lago-bitcoin-community/v/ad/"
     ],
     [
      "es",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/d/es/"
+     "https://itstomekk.github.io/lago-bitcoin-community/v/ad/es/"
     ],
     [
      "x-default",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/d/"
+     "https://itstomekk.github.io/lago-bitcoin-community/v/ad/"
     ]
    ]
   },
   {
-   "gate": "[d/en] html lang + data-design",
+   "gate": "[ad/en] html lang + data-design",
    "result": "PASS",
    "evidence": "en"
   },
   {
-   "gate": "[d/en] every referenced asset and link returns 200",
+   "gate": "[ad/en] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 57,
+    "checked": 123,
     "bad": []
    }
   },
   {
-   "gate": "[d/en] no console errors/warnings, no failed requests",
+   "gate": "[ad/en] no console errors/warnings, no failed requests",
    "result": "PASS",
    "evidence": {
     "console": [],
@@ -1651,12 +903,12 @@
    }
   },
   {
-   "gate": "[d/en] page weight under 3 MB excluding map tiles",
+   "gate": "[ad/en] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "905 KB"
+   "evidence": "2359 KB"
   },
   {
-   "gate": "[d/en] no horizontal overflow at 1440",
+   "gate": "[ad/en] no horizontal overflow at 1440",
    "result": "PASS",
    "evidence": {
     "sw": 1440,
@@ -1664,12 +916,12 @@
    }
   },
   {
-   "gate": "[d/en] no text leaves the screen at 1440",
+   "gate": "[ad/en] no text leaves the screen at 1440",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[d/en] every section fills the screen (>=0.95 of viewport height)",
+   "gate": "[ad/en] every section fills the screen (>=0.95 of viewport height)",
    "result": "PASS",
    "evidence": [
     [
@@ -1678,7 +930,7 @@
     ],
     [
      "lake",
-     1.29
+     1.3
     ],
     [
      "bitcoin",
@@ -1690,7 +942,7 @@
     ],
     [
      "community",
-     1.06
+     1.66
     ],
     [
      "tours",
@@ -1702,12 +954,12 @@
     ],
     [
      "about",
-     2.72
+     6.12
     ]
    ]
   },
   {
-   "gate": "[d/en] map ready and renders 117 markers",
+   "gate": "[ad/en] map ready and renders 117 markers",
    "result": "PASS",
    "evidence": {
     "state": "ready",
@@ -1716,7 +968,7 @@
    }
   },
   {
-   "gate": "[d/en] list count == marker count == 117",
+   "gate": "[ad/en] list count == marker count == 117",
    "result": "PASS",
    "evidence": {
     "cards": 117,
@@ -1730,22 +982,22 @@
    }
   },
   {
-   "gate": "[d/en] count text shows 117",
+   "gate": "[ad/en] count text shows 117",
    "result": "PASS",
    "evidence": "Showing 117 of 117 places"
   },
   {
-   "gate": "[d/en] markers use the design's own colour token",
+   "gate": "[ad/en] markers use the design's own colour token",
    "result": "PASS",
    "evidence": {
     "fills": [
-     "#f2b632"
+     "#20a060"
     ],
-    "token": "#f2b632"
+    "token": "#20a060"
    }
   },
   {
-   "gate": "[d/en] search filters list and map together",
+   "gate": "[ad/en] search filters list and map together",
    "result": "PASS",
    "evidence": {
     "c": 6,
@@ -1754,7 +1006,7 @@
    }
   },
   {
-   "gate": "[d/en] category chip filters (stay)",
+   "gate": "[ad/en] category chip filters (stay)",
    "result": "PASS",
    "evidence": {
     "c": 16,
@@ -1763,7 +1015,7 @@
    }
   },
   {
-   "gate": "[d/en] village filter",
+   "gate": "[ad/en] village filter",
    "result": "PASS",
    "evidence": {
     "c": 10,
@@ -1771,7 +1023,7 @@
    }
   },
   {
-   "gate": "[d/en] empty state",
+   "gate": "[ad/en] empty state",
    "result": "PASS",
    "evidence": {
     "c": 0,
@@ -1780,7 +1032,7 @@
    }
   },
   {
-   "gate": "[d/en] reset restores 117",
+   "gate": "[ad/en] reset restores 117",
    "result": "PASS",
    "evidence": {
     "c": 117,
@@ -1788,73 +1040,95 @@
    }
   },
   {
-   "gate": "[d/en] ride 'Show on map' opens a popup",
+   "gate": "[ad/en] ride 'Show on map' opens a popup",
    "result": "PASS",
    "evidence": "popup"
   },
   {
-   "gate": "[d/en] every image has alt text",
+   "gate": "[ad/en] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 13,
+    "images": 52,
     "bad": []
    }
   },
   {
-   "gate": "[d/en] only local photos, each with a Commons or approved community-archive credit",
+   "gate": "[ad/en] only local photos, each with a Commons, approved community-archive, or linked press credit",
    "result": "PASS",
    "evidence": {
-    "photos": 11,
+    "photos": 50,
     "no_credit": [],
     "other_images": []
    }
   },
   {
-   "gate": "[d/en] no broken images",
+   "gate": "[ad/en] all 30 press photos appear once with visible linked credits",
+   "result": "PASS",
+   "evidence": {
+    "count": 30,
+    "unique": 30,
+    "missing": [],
+    "bad_credit": []
+   }
+  },
+  {
+   "gate": "[ad/en] no broken images",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[d/en] no 'official'/'oficial' claim",
+   "gate": "[ad/en] no 'official'/'oficial' claim",
    "result": "PASS",
    "evidence": "none"
   },
   {
-   "gate": "[d/en] no em or en dashes in visible text",
+   "gate": "[ad/en] no em or en dashes in visible text",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[d/en] merchant check note present",
+   "gate": "[ad/en] merchant check note present",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[d/en] 117 places + 50+ claim + data date",
+   "gate": "[ad/en] 117 places + 50+ claim + data date",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[d/en] OSM/ODbL, BTC Map and Commons credits in footer",
+   "gate": "[ad/en] OSM/ODbL, BTC Map and Commons credits in footer",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[d/en] floating Design switcher: A C D, current marked, fixed, in view",
+   "gate": "[ad/en] floating Design switcher: all finished designs, current marked, fixed, in view",
    "result": "PASS",
    "evidence": {
     "letters": [
      "A",
      "C",
-     "D"
+     "D",
+     "AC",
+     "AD",
+     "CD",
+     "F",
+     "G",
+     "H"
     ],
     "cur": [
-     "D"
+     "AD"
     ],
     "hrefs": [
      "../a/",
      "../c/",
+     "../d/",
+     "../ac/",
      "./",
+     "../cd/",
+     "../f/",
+     "../g/",
+     "../h/",
      "../../variants/"
     ],
     "inView": true,
@@ -1862,29 +1136,29 @@
    }
   },
   {
-   "gate": "[d/en] switcher goes to design C in the same language and remembers it",
+   "gate": "[ad/en] switcher goes to design C in the same language and remembers it",
    "result": "PASS",
    "evidence": {
-    "url": "http://127.0.0.1:18432/v/c/",
+    "url": "http://127.0.0.1:18500/v/c/",
     "stored": "c"
    }
   },
   {
-   "gate": "[d/en] 1440 axe-core WCAG A/AA violations",
+   "gate": "[ad/en] 1440 axe-core WCAG A/AA violations",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[d/en] 1440 text over photos/gradients: contrast >= AA (pixel check)",
+   "gate": "[ad/en] 1440 text over photos/gradients: contrast >= AA (pixel check)",
    "result": "PASS",
    "evidence": {
     "checked": 8,
-    "lowest_ratio": 9.64,
+    "lowest_ratio": 9.98,
     "failures": []
    }
   },
   {
-   "gate": "[d/en] no horizontal overflow at 390",
+   "gate": "[ad/en] no horizontal overflow at 390",
    "result": "PASS",
    "evidence": {
     "sw": 390,
@@ -1892,70 +1166,69 @@
    }
   },
   {
-   "gate": "[d/en] no text leaves the screen at 390",
+   "gate": "[ad/en] no text leaves the screen at 390",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[d/en] no console errors at 390",
+   "gate": "[ad/en] no console errors at 390",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[d/en] brand text does not run into the language switch or menu button at 390",
+   "gate": "[ad/en] brand does not overlap its CTA or menu button at 390",
    "result": "PASS",
    "evidence": {
     "brandRight": 221,
-    "langLeft": 246,
-    "overlapLang": false,
+    "overlapCta": false,
     "overlapMenu": false
    }
   },
   {
-   "gate": "[d/en] 117 markers at 390",
+   "gate": "[ad/en] 117 markers at 390",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[d/en] switcher fits at 390",
+   "gate": "[ad/en] switcher fits at 390",
    "result": "PASS",
    "evidence": {
     "right": 382,
     "vw": 390,
-    "h": 44
+    "h": 40
    }
   },
   {
-   "gate": "[d/en] mobile menu opens",
+   "gate": "[ad/en] mobile menu opens",
    "result": "PASS",
    "evidence": true
   },
   {
-   "gate": "[d/en] menu link scrolls to the merchants section",
+   "gate": "[ad/en] navigation link scrolls to the merchants section",
    "result": "PASS",
    "evidence": 84
   },
   {
-   "gate": "[d/en] 390 axe-core WCAG A/AA violations",
+   "gate": "[ad/en] 390 axe-core WCAG A/AA violations",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[d/en] 390 text over photos/gradients: contrast >= AA (pixel check)",
+   "gate": "[ad/en] 390 text over photos/gradients: contrast >= AA (pixel check)",
    "result": "PASS",
    "evidence": {
     "checked": 8,
-    "lowest_ratio": 9.67,
+    "lowest_ratio": 9.98,
     "failures": []
    }
   },
   {
-   "gate": "[d/es] HTTP 200 http://127.0.0.1:18432/v/d/es/",
+   "gate": "[ad/es] HTTP 200 http://127.0.0.1:18500/v/ad/es/",
    "result": "PASS",
    "evidence": 200
   },
   {
-   "gate": "[d/es] title + meta description",
+   "gate": "[ad/es] title + meta description",
    "result": "PASS",
    "evidence": {
     "title": "Lago Bitcoin Community | Bitcoin en el Lago de Atitlán, Guatemala",
@@ -1963,43 +1236,43 @@
    }
   },
   {
-   "gate": "[d/es] meta robots noindex,nofollow",
+   "gate": "[ad/es] meta robots noindex,nofollow",
    "result": "PASS",
    "evidence": "present"
   },
   {
-   "gate": "[d/es] hreflang en/es/x-default",
+   "gate": "[ad/es] hreflang en/es/x-default",
    "result": "PASS",
    "evidence": [
     [
      "en",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/d/"
+     "https://itstomekk.github.io/lago-bitcoin-community/v/ad/"
     ],
     [
      "es",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/d/es/"
+     "https://itstomekk.github.io/lago-bitcoin-community/v/ad/es/"
     ],
     [
      "x-default",
-     "https://itstomekk.github.io/lago-bitcoin-community/v/d/"
+     "https://itstomekk.github.io/lago-bitcoin-community/v/ad/"
     ]
    ]
   },
   {
-   "gate": "[d/es] html lang + data-design",
+   "gate": "[ad/es] html lang + data-design",
    "result": "PASS",
    "evidence": "es"
   },
   {
-   "gate": "[d/es] every referenced asset and link returns 200",
+   "gate": "[ad/es] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 59,
+    "checked": 131,
     "bad": []
    }
   },
   {
-   "gate": "[d/es] no console errors/warnings, no failed requests",
+   "gate": "[ad/es] no console errors/warnings, no failed requests",
    "result": "PASS",
    "evidence": {
     "console": [],
@@ -2007,12 +1280,12 @@
    }
   },
   {
-   "gate": "[d/es] page weight under 3 MB excluding map tiles",
+   "gate": "[ad/es] page weight under 3 MB excluding map tiles",
    "result": "PASS",
-   "evidence": "906 KB"
+   "evidence": "2361 KB"
   },
   {
-   "gate": "[d/es] no horizontal overflow at 1440",
+   "gate": "[ad/es] no horizontal overflow at 1440",
    "result": "PASS",
    "evidence": {
     "sw": 1440,
@@ -2020,12 +1293,12 @@
    }
   },
   {
-   "gate": "[d/es] no text leaves the screen at 1440",
+   "gate": "[ad/es] no text leaves the screen at 1440",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[d/es] every section fills the screen (>=0.95 of viewport height)",
+   "gate": "[ad/es] every section fills the screen (>=0.95 of viewport height)",
    "result": "PASS",
    "evidence": [
     [
@@ -2034,7 +1307,7 @@
     ],
     [
      "lake",
-     1.29
+     1.3
     ],
     [
      "bitcoin",
@@ -2046,7 +1319,7 @@
     ],
     [
      "community",
-     1.07
+     1.67
     ],
     [
      "tours",
@@ -2058,12 +1331,12 @@
     ],
     [
      "about",
-     2.72
+     6.12
     ]
    ]
   },
   {
-   "gate": "[d/es] map ready and renders 117 markers",
+   "gate": "[ad/es] map ready and renders 117 markers",
    "result": "PASS",
    "evidence": {
     "state": "ready",
@@ -2072,7 +1345,7 @@
    }
   },
   {
-   "gate": "[d/es] list count == marker count == 117",
+   "gate": "[ad/es] list count == marker count == 117",
    "result": "PASS",
    "evidence": {
     "cards": 117,
@@ -2086,22 +1359,22 @@
    }
   },
   {
-   "gate": "[d/es] count text shows 117",
+   "gate": "[ad/es] count text shows 117",
    "result": "PASS",
    "evidence": "Mostrando 117 de 117 lugares"
   },
   {
-   "gate": "[d/es] markers use the design's own colour token",
+   "gate": "[ad/es] markers use the design's own colour token",
    "result": "PASS",
    "evidence": {
     "fills": [
-     "#f2b632"
+     "#20a060"
     ],
-    "token": "#f2b632"
+    "token": "#20a060"
    }
   },
   {
-   "gate": "[d/es] search filters list and map together",
+   "gate": "[ad/es] search filters list and map together",
    "result": "PASS",
    "evidence": {
     "c": 17,
@@ -2110,7 +1383,7 @@
    }
   },
   {
-   "gate": "[d/es] category chip filters (stay)",
+   "gate": "[ad/es] category chip filters (stay)",
    "result": "PASS",
    "evidence": {
     "c": 16,
@@ -2119,7 +1392,7 @@
    }
   },
   {
-   "gate": "[d/es] village filter",
+   "gate": "[ad/es] village filter",
    "result": "PASS",
    "evidence": {
     "c": 10,
@@ -2127,7 +1400,7 @@
    }
   },
   {
-   "gate": "[d/es] empty state",
+   "gate": "[ad/es] empty state",
    "result": "PASS",
    "evidence": {
     "c": 0,
@@ -2136,7 +1409,7 @@
    }
   },
   {
-   "gate": "[d/es] reset restores 117",
+   "gate": "[ad/es] reset restores 117",
    "result": "PASS",
    "evidence": {
     "c": 117,
@@ -2144,73 +1417,95 @@
    }
   },
   {
-   "gate": "[d/es] ride 'Show on map' opens a popup",
+   "gate": "[ad/es] ride 'Show on map' opens a popup",
    "result": "PASS",
    "evidence": "popup"
   },
   {
-   "gate": "[d/es] every image has alt text",
+   "gate": "[ad/es] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 13,
+    "images": 52,
     "bad": []
    }
   },
   {
-   "gate": "[d/es] only local photos, each with a Commons or approved community-archive credit",
+   "gate": "[ad/es] only local photos, each with a Commons, approved community-archive, or linked press credit",
    "result": "PASS",
    "evidence": {
-    "photos": 11,
+    "photos": 50,
     "no_credit": [],
     "other_images": []
    }
   },
   {
-   "gate": "[d/es] no broken images",
+   "gate": "[ad/es] all 30 press photos appear once with visible linked credits",
+   "result": "PASS",
+   "evidence": {
+    "count": 30,
+    "unique": 30,
+    "missing": [],
+    "bad_credit": []
+   }
+  },
+  {
+   "gate": "[ad/es] no broken images",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[d/es] no 'official'/'oficial' claim",
+   "gate": "[ad/es] no 'official'/'oficial' claim",
    "result": "PASS",
    "evidence": "none"
   },
   {
-   "gate": "[d/es] no em or en dashes in visible text",
+   "gate": "[ad/es] no em or en dashes in visible text",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[d/es] merchant check note present",
+   "gate": "[ad/es] merchant check note present",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[d/es] 117 places + 50+ claim + data date",
+   "gate": "[ad/es] 117 places + 50+ claim + data date",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[d/es] OSM/ODbL, BTC Map and Commons credits in footer",
+   "gate": "[ad/es] OSM/ODbL, BTC Map and Commons credits in footer",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[d/es] floating Design switcher: A C D, current marked, fixed, in view",
+   "gate": "[ad/es] floating Design switcher: all finished designs, current marked, fixed, in view",
    "result": "PASS",
    "evidence": {
     "letters": [
      "A",
      "C",
-     "D"
+     "D",
+     "AC",
+     "AD",
+     "CD",
+     "F",
+     "G",
+     "H"
     ],
     "cur": [
-     "D"
+     "AD"
     ],
     "hrefs": [
      "../../a/es/",
      "../../c/es/",
+     "../../d/es/",
+     "../../ac/es/",
      "./",
+     "../../cd/es/",
+     "../../f/es/",
+     "../../g/es/",
+     "../../h/es/",
      "../../../variants/es/"
     ],
     "inView": true,
@@ -2218,29 +1513,29 @@
    }
   },
   {
-   "gate": "[d/es] switcher goes to design C in the same language and remembers it",
+   "gate": "[ad/es] switcher goes to design C in the same language and remembers it",
    "result": "PASS",
    "evidence": {
-    "url": "http://127.0.0.1:18432/v/c/es/",
+    "url": "http://127.0.0.1:18500/v/c/es/",
     "stored": "c"
    }
   },
   {
-   "gate": "[d/es] 1440 axe-core WCAG A/AA violations",
+   "gate": "[ad/es] 1440 axe-core WCAG A/AA violations",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[d/es] 1440 text over photos/gradients: contrast >= AA (pixel check)",
+   "gate": "[ad/es] 1440 text over photos/gradients: contrast >= AA (pixel check)",
    "result": "PASS",
    "evidence": {
     "checked": 8,
-    "lowest_ratio": 9.67,
+    "lowest_ratio": 9.98,
     "failures": []
    }
   },
   {
-   "gate": "[d/es] no horizontal overflow at 390",
+   "gate": "[ad/es] no horizontal overflow at 390",
    "result": "PASS",
    "evidence": {
     "sw": 390,
@@ -2248,51 +1543,50 @@
    }
   },
   {
-   "gate": "[d/es] no text leaves the screen at 390",
+   "gate": "[ad/es] no text leaves the screen at 390",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[d/es] no console errors at 390",
+   "gate": "[ad/es] no console errors at 390",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[d/es] brand text does not run into the language switch or menu button at 390",
+   "gate": "[ad/es] brand does not overlap its CTA or menu button at 390",
    "result": "PASS",
    "evidence": {
     "brandRight": 221,
-    "langLeft": 246,
-    "overlapLang": false,
+    "overlapCta": false,
     "overlapMenu": false
    }
   },
   {
-   "gate": "[d/es] 117 markers at 390",
+   "gate": "[ad/es] 117 markers at 390",
    "result": "PASS",
    "evidence": "ok"
   },
   {
-   "gate": "[d/es] switcher fits at 390",
+   "gate": "[ad/es] switcher fits at 390",
    "result": "PASS",
    "evidence": {
     "right": 382,
     "vw": 390,
-    "h": 44
+    "h": 40
    }
   },
   {
-   "gate": "[d/es] mobile menu opens",
+   "gate": "[ad/es] mobile menu opens",
    "result": "PASS",
    "evidence": true
   },
   {
-   "gate": "[d/es] menu link scrolls to the merchants section",
+   "gate": "[ad/es] navigation link scrolls to the merchants section",
    "result": "PASS",
    "evidence": 84
   },
   {
-   "gate": "[d] EN/ES parity: same section ids in same order",
+   "gate": "[ad] EN/ES parity: same section ids in same order",
    "result": "PASS",
    "evidence": [
     "hero",
@@ -2306,7 +1600,7 @@
    ]
   },
   {
-   "gate": "[d] EN/ES parity: placeholders, nav targets, h2 and image counts",
+   "gate": "[ad] EN/ES parity: placeholders, nav targets, h2 and image counts",
    "result": "PASS",
    "evidence": {
     "placeholders": [
@@ -2323,7 +1617,7 @@
      "whatsapp-invite-url"
     ],
     "h2": 7,
-    "imgs": 29,
+    "imgs": 68,
     "nav": [
      "#lake",
      "#bitcoin",
@@ -2336,7 +1630,7 @@
    }
   },
   {
-   "gate": "[d] every nav link targets an existing section",
+   "gate": "[ad] every nav link targets an existing section",
    "result": "PASS",
    "evidence": [
     "#lake",
@@ -2349,190 +1643,871 @@
    ]
   },
   {
-   "gate": "[d] no section dropped (map, merchants, community, tours, expats, boat/tuk tuk, ATM, history)",
+   "gate": "[ad] no section dropped (map, merchants, community, tours, expats, boat/tuk tuk, ATM, history)",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[d] browser language es: opening EN redirects to /es/",
+   "gate": "[ad] browser language es: opening EN redirects to /es/",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/d/es/"
+   "evidence": "http://127.0.0.1:18500/v/ad/es/"
   },
   {
-   "gate": "[d] EN switch stays in this design and stores the choice",
+   "gate": "[ad] EN switch stays in this design and stores the choice",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/d/"
+   "evidence": "http://127.0.0.1:18500/v/ad/"
   },
   {
-   "gate": "[d] ES switch stays in this design",
+   "gate": "[ad] ES switch stays in this design",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/d/es/"
+   "evidence": "http://127.0.0.1:18500/v/ad/es/"
   },
   {
-   "gate": "[d] browser language en: opening /es/ redirects to EN",
+   "gate": "[ad] browser language en: opening /es/ redirects to EN",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/d/"
+   "evidence": "http://127.0.0.1:18500/v/ad/"
   },
   {
-   "gate": "[d] placeholder button shows 'coming soon' toast",
+   "gate": "[ad] placeholder button shows 'coming soon' toast",
    "result": "PASS",
    "evidence": "toast"
   },
   {
-   "gate": "[d] placeholder badge visible in preview",
+   "gate": "[ad] placeholder badge visible in preview",
    "result": "PASS",
    "evidence": "\"Placeholder: whatsapp-invite-url\""
   },
   {
-   "gate": "[index/en] HTTP 200 http://127.0.0.1:18432/variants/",
+   "gate": "[cd/en] HTTP 200 http://127.0.0.1:18500/v/cd/",
    "result": "PASS",
    "evidence": 200
   },
   {
-   "gate": "[index/en] noindex,nofollow",
+   "gate": "[cd/en] title + meta description",
+   "result": "PASS",
+   "evidence": {
+    "title": "Lago Bitcoin Community | Bitcoin on Lake Atitlán, Guatemala",
+    "desc_len": 158
+   }
+  },
+  {
+   "gate": "[cd/en] meta robots noindex,nofollow",
    "result": "PASS",
    "evidence": "present"
   },
   {
-   "gate": "[index/en] every referenced asset and link returns 200",
+   "gate": "[cd/en] hreflang en/es/x-default",
+   "result": "PASS",
+   "evidence": [
+    [
+     "en",
+     "https://itstomekk.github.io/lago-bitcoin-community/v/cd/"
+    ],
+    [
+     "es",
+     "https://itstomekk.github.io/lago-bitcoin-community/v/cd/es/"
+    ],
+    [
+     "x-default",
+     "https://itstomekk.github.io/lago-bitcoin-community/v/cd/"
+    ]
+   ]
+  },
+  {
+   "gate": "[cd/en] html lang + data-design",
+   "result": "PASS",
+   "evidence": "en"
+  },
+  {
+   "gate": "[cd/en] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 16,
+    "checked": 123,
     "bad": []
    }
   },
   {
-   "gate": "[index/en] 1440: four cards, four loaded thumbnails, no console errors, no overflow",
+   "gate": "[cd/en] no console errors/warnings, no failed requests",
    "result": "PASS",
    "evidence": {
-    "info": {
-     "cards": 4,
-     "thumbs": 4
-    },
-    "errs": [],
-    "ov": {
-     "sw": 1440,
-     "cw": 1440
-    }
+    "console": [],
+    "failed": []
    }
   },
   {
-   "gate": "[index/en] 1440 axe-core WCAG A/AA violations",
+   "gate": "[cd/en] page weight under 3 MB excluding map tiles",
+   "result": "PASS",
+   "evidence": "2584 KB"
+  },
+  {
+   "gate": "[cd/en] no horizontal overflow at 1440",
+   "result": "PASS",
+   "evidence": {
+    "sw": 1440,
+    "cw": 1440
+   }
+  },
+  {
+   "gate": "[cd/en] no text leaves the screen at 1440",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[index/en] 390: four cards, four loaded thumbnails, no console errors, no overflow",
+   "gate": "[cd/en] every section fills the screen (>=0.95 of viewport height)",
+   "result": "PASS",
+   "evidence": [
+    [
+     "hero",
+     1
+    ],
+    [
+     "lake",
+     1.12
+    ],
+    [
+     "bitcoin",
+     1.89
+    ],
+    [
+     "transport",
+     1.71
+    ],
+    [
+     "community",
+     1.56
+    ],
+    [
+     "tours",
+     1.13
+    ],
+    [
+     "expats",
+     1
+    ],
+    [
+     "about",
+     6.1
+    ]
+   ]
+  },
+  {
+   "gate": "[cd/en] map ready and renders 117 markers",
    "result": "PASS",
    "evidence": {
-    "info": {
-     "cards": 4,
-     "thumbs": 4
-    },
-    "errs": [],
-    "ov": {
-     "sw": 390,
-     "cw": 390
+    "state": "ready",
+    "markers": 117,
+    "tiles": 16
+   }
+  },
+  {
+   "gate": "[cd/en] list count == marker count == 117",
+   "result": "PASS",
+   "evidence": {
+    "cards": 117,
+    "markers": 117,
+    "hook": {
+     "m": 117,
+     "c": 117,
+     "v": 117,
+     "p": 117
     }
    }
   },
   {
-   "gate": "[index/en] 390 axe-core WCAG A/AA violations",
+   "gate": "[cd/en] count text shows 117",
+   "result": "PASS",
+   "evidence": "Showing 117 of 117 places"
+  },
+  {
+   "gate": "[cd/en] markers use the design's own colour token",
+   "result": "PASS",
+   "evidence": {
+    "fills": [
+     "#d03040"
+    ],
+    "token": "#d03040"
+   }
+  },
+  {
+   "gate": "[cd/en] search filters list and map together",
+   "result": "PASS",
+   "evidence": {
+    "c": 6,
+    "m": 6,
+    "paths": 6
+   }
+  },
+  {
+   "gate": "[cd/en] category chip filters (stay)",
+   "result": "PASS",
+   "evidence": {
+    "c": 16,
+    "m": 16,
+    "pressed": "stay"
+   }
+  },
+  {
+   "gate": "[cd/en] village filter",
+   "result": "PASS",
+   "evidence": {
+    "c": 10,
+    "m": 10
+   }
+  },
+  {
+   "gate": "[cd/en] empty state",
+   "result": "PASS",
+   "evidence": {
+    "c": 0,
+    "m": 0,
+    "empty": true
+   }
+  },
+  {
+   "gate": "[cd/en] reset restores 117",
+   "result": "PASS",
+   "evidence": {
+    "c": 117,
+    "m": 117
+   }
+  },
+  {
+   "gate": "[cd/en] ride 'Show on map' opens a popup",
+   "result": "PASS",
+   "evidence": "popup"
+  },
+  {
+   "gate": "[cd/en] every image has alt text",
+   "result": "PASS",
+   "evidence": {
+    "images": 52,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[cd/en] only local photos, each with a Commons, approved community-archive, or linked press credit",
+   "result": "PASS",
+   "evidence": {
+    "photos": 50,
+    "no_credit": [],
+    "other_images": []
+   }
+  },
+  {
+   "gate": "[cd/en] all 30 press photos appear once with visible linked credits",
+   "result": "PASS",
+   "evidence": {
+    "count": 30,
+    "unique": 30,
+    "missing": [],
+    "bad_credit": []
+   }
+  },
+  {
+   "gate": "[cd/en] no broken images",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[cd/en] no 'official'/'oficial' claim",
+   "result": "PASS",
+   "evidence": "none"
+  },
+  {
+   "gate": "[cd/en] no em or en dashes in visible text",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[index/en] card A opens /v/a/ in en",
+   "gate": "[cd/en] merchant check note present",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/a/"
+   "evidence": "ok"
   },
   {
-   "gate": "[index/en] card C opens /v/c/ in en",
+   "gate": "[cd/en] 117 places + 50+ claim + data date",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/c/"
+   "evidence": "ok"
   },
   {
-   "gate": "[index/en] card D opens /v/d/ in en",
+   "gate": "[cd/en] OSM/ODbL, BTC Map and Commons credits in footer",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/d/"
+   "evidence": "ok"
   },
   {
-   "gate": "[index/es] HTTP 200 http://127.0.0.1:18432/variants/es/",
+   "gate": "[cd/en] floating Design switcher: all finished designs, current marked, fixed, in view",
+   "result": "PASS",
+   "evidence": {
+    "letters": [
+     "A",
+     "C",
+     "D",
+     "AC",
+     "AD",
+     "CD",
+     "F",
+     "G",
+     "H"
+    ],
+    "cur": [
+     "CD"
+    ],
+    "hrefs": [
+     "../a/",
+     "../c/",
+     "../d/",
+     "../ac/",
+     "../ad/",
+     "./",
+     "../f/",
+     "../g/",
+     "../h/",
+     "../../variants/"
+    ],
+    "inView": true,
+    "fixed": "fixed"
+   }
+  },
+  {
+   "gate": "[cd/en] switcher goes to design C in the same language and remembers it",
+   "result": "PASS",
+   "evidence": {
+    "url": "http://127.0.0.1:18500/v/c/",
+    "stored": "c"
+   }
+  },
+  {
+   "gate": "[cd/en] 1440 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[cd/en] 1440 text over photos/gradients: contrast >= AA (pixel check)",
+   "result": "PASS",
+   "evidence": {
+    "checked": 32,
+    "lowest_ratio": 5.03,
+    "failures": []
+   }
+  },
+  {
+   "gate": "[cd/en] no horizontal overflow at 390",
+   "result": "PASS",
+   "evidence": {
+    "sw": 390,
+    "cw": 390
+   }
+  },
+  {
+   "gate": "[cd/en] no text leaves the screen at 390",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[cd/en] no console errors at 390",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[cd/en] brand does not overlap its CTA or menu button at 390",
+   "result": "PASS",
+   "evidence": {
+    "brandRight": 197,
+    "overlapCta": false,
+    "overlapMenu": false
+   }
+  },
+  {
+   "gate": "[cd/en] 117 markers at 390",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[cd/en] switcher fits at 390",
+   "result": "PASS",
+   "evidence": {
+    "right": 382,
+    "vw": 390,
+    "h": 40
+   }
+  },
+  {
+   "gate": "[cd/en] mobile menu opens",
+   "result": "PASS",
+   "evidence": true
+  },
+  {
+   "gate": "[cd/en] navigation link scrolls to the merchants section",
+   "result": "PASS",
+   "evidence": -0.0
+  },
+  {
+   "gate": "[cd/en] 390 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[cd/en] 390 text over photos/gradients: contrast >= AA (pixel check)",
+   "result": "PASS",
+   "evidence": {
+    "checked": 32,
+    "lowest_ratio": 5.03,
+    "failures": []
+   }
+  },
+  {
+   "gate": "[cd/es] HTTP 200 http://127.0.0.1:18500/v/cd/es/",
    "result": "PASS",
    "evidence": 200
   },
   {
-   "gate": "[index/es] noindex,nofollow",
+   "gate": "[cd/es] title + meta description",
+   "result": "PASS",
+   "evidence": {
+    "title": "Lago Bitcoin Community | Bitcoin en el Lago de Atitlán, Guatemala",
+    "desc_len": 179
+   }
+  },
+  {
+   "gate": "[cd/es] meta robots noindex,nofollow",
    "result": "PASS",
    "evidence": "present"
   },
   {
-   "gate": "[index/es] every referenced asset and link returns 200",
+   "gate": "[cd/es] hreflang en/es/x-default",
+   "result": "PASS",
+   "evidence": [
+    [
+     "en",
+     "https://itstomekk.github.io/lago-bitcoin-community/v/cd/"
+    ],
+    [
+     "es",
+     "https://itstomekk.github.io/lago-bitcoin-community/v/cd/es/"
+    ],
+    [
+     "x-default",
+     "https://itstomekk.github.io/lago-bitcoin-community/v/cd/"
+    ]
+   ]
+  },
+  {
+   "gate": "[cd/es] html lang + data-design",
+   "result": "PASS",
+   "evidence": "es"
+  },
+  {
+   "gate": "[cd/es] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 17,
+    "checked": 131,
     "bad": []
    }
   },
   {
-   "gate": "[index/es] 1440: four cards, four loaded thumbnails, no console errors, no overflow",
+   "gate": "[cd/es] no console errors/warnings, no failed requests",
    "result": "PASS",
    "evidence": {
-    "info": {
-     "cards": 4,
-     "thumbs": 4
-    },
-    "errs": [],
-    "ov": {
-     "sw": 1440,
-     "cw": 1440
-    }
+    "console": [],
+    "failed": []
    }
   },
   {
-   "gate": "[index/es] 1440 axe-core WCAG A/AA violations",
+   "gate": "[cd/es] page weight under 3 MB excluding map tiles",
+   "result": "PASS",
+   "evidence": "2585 KB"
+  },
+  {
+   "gate": "[cd/es] no horizontal overflow at 1440",
+   "result": "PASS",
+   "evidence": {
+    "sw": 1440,
+    "cw": 1440
+   }
+  },
+  {
+   "gate": "[cd/es] no text leaves the screen at 1440",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[index/es] 390: four cards, four loaded thumbnails, no console errors, no overflow",
+   "gate": "[cd/es] every section fills the screen (>=0.95 of viewport height)",
+   "result": "PASS",
+   "evidence": [
+    [
+     "hero",
+     1
+    ],
+    [
+     "lake",
+     1.24
+    ],
+    [
+     "bitcoin",
+     1.89
+    ],
+    [
+     "transport",
+     1.62
+    ],
+    [
+     "community",
+     1.57
+    ],
+    [
+     "tours",
+     1.1
+    ],
+    [
+     "expats",
+     1
+    ],
+    [
+     "about",
+     6.1
+    ]
+   ]
+  },
+  {
+   "gate": "[cd/es] map ready and renders 117 markers",
    "result": "PASS",
    "evidence": {
-    "info": {
-     "cards": 4,
-     "thumbs": 4
-    },
-    "errs": [],
-    "ov": {
-     "sw": 390,
-     "cw": 390
+    "state": "ready",
+    "markers": 117,
+    "tiles": 16
+   }
+  },
+  {
+   "gate": "[cd/es] list count == marker count == 117",
+   "result": "PASS",
+   "evidence": {
+    "cards": 117,
+    "markers": 117,
+    "hook": {
+     "m": 117,
+     "c": 117,
+     "v": 117,
+     "p": 117
     }
    }
   },
   {
-   "gate": "[index/es] 390 axe-core WCAG A/AA violations",
+   "gate": "[cd/es] count text shows 117",
+   "result": "PASS",
+   "evidence": "Mostrando 117 de 117 lugares"
+  },
+  {
+   "gate": "[cd/es] markers use the design's own colour token",
+   "result": "PASS",
+   "evidence": {
+    "fills": [
+     "#d03040"
+    ],
+    "token": "#d03040"
+   }
+  },
+  {
+   "gate": "[cd/es] search filters list and map together",
+   "result": "PASS",
+   "evidence": {
+    "c": 17,
+    "m": 17,
+    "paths": 17
+   }
+  },
+  {
+   "gate": "[cd/es] category chip filters (stay)",
+   "result": "PASS",
+   "evidence": {
+    "c": 16,
+    "m": 16,
+    "pressed": "stay"
+   }
+  },
+  {
+   "gate": "[cd/es] village filter",
+   "result": "PASS",
+   "evidence": {
+    "c": 10,
+    "m": 10
+   }
+  },
+  {
+   "gate": "[cd/es] empty state",
+   "result": "PASS",
+   "evidence": {
+    "c": 0,
+    "m": 0,
+    "empty": true
+   }
+  },
+  {
+   "gate": "[cd/es] reset restores 117",
+   "result": "PASS",
+   "evidence": {
+    "c": 117,
+    "m": 117
+   }
+  },
+  {
+   "gate": "[cd/es] ride 'Show on map' opens a popup",
+   "result": "PASS",
+   "evidence": "popup"
+  },
+  {
+   "gate": "[cd/es] every image has alt text",
+   "result": "PASS",
+   "evidence": {
+    "images": 52,
+    "bad": []
+   }
+  },
+  {
+   "gate": "[cd/es] only local photos, each with a Commons, approved community-archive, or linked press credit",
+   "result": "PASS",
+   "evidence": {
+    "photos": 50,
+    "no_credit": [],
+    "other_images": []
+   }
+  },
+  {
+   "gate": "[cd/es] all 30 press photos appear once with visible linked credits",
+   "result": "PASS",
+   "evidence": {
+    "count": 30,
+    "unique": 30,
+    "missing": [],
+    "bad_credit": []
+   }
+  },
+  {
+   "gate": "[cd/es] no broken images",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[cd/es] no 'official'/'oficial' claim",
+   "result": "PASS",
+   "evidence": "none"
+  },
+  {
+   "gate": "[cd/es] no em or en dashes in visible text",
    "result": "PASS",
    "evidence": []
   },
   {
-   "gate": "[index/es] card A opens /v/a/ in es",
+   "gate": "[cd/es] merchant check note present",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/a/es/"
+   "evidence": "ok"
   },
   {
-   "gate": "[index/es] card C opens /v/c/ in es",
+   "gate": "[cd/es] 117 places + 50+ claim + data date",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/c/es/"
+   "evidence": "ok"
   },
   {
-   "gate": "[index/es] card D opens /v/d/ in es",
+   "gate": "[cd/es] OSM/ODbL, BTC Map and Commons credits in footer",
    "result": "PASS",
-   "evidence": "http://127.0.0.1:18432/v/d/es/"
+   "evidence": "ok"
   },
   {
-   "gate": "HTTP 200 http://127.0.0.1:18432/v/",
+   "gate": "[cd/es] floating Design switcher: all finished designs, current marked, fixed, in view",
    "result": "PASS",
-   "evidence": 200
+   "evidence": {
+    "letters": [
+     "A",
+     "C",
+     "D",
+     "AC",
+     "AD",
+     "CD",
+     "F",
+     "G",
+     "H"
+    ],
+    "cur": [
+     "CD"
+    ],
+    "hrefs": [
+     "../../a/es/",
+     "../../c/es/",
+     "../../d/es/",
+     "../../ac/es/",
+     "../../ad/es/",
+     "./",
+     "../../f/es/",
+     "../../g/es/",
+     "../../h/es/",
+     "../../../variants/es/"
+    ],
+    "inView": true,
+    "fixed": "fixed"
+   }
+  },
+  {
+   "gate": "[cd/es] switcher goes to design C in the same language and remembers it",
+   "result": "PASS",
+   "evidence": {
+    "url": "http://127.0.0.1:18500/v/c/es/",
+    "stored": "c"
+   }
+  },
+  {
+   "gate": "[cd/es] 1440 axe-core WCAG A/AA violations",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[cd/es] 1440 text over photos/gradients: contrast >= AA (pixel check)",
+   "result": "PASS",
+   "evidence": {
+    "checked": 32,
+    "lowest_ratio": 5.03,
+    "failures": []
+   }
+  },
+  {
+   "gate": "[cd/es] no horizontal overflow at 390",
+   "result": "PASS",
+   "evidence": {
+    "sw": 390,
+    "cw": 390
+   }
+  },
+  {
+   "gate": "[cd/es] no text leaves the screen at 390",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[cd/es] no console errors at 390",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[cd/es] brand does not overlap its CTA or menu button at 390",
+   "result": "PASS",
+   "evidence": {
+    "brandRight": 197,
+    "overlapCta": false,
+    "overlapMenu": false
+   }
+  },
+  {
+   "gate": "[cd/es] 117 markers at 390",
+   "result": "PASS",
+   "evidence": "ok"
+  },
+  {
+   "gate": "[cd/es] switcher fits at 390",
+   "result": "PASS",
+   "evidence": {
+    "right": 382,
+    "vw": 390,
+    "h": 40
+   }
+  },
+  {
+   "gate": "[cd/es] mobile menu opens",
+   "result": "PASS",
+   "evidence": true
+  },
+  {
+   "gate": "[cd/es] navigation link scrolls to the merchants section",
+   "result": "PASS",
+   "evidence": -0.0
+  },
+  {
+   "gate": "[cd] EN/ES parity: same section ids in same order",
+   "result": "PASS",
+   "evidence": [
+    "hero",
+    "lake",
+    "bitcoin",
+    "transport",
+    "community",
+    "tours",
+    "expats",
+    "about"
+   ]
+  },
+  {
+   "gate": "[cd] EN/ES parity: placeholders, nav targets, h2 and image counts",
+   "result": "PASS",
+   "evidence": {
+    "placeholders": [
+     "atm-locations",
+     "contact-email",
+     "expat-contact",
+     "facebook",
+     "meetup-dates",
+     "meetup-venues",
+     "school-list",
+     "tomek-bio-photo",
+     "tour-booking",
+     "tour-booking-details",
+     "whatsapp-invite-url"
+    ],
+    "h2": 7,
+    "imgs": 68,
+    "nav": [
+     "#lake",
+     "#bitcoin",
+     "#transport",
+     "#community",
+     "#tours",
+     "#expats",
+     "#about"
+    ]
+   }
+  },
+  {
+   "gate": "[cd] every nav link targets an existing section",
+   "result": "PASS",
+   "evidence": [
+    "#lake",
+    "#bitcoin",
+    "#transport",
+    "#community",
+    "#tours",
+    "#expats",
+    "#about"
+   ]
+  },
+  {
+   "gate": "[cd] no section dropped (map, merchants, community, tours, expats, boat/tuk tuk, ATM, history)",
+   "result": "PASS",
+   "evidence": []
+  },
+  {
+   "gate": "[cd] browser language es: opening EN redirects to /es/",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18500/v/cd/es/"
+  },
+  {
+   "gate": "[cd] EN switch stays in this design and stores the choice",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18500/v/cd/"
+  },
+  {
+   "gate": "[cd] ES switch stays in this design",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18500/v/cd/es/"
+  },
+  {
+   "gate": "[cd] browser language en: opening /es/ redirects to EN",
+   "result": "PASS",
+   "evidence": "http://127.0.0.1:18500/v/cd/"
+  },
+  {
+   "gate": "[cd] placeholder button shows 'coming soon' toast",
+   "result": "PASS",
+   "evidence": "toast"
+  },
+  {
+   "gate": "[cd] placeholder badge visible in preview",
+   "result": "PASS",
+   "evidence": "\"Placeholder: whatsapp-invite-url\""
   },
   {
    "gate": "every data-placeholder is listed in HANDOFF.md",

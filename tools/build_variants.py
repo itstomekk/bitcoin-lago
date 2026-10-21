@@ -48,7 +48,7 @@ META = {
     "cd": {"theme": "#0C0B0B", "fonts": ["bebas-neue-latin-400-normal.woff2", "geist-latin-wght-normal.woff2"]},
     "f": {"theme": "#FAF6F3", "fonts": ["geist-latin-wght-normal.woff2"]},
     "g": {"theme": "#FDFDFB", "fonts": ["newsreader-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
-    "h": {"theme": "#F2F6FF", "fonts": ["sora-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
+    "h": {"theme": "#FBFCFE", "fonts": ["archivo-latin-vf.woff2", "archivo-latin-ext-vf.woff2"]},
 }
 
 

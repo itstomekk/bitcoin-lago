@@ -20,5 +20,16 @@
     "footer": "Ft1 mast-headed",
     "variation_knobs": "H2 6/6, credited community-tuk-tuk proof photo with supporting figures; major sections alternate copy and evidence",
     "brief": "F: bilingual Lake Atitlán community guide with verified places, transport, photos and AB23 video."
+  },
+  {
+    "date": "2026-10-20",
+    "macrostructure": "Map / Diagram",
+    "theme": "Grid",
+    "theme_axes": "cool near-white paper / single-family Archivo grotesk / ultramarine geometry",
+    "enrichment": "none: the functional section graph is the page illustration; supplied and credited photos remain content evidence",
+    "nav": "N9 edge-aligned minimal",
+    "footer": "Ft2 inline-rule single line",
+    "variation_knobs": "H9 hand-built SVG network; seven linked section nodes; exposed 12-column rails; one merchant-map plate; asymmetric section silhouettes; no scroll reveal",
+    "brief": "H: wayfinding for Lake Atitlán visitors and community members, with the shared bilingual content, merchant data, transport photos and privacy-first AB23 video."
   }
 ]

@@ -87,7 +87,7 @@ h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.04; letter-spacing: -
 .topbar-chip[data-design="f"]      { --chip-color: #d03040; color: #ff9da7; }
 .topbar-chip.topbar-current[data-design="f"] { color: #ffffff; }
 .topbar-chip[data-design="g"]      { --chip-color: oklch(40% 0.12 145); color: oklch(82% 0.08 145); }
-.topbar-chip[data-design="h"]      { --chip-color: #1d5cff; color: #8daeff; }
+.topbar-chip[data-design="h"]      { --chip-color: oklch(45% 0.19 264); color: oklch(83% 0.08 264); }
 
 .topbar-lang { display: inline-flex; border: 1.5px solid #003060; border-radius: 999px; padding: 2px; background: #001838; }
 .topbar-lang a { text-decoration: none; font-weight: 700; font-size: 0.65rem; padding: 0.18rem 0.5rem; border-radius: 999px; min-width: 34px; text-align: center; transition: background-color 0.15s, color 0.15s; }

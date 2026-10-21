@@ -89,6 +89,8 @@ The Spanish was written for natural Guatemalan usage ("tuc tuc", "lancha", "come
 
 `qa/report-local.md` and `qa/report-live.md` list every gate with the measured evidence. Screenshots: `qa/screenshots/` (local) and `qa/screenshots/live/` (from the live URL). Re-run:
 
+Final local QA on 2026-10-21 (all nine designs): baseline 80/80 (`qa/report-local.md`); A, C, D, AC, AD, CD, F, G and H 899/899 in `qa/report-variants-local-acdacadcdfgh.md`; Hallmark F/G/H mobile 28/28 at 320/375/414/768 plus the 1280x800 fold. Fixed on 2026-10-21: the hidden "coming soon" toast no longer peeks above the bottom edge, and H's node arrows no longer touch the next label.
+
 Local F + press-photo phase on 2026-10-20: baseline 80/80; A, C, D, AC, AD, CD and F 703/703 in `qa/report-variants-local-acdacadcdf.md`, including the exact 30-photo set and linked credits. Hallmark F mobile 10/10 at 320/375/414/768; AB23 privacy and keyboard activation 16/16. The last full browser QA preceded the final quote shortening; the builders were rerun and now reject any press quote that is not exactly one sentence.
 
 ```
@@ -116,9 +118,9 @@ python qa/check_links.py
 * `DESIGN-VARIANTS-BRIEF.md` (Tomek's voice notes) was expanded; see the current set and build status below.
   The root pages stay the baseline until Tomek picks.
 
-## Design variants (seven current looks, same content)
+## Design variants (nine current looks, same content)
 
-Live (noindex, like the rest of the preview): `/v/a/`, `/v/c/`, `/v/d/`, `/v/ac/`, `/v/ad/`, `/v/cd/` and their `/es/` pages, the index `/variants/` (and `/variants/es/`),
+Live (noindex, like the rest of the preview): `/v/a/`, `/v/c/`, `/v/d/`, `/v/ac/`, `/v/ad/`, `/v/cd/`, `/v/f/`, `/v/g/`, `/v/h/` and their `/es/` pages, the index `/variants/` (and `/variants/es/`),
 and `/v/` (sends you to the design you looked at last). Every variant page has the fixed switcher and language bar plus the floating design switcher.
 (it keeps the language and remembers the choice in `localStorage` key `lbc-design`).
 
@@ -131,15 +133,17 @@ and `/v/` (sends you to the design you looked at last). Every variant page has t
 | AD | A's restraint and stepped motifs combined with D's woven colour blocks and arch frames. |
 | CD | C's night scenes combined with D's textile colour blocks and arch frames. |
 | F | Split Studio: a credited community tuk-tuk portrait paired with the dated merchant map and alternating evidence-led sections. Hallmark: Coral tokens. |
+| G | Field Notes: newspaper masthead, one long reading column, short credited photo plates, prose and lists instead of cards. Hallmark: light paper, serif, green accent. |
+| H | Section map: a 12-column wayfinding grid, a hand-built diagram whose seven nodes link to the sections, and the geographic merchant map. Hallmark: Grid tokens (Archivo, ultramarine). |
 
-All designs share one content source and merchant dataset. Designs B and E were removed. F's local build and QA are complete; G and H remain in progress and are not linked until their pages are finished.
+All designs share one content source and merchant dataset. Designs B and E were removed. F, G and H were built with the Hallmark skill (catalog theme, locked tokens in `v/*.tokens.css`, pre-emit critique stamp in `.hallmark/log.json`, mobile checks at 320/375/414/768). A, C, D, AC, AD and CD did not use Hallmark.
 
 | File | What it is | Edit here? |
 |---|---|---|
 | `tools/content.py` | The same words as the root pages, plus the names of the variants and the switcher / index strings. | **Yes, for wording (all current variants follow).** |
-| `tools/variants/a.html`, `c.html`, `d.html`, `f.html` | The page layouts of A, C, D and F. AC/CD use C's layout base, AD uses D's; each design has its own visual treatment. | Yes, for structure. |
+| `tools/variants/a.html`, `c.html`, `d.html`, `f.html`, `g.html`, `h.html` | The page layouts of A, C, D, F, G and H. AC/CD use C's layout base, AD uses D's; each design has its own visual treatment. | Yes, for structure. |
 | `v/base.css` | Shared floor: buttons, merchant finder, switcher, placeholders, toast. Colours come from tokens. | Rarely. |
-| `v/a.css`, `c.css`, `d.css`, `ac.css`, `ad.css`, `cd.css`, `f.css`, `f.tokens.css` | The look and locked Hallmark tokens for each current design. | **Yes, for look.** |
+| `v/a.css`, `c.css`, `d.css`, `ac.css`, `ad.css`, `cd.css`, `f.css`, `g.css`, `h.css` and `f/g/h.tokens.css` | The look and locked Hallmark tokens for each current design. | **Yes, for look.** |
 | `v/app.js` | Behaviour shared by the designs (copy of `script.js` plus marker colours, design memory, count-up and click-to-play AB23 embed). | Rarely. |
 | `tools/build_variants.py` | Builds all `v/*/index.html`, `v/*/es/index.html` and `variants/` pages. `python tools/build_variants.py` (or `... a c` for some). | Run after any edit. |
 | `tools/variants/index.html`, `variants/variants.css` | The `/variants/` page and its look. Thumbnails: `variants/thumbs/*.webp` (made by `qa/make_thumbs.py`). | Yes. |
@@ -156,7 +160,7 @@ Each design has one fixed theme (no automatic dark mode); C is dark by design.
 The supplied `tuktuk-bitcoin-lake-road.jpg` and `pier-to-pier-bitcoin-boat.jpg` are credited on-page as exactly
 "Photo: community archive (source to confirm)". Do not invent a photographer; replace this provisional credit only when Tomek confirms the source.
 
-QA for the variants: `python qa/run_qa_variants.py <site URL> <screenshot dir> [a,c,d,ac,ad,cd,f]`. Reports: `qa/report-variants-local.md`
+QA for the variants: `python qa/run_qa_variants.py <site URL> <screenshot dir> [a,c,d,ac,ad,cd,f,g,h]`. Reports: `qa/report-variants-local.md`
 and `qa/report-variants-live.md`; live screenshots are stored under `qa/screenshots/`.
 The runner also measures contrast of text that sits over photos or patterns with a pixel check (axe cannot do that).
 It needs `qa/.cache/axe.min.js` (download command is at the top of the script).

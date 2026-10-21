@@ -71,6 +71,9 @@ def inspect_page(page) -> dict:
           const photo = proof && proof.querySelector('.hero-visual');
           const image = photo && photo.querySelector('img');
           const caption = photo && photo.querySelector('figcaption');
+          const guide = document.querySelector('.guide-map');
+          const guideLinks = guide ? [...guide.querySelectorAll('.guide-nodes .node a')] : [];
+          const guideTargets = guideLinks.map(a => document.querySelector(a.getAttribute('href')));
           return {width: innerWidth, rootWidth: document.documentElement.clientWidth,
             documentWidth: document.documentElement.scrollWidth,
             cards: document.querySelectorAll('#cards .card').length,
@@ -79,6 +82,7 @@ def inspect_page(page) -> dict:
             heroProof: Boolean(photo && proof.querySelector('.hero-stats')),
             heroPhoto: Boolean(image && image.alt.trim() && image.currentSrc.includes('community-tuktuk-') && image.naturalWidth > 0 && caption && caption.querySelector('.credit')?.textContent.includes('Photo: community archive (source to confirm)')),
             heroLoading: Boolean(image && image.getAttribute('loading') === 'eager' && image.getAttribute('fetchpriority') === 'high'),
+            heroDiagram: Boolean(guide && guide.querySelector('svg.diagram-lines') && guideLinks.length === 7 && guideLinks.every((a, i) => a.textContent.trim() && guideTargets[i] && a.getAttribute('href').startsWith('#'))),
             wrapped: wrapped.slice(0, 12), overflow: overflow.slice(0, 12)};
         }"""
     )
@@ -116,7 +120,10 @@ def main() -> int:
                         response = page.goto(url, wait_until="domcontentloaded", timeout=60000)
                         if response is None or response.status != 200:
                             failures.append(f"{variant}-{lang}-{width}: HTTP {response.status if response else 'none'}")
-                        page.wait_for_function("() => { const i = document.querySelector('.hero-visual img'); return i && i.complete && i.naturalWidth > 0; }", timeout=30000)
+                        if variant == "f":
+                            page.wait_for_function("() => { const i = document.querySelector('.hero-visual img'); return i && i.complete && i.naturalWidth > 0; }", timeout=30000)
+                        elif variant == "h":
+                            page.wait_for_function("() => { const n = document.querySelector('.guide-map'); return n && n.querySelector('svg.diagram-lines') && n.querySelectorAll('.guide-nodes .node a').length === 7; }", timeout=30000)
                         page.wait_for_function("document.querySelectorAll('#cards .card').length >= 117", timeout=60000)
                         page.wait_for_function("() => [...document.querySelectorAll('.stats-main dd[data-count]')].every(e => e.textContent.trim() === e.dataset.count)", timeout=10000)
                         result = inspect_page(page)
@@ -131,6 +138,8 @@ def main() -> int:
                             failures.append(f"{variant}-{lang}-{width}: off-screen visible elements: {result['overflow']}")
                         if variant == "f" and (not result["heroProof"] or not result["heroPhoto"] or not result["heroLoading"]):
                             failures.append(f"{variant}-{lang}-{width}: Split Studio hero needs the eager, accessible, credited tuk-tuk photo and supporting figures")
+                        if variant == "h" and not result["heroDiagram"]:
+                            failures.append(f"{variant}-{lang}-{width}: Grid hero needs the accessible seven-link section diagram")
                         if result["heroTrackCount"] != 1:
                             failures.append(f"{variant}-{lang}-{width}: mobile hero should use one track, got {result['heroTrackCount']}")
                         if result["cards"] != 117:
@@ -189,6 +198,28 @@ def main() -> int:
                 pages += 1
                 passed += not any(f"{label}:" in failure for failure in failures)
                 print(f"{'PASS' if not any(f'{label}:' in failure for failure in failures) else 'FAIL'} f {lang.upper()} 1280x800 hero fold :: {fold} screenshot={shot.relative_to(ROOT)}", flush=True)
+                page.close()
+            for lang, route in (LANGS if "h" in VARIANTS else ()):
+                page = browser.new_page(viewport={"width": 1280, "height": 800}, device_scale_factor=1)
+                page.add_init_script(f"localStorage.setItem('lbc-lang', '{lang}')")
+                page.goto(f"{base}v/h/{route}", wait_until="domcontentloaded", timeout=60000)
+                page.wait_for_function("() => document.querySelectorAll('.guide-nodes .node a').length === 7")
+                fold = page.evaluate("""() => {
+                  const selectors = ['.hero-copy h1', '.hero-copy .lede', '.map-action a', '.guide-nodes .guide-core', ...[...document.querySelectorAll('.guide-nodes .node a')].map((_, i) => `.guide-nodes .node:nth-of-type(${i + 2}) a`)];
+                  return {width: innerWidth, height: innerHeight, selectors: selectors.map(s => {
+                    const e = document.querySelector(s), r = e?.getBoundingClientRect();
+                    return {selector: s, found: Boolean(e), bottom: r ? Math.round(r.bottom) : null, visible: Boolean(r && r.bottom <= innerHeight)};
+                  })};
+                }""")
+                shot = SHOT_DIR / "h" / f"h-{lang}-1280x800.png"
+                shot.parent.mkdir(parents=True, exist_ok=True)
+                page.screenshot(path=str(shot), full_page=False, animations="disabled", timeout=60000)
+                label = f"h-{lang}-1280x800"
+                if any(not item["found"] or not item["visible"] for item in fold["selectors"]):
+                    failures.append(f"{label}: title, map CTA, or section nodes miss the first fold: {fold}")
+                pages += 1
+                passed += not any(f"{label}:" in failure for failure in failures)
+                print(f"{'PASS' if not any(f'{label}:' in failure for failure in failures) else 'FAIL'} h {lang.upper()} 1280x800 map fold :: {fold} screenshot={shot.relative_to(ROOT)}", flush=True)
                 page.close()
             browser.close()
     finally:
