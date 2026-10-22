@@ -95,6 +95,27 @@
       a.addEventListener('click', function (e) { e.preventDefault(); toast(); });
     }
   });
+
+  /* ---------- 2b. "Tell us what you need" form: opens WhatsApp with the message ready ---------- */
+  var ask = $('#ask');
+  if (ask) {
+    var num = String(cfg.whatsappNumber || '').replace(/[^0-9]/g, '');
+    var sendBtn = ask.querySelector('button[type="submit"]');
+    var sendPh = ask.querySelector('.send-ph');
+    if (num && sendPh) sendPh.removeAttribute('data-placeholder');
+    ask.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!num) { toast(); return; }
+      var f = ask.elements, lines = [ask.getAttribute('data-hello')];
+      [['need', f.need], ['dates', f.dates], ['people', f.people], ['name', f.name], ['msg', f.msg]].forEach(function (p) {
+        var el = p[1]; if (!el) return;
+        var v = String(el.value || '').trim(); if (!v) return;
+        var lab = ask.querySelector('label[for="' + el.id + '"]');
+        lines.push((lab ? lab.textContent.replace(/\?$/, '') : p[0]) + ': ' + v);
+      });
+      window.open('https://wa.me/' + num + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+    });
+  }
   $all('[data-hide-if]').forEach(function (n) {
     if (String(cfg[n.getAttribute('data-hide-if')] || '').trim()) n.hidden = true;
   });

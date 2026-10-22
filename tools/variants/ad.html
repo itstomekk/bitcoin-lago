@@ -79,6 +79,7 @@
 <section class="scr community" id="community" aria-labelledby="community-h2">
   <div class="sec-head reveal"><span class="sec-num">{{maya:4|maya maya-lg}}</span><h2 id="community-h2">{{community_h2}}</h2></div>
   <div class="bento">{{@community}}</div>
+  {{@gallery}}
   {{@press_highlights}}
 </section>
 
@@ -87,10 +88,10 @@
   <div class="tours-text reveal">
     <div class="sec-head"><span class="sec-num">{{maya:5|maya maya-lg}}</span><h2 id="tours-h2">{{tours_h2}}</h2></div>
     <p class="lead">{{tours_p}}</p>
-    <ul class="points">{{@tour_points}}</ul>
-    <p><a class="btn btn-primary" href="#tours" data-config-link="tourBooking" data-placeholder="tour-booking">{{tours_cta}}</a></p>
-    <p class="muted" data-placeholder="tour-booking-details" data-hide-if="tourBooking">{{tours_note}}</p>
+    <p>{{svc_lead}}</p>
+    <p><a class="link-arrow" href="{{x_tours}}" rel="noopener">{{svc_tours_link}}{{icon:arrow-up-right}}</a></p>
   </div>
+  <div class="svc-wrap">{{@services}}</div>
 </section>
 
 <section class="scr expats" id="expats" aria-labelledby="expats-h2">
@@ -107,8 +108,10 @@
   <div class="about-text reveal">
     <div class="sec-head"><span class="sec-num">{{maya:7|maya maya-lg}}</span><h2 id="about-h2">{{about_h2}}</h2></div>
     <p class="lead">{{about_p_html}}</p>
-    <p><a class="link-arrow" href="{{x_lakebitcoin}}" rel="noopener">{{about_x}}{{icon:arrow-up-right}}</a></p>
+    <blockquote class="eli-quote"><p>{{story_quote}}</p><footer>{{story_quote_by}}</footer></blockquote>
+    <p><a class="link-arrow" href="{{x_eli}}" rel="noopener">{{story_x}}{{icon:arrow-up-right}}</a> <a class="link-arrow" href="{{x_lakebitcoin}}" rel="noopener">{{about_x}}{{icon:arrow-up-right}}</a></p>
   </div>
+  {{@timeline}}
   <div class="press reveal"><h3>{{press_h}}</h3><ul>{{@press}}</ul></div>
   {{@ab23_video}}
 </section>

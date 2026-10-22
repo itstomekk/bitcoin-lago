@@ -44,14 +44,10 @@ class `show-placeholders`. To hide every badge at go-live, remove that class in 
 | `data-placeholder` | Where | What Tomek must supply |
 |---|---|---|
 | `whatsapp-invite-url` | Hero button and Community tile | WhatsApp group invite link. Put it in `config.js` (`whatsapp`). Both buttons go live and both badges vanish. |
-| `meetup-dates` | Community, Meetups | Meetup dates (edit `meet_when` in `tools/content.py`, EN and ES). |
-| `meetup-venues` | Community, Meetups | Meetup venues (edit `meet_where`). |
-| `school-list` | Community, School visits | Which schools are visited (edit `school_list`). Add names only with the schools' agreement. |
 | `facebook` | Community, "Follow and write to us" | Facebook page URL. `config.js` (`facebook`). |
 | `contact-email` | Community, "Follow and write to us" | Contact email. `config.js` (`email`). |
-| `tomek-bio-photo` | Community, "Who we are" | Tomek's bio and photo. Needs a new image added through `tools/optimize_images.py` or a plain image file. |
-| `tour-booking` | VIP tours button | Booking link. `config.js` (`tourBooking`). cal.com/itstomekk is Tomek's calendar: **ask before wiring it**. |
-| `tour-booking-details` | VIP tours note | Hidden automatically once `tourBooking` is set. |
+| `eliazar-bio-photo` | Community, "Who we are" | Eliazar's photo and short bio (Lago Bitcoin's local leader). |
+| `whatsapp-number` | Plan your stay, "Send on WhatsApp" | Lago Bitcoin's WhatsApp number in `config.js` (`whatsappNumber`, digits with country code). The request form opens a chat with this number. |
 | `expat-contact` | Newcomers button | Contact link or email. `config.js` (`expatContact`). |
 | `atm-locations` | Bitcoin ATMs block | ATM locations. **None are in the data**, so none are listed. Add them in `tools/content.py` / the template. |
 
@@ -157,3 +153,10 @@ It needs `qa/.cache/axe.min.js` (download command is at the top of the script).
 
 Choosing the winner: tell the builder which design should become `/`. The root `index.html` / `es/index.html` would then be
 generated from that design's layout (path prefix changes from `../../` to `./`); until then the root is the first build.
+
+## 2026-10-21: Lago Bitcoin's own site
+- Tomek decided the site is Lago Bitcoin's own: founded 2021 by Patrick Melder with friends and supporters; Eliazar (@JUN_AJPU_btc) is the local leader.
+- New content lives at the end of `tools/content.py`: `LB_PHOTOS`, `GALLERY`, `TIMELINE` (each year links its X sources), `SERVICES`, and the form strings.
+- Photos: `python tools/optimize_lago_photos.py` builds `images/lb-*` from the ignored `source-archive/` (Eliazar's Telegram photos, and public X posts of @JUN_AJPU_btc and @AtitlanTours21).
+- Full X history notes: `source-archive/x-2026-10-21/` (tweets.json, manifest.json, lago-bitcoin-history.md).
+- The "Plan your stay" section (`#tours`) is a concierge funnel: no prices, one form that opens WhatsApp with the message filled in.

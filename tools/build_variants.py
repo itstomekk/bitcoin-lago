@@ -101,14 +101,14 @@ def community(T):
     return f'''<article class="tile tile-wa reveal">{BP.icon("whatsapp-logo")}<h3>{T["wa_h"]}</h3><p>{T["wa_p"]}</p>
   <a class="btn btn-primary" href="#community" data-config-link="whatsapp" data-placeholder="whatsapp-invite-url">{T["cta_whatsapp"]}</a></article>
 <article class="tile tile-meet reveal">{BP.icon("calendar-blank")}<h3>{T["meet_h"]}</h3><p>{T["meet_p"]}</p>
-  <ul class="plain"><li data-placeholder="meetup-dates">{T["meet_when"]}</li><li data-placeholder="meetup-venues">{T["meet_where"]}</li></ul></article>
+  <ul class="plain"><li>{T["meet_when"]}</li><li>{T["meet_where"]}</li></ul><p><a class="link-arrow" href="{C.X_ELI}" rel="noopener">@JUN_AJPU_btc{BP.icon("arrow-up-right")}</a></p></article>
 <article class="tile tile-school reveal">{BP.icon("graduation-cap")}<h3>{T["school_h"]}</h3><p>{T["school_p"]}</p>
-  <p class="muted" data-placeholder="school-list">{T["school_list"]}</p></article>
+  <p class="muted">{T["school_list"]}</p></article>
 <article class="tile tile-follow reveal">{BP.icon("envelope-simple")}<h3>{T["follow_h"]}</h3>
   <ul class="plain"><li><a class="link-arrow" href="#community" data-config-link="facebook" data-placeholder="facebook">{BP.icon("facebook-logo")}{T["facebook"]}</a></li>
   <li><a class="link-arrow" href="#community" data-config-link="email" data-placeholder="contact-email">{BP.icon("envelope-simple")}{T["email"]}</a></li></ul></article>
 <article class="tile tile-who reveal">{BP.icon("users-three")}<h3>{T["who_h"]}</h3><p>{T["who_p"]}</p>
-  <p class="muted" data-placeholder="tomek-bio-photo">{T["who_bio"]}</p></article>'''
+  <p class="muted" data-placeholder="eliazar-bio-photo">{T["who_bio"]}</p></article>'''
 
 
 def tour_points(T):
@@ -116,6 +116,65 @@ def tour_points(T):
         f'<li class="reveal">{BP.icon(ic)}<div><h3>{T[f"tours_{i}_h"]}</h3><p>{T[f"tours_{i}_p"]}</p></div></li>'
         for i, ic in ((1, "handshake"), (2, "compass"), (3, "currency-btc")))
 
+
+
+def lb_fig(slug, T, sizes="(min-width: 900px) 30vw, 92vw", cls=""):
+    """A Lago Bitcoin photo (Eliazar's archive or a public X post) with its credit."""
+    from PIL import Image
+    meta = C.LB_PHOTOS[slug]
+    files = sorted(ROOT.glob(f"images/lb-{slug}-*.jpg"), key=lambda f: int(f.stem.rsplit("-", 1)[1]))
+    widths = [int(f.stem.rsplit("-", 1)[1]) for f in files]
+    with Image.open(files[0]) as im:
+        w, h = im.size
+    webp = ", ".join(f"{{{{p}}}}images/lb-{slug}-{x}.webp {x}w" for x in widths)
+    jpg = ", ".join(f"{{{{p}}}}images/lb-{slug}-{x}.jpg {x}w" for x in widths)
+    cap = escape(C.LB_CAPTIONS[T["lang"]][slug])
+    credit_txt = escape(T["lb_credit_" + meta["by"]])
+    credit = (f'<a class="credit" href="{meta["url"]}" rel="noopener">{credit_txt}</a>' if meta.get("url")
+              else f'<span class="credit">{credit_txt}</span>')
+    return (f'<figure class="photo lb-photo {cls}"><picture><source type="image/webp" srcset="{webp}" sizes="{sizes}">'
+            f'<img src="{{{{p}}}}images/lb-{slug}-{widths[0]}.jpg" srcset="{jpg}" sizes="{sizes}" width="{w}" height="{h}" '
+            f'alt="{escape(C.LB_CAPTIONS[T["lang"]][slug], quote=True)}" loading="lazy" decoding="async"></picture>'
+            f'<figcaption>{cap}. {credit}</figcaption></figure>')
+
+
+def gallery(T):
+    return (f'<div class="lb-gallery reveal"><h3>{T["gallery_h"]}</h3><div class="lb-grid">'
+            + "".join(lb_fig(s, T, "(min-width: 1100px) 24vw, (min-width: 700px) 45vw, 92vw") for s in C.GALLERY)
+            + "</div></div>")
+
+
+def timeline(T):
+    i = 2 if T["lang"] == "en" else 3
+    items = []
+    for row in C.TIMELINE:
+        year, srcs, text = row[0], row[1], row[i]
+        links = " ".join(f'<a href="{u}" rel="noopener">{n + 1}</a>' for n, u in enumerate(srcs))
+        src = f' <span class="tl-src">{T["story_source"]}: {links}</span>' if links else ""
+        items.append(f'<li><span class="tl-year">{year}</span><p>{escape(text)}{src}</p></li>')
+    return f'<div class="timeline reveal"><h3>{T["story_timeline_h"]}</h3><ol>{"".join(items)}</ol></div>'
+
+
+def services(T):
+    en = T["lang"] == "en"
+    cards, opts = [], []
+    for key, ic, h_en, h_es, rows in C.SERVICES:
+        h = h_en if en else h_es
+        lis = "".join(f"<li>{escape(a if en else b)}</li>" for a, b in rows)
+        cards.append(f'<article class="svc svc-{key} reveal">{BP.icon(ic)}<h3>{escape(h)}</h3><ul>{lis}</ul></article>')
+        opts.append(f'<option value="{escape(h, quote=True)}">{escape(h)}</option>')
+    opts.append(f'<option value="{escape(T["form_need_other"], quote=True)}">{escape(T["form_need_other"])}</option>')
+    form = f"""<form class="ask reveal" id="ask" novalidate data-hello="{escape(T["form_hello"], quote=True)}">
+  <h3>{T["form_h"]}</h3><p class="muted">{T["form_p"]}</p>
+  <div class="field"><label for="ask-need">{T["form_need"]}</label><select id="ask-need" name="need">{"".join(opts)}</select></div>
+  <div class="row2"><div class="field"><label for="ask-dates">{T["form_dates"]}</label><input id="ask-dates" name="dates" type="text" placeholder="{escape(T["form_dates_ph"], quote=True)}" autocomplete="off"></div>
+  <div class="field"><label for="ask-people">{T["form_people"]}</label><input id="ask-people" name="people" type="number" min="1" max="200" inputmode="numeric"></div></div>
+  <div class="field"><label for="ask-name">{T["form_name"]}</label><input id="ask-name" name="name" type="text" autocomplete="name"></div>
+  <div class="field"><label for="ask-msg">{T["form_msg"]}</label><textarea id="ask-msg" name="msg" rows="3"></textarea></div>
+  <div class="send-row"><button class="btn btn-primary" type="submit">{BP.icon("whatsapp-logo")}{T["form_send"]}</button><span class="send-ph" data-placeholder="whatsapp-number"></span></div>
+  <p class="muted small">{T["form_note"]}</p>
+</form>"""
+    return f'<div class="svc-grid">{"".join(cards)}</div>{form}'
 
 def stats(T, ln, chain):
     return (f'<dl class="stats"><div><dt>{T["btc_stat_places"]}</dt><dd data-count="{len(BP.PLACES)}">{len(BP.PLACES)}</dd></div>'
@@ -160,7 +219,7 @@ def head_html(vid):
         f'<link rel="alternate" hreflang="es" href="{{{{url_es}}}}">\n'
         f'<link rel="alternate" hreflang="x-default" href="{{{{url_en}}}}">\n'
         f'<meta property="og:type" content="website">\n'
-        f'<meta property="og:site_name" content="Lago Bitcoin Community">\n'
+        f'<meta property="og:site_name" content="Lago Bitcoin">\n'
         f'<meta property="og:title" content="{{{{title}}}}">\n'
         f'<meta property="og:description" content="{{{{description}}}}">\n'
         f'<meta property="og:url" content="{{{{canonical}}}}">\n'
@@ -235,6 +294,8 @@ def render(vid, lang):
         url_es=C.SITE_URL + "es/",
         og_image=C.SITE_URL + "images/hero-1600.jpg",
         x_lakebitcoin=C.X_LAKEBITCOIN,
+        x_eli=C.X_ELI,
+        x_tours=C.X_TOURS,
         n_places=str(len(BP.PLACES)),
         n_ln=str(ln),
         n_chain=str(chain),
@@ -254,6 +315,9 @@ def render(vid, lang):
         "finder_console": finder(T, console=True),
         "community": community(T),
         "tour_points": tour_points(T),
+        "gallery": gallery(T),
+        "timeline": timeline(T),
+        "services": services(T),
         "stats": stats(T, ln, chain),
         "atm": atm(T),
         "footer_text": footer_text(T),

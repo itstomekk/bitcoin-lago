@@ -7,7 +7,7 @@ HOW THIS FILE IS USED
 
 HOW TO EDIT
   Change the text here, then run:  python tools/build_pages.py
-  Rules of the house: never write "official" (this is an independent community site);
+  Rules of the house: never write "official";
   no invented facts, prices, hours or testimonials; no em dashes; Maya communities are
   described in plain terms (education, onboarding merchants, cooperatives), never exoticized.
 
@@ -15,7 +15,7 @@ Strings ending in _html may contain simple inline HTML (links, <strong>).
 """
 
 SITE_URL = "https://itstomekk.github.io/lago-bitcoin-community/"
-LAST_UPDATED = "2026-10-20"
+LAST_UPDATED = "2026-10-21"
 DATA_DATE = "2026-10-19"
 BTCMAP_COMMUNITY = "https://btcmap.org/community/lago-bitcoin/merchants"
 X_LAKEBITCOIN = "https://x.com/LakeBitcoin"
@@ -95,18 +95,18 @@ PHOTOS = {
 EN = {
     "lang": "en",
     "og_locale": "en_US",
-    "title": "Lago Bitcoin Community | Bitcoin on Lake Atitlán, Guatemala",
-    "description": "Our Bitcoin community on Lake Atitlán, Guatemala: 117 listed places on a live map, Bitcoin boats and tuk tuks, meetups, VIP tours and a welcome for newcomers.",
+    "title": "Lago Bitcoin | The Bitcoin community of Lake Atitlán, Guatemala",
+    "description": "Lago Bitcoin, Lake Atitlán's Bitcoin community since 2021: 117 places on a map, school courses, meetups, and tours and help for visitors, paid in bitcoin.",
     "skip": "Skip to content",
-    "brand": "Lago Bitcoin Community",
+    "brand": "Lago Bitcoin",
     "nav_label": "Main",
     "nav_lake": "The lake",
     "nav_bitcoin": "Merchants",
     "nav_transport": "Getting around",
     "nav_community": "Community",
-    "nav_tours": "VIP tours",
+    "nav_tours": "Plan your stay",
     "nav_expats": "Newcomers",
-    "nav_about": "History",
+    "nav_about": "Our story",
     "g_mastline": "LAKE ATITLÁN · COMMUNITY FIELD NOTES",
     "menu_open": "Menu",
     "menu_close": "Close menu",
@@ -194,21 +194,21 @@ EN = {
     "wa_h": "Our WhatsApp group",
     "wa_p": "The easiest way to meet the community, ask a question or hear about the next meetup.",
     "meet_h": "Meetups",
-    "meet_p": "We meet in person around the lake.",
-    "meet_when": "Dates to be announced.",
-    "meet_where": "Venues to be announced.",
-    "school_h": "School visits",
-    "school_p": "We go to different schools and teach Bitcoin.",
-    "school_list": "Schools to be listed.",
+    "meet_p": "Once a month we meet in Panajachel to talk Bitcoin, swap sats and drink local coffee.",
+    "meet_when": "Monthly. Each date is posted on X by @JUN_AJPU_btc.",
+    "meet_where": "Panajachel. The venue comes with each date.",
+    "school_h": "Bitcoin in schools",
+    "school_p": "Since 2023 we teach Bitcoin courses with a diploma, from primary schools to universities. Students make their first Lightning payments in class.",
+    "school_list": "So far: Centro Educativo Josué, LTK School, Colegio Ebenezer, AMA School, INEDSC in Santa Catarina Palopó, Ciencias Comerciales in Sololá (200 students per course) and UVG Altiplano.",
     "follow_h": "Follow and write to us",
     "facebook": "Facebook",
     "email": "Email",
     "who_h": "Who we are",
-    "who_p": "A community of people who live on the lake and believe in Bitcoin.",
-    "who_bio": "Bio and photo to be added.",
+    "who_p": "Lago Bitcoin was founded in 2021 by Patrick Melder together with friends and supporters. Eliazar leads the work on the ground, with volunteers, teachers and merchants around the lake.",
+    "who_bio": "Photo and short bio of Eliazar to be added.",
 
-    "tours_h2": "VIP tours around Atitlán",
-    "tours_p": "We organize VIP tours around the lake for people who want more than a viewpoint. You come as a guest and spend your time with the people who live here.",
+    "tours_h2": "Plan your stay with Lago Bitcoin",
+    "tours_p": "Tours, stays, transport, a soft landing for newcomers, team retreats. We know the people who do it best around the lake.",
     "tours_1_h": "Meet locals",
     "tours_1_p": "Time with the people who live and work around the lake.",
     "tours_2_h": "Culture and Maya communities",
@@ -229,16 +229,16 @@ EN = {
     "video_thumbnail_alt": "Thumbnail for the Adopting Bitcoin talk about Bitcoin Lake",
     "video_channel_label": "Channel",
     "video_watch": "Watch the video",
-    "about_h2": "Where the merchant network started",
-    "about_p_html": "The first Bitcoin merchant network around the lake was started by <strong>Bitcoin Lake</strong> (Lago Bitcoin), founded by Patrick Melder in Panajachel in 2021 and rooted in years of volunteering at Centro Educativo Josué. We are a separate, independent community and this site is not run by Bitcoin Lake.",
-    "about_x": "Bitcoin Lake on X: @LakeBitcoin",
+    "about_h2": "Our story",
+    "about_p_html": "Lago Bitcoin began in Panajachel in 2021. It was founded by <strong>Patrick Melder</strong> with friends and supporters, out of years of volunteering at Centro Educativo Josué. <strong>Eliazar</strong>, our local leader, started by visiting businesses one by one.",
+    "about_x": "Lago Bitcoin on X: @LakeBitcoin",
     "press_h": "In the press",
     "press_highlights_h": "Photographs from published coverage",
     "press_read": "Read",
 
-    "foot_legal": "© 2026 Lago Bitcoin Community. An independent community site, not run by Bitcoin Lake.",
+    "foot_legal": "© 2026 Lago Bitcoin, Lake Atitlán, Guatemala.",
     "foot_data_html": "Merchant data © <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap contributors</a> (ODbL), as shown on <a href=\"https://btcmap.org/community/lago-bitcoin/merchants\">BTC Map</a>. Map tiles © OpenStreetMap contributors.",
-    "foot_photos": "Photos from Wikimedia Commons under Creative Commons licences, credited under each photo.",
+    "foot_photos": "Photos from Lago Bitcoin, from the public X posts of @JUN_AJPU_btc and @AtitlanTours21, and from Wikimedia Commons under Creative Commons licences, credited under each photo.",
     "foot_updated": "Last updated {d}",
 
     "vsw_label": "Design",
@@ -266,18 +266,18 @@ EN = {
 ES = {
     "lang": "es",
     "og_locale": "es_GT",
-    "title": "Lago Bitcoin Community | Bitcoin en el Lago de Atitlán, Guatemala",
-    "description": "Nuestra comunidad Bitcoin en el Lago de Atitlán, Guatemala: 117 lugares en un mapa en vivo, lanchas y tuc tucs con Bitcoin, encuentros, tours VIP y bienvenida para quienes llegan.",
+    "title": "Lago Bitcoin | La comunidad Bitcoin del Lago de Atitlán, Guatemala",
+    "description": "Lago Bitcoin, la comunidad Bitcoin del Lago de Atitlán desde 2021: 117 lugares en un mapa, cursos, encuentros, y tours y ayuda para visitantes, con bitcoin.",
     "skip": "Saltar al contenido",
-    "brand": "Lago Bitcoin Community",
+    "brand": "Lago Bitcoin",
     "nav_label": "Principal",
     "nav_lake": "El lago",
     "nav_bitcoin": "Comercios",
     "nav_transport": "Cómo moverse",
     "nav_community": "Comunidad",
-    "nav_tours": "Tours VIP",
+    "nav_tours": "Planea tu visita",
     "nav_expats": "Recién llegados",
-    "nav_about": "Historia",
+    "nav_about": "Nuestra historia",
     "g_mastline": "LAGO DE ATITLÁN · NOTAS DE LA COMUNIDAD",
     "menu_open": "Menú",
     "menu_close": "Cerrar menú",
@@ -365,21 +365,21 @@ ES = {
     "wa_h": "Nuestro grupo de WhatsApp",
     "wa_p": "La forma más fácil de conocer a la comunidad, hacer una pregunta o enterarte del próximo encuentro.",
     "meet_h": "Encuentros",
-    "meet_p": "Nos reunimos en persona alrededor del lago.",
-    "meet_when": "Fechas por anunciar.",
-    "meet_where": "Lugares por anunciar.",
-    "school_h": "Visitas a escuelas",
-    "school_p": "Visitamos distintas escuelas y enseñamos Bitcoin.",
-    "school_list": "Las escuelas se agregarán a la lista.",
+    "meet_p": "Una vez al mes nos reunimos en Panajachel para hablar de Bitcoin, intercambiar sats y tomar café local.",
+    "meet_when": "Cada mes. Cada fecha se publica en X en @JUN_AJPU_btc.",
+    "meet_where": "Panajachel. El lugar se anuncia con cada fecha.",
+    "school_h": "Bitcoin en las escuelas",
+    "school_p": "Desde 2023 damos cursos de Bitcoin con diploma, desde escuelas primarias hasta universidades. Los estudiantes hacen sus primeros pagos con Lightning en clase.",
+    "school_list": "Hasta ahora: Centro Educativo Josué, LTK School, Colegio Ebenezer, AMA School, INEDSC en Santa Catarina Palopó, Ciencias Comerciales en Sololá (200 estudiantes por curso) y la UVG Altiplano.",
     "follow_h": "Síguenos y escríbenos",
     "facebook": "Facebook",
     "email": "Correo",
     "who_h": "Quiénes somos",
-    "who_p": "Una comunidad de personas que viven en el lago y creen en Bitcoin.",
-    "who_bio": "La biografía y la foto se agregarán.",
+    "who_p": "Lago Bitcoin fue fundado en 2021 por Patrick Melder junto con amigos y colaboradores. Eliazar dirige el trabajo en el terreno, con voluntarios, maestros y comerciantes alrededor del lago.",
+    "who_bio": "La foto y una breve biografía de Eliazar se agregarán.",
 
-    "tours_h2": "Tours VIP por Atitlán",
-    "tours_p": "Organizamos tours VIP por el lago para quienes quieren algo más que un mirador. Llegas como invitado y pasas tu tiempo con las personas que viven aquí.",
+    "tours_h2": "Planea tu visita con Lago Bitcoin",
+    "tours_p": "Tours, hospedaje, transporte, una llegada fácil para recién llegados, retiros de equipo. Conocemos a quienes mejor lo hacen en el lago.",
     "tours_1_h": "Conoce a la gente local",
     "tours_1_p": "Tiempo con las personas que viven y trabajan alrededor del lago.",
     "tours_2_h": "Cultura y comunidades mayas",
@@ -400,16 +400,16 @@ ES = {
     "video_thumbnail_alt": "Miniatura de la charla de Adopting Bitcoin sobre Bitcoin Lake",
     "video_channel_label": "Canal",
     "video_watch": "Ver el video",
-    "about_h2": "De dónde viene la red de comercios",
-    "about_p_html": "La primera red de comercios con Bitcoin alrededor del lago la inició <strong>Bitcoin Lake</strong> (Lago Bitcoin), fundado por Patrick Melder en Panajachel en 2021 a partir de años de voluntariado en el Centro Educativo Josué. Somos una comunidad aparte e independiente, y este sitio no lo administra Bitcoin Lake.",
-    "about_x": "Bitcoin Lake en X: @LakeBitcoin",
+    "about_h2": "Nuestra historia",
+    "about_p_html": "Lago Bitcoin empezó en Panajachel en 2021. Lo fundó <strong>Patrick Melder</strong> con amigos y colaboradores, a partir de años de voluntariado en el Centro Educativo Josué. <strong>Eliazar</strong>, nuestro líder local, empezó visitando los negocios uno por uno.",
+    "about_x": "Lago Bitcoin en X: @LakeBitcoin",
     "press_h": "En la prensa",
     "press_highlights_h": "Fotografías de la cobertura publicada",
     "press_read": "Leer",
 
-    "foot_legal": "© 2026 Lago Bitcoin Community. Un sitio comunitario independiente, no administrado por Bitcoin Lake.",
+    "foot_legal": "© 2026 Lago Bitcoin, Lago de Atitlán, Guatemala.",
     "foot_data_html": "Datos de comercios © <a href=\"https://www.openstreetmap.org/copyright\">colaboradores de OpenStreetMap</a> (ODbL), tal como se muestran en <a href=\"https://btcmap.org/community/lago-bitcoin/merchants\">BTC Map</a>. Mosaicos del mapa © colaboradores de OpenStreetMap.",
-    "foot_photos": "Fotos de Wikimedia Commons con licencias Creative Commons, con crédito debajo de cada foto.",
+    "foot_photos": "Fotos de Lago Bitcoin, de las publicaciones públicas en X de @JUN_AJPU_btc y @AtitlanTours21, y de Wikimedia Commons con licencias Creative Commons, con crédito bajo cada foto.",
     "foot_updated": "Última actualización {d}",
 
     "vsw_label": "Diseño",
@@ -490,5 +490,180 @@ I18N_KEYS = [
     "group_all", "group_eat", "group_stay", "group_tours", "group_shops", "group_services", "group_other",
     "showing", "empty", "show_on_map", "survey", "survey_none", "hours", "ln", "chain", "unnamed", "phone",
 ]
+
+
+# ---------------------------------------------------------------------------------------------
+# LAGO BITCOIN'S OWN SITE (Tomek, 2026-10-21): founded by Patrick Melder with friends and
+# supporters; Eliazar (@JUN_AJPU_btc) is the local leader. Facts below come from Eliazar's own
+# messages and his public X posts (source-archive/x-2026-10-21/lago-bitcoin-history.md).
+# ---------------------------------------------------------------------------------------------
+X_ELI = "https://x.com/JUN_AJPU_btc"
+X_TOURS = "https://x.com/AtitlanTours21"
+
+
+def _x(user, tid):
+    return f"https://x.com/{user}/status/{tid}"
+
+
+# slug -> source (relative to source-archive/), credit kind, tweet url (for X photos)
+LB_PHOTOS = {
+    "boat": {"src": "eli-stack-2026-10-21/292216.jpg", "by": "lago"},
+    "tuktuk": {"src": "eli-stack-2026-10-21/292215.jpg", "by": "lago"},
+    "sign": {"src": "eli-stack-2026-10-21/292222.jpg", "by": "lago"},
+    "uvg": {"src": "x-2026-10-21/history/1855271801967857731-0.jpg", "by": "eli", "url": _x("JUN_AJPU_btc", "1855271801967857731")},
+    "library": {"src": "x-2026-10-21/history/1952823905409724887-2.jpg", "by": "eli", "url": _x("JUN_AJPU_btc", "1952823905409724887")},
+    "steelcraft": {"src": "x-2026-10-21/JUN_AJPU_btc-2107890964345856285-3.jpg", "by": "eli", "url": _x("JUN_AJPU_btc", "2107890964345856285")},
+    "chuijuyub": {"src": "x-2026-10-21/JUN_AJPU_btc-2108282671063269688-1.jpg", "by": "eli", "url": _x("JUN_AJPU_btc", "2108282671063269688")},
+    "rosa": {"src": "x-2026-10-21/JUN_AJPU_btc-2091990468351672550-0.jpg", "by": "eli", "url": _x("JUN_AJPU_btc", "2091990468351672550")},
+    "santacruz": {"src": "x-2026-10-21/AtitlanTours21-2074187428013691030-0.jpg", "by": "tours", "url": _x("AtitlanTours21", "2074187428013691030")},
+    "tzununa": {"src": "x-2026-10-21/AtitlanTours21-2074191182603641216-0.jpg", "by": "tours", "url": _x("AtitlanTours21", "2074191182603641216")},
+    "huipil": {"src": "x-2026-10-21/AtitlanTours21-2052801148210332090-0.jpg", "by": "tours", "url": _x("AtitlanTours21", "2052801148210332090")},
+    "painting": {"src": "x-2026-10-21/JUN_AJPU_btc-2112992185599857074-0.jpg", "by": "eli", "url": _x("JUN_AJPU_btc", "2112992185599857074")},
+}
+GALLERY = ["boat", "steelcraft", "santacruz", "chuijuyub", "library", "huipil", "tuktuk", "tzununa", "uvg", "rosa", "sign", "painting"]
+
+LB_CAPTIONS = {
+    "en": {
+        "boat": "The Lago Bitcoin boat at a pier on Lake Atitlán",
+        "tuktuk": "A tuk tuk outside a business painted with \u201cBitcoin aceptado aquí\u201d",
+        "sign": "An \u201cAceptamos Bitcoin\u201d sign with Blink and Fedi",
+        "uvg": "Our banner at a Bitcoin talk at UVG in Sololá, 2024",
+        "library": "Bitcoin diploma binders on the shelf at the Panajachel public library",
+        "steelcraft": "Steelcraft, a hotel built from shipping containers, now accepts bitcoin",
+        "chuijuyub": "Coffee at Chui Juyub, accepting bitcoin since October 2026",
+        "rosa": "Rosa runs her own business and now accepts bitcoin",
+        "santacruz": "A viewpoint above Santa Cruz La Laguna",
+        "tzununa": "Tzununá, the place of hummingbirds, on the north shore",
+        "huipil": "A handwoven huipil, from a weaving visit with Atitlán Bitcoin Tours",
+        "painting": "A painting of the lake, shared by Eliazar",
+    },
+    "es": {
+        "boat": "La lancha de Lago Bitcoin en un muelle del Lago de Atitlán",
+        "tuktuk": "Un tuk tuk frente a un negocio pintado con \u201cBitcoin aceptado aquí\u201d",
+        "sign": "Un letrero de \u201cAceptamos Bitcoin\u201d con Blink y Fedi",
+        "uvg": "Nuestro banner en una charla de Bitcoin en la UVG de Sololá, 2024",
+        "library": "Carpetas del diplomado de Bitcoin en el estante de la biblioteca pública de Panajachel",
+        "steelcraft": "Steelcraft, un hotel hecho con contenedores, ya acepta bitcoin",
+        "chuijuyub": "Café en Chui Juyub, que acepta bitcoin desde octubre de 2026",
+        "rosa": "Rosa tiene su propio negocio y ahora acepta bitcoin",
+        "santacruz": "Un mirador sobre Santa Cruz La Laguna",
+        "tzununa": "Tzununá, el lugar de los colibríes, en la orilla norte",
+        "huipil": "Un huipil tejido a mano, de una visita de tejido con Atitlán Bitcoin Tours",
+        "painting": "Una pintura del lago, compartida por Eliazar",
+    },
+}
+
+TIMELINE = [
+    # year, sources (tweet urls), EN, ES
+    ("2021", [],
+     "Lago Bitcoin starts in Panajachel. Eliazar visits businesses one by one, and the first merchants accept bitcoin.",
+     "Lago Bitcoin nace en Panajachel. Eliazar visita los negocios uno por uno y los primeros comercios aceptan bitcoin."),
+    ("2022", [_x("JUN_AJPU_btc", "1568416150765113344"), _x("JUN_AJPU_btc", "1592607133664940032")],
+     "Kaboom: used cooking oil runs a generator that mines bitcoin. The lake team travels to Adopting Bitcoin in El Salvador.",
+     "Kaboom: aceite de cocina usado mueve un generador que mina bitcoin. El equipo del lago viaja a Adopting Bitcoin en El Salvador."),
+    ("2023", [_x("JUN_AJPU_btc", "1633555241814708225"), _x("JUN_AJPU_btc", "1663352554430898176"), _x("JUN_AJPU_btc", "1676971341545701376")],
+     "Bitcoin enters the classroom: diploma courses at Centro Educativo Josué and a first course for teachers. The Bitcoin Beach team visits and rides the Bitcoin boat. Tuk tuks start taking bitcoin.",
+     "Bitcoin entra al aula: diplomados en el Centro Educativo Josué y un primer curso para maestros. El equipo de Bitcoin Beach nos visita y sube a la lancha Bitcoin. Los tuk tuks empiezan a aceptar bitcoin."),
+    ("2024", [_x("JUN_AJPU_btc", "1767247695238881640"), _x("JUN_AJPU_btc", "1761171835108876402"), _x("JUN_AJPU_btc", "1855271801967857731")],
+     "Courses at LTK School, Colegio Ebenezer, AMA School and INEDSC in Santa Catarina Palopó. Students open their first Fedi community. Wallets and books arrive from the Swiss Bitcoin community. Talks at UVG in Sololá.",
+     "Cursos en LTK School, Colegio Ebenezer, AMA School e INEDSC en Santa Catarina Palopó. Los estudiantes abren su primera comunidad Fedi. Llegan billeteras y libros de la comunidad Bitcoin de Suiza. Charlas en la UVG de Sololá."),
+    ("2025", [_x("JUN_AJPU_btc", "1886870351314928014"), _x("JUN_AJPU_btc", "1901732370849354124"), _x("JUN_AJPU_btc", "1994541099265003655"), _x("JUN_AJPU_btc", "1985496849168678999")],
+     "A Bitcoin shelf opens at the Panajachel public library. Our first university course, at UVG Altiplano. 200 students at Ciencias Comerciales in Sololá. Classes in the local Maya language in San Antonio Palopó, and bitcoin reaches Santiago Atitlán.",
+     "Se abre un estante de Bitcoin en la biblioteca pública de Panajachel. Nuestro primer curso universitario, en la UVG Altiplano. 200 estudiantes en Ciencias Comerciales de Sololá. Clases en idioma maya en San Antonio Palopó, y bitcoin llega a Santiago Atitlán."),
+    ("2026", [_x("JUN_AJPU_btc", "2041212733241110562"), _x("JUN_AJPU_btc", "2097472336664346864"), _x("JUN_AJPU_btc", "2095653627339903429"), _x("JUN_AJPU_btc", "2112735223527899506")],
+     "The first graduation of the year is recorded on the Bitcoin blockchain. 200 more students in Sololá, a Lightning workshop for a women's group, a container hotel and Chui Juyub coffee join, and Atitlán Bitcoin Tours launches.",
+     "La primera graduación del año queda registrada en la blockchain de Bitcoin. 200 estudiantes más en Sololá, un taller de Lightning para un grupo de mujeres, se suman un hotel de contenedores y el café Chui Juyub, y nace Atitlán Bitcoin Tours."),
+]
+
+# Services: (key, icon, EN group title, ES group title, [(EN item, ES item), ...])
+SERVICES = [
+    ("visit", "compass", "Visiting the lake", "De visita en el lago", [
+        ("Lake days by boat: the villages, sunrise and sunset rides, the Bitcoin boat",
+         "Días en lancha: los pueblos, paseos al amanecer y al atardecer, la lancha Bitcoin"),
+        ("Hikes and adventure: Rostro Maya at sunrise, San Pedro volcano, viewpoints, kayaks, paragliding, ATVs",
+         "Caminatas y aventura: Rostro Maya al amanecer, volcán San Pedro, miradores, kayak, parapente, cuatrimotos"),
+        ("Culture and craft: weaving and natural dyes, chocolate, honey, coffee, cooking with a Maya family, the Sololá and Chichicastenango markets",
+         "Cultura y artesanía: tejido y tintes naturales, chocolate, miel, café, cocina con una familia maya, los mercados de Sololá y Chichicastenango"),
+        ("Getting here and around: shuttles from the airport or Antigua, private boats, tuk tuks, scooters and bikes",
+         "Llegar y moverse: shuttles desde el aeropuerto o Antigua, lanchas privadas, tuk tuks, motos y bicicletas"),
+    ]),
+    ("live", "globe", "Working and living here", "Trabajar y vivir aquí", [
+        ("Stays that accept bitcoin: hotels, apartments and villas, for a week or a season",
+         "Hospedaje que acepta bitcoin: hoteles, apartamentos y villas, por una semana o una temporada"),
+        ("A soft landing: SIM card, internet good enough for calls, coworking, cash and banks, the right town for you",
+         "Una llegada fácil: chip, internet que aguanta videollamadas, coworking, efectivo y bancos, el pueblo que te conviene"),
+        ("Moving here: introductions to long rentals, land, builders and local lawyers for residency",
+         "Mudarte aquí: contactos para alquileres largos, terrenos, constructores y abogados locales para la residencia"),
+        ("Spanish classes and homestays with local families",
+         "Clases de español y estancias con familias locales"),
+    ]),
+    ("groups", "users-three", "Groups and teams", "Grupos y equipos", [
+        ("Team retreats and offsites: venue, transport, food and activities in one plan",
+         "Retiros y viajes de equipo: lugar, transporte, comida y actividades en un solo plan"),
+        ("Bitcoin workshops for your group, and a visit to one of our school classes",
+         "Talleres de Bitcoin para tu grupo, y una visita a una de nuestras clases en escuelas"),
+        ("Meetups and events with local merchants who accept bitcoin",
+         "Encuentros y eventos con comercios locales que aceptan bitcoin"),
+    ]),
+    ("support", "graduation-cap", "Support the work", "Apoya el trabajo", [
+        ("Sponsor a course or a graduation, fund class equipment, or donate Bitcoin books to the Panajachel library shelf",
+         "Patrocina un curso o una graduación, apoya con equipo para las clases, o dona libros de Bitcoin al estante de la biblioteca de Panajachel"),
+        ("Volunteer: teach a class, run a workshop, or help a local business start accepting bitcoin",
+         "Voluntariado: da una clase, organiza un taller, o ayuda a un negocio local a empezar a aceptar bitcoin"),
+        ("Visit a graduation and spend your sats with the merchants who accept them",
+         "Ven a una graduación y gasta tus sats con los comercios que los aceptan"),
+    ]),
+]
+
+EN.update({
+    "lb_credit_lago": "Photo: Lago Bitcoin",
+    "lb_credit_eli": "Photo: @JUN_AJPU_btc on X",
+    "lb_credit_tours": "Photo: @AtitlanTours21 on X",
+    "gallery_h": "Around the lake with Lago Bitcoin",
+    "story_quote": "One of my main goals with Lago Bitcoin is simply to teach about Bitcoin to all the communities around Lake Atitlán, from 10-year-old children to 100-year-old adults. One of my greatest dreams is for every town around the lake to learn about Bitcoin and use it, and one day to open a Bitcoin center here.",
+    "story_quote_by": "Eliazar, Lago Bitcoin",
+    "story_timeline_h": "Year by year",
+    "story_source": "Source",
+    "story_x": "Eliazar on X: @JUN_AJPU_btc",
+    "svc_lead": "Tell us what you need and we arrange it with people we know around the lake. You pay in bitcoin, and every local business we bring in learns to accept it. That is how the community grows.",
+    "svc_tours_link": "Atitlán Bitcoin Tours on X: @AtitlanTours21",
+    "form_h": "Tell us what you need",
+    "form_p": "One message is enough. We reply on WhatsApp with options.",
+    "form_need": "What do you need?",
+    "form_need_other": "Something else",
+    "form_dates": "Dates",
+    "form_dates_ph": "e.g. 3 to 10 March",
+    "form_people": "How many people",
+    "form_name": "Your name",
+    "form_msg": "Anything else we should know",
+    "form_send": "Send on WhatsApp",
+    "form_note": "This opens WhatsApp with your message ready to send. Nothing is booked or paid yet.",
+    "form_hello": "Hi Lago Bitcoin! I found you on your website.",
+})
+ES.update({
+    "lb_credit_lago": "Foto: Lago Bitcoin",
+    "lb_credit_eli": "Foto: @JUN_AJPU_btc en X",
+    "lb_credit_tours": "Foto: @AtitlanTours21 en X",
+    "gallery_h": "Por el lago con Lago Bitcoin",
+    "story_quote": "Una de mis metas principales con Lago Bitcoin es simplemente enseñar Bitcoin a todas las comunidades alrededor del Lago de Atitlán, desde niños de 10 años hasta adultos de 100. Uno de mis mayores sueños es que cada pueblo del lago aprenda Bitcoin y lo use, y algún día abrir un centro de Bitcoin aquí.",
+    "story_quote_by": "Eliazar, Lago Bitcoin",
+    "story_timeline_h": "Año por año",
+    "story_source": "Fuente",
+    "story_x": "Eliazar en X: @JUN_AJPU_btc",
+    "svc_lead": "Cuéntanos qué necesitas y lo organizamos con gente que conocemos en el lago. Pagas en bitcoin, y cada negocio local que sumamos aprende a aceptarlo. Así crece la comunidad.",
+    "svc_tours_link": "Atitlán Bitcoin Tours en X: @AtitlanTours21",
+    "form_h": "Cuéntanos qué necesitas",
+    "form_p": "Con un mensaje basta. Te respondemos por WhatsApp con opciones.",
+    "form_need": "¿Qué necesitas?",
+    "form_need_other": "Otra cosa",
+    "form_dates": "Fechas",
+    "form_dates_ph": "p. ej. del 3 al 10 de marzo",
+    "form_people": "Cuántas personas",
+    "form_name": "Tu nombre",
+    "form_msg": "Algo más que debamos saber",
+    "form_send": "Enviar por WhatsApp",
+    "form_note": "Se abre WhatsApp con tu mensaje listo para enviar. Todavía no se reserva ni se paga nada.",
+    "form_hello": "¡Hola Lago Bitcoin! Los encontré en su sitio web.",
+})
 
 LANGS = {"en": EN, "es": ES}

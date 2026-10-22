@@ -83,7 +83,7 @@ PARITY_JS = """() => ({
   imgs: document.querySelectorAll('img').length })"""
 IMG_JS = """() => [...document.querySelectorAll('img')].filter(i => !i.closest('.leaflet-container')).map(i => ({
   src: i.currentSrc, alt: i.getAttribute('alt'), nat: i.naturalWidth, inFigure: !!i.closest('figure'),
-  credit: !!(i.closest('figure') && ((i.closest('figure').querySelector('.credit a[href*="commons.wikimedia.org"]') && i.closest('figure').querySelector('.credit a[href*="creativecommons.org"]')) || i.closest('figure').querySelector('.credit')?.textContent.includes('Photo: community archive (source to confirm)') || i.closest('figure').querySelector('.press-photo-credit[href]') || (i.closest('.history-video') && i.closest('figure').querySelector('figcaption a[href*="youtube.com/watch"]')))) }))"""
+  credit: !!(i.closest('figure') && ((i.closest('figure').querySelector('.credit a[href*="commons.wikimedia.org"]') && i.closest('figure').querySelector('.credit a[href*="creativecommons.org"]')) || i.closest('figure').querySelector('.credit')?.textContent.includes('Photo: community archive (source to confirm)') || (i.closest('.lb-photo') && /^(Photo|Foto): (Lago Bitcoin|@JUN_AJPU_btc|@AtitlanTours21)/.test(i.closest('figure').querySelector('.credit')?.textContent || '')) || i.closest('figure').querySelector('.press-photo-credit[href]') || (i.closest('.history-video') && i.closest('figure').querySelector('figcaption a[href*="youtube.com/watch"]')))) }))"""
 PRESS_JS = """() => { const fs = [...document.querySelectorAll('.press .press-photo')];
   return {slugs: fs.map(f => f.dataset.pressSlug), bad: fs.filter(f => {
     const c = f.querySelector('.press-photo-credit[href]');
