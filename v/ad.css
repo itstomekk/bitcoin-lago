@@ -258,7 +258,7 @@ input[type="search"], select { border-radius: 2px; }
 }
 
 
-/* ---------- Lago Bitcoin's own content (2026-10-21): gallery, story timeline, services, request form ---------- */
+/* ---------- Bitcoin Lago's own content (2026-10-21): gallery, story timeline, services, request form ---------- */
 .lb-gallery h3 { font-size: 1.15rem; color: var(--marigold); margin-bottom: 1rem; }
 .lb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1rem; }
 .lb-photo { margin: 0; }
@@ -324,3 +324,28 @@ input[type="search"], select { border-radius: 2px; }
 .timeline li:nth-last-child(2) { border-bottom: 0 !important; }
 .tl-src a { font-size: 0.9rem; font-weight: 700; }
 .ask .send-row .btn-primary { flex: 1 1 14rem; justify-content: center; }
+
+/* partners band (2026-10-21) */
+.partners { --ink: #ffffff; --muted: #dfe3fb; --link: #ffd978; --focus: #ffd978; background: var(--indigo-deep); border-top: 6px solid var(--marigold); color: #f7f1e3; padding: clamp(3rem, 7vw, 6rem) clamp(1.2rem, 5vw, 4rem); }
+.partners h2 { color: #f7f1e3; }
+.partners .lead { color: #e9e2d0; max-width: 46rem; }
+.partner-grid { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 1.2rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px) { .partner-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .partner-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.partner { border: 1px solid rgba(247, 241, 227, 0.22); border-radius: 0; padding: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.partner a { color: #f7f1e3; text-decoration: none; display: flex; flex-direction: column; gap: 0.8rem; }
+.partner a:hover .partner-name, .partner a:focus-visible .partner-name { text-decoration: underline; }
+.partner-logo { height: 84px; display: flex; align-items: center; }
+.partner-logo img { max-height: 84px; max-width: 100%; width: auto; height: auto; }
+.partner-name { font-weight: 700; font-size: 1.05rem; }
+.partner p { margin: 0; color: #e9e2d0; font-size: 0.95rem; line-height: 1.5; }
+
+.partner-logo img { max-width: min(100%, 190px); }
+@media (min-width: 1100px) { .partner-name { min-height: 2.7em; } }
+.partner p { font-size: 1rem; color: #f1ecdf; }
+@media (max-width: 639px) {
+  .partner a { flex-direction: row; align-items: center; gap: 1rem; }
+  .partner-logo { flex: 0 0 96px; height: 60px; justify-content: center; }
+  .partner-logo img { max-height: 60px; max-width: 96px; }
+}
+.partners { padding-bottom: clamp(3.5rem, 8vw, 6.5rem); }

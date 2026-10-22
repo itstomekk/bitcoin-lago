@@ -1,4 +1,4 @@
-"""Build public WebP and JPG sizes for Lago Bitcoin's own photos (Eliazar's Telegram archive and
+"""Build public WebP and JPG sizes for Bitcoin Lago's own photos (Eliazar's Telegram archive and
 the public X posts of @JUN_AJPU_btc and @AtitlanTours21). Sources stay in the ignored source-archive.
 
 Run: python tools/optimize_lago_photos.py   (writes images/lb-<slug>-<w>.webp/.jpg)

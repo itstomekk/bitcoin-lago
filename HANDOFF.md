@@ -1,11 +1,11 @@
-# HANDOFF: Lago Bitcoin Community site
+# HANDOFF: Bitcoin Lago Community site
 
 Status: **preview, `noindex,nofollow` ON** until Tomek says go public.
 Repo: https://github.com/itstomekk/lago-bitcoin-community (branch `main`).
 Live preview: see "Deployment" at the bottom.
 
 This is Tomek's own community site for Lake Atitlán. It is an independent site and says so. It is
-**not** the site of Bitcoin Lake / Lago Bitcoin (Patrick Melder's project), and the word "official"
+**not** the site of Bitcoin Lake / Bitcoin Lago (Patrick Melder's project), and the word "official"
 is never used. Bitcoin Lake is credited only as history (it started the merchant network) with a
 link to https://x.com/LakeBitcoin.
 
@@ -46,8 +46,8 @@ class `show-placeholders`. To hide every badge at go-live, remove that class in 
 | `whatsapp-invite-url` | Hero button and Community tile | WhatsApp group invite link. Put it in `config.js` (`whatsapp`). Both buttons go live and both badges vanish. |
 | `facebook` | Community, "Follow and write to us" | Facebook page URL. `config.js` (`facebook`). |
 | `contact-email` | Community, "Follow and write to us" | Contact email. `config.js` (`email`). |
-| `eliazar-bio-photo` | Community, "Who we are" | Eliazar's photo and short bio (Lago Bitcoin's local leader). |
-| `whatsapp-number` | Plan your stay, "Send on WhatsApp" | Lago Bitcoin's WhatsApp number in `config.js` (`whatsappNumber`, digits with country code). The request form opens a chat with this number. |
+| `eliazar-bio-photo` | Community, "Who we are" | Eliazar's photo and short bio (Bitcoin Lago's local leader). |
+| `whatsapp-number` | Plan your stay, "Send on WhatsApp" | Bitcoin Lago's WhatsApp number in `config.js` (`whatsappNumber`, digits with country code). The request form opens a chat with this number. |
 | `expat-contact` | Newcomers button | Contact link or email. `config.js` (`expatContact`). |
 | `atm-locations` | Bitcoin ATMs block | ATM locations. **None are in the data**, so none are listed. Add them in `tools/content.py` / the template. |
 
@@ -154,8 +154,8 @@ It needs `qa/.cache/axe.min.js` (download command is at the top of the script).
 Choosing the winner: tell the builder which design should become `/`. The root `index.html` / `es/index.html` would then be
 generated from that design's layout (path prefix changes from `../../` to `./`); until then the root is the first build.
 
-## 2026-10-21: Lago Bitcoin's own site
-- Tomek decided the site is Lago Bitcoin's own: founded 2021 by Patrick Melder with friends and supporters; Eliazar (@JUN_AJPU_btc) is the local leader.
+## 2026-10-21: Bitcoin Lago's own site
+- Tomek decided the site is Bitcoin Lago's own: founded 2021 by Patrick Melder with friends and supporters; Eliazar (@JUN_AJPU_btc) is the local leader.
 - New content lives at the end of `tools/content.py`: `LB_PHOTOS`, `GALLERY`, `TIMELINE` (each year links its X sources), `SERVICES`, and the form strings.
 - Photos: `python tools/optimize_lago_photos.py` builds `images/lb-*` from the ignored `source-archive/` (Eliazar's Telegram photos, and public X posts of @JUN_AJPU_btc and @AtitlanTours21).
 - Full X history notes moved 2026-10-22 to the program anchor `C:\Users\Lenovo\Hermes\projects\community\lago-bitcoin\research\x-2026-10-21\` (tweets.json, manifest.json, lago-bitcoin-history.md). Tweet images stay in `source-archive/x-2026-10-21/` (build input). Content plan and blog ideas: `...\lago-bitcoin\content\content-plan.md`. Open work for the whole project: `...\lago-bitcoin\PLAN.md`.

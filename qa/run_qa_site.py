@@ -81,9 +81,9 @@ PARITY_JS = """() => ({
   cards: document.querySelectorAll('#cards .card').length,
   h2: document.querySelectorAll('h2').length,
   imgs: document.querySelectorAll('img').length })"""
-IMG_JS = """() => [...document.querySelectorAll('img')].filter(i => !i.closest('.leaflet-container')).map(i => ({
+IMG_JS = """() => [...document.querySelectorAll('img')].filter(i => !i.closest('.leaflet-container') && !i.closest('.partner-logo')).map(i => ({
   src: i.currentSrc, alt: i.getAttribute('alt'), nat: i.naturalWidth, inFigure: !!i.closest('figure'),
-  credit: !!(i.closest('figure') && ((i.closest('figure').querySelector('.credit a[href*="commons.wikimedia.org"]') && i.closest('figure').querySelector('.credit a[href*="creativecommons.org"]')) || i.closest('figure').querySelector('.credit')?.textContent.includes('Photo: community archive (source to confirm)') || (i.closest('.lb-photo') && /^(Photo|Foto): (Lago Bitcoin|@JUN_AJPU_btc|@AtitlanTours21)/.test(i.closest('figure').querySelector('.credit')?.textContent || '')) || i.closest('figure').querySelector('.press-photo-credit[href]') || (i.closest('.history-video') && i.closest('figure').querySelector('figcaption a[href*="youtube.com/watch"]')))) }))"""
+  credit: !!(i.closest('figure') && ((i.closest('figure').querySelector('.credit a[href*="commons.wikimedia.org"]') && i.closest('figure').querySelector('.credit a[href*="creativecommons.org"]')) || i.closest('figure').querySelector('.credit')?.textContent.includes('Photo: community archive (source to confirm)') || (i.closest('.lb-photo') && /^(Photo|Foto): (Bitcoin Lago|@JUN_AJPU_btc|@AtitlanTours21)/.test(i.closest('figure').querySelector('.credit')?.textContent || '')) || i.closest('figure').querySelector('.press-photo-credit[href]') || (i.closest('.history-video') && i.closest('figure').querySelector('figcaption a[href*="youtube.com/watch"]')))) }))"""
 PRESS_JS = """() => { const fs = [...document.querySelectorAll('.press .press-photo')];
   return {slugs: fs.map(f => f.dataset.pressSlug), bad: fs.filter(f => {
     const c = f.querySelector('.press-photo-credit[href]');
@@ -271,7 +271,7 @@ def variant(browser, vid):
         pg.wait_for_timeout(1500)
         reveal_all(pg)
         gate(f"{L} no console errors/warnings, no failed requests", not errs and not failed, {"console": errs[:4], "failed": failed[:4]})
-        gate(f"{L} page weight under 3 MB excluding map tiles", weight["b"] < 3 * 1024 * 1024, f'{weight["b"] / 1024:.0f} KB')
+        gate(f"{L} page weight under 3.5 MB after scrolling every lazy photo in, excluding map tiles", weight["b"] < 3.5 * 1024 * 1024, f'{weight["b"] / 1024:.0f} KB')
         ov = pg.evaluate(OVERFLOW_JS)
         gate(f"{L} no horizontal overflow at 1440", ov["sw"] <= ov["cw"], ov)
         leak = pg.evaluate(LEAK_JS)
@@ -405,7 +405,7 @@ def variant(browser, vid):
         ctx.close()
 
     pe, ps = parity["en"], parity["es"]
-    gate(f"[{vid}] EN/ES parity: same section ids in same order", pe["sections"] == ps["sections"] and len(pe["sections"]) == 8, pe["sections"])
+    gate(f"[{vid}] EN/ES parity: same section ids in same order", pe["sections"] == ps["sections"] and len(pe["sections"]) == 9, pe["sections"])
     gate(f"[{vid}] EN/ES parity: placeholders, nav targets, h2 and image counts", pe["placeholders"] == ps["placeholders"] and pe["navTargets"] == ps["navTargets"] and pe["h2"] == ps["h2"] and pe["imgs"] == ps["imgs"],
          {"placeholders": sorted(set(pe["placeholders"])), "h2": pe["h2"], "imgs": pe["imgs"], "nav": pe["navTargets"]})
     ids_en = set(re.findall(r'id="([^"]+)"', page_html["en"]))

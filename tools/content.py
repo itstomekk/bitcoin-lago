@@ -95,10 +95,10 @@ PHOTOS = {
 EN = {
     "lang": "en",
     "og_locale": "en_US",
-    "title": "Lago Bitcoin | The Bitcoin community of Lake Atitlán, Guatemala",
-    "description": "Lago Bitcoin, Lake Atitlán's Bitcoin community since 2021: 117 places on a map, school courses, meetups, and tours and help for visitors, paid in bitcoin.",
+    "title": "Bitcoin Lago | The Bitcoin community of Lake Atitlán, Guatemala",
+    "description": "Bitcoin Lago, Lake Atitlán's Bitcoin community since 2021: 117 places on a map, school courses, meetups, and tours and help for visitors, paid in bitcoin.",
     "skip": "Skip to content",
-    "brand": "Lago Bitcoin",
+    "brand": "Bitcoin Lago",
     "nav_label": "Main",
     "nav_lake": "The lake",
     "nav_bitcoin": "Merchants",
@@ -122,7 +122,7 @@ EN = {
     "h_hero_follow": "A guide to the Bitcoin community here.",
     "h_hero_sub": "Merchant listings, transport, community resources and practical information for Lake Atitlán.",
     "h_guide_label": "Map of this guide",
-    "h_core_name": "Lago Bitcoin",
+    "h_core_name": "Bitcoin Lago",
     "h_core_note": "community guide",
     "h_legend_label": "Map key",
     "h_legend_core": "Community guide",
@@ -204,10 +204,10 @@ EN = {
     "facebook": "Facebook",
     "email": "Email",
     "who_h": "Who we are",
-    "who_p": "Lago Bitcoin was founded in 2021 by Patrick Melder together with friends and supporters. Eliazar leads the work on the ground, with volunteers, teachers and merchants around the lake.",
+    "who_p": "Bitcoin Lago was founded in 2021 by Patrick Melder together with friends and supporters. Eliazar leads the work on the ground, with volunteers, teachers and merchants around the lake.",
     "who_bio": "Photo and short bio of Eliazar to be added.",
 
-    "tours_h2": "Plan your stay with Lago Bitcoin",
+    "tours_h2": "Plan your stay with Bitcoin Lago",
     "tours_p": "Tours, stays, transport, a soft landing for newcomers, team retreats. We know the people who do it best around the lake.",
     "tours_1_h": "Meet locals",
     "tours_1_p": "Time with the people who live and work around the lake.",
@@ -230,23 +230,23 @@ EN = {
     "video_channel_label": "Channel",
     "video_watch": "Watch the video",
     "about_h2": "Our story",
-    "about_p_html": "Lago Bitcoin began in Panajachel in 2021. It was founded by <strong>Patrick Melder</strong> with friends and supporters, out of years of volunteering at Centro Educativo Josué. <strong>Eliazar</strong>, our local leader, started by visiting businesses one by one.",
-    "about_x": "Lago Bitcoin on X: @LakeBitcoin",
+    "about_p_html": "Bitcoin Lago began in Panajachel in 2021. It was founded by <strong>Patrick Melder</strong> with friends and supporters, out of years of volunteering at Centro Educativo Josué. <strong>Eliazar</strong>, our local leader, started by visiting businesses one by one.",
+    "about_x": "Bitcoin Lago on X: @LakeBitcoin",
     "press_h": "In the press",
     "press_highlights_h": "Photographs from published coverage",
     "press_read": "Read",
 
-    "foot_legal": "© 2026 Lago Bitcoin, Lake Atitlán, Guatemala.",
+    "foot_legal": "© 2026 Bitcoin Lago, Lake Atitlán, Guatemala.",
     "foot_data_html": "Merchant data © <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap contributors</a> (ODbL), as shown on <a href=\"https://btcmap.org/community/lago-bitcoin/merchants\">BTC Map</a>. Map tiles © OpenStreetMap contributors.",
-    "foot_photos": "Photos from Lago Bitcoin, from the public X posts of @JUN_AJPU_btc and @AtitlanTours21, and from Wikimedia Commons under Creative Commons licences, credited under each photo.",
+    "foot_photos": "Photos from Bitcoin Lago, from the public X posts of @JUN_AJPU_btc and @AtitlanTours21, and from Wikimedia Commons under Creative Commons licences, credited under each photo.",
     "foot_updated": "Last updated {d}",
 
     "vsw_label": "Design",
     "vsw_aria": "Switch the design of this page",
     "vsw_all": "All designs",
     "vsw_all_short": "All",
-    "vx_title": "Design previews | Lago Bitcoin Community",
-    "vx_description": "Design previews of the Lago Bitcoin Community site for Lake Atitlán. Every finished design shares the same content and the 117-place dataset, in English and Spanish.",
+    "vx_title": "Design previews | Bitcoin Lago Community",
+    "vx_description": "Design previews of the Bitcoin Lago Community site for Lake Atitlán. Every finished design shares the same content and the 117-place dataset, in English and Spanish.",
     "vx_h1": "Compare the finished designs",
     "vx_p": "Same words, same 117 places, same English and Spanish. Only the design changes. Open one, then use the Design switcher at the bottom of any page to compare.",
     "vx_open": "Open design",
@@ -266,10 +266,10 @@ EN = {
 ES = {
     "lang": "es",
     "og_locale": "es_GT",
-    "title": "Lago Bitcoin | La comunidad Bitcoin del Lago de Atitlán, Guatemala",
-    "description": "Lago Bitcoin, la comunidad Bitcoin del Lago de Atitlán desde 2021: 117 lugares en un mapa, cursos, encuentros, y tours y ayuda para visitantes, con bitcoin.",
+    "title": "Bitcoin Lago | La comunidad Bitcoin del Lago de Atitlán, Guatemala",
+    "description": "Bitcoin Lago, la comunidad Bitcoin del Lago de Atitlán desde 2021: 117 lugares en un mapa, cursos, encuentros, y tours y ayuda para visitantes, con bitcoin.",
     "skip": "Saltar al contenido",
-    "brand": "Lago Bitcoin",
+    "brand": "Bitcoin Lago",
     "nav_label": "Principal",
     "nav_lake": "El lago",
     "nav_bitcoin": "Comercios",
@@ -293,7 +293,7 @@ ES = {
     "h_hero_follow": "Una guía de la comunidad Bitcoin aquí.",
     "h_hero_sub": "Comercios, transporte, recursos comunitarios e información práctica para el Lago de Atitlán.",
     "h_guide_label": "Mapa de esta guía",
-    "h_core_name": "Lago Bitcoin",
+    "h_core_name": "Bitcoin Lago",
     "h_core_note": "guía comunitaria",
     "h_legend_label": "Clave del mapa",
     "h_legend_core": "Guía comunitaria",
@@ -375,10 +375,10 @@ ES = {
     "facebook": "Facebook",
     "email": "Correo",
     "who_h": "Quiénes somos",
-    "who_p": "Lago Bitcoin fue fundado en 2021 por Patrick Melder junto con amigos y colaboradores. Eliazar dirige el trabajo en el terreno, con voluntarios, maestros y comerciantes alrededor del lago.",
+    "who_p": "Bitcoin Lago fue fundado en 2021 por Patrick Melder junto con amigos y colaboradores. Eliazar dirige el trabajo en el terreno, con voluntarios, maestros y comerciantes alrededor del lago.",
     "who_bio": "La foto y una breve biografía de Eliazar se agregarán.",
 
-    "tours_h2": "Planea tu visita con Lago Bitcoin",
+    "tours_h2": "Planea tu visita con Bitcoin Lago",
     "tours_p": "Tours, hospedaje, transporte, una llegada fácil para recién llegados, retiros de equipo. Conocemos a quienes mejor lo hacen en el lago.",
     "tours_1_h": "Conoce a la gente local",
     "tours_1_p": "Tiempo con las personas que viven y trabajan alrededor del lago.",
@@ -401,23 +401,23 @@ ES = {
     "video_channel_label": "Canal",
     "video_watch": "Ver el video",
     "about_h2": "Nuestra historia",
-    "about_p_html": "Lago Bitcoin empezó en Panajachel en 2021. Lo fundó <strong>Patrick Melder</strong> con amigos y colaboradores, a partir de años de voluntariado en el Centro Educativo Josué. <strong>Eliazar</strong>, nuestro líder local, empezó visitando los negocios uno por uno.",
-    "about_x": "Lago Bitcoin en X: @LakeBitcoin",
+    "about_p_html": "Bitcoin Lago empezó en Panajachel en 2021. Lo fundó <strong>Patrick Melder</strong> con amigos y colaboradores, a partir de años de voluntariado en el Centro Educativo Josué. <strong>Eliazar</strong>, nuestro líder local, empezó visitando los negocios uno por uno.",
+    "about_x": "Bitcoin Lago en X: @LakeBitcoin",
     "press_h": "En la prensa",
     "press_highlights_h": "Fotografías de la cobertura publicada",
     "press_read": "Leer",
 
-    "foot_legal": "© 2026 Lago Bitcoin, Lago de Atitlán, Guatemala.",
+    "foot_legal": "© 2026 Bitcoin Lago, Lago de Atitlán, Guatemala.",
     "foot_data_html": "Datos de comercios © <a href=\"https://www.openstreetmap.org/copyright\">colaboradores de OpenStreetMap</a> (ODbL), tal como se muestran en <a href=\"https://btcmap.org/community/lago-bitcoin/merchants\">BTC Map</a>. Mosaicos del mapa © colaboradores de OpenStreetMap.",
-    "foot_photos": "Fotos de Lago Bitcoin, de las publicaciones públicas en X de @JUN_AJPU_btc y @AtitlanTours21, y de Wikimedia Commons con licencias Creative Commons, con crédito bajo cada foto.",
+    "foot_photos": "Fotos de Bitcoin Lago, de las publicaciones públicas en X de @JUN_AJPU_btc y @AtitlanTours21, y de Wikimedia Commons con licencias Creative Commons, con crédito bajo cada foto.",
     "foot_updated": "Última actualización {d}",
 
     "vsw_label": "Diseño",
     "vsw_aria": "Cambia el diseño de esta página",
     "vsw_all": "Todos los diseños",
     "vsw_all_short": "Todos",
-    "vx_title": "Diseños | Lago Bitcoin Community",
-    "vx_description": "Vistas previas de diseño del sitio Lago Bitcoin Community para el Lago de Atitlán. Cada diseño terminado comparte el contenido y los 117 lugares, en inglés y español.",
+    "vx_title": "Diseños | Bitcoin Lago Community",
+    "vx_description": "Vistas previas de diseño del sitio Bitcoin Lago Community para el Lago de Atitlán. Cada diseño terminado comparte el contenido y los 117 lugares, en inglés y español.",
     "vx_h1": "Compara los diseños terminados",
     "vx_p": "Las mismas palabras, los mismos 117 lugares, el mismo inglés y español. Solo cambia el diseño. Abre uno y usa el selector de Diseño al pie de cualquier página para comparar.",
     "vx_open": "Abrir diseño",
@@ -493,7 +493,7 @@ I18N_KEYS = [
 
 
 # ---------------------------------------------------------------------------------------------
-# LAGO BITCOIN'S OWN SITE (Tomek, 2026-10-21): founded by Patrick Melder with friends and
+# BITCOIN LAGO'S OWN SITE (Tomek, 2026-10-21): founded by Patrick Melder with friends and
 # supporters; Eliazar (@JUN_AJPU_btc) is the local leader. Facts below come from Eliazar's own
 # messages and his public X posts (Hermes/projects/community/lago-bitcoin/research/x-2026-10-21/lago-bitcoin-history.md).
 # ---------------------------------------------------------------------------------------------
@@ -524,7 +524,7 @@ GALLERY = ["boat", "steelcraft", "santacruz", "chuijuyub", "library", "huipil", 
 
 LB_CAPTIONS = {
     "en": {
-        "boat": "The Lago Bitcoin boat at a pier on Lake Atitlán",
+        "boat": "The Bitcoin Lago boat at a pier on Lake Atitlán",
         "tuktuk": "A tuk tuk outside a business painted with \u201cBitcoin aceptado aquí\u201d",
         "sign": "An \u201cAceptamos Bitcoin\u201d sign with Blink and Fedi",
         "uvg": "Our banner at a Bitcoin talk at UVG in Sololá, 2024",
@@ -538,7 +538,7 @@ LB_CAPTIONS = {
         "painting": "A painting of the lake, shared by Eliazar",
     },
     "es": {
-        "boat": "La lancha de Lago Bitcoin en un muelle del Lago de Atitlán",
+        "boat": "La lancha de Bitcoin Lago en un muelle del Lago de Atitlán",
         "tuktuk": "Un tuk tuk frente a un negocio pintado con \u201cBitcoin aceptado aquí\u201d",
         "sign": "Un letrero de \u201cAceptamos Bitcoin\u201d con Blink y Fedi",
         "uvg": "Nuestro banner en una charla de Bitcoin en la UVG de Sololá, 2024",
@@ -556,8 +556,8 @@ LB_CAPTIONS = {
 TIMELINE = [
     # year, sources (tweet urls), EN, ES
     ("2021", [],
-     "Lago Bitcoin starts in Panajachel. Eliazar visits businesses one by one, and the first merchants accept bitcoin.",
-     "Lago Bitcoin nace en Panajachel. Eliazar visita los negocios uno por uno y los primeros comercios aceptan bitcoin."),
+     "Bitcoin Lago starts in Panajachel. Eliazar visits businesses one by one, and the first merchants accept bitcoin.",
+     "Bitcoin Lago nace en Panajachel. Eliazar visita los negocios uno por uno y los primeros comercios aceptan bitcoin."),
     ("2022", [_x("JUN_AJPU_btc", "1568416150765113344"), _x("JUN_AJPU_btc", "1592607133664940032")],
      "Kaboom: used cooking oil runs a generator that mines bitcoin. The lake team travels to Adopting Bitcoin in El Salvador.",
      "Kaboom: aceite de cocina usado mueve un generador que mina bitcoin. El equipo del lago viaja a Adopting Bitcoin en El Salvador."),
@@ -616,12 +616,12 @@ SERVICES = [
 ]
 
 EN.update({
-    "lb_credit_lago": "Photo: Lago Bitcoin",
+    "lb_credit_lago": "Photo: Bitcoin Lago",
     "lb_credit_eli": "Photo: @JUN_AJPU_btc on X",
     "lb_credit_tours": "Photo: @AtitlanTours21 on X",
-    "gallery_h": "Around the lake with Lago Bitcoin",
-    "story_quote": "One of my main goals with Lago Bitcoin is simply to teach about Bitcoin to all the communities around Lake Atitlán, from 10-year-old children to 100-year-old adults. One of my greatest dreams is for every town around the lake to learn about Bitcoin and use it, and one day to open a Bitcoin center here.",
-    "story_quote_by": "Eliazar, Lago Bitcoin",
+    "gallery_h": "Around the lake with Bitcoin Lago",
+    "story_quote": "One of my main goals with Bitcoin Lago is simply to teach about Bitcoin to all the communities around Lake Atitlán, from 10-year-old children to 100-year-old adults. One of my greatest dreams is for every town around the lake to learn about Bitcoin and use it, and one day to open a Bitcoin center here.",
+    "story_quote_by": "Eliazar, Bitcoin Lago",
     "story_timeline_h": "Year by year",
     "story_source": "Source",
     "story_x": "Eliazar on X: @JUN_AJPU_btc",
@@ -638,15 +638,17 @@ EN.update({
     "form_msg": "Anything else we should know",
     "form_send": "Send on WhatsApp",
     "form_note": "This opens WhatsApp with your message ready to send. Nothing is booked or paid yet.",
-    "form_hello": "Hi Lago Bitcoin! I found you on your website.",
+    "form_hello": "Hi Bitcoin Lago! I found you on your website.",
+    "partners_h": "Partners",
+    "partners_p": "Organisations that work with Bitcoin Lago and support Bitcoin at the lake.",
 })
 ES.update({
-    "lb_credit_lago": "Foto: Lago Bitcoin",
+    "lb_credit_lago": "Foto: Bitcoin Lago",
     "lb_credit_eli": "Foto: @JUN_AJPU_btc en X",
     "lb_credit_tours": "Foto: @AtitlanTours21 en X",
-    "gallery_h": "Por el lago con Lago Bitcoin",
-    "story_quote": "Una de mis metas principales con Lago Bitcoin es simplemente enseñar Bitcoin a todas las comunidades alrededor del Lago de Atitlán, desde niños de 10 años hasta adultos de 100. Uno de mis mayores sueños es que cada pueblo del lago aprenda Bitcoin y lo use, y algún día abrir un centro de Bitcoin aquí.",
-    "story_quote_by": "Eliazar, Lago Bitcoin",
+    "gallery_h": "Por el lago con Bitcoin Lago",
+    "story_quote": "Una de mis metas principales con Bitcoin Lago es simplemente enseñar Bitcoin a todas las comunidades alrededor del Lago de Atitlán, desde niños de 10 años hasta adultos de 100. Uno de mis mayores sueños es que cada pueblo del lago aprenda Bitcoin y lo use, y algún día abrir un centro de Bitcoin aquí.",
+    "story_quote_by": "Eliazar, Bitcoin Lago",
     "story_timeline_h": "Año por año",
     "story_source": "Fuente",
     "story_x": "Eliazar en X: @JUN_AJPU_btc",
@@ -663,7 +665,29 @@ ES.update({
     "form_msg": "Algo más que debamos saber",
     "form_send": "Enviar por WhatsApp",
     "form_note": "Se abre WhatsApp con tu mensaje listo para enviar. Todavía no se reserva ni se paga nada.",
-    "form_hello": "¡Hola Lago Bitcoin! Los encontré en su sitio web.",
+    "form_hello": "¡Hola Bitcoin Lago! Los encontré en su sitio web.",
+    "partners_h": "Aliados",
+    "partners_p": "Organizaciones que trabajan con Bitcoin Lago y apoyan Bitcoin en el lago.",
 })
+
+
+# PARTNERS (Tomek, 2026-10-21). Logos in images/partners/ (Orange Pages logo set, fbce.io, bullishguate.com).
+PARTNERS = [
+    ("fbce", "Federation of Bitcoin Circular Economies", "https://fbce.io/",
+     "A global federation that connects and supports local Bitcoin circular economies like ours.",
+     "Una federación global que conecta y apoya economías circulares de Bitcoin locales como la nuestra."),
+    ("bullish-guate", "Bullish Guate", "https://www.bullishguate.com/",
+     "Bitcoin-only company in Guatemala: buy bitcoin straight to your own wallet, hardware wallets, advice and free meetups.",
+     "Empresa solo Bitcoin en Guatemala: compra bitcoin directo a tu propia billetera, hardware, asesorías y meetups gratis."),
+    ("bitcoin-district", "Bitcoin District Próspera", "https://thebitcoindistrict.com/",
+     "A Bitcoin-native district and community in Próspera, Roatán, Honduras.",
+     "Un distrito y comunidad nativos de Bitcoin en Próspera, Roatán, Honduras."),
+    ("bitcoin-filmfest", "Bitcoin FilmFest", "https://bitcoinfilmfest.com/",
+     "A festival of Bitcoin films and culture, born in Warsaw, with screenings around the world.",
+     "Un festival de cine y cultura Bitcoin, nacido en Varsovia, con proyecciones alrededor del mundo."),
+    ("blink", "Blink", "https://www.blink.sv/",
+     "A Lightning wallet for everyday bitcoin payments, formerly the Bitcoin Beach Wallet.",
+     "Una billetera Lightning para pagos diarios con bitcoin, antes Bitcoin Beach Wallet."),
+]
 
 LANGS = {"en": EN, "es": ES}

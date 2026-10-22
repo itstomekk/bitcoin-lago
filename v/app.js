@@ -25,7 +25,7 @@
   var BASE = doc.body.getAttribute('data-base') || '';
   var I18N = JSON.parse(doc.getElementById('i18n').textContent);
   var GROUPS = ['eat', 'stay', 'tours', 'shops', 'services', 'other'];
-  var BBOX = [[14.598, -91.326], [14.762, -91.097]]; // Lago Bitcoin community area on BTC Map
+  var BBOX = [[14.598, -91.326], [14.762, -91.097]]; // Bitcoin Lago community area on BTC Map
 
   /* Load the privacy-enhanced YouTube player only after an explicit, keyboard-accessible click. */
   doc.addEventListener('click', function (event) {

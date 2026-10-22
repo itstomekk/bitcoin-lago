@@ -7,7 +7,7 @@
     email        : contact email address (plain address, no "mailto:")
     tourBooking  : booking link or page for VIP tours (ask Tomek before using cal.com/itstomekk)
     expatContact : link or "mailto:" address for the newcomers contact
-    whatsappNumber : Lago Bitcoin's WhatsApp number in international format, e.g. "50212345678".
+    whatsappNumber : Bitcoin Lago's WhatsApp number in international format, e.g. "50212345678".
                    The "Tell us what you need" form opens a chat with this number.
 */
 window.LBC_CONFIG = {

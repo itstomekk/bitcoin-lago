@@ -1,4 +1,4 @@
-# Lago Bitcoin Community
+# Bitcoin Lago Community
 
 Static, bilingual (EN / ES) community site for Lake Atitlán, Guatemala. Vanilla HTML, CSS and JavaScript, no framework,
 no API keys. Hosted on GitHub Pages from the `main` branch.

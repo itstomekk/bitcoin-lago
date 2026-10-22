@@ -21,6 +21,7 @@ PAGE TEMPLATE SYNTAX (same idea as tools/page.template.html)
   {{maya:N|cls}}             the number N (1 to 19) written in dot-and-bar notation, as decoration
 """
 import json
+from PIL import Image
 import sys as _s, pathlib as _p; _s.path.insert(0,str(_p.Path(__file__).resolve().parent))
 import re
 import sys
@@ -119,7 +120,7 @@ def tour_points(T):
 
 
 def lb_fig(slug, T, sizes="(min-width: 900px) 30vw, 92vw", cls=""):
-    """A Lago Bitcoin photo (Eliazar's archive or a public X post) with its credit."""
+    """A Bitcoin Lago photo (Eliazar's archive or a public X post) with its credit."""
     from PIL import Image
     meta = C.LB_PHOTOS[slug]
     files = sorted(ROOT.glob(f"images/lb-{slug}-*.jpg"), key=lambda f: int(f.stem.rsplit("-", 1)[1]))
@@ -153,6 +154,21 @@ def timeline(T):
         src = f' <span class="tl-src">{T["story_source"]}: {links}</span>' if links else ""
         items.append(f'<li><span class="tl-year">{year}</span><p>{escape(text)}{src}</p></li>')
     return f'<div class="timeline reveal"><h3>{T["story_timeline_h"]}</h3><ol>{"".join(items)}</ol></div>'
+
+
+def partners(T):
+    i = 3 if T["lang"] == "en" else 4
+    cards = []
+    for slug, name, url, *desc in C.PARTNERS:
+        im = Image.open(ROOT / "images" / "partners" / f"{slug}.png")
+        cards.append(
+            f'<li class="partner"><a href="{url}" rel="noopener"><span class="partner-logo">'
+            f'<picture><source srcset="{T["p"]}images/partners/{slug}.webp" type="image/webp">'
+            f'<img src="{T["p"]}images/partners/{slug}.png" alt="{escape(name)}" width="{im.width}" height="{im.height}" loading="lazy"></picture></span>'
+            f'<span class="partner-name">{escape(name)}</span></a><p>{escape(desc[i - 3])}</p></li>')
+    return ('<section class="scr partners" id="partners" aria-labelledby="partners-h2"><div class="partners-in reveal">'
+            f'<h2 id="partners-h2">{T["partners_h"]}</h2><p class="lead">{T["partners_p"]}</p>'
+            f'<ul class="partner-grid">{"".join(cards)}</ul></div></section>')
 
 
 def services(T):
@@ -219,7 +235,7 @@ def head_html(vid):
         f'<link rel="alternate" hreflang="es" href="{{{{url_es}}}}">\n'
         f'<link rel="alternate" hreflang="x-default" href="{{{{url_en}}}}">\n'
         f'<meta property="og:type" content="website">\n'
-        f'<meta property="og:site_name" content="Lago Bitcoin">\n'
+        f'<meta property="og:site_name" content="Bitcoin Lago">\n'
         f'<meta property="og:title" content="{{{{title}}}}">\n'
         f'<meta property="og:description" content="{{{{description}}}}">\n'
         f'<meta property="og:url" content="{{{{canonical}}}}">\n'
@@ -318,6 +334,7 @@ def render(vid, lang):
         "gallery": gallery(T),
         "timeline": timeline(T),
         "services": services(T),
+        "partners": partners(T),
         "stats": stats(T, ln, chain),
         "atm": atm(T),
         "footer_text": footer_text(T),
@@ -409,9 +426,9 @@ def build_index(lang):
 
 REDIRECT = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
-<title>Lago Bitcoin Community</title><meta http-equiv="refresh" content="0; url={to}">
+<title>Bitcoin Lago Community</title><meta http-equiv="refresh" content="0; url={to}">
 <link rel="canonical" href="{canon}"></head>
-<body><p><a href="{to}">Lago Bitcoin Community</a></p>
+<body><p><a href="{to}">Bitcoin Lago Community</a></p>
 <script>location.replace("{to}" + location.hash);</script></body></html>
 """
 
