@@ -22,7 +22,6 @@ PAGE TEMPLATE SYNTAX (same idea as tools/page.template.html)
 """
 import json
 import sys as _s, pathlib as _p; _s.path.insert(0,str(_p.Path(__file__).resolve().parent))
-from topbar_prune import prune
 import re
 import sys
 from html import escape
@@ -34,21 +33,13 @@ import build_pages as BP  # noqa: E402
 
 ROOT = BP.ROOT
 VDIR = ROOT / "tools" / "variants"
-IDS = ["a", "c", "d", "ac", "ad", "cd", "f", "g", "h"]
-LAYOUT_FALLBACKS = {"ac": "c", "ad": "d", "cd": "c"}
+IDS = ["ad"]  # the one design (Tomek picked AD on 2026-10-21; A, C, D, AC, CD, F, G, H and the baseline were removed)
+LAYOUT_FALLBACKS = {}
 SECTIONS = ["lake", "bitcoin", "transport", "community", "tours", "expats", "about"]
 
 # Per-variant head settings: browser theme colour and the fonts to preload (files in /fonts).
 META = {
-    "a": {"theme": "#EEF0EB", "fonts": ["geist-latin-wght-normal.woff2", "geist-mono-latin-wght-normal.woff2"]},
-    "c": {"theme": "#0C0B0B", "fonts": ["bebas-neue-latin-400-normal.woff2", "geist-latin-wght-normal.woff2"]},
-    "d": {"theme": "#1E2760", "fonts": ["bricolage-grotesque-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
-    "ac": {"theme": "#EEF0EB", "fonts": ["bebas-neue-latin-400-normal.woff2", "geist-latin-wght-normal.woff2"]},
-    "ad": {"theme": "#1E2760", "fonts": ["bricolage-grotesque-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
-    "cd": {"theme": "#0C0B0B", "fonts": ["bebas-neue-latin-400-normal.woff2", "geist-latin-wght-normal.woff2"]},
-    "f": {"theme": "#FAF6F3", "fonts": ["geist-latin-wght-normal.woff2"]},
-    "g": {"theme": "#FDFDFB", "fonts": ["newsreader-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2"]},
-    "h": {"theme": "#FBFCFE", "fonts": ["archivo-latin-vf.woff2", "archivo-latin-ext-vf.woff2"]},
+    "ad": {"theme": "#1E2760", "fonts": ["bricolage-grotesque-latin-wght-normal.woff2", "geist-latin-wght-normal.woff2", "geist-mono-latin-wght-normal.woff2"]},
 }
 
 
@@ -194,27 +185,6 @@ def head_html(vid):
         f'<body class="show-placeholders v-{vid}" data-base="{{{{p}}}}" data-design="{vid}">\n'
         f'<a class="skip" href="#main">{{{{skip}}}}</a>\n'
         f'\n'
-        f'<!-- Fixed top bar: variant switcher + EN/ES toggle. Navy bar with coloured per-design chips. -->\n'
-        f'<div class="topbar" role="navigation" aria-label="Design and language switcher">\n'
-        f'  <div class="topbar-in">\n'
-        f'    <nav class="topbar-variants" aria-label="Design variants">\n'
-        f'      <a href="{{{{p}}}}" class="topbar-chip {{{{topbar_baseline}}}}" data-design="baseline" title="First design (baseline)">Base</a>\n'
-        f'      <a href="{{{{p}}}}v/a/" class="topbar-chip {{{{topbar_a}}}}" data-design="a" title="{{{{vsw_label}}}} A: {{{{VARIANTS.a.[lang].0}}}}">A</a>\n'
-        f'      <a href="{{{{p}}}}v/c/" class="topbar-chip {{{{topbar_c}}}}" data-design="c" title="{{{{vsw_label}}}} C: {{{{VARIANTS.c.[lang].0}}}}">C</a>\n'
-        f'      <a href="{{{{p}}}}v/d/" class="topbar-chip {{{{topbar_d}}}}" data-design="d" title="{{{{vsw_label}}}} D: {{{{VARIANTS.d.[lang].0}}}}">D</a>\n'
-        f'      <a href="{{{{p}}}}v/ac/" class="topbar-chip {{{{topbar_ac}}}}" data-design="ac" title="{{{{vsw_label}}}} AC: {{{{VARIANTS.ac.[lang].0}}}}">AC</a>\n'
-        f'      <a href="{{{{p}}}}v/ad/" class="topbar-chip {{{{topbar_ad}}}}" data-design="ad" title="{{{{vsw_label}}}} AD: {{{{VARIANTS.ad.[lang].0}}}}">AD</a>\n'
-        f'      <a href="{{{{p}}}}v/cd/" class="topbar-chip {{{{topbar_cd}}}}" data-design="cd" title="{{{{vsw_label}}}} CD: {{{{VARIANTS.cd.[lang].0}}}}">CD</a>\n'
-        f'      <a href="{{{{p}}}}v/f/" class="topbar-chip {{{{topbar_f}}}}" data-design="f" title="{{{{vsw_label}}}} F: {{{{VARIANTS.f.[lang].0}}}}">F</a>\n'
-        f'      <a href="{{{{p}}}}v/g/" class="topbar-chip {{{{topbar_g}}}}" data-design="g" title="{{{{vsw_label}}}} G: {{{{VARIANTS.g.[lang].0}}}}">G</a>\n'
-        f'      <a href="{{{{p}}}}v/h/" class="topbar-chip {{{{topbar_h}}}}" data-design="h" title="{{{{vsw_label}}}} H: {{{{VARIANTS.h.[lang].0}}}}">H</a>\n'
-        f'    </nav>\n'
-        f'    <div class="topbar-lang" role="group" aria-label="{{{{lang_label}}}}">\n'
-        f'      <a href="{{{{p_en}}}}" lang="en" hreflang="en" data-lang="en" title="{{{{lang_en_name}}}}" {{{{cur_en}}}}>EN</a>\n'
-        f'      <a href="{{{{p_es}}}}" lang="es" hreflang="es" data-lang="es" title="{{{{lang_es_name}}}}" {{{{cur_es}}}}>ES</a>\n'
-        f'    </div>\n'
-        f'  </div>\n'
-        f'</div>\n'
     )
 
 
@@ -247,24 +217,12 @@ def switcher(vid, lang, T):
 
 
 def render(vid, lang):
+    """The site itself: the one design, at the site root (index.html and es/index.html)."""
     T = dict(C.LANGS[lang])
-    prefix = "../../" if lang == "en" else "../../../"
+    prefix = "" if lang == "en" else "../"
     ln = sum(1 for p in BP.PLACES if p["lightning"] == "yes")
     chain = sum(1 for p in BP.PLACES if p["onchain"] == "yes")
-    path = f"v/{vid}/" + ("" if lang == "en" else "es/")
-    # Top bar active states: current variant gets topbar-current
-    topbar_states = {
-        "topbar_baseline": "",
-        "topbar_a": "topbar-current" if vid == "a" else "",
-        "topbar_c": "topbar-current" if vid == "c" else "",
-        "topbar_d": "topbar-current" if vid == "d" else "",
-        "topbar_ac": "topbar-current" if vid == "ac" else "",
-        "topbar_ad": "topbar-current" if vid == "ad" else "",
-        "topbar_cd": "topbar-current" if vid == "cd" else "",
-        "topbar_f": "topbar-current" if vid == "f" else "",
-        "topbar_g": "topbar-current" if vid == "g" else "",
-        "topbar_h": "topbar-current" if vid == "h" else "",
-    }
+    path = "" if lang == "en" else "es/"
     T.update(
         p=prefix,
         vid=vid,
@@ -273,15 +231,14 @@ def render(vid, lang):
         cur_en='aria-current="true"' if lang == "en" else "",
         cur_es='aria-current="true"' if lang == "es" else "",
         canonical=C.SITE_URL + path,
-        url_en=C.SITE_URL + f"v/{vid}/",
-        url_es=C.SITE_URL + f"v/{vid}/es/",
-        og_image=C.SITE_URL + ("images/community-tuktuk-940.jpg" if vid == "f" else "images/hero-1600.jpg"),
+        url_en=C.SITE_URL,
+        url_es=C.SITE_URL + "es/",
+        og_image=C.SITE_URL + "images/hero-1600.jpg",
         x_lakebitcoin=C.X_LAKEBITCOIN,
         n_places=str(len(BP.PLACES)),
         n_ln=str(ln),
         n_chain=str(chain),
         vname=C.VARIANTS[vid][lang][0],
-        **topbar_states,
     )
     T["foot_updated"] = T["foot_updated"].format(d=C.LAST_UPDATED)
     blocks = {
@@ -300,7 +257,7 @@ def render(vid, lang):
         "stats": stats(T, ln, chain),
         "atm": atm(T),
         "footer_text": footer_text(T),
-        "switcher": switcher(vid, lang, T),
+        "switcher": "",
         "i18n_json": json.dumps({**{k: T[k] for k in C.I18N_KEYS}, "categories": C.CATEGORIES[lang]},
                                 ensure_ascii=False).replace("</", "<\\/"),
     }
@@ -386,26 +343,31 @@ def build_index(lang):
     return fill(html, T, blocks, lang, f"index/{lang}")
 
 
+REDIRECT = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<title>Lago Bitcoin Community</title><meta http-equiv="refresh" content="0; url={to}">
+<link rel="canonical" href="{canon}"></head>
+<body><p><a href="{to}">Lago Bitcoin Community</a></p>
+<script>location.replace("{to}" + location.hash);</script></body></html>
+"""
+
+# Old preview addresses that people may still have: send them to the site.
+OLD_PAGES = {"v/": "../", "v/ad/": "../../", "v/ad/es/": "../../../es/", "variants/": "../", "variants/es/": "../../es/"}
+
+
 def main():
     assert set(C.EN) == set(C.ES), set(C.EN) ^ set(C.ES)
-    assert set(C.VARIANTS) == set(IDS)
-    ids = [a for a in sys.argv[1:] if a in IDS] or IDS  # optional: python tools/build_variants.py a c
-    for vid in ids:
-        if not (VDIR / f"{vid}.html").exists() and vid not in LAYOUT_FALLBACKS:
-            print("skip (no layout file yet):", vid)
-            continue
-        for lang in ("en", "es"):
-            out = ROOT / "v" / vid / ("" if lang == "en" else "es") / "index.html"
-            out.parent.mkdir(parents=True, exist_ok=True)
-            out.write_text(prune(render(vid, lang)), encoding="utf-8")
-            print("wrote", out.relative_to(ROOT))
-    # /v/ : send visitors to the design they looked at last (default A).
-    (ROOT / "v" / "index.html").write_text((VDIR / "v-redirect.html").read_text(encoding="utf-8"), encoding="utf-8")
     for lang in ("en", "es"):
-        out = ROOT / "variants" / ("" if lang == "en" else "es") / "index.html"
+        out = ROOT / ("" if lang == "en" else "es") / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(prune(build_index(lang)), encoding="utf-8")
+        out.write_text(render("ad", lang), encoding="utf-8")
         print("wrote", out.relative_to(ROOT))
+    for rel, to in OLD_PAGES.items():
+        out = ROOT / rel / "index.html"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        canon = C.SITE_URL + ("es/" if rel.endswith("es/") else "")
+        out.write_text(REDIRECT.format(to=to, canon=canon), encoding="utf-8")
+        print("wrote", out.relative_to(ROOT), "->", to)
 
 
 if __name__ == "__main__":

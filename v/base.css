@@ -29,19 +29,6 @@
   --map-h: clamp(440px, 74svh, 820px);
   --vsw-bg: #0f1417; --vsw-fg: #ffffff; --vsw-cur-bg: #ffffff; --vsw-cur-fg: #0f1417;
   --shadow-soft: 0 10px 30px -8px rgb(0 0 0 / 0.5), inset 0 0 0 1px rgb(255 255 255 / 0.14);
-  --topbar-bg: #002040; --topbar-fg: #ffffff; --topbar-border: #003060; --topbar-inset: #001838;
-  --topbar-current-ink: #002040; --topbar-underline: #ffffff; --topbar-hover: rgb(255 255 255 / 0.12);
-  --topbar-en: #ff8088; --topbar-es: #65d99a;
-  --chip-base: #f7931a; --chip-base-label: #ffb44d;
-  --chip-a: #20a060; --chip-a-label: #65d99a;
-  --chip-c: #ff5b1f; --chip-c-label: #ff9a70;
-  --chip-d: #f2b632; --chip-d-label: #ffd875;
-  --chip-ac: #60c0a0; --chip-ac-label: #85e0c0;
-  --chip-ad: #80c060; --chip-ad-label: #a8df88;
-  --chip-cd: #ff8040; --chip-cd-label: #ffad80;
-  --chip-f: oklch(48% 0.16 25); --chip-f-label: oklch(82% 0.1 25);
-  --chip-g: oklch(40% 0.12 145); --chip-g-label: oklch(82% 0.08 145);
-  --chip-h: oklch(45% 0.19 264); --chip-h-label: oklch(83% 0.08 264);
   --pad: clamp(1rem, 4vw, 2.5rem);
   color-scheme: light;
 }
@@ -171,65 +158,6 @@ input::placeholder { color: var(--muted); opacity: 1; }
   .vsw a { min-width: 24px; height: 28px; }
   .vsw .vsw-all { padding: 0 0.35rem; height: 28px; font-size: 0.65rem; }
 }
-
-/* TOP BAR: fixed variant switcher + EN/ES toggle above the header (shared by baseline and all variants) */
-/* Navy bar (logo navy ~#002040), coloured chips per design, active filled + underline, hover glow, EN/ES in logo red/green */
-.topbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: var(--topbar-bg); color: var(--topbar-fg);
-  font-family: var(--font-body); font-size: 0.7rem; font-weight: 650;
-  line-height: 1; border-bottom: 1px solid var(--topbar-border);
-}
-.topbar-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1400px; margin: 0 auto; padding: 0.3rem clamp(1rem, 4vw, 2rem); }
-.topbar-variants { display: flex; align-items: center; gap: 0.2rem; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; scrollbar-width: none; -ms-overflow-style: none; }
-.topbar-variants::-webkit-scrollbar { display: none; }
-.topbar-chip {
-  display: inline-flex; align-items: center; justify-content: center;
-  min-width: 36px; height: 30px; padding: 0 0.55rem;
-  border-radius: 999px; border: 1.5px solid transparent;
-  background: transparent; color: var(--topbar-fg);
-  text-decoration: none; white-space: nowrap;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s, transform 0.1s;
-  position: relative;
-}
-.topbar-chip::after {
-  content: ""; position: absolute; left: 50%; bottom: -2px; width: 0; height: 2px;
-  background: currentColor; transform: translateX(-50%);
-  transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.topbar-chip:hover {
-  background: var(--topbar-hover);
-  box-shadow: 0 0 12px -2px currentColor;
-}
-.topbar-chip.topbar-current[data-design] {
-  background: var(--chip-color); color: var(--topbar-current-ink);
-  border-color: var(--chip-color);
-}
-.topbar-chip.topbar-current::after { width: 80%; background: var(--topbar-underline); }
-
-/* Per-design accent colours (logo navy #002040, green #20a060, red #d03040, plus design accents) */
-.topbar-chip[data-design="baseline"] { --chip-color: var(--chip-base); color: var(--chip-base-label); } /* bitcoin orange */
-.topbar-chip[data-design="a"]      { --chip-color: var(--chip-a); color: var(--chip-a-label); } /* logo green / jade */
-.topbar-chip[data-design="c"]      { --chip-color: var(--chip-c); color: var(--chip-c-label); } /* ember / cinnabar */
-.topbar-chip[data-design="d"]      { --chip-color: var(--chip-d); color: var(--chip-d-label); } /* marigold */
-.topbar-chip[data-design="ac"]     { --chip-color: var(--chip-ac); color: var(--chip-ac-label); }
-.topbar-chip[data-design="ad"]     { --chip-color: var(--chip-ad); color: var(--chip-ad-label); }
-.topbar-chip[data-design="cd"]     { --chip-color: var(--chip-cd); color: var(--chip-cd-label); }
-.topbar-chip[data-design="f"]      { --chip-color: var(--chip-f); color: var(--chip-f-label); }
-.topbar-chip.topbar-current[data-design="f"] { color: var(--color-accent-ink); }
-.topbar-chip[data-design="g"]      { --chip-color: var(--chip-g); color: var(--chip-g-label); }
-.topbar-chip[data-design="h"]      { --chip-color: var(--chip-h); color: var(--chip-h-label); }
-
-.topbar-lang { display: inline-flex; border: 1.5px solid var(--topbar-border); border-radius: 999px; padding: 2px; background: var(--topbar-inset); }
-.topbar-lang a { text-decoration: none; font-weight: 700; font-size: 0.65rem; padding: 0.18rem 0.5rem; border-radius: 999px; min-width: 34px; text-align: center; transition: background-color 0.15s, color 0.15s; }
-.topbar-lang a[data-lang="en"] { color: var(--topbar-en); }   /* logo red */
-.topbar-lang a[data-lang="es"] { color: var(--topbar-es); }   /* logo green */
-.topbar-lang a[aria-current] { background: var(--topbar-fg); color: var(--topbar-current-ink); }
-.topbar-lang a:not([aria-current]):hover { background: var(--topbar-hover); color: var(--topbar-fg); }
-
-/* Push page content down to make room for topbar */
-body { padding-top: 28px; }
-@media (max-width: 420px) { .topbar { font-size: 0.65rem; } .topbar-in { padding: 0.25rem 0.75rem; } body { padding-top: 26px; } .topbar-chip { min-width: 32px; height: 28px; padding: 0 0.45rem; } }
 
 /* Motion */
 @media (prefers-reduced-motion: no-preference) {

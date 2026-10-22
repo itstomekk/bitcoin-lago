@@ -13,7 +13,6 @@ RUN     python tools/build_pages.py
 """
 import json
 import sys as _s, pathlib as _p; _s.path.insert(0,str(_p.Path(__file__).resolve().parent))
-from topbar_prune import prune
 import re
 import sys
 from collections import Counter
@@ -24,7 +23,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import content as C  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-TEMPLATE = (ROOT / "tools" / "page.template.html").read_text(encoding="utf-8")
+TEMPLATE = ""  # the old baseline page template was removed on 2026-10-21 (the site is design AD now)
 DATA = json.loads((ROOT / "data" / "merchants.json").read_text(encoding="utf-8"))
 PLACES = DATA["places"]
 PHOTOS = json.loads((ROOT / "data" / "photos.json").read_text(encoding="utf-8"))
@@ -309,9 +308,11 @@ def main():
     assert set(C.EN) == set(C.ES), set(C.EN) ^ set(C.ES)
     for lang, path in (("en", ROOT / "index.html"), ("es", ROOT / "es" / "index.html")):
         path.parent.mkdir(exist_ok=True)
-        path.write_text(prune(render(lang)), encoding="utf-8")
+        path.write_text(render(lang), encoding="utf-8")
         print("wrote", path)
 
 
 if __name__ == "__main__":
-    main()
+    # Since 2026-10-21 the site root is design AD, built by tools/build_variants.py.
+    # This file now only provides the shared helpers (photos, icons, merchant data) for that build.
+    sys.exit("The root pages are built by: python tools/build_variants.py")

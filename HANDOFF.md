@@ -15,10 +15,7 @@ link to https://x.com/LakeBitcoin.
 |---|---|---|
 | `index.html`, `es/index.html` | The English and Spanish pages. **Generated.** | No. Edit the sources below, then rebuild. |
 | `tools/content.py` | Every visible word, EN and ES, in one file. Photo captions, press list. | **Yes, for wording.** |
-| `tools/page.template.html` | The page layout shared by both languages (sections, ids). | Yes, for structure. |
-| `tools/build_pages.py` | Builds both pages. `python tools/build_pages.py` | Run after any edit. |
-| `style.css` | All styling. Colours and sizes are at the top (tokens). | Yes, for look. |
-| `script.js` | Language memory, menu, map, merchant list, filters. | Rarely. |
+| `tools/build_variants.py` | Builds both pages (design AD). `python tools/build_variants.py` | Run after any edit. |
 | `config.js` | **Switches placeholder links on** (WhatsApp, Facebook, email, tour booking, newcomers contact). | **Yes. Start here.** |
 | `data/merchants.json` | The 117 places (trimmed OpenStreetMap export, dated 2026-10-19). | Rebuild with `tools/build_data.py`. |
 | `data/photos.json` | Credit line for each photo (artist, licence, Commons page). | Via `tools/optimize_images.py`. |
@@ -42,7 +39,7 @@ Map tiles © OpenStreetMap contributors (Leaflet attribution).
 ## Placeholders (all visibly badged in preview, all carry `data-placeholder`)
 
 The badge ("Placeholder: ...") is drawn by CSS for every `[data-placeholder]` element while `<body>` has the
-class `show-placeholders`. To hide every badge at go-live, remove that class in `tools/page.template.html` and rebuild.
+class `show-placeholders`. To hide every badge at go-live, remove that class in `tools/build_variants.py` (head_html) and rebuild.
 
 | `data-placeholder` | Where | What Tomek must supply |
 |---|---|---|
@@ -104,8 +101,8 @@ python qa/check_links.py
 ## Go-live checklist (when Tomek says go)
 
 1. Fill `config.js`; replace placeholder texts in `tools/content.py`; remove `show-placeholders` from the body tag.
-2. Remove the `noindex,nofollow` meta tag from `tools/page.template.html` and the `Disallow: /` line from `robots.txt`.
-3. `python tools/build_pages.py`, run QA, commit, push to `main` (GitHub Pages redeploys from `main`).
+2. Remove the `noindex,nofollow` meta tag from `tools/build_variants.py` (head_html) and the `Disallow: /` line from `robots.txt`.
+3. `python tools/build_variants.py`, run `qa/run_qa_site.py`, commit, push to `main` (GitHub Pages redeploys from `main`).
 4. Optional: custom domain (add `CNAME`), and a real social share image.
 
 ## Deployment
@@ -120,42 +117,33 @@ python qa/check_links.py
 * `DESIGN-VARIANTS-BRIEF.md` (Tomek's voice notes) was expanded; see the current set and build status below.
   The root pages stay the baseline until Tomek picks.
 
-## Design variants (nine current looks, same content)
+## Design (one design since 2026-10-21)
 
-Live (noindex, like the rest of the preview): `/v/a/`, `/v/c/`, `/v/d/`, `/v/ac/`, `/v/ad/`, `/v/cd/`, `/v/f/`, `/v/g/`, `/v/h/` and their `/es/` pages, the index `/variants/` (and `/variants/es/`),
-and `/v/` (sends you to the design you looked at last). Every variant page has the fixed switcher and language bar plus the floating design switcher.
-(it keeps the language and remembers the choice in `localStorage` key `lbc-design`).
+Tomek picked AD and asked to remove every other design. The site root (`/` and `/es/`) is now design AD, "Woven Maya":
+D's colours and warmth (indigo, jade, cinnabar, marigold and linen panels, woven stripe bands, checker hero, Bricolage Grotesque
+headlines) with A's symbols and clean structure (left rail with dot-and-bar section numerals, step-fret bands, stepped photo
+silhouettes, hairline grids and lists, mono figures, square corners, no hard offset shadows).
 
-| Design | Idea |
-|---|---|
-| A | Maya 1500 / 2100: stone, jade, cinnabar; step-fret lines, dot-and-bar section numerals, a rail that opens on hover. Tomek's first choice. |
-| C | Volcano night: dark and cinematic, logo cinnabar and jade accents, Bebas Neue titles, film strips, map console with a side drawer. |
-| D | Textile and craft: woven colour blocks (indigo, cinnabar, marigold, jade), arch photo frames, pill controls. |
-| AC | C's night palette with A-inspired restraint, stepped details and more open spacing. |
-| AD | A's restraint and stepped motifs combined with D's woven colour blocks and arch frames. |
-| CD | C's night scenes combined with D's textile colour blocks and arch frames. |
-| F | Split Studio: a credited community tuk-tuk portrait paired with the dated merchant map and alternating evidence-led sections. Hallmark: Coral tokens. |
-| G | Field Notes: newspaper masthead, one long reading column, short credited photo plates, prose and lists instead of cards. Hallmark: light paper, serif, green accent. |
-| H | Section map: a 12-column wayfinding grid, a hand-built diagram whose seven nodes link to the sections, and the geographic merchant map. Hallmark: Grid tokens (Archivo, ultramarine). |
-
-All designs share one content source and merchant dataset. Designs B and E were removed. F, G and H were built with the Hallmark skill (catalog theme, locked tokens in `v/*.tokens.css`, pre-emit critique stamp in `.hallmark/log.json`, mobile checks at 320/375/414/768). A, C, D, AC, AD and CD did not use Hallmark.
+Removed: the baseline page (`style.css`, `script.js`, `tools/page.template.html`), designs A, C, D, AC, CD, F, G, H, the
+`/variants/` index, the design switcher and the top test bar. They stay in git history (last commit with all of them: `4dc4f58`).
+Old preview links `/v/`, `/v/ad/`, `/v/ad/es/`, `/variants/` and `/variants/es/` are small redirect pages to the site.
 
 | File | What it is | Edit here? |
 |---|---|---|
-| `tools/content.py` | The same words as the root pages, plus the names of the variants and the switcher / index strings. | **Yes, for wording (all current variants follow).** |
-| `tools/variants/a.html`, `c.html`, `d.html`, `f.html`, `g.html`, `h.html` | The page layouts of A, C, D, F, G and H. AC/CD use C's layout base, AD uses D's; each design has its own visual treatment. | Yes, for structure. |
-| `v/base.css` | Shared floor: buttons, merchant finder, switcher, placeholders, toast. Colours come from tokens. | Rarely. |
-| `v/a.css`, `c.css`, `d.css`, `ac.css`, `ad.css`, `cd.css`, `f.css`, `g.css`, `h.css` and `f/g/h.tokens.css` | The look and locked Hallmark tokens for each current design. | **Yes, for look.** |
-| `v/app.js` | Behaviour shared by the designs (copy of `script.js` plus marker colours, design memory, count-up and click-to-play AB23 embed). | Rarely. |
-| `tools/build_variants.py` | Builds all `v/*/index.html`, `v/*/es/index.html` and `variants/` pages. `python tools/build_variants.py` (or `... a c` for some). | Run after any edit. |
-| `tools/variants/index.html`, `variants/variants.css` | The `/variants/` page and its look. Thumbnails: `variants/thumbs/*.webp` (made by `qa/make_thumbs.py`). | Yes. |
-| `fonts/` (new files) | Newsreader, Bebas Neue, Bricolage Grotesque, Sora, Geist Mono (all SIL OFL, self-hosted). | No. |
-| `images/bw-*.jpg/webp`, `lake-5-*`, `lake-12-*` | Four more Commons photos used only by the variants (credits in `data/photos.json`; `python tools/optimize_images.py --extra`). | Via the script. |
-| `images/community-tuktuk-*`, `community-boat-*` | Optimized Tomek-supplied tuk tuk and boat photos, used in the transport section on the baseline and all current designs. Source originals stay in ignored `source-archive/tomek-supplied/`. | `python tools/optimize_community_photos.py`. |
+| `index.html`, `es/index.html` | The English and Spanish pages. **Generated.** | No. |
+| `tools/content.py` | Every visible word, EN and ES. | **Yes, for wording.** |
+| `tools/variants/ad.html` | The page layout (sections, ids). | Yes, for structure. |
+| `v/ad.css` | The look: colour tokens at the top, then each section. | **Yes, for look.** |
+| `v/base.css` | Shared floor: buttons, merchant finder, placeholders, toast. | Rarely. |
+| `v/app.js` | Language memory, menu, map, merchant list, filters, count-up, AB23 click-to-play. | Rarely. |
+| `tools/build_variants.py` | Builds both pages and the redirect pages: `python tools/build_variants.py`. | Run after any edit. |
+| `tools/build_pages.py` | Shared helpers only (photos, icons, merchant data). Running it directly is refused. | No. |
 
-Rules that hold in every variant: same 8 sections and ids, same 117 places and the same data file, every placeholder keeps its
-`data-placeholder` badge (so the table above still applies), photo credits stay visible, `noindex,nofollow`, WCAG AA text.
-Each design has one fixed theme (no automatic dark mode); C is dark by design.
+Rules: same 8 sections and ids, 117 places from one data file, every placeholder keeps its `data-placeholder` badge,
+photo credits stay visible, `noindex,nofollow` until go-live, WCAG AA text on every panel.
+
+QA: `python qa/run_qa_site.py <site URL> <screenshot dir>` writes `qa/report-site-local.md` or `qa/report-site-live.md`.
+It needs `qa/.cache/axe.min.js`. The older runners (`run_qa.py`, `run_qa_variants.py`) are for the removed designs.
 
 ### Photo credits to confirm
 
