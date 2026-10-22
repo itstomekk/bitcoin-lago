@@ -160,3 +160,11 @@ generated from that design's layout (path prefix changes from `../../` to `./`);
 - Photos: `python tools/optimize_lago_photos.py` builds `images/lb-*` from the ignored `source-archive/` (Eliazar's Telegram photos, and public X posts of @JUN_AJPU_btc and @AtitlanTours21).
 - Full X history notes moved 2026-10-22 to the program anchor `C:\Users\Lenovo\Hermes\projects\community\lago-bitcoin\research\x-2026-10-21\` (tweets.json, manifest.json, lago-bitcoin-history.md). Tweet images stay in `source-archive/x-2026-10-21/` (build input). Content plan and blog ideas: `...\lago-bitcoin\content\content-plan.md`. Open work for the whole project: `...\lago-bitcoin\PLAN.md`.
 - The "Plan your stay" section (`#tours`) is a concierge funnel: no prices, one form that opens WhatsApp with the message filled in.
+
+
+## 2026-10-22: Bitcoin Lago rename, partners, story page
+- Name is **Bitcoin Lago** everywhere (logo wordmark words swapped; originals in source-archive/logo-before-rename/). Site moved to https://itstomekk.github.io/bitcoin-lago/ (repo renamed).
+- Partners band (`C.PARTNERS`, logos in images/partners/).
+- Story page `/story/` and `/es/story/`: built from `tools/story_data.json`, which `python tools/import_x_harvest.py` makes from the gitignored X harvest `source-archive/x-harvest-2026-10-21.json` (1,660 tweets of @JUN_AJPU_btc, 2022 to 2026). Only photos with child_faces false are published (7 withheld).
+- Main page: Atitlán Bitcoin Tours offer list (`C.TOURS_OFFER`), link to the story page under the timeline.
+- QA: `python qa/run_qa_site.py <base> <shots>` (main pages) and `python qa/test_story.py <base> <shots>` (story pages).

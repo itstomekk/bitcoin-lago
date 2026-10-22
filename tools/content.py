@@ -690,4 +690,79 @@ PARTNERS = [
      "Una billetera Lightning para pagos diarios con bitcoin, antes Bitcoin Beach Wallet."),
 ]
 
+
+# STORY PAGE (/story/), built from tools/story_data.json (python tools/import_x_harvest.py).
+INTERVIEWS = [
+    # (outlet, date YYYY-MM, title, url, kind)
+    ("CriptoNoticias", "2022-07", "Comunidades de Guatemala se suman a Bitcoin y este mototaxi lo demuestra",
+     "https://www.criptonoticias.com/comunidad/comunidades-guatemala-suman-bitcoin-mototaxi-demuestra/", "article"),
+    ("One Love Bitcoin", "2023-01", "S3:E2 Lago Bitcoin goes Kaboom! with Eliazar",
+     "https://playpodcasts.com/podcasts/one-love-bitcoin/s3e2-one-love-bitcoin-lago-bitcoin-goes-kaboom-w-junajpubtc-guatemala", "podcast"),
+    ("CriptoNoticias", "2024-02", "Turismo bitcoiner crece en Guatemala",
+     "https://www.criptonoticias.com/comunidad/ahora-vienen-bitcoiners-ciudadela-lago-bitcoin-guatemala/", "article"),
+    ("Bullish Guate, Bitcoin Meetup #8", "2025-09", "Bitcoin Meetup #8: Bitcoin Lake, with Eliazar",
+     "https://luma.com/kvbn2his", "talk"),
+    ("Bitcoinismo", "2026-05", "LAGO BITCOIN Guatemala: ¿Cómo funciona la Economía Circular?",
+     "https://www.youtube.com/watch?v=iU7EruLMre0", "video"),
+]
+STORY = {
+    "en": {
+        "st_title": "Our story, year by year | Bitcoin Lago, Lake Atitlán",
+        "st_description": "The full story of Bitcoin Lago at Lake Atitlán from 2021 to today: schools, merchants, mining with used cooking oil, meetups, visitors and tours, with photos and sources.",
+        "st_h1": "Our story, year by year",
+        "st_lead": "Everything we could gather from Eliazar's public posts since 2022: the schools, the merchants, the meetups and the visitors. Every moment links to its source.",
+        "st_years_h": "Year by year",
+        "st_topics_h": "What we do, topic by topic",
+        "st_media_h": "Interviews, podcasts and talks",
+        "st_kinds": {"article": "Article", "podcast": "Podcast", "talk": "Talk", "video": "Video"},
+        "st_src": "Source",
+        "st_photo_credit": "Photo: @JUN_AJPU_btc on X",
+        "st_back": "Back to the main page",
+        "st_cta": "Read the full story, year by year",
+        "st_cta_p": "45 moments from 2022 to today, with photos and sources.",
+        "st_nav": "Our story",
+        "tours_list_h": "What Atitlán Bitcoin Tours offers",
+        "st_2021": "Bitcoin Lago starts in Panajachel in December 2021. Eliazar visits businesses one by one, and the first merchants accept bitcoin.",
+    },
+    "es": {
+        "st_title": "Nuestra historia, año por año | Bitcoin Lago, Lago de Atitlán",
+        "st_description": "La historia completa de Bitcoin Lago en el Lago de Atitlán desde 2021 hasta hoy: escuelas, comercios, minería con aceite usado, encuentros, visitantes y tours, con fotos y fuentes.",
+        "st_h1": "Nuestra historia, año por año",
+        "st_lead": "Todo lo que pudimos reunir de las publicaciones públicas de Eliazar desde 2022: las escuelas, los comercios, los encuentros y los visitantes. Cada momento enlaza a su fuente.",
+        "st_years_h": "Año por año",
+        "st_topics_h": "Lo que hacemos, tema por tema",
+        "st_media_h": "Entrevistas, podcasts y charlas",
+        "st_kinds": {"article": "Artículo", "podcast": "Podcast", "talk": "Charla", "video": "Video"},
+        "st_src": "Fuente",
+        "st_photo_credit": "Foto: @JUN_AJPU_btc en X",
+        "st_back": "Volver a la página principal",
+        "st_cta": "Lee la historia completa, año por año",
+        "st_cta_p": "45 momentos desde 2022 hasta hoy, con fotos y fuentes.",
+        "st_nav": "Nuestra historia",
+        "tours_list_h": "Lo que ofrece Atitlán Bitcoin Tours",
+        "st_2021": "Bitcoin Lago nace en Panajachel en diciembre de 2021. Eliazar visita los negocios uno por uno y los primeros comercios aceptan bitcoin.",
+    },
+}
+
+
+# What Atitlán Bitcoin Tours offers (from @AtitlanTours21 posts, 2026). (EN label, EN, ES label, ES, tweet id)
+TOURS_OFFER = [
+    ("Hikes and volcanoes", "Easy, medium and hard hikes on the mountains and volcanoes around the lake, with viewpoints and the largest caves on the lake.",
+     "Caminatas y volcanes", "Caminatas fáciles, medias y difíciles en las montañas y volcanes del lago, con miradores y las cuevas más grandes del lago.", "2041733259575304609"),
+    ("Volcán de Fuego", "A personal plan to see an active volcano up close.",
+     "Volcán de Fuego", "Un plan a tu medida para ver de cerca un volcán activo.", "2044452656173678693"),
+    ("ATVs and paragliding", "Ride around the lake on ATVs, or fly over it by paraglider.",
+     "Cuatrimotos y parapente", "Recorre el lago en cuatrimoto o vuélalo en parapente.", "2041269473747870023"),
+    ("Coffee, cacao and honey", "Coffee tours with Bit Mayan Coffee, how cacao is grown and roasted, and a honey tour.",
+     "Café, cacao y miel", "Tours de café con Bit Mayan Coffee, cómo se cultiva y tuesta el cacao, y un tour de miel.", "2052797399450460579"),
+    ("Weaving and natural dyes", "See how Maya weavers spin cotton yarn and dye it with fruits, seeds and plants, and try the loom yourself.",
+     "Tejido y tintes naturales", "Mira cómo las tejedoras mayas hilan el algodón y lo tiñen con frutas, semillas y plantas, y prueba tú mismo el telar.", "2052795711553409048"),
+    ("The Palopó towns", "San Antonio Palopó for ceramics, hot springs and a viewpoint, and colourful Santa Catarina Palopó.",
+     "Los pueblos Palopó", "San Antonio Palopó con su cerámica, aguas termales y mirador, y la colorida Santa Catarina Palopó.", "2029652286847250631"),
+    ("Santa Cruz, Tzununá and Jaibalito", "Villages by boat: Santa Cruz La Laguna seven minutes from Panajachel, Tzununá with its waterfalls, and Jaibalito, reached only by water.",
+     "Santa Cruz, Tzununá y Jaibalito", "Pueblos en lancha: Santa Cruz La Laguna a siete minutos de Panajachel, Tzununá con sus cascadas, y Jaibalito, al que solo se llega por agua.", "2074187428013691030"),
+    ("Chichicastenango market", "One of the biggest markets in Guatemala, where Maya ceremonies are still held.",
+     "Mercado de Chichicastenango", "Uno de los mercados más grandes de Guatemala, donde todavía se celebran ceremonias mayas.", "2052808647726485544"),
+]
+
 LANGS = {"en": EN, "es": ES}

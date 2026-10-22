@@ -1,0 +1,48 @@
+<header class="rail" id="top">
+  <span class="rail-weave" aria-hidden="true"></span>
+  <a class="brand" href="{{home}}" aria-label="{{brand}}"><img src="{{p}}images/logo/lago-bitcoin-logo.png" alt="" width="540" height="370"><span class="brand-t">{{brand}}</span></a>
+  <nav class="nav" id="nav" aria-label="{{nav_label}}">
+    <a href="{{home}}#lake"><span class="num">{{maya:1}}</span><span class="lbl">{{nav_lake}}</span></a>
+    <a href="{{home}}#bitcoin"><span class="num">{{maya:2}}</span><span class="lbl">{{nav_bitcoin}}</span></a>
+    <a href="{{home}}#transport"><span class="num">{{maya:3}}</span><span class="lbl">{{nav_transport}}</span></a>
+    <a href="{{home}}#community"><span class="num">{{maya:4}}</span><span class="lbl">{{nav_community}}</span></a>
+    <a href="{{home}}#tours"><span class="num">{{maya:5}}</span><span class="lbl">{{nav_tours}}</span></a>
+    <a href="{{home}}#expats"><span class="num">{{maya:6}}</span><span class="lbl">{{nav_expats}}</span></a>
+    <a href="{{home}}#about" aria-current="page"><span class="num">{{maya:7}}</span><span class="lbl">{{nav_about}}</span></a>
+  </nav>
+  <div class="lang" role="group" aria-label="{{lang_label}}">
+    <a href="{{p_en}}" lang="en" hreflang="en" data-lang="en" title="{{lang_en_name}}" {{cur_en}}>EN</a>
+    <a href="{{p_es}}" lang="es" hreflang="es" data-lang="es" title="{{lang_es_name}}" {{cur_es}}>ES</a>
+  </div>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-open="{{menu_open}}" data-close="{{menu_close}}"><span class="sr-only">{{menu_open}}</span>{{icon:list}}</button>
+</header>
+
+<main id="main" class="story">
+
+<section class="scr story-hero" id="hero" aria-labelledby="st-h1">
+  <p><a class="link-arrow" href="{{home}}">{{st_back}}</a></p>
+  <h1 id="st-h1">{{st_h1}}</h1>
+  <p class="lede">{{st_lead}}</p>
+  <nav class="year-chips" aria-label="{{st_years_h}}">{{@year_chips}}</nav>
+</section>
+
+<section class="scr story-years" id="years" aria-labelledby="st-years-h2">
+  <h2 id="st-years-h2">{{st_years_h}}</h2>
+  {{@years}}
+</section>
+
+<section class="scr story-topics" id="topics" aria-labelledby="st-topics-h2">
+  <h2 id="st-topics-h2">{{st_topics_h}}</h2>
+  <div class="topic-grid">{{@topics}}</div>
+</section>
+
+<section class="scr story-media" id="media" aria-labelledby="st-media-h2">
+  <h2 id="st-media-h2">{{st_media_h}}</h2>
+  <ul class="media-list">{{@media}}</ul>
+</section>
+
+{{@partners}}
+
+</main>
+
+<footer class="site-footer"><div class="weave-band" aria-hidden="true"></div><div class="foot"><a class="foot-brand" href="{{home}}"><img src="{{p}}images/logo/lago-bitcoin-logo.png" alt="Bitcoin Lago" width="540" height="370"></a>{{@footer_text}}</div></footer>

@@ -156,6 +156,13 @@ def timeline(T):
     return f'<div class="timeline reveal"><h3>{T["story_timeline_h"]}</h3><ol>{"".join(items)}</ol></div>'
 
 
+def story_cta(T):
+    T2 = C.STORY[T["lang"]]
+    href = "story/" if T["lang"] == "en" else "story/"
+    return (f'<div class="story-cta reveal"><a class="btn btn-primary" href="{href}">{T2["st_cta"]}</a>'
+            f'<p>{T2["st_cta_p"]}</p></div>')
+
+
 def partners(T):
     i = 3 if T["lang"] == "en" else 4
     cards = []
@@ -294,6 +301,7 @@ def switcher(vid, lang, T):
 def render(vid, lang):
     """The site itself: the one design, at the site root (index.html and es/index.html)."""
     T = dict(C.LANGS[lang])
+    T.update(C.STORY[lang])
     prefix = "" if lang == "en" else "../"
     ln = sum(1 for p in BP.PLACES if p["lightning"] == "yes")
     chain = sum(1 for p in BP.PLACES if p["onchain"] == "yes")
@@ -335,6 +343,8 @@ def render(vid, lang):
         "timeline": timeline(T),
         "services": services(T),
         "partners": partners(T),
+        "tours_list": tours_list(T),
+        "story_cta": story_cta(T),
         "stats": stats(T, ln, chain),
         "atm": atm(T),
         "footer_text": footer_text(T),
@@ -424,6 +434,110 @@ def build_index(lang):
     return fill(html, T, blocks, lang, f"index/{lang}")
 
 
+# ---------- Story page (/story/, /es/story/) ----------
+MONTH_NAMES = {"en": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+               "es": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]}
+
+
+def fmt_date(d, lang):
+    parts = d.split("-")
+    if len(parts) == 1:
+        return parts[0]
+    m = MONTH_NAMES[lang][int(parts[1]) - 1]
+    if len(parts) == 3:
+        return f"{int(parts[2])} {m} {parts[0]}"
+    return f"{m} {parts[0]}"
+
+
+def xurl(tid):
+    return f"https://x.com/JUN_AJPU_btc/status/{tid}"
+
+
+def src_links(T, ids):
+    if not ids:
+        return ""
+    links = " ".join(f'<a href="{xurl(i)}" rel="noopener">{n + 1}</a>' for n, i in enumerate(ids))
+    return f' <span class="tl-src">{T["st_src"]}: {links}</span>'
+
+
+def x_fig(ph, T):
+    lang = T["lang"]
+    sizes = "(min-width: 1100px) 22vw, (min-width: 700px) 30vw, 46vw"
+    webp = ", ".join(f'{T["p"]}images/x/{ph["stem"]}-{w}.webp {w}w' for w in ph["widths"])
+    jpg = ", ".join(f'{T["p"]}images/x/{ph["stem"]}-{w}.jpg {w}w' for w in ph["widths"])
+    cap = escape(ph[lang])
+    return (f'<figure class="photo lb-photo xph"><picture><source type="image/webp" srcset="{webp}" sizes="{sizes}">'
+            f'<img src="{T["p"]}images/x/{ph["stem"]}-480.jpg" srcset="{jpg}" sizes="{sizes}" width="{ph["w"]}" height="{ph["h"]}" '
+            f'alt="{escape(ph[lang], quote=True)}" loading="lazy" decoding="async"></picture>'
+            f'<figcaption>{cap}. <a class="credit" href="{xurl(ph["tweet_id"])}" rel="noopener">{escape(T["st_photo_credit"])}</a></figcaption></figure>')
+
+
+def story_blocks(T):
+    lang = T["lang"]
+    D = json.loads((ROOT / "tools" / "story_data.json").read_text(encoding="utf-8"))
+    years = {}
+    years.setdefault("2021", {"items": [], "photos": []})["items"].append(
+        f'<li><time>{"dic 2021" if lang == "es" else "Dec 2021"}</time><p>{escape(T["st_2021"])} '
+        f'<span class="tl-src">{T["st_src"]}: <a href="{C.INTERVIEWS[0][3]}" rel="noopener">1</a></span></p></li>')
+    for t in D["timeline"]:
+        y = t["date"][:4]
+        years.setdefault(y, {"items": [], "photos": []})["items"].append(
+            f'<li><time>{fmt_date(t["date"], lang)}</time><h4>{escape(t["title_" + lang])}</h4>'
+            f'<p>{escape(t[lang])}{src_links(T, t["ids"])}</p></li>')
+    for ph in D["photos"]:
+        years.setdefault(ph["year"], {"items": [], "photos": []})["photos"].append(x_fig(ph, T))
+    out, chips = [], []
+    for y in sorted(years):
+        chips.append(f'<a href="#y{y}">{y}</a>')
+        ph = years[y]["photos"]
+        gal = f'<div class="sy-photos">{"".join(ph)}</div>' if ph else ""
+        out.append(f'<div class="sy reveal" id="y{y}"><h3 class="sy-year">{y}</h3><ol class="sy-list">{"".join(years[y]["items"])}</ol>{gal}</div>')
+    topics = "".join(
+        f'<article class="topic reveal"><h3>{escape(f["topic_" + lang])}</h3><p>{escape(f[lang])}{src_links(T, f["ids"])}</p></article>'
+        for f in D["facts"])
+    media = "".join(
+        f'<li><span class="m-kind">{T["st_kinds"][kind]}, {fmt_date(d, lang)}</span>'
+        f'<a href="{url}" rel="noopener"><span class="m-outlet">{escape(outlet)}</span> <span class="m-title" lang="{"es" if outlet.startswith(("Cripto", "Bitcoinismo")) else "en"}">{escape(title)}</span></a></li>'
+        for outlet, d, title, url, kind in C.INTERVIEWS)
+    return {"year_chips": "".join(chips), "years": "".join(out), "topics": topics, "media": media}
+
+
+def tours_list(T):
+    en = T["lang"] == "en"
+    items = "".join(
+        f'<li><strong>{escape(le if en else ls)}.</strong> {escape(te if en else ts)} '
+        f'<a class="tl-src" href="https://x.com/AtitlanTours21/status/{tid}" rel="noopener">{T["st_src"]}</a></li>'
+        for le, te, ls, ts, tid in C.TOURS_OFFER)
+    return f'<div class="tours-list reveal"><h3>{T["tours_list_h"]}</h3><ul>{items}</ul></div>'
+
+
+def render_story(lang):
+    T = dict(C.LANGS[lang])
+    T.update(C.STORY[lang])
+    en = lang == "en"
+    prefix = "../" if en else "../../"
+    T.update(
+        p=prefix, vid="ad",
+        home=prefix if en else prefix + "es/",
+        p_en="./" if en else "../../story/",
+        p_es="../es/story/" if en else "./",
+        cur_en='aria-current="true"' if en else "",
+        cur_es='aria-current="true"' if not en else "",
+        canonical=C.SITE_URL + ("story/" if en else "es/story/"),
+        url_en=C.SITE_URL + "story/", url_es=C.SITE_URL + "es/story/",
+        alt_lang_href="../es/story/" if en else "../../story/",
+        og_image=C.SITE_URL + "images/hero-1600.jpg",
+        title=T["st_title"], description=T["st_description"],
+    )
+    T["foot_updated"] = T["foot_updated"].format(d=C.LAST_UPDATED)
+    blocks = story_blocks(T)
+    blocks.update(partners=partners(T), footer_text=footer_text(T), switcher="",
+                  i18n_json=json.dumps({**{k: T[k] for k in C.I18N_KEYS}, "categories": C.CATEGORIES[lang]},
+                                       ensure_ascii=False).replace("</", "<\\/"))
+    html = head_html("ad") + (VDIR / "story.html").read_text(encoding="utf-8") + FOOT
+    return fill(html, T, blocks, lang, f"story/{lang}")
+
+
 REDIRECT = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
 <title>Bitcoin Lago Community</title><meta http-equiv="refresh" content="0; url={to}">
@@ -442,6 +556,10 @@ def main():
         out = ROOT / ("" if lang == "en" else "es") / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(render("ad", lang), encoding="utf-8")
+        print("wrote", out.relative_to(ROOT))
+        out = ROOT / ("story" if lang == "en" else "es/story") / "index.html"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(render_story(lang), encoding="utf-8")
         print("wrote", out.relative_to(ROOT))
     for rel, to in OLD_PAGES.items():
         out = ROOT / rel / "index.html"

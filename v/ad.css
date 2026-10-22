@@ -349,3 +349,58 @@ input[type="search"], select { border-radius: 2px; }
   .partner-logo img { max-height: 60px; max-width: 96px; }
 }
 .partners { padding-bottom: clamp(3.5rem, 8vw, 6.5rem); }
+
+/* ---------- story page and story links (2026-10-22) ---------- */
+.story-cta { margin: 2rem 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 1.2rem; }
+.story-cta p { margin: 0; color: var(--muted); }
+.tours-list { grid-column: 1 / -1; margin: 1.5rem 0 0; }
+.tours-list ul { margin: 0.6rem 0 0; padding-left: 1.2rem; columns: 1; }
+@media (min-width: 900px) { .tours-list ul { columns: 2; column-gap: 2.5rem; } }
+.tours-list li { break-inside: avoid; margin: 0 0 0.6rem; line-height: 1.5; }
+.story .scr { min-height: 0; }
+.story-hero { --ink: #ffffff; --muted: #dfe3fb; --link: #ffd978; --focus: #ffd978; background: var(--indigo); color: #fff; padding: clamp(3rem, 8vw, 6.5rem) clamp(1.2rem, 5vw, 4rem); }
+.story-hero h1 { color: #fff; margin: 0.6rem 0 0.8rem; }
+.story-hero .lede { max-width: 48rem; color: #eef0fc; }
+.year-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.6rem; }
+.year-chips a { display: inline-block; padding: 0.45rem 0.9rem; border: 2px solid #ffd978; color: #ffd978; font-weight: 700; text-decoration: none; min-height: 44px; line-height: 1.6; }
+.year-chips a:hover, .year-chips a:focus-visible { background: #ffd978; color: #1b1410; }
+.story-years, .story-topics, .story-media { padding: clamp(2.5rem, 6vw, 5rem) clamp(1.2rem, 5vw, 4rem); }
+.story-years { background: var(--paper); }
+.sy { display: grid; gap: 1.2rem 2.5rem; grid-template-columns: minmax(0, 1fr); padding: 2rem 0; border-top: 1px solid var(--line); scroll-margin-top: 1rem; }
+@media (min-width: 1100px) { .sy { grid-template-columns: 7rem minmax(0, 1.1fr) minmax(0, 1fr); align-items: start; } }
+.sy-year { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); margin: 0; color: var(--cinnabar); }
+.sy-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+.sy-list li { border-left: 4px solid var(--marigold); padding: 0.1rem 0 0.1rem 1rem; }
+.sy-list time { font-family: var(--mono); font-size: 0.85rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.sy-list h4 { margin: 0.2rem 0 0.3rem; font-size: 1.1rem; }
+.sy-list p { margin: 0; line-height: 1.55; }
+.sy-photos { display: grid; gap: 0.8rem; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; }
+.sy-photos .xph { margin: 0; }
+.sy-photos img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.sy-photos figcaption { font-size: 0.85rem; line-height: 1.4; margin-top: 0.35rem; color: var(--ink); }
+.story-topics { --ink: #ffffff; --muted: #e2f3ec; --link: #ffd978; --line: rgb(255 255 255 / 0.34); --focus: #ffd978; background: var(--jade); color: #fff; }
+.story-topics h2 { color: #fff; }
+.topic-grid { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); margin-top: 1.5rem; }
+@media (min-width: 760px) { .topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1200px) { .topic-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.topic { border: 1px solid var(--line); padding: 1.1rem 1.2rem; }
+.topic h3 { margin: 0 0 0.5rem; font-size: 1.1rem; color: #fff; }
+.topic p { margin: 0; line-height: 1.55; color: #f3faf7; }
+.story-media { --ink: #1b1410; --muted: #2a1d10; --link: #1e2760; background: var(--marigold); color: #1b1410; }
+.media-list { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; gap: 0.9rem; max-width: 60rem; }
+.media-list li { border-bottom: 1px solid rgb(27 20 16 / 0.3); padding-bottom: 0.8rem; }
+.m-kind { display: block; font-family: var(--mono); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+.media-list a { color: #1b1410; font-size: 1.05rem; }
+.m-outlet { font-weight: 800; }
+.story .tl-src a { display: inline-block; min-width: 24px; text-align: center; }
+
+@media (min-width: 1100px) { .sy { grid-template-columns: 9rem minmax(0, 1.1fr) minmax(0, 1fr); } }
+.sy-year { white-space: nowrap; }
+.sy-photos figure { margin-bottom: 0.6rem; }
+.story .tl-src { font-size: 0.9rem; }
+.topic { display: flex; flex-direction: column; }
+
+.tours-list h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); margin: 0 0 0.4rem; }
+.tours-list ul { padding-left: 1.1rem; }
+.tours-list li { margin: 0 0 0.75rem; }
+.tours-list .tl-src { font-size: 0.85rem; }
