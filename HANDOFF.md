@@ -158,5 +158,5 @@ generated from that design's layout (path prefix changes from `../../` to `./`);
 - Tomek decided the site is Lago Bitcoin's own: founded 2021 by Patrick Melder with friends and supporters; Eliazar (@JUN_AJPU_btc) is the local leader.
 - New content lives at the end of `tools/content.py`: `LB_PHOTOS`, `GALLERY`, `TIMELINE` (each year links its X sources), `SERVICES`, and the form strings.
 - Photos: `python tools/optimize_lago_photos.py` builds `images/lb-*` from the ignored `source-archive/` (Eliazar's Telegram photos, and public X posts of @JUN_AJPU_btc and @AtitlanTours21).
-- Full X history notes: `source-archive/x-2026-10-21/` (tweets.json, manifest.json, lago-bitcoin-history.md).
+- Full X history notes moved 2026-10-22 to the program anchor `C:\Users\Lenovo\Hermes\projects\community\lago-bitcoin\research\x-2026-10-21\` (tweets.json, manifest.json, lago-bitcoin-history.md). Tweet images stay in `source-archive/x-2026-10-21/` (build input). Content plan and blog ideas: `...\lago-bitcoin\content\content-plan.md`. Open work for the whole project: `...\lago-bitcoin\PLAN.md`.
 - The "Plan your stay" section (`#tours`) is a concierge funnel: no prices, one form that opens WhatsApp with the message filled in.

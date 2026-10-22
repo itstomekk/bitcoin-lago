@@ -495,7 +495,7 @@ I18N_KEYS = [
 # ---------------------------------------------------------------------------------------------
 # LAGO BITCOIN'S OWN SITE (Tomek, 2026-10-21): founded by Patrick Melder with friends and
 # supporters; Eliazar (@JUN_AJPU_btc) is the local leader. Facts below come from Eliazar's own
-# messages and his public X posts (source-archive/x-2026-10-21/lago-bitcoin-history.md).
+# messages and his public X posts (Hermes/projects/community/lago-bitcoin/research/x-2026-10-21/lago-bitcoin-history.md).
 # ---------------------------------------------------------------------------------------------
 X_ELI = "https://x.com/JUN_AJPU_btc"
 X_TOURS = "https://x.com/AtitlanTours21"
