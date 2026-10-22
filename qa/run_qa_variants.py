@@ -4,7 +4,7 @@
 USAGE
   python qa/run_qa_variants.py <site root URL> <screenshot dir> [variants, e.g. a,c,d] [--no-index]
   local : python qa/run_qa_variants.py http://127.0.0.1:18431/ qa/.cache/shots-local
-  live  : python qa/run_qa_variants.py https://itstomekk.github.io/lago-bitcoin-community/ qa/screenshots
+  live  : python qa/run_qa_variants.py https://itstomekk.github.io/bitcoin-lago/ qa/screenshots
   (needs qa/.cache/axe.min.js: curl -L -o qa/.cache/axe.min.js https://cdn.jsdelivr.net/npm/axe-core@4.10.2/axe.min.js)
 
 WRITES

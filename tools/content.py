@@ -14,7 +14,7 @@ HOW TO EDIT
 Strings ending in _html may contain simple inline HTML (links, <strong>).
 """
 
-SITE_URL = "https://itstomekk.github.io/lago-bitcoin-community/"
+SITE_URL = "https://itstomekk.github.io/bitcoin-lago/"
 LAST_UPDATED = "2026-10-21"
 DATA_DATE = "2026-10-19"
 BTCMAP_COMMUNITY = "https://btcmap.org/community/lago-bitcoin/merchants"

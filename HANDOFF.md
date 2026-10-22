@@ -1,7 +1,7 @@
 # HANDOFF: Bitcoin Lago Community site
 
 Status: **preview, `noindex,nofollow` ON** until Tomek says go public.
-Repo: https://github.com/itstomekk/lago-bitcoin-community (branch `main`).
+Repo: https://github.com/itstomekk/bitcoin-lago (branch `main`).
 Live preview: see "Deployment" at the bottom.
 
 This is Tomek's own community site for Lake Atitlán. It is an independent site and says so. It is
@@ -82,7 +82,7 @@ The Spanish was written for natural Guatemalan usage ("tuc tuc", "lancha", "come
 
 `qa/report-local.md` and `qa/report-live.md` list every gate with the measured evidence. Screenshots: `qa/screenshots/` (local) and `qa/screenshots/live/` (from the live URL). Re-run:
 
-Final live QA on 2026-10-21 (https://itstomekk.github.io/lago-bitcoin-community/): baseline 80/80; nine designs 893/899 on the first pass, the 6 misses were lazy photos still downloading on a slow link (all assets 200), so the runner now scrolls and waits up to 25 s for images; D, F and G rerun 290/290 (`qa/report-variants-live.md`; first pass in `qa/report-variants-live-acdacadcdfgh.md`).
+Final live QA on 2026-10-21 (https://itstomekk.github.io/bitcoin-lago/): baseline 80/80; nine designs 893/899 on the first pass, the 6 misses were lazy photos still downloading on a slow link (all assets 200), so the runner now scrolls and waits up to 25 s for images; D, F and G rerun 290/290 (`qa/report-variants-live.md`; first pass in `qa/report-variants-live-acdacadcdfgh.md`).
 
 Final local QA on 2026-10-21 (all nine designs): baseline 80/80 (`qa/report-local.md`); A, C, D, AC, AD, CD, F, G and H 899/899 in `qa/report-variants-local-acdacadcdfgh.md`; Hallmark F/G/H mobile 28/28 at 320/375/414/768 plus the 1280x800 fold. Fixed on 2026-10-21: the hidden "coming soon" toast no longer peeks above the bottom edge, and H's node arrows no longer touch the next label.
 
@@ -90,7 +90,7 @@ Local F + press-photo phase on 2026-10-20: baseline 80/80; A, C, D, AC, AD, CD a
 
 ```
 python qa/run_qa.py http://127.0.0.1:18431/ qa/screenshots      # local, after: python -m http.server 18431
-python qa/run_qa.py https://itstomekk.github.io/lago-bitcoin-community/ qa/screenshots/live
+python qa/run_qa.py https://itstomekk.github.io/bitcoin-lago/ qa/screenshots/live
 python qa/check_links.py
 ```
 
@@ -103,8 +103,8 @@ python qa/check_links.py
 
 ## Deployment
 
-* Live URL (English): https://itstomekk.github.io/lago-bitcoin-community/
-* Live URL (Spanish): https://itstomekk.github.io/lago-bitcoin-community/es/
+* Live URL (English): https://itstomekk.github.io/bitcoin-lago/
+* Live URL (Spanish): https://itstomekk.github.io/bitcoin-lago/es/
 * GitHub Pages from `main` (root). The repo was created **private** as planned, but the account plan does not allow Pages on
   private repositories (GitHub API: HTTP 422), so, as the brief's addendum allows, the repo was made **public** with
   `noindex,nofollow` in both pages and `Disallow: /` in `robots.txt`. Nothing private is in the repo (see `.gitignore`).

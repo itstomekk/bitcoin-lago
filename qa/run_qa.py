@@ -3,7 +3,7 @@
 
 USAGE
   python qa/run_qa.py http://127.0.0.1:18431/ qa/screenshots            (local)
-  python qa/run_qa.py https://itstomekk.github.io/lago-bitcoin-community/ qa/screenshots/live
+  python qa/run_qa.py https://itstomekk.github.io/bitcoin-lago/ qa/screenshots/live
 
 WRITES
   <screenshot dir>/*.png      screenshots (1440 and 390, EN and ES, plus filter and menu states)
