@@ -199,9 +199,11 @@ def services(T):
     return f'<div class="svc-grid">{"".join(cards)}</div>{form}'
 
 def stats(T, ln, chain):
-    return (f'<dl class="stats"><div><dt>{T["btc_stat_places"]}</dt><dd data-count="{len(BP.PLACES)}">{len(BP.PLACES)}</dd></div>'
+    return (f'<dl class="stats"><div><dt>{T["btc_stat_active"]}</dt><dd>~50</dd></div>'
+            f'<div><dt>{T["btc_stat_places"]}</dt><dd data-count="{len(BP.PLACES)}">{len(BP.PLACES)}</dd></div>'
             f'<div><dt>{T["btc_stat_ln"]}</dt><dd data-count="{ln}">{ln}</dd></div>'
-            f'<div><dt>{T["btc_stat_chain"]}</dt><dd data-count="{chain}">{chain}</dd></div></dl>')
+            f'<div><dt>{T["btc_stat_chain"]}</dt><dd data-count="{chain}">{chain}</dd></div></dl>'
+            f'<p class="datanote">{T["btc_active_note"]}</p>')
 
 
 def atm(T):

@@ -433,3 +433,6 @@ input[type="search"], select { border-radius: 2px; }
 .bq p { margin: 0 0 0.4rem; font-size: 1.1rem; font-style: italic; }
 .bq footer { font-family: var(--mono); font-size: 0.85rem; }
 .post-note { font-size: 0.9rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 1rem; margin-top: 2rem; }
+
+.stats div:nth-child(4) { border-left-color: var(--indigo); }
+.datanote { color: var(--muted); font-size: 0.9rem; margin: 0 0 1rem; }
