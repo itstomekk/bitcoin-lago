@@ -338,7 +338,7 @@ def variant(browser, vid):
         gate(f"{L} no 'official'/'oficial' claim", not re.search(r"\b(official|oficial)\b", text, re.I), "none")
         gate(f"{L} no em or en dashes in visible text", not re.search("[\u2014\u2013]", text), re.findall(".{12}[\u2014\u2013].{12}", text)[:3])
         gate(f"{L} merchant check note present", ("Always check with the merchant" in text) if lang == "en" else ("Confirma siempre con el comercio" in text), "ok")
-        gate(f"{L} 117 places + 50+ claim + data date", ("117 places listed on BTC Map / OpenStreetMap, data of 2026-10-19" in text and "More than 50 merchants" in text) if lang == "en" else ("117 lugares registrados en BTC Map / OpenStreetMap, datos del 2026-10-19" in text and "Más de 50 comercios" in text), "ok")
+        gate(f"{L} 117 listed + about 50 active + data date", ("117 places listed on BTC Map / OpenStreetMap, data of 2026-10-19" in text and "About 50 of them take bitcoin actively today" in text) if lang == "en" else ("117 lugares registrados en BTC Map / OpenStreetMap, datos del 2026-10-19" in text and "Unos 50 aceptan bitcoin activamente hoy" in text), "ok")
         gate(f"{L} OSM/ODbL, BTC Map and Commons credits in footer", all(s in html for s in ("openstreetmap.org/copyright", "btcmap.org/community/lago-bitcoin", "Wikimedia Commons", "ODbL")), "ok")
         parity[lang] = pg.evaluate(PARITY_JS)
         PLACEHOLDERS.update(parity[lang]["placeholders"])
