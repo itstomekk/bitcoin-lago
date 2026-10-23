@@ -29,6 +29,8 @@ SHORT_TITLES = {
  'a-day-paying-with-bitcoin': ('A day paying only with bitcoin at Atitlán', 'Un día pagando solo con bitcoin en Atitlán'),
  'wallets-at-the-lake': ('Bitcoin wallets used at Lake Atitlán', 'Billeteras bitcoin usadas en Atitlán'),
  'waste-to-energy-plan-2022': ('The 2022 waste-to-energy plan: what happened', 'El plan de energía de 2022: qué ocurrió'),
+ 'visiting-lake-atitlan-with-bitcoin': ('Visiting Lake Atitlán with bitcoin', 'Visitar el Lago de Atitlán con bitcoin'),
+ 'learning-and-supporting-bitcoin-lago': ('Learning bitcoin and supporting the lake', 'Aprender sobre bitcoin y apoyar al lago'),
 }
 
 

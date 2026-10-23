@@ -602,6 +602,25 @@ def blog_card(T, a, href):
             f'<span class="bc-title">{escape(a["title_" + lang])}</span></a><p>{escape(a["dek_" + lang])}</p></li>')
 
 
+READING_PATH_FILE = ROOT / "tools" / "reading_path.json"
+
+
+def render_reading_path(lang):
+    data = json.loads(READING_PATH_FILE.read_text(encoding="utf-8"))
+    available = {t["slug"] for t in topic_articles()}
+    items = []
+    for item in data["items"]:
+        slug = item["slug"]
+        if slug not in available:
+            raise ValueError(f"Reading path refers to unknown topic: {slug}")
+        items.append(f'<li><a href="{escape(slug, quote=True)}/">{escape(item["title_" + lang])}</a>'
+                     f'<p>{escape(item["summary_" + lang])}</p></li>')
+    return (f'<nav class="scr blog-list blog-start" aria-labelledby="start-h">'
+            f'<h2 id="start-h">{escape(data["title_" + lang])}</h2>'
+            f'<p class="lede-s">{escape(data["intro_" + lang])}</p>'
+            f'<ol class="blog-reading-path">{"".join(items)}</ol></nav>')
+
+
 def render_blog_index(lang, arts):
     T = page_T(lang, "blog/", "es/blog/", C.STORY[lang]["bl_title"], C.STORY[lang]["bl_description"])
     cards = "".join(blog_card(T, a, f'{a["slug"]}/') for a in arts)
@@ -611,7 +630,7 @@ def render_blog_index(lang, arts):
     topics = (f'<section class="scr blog-list blog-topics" aria-labelledby="tp-h"><h2 id="tp-h">{TT["tp_h"]}</h2><p class="lede-s">{TT["tp_lead"]}</p>'
               f'<ul class="blog-grid">{tcards}</ul></section>') if tcards else ""
     main = (f'<section class="scr story-hero" id="hero" aria-labelledby="bl-h1"><p><a class="link-arrow" href="{T["home"]}">{T["st_back"]}</a></p>'
-            f'<h1 id="bl-h1">{T["bl_h1"]}</h1><p class="lede">{T["bl_lead"]}</p></section>' + topics +
+            f'<h1 id="bl-h1">{T["bl_h1"]}</h1><p class="lede">{T["bl_lead"]}</p></section>' + render_reading_path(lang) + topics +
             f'<section class="scr blog-list" aria-labelledby="vd-h"><h2 id="vd-h">{TT["tp_vids_h"]}</h2><ul class="blog-grid">{cards}</ul></section>')
     return render_page(T, lang, main, f"blog/{lang}")
 

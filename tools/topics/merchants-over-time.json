@@ -8,7 +8,21 @@
  "dek_es": "Los conteos públicos de lugares que aceptan bitcoin en el lago pasaron de unos 7 en marzo de 2022 a más de 100, y luego bajaron a entre 40 y 60. Esto es lo que los números pueden y no pueden decirnos.",
  "body_en": [
   {
-   "p": "Our main page says two things that seem to clash: 117 places are listed on BTC Map, and about 50 are active today. Both are true, and the gap between them is the story of the Bitcoin Lago circular economy. It grew fast in 2022, passed 100 places around 2023 to 2024, and then shrank to roughly 40 to 60 businesses that still take bitcoin. The team says the lesson was simple: a circular economy needs people who spend, not only places that accept."
+   "p": "The map snapshot checked on 22 October 2026 lists 117 places. Separately, Eliazar estimated 40 to 50 accepting businesses in an interview published in January 2026 and 50 to 60 in one published in May 2026. Publication dates are not necessarily recording dates, and neither estimate is a current merchant audit. These figures measure different things: map listings versus reported active use. The interviews describe a fast expansion followed by fewer participating businesses, and a lesson: a circular economy needs people who spend, not only places that accept.",
+   "src": [
+   {
+      "t": "BTC Map snapshot, 22 October 2026",
+      "u": "https://btcmap.org/community/lago-bitcoin/merchants"
+   },
+   {
+      "t": "Ordermoon interview, published January 2026",
+      "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=464s"
+   },
+   {
+      "t": "Bitcoinismo interview, published May 2026; recording date unconfirmed",
+      "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=166s"
+   }
+]
   },
   {
    "p": "Before the details, look at the chart. Each mark is one public claim, placed on the day it was said. Claims given as a range, like 40 to 50, cover that range, and \"more than\" claims are a minimum. The separate line counts how many of today's 117 BTC Map places had been listed by each date. Notice how the marks scatter: they come from different people."
@@ -22,7 +36,7 @@
   {
    "p": "In March 2022, Patrick Melder, a founder of the project, said in an interview that about seven businesses accepted bitcoin. In April a Soy502 news clip counted 15. Eliazar went to El Zonte in El Salvador for a week, came back, and says that in six months he introduced around 60 businesses to bitcoin. By September 2022 the project's account on X spoke of more than 60 places around the lake. In an interview recorded around late 2022, a date that is inferred because it is not spoken, Eliazar says \"we have 65 businesses now\". Patrick later framed the network as 200 businesses in Guatemala, with about 100 around the lake. The chart uses lake-area claims for comparison, not the nationwide total. By July, Patrick said about 50 had joined since January, with another 50 expected; in September CoinDesk quoted him at about 70 around the lake.",
    "src": [
-    {
+   {
      "t": "Descubriendo Bitcoin interview, 29:44",
      "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=1784s"
     },
@@ -62,7 +76,7 @@
   {
    "p": "In November 2023, at Adopting Bitcoin in El Salvador, volunteer Rudy Gallardo said there were around 80 businesses in Panajachel and over 100 around the lake. About half a minute later, in the same talk, he says more than 70 merchants accept bitcoin in Panajachel. The talk also gave the activity so far: 8.85 BTC and more than 5,000 transactions from January 2022 to April 2023. In February 2024 a news item shared on X said 90 locations. Looking back at 2024, Eliazar says they had reached more than 100 businesses. Patrick said about 70 in May 2023, while Eliazar said around 80 in one year; both are separate dated claims in the chart.",
    "src": [
-    {
+   {
      "t": "Adopting Bitcoin 2023 talk, 1:35",
      "u": "https://www.youtube.com/watch?v=79cIKf_T3N0&t=95s"
     },
@@ -98,7 +112,7 @@
   {
    "p": "Eliazar's explanation is short. In Spanish, on Bitcoinismo, he says there were more than 100 businesses, but they did not see many transactions, so now there are about 50 or 60. On the Ordermoon podcast he calls it a mistake: many businesses were introduced and not many people came to spend. Ricky, from the founding group, says in 2025 that the team had to stop recruiting because bitcoin can only enter the local economy when bitcoiners visit and spend it. In January 2025 Eliazar estimated around 85 businesses accepting bitcoin, and said 50 to 60 percent cash out while 30 to 40 percent hold. This active-use detail is different from the total onboarded.",
    "src": [
-    {
+   {
      "t": "Bitcoinismo interview, 2:41",
      "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=161s"
     },
@@ -119,7 +133,7 @@
   {
    "p": "Price played a part too. Eliazar began in 2022, when bitcoin fell from about 45,000 to 15,000 or 16,000 dollars, and merchants watched it drop. Patrick said in May 2023 that during the 2022 bear market many merchants accepted bitcoin and then cashed out. Ricky remembers Eliazar acting as a \"walking ATM\", cashing merchants out almost every day. Staff changes also hurt: when an employee who knew the system leaves, someone has to teach the next one.",
    "src": [
-    {
+   {
      "t": "Ordermoon podcast, 10:29",
      "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=629s"
     },
@@ -143,7 +157,7 @@
   {
    "p": "The lesson is fewer merchants, more spenders and savers. An Ordermoon host, who is building a similar project, said you should aim for less but good quality, not 100 places. In March 2025 Ricky said the team can still onboard a business that asks, but there are already enough places for bitcoiners to spend, and the main effort is classes for children. On the saving side, Rudy said in 2023 that staff accept tips in bitcoin and prefer to keep them. In 2026 Eliazar says most businesses still accepting bitcoin have held it since 2022, and tells of primary school children saving their snack money in bitcoin.",
    "src": [
-    {
+   {
      "t": "Ordermoon podcast, 17:46 (host)",
      "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=1066s"
     },
@@ -171,7 +185,7 @@
   {
    "p": "BTC Map is a public map of places that accept bitcoin, built on OpenStreetMap. Today it lists 117 places at the lake. They were first listed between September 2022 and February 2026: 49 in 2022, 34 in 2023, 19 in 2024, 14 in 2025 and 1 in 2026. Two limits matter. The count only includes places still on the map, so places that were listed and later removed are missing, which is why the listing line can only rise. And a listing is not a check. The next chart shows the year of the last on-the-ground check recorded for each place. Look at how tall the bars are for 2022 and 2023.",
    "src": [
-    {
+   {
      "t": "BTC Map data, 22 October 2026",
      "u": "https://btcmap.org"
     }
@@ -183,7 +197,7 @@
   {
    "p": "Thirty places were last checked in 2022 and 28 in 2023, so 58 of the 117 have not been checked since 2023 at the latest. Only 13 were checked in the last 12 months, and one has no check at all. That does not mean those places closed. It means the map cannot confirm they are open. In a video published in May 2023, a visitor on the Reverend Hodl channel found a lakefront cafe that BTC Map listed but that no longer took bitcoin. He tried three places that morning and one accepted. In February 2025 a visitor said only about 25% of places they tried could actually process a bitcoin payment. This is one visitor’s experience, not a census.",
    "src": [
-    {
+   {
      "t": "BTC Map data, 22 October 2026",
      "u": "https://btcmap.org"
     },
@@ -207,7 +221,7 @@
   {
    "p": "So the site shows 117 listed and about 50 active. The 117 is a count anyone can check, with dates. The \"about 50\" is a spoken estimate from the team: 40 or 50 in the Ordermoon podcast, published in January 2026, and 50 or 60 in Bitcoinismo, published in May 2026. It is not an audit. Other numbers differ because they measure different things: onboarded or active, Panajachel or the whole lake, \"more than\" or \"about\". In 2025 outside accounts on X said over 80 businesses onboarded in February and over 40 in June. Read that as two different counts, not a fall in four months.",
    "src": [
-    {
+   {
      "t": "Ordermoon podcast, 7:44",
      "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=464s"
     },
@@ -229,8 +243,9 @@
    "h": "What visitors can do"
   },
   {
-   "p": "Spend bitcoin while you are at the lake, because spending is what keeps the economy turning. Ask before you pay, since a listing or a sign can be out of date and staff may need a moment to set things up. Tip in sats: staff have said they like to save tips. And if a place is closed or no longer accepts bitcoin, report it on BTC Map so the next visitor does not walk there for nothing. A December 2022 Bitcoin Explorers video also visited an Antigua restaurant that had stopped accepting bitcoin; that example is outside the lake area. See also <a href=\"blog/a-day-paying-with-bitcoin/\">a day paying with bitcoin</a>.",
-   "src": [
+   "p": "Spend bitcoin while you are at the lake, because spending is what keeps the economy turning. Ask before you pay, since a listing or a sign can be out of date and staff may need a moment to set things up. Tip in sats: staff have said they like to save tips. And if a place is closed or no longer accepts bitcoin, report it on BTC Map so the next visitor does not walk there for nothing. A December 2022 Bitcoin Explorers video also visited an Antigua restaurant that had stopped accepting bitcoin; that example is outside the lake area. Read the linked visitor guide for practical preparation and payment fallbacks.",
+      "src": [
+       {"t": "Practical visitor guide", "u": "blog/visiting-lake-atitlan-with-bitcoin/"},
     {
      "t": "Ricky interview, 49:39",
      "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2979s"
@@ -252,7 +267,21 @@
  ],
  "body_es": [
   {
-   "p": "Nuestra página principal dice dos cosas que parecen chocar: hay 117 lugares en BTC Map y unos 50 están activos hoy. Las dos son ciertas, y la distancia entre ambas es la historia de la economía circular de Bitcoin Lago. Creció rápido en 2022, pasó de 100 lugares hacia 2023 y 2024, y después bajó a unos 40 a 60 negocios que todavía aceptan bitcoin. El equipo dice que la lección fue sencilla: una economía circular necesita gente que gaste, no solo lugares que acepten."
+   "p": "Los datos del mapa consultados el 22 de octubre de 2026 incluyen 117 lugares. Por separado, Eliazar calculó entre 40 y 50 negocios que aceptaban bitcoin en una entrevista publicada en enero de 2026 y entre 50 y 60 en otra publicada en mayo de 2026. Las fechas de publicación no son necesariamente las de grabación y ninguna estimación es una revisión actual de los comercios. Son cifras de cosas distintas: listados del mapa y uso activo reportado. Las entrevistas describen una expansión rápida seguida de menos negocios participantes, y una lección: una economía circular necesita gente que gaste, no solo lugares que acepten.",
+   "src": [
+   {
+      "t": "Datos de BTC Map, consultados el 22 de octubre de 2026",
+      "u": "https://btcmap.org/community/lago-bitcoin/merchants"
+   },
+   {
+      "t": "Entrevista de Ordermoon, publicada en enero de 2026",
+      "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=464s"
+   },
+   {
+      "t": "Entrevista de Bitcoinismo, publicada en mayo de 2026; grabación sin fecha confirmada",
+      "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=166s"
+   }
+]
   },
   {
    "p": "Antes de los detalles, mira la gráfica. Cada marca es una afirmación pública, puesta en el día en que se dijo. Las que dan un rango, como 40 a 50, cubren ese rango, y las de \"más de\" son un mínimo. La línea aparte cuenta cuántos de los 117 lugares actuales de BTC Map ya estaban listados en cada fecha. Fíjate en lo dispersas que están las marcas: vienen de personas distintas."
@@ -266,7 +295,7 @@
   {
    "p": "En marzo de 2022, Patrick Melder, uno de los fundadores del proyecto, dijo en una entrevista que unos siete negocios aceptaban bitcoin. En abril, un reportaje de Soy502 contó 15. Eliazar viajó una semana a El Zonte, en El Salvador, volvió, y cuenta que en seis meses presentó bitcoin a unos 60 negocios. En septiembre de 2022, la cuenta del proyecto en X hablaba de más de 60 lugares alrededor del lago. En una entrevista grabada hacia finales de 2022, fecha que es una deducción porque no se dice en voz alta, Eliazar afirma: \"tenemos 65 negocios ahora\". Más adelante Patrick presentó la red como 200 negocios en Guatemala, con unos 100 alrededor del lago. La gráfica usa los datos del área del lago para comparar, no el total nacional. En julio, Patrick dijo que unos 50 se habían sumado desde enero y que esperaba otros 50; en septiembre CoinDesk lo citó con unos 70 alrededor del lago.",
    "src": [
-    {
+   {
      "t": "Entrevista en Descubriendo Bitcoin, 29:44",
      "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=1784s"
     },
@@ -306,7 +335,7 @@
   {
    "p": "En noviembre de 2023, en Adopting Bitcoin en El Salvador, el voluntario Rudy Gallardo dijo que había unos 80 negocios en Panajachel y más de 100 alrededor del lago. Medio minuto después, en la misma charla, dice que más de 70 comercios aceptan bitcoin en Panajachel. La charla también dio la actividad hasta entonces: 8.85 BTC y más de 5,000 transacciones de enero de 2022 a abril de 2023. En febrero de 2024, una nota de prensa compartida en X habló de 90 lugares. Al mirar atrás hacia 2024, Eliazar dice que llegaron a más de 100 negocios. Patrick dijo unos 70 en mayo de 2023, mientras que Eliazar habló de alrededor de 80 en un año; ambos son datos fechados distintos de la gráfica.",
    "src": [
-    {
+   {
      "t": "Charla en Adopting Bitcoin 2023, 1:35",
      "u": "https://www.youtube.com/watch?v=79cIKf_T3N0&t=95s"
     },
@@ -342,7 +371,7 @@
   {
    "p": "La explicación de Eliazar es corta. En español, en Bitcoinismo, dice que había más de 100 negocios, pero no vieron muchas transacciones, así que ahora hay unos 50 o 60. En el podcast de Ordermoon lo llama un error: se presentó bitcoin a muchos negocios y no llegó mucha gente a gastar. Ricky, del grupo fundador, dice en 2025 que el equipo tuvo que dejar de reclutar porque el bitcoin solo entra a la economía local cuando los bitcoiners la visitan y gastan. En enero de 2025 Eliazar calculó que unos 85 negocios aceptaban bitcoin y dijo que entre 50 y 60 por ciento cambia a efectivo, mientras que entre 30 y 40 por ciento guarda bitcoin. Ese dato de uso activo es distinto del total incorporado.",
    "src": [
-    {
+   {
      "t": "Entrevista en Bitcoinismo, 2:41",
      "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=161s"
     },
@@ -363,7 +392,7 @@
   {
    "p": "El precio también influyó. Eliazar empezó en 2022, cuando el bitcoin cayó de unos 45,000 a 15,000 o 16,000 dólares, y los comercios lo vieron bajar. Patrick dijo en mayo de 2023 que durante el mercado bajista de 2022 muchos comercios aceptaban bitcoin y luego lo cambiaban a dinero. Ricky recuerda a Eliazar como un \"cajero ambulante\" que cambiaba el bitcoin de los comercios casi todos los días. Los cambios de personal también pesaron: cuando se va un empleado que conocía el sistema, alguien tiene que enseñarle al siguiente.",
    "src": [
-    {
+   {
      "t": "Podcast de Ordermoon, 10:29",
      "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=629s"
     },
@@ -387,7 +416,7 @@
   {
    "p": "La lección es menos comercios, más gente que gasta y que ahorra. Un presentador de Ordermoon, que está armando un proyecto parecido, dijo que conviene apuntar a menos lugares pero buenos, no a 100. En marzo de 2025 Ricky dijo que el equipo todavía incorpora a un negocio que lo pida, pero que ya hay suficientes lugares donde los bitcoiners pueden gastar, y que el esfuerzo principal son las clases para niños. Del lado del ahorro, Rudy dijo en 2023 que el personal acepta propinas en bitcoin y prefiere guardarlas. En 2026 Eliazar dice que la mayoría de los negocios que siguen aceptando bitcoin lo tienen guardado desde 2022, y cuenta de niños de primaria que ahorraban el dinero de su refacción en bitcoin.",
    "src": [
-    {
+   {
      "t": "Podcast de Ordermoon, 17:46 (presentador)",
      "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=1066s"
     },
@@ -415,7 +444,7 @@
   {
    "p": "BTC Map es un mapa público de lugares que aceptan bitcoin, construido sobre OpenStreetMap. Hoy lista 117 lugares en el lago. Se listaron por primera vez entre septiembre de 2022 y febrero de 2026: 49 en 2022, 34 en 2023, 19 en 2024, 14 en 2025 y 1 en 2026. Importan dos límites. El conteo solo incluye lugares que siguen en el mapa, así que faltan los que se listaron y luego se quitaron, y por eso la línea de listados solo puede subir. Y un listado no es una revisión. La siguiente gráfica muestra el año de la última revisión en el lugar registrada para cada sitio. Fíjate en lo altas que son las barras de 2022 y 2023.",
    "src": [
-    {
+   {
      "t": "Datos de BTC Map, 22 de octubre de 2026",
      "u": "https://btcmap.org"
     }
@@ -427,7 +456,7 @@
   {
    "p": "Treinta lugares se revisaron por última vez en 2022 y 28 en 2023, así que 58 de los 117 no se han revisado desde 2023 como muy tarde. Solo 13 se revisaron en los últimos 12 meses, y uno no tiene ninguna revisión. Eso no significa que esos lugares hayan cerrado. Significa que el mapa no puede confirmar que sigan abiertos. En un video publicado en mayo de 2023, un visitante del canal Reverend Hodl encontró un café frente al lago que BTC Map listaba pero que ya no aceptaba bitcoin. Probó tres lugares esa mañana y uno aceptó. En febrero de 2025, un visitante dijo que solo alrededor del 25% de los lugares que probó pudo procesar un pago en bitcoin. Es la experiencia de un visitante, no un censo.",
    "src": [
-    {
+   {
      "t": "Datos de BTC Map, 22 de octubre de 2026",
      "u": "https://btcmap.org"
     },
@@ -451,7 +480,7 @@
   {
    "p": "Por eso el sitio muestra 117 listados y unos 50 activos. Los 117 son un conteo que cualquiera puede revisar, con fechas. Los \"unos 50\" son una estimación hablada del equipo: 40 o 50 en el podcast de Ordermoon, publicado en enero de 2026, y 50 o 60 en Bitcoinismo, publicado en mayo de 2026. No es una auditoría. Las otras cifras difieren porque miden cosas distintas: incorporados o activos, Panajachel o todo el lago, \"más de\" o \"unos\". En 2025, cuentas externas en X hablaron de más de 80 negocios incorporados en febrero y más de 40 en junio. Hay que leerlas como dos conteos distintos, no como una caída en cuatro meses.",
    "src": [
-    {
+   {
      "t": "Podcast de Ordermoon, 7:44",
      "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=464s"
     },
@@ -473,8 +502,9 @@
    "h": "Lo que pueden hacer los visitantes"
   },
   {
-   "p": "Gasta bitcoin mientras estés en el lago, porque gastar es lo que mantiene girando la economía. Pregunta antes de pagar, ya que un listado o un letrero puede estar desactualizado y el personal quizás necesite un momento para prepararse. Da propina en sats: el personal ha dicho que le gusta guardar las propinas. Y si un lugar cerró o ya no acepta bitcoin, repórtalo en BTC Map para que el próximo visitante no vaya en vano. Un video de Bitcoin Explorers de diciembre de 2022 también visitó un restaurante en Antigua que había dejado de aceptar bitcoin; ese ejemplo queda fuera del área del lago. Consulta también <a href=\"blog/a-day-paying-with-bitcoin/\">un día pagando con bitcoin</a>.",
-   "src": [
+   "p": "Gasta bitcoin mientras estés en el lago, porque gastar es lo que mantiene girando la economía. Pregunta antes de pagar, ya que un listado o un letrero puede estar desactualizado y el personal quizás necesite un momento para prepararse. Da propina en sats: el personal ha dicho que le gusta guardar las propinas. Y si un lugar cerró o ya no acepta bitcoin, repórtalo en BTC Map para que el próximo visitante no vaya en vano. Un video de Bitcoin Explorers de diciembre de 2022 también visitó un restaurante en Antigua que había dejado de aceptar bitcoin; ese ejemplo queda fuera del área del lago. Consulta la guía de visitantes enlazada para prepararte y tener alternativas de pago.",
+      "src": [
+       {"t": "Guía práctica para visitantes", "u": "blog/visiting-lake-atitlan-with-bitcoin/"},
     {
      "t": "Entrevista a Ricky, 49:39",
      "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2979s"

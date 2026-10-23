@@ -493,6 +493,32 @@
       "image": "images/og/kaboom-cooking-oil-generator-es.jpg",
       "date": "2026-10-23"
     },
+    "blog/learning-and-supporting-bitcoin-lago/": {
+      "key": "learning-and-supporting-bitcoin-lago",
+      "path": "blog/learning-and-supporting-bitcoin-lago/",
+      "lang": "en",
+      "title": "Learning bitcoin and supporting the lake | Bitcoin Lago",
+      "description": "What the education reports show, how visitors can help and what to confirm before offering time or money. A sourced guide, not an open call for donations or…",
+      "heading": "Learning bitcoin and supporting the lake",
+      "label": "FROM THE LAKE · STORIES",
+      "type": "WebPage",
+      "article": true,
+      "image": "images/og/learning-and-supporting-bitcoin-lago-en.jpg",
+      "date": "2026-10-23"
+    },
+    "es/blog/learning-and-supporting-bitcoin-lago/": {
+      "key": "learning-and-supporting-bitcoin-lago",
+      "path": "es/blog/learning-and-supporting-bitcoin-lago/",
+      "lang": "es",
+      "title": "Aprender sobre bitcoin y apoyar al lago | Bitcoin Lago",
+      "description": "Qué muestran los reportes educativos, cómo pueden ayudar los visitantes y qué confirmar antes de ofrecer tiempo o dinero. Una guía con fuentes, no una…",
+      "heading": "Aprender sobre bitcoin y apoyar al lago",
+      "label": "DESDE EL LAGO · HISTORIAS",
+      "type": "WebPage",
+      "article": true,
+      "image": "images/og/learning-and-supporting-bitcoin-lago-es.jpg",
+      "date": "2026-10-23"
+    },
     "blog/merchants-over-time/": {
       "key": "merchants-over-time",
       "path": "blog/merchants-over-time/",
@@ -517,6 +543,32 @@
       "type": "WebPage",
       "article": true,
       "image": "images/og/merchants-over-time-es.jpg",
+      "date": "2026-10-23"
+    },
+    "blog/visiting-lake-atitlan-with-bitcoin/": {
+      "key": "visiting-lake-atitlan-with-bitcoin",
+      "path": "blog/visiting-lake-atitlan-with-bitcoin/",
+      "lang": "en",
+      "title": "Visiting Lake Atitlán with bitcoin | Bitcoin Lago",
+      "description": "A practical guide: prepare a Lightning wallet, find places to ask, pay with care and keep a cash backup. Historical visitor reports, not promises of…",
+      "heading": "Visiting Lake Atitlán with bitcoin",
+      "label": "FROM THE LAKE · STORIES",
+      "type": "WebPage",
+      "article": true,
+      "image": "images/og/visiting-lake-atitlan-with-bitcoin-en.jpg",
+      "date": "2026-10-23"
+    },
+    "es/blog/visiting-lake-atitlan-with-bitcoin/": {
+      "key": "visiting-lake-atitlan-with-bitcoin",
+      "path": "es/blog/visiting-lake-atitlan-with-bitcoin/",
+      "lang": "es",
+      "title": "Visitar el Lago de Atitlán con bitcoin | Bitcoin Lago",
+      "description": "Una guía práctica: prepara una billetera Lightning, busca comercios, pregunta antes de pedir y lleva efectivo. Experiencias históricas, no promesas de…",
+      "heading": "Visitar el Lago de Atitlán con bitcoin",
+      "label": "DESDE EL LAGO · HISTORIAS",
+      "type": "WebPage",
+      "article": true,
+      "image": "images/og/visiting-lake-atitlan-with-bitcoin-es.jpg",
       "date": "2026-10-23"
     },
     "blog/wallets-at-the-lake/": {

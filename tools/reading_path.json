@@ -1,0 +1,36 @@
+{
+  "title_en": "Start here",
+  "title_es": "Empieza aquí",
+  "intro_en": "Visiting the lake? Follow this short reading path, then explore the full stories and source videos below.",
+  "intro_es": "¿Vas a visitar el lago? Sigue esta ruta breve de lectura y después explora las historias y los videos originales de abajo.",
+  "items": [
+    {
+      "slug": "visiting-lake-atitlan-with-bitcoin",
+      "title_en": "Plan your first day",
+      "title_es": "Prepara tu primer día",
+      "summary_en": "Prepare a wallet, ask before ordering and keep a cash and connection backup.",
+      "summary_es": "Prepara una billetera, pregunta antes de pedir y ten alternativas de efectivo y conexión."
+    },
+    {
+      "slug": "wallets-at-the-lake",
+      "title_en": "Understand wallets and payments",
+      "title_es": "Entiende las billeteras y los pagos",
+      "summary_en": "See which tools appear in the reports and what their custody trade-offs mean.",
+      "summary_es": "Conoce las herramientas de los reportes y qué implica cada opción de custodia."
+    },
+    {
+      "slug": "how-bitcoin-lago-started",
+      "title_en": "Meet the project through its history",
+      "title_es": "Conoce el proyecto a través de su historia",
+      "summary_en": "Follow the education, merchant and community work behind Bitcoin Lago.",
+      "summary_es": "Descubre el trabajo educativo, comercial y comunitario detrás de Bitcoin Lago."
+    },
+    {
+      "slug": "kaboom-cooking-oil-generator",
+      "title_en": "Read the mining experiment, with context",
+      "title_es": "Lee sobre el experimento de minería, con contexto",
+      "summary_en": "Learn what Kaboom demonstrated and why its historical reports are not a current operating claim.",
+      "summary_es": "Entiende qué demostró Kaboom y por qué los reportes históricos no confirman que funcione hoy."
+    }
+  ]
+}
