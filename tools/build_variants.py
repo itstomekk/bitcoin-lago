@@ -157,10 +157,9 @@ def timeline(T):
 
 
 def story_cta(T):
-    T2 = C.STORY[T["lang"]]
-    href = "story/" if T["lang"] == "en" else "story/"
-    return (f'<div class="story-cta reveal"><a class="btn btn-primary" href="{href}">{T2["st_cta"]}</a>'
-            f'<p>{T2["st_cta_p"]}</p></div>')
+    S = C.STORY[T["lang"]]
+    return (f'<div class="story-cta reveal"><a class="btn btn-primary" href="story/">{S["st_cta"]}</a><p>{S["st_cta_p"]}</p></div>'
+            f'<div class="story-cta reveal"><a class="btn btn-primary" href="blog/">{S["bl_cta"]}</a><p>{S["bl_cta_p"]}</p></div>')
 
 
 def partners(T):
@@ -499,6 +498,7 @@ def story_blocks(T):
         f'<li><span class="m-kind">{T["st_kinds"][kind]}, {fmt_date(d, lang)}</span>'
         f'<a href="{url}" rel="noopener"><span class="m-outlet">{escape(outlet)}</span> <span class="m-title" lang="{"es" if outlet.startswith(("Cripto", "Bitcoinismo")) else "en"}">{escape(title)}</span></a></li>'
         for outlet, d, title, url, kind in C.INTERVIEWS)
+    chips.append(f'<a href="{T["home"]}blog/">{T["bl_h1"]}</a>')
     return {"year_chips": "".join(chips), "years": "".join(out), "topics": topics, "media": media}
 
 
@@ -538,6 +538,119 @@ def render_story(lang):
     return fill(html, T, blocks, lang, f"story/{lang}")
 
 
+# ---------- Blog: videos and stories (/blog/, /blog/<slug>/) ----------
+BLOG_DIR = ROOT / "tools" / "blog"
+
+
+def blog_articles():
+    arts = [json.loads(f.read_text(encoding="utf-8")) for f in sorted(BLOG_DIR.glob("*.json"))]
+    return sorted(arts, key=lambda a: a["date_published_video"], reverse=True)
+
+
+def mmss_to_s(t):
+    parts = [int(x) for x in t.split(":")]
+    s = 0
+    for x in parts:
+        s = s * 60 + x
+    return s
+
+
+def page_T(lang, path_en, path_es, title, description):
+    T = dict(C.LANGS[lang])
+    T.update(C.STORY[lang])
+    en = lang == "en"
+    depth_en = path_en.count("/")
+    prefix = "../" * depth_en if en else "../" * (depth_en + 1)
+    T.update(
+        p=prefix, vid="ad", home=prefix if en else prefix + "es/",
+        p_en="./" if en else "../" * (depth_en + 1) + path_en,
+        p_es="../" * depth_en + "es/" + path_en if en else "./",
+        cur_en='aria-current="true"' if en else "", cur_es='aria-current="true"' if not en else "",
+        canonical=C.SITE_URL + (path_en if en else path_es), url_en=C.SITE_URL + path_en, url_es=C.SITE_URL + path_es,
+        alt_lang_href=("../" * depth_en + "es/" + path_en) if en else ("../" * (depth_en + 1) + path_en),
+        og_image=C.SITE_URL + "images/hero-1600.jpg", title=title, description=description,
+    )
+    T["foot_updated"] = T["foot_updated"].format(d=C.LAST_UPDATED)
+    return T
+
+
+def render_page(T, lang, main_html, label):
+    blocks = {"main": main_html, "footer_text": footer_text(T), "switcher": "",
+              "i18n_json": json.dumps({**{k: T[k] for k in C.I18N_KEYS}, "categories": C.CATEGORIES[lang]},
+                                      ensure_ascii=False).replace("</", "<\\/")}
+    html = head_html("ad") + (VDIR / "page.html").read_text(encoding="utf-8") + FOOT
+    return fill(html, T, blocks, lang, label)
+
+
+def thumb(T, vid_id, alt, cls="blog-thumb", eager=False):
+    return (f'<picture><source type="image/webp" srcset="{T["p"]}images/blog/{vid_id}.webp">'
+            f'<img class="{cls}" src="{T["p"]}images/blog/{vid_id}.jpg" alt="{escape(alt, quote=True)}" width="640" height="360" '
+            f'loading="{"eager" if eager else "lazy"}" decoding="async"></picture>')
+
+
+def blog_card(T, a, href):
+    lang = T["lang"]
+    return (f'<li class="blog-card reveal"><a href="{href}">{thumb(T, a["video_id"], a["title_" + lang])}'
+            f'<span class="bc-meta">{escape(a["channel"])}, {fmt_date(a["date_published_video"][:7], lang)}</span>'
+            f'<span class="bc-title">{escape(a["title_" + lang])}</span></a><p>{escape(a["dek_" + lang])}</p></li>')
+
+
+def render_blog_index(lang, arts):
+    T = page_T(lang, "blog/", "es/blog/", C.STORY[lang]["bl_title"], C.STORY[lang]["bl_description"])
+    cards = "".join(blog_card(T, a, f'{a["slug"]}/') for a in arts)
+    main = (f'<section class="scr story-hero" id="hero" aria-labelledby="bl-h1"><p><a class="link-arrow" href="{T["home"]}">{T["st_back"]}</a></p>'
+            f'<h1 id="bl-h1">{T["bl_h1"]}</h1><p class="lede">{T["bl_lead"]}</p></section>'
+            f'<section class="scr blog-list" aria-labelledby="bl-h1"><ul class="blog-grid">{cards}</ul></section>')
+    return render_page(T, lang, main, f"blog/{lang}")
+
+
+def render_article(lang, a, arts):
+    slug = a["slug"]
+    T = page_T(lang, f"blog/{slug}/", f"es/blog/{slug}/", f'{a["title_" + lang]} | Bitcoin Lago', a["dek_" + lang])
+    T["og_image"] = C.SITE_URL + f'images/blog/{a["video_id"]}.jpg'
+    vid, url = a["video_id"], f'https://www.youtube.com/watch?v={a["video_id"]}'
+    body = []
+    for b in a["body_" + lang]:
+        if b.get("h"):
+            body.append(f'<h2>{escape(b["h"])}</h2>')
+        if b.get("p"):
+            body.append(f'<p>{escape(b["p"])}</p>')
+    quotes = "".join(
+        f'<blockquote class="bq"><p>{escape(q[lang] if lang != "orig" else q["original"])}</p>'
+        f'<footer><a href="{url}&amp;t={mmss_to_s(q["t"])}s" rel="noopener">{T["bl_at"]} {q["t"]}</a></footer></blockquote>'
+        for q in a.get("quotes", []))
+    others = [o for o in arts if o["slug"] != slug][:3]
+    more = "".join(blog_card(T, o, f'../{o["slug"]}/') for o in others)
+    title = escape(a["title_" + lang], quote=True)
+    video = (f'<figure class="blog-video"><div class="video-facade" data-youtube-facade="{vid}">'
+             f'<button class="video-play" type="button" data-youtube-play="{vid}" data-youtube-title="{title}" aria-label="{T["bl_play"]}">'
+             f'{thumb(T, vid, a["title_" + lang], "blog-thumb", eager=True)}<span class="video-play-mark" aria-hidden="true">▶</span></button></div>'
+             f'<figcaption>{T["bl_privacy"]} <a href="{url}" rel="noopener">{T["bl_watch"]}</a></figcaption></figure>')
+    main = (f'<article class="post"><header class="scr story-hero post-head"><p><a class="link-arrow" href="../">{T["bl_back"]}</a></p>'
+            f'<h1>{escape(a["title_" + lang])}</h1><p class="lede">{escape(a["dek_" + lang])}</p>'
+            f'<p class="post-meta">{T["bl_by"]}: <strong>{escape(a["channel"])}</strong>. {T["bl_recorded"]}: {fmt_date(a["date_published_video"], lang)}.</p></header>'
+            f'<div class="scr post-body">{video}<div class="post-text">{"".join(body)}'
+            + (f'<h2>{T["bl_quotes_h"]}</h2>{quotes}' if quotes else "")
+            + f'<p class="post-note">{T["bl_note"]}</p></div></div></article>'
+            + (f'<section class="scr blog-list more"><h2>{T["bl_more_h"]}</h2><ul class="blog-grid">{more}</ul></section>' if more else ""))
+    return render_page(T, lang, main, f"blog/{slug}/{lang}")
+
+
+def build_blog():
+    arts = blog_articles()
+    if not arts:
+        return
+    for lang in ("en", "es"):
+        base = ROOT / ("blog" if lang == "en" else "es/blog")
+        base.mkdir(parents=True, exist_ok=True)
+        (base / "index.html").write_text(render_blog_index(lang, arts), encoding="utf-8")
+        for a in arts:
+            d = base / a["slug"]
+            d.mkdir(parents=True, exist_ok=True)
+            (d / "index.html").write_text(render_article(lang, a, arts), encoding="utf-8")
+    print("wrote blog:", len(arts), "articles x 2 languages")
+
+
 REDIRECT = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
 <title>Bitcoin Lago Community</title><meta http-equiv="refresh" content="0; url={to}">
@@ -561,6 +674,7 @@ def main():
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(render_story(lang), encoding="utf-8")
         print("wrote", out.relative_to(ROOT))
+    build_blog()
     for rel, to in OLD_PAGES.items():
         out = ROOT / rel / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
