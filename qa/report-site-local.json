@@ -20,8 +20,8 @@
    "gate": "[ad/en] title + meta description",
    "result": "PASS",
    "evidence": {
-    "title": "Lago Bitcoin Community | Bitcoin on Lake Atitlán, Guatemala",
-    "desc_len": 158
+    "title": "Bitcoin at Lake Atitlán, Guatemala | Bitcoin Lago",
+    "desc_len": 149
    }
   },
   {
@@ -35,15 +35,15 @@
    "evidence": [
     [
      "en",
-     "https://itstomekk.github.io/lago-bitcoin-community/"
+     "https://itstomekk.github.io/bitcoin-lago/"
     ],
     [
      "es",
-     "https://itstomekk.github.io/lago-bitcoin-community/es/"
+     "https://itstomekk.github.io/bitcoin-lago/es/"
     ],
     [
      "x-default",
-     "https://itstomekk.github.io/lago-bitcoin-community/"
+     "https://itstomekk.github.io/bitcoin-lago/"
     ]
    ]
   },
@@ -56,7 +56,7 @@
    "gate": "[ad/en] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 110,
+    "checked": 170,
     "bad": []
    }
   },
@@ -69,9 +69,9 @@
    }
   },
   {
-   "gate": "[ad/en] page weight under 3 MB excluding map tiles",
+   "gate": "[ad/en] page weight under 3.5 MB after scrolling every lazy photo in, excluding map tiles",
    "result": "PASS",
-   "evidence": "2326 KB"
+   "evidence": "3096 KB"
   },
   {
    "gate": "[ad/en] no horizontal overflow at 1440",
@@ -100,7 +100,7 @@
     ],
     [
      "bitcoin",
-     1.8
+     1.86
     ],
     [
      "transport",
@@ -108,11 +108,11 @@
     ],
     [
      "community",
-     1.68
+     3.06
     ],
     [
      "tours",
-     1.02
+     3.08
     ],
     [
      "expats",
@@ -120,7 +120,11 @@
     ],
     [
      "about",
-     5.92
+     5.63
+    ],
+    [
+     "partners",
+     1
     ]
    ]
   },
@@ -214,7 +218,7 @@
    "gate": "[ad/en] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 51,
+    "images": 63,
     "bad": []
    }
   },
@@ -222,7 +226,7 @@
    "gate": "[ad/en] only local photos, each with a Commons, approved community-archive, or linked press credit",
    "result": "PASS",
    "evidence": {
-    "photos": 49,
+    "photos": 61,
     "no_credit": [],
     "other_images": []
    }
@@ -258,7 +262,7 @@
    "evidence": "ok"
   },
   {
-   "gate": "[ad/en] 117 places + 50+ claim + data date",
+   "gate": "[ad/en] 117 listed + about 50 active + data date",
    "result": "PASS",
    "evidence": "ok"
   },
@@ -304,7 +308,7 @@
    "gate": "[ad/en] brand does not overlap its CTA or menu button at 390",
    "result": "PASS",
    "evidence": {
-    "brandRight": 229,
+    "brandRight": 150,
     "overlapCta": false,
     "overlapMenu": false
    }
@@ -348,8 +352,8 @@
    "gate": "[ad/es] title + meta description",
    "result": "PASS",
    "evidence": {
-    "title": "Lago Bitcoin Community | Bitcoin en el Lago de Atitlán, Guatemala",
-    "desc_len": 179
+    "title": "Bitcoin en el Lago de Atitlán, Guatemala | Bitcoin Lago",
+    "desc_len": 153
    }
   },
   {
@@ -363,15 +367,15 @@
    "evidence": [
     [
      "en",
-     "https://itstomekk.github.io/lago-bitcoin-community/"
+     "https://itstomekk.github.io/bitcoin-lago/"
     ],
     [
      "es",
-     "https://itstomekk.github.io/lago-bitcoin-community/es/"
+     "https://itstomekk.github.io/bitcoin-lago/es/"
     ],
     [
      "x-default",
-     "https://itstomekk.github.io/lago-bitcoin-community/"
+     "https://itstomekk.github.io/bitcoin-lago/"
     ]
    ]
   },
@@ -384,7 +388,7 @@
    "gate": "[ad/es] every referenced asset and link returns 200",
    "result": "PASS",
    "evidence": {
-    "checked": 110,
+    "checked": 170,
     "bad": []
    }
   },
@@ -397,9 +401,9 @@
    }
   },
   {
-   "gate": "[ad/es] page weight under 3 MB excluding map tiles",
+   "gate": "[ad/es] page weight under 3.5 MB after scrolling every lazy photo in, excluding map tiles",
    "result": "PASS",
-   "evidence": "2327 KB"
+   "evidence": "3098 KB"
   },
   {
    "gate": "[ad/es] no horizontal overflow at 1440",
@@ -428,7 +432,7 @@
     ],
     [
      "bitcoin",
-     1.8
+     1.86
     ],
     [
      "transport",
@@ -436,11 +440,11 @@
     ],
     [
      "community",
-     1.64
+     3.09
     ],
     [
      "tours",
-     1.05
+     3.16
     ],
     [
      "expats",
@@ -448,7 +452,11 @@
     ],
     [
      "about",
-     5.92
+     5.63
+    ],
+    [
+     "partners",
+     1
     ]
    ]
   },
@@ -542,7 +550,7 @@
    "gate": "[ad/es] every image has alt text",
    "result": "PASS",
    "evidence": {
-    "images": 51,
+    "images": 63,
     "bad": []
    }
   },
@@ -550,7 +558,7 @@
    "gate": "[ad/es] only local photos, each with a Commons, approved community-archive, or linked press credit",
    "result": "PASS",
    "evidence": {
-    "photos": 49,
+    "photos": 61,
     "no_credit": [],
     "other_images": []
    }
@@ -586,7 +594,7 @@
    "evidence": "ok"
   },
   {
-   "gate": "[ad/es] 117 places + 50+ claim + data date",
+   "gate": "[ad/es] 117 listed + about 50 active + data date",
    "result": "PASS",
    "evidence": "ok"
   },
@@ -632,7 +640,7 @@
    "gate": "[ad/es] brand does not overlap its CTA or menu button at 390",
    "result": "PASS",
    "evidence": {
-    "brandRight": 229,
+    "brandRight": 150,
     "overlapCta": false,
     "overlapMenu": false
    }
@@ -663,7 +671,8 @@
     "community",
     "tours",
     "expats",
-    "about"
+    "about",
+    "partners"
    ]
   },
   {
@@ -673,18 +682,14 @@
     "placeholders": [
      "atm-locations",
      "contact-email",
+     "eliazar-bio-photo",
      "expat-contact",
      "facebook",
-     "meetup-dates",
-     "meetup-venues",
-     "school-list",
-     "tomek-bio-photo",
-     "tour-booking",
-     "tour-booking-details",
-     "whatsapp-invite-url"
+     "whatsapp-invite-url",
+     "whatsapp-number"
     ],
-    "h2": 7,
-    "imgs": 67,
+    "h2": 8,
+    "imgs": 84,
     "nav": [
      "#lake",
      "#bitcoin",
@@ -776,15 +781,11 @@
     "placeholders": [
      "atm-locations",
      "contact-email",
+     "eliazar-bio-photo",
      "expat-contact",
      "facebook",
-     "meetup-dates",
-     "meetup-venues",
-     "school-list",
-     "tomek-bio-photo",
-     "tour-booking",
-     "tour-booking-details",
-     "whatsapp-invite-url"
+     "whatsapp-invite-url",
+     "whatsapp-number"
     ],
     "missing": []
    }

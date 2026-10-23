@@ -15,9 +15,12 @@ os.makedirs(out, exist_ok=True)
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 slugs = [json.load(open(f, encoding="utf-8"))["slug"] for f in glob.glob(os.path.join(root, "tools", "blog", "*.json"))]
 slugs += [json.load(open(f, encoding="utf-8"))["slug"] for f in glob.glob(os.path.join(root, "tools", "topics", "*.json"))
-          if not f.endswith("merchant_counts.json")]
+          if not f.endswith(("merchant_counts.json", "video_meta.json"))]
 paths = ["faq/", "es/faq/", "blog/", "es/blog/"] + [f"blog/{s}/" for s in slugs] + [f"es/blog/{s}/" for s in slugs]
 fails = 0
+N_CLAIMS = len(json.load(open(os.path.join(root, "tools", "topics", "merchant_counts.json"), encoding="utf-8"))["claims"])
+N_TOPICS = len([f for f in glob.glob(os.path.join(root, "tools", "topics", "*.json")) if not f.endswith(("merchant_counts.json", "video_meta.json"))])
+N_FAQ = sum(len(g["items"]) for g in json.load(open(os.path.join(root, "tools", "faq.json"), encoding="utf-8"))["groups"])
 
 
 def gate(name, ok, info=""):
@@ -53,12 +56,12 @@ with sync_playwright() as p:
             gate(f"{L} no console errors", not errs, errs[:2])
             if "merchants-over-time" in path:
                 ch = pg.evaluate("[document.querySelectorAll('#chart-merchants svg a').length, document.querySelectorAll('#chart-checks li').length]")
-                gate(f"{L} merchant charts drawn (14 linked claims, 6 check bars)", ch == [14, 6], ch)
+                gate(f"{L} merchant charts drawn (all linked claims, 6 check bars)", ch == [N_CLAIMS, 6], ch)
             if path.endswith("faq/"):
                 n = pg.evaluate("document.querySelectorAll('.faq-item').length")
-                gate(f"{L} FAQ lists 28 questions", n == 28, n)
+                gate(f"{L} FAQ lists every question", n == N_FAQ, n)
             if path in ("blog/", "es/blog/"):
-                gate(f"{L} topics section lists 3 stories", pg.evaluate("document.querySelectorAll('.topic-card').length") == 3)
+                gate(f"{L} topics section lists every story", pg.evaluate("document.querySelectorAll('.topic-card').length") == N_TOPICS)
             gate(f"{L} no failed requests", not bad, bad[:2])
             gate(f"{L} images load", not info["broken"], info["broken"][:2])
             gate(f"{L} images have alt", info["noalt"] == 0)

@@ -9,6 +9,8 @@ This is Tomek's own community site for Lake Atitlán. It is an independent site 
 is never used. Bitcoin Lake is credited only as history (it started the merchant network) with a
 link to https://x.com/LakeBitcoin.
 
+The English and Spanish canonical pages (home, story, blog index, FAQ, 12 video stories and 6 topic pages) use page-specific titles, descriptions, canonical/hreflang, Open Graph, Twitter, and JSON-LD metadata from `tools/seo.py`. Matching 1200×630 JPEG share cards live in `images/og/`; their provenance and page mapping are in `images/og/manifest.json`. After changing page content or adding a story, update `tools/seo.py`, run `python tools/build_variants.py`, then `C:/Python314/python.exe tools/build_og.py` and `python qa/test_seo.py`. The site remains `noindex,nofollow` and `robots.txt` remains disallowed until Tomek explicitly says go public.
+
 ## How the site is built (plain language)
 
 | File or folder | What it is | Edit here? |

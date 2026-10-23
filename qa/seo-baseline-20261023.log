@@ -1,0 +1,388 @@
+Canonical pages under test: 38
+test_every_page (__main__.SEOTest.test_every_page) ... 
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/adopting-bitcoin-2023-talk-rudy-eliazar/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/bitcoin-economics-radio-lake-may-2023/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/blink-at-lago-summit-june-2023/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/cgtn-america-report-panajachel-2022/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/eliazar-interview-bitcoinismo-circular-economy/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/eliazar-one-love-bitcoin-kaboom-story/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/get-based-visit-cooking-oil-mining-san-juan/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/how-bitcoin-lago-started/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/kaboom-cooking-oil-generator/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/merchants-over-time/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/ordermoon-podcast-fewer-merchants-better-spenders/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/patrick-melder-interview-march-2022/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/reverend-hodl-sunday-in-panajachel-may-2023/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/ricky-explains-bitcoin-lago-oslo-interview/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='blog/soy502-bitcoin-atitlan-15-businesses-2022/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/adopting-bitcoin-2023-talk-rudy-eliazar/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/bitcoin-economics-radio-lake-may-2023/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/blink-at-lago-summit-june-2023/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/cgtn-america-report-panajachel-2022/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/eliazar-interview-bitcoinismo-circular-economy/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/eliazar-one-love-bitcoin-kaboom-story/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/get-based-visit-cooking-oil-mining-san-juan/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/how-bitcoin-lago-started/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/kaboom-cooking-oil-generator/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/merchants-over-time/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/ordermoon-podcast-fewer-merchants-better-spenders/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/patrick-melder-interview-march-2022/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/reverend-hodl-sunday-in-panajachel-may-2023/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/ricky-explains-bitcoin-lago-oslo-interview/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/soy502-bitcoin-atitlan-15-businesses-2022/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/faq/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='es/story/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='faq/index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='index.html') ... FAIL
+  test_every_page (__main__.SEOTest.test_every_page) (page='story/index.html') ... FAIL
+test_preview_gate (__main__.SEOTest.test_preview_gate) ... ok
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/adopting-bitcoin-2023-talk-rudy-eliazar/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ["Adopting Bitcoin 2023: Rudy Gallardo and Eliazar present Bitcoin Lago's numbers, schools and mining | Bitcoin Lago"]
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/bitcoin-economics-radio-lake-may-2023/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['On Bitcoin Economics radio, May 2023: 70 merchants, 8.85 BTC and the first savers | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/blink-at-lago-summit-june-2023/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Blink visits the Lago Summit 2023: Lightning cards on the tables | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/cgtn-america-report-panajachel-2022/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['CGTN America reports from Panajachel during the 2022 price slump | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/eliazar-interview-bitcoinismo-circular-economy/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ["Eliazar on how Bitcoin Lago's circular economy works: an interview by Adrián Bernabéu | Bitcoin Lago"]
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/eliazar-one-love-bitcoin-kaboom-story/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Eliazar on One Love Bitcoin: from waiter to bitcoin leader, and the story of Kaboom | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/get-based-visit-cooking-oil-mining-san-juan/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['A Canadian creator visits Bitcoin Lago: cooking oil mining, tuk tuks and weavers in San Juan | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/how-bitcoin-lago-started/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 54, in test_every_page
+    for key in required: self.assertEqual(len(p.meta.get(key, [])), 1, key)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : og:image:width
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 54, in test_every_page
+    for key in required: self.assertEqual(len(p.meta.get(key, [])), 1, key)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : og:image:width
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/kaboom-cooking-oil-generator/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 54, in test_every_page
+    for key in required: self.assertEqual(len(p.meta.get(key, [])), 1, key)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : og:image:width
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/merchants-over-time/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 50, in test_every_page
+    self.assertEqual(len(p.titles), 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: 16 != 1
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/ordermoon-podcast-fewer-merchants-better-spenders/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Fewer merchants, more spenders: Eliazar on what Bitcoin Lago learned, on the Ordermoon podcast | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/patrick-melder-interview-march-2022/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Patrick Melder explains the plan, March 2022: teach the children first | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/reverend-hodl-sunday-in-panajachel-may-2023/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['A visitor tries to spend bitcoin in Panajachel on a Sunday, May 2023 | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/ricky-explains-bitcoin-lago-oslo-interview/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 54, in test_every_page
+    for key in required: self.assertEqual(len(p.meta.get(key, [])), 1, key)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : og:image:width
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='blog/soy502-bitcoin-atitlan-15-businesses-2022/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Soy502 counts 15 businesses taking bitcoin on the Atitlán shore, April 2022 | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/adopting-bitcoin-2023-talk-rudy-eliazar/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Adopting Bitcoin 2023: Rudy Gallardo y Eliazar presentan las cifras, las escuelas y la minería de Bitcoin Lago | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/bitcoin-economics-radio-lake-may-2023/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['En la radio Bitcoin Economics, mayo de 2023: 70 comercios, 8.85 BTC y los primeros ahorradores | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/blink-at-lago-summit-june-2023/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Blink visita el Lago Summit 2023: tarjetas Lightning en las mesas | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/cgtn-america-report-panajachel-2022/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['CGTN America informa desde Panajachel durante la caída de precios de 2022 | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/eliazar-interview-bitcoinismo-circular-economy/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Eliazar explica cómo funciona la economía circular de Bitcoin Lago: entrevista de Adrián Bernabéu | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/eliazar-one-love-bitcoin-kaboom-story/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Eliazar en One Love Bitcoin: de mesero a líder bitcoin, y la historia de Kaboom | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/get-based-visit-cooking-oil-mining-san-juan/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Un creador canadiense visita Bitcoin Lago: minería con aceite de cocina, tuk tuks y tejedoras en San Juan | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/how-bitcoin-lago-started/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 54, in test_every_page
+    for key in required: self.assertEqual(len(p.meta.get(key, [])), 1, key)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : og:image:width
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 54, in test_every_page
+    for key in required: self.assertEqual(len(p.meta.get(key, [])), 1, key)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : og:image:width
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/kaboom-cooking-oil-generator/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['La historia de Kaboom: minar bitcoin con aceite de cocina usado | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/merchants-over-time/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 50, in test_every_page
+    self.assertEqual(len(p.titles), 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: 16 != 1
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/ordermoon-podcast-fewer-merchants-better-spenders/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Menos comercios, más gente que gasta: lo que aprendió Bitcoin Lago, según Eliazar en el podcast de Ordermoon | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/patrick-melder-interview-march-2022/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Patrick Melder explica el plan en marzo de 2022: primero enseñar a los niños | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/reverend-hodl-sunday-in-panajachel-may-2023/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Un visitante intenta gastar bitcoin en Panajachel un domingo de mayo de 2023 | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/ricky-explains-bitcoin-lago-oslo-interview/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 54, in test_every_page
+    for key in required: self.assertEqual(len(p.meta.get(key, [])), 1, key)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : og:image:width
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/blog/soy502-bitcoin-atitlan-15-businesses-2022/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 51, in test_every_page
+    self.assertTrue(30 <= len(p.titles[0]) <= 70, p.titles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : ['Soy502 cuenta 15 negocios que aceptan bitcoin en la orilla de Atitlán, abril de 2022 | Bitcoin Lago']
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/faq/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 54, in test_every_page
+    for key in required: self.assertEqual(len(p.meta.get(key, [])), 1, key)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : og:image:width
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 54, in test_every_page
+    for key in required: self.assertEqual(len(p.meta.get(key, [])), 1, key)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : og:image:width
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='es/story/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 54, in test_every_page
+    for key in required: self.assertEqual(len(p.meta.get(key, [])), 1, key)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : og:image:width
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='faq/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 54, in test_every_page
+    for key in required: self.assertEqual(len(p.meta.get(key, [])), 1, key)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : og:image:width
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 54, in test_every_page
+    for key in required: self.assertEqual(len(p.meta.get(key, [])), 1, key)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : og:image:width
+
+======================================================================
+FAIL: test_every_page (__main__.SEOTest.test_every_page) (page='story/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Hermes\projects\websites\bitcoin-lake-guatemala\qa\test_seo.py", line 54, in test_every_page
+    for key in required: self.assertEqual(len(p.meta.get(key, [])), 1, key)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : og:image:width
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.189s
+
+FAILED (failures=38)

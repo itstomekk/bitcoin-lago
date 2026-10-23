@@ -12,3 +12,6 @@ Thumbs.db
 qa/.cache/
 variants-run.log
 PLAN.md
+# QA screenshots stay local (too big for the repo)
+qa/screenshots/
+qa/og-contact-sheet.jpg

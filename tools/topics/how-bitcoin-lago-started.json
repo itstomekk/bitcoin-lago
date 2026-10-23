@@ -1,7 +1,7 @@
 {
  "slug": "how-bitcoin-lago-started",
  "kind": "topic",
- "date": "2026-10-22",
+ "date": "2026-10-23",
  "title_en": "How Bitcoin Lago started",
  "title_es": "Cómo empezó Bitcoin Lago",
  "dek_en": "Bitcoin Lago began in 2021 with a meetup, a waiter and a US bitcoiner, and grew by walking into shops one by one. Here is what the interviews, press and posts say, and where they disagree.",
@@ -9,17 +9,21 @@
  "body_en": [
   {
    "h": "In short",
-   "p": "Bitcoin Lago is a bitcoin circular economy project in Panajachel, on Lake Atitlán in Guatemala. Eliazar Ajquijay, who leads it on the ground, gave the start in one sentence in a message to this site in October 2026: it began in 2021, he visited businesses one by one, and around 2023 the project began taking bitcoin into schools with a certification. This page puts the early story together from interviews, press and posts. Where they disagree, we say so.",
+   "p": "Bitcoin Lago is a bitcoin circular economy project in Panajachel, on Lake Atitlán in Guatemala. Eliazar Ajquijay, who leads it on the ground, gave the start in one sentence in a message to this site in October 2026: it began in 2021, he visited businesses one by one, and around 2023 the project began taking bitcoin into schools with a certification. This page puts the early story together from interviews, press and posts. Where they disagree, we say so. Patrick Melder says he scouted Panajachel in December 2021 and launched Bitcoin Lago in January 2022.",
    "src": [
     {
      "t": "Eliazar, message to the site, October 2026",
      "u": ""
+    },
+    {
+     "t": "Patrick Melder on scouting and launch",
+     "u": "https://www.youtube.com/watch?v=9g4Vb0_IxS4&t=363s"
     }
    ]
   },
   {
    "h": "A meetup and Patrick Melder, late 2021",
-   "p": "Most tellings start with Patrick Melder, who lives in Atlanta. Patrick says his family first came to Panajachel in 2012 for an art camp and returned every year until 2016. When he began to think about how bitcoin could help a community, his mind went back to Panajachel. In the Adopting Bitcoin 2023 talk, Rudy said Patrick started the project in late 2021 or the beginning of 2022. Eliazar says it began at the end of 2021, when he went to a meetup in Panajachel and heard about money and inflation for the first time, and about bitcoin for the second. Ricky, a friend and former colleague of Patrick who lives in Montreal, says Patrick had contacts in Panajachel and wanted to launch in 2022. Ricky thought a bear market was a bad time to launch, but Patrick was determined, so he joined.",
+   "p": "Most tellings start with Patrick Melder, who lives in Atlanta. Patrick says his family first came to Panajachel in 2012 for an art camp and returned every year until 2016. When he began to think about how bitcoin could help a community, his mind went back to Panajachel. In the Adopting Bitcoin 2023 talk, Rudy said Patrick started the project in late 2021 or the beginning of 2022. Eliazar says it began at the end of 2021, when he went to a meetup in Panajachel and heard about money and inflation for the first time, and about bitcoin for the second. Ricky, a friend and former colleague of Patrick who lives in Montreal, says Patrick had contacts in Panajachel and wanted to launch in 2022. Ricky thought a bear market was a bad time to launch, but Patrick was determined, so he joined. In a later interview Patrick dates the family art camps from 2012 to 2018, while his March 2022 account gives 2012 to 2016. The dates conflict. He also recalls an earlier visit to El Zonte, but its date is uncertain.",
    "src": [
     {
      "t": "Descubriendo Bitcoin, Patrick Melder, 6:22",
@@ -48,6 +52,14 @@
     {
      "t": "Ricky, The Orange Journey, 39:50",
      "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2390s"
+    },
+    {
+     "t": "Patrick on art camps and early El Zonte visit",
+     "u": "https://www.youtube.com/watch?v=9uNYM9IXqSk&t=320s"
+    },
+    {
+     "t": "Patrick, March 2022, art camp dates",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA"
     }
    ]
   },
@@ -121,7 +133,7 @@
   },
   {
    "h": "Classes first, or merchants first?",
-   "p": "The sources disagree here. Patrick told Descubriendo Bitcoin in March 2022 that the first lesson from El Zonte was to teach children first, because adults resist new money. He said he taught a school in Panajachel by Zoom every week from Atlanta, and that after the first lesson the students all raised their hands for bitcoin over the quetzal. The same month he told El Faro the project used \"formal school training versus community training\". Ricky says the project launched with classes in a school and no businesses, and that Eliazar was not yet involved. A project post in May 2022 shows a school room turned into a Bitcoin education room. Eliazar, though, dates the start of education to 2023, and in an interview recorded in 2022 he said schools were planned for \"next year\". These may be two different things, Patrick's early classes and the school programme Eliazar runs. We have not confirmed that.",
+   "p": "The sources disagree here. Patrick told Descubriendo Bitcoin in March 2022 that the first lesson from El Zonte was to teach children first, because adults resist new money. He said he taught a school in Panajachel by Zoom every week from Atlanta, and that after the first lesson the students all raised their hands for bitcoin over the quetzal. The same month he told El Faro the project used \"formal school training versus community training\". Ricky says the project launched with classes in a school and no businesses, and that Eliazar was not yet involved. A project post in May 2022 shows a school room turned into a Bitcoin education room. Eliazar, though, dates the start of education to 2023, and in an interview recorded in 2022 he said schools were planned for \"next year\". These may be two different things, Patrick's early classes and the school programme Eliazar runs. We have not confirmed that. Patrick described a node and miner at the school run by Nancy, and said his reason was to help without creating dependence. He explained that the quetzal on the logo is Guatemala’s national bird and means this is not another gringo project.",
    "src": [
     {
      "t": "Descubriendo Bitcoin, Patrick Melder, 2:29",
@@ -154,6 +166,18 @@
     {
      "t": "One Love Bitcoin, Eliazar, 23:03",
      "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1383s"
+    },
+    {
+     "t": "Patrick on the school node and miner",
+     "u": "https://www.youtube.com/watch?v=lHTOEUS_v-Q&t=372s"
+    },
+    {
+     "t": "School miner interview",
+     "u": "https://www.youtube.com/watch?v=0q5DbvtfYFE&t=2965s"
+    },
+    {
+     "t": "Patrick on the quetzal logo",
+     "u": "https://www.youtube.com/watch?v=jN4aLgZOpDM&t=1523s"
     }
    ]
   },
@@ -287,7 +311,7 @@
   },
   {
    "h": "Where it went next",
-   "p": "The count did not hold. Eliazar says more than 100 businesses had been onboarded by 2024, but the lesson was that a circular economy needs people who spend, not only businesses that accept. He gave about 40 or 50 accepting businesses in a podcast published in January 2026 and about 50 or 60 in a Spanish interview published in May 2026. Education, which he dates to 2023 with a My First Bitcoin diploma in a first primary school, has become the main work. Ricky said in 2025 that classes for children in schools are the most important thing the project does. Eliazar's mission is to teach from children to elders, and the team hopes to open a Bitcoin center. The pages on the Ordermoon and Bitcoinismo interviews tell that part in more detail.",
+   "p": "The count did not hold. Eliazar says more than 100 businesses had been onboarded by 2024, but the lesson was that a circular economy needs people who spend, not only businesses that accept. He gave about 40 or 50 accepting businesses in a podcast published in January 2026 and about 50 or 60 in a Spanish interview published in May 2026. Education, which he dates to 2023 with a My First Bitcoin diploma in a first primary school, has become the main work. Ricky said in 2025 that classes for children in schools are the most important thing the project does. Eliazar's mission is to teach from children to elders, and the team hopes to open a Bitcoin center. The pages on the Ordermoon and Bitcoinismo interviews tell that part in more detail. Not to be confused with Bitcoin Lake, a separate project founded by Rishi Bond in San Marcos La Laguna that began in May 2021.",
    "src": [
     {
      "t": "Ordermoon podcast, 6:55",
@@ -316,6 +340,10 @@
     {
      "t": "Our page: Bitcoinismo interview",
      "u": "blog/eliazar-interview-bitcoinismo-circular-economy/"
+    },
+    {
+     "t": "Bitcoin Lake in San Marcos La Laguna, history",
+     "u": "https://www.youtube.com/watch?v=UyQNzuycdlA&t=150s"
     }
    ]
   }
@@ -323,17 +351,21 @@
  "body_es": [
   {
    "h": "En resumen",
-   "p": "Bitcoin Lago es un proyecto de economía circular de bitcoin en Panajachel, en el Lago de Atitlán, Guatemala. Eliazar Ajquijay, quien lo lidera en el terreno, resumió el comienzo en una frase en un mensaje a este sitio en octubre de 2026: empezó en 2021, él visitó los negocios uno por uno y alrededor de 2023 el proyecto empezó a llevar bitcoin a las escuelas con una certificación. Esta página junta la historia temprana a partir de entrevistas, prensa y publicaciones. Donde no coinciden, lo decimos.",
+   "p": "Bitcoin Lago es un proyecto de economía circular de bitcoin en Panajachel, en el Lago de Atitlán, Guatemala. Eliazar Ajquijay, quien lo lidera en el terreno, resumió el comienzo en una frase en un mensaje a este sitio en octubre de 2026: empezó en 2021, él visitó los negocios uno por uno y alrededor de 2023 el proyecto empezó a llevar bitcoin a las escuelas con una certificación. Esta página junta la historia temprana a partir de entrevistas, prensa y publicaciones. Donde no coinciden, lo decimos. Patrick Melder cuenta que exploró Panajachel en diciembre de 2021 y lanzó Bitcoin Lago en enero de 2022.",
    "src": [
     {
      "t": "Eliazar, mensaje al sitio, octubre de 2026",
      "u": ""
+    },
+    {
+     "t": "Patrick Melder on scouting and launch",
+     "u": "https://www.youtube.com/watch?v=9g4Vb0_IxS4&t=363s"
     }
    ]
   },
   {
    "h": "Un encuentro y Patrick Melder, finales de 2021",
-   "p": "La mayoría de los relatos empiezan con Patrick Melder, quien vive en Atlanta. Patrick cuenta que su familia vino por primera vez a Panajachel en 2012 para un campamento de arte y volvió cada año hasta 2016. Cuando empezó a pensar en cómo bitcoin podía ayudar a una comunidad, su mente regresó a Panajachel. En la charla de Adopting Bitcoin 2023, Rudy dijo que Patrick inició el proyecto a finales de 2021 o a comienzos de 2022. Eliazar dice que empezó a finales de 2021, cuando fue a un encuentro en Panajachel y escuchó por primera vez sobre el dinero y la inflación, y por segunda vez sobre bitcoin. Ricky, amigo y excolega de Patrick que vive en Montreal, dice que Patrick tenía contactos en Panajachel y quería lanzarlo en 2022. Ricky pensaba que un mercado bajista era mal momento para lanzar, pero Patrick estaba decidido y por eso se sumó.",
+   "p": "La mayoría de los relatos empiezan con Patrick Melder, quien vive en Atlanta. Patrick cuenta que su familia vino por primera vez a Panajachel en 2012 para un campamento de arte y volvió cada año hasta 2016. Cuando empezó a pensar en cómo bitcoin podía ayudar a una comunidad, su mente regresó a Panajachel. En la charla de Adopting Bitcoin 2023, Rudy dijo que Patrick inició el proyecto a finales de 2021 o a comienzos de 2022. Eliazar dice que empezó a finales de 2021, cuando fue a un encuentro en Panajachel y escuchó por primera vez sobre el dinero y la inflación, y por segunda vez sobre bitcoin. Ricky, amigo y excolega de Patrick que vive en Montreal, dice que Patrick tenía contactos en Panajachel y quería lanzarlo en 2022. Ricky pensaba que un mercado bajista era mal momento para lanzar, pero Patrick estaba decidido y por eso se sumó. En una entrevista posterior Patrick ubica los campamentos de arte familiares entre 2012 y 2018, mientras que en su relato de marzo de 2022 dice de 2012 a 2016. Las fechas no coinciden. También recuerda una visita anterior a El Zonte, pero no se sabe cuándo fue.",
    "src": [
     {
      "t": "Descubriendo Bitcoin, Patrick Melder, 6:22",
@@ -362,6 +394,14 @@
     {
      "t": "Ricky, The Orange Journey, 39:50",
      "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2390s"
+    },
+    {
+     "t": "Patrick on art camps and early El Zonte visit",
+     "u": "https://www.youtube.com/watch?v=9uNYM9IXqSk&t=320s"
+    },
+    {
+     "t": "Patrick, March 2022, art camp dates",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA"
     }
    ]
   },
@@ -435,7 +475,7 @@
   },
   {
    "h": "¿Primero las clases o primero los comercios?",
-   "p": "Aquí las fuentes no coinciden. Patrick dijo a Descubriendo Bitcoin en marzo de 2022 que la primera lección de El Zonte fue enseñar primero a los niños, porque los adultos se resisten al dinero nuevo. Contó que daba clase a una escuela de Panajachel por Zoom cada semana desde Atlanta, y que tras la primera lección todos los estudiantes levantaron la mano por bitcoin y no por el quetzal. Ese mismo mes dijo a El Faro que el proyecto usaba \"formación escolar formal frente a formación comunitaria\". Ricky dice que el proyecto arrancó con clases en una escuela y sin negocios, y que Eliazar aún no participaba. Una publicación del proyecto de mayo de 2022 muestra un salón de la escuela convertido en salón de educación de Bitcoin. Eliazar, en cambio, ubica el inicio de la educación en 2023, y en una entrevista grabada en 2022 dijo que las escuelas estaban planeadas para \"el próximo año\". Pueden ser dos cosas distintas: las clases tempranas de Patrick y el programa escolar que dirige Eliazar. No lo hemos confirmado.",
+   "p": "Aquí las fuentes no coinciden. Patrick dijo a Descubriendo Bitcoin en marzo de 2022 que la primera lección de El Zonte fue enseñar primero a los niños, porque los adultos se resisten al dinero nuevo. Contó que daba clase a una escuela de Panajachel por Zoom cada semana desde Atlanta, y que tras la primera lección todos los estudiantes levantaron la mano por bitcoin y no por el quetzal. Ese mismo mes dijo a El Faro que el proyecto usaba \"formación escolar formal frente a formación comunitaria\". Ricky dice que el proyecto arrancó con clases en una escuela y sin negocios, y que Eliazar aún no participaba. Una publicación del proyecto de mayo de 2022 muestra un salón de la escuela convertido en salón de educación de Bitcoin. Eliazar, en cambio, ubica el inicio de la educación en 2023, y en una entrevista grabada en 2022 dijo que las escuelas estaban planeadas para \"el próximo año\". Pueden ser dos cosas distintas: las clases tempranas de Patrick y el programa escolar que dirige Eliazar. No lo hemos confirmado. Patrick describió un nodo y un minero en la escuela dirigida por Nancy, y dijo que su motivo era ayudar sin crear dependencia. Explicó que el quetzal del logo es el ave nacional de Guatemala y expresa que no es otro proyecto de gringos.",
    "src": [
     {
      "t": "Descubriendo Bitcoin, Patrick Melder, 2:29",
@@ -468,6 +508,18 @@
     {
      "t": "One Love Bitcoin, Eliazar, 23:03",
      "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1383s"
+    },
+    {
+     "t": "Patrick on the school node and miner",
+     "u": "https://www.youtube.com/watch?v=lHTOEUS_v-Q&t=372s"
+    },
+    {
+     "t": "School miner interview",
+     "u": "https://www.youtube.com/watch?v=0q5DbvtfYFE&t=2965s"
+    },
+    {
+     "t": "Patrick on the quetzal logo",
+     "u": "https://www.youtube.com/watch?v=jN4aLgZOpDM&t=1523s"
     }
    ]
   },
@@ -601,7 +653,7 @@
   },
   {
    "h": "Hacia dónde siguió",
-   "p": "El número no se sostuvo. Eliazar dice que en 2024 ya había incorporado a más de 100 negocios, pero la lección fue que una economía circular necesita personas que gasten, no solo negocios que acepten. Dio unos 40 o 50 negocios que aceptan en un pódcast publicado en enero de 2026 y unos 50 o 60 en una entrevista en español publicada en mayo de 2026. La educación, que él ubica en 2023 con un diploma de Mi Primer Bitcoin en una primera escuela primaria, se ha vuelto el trabajo principal. Ricky dijo en 2025 que las clases para niños en las escuelas son lo más importante que hace el proyecto. La misión de Eliazar es enseñar desde los niños hasta los ancianos, y el equipo espera abrir un centro de Bitcoin. Las páginas sobre las entrevistas de Ordermoon y Bitcoinismo cuentan esa parte con más detalle.",
+   "p": "El número no se sostuvo. Eliazar dice que en 2024 ya había incorporado a más de 100 negocios, pero la lección fue que una economía circular necesita personas que gasten, no solo negocios que acepten. Dio unos 40 o 50 negocios que aceptan en un pódcast publicado en enero de 2026 y unos 50 o 60 en una entrevista en español publicada en mayo de 2026. La educación, que él ubica en 2023 con un diploma de Mi Primer Bitcoin en una primera escuela primaria, se ha vuelto el trabajo principal. Ricky dijo en 2025 que las clases para niños en las escuelas son lo más importante que hace el proyecto. La misión de Eliazar es enseñar desde los niños hasta los ancianos, y el equipo espera abrir un centro de Bitcoin. Las páginas sobre las entrevistas de Ordermoon y Bitcoinismo cuentan esa parte con más detalle. No debe confundirse con Bitcoin Lake, un proyecto separado fundado por Rishi Bond en San Marcos La Laguna que comenzó en mayo de 2021.",
    "src": [
     {
      "t": "Podcast Ordermoon, 6:55",
@@ -630,6 +682,10 @@
     {
      "t": "Nuestra página: entrevista de Bitcoinismo",
      "u": "blog/eliazar-interview-bitcoinismo-circular-economy/"
+    },
+    {
+     "t": "Bitcoin Lake in San Marcos La Laguna, history",
+     "u": "https://www.youtube.com/watch?v=UyQNzuycdlA&t=150s"
     }
    ]
   }

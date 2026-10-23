@@ -1,7 +1,7 @@
 {
  "slug": "kaboom-cooking-oil-generator",
  "kind": "topic",
- "date": "2026-10-22",
+ "date": "2026-10-23",
  "title_en": "The Kaboom story: mining bitcoin with used cooking oil",
  "title_es": "La historia de Kaboom: minar bitcoin con aceite de cocina usado",
  "dek_en": "In 2022 the Bitcoin Lago team at Lake Atitlán ran an old diesel generator on used restaurant oil to power bitcoin miners. Here is how it started, what the sources say it earned, and what we still cannot confirm.",
@@ -49,7 +49,7 @@
   },
   {
    "h": "Bill's idea and an old generator",
-   "p": "Eliazar credits his mining partner, Bill Whittaker, with the idea. Around June or July, most likely 2022, Bill pointed out that a diesel engine can run on vegetable oil. They went looking for a generator in what Eliazar's captions call \"chimal tenango\", probably Chimaltenango, a town known for vehicle parts. They walked all day and found a plain generator on the ground in something like a junkyard. Eliazar says it was 50 to 60 years old, but it worked on diesel. Bill bought it. They had no truck that day, so they came back for it.",
+   "p": "Eliazar credits his mining partner, Bill Whittaker, with the idea. Around June or July, most likely 2022, Bill pointed out that a diesel engine can run on vegetable oil. They went looking for a generator in what Eliazar's captions call \"chimal tenango\", probably Chimaltenango, a town known for vehicle parts. They walked all day and found a plain generator on the ground in something like a junkyard. Eliazar says it was 50 to 60 years old, but it worked on diesel. Bill bought it. They had no truck that day, so they came back for it. Patrick Melder later gave a different estimate: 30 to 40 years old in one interview, and 50 to 60 years in another. He also described adapting a centrifuge, while Eliazar says they filtered the oil through jeans. These are differing recollections, not a settled specification.",
    "src": [
     {
      "t": "One Love Bitcoin, 27:57",
@@ -66,6 +66,14 @@
     {
      "t": "One Love Bitcoin, 30:13",
      "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1813s"
+    },
+    {
+     "t": "Patrick Melder on Kaboom origin and generator",
+     "u": "https://www.youtube.com/watch?v=w5a9tnv64vg&t=623s"
+    },
+    {
+     "t": "Patrick Melder on engine and centrifuge",
+     "u": "https://www.youtube.com/watch?v=3jCqoyrh0rw&t=1272s"
     }
    ]
   },
@@ -89,7 +97,7 @@
   },
   {
    "h": "A loud engine and a name",
-   "p": "Nobody wanted a loud engine nearby. Eliazar says Bill and a friend found a small parking place that worked as a mechanic's space near the river and rented it. When Bill saw it, he said Kaboom, and the name stuck. A video the team posted went viral on the Lago Bitcoin account on X. The host says three machines were running. Eliazar also says they first turned the engine on \"right there in the school\", so the order of events is not fully clear.",
+   "p": "Nobody wanted a loud engine nearby. Eliazar says Bill and a friend found a small parking place that worked as a mechanic's space near the river and rented it. When Bill saw it, he said Kaboom, and the name stuck. A video the team posted went viral on the Lago Bitcoin account on X. The host says three machines were running. Eliazar also says they first turned the engine on \"right there in the school\", so the order of events is not fully clear. A May 2023 video shows the engine running at a rented site and powering two miners on camera. CoinDesk also covered the project in September 2022. CGTN offered an outside view and noted that burning used oil still produces emissions.",
    "src": [
     {
      "t": "One Love Bitcoin, 34:07",
@@ -102,6 +110,22 @@
     {
      "t": "One Love Bitcoin, 32:16",
      "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1936s"
+    },
+    {
+     "t": "Reverend Hodl, running engine and two miners, May 2023",
+     "u": "https://www.youtube.com/watch?v=emmVoMP0HZQ&t=1055s"
+    },
+    {
+     "t": "CoinDesk, September 2022",
+     "u": "https://www.youtube.com/watch?v=2-MA7VYFQRo&t=217s"
+    },
+    {
+     "t": "CGTN outside report",
+     "u": "https://www.youtube.com/watch?v=ah4dzorhc-0&t=535s"
+    },
+    {
+     "t": "Reverend Hodl, rented site, May 2023",
+     "u": "https://www.youtube.com/watch?v=emmVoMP0HZQ&t=922s"
     }
    ]
   },
@@ -159,7 +183,7 @@
   },
   {
    "h": "Does it still run?",
-   "p": "In May 2023 the English speaker, Patrick by our notes, said: \"Now we can't run it efficiently because of economies of scale.\" That means one small engine does not pay off well. The Spanish part of the answer says the project is still there, as a proof of concept and a stop for bitcoin tourists. In February 2024 Eliazar posted that they had more oil to run Kaboom and that he was fixing its engine. In October 2024 he posted \"Plastic to Diesel\" with Kaboom, and Bill wrote that Kaboom ran on diesel made from waste plastic. We found no 2025 or 2026 interview that mentions Kaboom. A January 2026 repost mentions Kaboom mining at the lake, but it is someone else's cut-off post, so we do not say it runs today.",
+   "p": "A May 2023 video shows Kaboom running and powering two miners. In January 2025, the engine would not start on camera, although two miners were connected. In June 2025 Eliazar said it was not working and that the team was now working on making diesel from plastic. So, as of Eliazar’s June 2025 update, Kaboom was not running. The earlier 2022 biogas plans for the wastewater plant were separate; see the project’s 2022 waste-to-energy plan.",
    "src": [
     {
      "t": "Bitcoin Eco. podcast, 30:57",
@@ -188,12 +212,24 @@
     {
      "t": "Repost on X, Jan 2026",
      "u": "https://x.com/i/status/2017639472758681732"
+    },
+    {
+     "t": "Reverend Hodl, engine running, May 2023",
+     "u": "https://www.youtube.com/watch?v=emmVoMP0HZQ&t=1020s"
+    },
+    {
+     "t": "Eliazar, engine did not start, January 2025",
+     "u": "https://www.youtube.com/watch?v=f8wEfqodLxE&t=345s"
+    },
+    {
+     "t": "Eliazar, Kaboom not working, June 2025",
+     "u": "https://www.youtube.com/watch?v=f2Q1_bRi_Sc&t=344s"
     }
    ]
   },
   {
    "h": "Not the town hall miner, not the biogas plan",
-   "p": "Two other mining stories sit close to Kaboom. On March 25, 2022, the Panajachel mayor accepted a first donated miner, and a July 2022 post says the town hall S9 had been hashing since that day. In March 2022 Patrick described a plan to fix the cracked biodigester at the town's wastewater plant and burn its methane to run miners, which Cointelegraph covered in April 2022 as a biogas plan. Both are different from Kaboom, which burns used cooking oil in a generator.",
+   "p": "Two other mining stories sit close to Kaboom. On March 25, 2022, the Panajachel mayor accepted a first donated miner, and a July 2022 post says the town hall S9 had been hashing since that day. In March 2022 Patrick described a plan to fix the cracked biodigester at the town's wastewater plant and burn its methane to run miners, which Cointelegraph covered in April 2022 as a biogas plan. Both are different from Kaboom, which burns used cooking oil in a generator. For the separate 2022 proposal, see the waste-to-energy plan.",
    "src": [
     {
      "t": "Mayor accepts miner, 25 Mar 2022",
@@ -210,6 +246,10 @@
     {
      "t": "Cointelegraph, Apr 2022",
      "u": "https://cointelegraph.com/news/why-is-a-guatemalan-mayor-mining-bitcoin-tackling-fud-with-biogas-and-btc"
+    },
+    {
+     "t": "2022 waste-to-energy plan",
+     "u": "blog/waste-to-energy-plan-2022/"
     }
    ]
   }
@@ -257,7 +297,7 @@
   },
   {
    "h": "La idea de Bill y un generador viejo",
-   "p": "Eliazar da el crédito de la idea a su socio de minería, Bill Whittaker. Hacia junio o julio, probablemente de 2022, Bill señaló que un motor diésel puede funcionar con aceite vegetal. Buscaron un generador en lo que los subtítulos llaman \"chimal tenango\", probablemente Chimaltenango, un pueblo conocido por los repuestos de vehículos. Caminaron todo el día y encontraron un generador sencillo en el suelo, en algo parecido a un deshuesadero. Eliazar dice que tenía de 50 a 60 años, pero funcionaba con diésel. Bill lo compró. Ese día no tenían camión, así que regresaron por él.",
+   "p": "Eliazar da el crédito de la idea a su socio de minería, Bill Whittaker. Hacia junio o julio, probablemente de 2022, Bill señaló que un motor diésel puede funcionar con aceite vegetal. Buscaron un generador en lo que los subtítulos llaman \"chimal tenango\", probablemente Chimaltenango, un pueblo conocido por los repuestos de vehículos. Caminaron todo el día y encontraron un generador sencillo en el suelo, en algo parecido a un deshuesadero. Eliazar dice que tenía de 50 a 60 años, pero funcionaba con diésel. Bill lo compró. Ese día no tenían camión, así que regresaron por él. Patrick Melder dio después otra estimación: de 30 a 40 años en una entrevista y de 50 a 60 en otra. También describió adaptar una centrífuga, mientras que Eliazar cuenta que filtraron el aceite con jeans. Son recuerdos distintos, no una especificación confirmada.",
    "src": [
     {
      "t": "One Love Bitcoin, 27:57",
@@ -274,6 +314,14 @@
     {
      "t": "One Love Bitcoin, 30:13",
      "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1813s"
+    },
+    {
+     "t": "Patrick Melder on Kaboom origin and generator",
+     "u": "https://www.youtube.com/watch?v=w5a9tnv64vg&t=623s"
+    },
+    {
+     "t": "Patrick Melder on engine and centrifuge",
+     "u": "https://www.youtube.com/watch?v=3jCqoyrh0rw&t=1272s"
     }
    ]
   },
@@ -297,7 +345,7 @@
   },
   {
    "h": "Un motor ruidoso y un nombre",
-   "p": "Nadie quería un motor ruidoso cerca. Eliazar cuenta que Bill y un amigo encontraron un pequeño estacionamiento que funcionaba como taller mecánico cerca del río y lo alquilaron. Cuando Bill lo vio, dijo Kaboom, y el nombre se quedó. Un video que el equipo publicó se hizo viral en la cuenta de Lago Bitcoin en X. El presentador dice que había tres máquinas funcionando. Eliazar también dice que encendieron el motor por primera vez \"ahí mismo en la escuela\", así que el orden de los hechos no queda del todo claro.",
+   "p": "Nadie quería un motor ruidoso cerca. Eliazar cuenta que Bill y un amigo encontraron un pequeño estacionamiento que funcionaba como taller mecánico cerca del río y lo alquilaron. Cuando Bill lo vio, dijo Kaboom, y el nombre se quedó. Un video que el equipo publicó se hizo viral en la cuenta de Lago Bitcoin en X. El presentador dice que había tres máquinas funcionando. Eliazar también dice que encendieron el motor por primera vez \"ahí mismo en la escuela\", así que el orden de los hechos no queda del todo claro. Un video de mayo de 2023 muestra el motor encendido en un sitio alquilado y alimentando dos mineros ante la cámara. CoinDesk también cubrió el proyecto en septiembre de 2022. CGTN ofreció una mirada externa y señaló que quemar aceite usado también produce emisiones.",
    "src": [
     {
      "t": "One Love Bitcoin, 34:07",
@@ -310,6 +358,22 @@
     {
      "t": "One Love Bitcoin, 32:16",
      "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1936s"
+    },
+    {
+     "t": "Reverend Hodl, running engine and two miners, May 2023",
+     "u": "https://www.youtube.com/watch?v=emmVoMP0HZQ&t=1055s"
+    },
+    {
+     "t": "CoinDesk, September 2022",
+     "u": "https://www.youtube.com/watch?v=2-MA7VYFQRo&t=217s"
+    },
+    {
+     "t": "CGTN outside report",
+     "u": "https://www.youtube.com/watch?v=ah4dzorhc-0&t=535s"
+    },
+    {
+     "t": "Reverend Hodl, rented site, May 2023",
+     "u": "https://www.youtube.com/watch?v=emmVoMP0HZQ&t=922s"
     }
    ]
   },
@@ -367,7 +431,7 @@
   },
   {
    "h": "¿Sigue funcionando?",
-   "p": "En mayo de 2023 quien hablaba en inglés, Patrick según nuestras notas, dijo: \"Ahora no podemos hacerlo funcionar de forma eficiente por las economías de escala\". Es decir, un solo motor pequeño no es rentable. La parte en español de la respuesta dice que el proyecto sigue ahí, como prueba de concepto y parada para los turistas bitcoiners. En febrero de 2024 Eliazar publicó que tenían más aceite para seguir con Kaboom y que estaba arreglando su motor. En octubre de 2024 publicó \"Plastic to Diesel\" con Kaboom, y Bill escribió que Kaboom funcionaba con diésel hecho de plástico de desecho. No encontramos ninguna entrevista de 2025 o 2026 que mencione Kaboom. Una republicación de enero de 2026 menciona a Kaboom minando en el lago, pero es una publicación ajena y cortada, así que no afirmamos que funcione hoy.",
+   "p": "Un video de mayo de 2023 muestra Kaboom en marcha y alimentando dos mineros. En enero de 2025, el motor no arrancó ante la cámara, aunque había dos mineros conectados. En junio de 2025 Eliazar dijo que no funcionaba y que ahora trabajaban en producir diésel a partir de plástico. Así que, según la actualización de Eliazar de junio de 2025, Kaboom no estaba funcionando. Los planes de biogás de 2022 para la planta de aguas residuales eran distintos; consulta el plan de conversión de residuos en energía de 2022.",
    "src": [
     {
      "t": "Podcast Bitcoin Economics, 30:57",
@@ -396,12 +460,24 @@
     {
      "t": "Republicación en X, ene. 2026",
      "u": "https://x.com/i/status/2017639472758681732"
+    },
+    {
+     "t": "Reverend Hodl, engine running, May 2023",
+     "u": "https://www.youtube.com/watch?v=emmVoMP0HZQ&t=1020s"
+    },
+    {
+     "t": "Eliazar, engine did not start, January 2025",
+     "u": "https://www.youtube.com/watch?v=f8wEfqodLxE&t=345s"
+    },
+    {
+     "t": "Eliazar, Kaboom not working, June 2025",
+     "u": "https://www.youtube.com/watch?v=f2Q1_bRi_Sc&t=344s"
     }
    ]
   },
   {
    "h": "No es el minero de la alcaldía ni el plan de biogás",
-   "p": "Cerca de Kaboom hay otras dos historias de minería. El 25 de marzo de 2022 el alcalde de Panajachel recibió un primer minero donado, y una publicación de julio de 2022 dice que el S9 de la alcaldía trabajaba desde ese día. En marzo de 2022 Patrick describió un plan para reparar el biodigestor agrietado de la planta de aguas residuales del pueblo y quemar su metano para alimentar mineros, que Cointelegraph cubrió en abril de 2022 como un plan de biogás. Ambos son distintos de Kaboom, que quema aceite de cocina usado en un generador.",
+   "p": "Cerca de Kaboom hay otras dos historias de minería. El 25 de marzo de 2022 el alcalde de Panajachel recibió un primer minero donado, y una publicación de julio de 2022 dice que el S9 de la alcaldía trabajaba desde ese día. En marzo de 2022 Patrick describió un plan para reparar el biodigestor agrietado de la planta de aguas residuales del pueblo y quemar su metano para alimentar mineros, que Cointelegraph cubrió en abril de 2022 como un plan de biogás. Ambos son distintos de Kaboom, que quema aceite de cocina usado en un generador. Para la propuesta separada de 2022, consulta el plan de conversión de residuos en energía.",
    "src": [
     {
      "t": "El alcalde recibe un minero, 25 mar. 2022",
@@ -418,6 +494,10 @@
     {
      "t": "Cointelegraph, abr. 2022",
      "u": "https://cointelegraph.com/news/why-is-a-guatemalan-mayor-mining-bitcoin-tackling-fud-with-biogas-and-btc"
+    },
+    {
+     "t": "2022 waste-to-energy plan",
+     "u": "blog/waste-to-energy-plan-2022/"
     }
    ]
   }
@@ -464,7 +544,6 @@
   "MjDnc7ZzQwA"
  ],
  "open_questions": [
-  "Does Kaboom run today? If yes, where, with which machines, and what does it earn now compared with the 230 dollars a month the Get Based film gave in late 2022? If not, when did it stop and why?",
   "You told One Love Bitcoin that the first S9 miner ran at the school from March, while our X sources say a donated S9 was hashing at the Panajachel town hall from March 25, 2022. Were these two different miners, and what happened to each?",
   "Where was Kaboom located? You said you first turned the engine on at the school and also that you rented a small mechanic and parking space by the river. Were these two places, and is the rented space still in use?",
   "Who should we credit for building it? You credit Bill Whittaker with the idea, Bitcoin Magazine quotes Patrick Melder on the goal, and the Get Based film calls you the person who maintains it. How would you describe each role?",
@@ -472,6 +551,7 @@
   "Which machines ran at Kaboom? A November 2022 post mentions S9 and S17 miners, and the host of One Love Bitcoin said three machines. Did the number or the models change over time?",
   "What did your September 2022 post 'another block with use cooking oil' mean? Did Kaboom find a whole block, or did it share in a pool's block?",
   "Your October 2024 post says 'Plastic to Diesel' with Kaboom and Bill wrote that it ran on diesel made from waste plastic. Did Kaboom switch from cooking oil to that diesel, or was it a one-time test?",
-  "Where did the 50 to 60 year old generator come from (Chimaltenango?), how much did it cost, and how much oil does it burn in a day?"
+  "Where did the 50 to 60 year old generator come from (Chimaltenango?), how much did it cost, and how much oil does it burn in a day?",
+  "Can the project confirm whether Kaboom has run again since Eliazar said in June 2025 that it was not working, and whether the diesel-from-plastic work became a separate working system?"
  ]
 }

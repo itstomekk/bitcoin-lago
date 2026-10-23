@@ -11,7 +11,12 @@
    "what_en": "about seven businesses right now",
    "what_es": "unos siete negocios por ahora",
    "url": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=1782s",
-   "src": "video 29:42"
+   "src": "video 29:42",
+   "lab": [
+    -12,
+    6,
+    "end"
+   ]
   },
   {
    "date": "2022-04-12",
@@ -23,7 +28,29 @@
    "what_en": "15 businesses accept it",
    "what_es": "15 negocios lo aceptan",
    "url": "https://www.youtube.com/watch?v=63kbzc9GfaQ&t=18s",
-   "src": "video 0:18"
+   "src": "video 0:18",
+   "lab": [
+    12,
+    6,
+    "start"
+   ]
+  },
+  {
+   "date": "2022-07-05",
+   "lo": 50,
+   "hi": 50,
+   "team": true,
+   "who_en": "Patrick Melder on Connect The World",
+   "who_es": "Patrick Melder en Connect The World",
+   "what_en": "about 50 merchants since January, another 50 about to join",
+   "what_es": "unos 50 comercios desde enero, otros 50 por sumarse",
+   "url": "https://www.youtube.com/watch?v=jN4aLgZOpDM&t=1464s",
+   "src": "video 24:24",
+   "lab": [
+    -12,
+    6,
+    "end"
+   ]
   },
   {
    "date": "2022-09-22",
@@ -36,7 +63,29 @@
    "what_en": "more than 60 places around the lake",
    "what_es": "más de 60 lugares alrededor del lago",
    "url": "https://x.com/i/status/1573086119662653440",
-   "src": "X post"
+   "src": "X post",
+   "lab": [
+    -12,
+    6,
+    "end"
+   ]
+  },
+  {
+   "date": "2022-09-28",
+   "lo": 70,
+   "hi": 70,
+   "team": true,
+   "who_en": "Patrick Melder on CoinDesk",
+   "who_es": "Patrick Melder en CoinDesk",
+   "what_en": "about 70 businesses around the lake",
+   "what_es": "unos 70 negocios alrededor del lago",
+   "url": "https://www.youtube.com/watch?v=2-MA7VYFQRo&t=248s",
+   "src": "video 4:08",
+   "lab": [
+    -6,
+    -13,
+    "end"
+   ]
   },
   {
    "date": "2022-10-24",
@@ -49,7 +98,29 @@
    "what_en": "more than 70 businesses in Panajachel",
    "what_es": "más de 70 comercios en Panajachel",
    "url": "https://x.com/i/status/1584365506580004865",
-   "src": "X post"
+   "src": "X post",
+   "lab": [
+    8,
+    -13,
+    "start"
+   ]
+  },
+  {
+   "date": "2022-11-16",
+   "lo": 100,
+   "hi": 100,
+   "team": true,
+   "who_en": "Patrick Melder at Adopting Bitcoin 2022",
+   "who_es": "Patrick Melder en Adopting Bitcoin 2022",
+   "what_en": "200 businesses in Guatemala, pushing about 100 at the lake",
+   "what_es": "200 negocios en Guatemala, casi 100 en el lago",
+   "url": "https://www.youtube.com/watch?v=AUqJig7EHlI&t=236s",
+   "src": "video 3:56",
+   "lab": [
+    0,
+    -14,
+    "middle"
+   ]
   },
   {
    "date": "2022-12-22",
@@ -62,7 +133,12 @@
    "what_en": "at least 40 bitcoin friendly businesses",
    "what_es": "al menos 40 negocios amigables con bitcoin",
    "url": "https://x.com/i/status/1606064474292568064",
-   "src": "X post"
+   "src": "X post",
+   "lab": [
+    0,
+    26,
+    "middle"
+   ]
   },
   {
    "date": "2023-03-13",
@@ -74,7 +150,12 @@
    "what_en": "around 80 businesses in Panajachel in 10 months",
    "what_es": "unos 80 negocios en Panajachel en 10 meses",
    "url": "https://www.youtube.com/watch?v=vYdp8yS1exU&t=321s",
-   "src": "video 5:21"
+   "src": "video 5:21",
+   "lab": [
+    0,
+    -14,
+    "middle"
+   ]
   },
   {
    "date": "2023-05-11",
@@ -87,7 +168,46 @@
    "what_en": "about 70, some 10 percent of the businesses in Panajachel",
    "what_es": "unos 70, cerca del 10 por ciento de los negocios de Panajachel",
    "url": "https://www.youtube.com/watch?v=0NjEr4251uM&t=2153s",
-   "src": "video 35:53"
+   "src": "video 35:53",
+   "lab": [
+    -6,
+    27,
+    "end"
+   ]
+  },
+  {
+   "date": "2023-05-19",
+   "lo": 70,
+   "hi": 70,
+   "team": false,
+   "who_en": "Tekoa Spaces, a visitor's video",
+   "who_es": "Tekoa Spaces, video de un visitante",
+   "what_en": "one of 70 different businesses",
+   "what_es": "uno de 70 negocios distintos",
+   "url": "https://www.youtube.com/watch?v=1I33HUv3IIo&t=500s",
+   "src": "video 8:20",
+   "lab": [
+    6,
+    27,
+    "start"
+   ]
+  },
+  {
+   "date": "2023-05-24",
+   "lo": 80,
+   "hi": 80,
+   "team": true,
+   "who_en": "Eliazar on Reverend Hodl",
+   "who_es": "Eliazar en Reverend Hodl",
+   "what_en": "in one year we had around 80 businesses",
+   "what_es": "en un año llegamos a unos 80 negocios",
+   "url": "https://www.youtube.com/watch?v=emmVoMP0HZQ&t=672s",
+   "src": "video 11:12",
+   "lab": [
+    0,
+    -14,
+    "middle"
+   ]
   },
   {
    "date": "2023-11-16",
@@ -100,7 +220,12 @@
    "what_en": "around 80 in Panajachel, over 100 around the lake",
    "what_es": "unos 80 en Panajachel, más de 100 alrededor del lago",
    "url": "https://www.youtube.com/watch?v=79cIKf_T3N0&t=95s",
-   "src": "video 1:35"
+   "src": "video 1:35",
+   "lab": [
+    0,
+    -14,
+    "middle"
+   ]
   },
   {
    "date": "2024-02-22",
@@ -112,7 +237,12 @@
    "what_en": "90 locations",
    "what_es": "90 lugares",
    "url": "https://x.com/i/status/1760715081325633720",
-   "src": "X post"
+   "src": "X post",
+   "lab": [
+    0,
+    26,
+    "middle"
+   ]
   },
   {
    "date": "2024-07-01",
@@ -126,7 +256,29 @@
    "what_en": "more than 100 businesses at the peak, in 2024",
    "what_es": "más de 100 negocios en el punto más alto, en 2024",
    "url": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=415s",
-   "src": "video 6:55"
+   "src": "video 6:55",
+   "lab": [
+    0,
+    -14,
+    "middle"
+   ]
+  },
+  {
+   "date": "2025-01-05",
+   "lo": 85,
+   "hi": 85,
+   "team": true,
+   "who_en": "Eliazar to Paco De La India",
+   "who_es": "Eliazar con Paco De La India",
+   "what_en": "around 85 businesses accepting bitcoin",
+   "what_es": "unos 85 negocios que aceptan bitcoin",
+   "url": "https://www.youtube.com/watch?v=f8wEfqodLxE&t=155s",
+   "src": "video 2:35",
+   "lab": [
+    0,
+    -14,
+    "middle"
+   ]
   },
   {
    "date": "2025-02-08",
@@ -139,7 +291,12 @@
    "what_en": "over 80 businesses onboarded",
    "what_es": "más de 80 negocios incorporados",
    "url": "https://x.com/i/status/1888016403690926443",
-   "src": "X post"
+   "src": "X post",
+   "lab": [
+    0,
+    26,
+    "middle"
+   ]
   },
   {
    "date": "2025-06-25",
@@ -152,7 +309,12 @@
    "what_en": "over 40 businesses",
    "what_es": "más de 40 negocios",
    "url": "https://x.com/i/status/1937860040074879405",
-   "src": "X post"
+   "src": "X post",
+   "lab": [
+    0,
+    26,
+    "middle"
+   ]
   },
   {
    "date": "2026-01-27",
@@ -164,7 +326,12 @@
    "what_en": "around 40 or 50 businesses accept bitcoin now",
    "what_es": "unos 40 o 50 negocios aceptan bitcoin ahora",
    "url": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=461s",
-   "src": "video 7:41"
+   "src": "video 7:41",
+   "lab": [
+    -12,
+    6,
+    "end"
+   ]
   },
   {
    "date": "2026-05-12",
@@ -176,7 +343,12 @@
    "what_en": "more than 100 at one point, now about 50 or 60",
    "what_es": "más de 100 en un momento, ahora unos 50 o 60",
    "url": "https://www.youtube.com/watch?v=iU7EruLMre0&t=163s",
-   "src": "video 2:43"
+   "src": "video 2:43",
+   "lab": [
+    12,
+    6,
+    "start"
+   ]
   }
  ],
  "btcmap": {

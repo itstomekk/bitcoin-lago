@@ -49,9 +49,9 @@
     {
      "id": "pay-ask-first",
      "q_en": "Does every place on the map really take bitcoin?",
-     "a_en": "No. 117 places are listed on BTC Map, but about 50 are active today, according to Eliazar in 2026. Listings can be out of date, so ask before you order. In 2023 one visitor found only one of three places took bitcoin, and a nice place on the lake no longer did.",
+     "a_en": "No. In February 2025 one creator said only about 25% of places they tried could actually process a payment. A 2023 visitor found one of three places worked. Ask before ordering; see the day-paying guide.",
      "q_es": "¿Todos los lugares del mapa aceptan bitcoin de verdad?",
-     "a_es": "No. En BTC Map hay 117 lugares, pero hoy están activos unos 50, según Eliazar en 2026. Los registros pueden estar desactualizados, así que pregunta antes de pedir. En 2023 un visitante encontró que solo uno de tres lugares aceptaba bitcoin, y un lugar bonito a la orilla del lago ya no lo aceptaba.",
+     "a_es": "No. En febrero de 2025, un creador dijo que solo alrededor del 25% de los lugares que probó pudo procesar un pago. En 2023, otro visitante encontró que funcionaba uno de tres lugares. Pregunta antes de pedir; consulta la guía de un día pagando con bitcoin.",
      "src": [
       {
        "t": "Why the count changed, 2022 to 2026",
@@ -68,6 +68,14 @@
       {
        "t": "Reverend Hodl video, 2:39",
        "u": "https://www.youtube.com/watch?v=AkaHBhfKQhk&t=159s"
+      },
+      {
+       "t": "The Orange Future, Feb 2025, 7:03",
+       "u": "https://www.youtube.com/watch?v=yIo6ST8RORU&t=423s"
+      },
+      {
+       "t": "A day paying with bitcoin",
+       "u": "blog/a-day-paying-with-bitcoin/"
       }
      ],
      "confirm": false
@@ -94,6 +102,24 @@
       {
        "t": "BTC Map, Bitcoin Lago community",
        "u": "https://btcmap.org/community/lago-bitcoin/merchants"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "visitor-payment-route",
+     "q_en": "Is there a route of places that worked for other visitors?",
+     "a_en": "Visitors in 2023 and 2025 named Coffee Art, 80’s Cafe, Chinajul, Amaranto and Delhi 6. These are reported experiences, not a current guarantee. Ask before ordering.",
+     "q_es": "¿Hay una ruta de lugares donde otros visitantes pudieron pagar?",
+     "a_es": "Visitantes de 2023 y 2025 mencionaron Coffee Art, 80’s Cafe, Chinajul, Amaranto y Delhi 6. Son experiencias reportadas, no una garantía actual. Pregunta antes de pedir.",
+     "src": [
+      {
+       "t": "Tekoa Spaces visitor video, May 2023",
+       "u": "https://www.youtube.com/watch?v=1I33HUv3IIo&t=98s"
+      },
+      {
+       "t": "The Orange Future, Feb 2025",
+       "u": "https://www.youtube.com/watch?v=yIo6ST8RORU&t=403s"
       }
      ],
      "confirm": false
@@ -181,9 +207,9 @@
     {
      "id": "cash-atm",
      "q_en": "Is there a Bitcoin ATM?",
-     "a_en": "Yes. A Lightning Bitcoin ATM was installed at the lake in 2023, and it came up again in the Bitcoinismo interview published in May 2026. In the 2023 talk the team demonstrated selling 100 quetzales from a Blink wallet and said you can buy and sell. We do not have a verified address, hours or fees, so ask the team before you plan around it.",
+     "a_en": "There was no ATM at the lake in December 2022. In May 2023, a video showed on-chain buying working and said Lightning would be added. In January 2025 the ATM was down, so do not rely on it; ask locally and bring cash.",
      "q_es": "¿Hay un cajero automático de Bitcoin?",
-     "a_es": "Sí. En 2023 se instaló en el lago un cajero de Bitcoin con Lightning, y volvió a mencionarse en la entrevista de Bitcoinismo publicada en mayo de 2026. En la charla de 2023 el equipo mostró cómo vender 100 quetzales desde una billetera Blink y dijo que se puede comprar y vender. No tenemos una dirección, horario ni comisiones confirmados, así que pregunta al equipo antes de contar con él.",
+     "a_es": "En diciembre de 2022 no había cajero en el lago. En mayo de 2023, un video mostró que funcionaba la compra en cadena y dijo que se agregaría Lightning. En enero de 2025 el cajero estaba fuera de servicio, así que no dependas de él; pregunta y lleva efectivo.",
      "src": [
       {
        "t": "Adopting Bitcoin 2023 talk, 10:20",
@@ -204,6 +230,18 @@
       {
        "t": "Bitcoin ATMs on this page",
        "u": "#atm"
+      },
+      {
+       "t": "Bitcoin Explorers, Dec 2022, no ATM",
+       "u": "https://www.youtube.com/watch?v=8Z3AlhSrfy4&t=604s"
+      },
+      {
+       "t": "Reverend Hodl, on-chain ATM and Lightning plan, May 2023",
+       "u": "https://www.youtube.com/watch?v=emmVoMP0HZQ&t=1020s"
+      },
+      {
+       "t": "Eliazar, ATM down, Jan 2025",
+       "u": "https://www.youtube.com/watch?v=f8wEfqodLxE&t=345s"
       }
      ],
      "confirm": true
@@ -244,6 +282,28 @@
       {
        "t": "Eliazar on the Ordermoon podcast, 11:33",
        "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=693s"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "bring-cash",
+     "q_en": "Should I bring cash?",
+     "a_en": "Yes. Visitors advise carrying cash because not every business can process bitcoin, boats are paid in cash, and the ATM has been unreliable.",
+     "q_es": "¿Debo llevar efectivo?",
+     "a_es": "Sí. Visitantes recomiendan llevar efectivo porque no todos los negocios pueden procesar pagos en bitcoin, las lanchas se pagan en efectivo y el cajero no ha sido confiable.",
+     "src": [
+      {
+       "t": "The Orange Future, Feb 2025",
+       "u": "https://www.youtube.com/watch?v=yIo6ST8RORU&t=403s"
+      },
+      {
+       "t": "Bitcoin Explorers, lake travel, Dec 2022",
+       "u": "https://www.youtube.com/watch?v=8Z3AlhSrfy4&t=604s"
+      },
+      {
+       "t": "Eliazar, ATM down, Jan 2025",
+       "u": "https://www.youtube.com/watch?v=f8wEfqodLxE&t=345s"
       }
      ],
      "confirm": false
@@ -417,9 +477,9 @@
     {
      "id": "tours-kaboom",
      "q_en": "Can I visit Kaboom, the cooking oil mining project?",
-     "a_en": "Kaboom ran an old diesel generator on used restaurant oil to power bitcoin miners, with no link to the power grid. Visitors and school groups saw it in 2022 and 2023. We found no 2025 or 2026 source saying it still runs, and we have no address or visiting hours, so ask the team first.",
+     "a_en": "Kaboom ran a cooking-oil generator to power bitcoin miners, but Eliazar said in June 2025 that it was not working. There is no verified address or visiting schedule, so ask the team before planning a visit.",
      "q_es": "¿Puedo visitar Kaboom, el proyecto de minería con aceite usado?",
-     "a_es": "Kaboom hacía funcionar un viejo generador diésel con aceite usado de restaurantes para alimentar mineros de bitcoin, sin conexión a la red eléctrica. Visitantes y grupos de estudiantes lo vieron en 2022 y 2023. No encontramos ninguna fuente de 2025 o 2026 que diga que sigue funcionando, y no tenemos dirección ni horario de visitas, así que pregunta primero al equipo.",
+     "a_es": "Kaboom hacía funcionar un generador con aceite usado para alimentar mineros de bitcoin, pero Eliazar dijo en junio de 2025 que no funcionaba. No tenemos dirección ni horario de visitas confirmados, así que pregunta al equipo antes de planear una visita.",
      "src": [
       {
        "t": "The Kaboom story",
@@ -432,6 +492,10 @@
       {
        "t": "Bitcoin Economics radio, May 2023, 30:30",
        "u": "https://www.youtube.com/watch?v=0NjEr4251uM&t=1830s"
+      },
+      {
+       "t": "Eliazar, Kaboom not working, June 2025",
+       "u": "https://www.youtube.com/watch?v=f2Q1_bRi_Sc&t=344s"
       }
      ],
      "confirm": true
@@ -559,6 +623,34 @@
       {
        "t": "New on the lake?",
        "u": "#expats"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "bitcoin-legal-guatemala",
+     "q_en": "Is bitcoin legal in Guatemala?",
+     "a_en": "This is not legal advice. Carlos Toriello says people may use any currency by agreement; Guatemala’s central bank said in 2018 that bitcoin is unregulated and used at your own risk.",
+     "q_es": "¿Es legal el bitcoin en Guatemala?",
+     "a_es": "Esto no es asesoría legal. Carlos Toriello dice que se puede usar cualquier moneda por acuerdo; en 2018 el banco central de Guatemala dijo que bitcoin no está regulado y se usa bajo responsabilidad propia.",
+     "src": [
+      {
+       "t": "Carlos Toriello, June 2025, about 22:36",
+       "u": "https://www.youtube.com/watch?v=f2Q1_bRi_Sc&t=1356s"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "bitcoin-lake-san-marcos",
+     "q_en": "Is Bitcoin Lago the same as Bitcoin Lake in San Marcos La Laguna?",
+     "a_en": "No. They are separate projects. Bitcoin Lake in San Marcos La Laguna was started by Rishi Bond in May 2021.",
+     "q_es": "¿Bitcoin Lago es lo mismo que Bitcoin Lake en San Marcos La Laguna?",
+     "a_es": "No. Son proyectos distintos. Bitcoin Lake, en San Marcos La Laguna, fue iniciado por Rishi Bond en mayo de 2021.",
+     "src": [
+      {
+       "t": "Bitcoin Lake in San Marcos La Laguna, history",
+       "u": "https://www.youtube.com/watch?v=UyQNzuycdlA&t=150s"
       }
      ],
      "confirm": false

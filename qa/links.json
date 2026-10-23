@@ -9,6 +9,26 @@
   ]
  },
  {
+  "url": "https://beta.elfaro.net/en/central-america-en/bitcoin-believers-look-for-new-paradise-at-mayan-lake",
+  "status": 200,
+  "final": "https://beta.elfaro.net/en/central-america-en/bitcoin-believers-look-for-new-paradise-at-mayan-lake",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://bitcoinfilmfest.com/",
+  "status": 200,
+  "final": "https://bitcoinfilmfest.com/",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
   "url": "https://bitcoinmagazine.com/culture/guatemala-town-mining-bitcoin-with-used-oil",
   "status": 200,
   "final": "https://bitcoinmagazine.com/culture/guatemala-town-mining-bitcoin-with-used-oil",
@@ -19,9 +39,29 @@
   ]
  },
  {
+  "url": "https://bitcoinmagazine.com/culture/inside-guatemalas-bitcoin-lake",
+  "status": 200,
+  "final": "https://bitcoinmagazine.com/culture/inside-guatemalas-bitcoin-lake",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
   "url": "https://btcmap.org/community/lago-bitcoin/merchants",
   "status": 200,
   "final": "https://btcmap.org/community/lago-bitcoin/merchants",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://cointelegraph.com/news/why-is-a-guatemalan-mayor-mining-bitcoin-tackling-fud-with-biogas-and-btc",
+  "status": 200,
+  "final": "https://cointelegraph.com/news/why-is-a-guatemalan-mayor-mining-bitcoin-tackling-fud-with-biogas-and-btc",
   "result": "ok",
   "where": [
    "es/index.html",
@@ -148,6 +188,26 @@
   ]
  },
  {
+  "url": "https://fbce.io/",
+  "status": 200,
+  "final": "https://fbce.io/",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://gizmodo.com/christian-crypto-missionaries-bitcoin-lake-guatemala-1849508562",
+  "status": 200,
+  "final": "https://gizmodo.com/christian-crypto-missionaries-bitcoin-lake-guatemala-1849508562",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
   "url": "https://grand.guatemalacity-hotels.com/en/",
   "status": 200,
   "final": "https://grand.guatemalacity-hotels.com/en/",
@@ -157,9 +217,9 @@
   ]
  },
  {
-  "url": "https://itstomekk.github.io/lago-bitcoin-community/",
+  "url": "https://itstomekk.github.io/bitcoin-lago/",
   "status": 200,
-  "final": "https://itstomekk.github.io/lago-bitcoin-community/",
+  "final": "https://itstomekk.github.io/bitcoin-lago/",
   "result": "ok",
   "where": [
    "es/index.html",
@@ -167,9 +227,9 @@
   ]
  },
  {
-  "url": "https://itstomekk.github.io/lago-bitcoin-community/es/",
+  "url": "https://itstomekk.github.io/bitcoin-lago/es/",
   "status": 200,
-  "final": "https://itstomekk.github.io/lago-bitcoin-community/es/",
+  "final": "https://itstomekk.github.io/bitcoin-lago/es/",
   "result": "ok",
   "where": [
    "es/index.html",
@@ -186,12 +246,42 @@
   ]
  },
  {
+  "url": "https://kayakguatemala.com/faqs/bitcoin-lake-atitlan-lago-de-bitcoin",
+  "status": 200,
+  "final": "https://kayakguatemala.com/faqs/bitcoin-lake-atitlan-lago-de-bitcoin/",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
   "url": "https://realworldparagliding.jimdofree.com/",
   "status": 200,
   "final": "https://realworldparagliding.jimdofree.com/",
   "result": "ok",
   "where": [
    "data:Realworld Paragliding"
+  ]
+ },
+ {
+  "url": "https://sv22.adoptingbitcoin.org/speaker/PatrickMelder/",
+  "status": 200,
+  "final": "https://sv22.adoptingbitcoin.org/speaker/PatrickMelder/",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://thebitcoindistrict.com/",
+  "status": 200,
+  "final": "https://thebitcoindistrict.com/",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
   ]
  },
  {
@@ -204,9 +294,39 @@
   ]
  },
  {
+  "url": "https://www.blink.sv/",
+  "status": 200,
+  "final": "https://www.blink.sv/",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://www.bloomberglinea.com/2022/06/07/trabajadores-en-san-marcos-la-laguna-se-capacitan-para-recibir-pagos-en-bitcoin",
+  "status": 200,
+  "final": "https://www.bloomberglinea.com/2022/06/07/trabajadores-en-san-marcos-la-laguna-se-capacitan-para-recibir-pagos-en-bitcoin/",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
   "url": "https://www.bloomberglinea.com/english/bitcoin-lake-guatemalas-crypto-enclave-launches/",
   "status": 200,
   "final": "https://www.bloomberglinea.com/english/bitcoin-lake-guatemalas-crypto-enclave-launches/",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://www.bullishguate.com/",
+  "status": 200,
+  "final": "https://www.bullishguate.com/",
   "result": "ok",
   "where": [
    "es/index.html",
@@ -329,6 +449,346 @@
   "result": "blocked",
   "where": [
    "data:Pasteleria y Café Lolita"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=79cIKf_T3N0",
+  "status": 200,
+  "final": "https://www.youtube.com/watch?v=79cIKf_T3N0",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/AtitlanTours21",
+  "status": 200,
+  "final": "https://x.com/AtitlanTours21",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/AtitlanTours21/status/2029652286847250631",
+  "status": 200,
+  "final": "https://x.com/AtitlanTours21/status/2029652286847250631",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/AtitlanTours21/status/2041269473747870023",
+  "status": 200,
+  "final": "https://x.com/AtitlanTours21/status/2041269473747870023",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/AtitlanTours21/status/2041733259575304609",
+  "status": 200,
+  "final": "https://x.com/AtitlanTours21/status/2041733259575304609",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/AtitlanTours21/status/2044452656173678693",
+  "status": 200,
+  "final": "https://x.com/AtitlanTours21/status/2044452656173678693",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/AtitlanTours21/status/2052795711553409048",
+  "status": 200,
+  "final": "https://x.com/AtitlanTours21/status/2052795711553409048",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/AtitlanTours21/status/2052797399450460579",
+  "status": 200,
+  "final": "https://x.com/AtitlanTours21/status/2052797399450460579",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/AtitlanTours21/status/2052801148210332090",
+  "status": 200,
+  "final": "https://x.com/AtitlanTours21/status/2052801148210332090",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/AtitlanTours21/status/2052808647726485544",
+  "status": 200,
+  "final": "https://x.com/AtitlanTours21/status/2052808647726485544",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/AtitlanTours21/status/2074187428013691030",
+  "status": 200,
+  "final": "https://x.com/AtitlanTours21/status/2074187428013691030",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/AtitlanTours21/status/2074191182603641216",
+  "status": 200,
+  "final": "https://x.com/AtitlanTours21/status/2074191182603641216",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/1568416150765113344",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/1568416150765113344",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/1592607133664940032",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/1592607133664940032",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/1633555241814708225",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/1633555241814708225",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/1663352554430898176",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/1663352554430898176",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/1676971341545701376",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/1676971341545701376",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/1761171835108876402",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/1761171835108876402",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/1767247695238881640",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/1767247695238881640",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/1855271801967857731",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/1855271801967857731",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/1886870351314928014",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/1886870351314928014",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/1901732370849354124",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/1901732370849354124",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/1952823905409724887",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/1952823905409724887",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/1985496849168678999",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/1985496849168678999",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/1994541099265003655",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/1994541099265003655",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/2041212733241110562",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/2041212733241110562",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/2091990468351672550",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/2091990468351672550",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/2095653627339903429",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/2095653627339903429",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/2097472336664346864",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/2097472336664346864",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/2107890964345856285",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/2107890964345856285",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/2108282671063269688",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/2108282671063269688",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/2112735223527899506",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/2112735223527899506",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "url": "https://x.com/JUN_AJPU_btc/status/2112992185599857074",
+  "status": 200,
+  "final": "https://x.com/JUN_AJPU_btc/status/2112992185599857074",
+  "result": "ok",
+  "where": [
+   "es/index.html",
+   "index.html"
   ]
  },
  {

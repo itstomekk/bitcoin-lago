@@ -31,6 +31,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import content as C  # noqa: E402
 import build_pages as BP  # noqa: E402
+import seo as SEO  # noqa: E402
 
 ROOT = BP.ROOT
 VDIR = ROOT / "tools" / "variants"
@@ -243,7 +244,7 @@ def head_html(vid):
         f'<link rel="alternate" hreflang="en" href="{{{{url_en}}}}">\n'
         f'<link rel="alternate" hreflang="es" href="{{{{url_es}}}}">\n'
         f'<link rel="alternate" hreflang="x-default" href="{{{{url_en}}}}">\n'
-        f'<meta property="og:type" content="website">\n'
+        f'<meta property="og:type" content="{{{{og_type}}}}">\n'
         f'<meta property="og:site_name" content="Bitcoin Lago">\n'
         f'<meta property="og:title" content="{{{{title}}}}">\n'
         f'<meta property="og:description" content="{{{{description}}}}">\n'
@@ -251,6 +252,7 @@ def head_html(vid):
         f'<meta property="og:locale" content="{{{{og_locale}}}}">\n'
         f'<meta property="og:image" content="{{{{og_image}}}}">\n'
         f'<meta name="twitter:card" content="summary_large_image">\n'
+        f'{{{{@seo}}}}\n'
         f'{pre}<link rel="stylesheet" href="{{{{p}}}}v/base.css">\n'
         f'{tokens}'
         f'<link rel="stylesheet" href="{{{{p}}}}v/{vid}.css">\n'
@@ -360,6 +362,8 @@ def render(vid, lang):
 
 
 def fill(html, T, blocks, lang, label):
+    T = SEO.prepare(T)
+    blocks = dict(blocks, seo=SEO.extra_meta(T))
     html = re.sub(r"\{\{@(\w+)\}\}", lambda m: blocks[m.group(1)], html)
     html = re.sub(r"\{\{icon:([\w-]+)\}\}", lambda m: BP.icon(m.group(1)), html)
     html = re.sub(r"\{\{fig:([\w-]+)((?:\|[^|}]*){0,3})\}\}",
@@ -673,10 +677,6 @@ TOPIC_T = {
            "ck_places": "lugares"},
 }
 MC = json.loads((TOPIC_DIR / "merchant_counts.json").read_text(encoding="utf-8")) if (TOPIC_DIR / "merchant_counts.json").exists() else None
-# label placement per claim index: (dx, dy, anchor)
-LABEL_POS = {0: (-12, 6, "end"), 1: (12, 6, "start"), 2: (-12, 6, "end"), 3: (0, -14, "middle"), 4: (0, 26, "middle"),
-             5: (0, -14, "middle"), 6: (0, 26, "middle"), 7: (0, -14, "middle"), 8: (0, -14, "middle"), 9: (0, -14, "middle"),
-             10: (0, 26, "middle"), 11: (0, 26, "middle"), 12: (-12, 6, "end"), 13: (12, 6, "start")}
 
 
 def _days(d):
@@ -714,7 +714,7 @@ def chart_merchants(lang):
     for i, c in enumerate(MC["claims"]):
         x, cls = X(c["date"]), "ch-team" if c["team"] else "ch-other"
         tip = escape(f'{c["date"][:7]}: {c["what_" + lang]}. {c["who_" + lang]}.')
-        dx, dy, anc = LABEL_POS.get(i, (0, -12, "middle"))
+        dx, dy, anc = c.get("lab") or (0, -14, "middle")
         if c["lo"] != c["hi"]:
             mark = (f'<rect x="{x - 7:.1f}" y="{Y(c["hi"]):.1f}" width="14" height="{Y(c["lo"]) - Y(c["hi"]):.1f}" rx="7" class="{cls}"/>')
             yl = Y((c["lo"] + c["hi"]) / 2)
@@ -754,15 +754,29 @@ def chart_checks(lang):
 CHARTS = {"merchants": chart_merchants, "checks": chart_checks}
 
 
+VIDEO_META = json.loads((TOPIC_DIR / "video_meta.json").read_text(encoding="utf-8")) if (TOPIC_DIR / "video_meta.json").exists() else {}
+
+
+def ext_video_card(T, vid):
+    """A video without its own article: thumbnail and title link straight to YouTube."""
+    lang = T["lang"]
+    m = VIDEO_META[vid]
+    img = thumb(T, vid, m["title"]) if (ROOT / "images" / "blog" / f"{vid}.webp").exists() else ""
+    when = fmt_date(m["date"][:7], lang) if m.get("date") else ""
+    return (f'<li class="blog-card reveal"><a href="https://www.youtube.com/watch?v={vid}" rel="noopener">{img}'
+            f'<span class="bc-meta">{escape(m.get("channel") or "YouTube")}{", " + when if when else ""}</span>'
+            f'<span class="bc-title">{escape(m["title"])}</span></a></li>')
+
+
 def topic_articles():
-    return [json.loads(f.read_text(encoding="utf-8")) for f in sorted(TOPIC_DIR.glob("*.json")) if f.name != "merchant_counts.json"]
+    return [json.loads(f.read_text(encoding="utf-8")) for f in sorted(TOPIC_DIR.glob("*.json")) if f.name not in ("merchant_counts.json", "video_meta.json")]
 
 
 def topic_card(T, t, href, arts_by_id):
     lang = T["lang"]
     TT = TOPIC_T[lang]
-    vid = (t.get("videos") or [None])[0]
-    img = thumb(T, vid, t["title_" + lang]) if vid in arts_by_id else ""
+    vid = next((v for v in t.get("videos", []) if (ROOT / "images" / "blog" / f"{v}.webp").exists()), None)
+    img = thumb(T, vid, t["title_" + lang]) if vid else ""
     return (f'<li class="blog-card topic-card reveal"><a href="{href}">{img}'
             f'<span class="bc-meta">{TT["tp_card"]}, {fmt_date(t["date"][:7], lang)}</span>'
             f'<span class="bc-title">{escape(t["title_" + lang])}</span></a><p>{escape(t["dek_" + lang])}</p></li>')
@@ -773,8 +787,9 @@ def render_topic(lang, t, arts, topics):
     TT = TOPIC_T[lang]
     T = page_T(lang, f"blog/{slug}/", f"es/blog/{slug}/", f'{t["title_" + lang]} | Bitcoin Lago', t["dek_" + lang])
     by_id = {a["video_id"]: a for a in arts}
-    if (t.get("videos") or [None])[0] in by_id:
-        T["og_image"] = C.SITE_URL + f'images/blog/{t["videos"][0]}.jpg'
+    first = next((v for v in t.get("videos", []) if (ROOT / "images" / "blog" / f"{v}.jpg").exists()), None)
+    if first:
+        T["og_image"] = C.SITE_URL + f'images/blog/{first}.jpg'
     body = []
     for b in t["body_" + lang]:
         if b.get("chart"):
@@ -797,6 +812,7 @@ def render_topic(lang, t, arts, topics):
         f'{escape(by_id[q["video_id"]]["channel"]) if q["video_id"] in by_id else "YouTube"}, {T["bl_at"]} {q["t"]}</a></footer></blockquote>'
         for q in t.get("quotes", []))
     used = "".join(blog_card(T, by_id[v], f'../{by_id[v]["slug"]}/') for v in t.get("videos", []) if v in by_id)
+    used += "".join(ext_video_card(T, v) for v in t.get("videos", []) if v not in by_id and v in VIDEO_META)
     main = (f'<article class="post"><header class="scr story-hero post-head"><p><a class="link-arrow" href="../">{T["bl_back"]}</a></p>'
             f'<h1>{escape(t["title_" + lang])}</h1><p class="lede">{escape(t["dek_" + lang])}</p>'
             f'<p class="post-meta">{TT["tp_meta"]}. {fmt_date(t["date"], lang)}.</p></header>'
