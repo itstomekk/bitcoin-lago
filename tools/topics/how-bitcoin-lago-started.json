@@ -1,0 +1,700 @@
+{
+ "slug": "how-bitcoin-lago-started",
+ "kind": "topic",
+ "date": "2026-10-22",
+ "title_en": "How Bitcoin Lago started",
+ "title_es": "Cómo empezó Bitcoin Lago",
+ "dek_en": "Bitcoin Lago began in 2021 with a meetup, a waiter and a US bitcoiner, and grew by walking into shops one by one. Here is what the interviews, press and posts say, and where they disagree.",
+ "dek_es": "Bitcoin Lago empezó en 2021 con un encuentro, un mesero y un bitcoiner estadounidense, y creció entrando a los negocios uno por uno. Esto dicen las entrevistas, la prensa y las publicaciones, y en qué no coinciden.",
+ "body_en": [
+  {
+   "h": "In short",
+   "p": "Bitcoin Lago is a bitcoin circular economy project in Panajachel, on Lake Atitlán in Guatemala. Eliazar Ajquijay, who leads it on the ground, gave the start in one sentence in a message to this site in October 2026: it began in 2021, he visited businesses one by one, and around 2023 the project began taking bitcoin into schools with a certification. This page puts the early story together from interviews, press and posts. Where they disagree, we say so.",
+   "src": [
+    {
+     "t": "Eliazar, message to the site, October 2026",
+     "u": ""
+    }
+   ]
+  },
+  {
+   "h": "A meetup and Patrick Melder, late 2021",
+   "p": "Most tellings start with Patrick Melder, who lives in Atlanta. Patrick says his family first came to Panajachel in 2012 for an art camp and returned every year until 2016. When he began to think about how bitcoin could help a community, his mind went back to Panajachel. In the Adopting Bitcoin 2023 talk, Rudy said Patrick started the project in late 2021 or the beginning of 2022. Eliazar says it began at the end of 2021, when he went to a meetup in Panajachel and heard about money and inflation for the first time, and about bitcoin for the second. Ricky, a friend and former colleague of Patrick who lives in Montreal, says Patrick had contacts in Panajachel and wanted to launch in 2022. Ricky thought a bear market was a bad time to launch, but Patrick was determined, so he joined.",
+   "src": [
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 6:22",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=382s"
+    },
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 6:55",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=415s"
+    },
+    {
+     "t": "Adopting Bitcoin 2023 talk, 0:25",
+     "u": "https://www.youtube.com/watch?v=79cIKf_T3N0&t=25s"
+    },
+    {
+     "t": "Ordermoon podcast, 3:13",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=193s"
+    },
+    {
+     "t": "Ordermoon podcast, 3:29",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=209s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 39:11",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2351s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 39:50",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2390s"
+    }
+   ]
+  },
+  {
+   "h": "From waiter to project leader",
+   "p": "After the pandemic Eliazar was working as a waiter, in a country that had been closed for seven months. In 2021 a guest at breakfast wore a Bitcoin T-shirt. Eliazar asked what bitcoin was. The guest, Patrick, made a transaction in front of him and told him to download Wallet of Satoshi. The Get Based video repeats the story, including a tip sent to the waiter. A couple of months later Patrick came back, invited him to a meetup in the park and asked him to join. Eliazar says he knew nothing about bitcoin but decided to learn from books. His first job, he says, was reading The Bitcoin Standard, then other books and podcasts. Ricky phoned him and asked for research. One early idea was to make Eliazar an exchange middleman whose profit would pay his salary, but there was no demand.",
+   "src": [
+    {
+     "t": "One Love Bitcoin, Eliazar, 16:44",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1004s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 17:39",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1059s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 18:30",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1110s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 19:17",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1157s"
+    },
+    {
+     "t": "Get Based video, 5:31",
+     "u": "https://www.youtube.com/watch?v=vYdp8yS1exU&t=331s"
+    },
+    {
+     "t": "Ordermoon podcast, 3:48",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=228s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 42:10",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2530s"
+    }
+   ]
+  },
+  {
+   "h": "A week in El Zonte",
+   "p": "In early 2022 Eliazar went to El Zonte, the home of Bitcoin Beach in El Salvador, for a week. He says Patrick and a man from Canada sent him and paid for everything. Ricky remembers it as a small training course, and thinks about 10 shops there accepted bitcoin at the time. Patrick told the Descubriendo Bitcoin show in March 2022 that the project had just sent one of its people for a week, but he did not name him. Eliazar says the spark was practice: paying for a Coca-Cola, a hotel room and food with bitcoin. He says his mind changed. Funding, per Ricky, came from a donation from Bitcoin Beach, other donations and the founders' own money.",
+   "src": [
+    {
+     "t": "Ordermoon podcast, 4:14",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=254s"
+    },
+    {
+     "t": "Ordermoon podcast, 4:43",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=283s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 20:14",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1214s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 21:40",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1300s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 43:16",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2596s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 44:45",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2685s"
+    },
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 3:12",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=192s"
+    }
+   ]
+  },
+  {
+   "h": "Classes first, or merchants first?",
+   "p": "The sources disagree here. Patrick told Descubriendo Bitcoin in March 2022 that the first lesson from El Zonte was to teach children first, because adults resist new money. He said he taught a school in Panajachel by Zoom every week from Atlanta, and that after the first lesson the students all raised their hands for bitcoin over the quetzal. The same month he told El Faro the project used \"formal school training versus community training\". Ricky says the project launched with classes in a school and no businesses, and that Eliazar was not yet involved. A project post in May 2022 shows a school room turned into a Bitcoin education room. Eliazar, though, dates the start of education to 2023, and in an interview recorded in 2022 he said schools were planned for \"next year\". These may be two different things, Patrick's early classes and the school programme Eliazar runs. We have not confirmed that.",
+   "src": [
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 2:29",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=149s"
+    },
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 13:27",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=807s"
+    },
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 42:01",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=2521s"
+    },
+    {
+     "t": "El Faro, 20 March 2022",
+     "u": "https://elfaro.net/en/202203/centroamerica/26052/Bitcoin-Believers-Look-for-New-Paradise-at-Mayan-Lake.htm"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 40:54",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2454s"
+    },
+    {
+     "t": "Project post on X, May 2022",
+     "u": "https://x.com/i/status/1523412626474422273"
+    },
+    {
+     "t": "Ordermoon podcast, 6:02",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=362s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 23:03",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1383s"
+    }
+   ]
+  },
+  {
+   "h": "The first merchants",
+   "p": "After El Zonte, Eliazar talked about bitcoin to everyone. He says he visited each business, was told no, came back the next week, then visited twice a month, and did a small exercise sending a few sats. At first he shared some of his own salary to set an example. The first count is Patrick's, in March 2022: about seven businesses. In the same weeks the project's account announced what it called the first hotel in Panajachel accepting bitcoin that it knew of, and began onboarding Amaranto, a hotel and restaurant. On 12 April Soy502 counted 15 businesses, from cafes and restaurants to hotels and crafts.",
+   "src": [
+    {
+     "t": "Bitcoinismo interview, 13:41",
+     "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=821s"
+    },
+    {
+     "t": "Bitcoinismo interview, 14:08",
+     "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=848s"
+    },
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 29:42",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=1782s"
+    },
+    {
+     "t": "Project post on X, 22 March 2022",
+     "u": "https://x.com/i/status/1506092054530637825"
+    },
+    {
+     "t": "Project post on X, 28 March 2022",
+     "u": "https://x.com/i/status/1508523578760781826"
+    },
+    {
+     "t": "Soy502 video, 0:18",
+     "u": "https://www.youtube.com/watch?v=63kbzc9GfaQ&t=18s"
+    }
+   ]
+  },
+  {
+   "h": "How many, really?",
+   "p": "Later counts do not line up. Eliazar says he brought about 60 businesses on board in six months, and Ricky says the same after one or two slow months. The project's account said more than 60 places around the lake on 22 September 2022. In an interview recorded in 2022, Eliazar said 65 and the host said over 65 in six months. A supporter counted more than 70 in Panajachel in October. The Get Based video said about 80 in Panajachel in 10 months. Ricky says about 100 in Panajachel by the end of 2022, adding \"maybe\". Some figures cover Panajachel and some the whole lake, and they come from different dates. BTC Map lists 5 of today's places as added by the end of September 2022 and 49 by the end of 2022, but listing dates may trail the first sign-ups, and places since removed are not counted.",
+   "src": [
+    {
+     "t": "Ordermoon podcast, 5:40",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=340s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 45:24",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2724s"
+    },
+    {
+     "t": "Project post on X, 22 September 2022",
+     "u": "https://x.com/i/status/1573086119662653440"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 22:24",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1344s"
+    },
+    {
+     "t": "One Love Bitcoin, host, 1:46",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=106s"
+    },
+    {
+     "t": "Supporter post on X, 24 October 2022",
+     "u": "https://x.com/i/status/1584365506580004865"
+    },
+    {
+     "t": "Get Based video, 5:18",
+     "u": "https://www.youtube.com/watch?v=vYdp8yS1exU&t=318s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 54:43",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=3283s"
+    },
+    {
+     "t": "BTC Map data, checked 22 October 2026",
+     "u": "https://btcmap.org/"
+    }
+   ]
+  },
+  {
+   "h": "The walking ATM",
+   "p": "Cashing out was the hard part. Patrick said some cash-out companies charged up to 9 percent or more, so the project used the man it had sent to El Zonte as a \"walk-in ATM\": he went around with cash and exchanged merchants' bitcoin for quetzales for a small fee. Eliazar describes the same service. After a sale, a merchant could call him and he would exchange right away. Ricky says he managed the money behind the scenes so that Eliazar always had cash. They cashed out almost every day, sometimes the next day, and, he says, never failed. Ricky says this arrangement is finished now. He also says that when the price hit bottom and began to rise, merchants started to hold their bitcoin and the circular flow stopped.",
+   "src": [
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 28:56",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=1736s"
+    },
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 29:13",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=1753s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 12:36",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=756s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 67:08",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=4028s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 68:09",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=4089s"
+    }
+   ]
+  },
+  {
+   "h": "First press",
+   "p": "El Faro published \"Bitcoin Believers Look for New Paradise at Mayan Lake\" on 20 March 2022, and Bitcoin Beach shared it on X the next day. In it, Bitcoin Beach co-founder Mike Peterson said the Salvadoran project had no formal ties to any bitcoin initiative at Atitlán, but was sharing what it had learned. Soy502, a Guatemalan outlet, ran a short video on 12 April, with a banner reading \"in association with Bitcoin Beach\". CGTN America reported from Panajachel in November 2022, calling the lake \"Bitcoin Lake\". A local voice said they accept bitcoin because many foreigners ask to pay with it and it might be the money of the future. The report also noted the price slump and doubted whether a community living hand to mouth would take to bitcoin.",
+   "src": [
+    {
+     "t": "El Faro, 20 March 2022",
+     "u": "https://elfaro.net/en/202203/centroamerica/26052/Bitcoin-Believers-Look-for-New-Paradise-at-Mayan-Lake.htm"
+    },
+    {
+     "t": "Bitcoin Beach post on X, 21 March 2022",
+     "u": "https://x.com/i/status/1505895032406093828"
+    },
+    {
+     "t": "Soy502 video, 0:12",
+     "u": "https://www.youtube.com/watch?v=63kbzc9GfaQ&t=12s"
+    },
+    {
+     "t": "CGTN America report, 0:07",
+     "u": "https://www.youtube.com/watch?v=DYYwE05ehMs&t=7s"
+    },
+    {
+     "t": "CGTN America report, 0:36",
+     "u": "https://www.youtube.com/watch?v=DYYwE05ehMs&t=36s"
+    },
+    {
+     "t": "CGTN America report, 1:21",
+     "u": "https://www.youtube.com/watch?v=DYYwE05ehMs&t=81s"
+    }
+   ]
+  },
+  {
+   "h": "Where it went next",
+   "p": "The count did not hold. Eliazar says more than 100 businesses had been onboarded by 2024, but the lesson was that a circular economy needs people who spend, not only businesses that accept. He gave about 40 or 50 accepting businesses in a podcast published in January 2026 and about 50 or 60 in a Spanish interview published in May 2026. Education, which he dates to 2023 with a My First Bitcoin diploma in a first primary school, has become the main work. Ricky said in 2025 that classes for children in schools are the most important thing the project does. Eliazar's mission is to teach from children to elders, and the team hopes to open a Bitcoin center. The pages on the Ordermoon and Bitcoinismo interviews tell that part in more detail.",
+   "src": [
+    {
+     "t": "Ordermoon podcast, 6:55",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=415s"
+    },
+    {
+     "t": "Ordermoon podcast, 7:41",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=461s"
+    },
+    {
+     "t": "Bitcoinismo interview, 2:29",
+     "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=149s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 53:30",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=3210s"
+    },
+    {
+     "t": "Eliazar, message to the site, October 2026",
+     "u": ""
+    },
+    {
+     "t": "Our page: Ordermoon interview",
+     "u": "blog/ordermoon-podcast-fewer-merchants-better-spenders/"
+    },
+    {
+     "t": "Our page: Bitcoinismo interview",
+     "u": "blog/eliazar-interview-bitcoinismo-circular-economy/"
+    }
+   ]
+  }
+ ],
+ "body_es": [
+  {
+   "h": "En resumen",
+   "p": "Bitcoin Lago es un proyecto de economía circular de bitcoin en Panajachel, en el Lago de Atitlán, Guatemala. Eliazar Ajquijay, quien lo lidera en el terreno, resumió el comienzo en una frase en un mensaje a este sitio en octubre de 2026: empezó en 2021, él visitó los negocios uno por uno y alrededor de 2023 el proyecto empezó a llevar bitcoin a las escuelas con una certificación. Esta página junta la historia temprana a partir de entrevistas, prensa y publicaciones. Donde no coinciden, lo decimos.",
+   "src": [
+    {
+     "t": "Eliazar, mensaje al sitio, octubre de 2026",
+     "u": ""
+    }
+   ]
+  },
+  {
+   "h": "Un encuentro y Patrick Melder, finales de 2021",
+   "p": "La mayoría de los relatos empiezan con Patrick Melder, quien vive en Atlanta. Patrick cuenta que su familia vino por primera vez a Panajachel en 2012 para un campamento de arte y volvió cada año hasta 2016. Cuando empezó a pensar en cómo bitcoin podía ayudar a una comunidad, su mente regresó a Panajachel. En la charla de Adopting Bitcoin 2023, Rudy dijo que Patrick inició el proyecto a finales de 2021 o a comienzos de 2022. Eliazar dice que empezó a finales de 2021, cuando fue a un encuentro en Panajachel y escuchó por primera vez sobre el dinero y la inflación, y por segunda vez sobre bitcoin. Ricky, amigo y excolega de Patrick que vive en Montreal, dice que Patrick tenía contactos en Panajachel y quería lanzarlo en 2022. Ricky pensaba que un mercado bajista era mal momento para lanzar, pero Patrick estaba decidido y por eso se sumó.",
+   "src": [
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 6:22",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=382s"
+    },
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 6:55",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=415s"
+    },
+    {
+     "t": "Charla en Adopting Bitcoin 2023, 0:25",
+     "u": "https://www.youtube.com/watch?v=79cIKf_T3N0&t=25s"
+    },
+    {
+     "t": "Podcast Ordermoon, 3:13",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=193s"
+    },
+    {
+     "t": "Podcast Ordermoon, 3:29",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=209s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 39:11",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2351s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 39:50",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2390s"
+    }
+   ]
+  },
+  {
+   "h": "De mesero a líder del proyecto",
+   "p": "Después de la pandemia, Eliazar trabajaba como mesero, en un país que llevaba siete meses cerrado. En 2021 un huésped llegó al desayuno con una camiseta de Bitcoin. Eliazar le preguntó qué era bitcoin. El huésped, Patrick, hizo una transacción frente a él y le dijo que descargara Wallet of Satoshi. El video de Get Based cuenta la misma historia, con una propina enviada al mesero. Un par de meses después Patrick volvió, lo invitó a un encuentro en el parque y le pidió que se uniera. Eliazar dice que no sabía nada de bitcoin, pero decidió aprender con libros. Su primer trabajo, cuenta, fue leer El patrón Bitcoin, y luego otros libros y pódcasts. Ricky lo llamó y le pidió investigación. Una idea temprana fue que Eliazar hiciera de intermediario de cambio y que su ganancia pagara su salario, pero no había demanda.",
+   "src": [
+    {
+     "t": "One Love Bitcoin, Eliazar, 16:44",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1004s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 17:39",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1059s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 18:30",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1110s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 19:17",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1157s"
+    },
+    {
+     "t": "Video de Get Based, 5:31",
+     "u": "https://www.youtube.com/watch?v=vYdp8yS1exU&t=331s"
+    },
+    {
+     "t": "Podcast Ordermoon, 3:48",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=228s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 42:10",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2530s"
+    }
+   ]
+  },
+  {
+   "h": "Una semana en El Zonte",
+   "p": "A principios de 2022 Eliazar fue a El Zonte, la casa de Bitcoin Beach en El Salvador, por una semana. Dice que Patrick y un hombre de Canadá lo enviaron y pagaron todo. Ricky lo recuerda como un pequeño curso de formación y calcula que unas 10 tiendas allí aceptaban bitcoin en ese momento. Patrick dijo en el programa Descubriendo Bitcoin, en marzo de 2022, que el proyecto acababa de enviar a una de sus personas una semana, pero no dio su nombre. Eliazar dice que la chispa fue la práctica: pagar una Coca-Cola, una habitación de hotel y comida con bitcoin. Cuenta que su mente cambió. La financiación, según Ricky, vino de una donación de Bitcoin Beach, otras donaciones y dinero de los propios fundadores.",
+   "src": [
+    {
+     "t": "Podcast Ordermoon, 4:14",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=254s"
+    },
+    {
+     "t": "Podcast Ordermoon, 4:43",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=283s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 20:14",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1214s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 21:40",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1300s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 43:16",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2596s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 44:45",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2685s"
+    },
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 3:12",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=192s"
+    }
+   ]
+  },
+  {
+   "h": "¿Primero las clases o primero los comercios?",
+   "p": "Aquí las fuentes no coinciden. Patrick dijo a Descubriendo Bitcoin en marzo de 2022 que la primera lección de El Zonte fue enseñar primero a los niños, porque los adultos se resisten al dinero nuevo. Contó que daba clase a una escuela de Panajachel por Zoom cada semana desde Atlanta, y que tras la primera lección todos los estudiantes levantaron la mano por bitcoin y no por el quetzal. Ese mismo mes dijo a El Faro que el proyecto usaba \"formación escolar formal frente a formación comunitaria\". Ricky dice que el proyecto arrancó con clases en una escuela y sin negocios, y que Eliazar aún no participaba. Una publicación del proyecto de mayo de 2022 muestra un salón de la escuela convertido en salón de educación de Bitcoin. Eliazar, en cambio, ubica el inicio de la educación en 2023, y en una entrevista grabada en 2022 dijo que las escuelas estaban planeadas para \"el próximo año\". Pueden ser dos cosas distintas: las clases tempranas de Patrick y el programa escolar que dirige Eliazar. No lo hemos confirmado.",
+   "src": [
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 2:29",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=149s"
+    },
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 13:27",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=807s"
+    },
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 42:01",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=2521s"
+    },
+    {
+     "t": "El Faro, 20 de marzo de 2022",
+     "u": "https://elfaro.net/en/202203/centroamerica/26052/Bitcoin-Believers-Look-for-New-Paradise-at-Mayan-Lake.htm"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 40:54",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2454s"
+    },
+    {
+     "t": "Publicación del proyecto en X, mayo de 2022",
+     "u": "https://x.com/i/status/1523412626474422273"
+    },
+    {
+     "t": "Podcast Ordermoon, 6:02",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=362s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 23:03",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1383s"
+    }
+   ]
+  },
+  {
+   "h": "Los primeros comercios",
+   "p": "Después de El Zonte, Eliazar le habló de bitcoin a todo el mundo. Cuenta que visitaba cada negocio, le decían que no, volvía la semana siguiente, luego iba dos veces al mes, y hacía un pequeño ejercicio enviando unos satoshis. Al principio compartió parte de su propio sueldo para dar el ejemplo. El primer conteo es de Patrick, en marzo de 2022: unos siete negocios. En esas mismas semanas la cuenta del proyecto anunció lo que llamó el primer hotel de Panajachel que aceptaba bitcoin hasta donde sabía, y empezó a incorporar a Amaranto, un hotel y restaurante. El 12 de abril Soy502 contó 15 negocios, desde cafés y restaurantes hasta hoteles y artesanías.",
+   "src": [
+    {
+     "t": "Entrevista de Bitcoinismo, 13:41",
+     "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=821s"
+    },
+    {
+     "t": "Entrevista de Bitcoinismo, 14:08",
+     "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=848s"
+    },
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 29:42",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=1782s"
+    },
+    {
+     "t": "Publicación del proyecto en X, 22 de marzo de 2022",
+     "u": "https://x.com/i/status/1506092054530637825"
+    },
+    {
+     "t": "Publicación del proyecto en X, 28 de marzo de 2022",
+     "u": "https://x.com/i/status/1508523578760781826"
+    },
+    {
+     "t": "Video de Soy502, 0:18",
+     "u": "https://www.youtube.com/watch?v=63kbzc9GfaQ&t=18s"
+    }
+   ]
+  },
+  {
+   "h": "¿Cuántos, de verdad?",
+   "p": "Los conteos posteriores no coinciden. Eliazar dice que incorporó a unos 60 negocios en seis meses, y Ricky dice lo mismo tras uno o dos meses lentos. La cuenta del proyecto habló de más de 60 lugares alrededor del lago el 22 de septiembre de 2022. En una entrevista grabada en 2022, Eliazar dijo 65 y el presentador dijo más de 65 en seis meses. Un colaborador contó más de 70 en Panajachel en octubre. El video de Get Based habló de unos 80 en Panajachel en 10 meses. Ricky dice que unos 100 en Panajachel a finales de 2022, y agrega \"quizás\". Algunas cifras cubren Panajachel y otras todo el lago, y vienen de fechas distintas. BTC Map lista 5 de los lugares de hoy como agregados antes de fin de septiembre de 2022 y 49 antes de fin de 2022, pero las fechas de registro pueden ir detrás de las primeras altas, y los lugares retirados después no se cuentan.",
+   "src": [
+    {
+     "t": "Podcast Ordermoon, 5:40",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=340s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 45:24",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=2724s"
+    },
+    {
+     "t": "Publicación del proyecto en X, 22 de septiembre de 2022",
+     "u": "https://x.com/i/status/1573086119662653440"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 22:24",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1344s"
+    },
+    {
+     "t": "One Love Bitcoin, presentador, 1:46",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=106s"
+    },
+    {
+     "t": "Publicación de un colaborador en X, 24 de octubre de 2022",
+     "u": "https://x.com/i/status/1584365506580004865"
+    },
+    {
+     "t": "Video de Get Based, 5:18",
+     "u": "https://www.youtube.com/watch?v=vYdp8yS1exU&t=318s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 54:43",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=3283s"
+    },
+    {
+     "t": "Datos de BTC Map, revisados el 22 de octubre de 2026",
+     "u": "https://btcmap.org/"
+    }
+   ]
+  },
+  {
+   "h": "El cajero ambulante",
+   "p": "Retirar efectivo era lo difícil. Patrick dijo que algunas empresas de cambio cobraban hasta 9 por ciento o más, así que el proyecto usó al hombre que había enviado a El Zonte como \"cajero ambulante\": andaba con efectivo y cambiaba el bitcoin de los comerciantes por quetzales con una comisión pequeña. Eliazar describe el mismo servicio. Después de una venta, el comerciante podía llamarlo y él hacía el cambio de inmediato. Ricky dice que manejaba el dinero detrás de escena para que Eliazar siempre tuviera efectivo. Cambiaban casi todos los días, a veces al día siguiente, y, según él, nunca fallaron. Ricky dice que este arreglo ya terminó. También dice que cuando el precio tocó fondo y empezó a subir, los comerciantes empezaron a guardar su bitcoin y el flujo circular se detuvo.",
+   "src": [
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 28:56",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=1736s"
+    },
+    {
+     "t": "Descubriendo Bitcoin, Patrick Melder, 29:13",
+     "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=1753s"
+    },
+    {
+     "t": "One Love Bitcoin, Eliazar, 12:36",
+     "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=756s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 67:08",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=4028s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 68:09",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=4089s"
+    }
+   ]
+  },
+  {
+   "h": "Primera prensa",
+   "p": "El Faro publicó \"Bitcoin Believers Look for New Paradise at Mayan Lake\" el 20 de marzo de 2022, y Bitcoin Beach lo compartió en X al día siguiente. En el texto, Mike Peterson, cofundador de Bitcoin Beach, dijo que el proyecto salvadoreño no tenía lazos formales con ninguna iniciativa de bitcoin en Atitlán, pero que compartía lo aprendido. Soy502, un medio guatemalteco, publicó un video corto el 12 de abril, con una manta que decía \"en asociación con Bitcoin Beach\". CGTN America informó desde Panajachel en noviembre de 2022 y llamó al lago \"Bitcoin Lake\". Una voz local dijo que aceptan bitcoin porque muchos extranjeros piden pagar con él y podría ser el dinero del futuro. El reportaje también señaló la caída del precio y dudó de que una comunidad que vive al día se acerque a bitcoin.",
+   "src": [
+    {
+     "t": "El Faro, 20 de marzo de 2022",
+     "u": "https://elfaro.net/en/202203/centroamerica/26052/Bitcoin-Believers-Look-for-New-Paradise-at-Mayan-Lake.htm"
+    },
+    {
+     "t": "Publicación de Bitcoin Beach en X, 21 de marzo de 2022",
+     "u": "https://x.com/i/status/1505895032406093828"
+    },
+    {
+     "t": "Video de Soy502, 0:12",
+     "u": "https://www.youtube.com/watch?v=63kbzc9GfaQ&t=12s"
+    },
+    {
+     "t": "Reportaje de CGTN America, 0:07",
+     "u": "https://www.youtube.com/watch?v=DYYwE05ehMs&t=7s"
+    },
+    {
+     "t": "Reportaje de CGTN America, 0:36",
+     "u": "https://www.youtube.com/watch?v=DYYwE05ehMs&t=36s"
+    },
+    {
+     "t": "Reportaje de CGTN America, 1:21",
+     "u": "https://www.youtube.com/watch?v=DYYwE05ehMs&t=81s"
+    }
+   ]
+  },
+  {
+   "h": "Hacia dónde siguió",
+   "p": "El número no se sostuvo. Eliazar dice que en 2024 ya había incorporado a más de 100 negocios, pero la lección fue que una economía circular necesita personas que gasten, no solo negocios que acepten. Dio unos 40 o 50 negocios que aceptan en un pódcast publicado en enero de 2026 y unos 50 o 60 en una entrevista en español publicada en mayo de 2026. La educación, que él ubica en 2023 con un diploma de Mi Primer Bitcoin en una primera escuela primaria, se ha vuelto el trabajo principal. Ricky dijo en 2025 que las clases para niños en las escuelas son lo más importante que hace el proyecto. La misión de Eliazar es enseñar desde los niños hasta los ancianos, y el equipo espera abrir un centro de Bitcoin. Las páginas sobre las entrevistas de Ordermoon y Bitcoinismo cuentan esa parte con más detalle.",
+   "src": [
+    {
+     "t": "Podcast Ordermoon, 6:55",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=415s"
+    },
+    {
+     "t": "Podcast Ordermoon, 7:41",
+     "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=461s"
+    },
+    {
+     "t": "Entrevista de Bitcoinismo, 2:29",
+     "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=149s"
+    },
+    {
+     "t": "Ricky, The Orange Journey, 53:30",
+     "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=3210s"
+    },
+    {
+     "t": "Eliazar, mensaje al sitio, octubre de 2026",
+     "u": ""
+    },
+    {
+     "t": "Nuestra página: entrevista de Ordermoon",
+     "u": "blog/ordermoon-podcast-fewer-merchants-better-spenders/"
+    },
+    {
+     "t": "Nuestra página: entrevista de Bitcoinismo",
+     "u": "blog/eliazar-interview-bitcoinismo-circular-economy/"
+    }
+   ]
+  }
+ ],
+ "quotes": [
+  {
+   "video_id": "MjDnc7ZzQwA",
+   "t": "2:29",
+   "who": "Patrick Melder",
+   "original": "the number one lesson was that in order for us to create awareness and bitcoin adoption we had to teach the children first",
+   "en": "The number one lesson was that to create awareness and bitcoin adoption, we had to teach the children first.",
+   "es": "La lección número uno fue que, para crear conciencia y adopción de bitcoin, teníamos que enseñar primero a los niños."
+  },
+  {
+   "video_id": "4SxWlCcMDiU",
+   "t": "3:48",
+   "who": "Eliazar",
+   "original": "my first job ... in Lago Bitcoin was reading the Bitcoin standard book",
+   "en": "My first job in Lago Bitcoin was reading The Bitcoin Standard.",
+   "es": "Mi primer trabajo en Lago Bitcoin fue leer El patrón Bitcoin."
+  },
+  {
+   "video_id": "1ktrkr1tg6g",
+   "t": "12:46",
+   "who": "Eliazar",
+   "original": "I am the ATM walking here",
+   "en": "I am the ATM, walking around here.",
+   "es": "Yo soy el cajero automático que anda caminando por aquí."
+  },
+  {
+   "video_id": "iU7EruLMre0",
+   "t": "2:29",
+   "who": "Eliazar",
+   "original": "Yo soy la persona que al principio visité uno por uno cada comercio hablándoles de Bitcoin.",
+   "en": "I am the person who, at the beginning, visited every business one by one and talked to them about bitcoin.",
+   "es": "Yo soy la persona que al principio visité uno por uno cada comercio hablándoles de Bitcoin."
+  },
+  {
+   "video_id": "mJf9LcwfaTU",
+   "t": "41:39",
+   "who": "Ricky",
+   "original": "there was obviously nothing so [it] was only classes in the school",
+   "en": "There was obviously nothing, so it was only classes in the school.",
+   "es": "Obviamente no había nada, así que eran solo clases en la escuela."
+  }
+ ],
+ "videos": [
+  "MjDnc7ZzQwA",
+  "79cIKf_T3N0",
+  "4SxWlCcMDiU",
+  "1ktrkr1tg6g",
+  "iU7EruLMre0",
+  "mJf9LcwfaTU",
+  "vYdp8yS1exU",
+  "63kbzc9GfaQ",
+  "DYYwE05ehMs"
+ ],
+ "open_questions": [
+  "Which businesses were the very first, and which one was first? Patrick counted about seven in March 2022, the project's account called one the first hotel in Panajachel on 22 March, and Amaranto was being onboarded by 28 March. Does that match your memory?",
+  "Did classes in a school come before the merchants, as Ricky and Patrick describe (Patrick taught by Zoom in early 2022), or was 2023 the first year of education, as you said on Ordermoon and as you said in 2022 when you planned schools for the next year? Are these two different programmes, and which school hosted the first class?",
+  "Which date should we give as the start? Rudy said late 2021 or the beginning of 2022, you say end of 2021, you also said you started in March 2022 and Patrick in January without you, and El Faro says Patrick returned in January 2022.",
+  "What counted as a business onboarded in 2022, and where? Sources give 7 (March), 15 (April), more than 60 around the lake (September), 65 (your interview), more than 70 in Panajachel (October), about 80 in Panajachel (Get Based) and about 100 in Panajachel by year end (Ricky, with a maybe). How many were active at the end of 2022?",
+  "Who was the man from Canada who helped send you to El Zonte, who paid, and in which month did the week take place? Patrick said in March 2022 that one of his people had just spent a week there.",
+  "When did the walking ATM arrangement end, and why? Ricky says it is finished now. Was the man Patrick called the walk-in ATM in March 2022 you?",
+  "Ricky said in 2025 that the team deliberately has no office or building. You hope to open a Bitcoin center. What is the plan, and how does it fit with that earlier choice?",
+  "Soy502 showed a banner reading in association with Bitcoin Beach, while Mike Peterson told El Faro there were no formal ties. How would you describe the relationship with Bitcoin Beach in 2022?"
+ ]
+}

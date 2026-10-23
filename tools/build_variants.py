@@ -203,7 +203,7 @@ def stats(T, ln, chain):
             f'<div><dt>{T["btc_stat_places"]}</dt><dd data-count="{len(BP.PLACES)}">{len(BP.PLACES)}</dd></div>'
             f'<div><dt>{T["btc_stat_ln"]}</dt><dd data-count="{ln}">{ln}</dd></div>'
             f'<div><dt>{T["btc_stat_chain"]}</dt><dd data-count="{chain}">{chain}</dd></div></dl>'
-            f'<p class="datanote">{T["btc_active_note"]}</p>')
+            f'<p class="datanote">{T["btc_active_note"]} <a href="blog/merchants-over-time/">{T["btc_count_link"]}</a></p>')
 
 
 def atm(T):
@@ -600,9 +600,14 @@ def blog_card(T, a, href):
 def render_blog_index(lang, arts):
     T = page_T(lang, "blog/", "es/blog/", C.STORY[lang]["bl_title"], C.STORY[lang]["bl_description"])
     cards = "".join(blog_card(T, a, f'{a["slug"]}/') for a in arts)
+    TT = TOPIC_T[lang]
+    by_id = {a["video_id"]: a for a in arts}
+    tcards = "".join(topic_card(T, t, f'{t["slug"]}/', by_id) for t in topic_articles())
+    topics = (f'<section class="scr blog-list blog-topics" aria-labelledby="tp-h"><h2 id="tp-h">{TT["tp_h"]}</h2><p class="lede-s">{TT["tp_lead"]}</p>'
+              f'<ul class="blog-grid">{tcards}</ul></section>') if tcards else ""
     main = (f'<section class="scr story-hero" id="hero" aria-labelledby="bl-h1"><p><a class="link-arrow" href="{T["home"]}">{T["st_back"]}</a></p>'
-            f'<h1 id="bl-h1">{T["bl_h1"]}</h1><p class="lede">{T["bl_lead"]}</p></section>'
-            f'<section class="scr blog-list" aria-labelledby="bl-h1"><ul class="blog-grid">{cards}</ul></section>')
+            f'<h1 id="bl-h1">{T["bl_h1"]}</h1><p class="lede">{T["bl_lead"]}</p></section>' + topics +
+            f'<section class="scr blog-list" aria-labelledby="vd-h"><h2 id="vd-h">{TT["tp_vids_h"]}</h2><ul class="blog-grid">{cards}</ul></section>')
     return render_page(T, lang, main, f"blog/{lang}")
 
 
@@ -638,6 +643,169 @@ def render_article(lang, a, arts):
     return render_page(T, lang, main, f"blog/{slug}/{lang}")
 
 
+# ---------- Topic articles (several sources) and charts ----------
+TOPIC_DIR = ROOT / "tools" / "topics"
+TOPIC_T = {
+    "en": {"tp_h": "Topics", "tp_lead": "Longer stories that bring several videos, posts and data together.", "tp_vids_h": "Videos",
+           "tp_meta": "Written by the Bitcoin Lago site team from the sources linked in each paragraph", "tp_used_h": "Videos used in this story",
+           "tp_quotes_h": "In their words", "tp_note": "Numbers and dates come from the linked sources. When sources disagree we say so. If you know better, tell us and we will fix it.",
+           "tp_src": "Source", "tp_card": "Story",
+           "ch_title": "How many places take bitcoin? Every public count we found, 2022 to 2026",
+           "ch_team": "Said by the Bitcoin Lago team", "ch_other": "Said by visitors, press or supporters",
+           "ch_line": "Places on BTC Map today, by the date they were first listed",
+           "ch_list": "All counts and their sources", "ch_to": "to",
+           "ch_note": "Each dot links to its source. A plus means \u201cmore than\u201d. A bar shows a range. Some counts are Panajachel only, others the whole lake; some count businesses ever onboarded, others the ones active now. BTC Map data of 2026-10-22; places removed from the map are not in the line.",
+           "ck_title": "When were the 117 places on BTC Map last checked on the ground?", "ck_none": "no date",
+           "ck_note": "Year of the newest check date in OpenStreetMap for each place on BTC Map, data of 2026-10-19. Only {n} places were checked in the last 12 months.",
+           "ck_places": "places"},
+    "es": {"tp_h": "Temas", "tp_lead": "Historias más largas que reúnen varios videos, publicaciones y datos.", "tp_vids_h": "Videos",
+           "tp_meta": "Escrito por el equipo del sitio Bitcoin Lago a partir de las fuentes enlazadas en cada párrafo", "tp_used_h": "Videos usados en esta historia",
+           "tp_quotes_h": "En sus palabras", "tp_note": "Las cifras y fechas vienen de las fuentes enlazadas. Cuando las fuentes no coinciden, lo decimos. Si sabes algo mejor, avísanos y lo corregimos.",
+           "tp_src": "Fuente", "tp_card": "Historia",
+           "ch_title": "\u00bfCu\u00e1ntos lugares aceptan bitcoin? Todas las cifras p\u00fablicas que encontramos, 2022 a 2026",
+           "ch_team": "Dicho por el equipo de Bitcoin Lago", "ch_other": "Dicho por visitantes, prensa o colaboradores",
+           "ch_line": "Lugares en BTC Map hoy, por la fecha en que se registraron",
+           "ch_list": "Todas las cifras y sus fuentes", "ch_to": "a",
+           "ch_note": "Cada punto enlaza a su fuente. Un signo m\u00e1s significa \u201cm\u00e1s de\u201d. Una barra muestra un rango. Algunas cifras son solo de Panajachel, otras de todo el lago; unas cuentan los negocios que alguna vez se sumaron, otras los activos. Datos de BTC Map del 2026-10-22; los lugares eliminados del mapa no est\u00e1n en la l\u00ednea.",
+           "ck_title": "\u00bfCu\u00e1ndo se revisaron en persona por \u00faltima vez los 117 lugares de BTC Map?", "ck_none": "sin fecha",
+           "ck_note": "A\u00f1o de la revisi\u00f3n m\u00e1s reciente en OpenStreetMap para cada lugar de BTC Map, datos del 2026-10-19. Solo {n} lugares se revisaron en los \u00faltimos 12 meses.",
+           "ck_places": "lugares"},
+}
+MC = json.loads((TOPIC_DIR / "merchant_counts.json").read_text(encoding="utf-8")) if (TOPIC_DIR / "merchant_counts.json").exists() else None
+# label placement per claim index: (dx, dy, anchor)
+LABEL_POS = {0: (-12, 6, "end"), 1: (12, 6, "start"), 2: (-12, 6, "end"), 3: (0, -14, "middle"), 4: (0, 26, "middle"),
+             5: (0, -14, "middle"), 6: (0, 26, "middle"), 7: (0, -14, "middle"), 8: (0, -14, "middle"), 9: (0, -14, "middle"),
+             10: (0, 26, "middle"), 11: (0, 26, "middle"), 12: (-12, 6, "end"), 13: (12, 6, "start")}
+
+
+def _days(d):
+    import datetime as _dt
+    return (_dt.date.fromisoformat(d) - _dt.date(2022, 1, 1)).days
+
+
+def claim_label(c, TT):
+    if c["lo"] != c["hi"]:
+        return f'{c["lo"]} {TT["ch_to"]} {c["hi"]}'
+    return f'{c["lo"]}+' if c.get("plus") else str(c["lo"])
+
+
+def chart_merchants(lang):
+    TT = TOPIC_T[lang]
+    W, H, L, R_, T_, B = 900, 470, 50, 24, 26, 44
+    pw, ph = W - L - R_, H - T_ - B
+    span = _days("2026-12-31")
+    X = lambda d: L + pw * _days(d) / span
+    Y = lambda v: T_ + ph * (1 - v / 125)
+    g = []
+    for v in (0, 25, 50, 75, 100, 125):
+        g.append(f'<line x1="{L}" x2="{W - R_}" y1="{Y(v):.1f}" y2="{Y(v):.1f}" class="ch-grid"/><text x="{L - 8}" y="{Y(v) + 5:.1f}" class="ch-ax" text-anchor="end">{v}</text>')
+    for yr in range(2022, 2027):
+        x = X(f"{yr}-01-01")
+        g.append(f'<line x1="{x:.1f}" x2="{x:.1f}" y1="{T_}" y2="{H - B}" class="ch-grid"/><text x="{X(f"{yr}-07-01"):.1f}" y="{H - B + 28}" class="ch-ax" text-anchor="middle">{yr}</text>')
+    dates = MC["btcmap"]["added_dates"]
+    pts, n = [f"M{X(dates[0]):.1f},{Y(0):.1f}"], 0
+    for d in dates:
+        n += 1
+        pts.append(f"H{X(d):.1f}V{Y(n):.1f}")
+    pts.append(f'H{X(MC["btcmap"]["data_date"]):.1f}')
+    g.append(f'<path d="{"".join(pts)}" class="ch-line"/>')
+    g.append(f'<text x="{X(MC["btcmap"]["data_date"]) - 4:.1f}" y="{Y(n) - 9:.1f}" class="ch-lab ch-lab-line" text-anchor="end">{n}</text>')
+    for i, c in enumerate(MC["claims"]):
+        x, cls = X(c["date"]), "ch-team" if c["team"] else "ch-other"
+        tip = escape(f'{c["date"][:7]}: {c["what_" + lang]}. {c["who_" + lang]}.')
+        dx, dy, anc = LABEL_POS.get(i, (0, -12, "middle"))
+        if c["lo"] != c["hi"]:
+            mark = (f'<rect x="{x - 7:.1f}" y="{Y(c["hi"]):.1f}" width="14" height="{Y(c["lo"]) - Y(c["hi"]):.1f}" rx="7" class="{cls}"/>')
+            yl = Y((c["lo"] + c["hi"]) / 2)
+        else:
+            mark = (f'<circle cx="{x:.1f}" cy="{Y(c["lo"]):.1f}" r="7.5" class="{cls}"/>' if c["team"] else
+                    f'<rect x="{x - 6.5:.1f}" y="{Y(c["lo"]) - 6.5:.1f}" width="13" height="13" class="{cls}"/>')
+            yl = Y(c["lo"])
+        g.append(f'<a href="{escape(c["url"], quote=True)}" rel="noopener"><title>{tip}</title>{mark}'
+                 f'<text x="{x + dx:.1f}" y="{yl + dy:.1f}" class="ch-lab" text-anchor="{anc}">{escape(claim_label(c, TT))}</text></a>')
+    legend = (f'<ul class="ch-legend"><li><span class="lg lg-team"></span>{TT["ch_team"]}</li><li><span class="lg lg-other"></span>{TT["ch_other"]}</li>'
+              f'<li><span class="lg lg-line"></span>{escape(TT["ch_line"])}</li></ul>')
+    svg = (legend + f'<div class="chart-scroll"><svg viewBox="0 0 {W} {H}" role="img" aria-labelledby="chm-t" class="chart-svg"><title id="chm-t">{escape(TT["ch_title"])}</title>'
+           f'{"".join(g)}</svg></div>')
+    items = "".join(
+        f'<li><span class="cl-d">{fmt_date(c["date"][:7], lang)}</span> <strong>{escape(claim_label(c, TT))}</strong>: {escape(c["what_" + lang])}. '
+        f'{escape(c["who_" + lang])}, <a href="{escape(c["url"], quote=True)}" rel="noopener">{escape(c["src"])}</a>.</li>' for c in MC["claims"])
+    return (f'<figure class="chart reveal" id="chart-merchants"><figcaption class="chart-h">{escape(TT["ch_title"])}</figcaption>{svg}'
+            f'<p class="chart-note">{escape(TT["ch_note"])}</p><details class="chart-list"><summary>{TT["ch_list"]} ({len(MC["claims"])})</summary><ol>{items}</ol></details></figure>')
+
+
+def chart_checks(lang):
+    TT = TOPIC_T[lang]
+    rows = MC["btcmap"]["last_check_by_year"]
+    total = sum(rows.values())
+    mx = max(rows.values())
+    bars = []
+    for k, v in rows.items():
+        lab = TT["ck_none"] if k == "none" else k
+        recent = k in ("2025", "2026")
+        bars.append(f'<li><span class="ck-y">{lab}</span><span class="ck-bar{" ck-recent" if recent else ""}" style="width:{100 * v / mx:.1f}%"></span>'
+                    f'<span class="ck-n">{v}</span></li>')
+    return (f'<figure class="chart reveal" id="chart-checks"><figcaption class="chart-h">{escape(TT["ck_title"])}</figcaption>'
+            f'<ol class="ck-bars" aria-label="{total} {TT["ck_places"]}">{"".join(bars)}</ol>'
+            f'<p class="chart-note">{escape(TT["ck_note"].format(n=MC["btcmap"]["checked_last_12m"]))}</p></figure>')
+
+
+CHARTS = {"merchants": chart_merchants, "checks": chart_checks}
+
+
+def topic_articles():
+    return [json.loads(f.read_text(encoding="utf-8")) for f in sorted(TOPIC_DIR.glob("*.json")) if f.name != "merchant_counts.json"]
+
+
+def topic_card(T, t, href, arts_by_id):
+    lang = T["lang"]
+    TT = TOPIC_T[lang]
+    vid = (t.get("videos") or [None])[0]
+    img = thumb(T, vid, t["title_" + lang]) if vid in arts_by_id else ""
+    return (f'<li class="blog-card topic-card reveal"><a href="{href}">{img}'
+            f'<span class="bc-meta">{TT["tp_card"]}, {fmt_date(t["date"][:7], lang)}</span>'
+            f'<span class="bc-title">{escape(t["title_" + lang])}</span></a><p>{escape(t["dek_" + lang])}</p></li>')
+
+
+def render_topic(lang, t, arts, topics):
+    slug = t["slug"]
+    TT = TOPIC_T[lang]
+    T = page_T(lang, f"blog/{slug}/", f"es/blog/{slug}/", f'{t["title_" + lang]} | Bitcoin Lago', t["dek_" + lang])
+    by_id = {a["video_id"]: a for a in arts}
+    if (t.get("videos") or [None])[0] in by_id:
+        T["og_image"] = C.SITE_URL + f'images/blog/{t["videos"][0]}.jpg'
+    body = []
+    for b in t["body_" + lang]:
+        if b.get("chart"):
+            body.append(CHARTS[b["chart"]](lang))
+            continue
+        if b.get("h"):
+            body.append(f'<h2>{escape(b["h"])}</h2>')
+        if b.get("p"):
+            srcs = []
+            for s in b.get("src", []):
+                u = s.get("u") or ""
+                if u.startswith("blog/"):
+                    u = "../" + u[5:]
+                srcs.append(f'<a href="{escape(u, quote=True)}" rel="noopener">{escape(s["t"])}</a>' if u else escape(s["t"]))
+            src = f' <span class="src">[{"; ".join(srcs)}]</span>' if srcs else ""
+            body.append(f'<p>{escape(b["p"])}{src}</p>')
+    quotes = "".join(
+        f'<blockquote class="bq"><p>{escape(q[lang])}</p><footer>{escape(q.get("who", ""))}, '
+        f'<a href="https://www.youtube.com/watch?v={q["video_id"]}&amp;t={mmss_to_s(q["t"])}s" rel="noopener">'
+        f'{escape(by_id[q["video_id"]]["channel"]) if q["video_id"] in by_id else "YouTube"}, {T["bl_at"]} {q["t"]}</a></footer></blockquote>'
+        for q in t.get("quotes", []))
+    used = "".join(blog_card(T, by_id[v], f'../{by_id[v]["slug"]}/') for v in t.get("videos", []) if v in by_id)
+    main = (f'<article class="post"><header class="scr story-hero post-head"><p><a class="link-arrow" href="../">{T["bl_back"]}</a></p>'
+            f'<h1>{escape(t["title_" + lang])}</h1><p class="lede">{escape(t["dek_" + lang])}</p>'
+            f'<p class="post-meta">{TT["tp_meta"]}. {fmt_date(t["date"], lang)}.</p></header>'
+            f'<div class="scr post-body topic-body"><div class="post-text">{"".join(body)}'
+            + (f'<h2>{TT["tp_quotes_h"]}</h2>{quotes}' if quotes else "")
+            + f'<p class="post-note">{TT["tp_note"]}</p></div></div></article>'
+            + (f'<section class="scr blog-list more"><h2>{TT["tp_used_h"]}</h2><ul class="blog-grid">{used}</ul></section>' if used else ""))
+    return render_page(T, lang, main, f"blog/{slug}/{lang}")
+
+
 def build_blog():
     arts = blog_articles()
     if not arts:
@@ -650,7 +818,12 @@ def build_blog():
             d = base / a["slug"]
             d.mkdir(parents=True, exist_ok=True)
             (d / "index.html").write_text(render_article(lang, a, arts), encoding="utf-8")
-    print("wrote blog:", len(arts), "articles x 2 languages")
+        topics = topic_articles()
+        for t in topics:
+            d = base / t["slug"]
+            d.mkdir(parents=True, exist_ok=True)
+            (d / "index.html").write_text(render_topic(lang, t, arts, topics), encoding="utf-8")
+    print("wrote blog:", len(arts), "articles +", len(topic_articles()), "topics x 2 languages")
 
 
 REDIRECT = """<!doctype html>
