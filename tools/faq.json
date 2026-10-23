@@ -207,9 +207,9 @@
     {
      "id": "cash-atm",
      "q_en": "Is there a Bitcoin ATM?",
-     "a_en": "There was no ATM at the lake in December 2022. In May 2023, a video showed on-chain buying working and said Lightning would be added. In January 2025 the ATM was down, so do not rely on it; ask locally and bring cash.",
+     "a_en": "There was no ATM at the lake in December 2022. In May 2023, a video showed on-chain buying working and said Lightning would be added. In January 2025 the ATM was down, so do not rely on it; ask locally and bring cash. In November 2022 Eliazar told a German TV crew he worked as a human ATM: you call him and he swaps bitcoin for cash, with no fee. Ask whether that still works.",
      "q_es": "¿Hay un cajero automático de Bitcoin?",
-     "a_es": "En diciembre de 2022 no había cajero en el lago. En mayo de 2023, un video mostró que funcionaba la compra en cadena y dijo que se agregaría Lightning. En enero de 2025 el cajero estaba fuera de servicio, así que no dependas de él; pregunta y lleva efectivo.",
+     "a_es": "En diciembre de 2022 no había cajero en el lago. En mayo de 2023, un video mostró que funcionaba la compra en cadena y dijo que se agregaría Lightning. En enero de 2025 el cajero estaba fuera de servicio, así que no dependas de él; pregunta y lleva efectivo. En noviembre de 2022 Eliazar le dijo a un equipo de la televisión alemana que funcionaba como un cajero humano: lo llamas y te cambia bitcoin por efectivo, sin comisión. Pregunta si eso sigue funcionando.",
      "src": [
       {
        "t": "Adopting Bitcoin 2023 talk, 10:20",
@@ -242,6 +242,10 @@
       {
        "t": "Eliazar, ATM down, Jan 2025",
        "u": "https://www.youtube.com/watch?v=f8wEfqodLxE&t=345s"
+      },
+      {
+       "t": "BR film Bitcoineros, Nov 2022, 23:24",
+       "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
       }
      ],
      "confirm": true

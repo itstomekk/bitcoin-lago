@@ -763,7 +763,8 @@ def ext_video_card(T, vid):
     m = VIDEO_META[vid]
     img = thumb(T, vid, m["title"]) if (ROOT / "images" / "blog" / f"{vid}.webp").exists() else ""
     when = fmt_date(m["date"][:7], lang) if m.get("date") else ""
-    return (f'<li class="blog-card reveal"><a href="https://www.youtube.com/watch?v={vid}" rel="noopener">{img}'
+    href = m.get("url") or f"https://www.youtube.com/watch?v={vid}"  # non-YouTube films carry their own url
+    return (f'<li class="blog-card reveal"><a href="{escape(href, quote=True)}" rel="noopener">{img}'
             f'<span class="bc-meta">{escape(m.get("channel") or "YouTube")}{", " + when if when else ""}</span>'
             f'<span class="bc-title">{escape(m["title"])}</span></a></li>')
 

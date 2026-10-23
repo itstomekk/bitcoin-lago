@@ -49,7 +49,7 @@
   },
   {
    "h": "Bill's idea and an old generator",
-   "p": "Eliazar credits his mining partner, Bill Whittaker, with the idea. Around June or July, most likely 2022, Bill pointed out that a diesel engine can run on vegetable oil. They went looking for a generator in what Eliazar's captions call \"chimal tenango\", probably Chimaltenango, a town known for vehicle parts. They walked all day and found a plain generator on the ground in something like a junkyard. Eliazar says it was 50 to 60 years old, but it worked on diesel. Bill bought it. They had no truck that day, so they came back for it. Patrick Melder later gave a different estimate: 30 to 40 years old in one interview, and 50 to 60 years in another. He also described adapting a centrifuge, while Eliazar says they filtered the oil through jeans. These are differing recollections, not a settled specification.",
+   "p": "Eliazar credits his mining partner, Bill Whittaker, with the idea. Around June or July, most likely 2022, Bill pointed out that a diesel engine can run on vegetable oil. They went looking for a generator in what Eliazar's captions call \"chimal tenango\", probably Chimaltenango, a town known for vehicle parts. They walked all day and found a plain generator on the ground in something like a junkyard. Eliazar says it was 50 to 60 years old, but it worked on diesel. Bill bought it. They had no truck that day, so they came back for it. Patrick Melder later gave a different estimate: 30 to 40 years old in one interview, and 50 to 60 years in another. He also described adapting a centrifuge, while Eliazar says they filtered the oil through jeans. These are differing recollections, not a settled specification. A German public TV film shot in November 2022 says the idea came from Patrick Melder, while Eliazar's own account names Bill.",
    "src": [
     {
      "t": "One Love Bitcoin, 27:57",
@@ -74,6 +74,10 @@
     {
      "t": "Patrick Melder on engine and centrifuge",
      "u": "https://www.youtube.com/watch?v=3jCqoyrh0rw&t=1272s"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 6:08",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
     }
    ]
   },
@@ -97,7 +101,7 @@
   },
   {
    "h": "A loud engine and a name",
-   "p": "Nobody wanted a loud engine nearby. Eliazar says Bill and a friend found a small parking place that worked as a mechanic's space near the river and rented it. When Bill saw it, he said Kaboom, and the name stuck. A video the team posted went viral on the Lago Bitcoin account on X. The host says three machines were running. Eliazar also says they first turned the engine on \"right there in the school\", so the order of events is not fully clear. A May 2023 video shows the engine running at a rented site and powering two miners on camera. CoinDesk also covered the project in September 2022. CGTN offered an outside view and noted that burning used oil still produces emissions.",
+   "p": "Nobody wanted a loud engine nearby. Eliazar says Bill and a friend found a small parking place that worked as a mechanic's space near the river and rented it. When Bill saw it, he said Kaboom, and the name stuck. A video the team posted went viral on the Lago Bitcoin account on X. The host says three machines were running. Eliazar also says they first turned the engine on \"right there in the school\", so the order of events is not fully clear. A May 2023 video shows the engine running at a rented site and powering two miners on camera. CoinDesk also covered the project in September 2022. CGTN offered an outside view and noted that burning used oil still produces emissions. The same German film shows Kaboom in a backyard next to a car workshop. A neighbour, a musician, says they should fit a silencer so it is quieter.",
    "src": [
     {
      "t": "One Love Bitcoin, 34:07",
@@ -126,12 +130,20 @@
     {
      "t": "Reverend Hodl, rented site, May 2023",
      "u": "https://www.youtube.com/watch?v=emmVoMP0HZQ&t=922s"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 4:24",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 5:17",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
     }
    ]
   },
   {
    "h": "What it earned, and who paid",
-   "p": "The Get Based film, probably recorded in late 2022, says Kaboom makes about 230 dollars of bitcoin a month, about half an average monthly salary in Guatemala. That figure comes from the narrator, not from Eliazar. An April 2024 post by the video maker Adam O'Brien also says Kaboom can generate half of a monthly salary. We have no figure for what the oil, rent and repairs cost. In October 2022 the project asked for help for Kaboom through a fundraising page, and in November for small donations to pay its rent and internet. Eliazar says the project lives only on donations.",
+   "p": "The Get Based film, probably recorded in late 2022, says Kaboom makes about 230 dollars of bitcoin a month, about half an average monthly salary in Guatemala. That figure comes from the narrator, not from Eliazar. In the German TV film from November 2022, Eliazar says a miner makes about three dollars a day, since the machines do not run all night. That points to less than the Get Based figure. An April 2024 post by the video maker Adam O'Brien also says Kaboom can generate half of a monthly salary. We have no figure for what the oil, rent and repairs cost. In October 2022 the project asked for help for Kaboom through a fundraising page, and in November for small donations to pay its rent and internet. Eliazar says the project lives only on donations.",
    "src": [
     {
      "t": "Get Based, 3:47",
@@ -152,12 +164,16 @@
     {
      "t": "One Love Bitcoin, 33:42",
      "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=2022s"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 5:03",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
     }
    ]
   },
   {
    "h": "A classroom and a tour stop",
-   "p": "In the Get Based film Eliazar says the oil used to go to the garbage, the rivers or the lake. On a May 2023 podcast the guests said children from Centro Educativo Josué were taken to see how it worked. At Adopting Bitcoin in November 2023 the team said so too, and added that a volunteer with a mining background helped explain it. Visitors came too: a German TV crew, a demo at the Lago Summit in May 2023, and the Get Based crew.",
+   "p": "In the Get Based film Eliazar says the oil used to go to the garbage, the rivers or the lake. On a May 2023 podcast the guests said children from Centro Educativo Josué were taken to see how it worked. At Adopting Bitcoin in November 2023 the team said so too, and added that a volunteer with a mining background helped explain it. Visitors came too: a German TV crew, a demo at the Lago Summit in May 2023, and the Get Based crew. The German film shows Patrick presenting Kaboom to bitcoiners he invited from around the world. He says wind or solar power would cost too much, so this was the cheapest way to start mining in Panajachel. One guest says that on grid power it would lose money, but with free energy it makes a profit.",
    "src": [
     {
      "t": "Get Based, 3:08",
@@ -178,6 +194,18 @@
     {
      "t": "Lago Summit post, May 2023",
      "u": "https://x.com/i/status/1655015917695254531"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 35:46",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 36:12",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 36:50",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
     }
    ]
   },
@@ -297,7 +325,7 @@
   },
   {
    "h": "La idea de Bill y un generador viejo",
-   "p": "Eliazar da el crédito de la idea a su socio de minería, Bill Whittaker. Hacia junio o julio, probablemente de 2022, Bill señaló que un motor diésel puede funcionar con aceite vegetal. Buscaron un generador en lo que los subtítulos llaman \"chimal tenango\", probablemente Chimaltenango, un pueblo conocido por los repuestos de vehículos. Caminaron todo el día y encontraron un generador sencillo en el suelo, en algo parecido a un deshuesadero. Eliazar dice que tenía de 50 a 60 años, pero funcionaba con diésel. Bill lo compró. Ese día no tenían camión, así que regresaron por él. Patrick Melder dio después otra estimación: de 30 a 40 años en una entrevista y de 50 a 60 en otra. También describió adaptar una centrífuga, mientras que Eliazar cuenta que filtraron el aceite con jeans. Son recuerdos distintos, no una especificación confirmada.",
+   "p": "Eliazar da el crédito de la idea a su socio de minería, Bill Whittaker. Hacia junio o julio, probablemente de 2022, Bill señaló que un motor diésel puede funcionar con aceite vegetal. Buscaron un generador en lo que los subtítulos llaman \"chimal tenango\", probablemente Chimaltenango, un pueblo conocido por los repuestos de vehículos. Caminaron todo el día y encontraron un generador sencillo en el suelo, en algo parecido a un deshuesadero. Eliazar dice que tenía de 50 a 60 años, pero funcionaba con diésel. Bill lo compró. Ese día no tenían camión, así que regresaron por él. Patrick Melder dio después otra estimación: de 30 a 40 años en una entrevista y de 50 a 60 en otra. También describió adaptar una centrífuga, mientras que Eliazar cuenta que filtraron el aceite con jeans. Son recuerdos distintos, no una especificación confirmada. Un documental de la televisión pública alemana grabado en noviembre de 2022 dice que la idea vino de Patrick Melder, mientras que el propio relato de Eliazar menciona a Bill.",
    "src": [
     {
      "t": "One Love Bitcoin, 27:57",
@@ -322,6 +350,10 @@
     {
      "t": "Patrick Melder on engine and centrifuge",
      "u": "https://www.youtube.com/watch?v=3jCqoyrh0rw&t=1272s"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 6:08",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
     }
    ]
   },
@@ -345,7 +377,7 @@
   },
   {
    "h": "Un motor ruidoso y un nombre",
-   "p": "Nadie quería un motor ruidoso cerca. Eliazar cuenta que Bill y un amigo encontraron un pequeño estacionamiento que funcionaba como taller mecánico cerca del río y lo alquilaron. Cuando Bill lo vio, dijo Kaboom, y el nombre se quedó. Un video que el equipo publicó se hizo viral en la cuenta de Lago Bitcoin en X. El presentador dice que había tres máquinas funcionando. Eliazar también dice que encendieron el motor por primera vez \"ahí mismo en la escuela\", así que el orden de los hechos no queda del todo claro. Un video de mayo de 2023 muestra el motor encendido en un sitio alquilado y alimentando dos mineros ante la cámara. CoinDesk también cubrió el proyecto en septiembre de 2022. CGTN ofreció una mirada externa y señaló que quemar aceite usado también produce emisiones.",
+   "p": "Nadie quería un motor ruidoso cerca. Eliazar cuenta que Bill y un amigo encontraron un pequeño estacionamiento que funcionaba como taller mecánico cerca del río y lo alquilaron. Cuando Bill lo vio, dijo Kaboom, y el nombre se quedó. Un video que el equipo publicó se hizo viral en la cuenta de Lago Bitcoin en X. El presentador dice que había tres máquinas funcionando. Eliazar también dice que encendieron el motor por primera vez \"ahí mismo en la escuela\", así que el orden de los hechos no queda del todo claro. Un video de mayo de 2023 muestra el motor encendido en un sitio alquilado y alimentando dos mineros ante la cámara. CoinDesk también cubrió el proyecto en septiembre de 2022. CGTN ofreció una mirada externa y señaló que quemar aceite usado también produce emisiones. El mismo documental alemán muestra Kaboom en un patio junto a un taller mecánico. Un vecino, músico, dice que deberían ponerle un silenciador para que haga menos ruido.",
    "src": [
     {
      "t": "One Love Bitcoin, 34:07",
@@ -374,12 +406,20 @@
     {
      "t": "Reverend Hodl, rented site, May 2023",
      "u": "https://www.youtube.com/watch?v=emmVoMP0HZQ&t=922s"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 4:24",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 5:17",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
     }
    ]
   },
   {
    "h": "Cuánto producía y quién pagaba",
-   "p": "La película de Get Based, probablemente grabada a fines de 2022, dice que Kaboom produce unos 230 dólares en bitcoin al mes, cerca de la mitad de un salario mensual promedio en Guatemala. Esa cifra viene del narrador, no de Eliazar. Una publicación de abril de 2024 del creador de videos Adam O'Brien también dice que Kaboom puede generar la mitad de un salario mensual. No tenemos una cifra de lo que costaban el aceite, el alquiler y las reparaciones. En octubre de 2022 el proyecto pidió ayuda para Kaboom con una página de recaudación, y en noviembre pidió pequeñas donaciones para pagar el alquiler y el internet. Eliazar dice que el proyecto vive solo de donaciones.",
+   "p": "La película de Get Based, probablemente grabada a fines de 2022, dice que Kaboom produce unos 230 dólares en bitcoin al mes, cerca de la mitad de un salario mensual promedio en Guatemala. Esa cifra viene del narrador, no de Eliazar. En el documental alemán de noviembre de 2022, Eliazar dice que un minero genera unos tres dólares al día, porque las máquinas no funcionan toda la noche. Eso apunta a menos que la cifra de Get Based. Una publicación de abril de 2024 del creador de videos Adam O'Brien también dice que Kaboom puede generar la mitad de un salario mensual. No tenemos una cifra de lo que costaban el aceite, el alquiler y las reparaciones. En octubre de 2022 el proyecto pidió ayuda para Kaboom con una página de recaudación, y en noviembre pidió pequeñas donaciones para pagar el alquiler y el internet. Eliazar dice que el proyecto vive solo de donaciones.",
    "src": [
     {
      "t": "Get Based, 3:47",
@@ -400,12 +440,16 @@
     {
      "t": "One Love Bitcoin, 33:42",
      "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=2022s"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 5:03",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
     }
    ]
   },
   {
    "h": "Un aula y una parada del recorrido",
-   "p": "En la película de Get Based, Eliazar dice que el aceite iba a la basura, a los ríos o al lago. En un podcast de mayo de 2023 los invitados dijeron que niños del Centro Educativo Josué fueron a ver cómo funcionaba. En Adopting Bitcoin, en noviembre de 2023, el equipo dijo lo mismo y agregó que un voluntario con experiencia en minería ayudó a explicarlo. También llegaron visitantes: un equipo de televisión alemán, una demostración en el Lago Summit en mayo de 2023 y el equipo de Get Based.",
+   "p": "En la película de Get Based, Eliazar dice que el aceite iba a la basura, a los ríos o al lago. En un podcast de mayo de 2023 los invitados dijeron que niños del Centro Educativo Josué fueron a ver cómo funcionaba. En Adopting Bitcoin, en noviembre de 2023, el equipo dijo lo mismo y agregó que un voluntario con experiencia en minería ayudó a explicarlo. También llegaron visitantes: un equipo de televisión alemán, una demostración en el Lago Summit en mayo de 2023 y el equipo de Get Based. El documental alemán muestra a Patrick presentando Kaboom a bitcoiners que invitó de todo el mundo. Dice que la energía eólica o solar costaría demasiado, así que esta era la forma más barata de empezar a minar en Panajachel. Un invitado dice que con electricidad de la red perdería dinero, pero con energía gratis da ganancia.",
    "src": [
     {
      "t": "Get Based, 3:08",
@@ -426,6 +470,18 @@
     {
      "t": "Publicación del Lago Summit, mayo 2023",
      "u": "https://x.com/i/status/1655015917695254531"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 35:46",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 36:12",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
+    },
+    {
+     "t": "BR film Bitcoineros, Nov 2022, 36:50",
+     "u": "https://www.ardmediathek.de/video/dokus-und-reportagen-im-br/bitcoineros-das-digitale-gold/br/Y3JpZDovL2JyLmRlL3ZpZGVvLzI1ZmJkNjA5LWEzNjctNGQ3Zi05YWNiLTQzZjNhYzZlYTU0Yw"
     }
    ]
   },
@@ -541,7 +597,8 @@
   "vYdp8yS1exU",
   "0NjEr4251uM",
   "79cIKf_T3N0",
-  "MjDnc7ZzQwA"
+  "MjDnc7ZzQwA",
+  "ard-bitcoineros"
  ],
  "open_questions": [
   "You told One Love Bitcoin that the first S9 miner ran at the school from March, while our X sources say a donated S9 was hashing at the Panajachel town hall from March 25, 2022. Were these two different miners, and what happened to each?",
