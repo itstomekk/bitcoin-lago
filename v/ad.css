@@ -476,3 +476,15 @@ input[type="search"], select { border-radius: 2px; }
 .ck-bars li > .ck-bar { display: block; height: 1.4rem; background: var(--muted); opacity: 0.55; justify-self: start; }
 .ck-bars li > .ck-recent { background: var(--jade); opacity: 1; }
 .ck-y, .ck-n { font-family: var(--mono); font-size: 0.95rem; }
+
+/* ---------- visitor FAQ ---------- */
+.faq-group { margin: 0 0 2.4rem; scroll-margin-top: 90px; }
+.faq-group h2 { scroll-margin-top: 90px; }
+.faq-item { border-top: 1px solid var(--line); }
+.faq-item:last-child { border-bottom: 1px solid var(--line); }
+.faq-item summary { cursor: pointer; padding: 0.9rem 0.2rem; font-weight: 700; font-size: 1.08rem; line-height: 1.4; min-height: 44px; }
+.faq-item summary:hover, .faq-item summary:focus-visible { color: var(--cinnabar); }
+.faq-a { padding: 0 0.2rem 1rem; }
+.faq-a p { margin: 0 0 0.6rem; }
+.faq-a .src { font-family: var(--mono); font-size: 0.82rem; color: var(--muted); }
+.faq-confirm { display: inline-block; font-size: 0.88rem; padding: 0.2rem 0.6rem; background: var(--tint); border-left: 4px solid var(--marigold); }

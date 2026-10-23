@@ -1,0 +1,694 @@
+{
+ "generated": "2026-10-23",
+ "groups": [
+  {
+   "id": "pay",
+   "h_en": "Paying with bitcoin",
+   "h_es": "Pagar con bitcoin",
+   "items": [
+    {
+     "id": "pay-how",
+     "q_en": "How do I pay with bitcoin at the lake?",
+     "a_en": "Most places use Lightning. Look for a \"Lightning accepted\" card or sign, then scan the QR code or pay to the Lightning address with your wallet. A visitor who filmed his breakfast payment in 2023 said it was instant, and both he and the restaurant knew at the same moment.",
+     "q_es": "¿Cómo pago con bitcoin en el lago?",
+     "a_es": "En casi todos los lugares se paga con Lightning. Busca una tarjeta o un letrero de \"Lightning accepted\", y luego escanea el código QR o paga a la dirección Lightning desde tu billetera. Un visitante que grabó el pago de su desayuno en 2023 dijo que fue instantáneo y que él y el restaurante se enteraron al mismo tiempo.",
+     "src": [
+      {
+       "t": "Blink at Lago Summit video, 0:03 (Lightning card on a shop table)",
+       "u": "https://www.youtube.com/watch?v=pm4mZxMzvCU&t=3s"
+      },
+      {
+       "t": "Reverend Hodl video, 7:41",
+       "u": "https://www.youtube.com/watch?v=AkaHBhfKQhk&t=461s"
+      },
+      {
+       "t": "BTC Map, Bitcoin Lago community",
+       "u": "https://btcmap.org/community/lago-bitcoin/merchants"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "pay-lightning",
+     "q_en": "Is it Lightning or regular on-chain bitcoin?",
+     "a_en": "Lightning is the normal way. In the merchant data behind our map, 109 of the 117 places are tagged Lightning and 59 are tagged on-chain. If you are unsure, ask the merchant which one they prefer before you pay.",
+     "q_es": "¿Se paga con Lightning o con bitcoin normal (on-chain)?",
+     "a_es": "Lightning es la forma normal de pagar. En los datos de comercios detrás de nuestro mapa, 109 de los 117 lugares están marcados con Lightning y 59 con on-chain. Si tienes dudas, pregunta al comercio cuál prefiere antes de pagar.",
+     "src": [
+      {
+       "t": "BTC Map, Bitcoin Lago community",
+       "u": "https://btcmap.org/community/lago-bitcoin/merchants"
+      },
+      {
+       "t": "Merchant map on this site",
+       "u": "#bitcoin"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "pay-ask-first",
+     "q_en": "Does every place on the map really take bitcoin?",
+     "a_en": "No. 117 places are listed on BTC Map, but about 50 are active today, according to Eliazar in 2026. Listings can be out of date, so ask before you order. In 2023 one visitor found only one of three places took bitcoin, and a nice place on the lake no longer did.",
+     "q_es": "¿Todos los lugares del mapa aceptan bitcoin de verdad?",
+     "a_es": "No. En BTC Map hay 117 lugares, pero hoy están activos unos 50, según Eliazar en 2026. Los registros pueden estar desactualizados, así que pregunta antes de pedir. En 2023 un visitante encontró que solo uno de tres lugares aceptaba bitcoin, y un lugar bonito a la orilla del lago ya no lo aceptaba.",
+     "src": [
+      {
+       "t": "Why the count changed, 2022 to 2026",
+       "u": "blog/merchants-over-time/"
+      },
+      {
+       "t": "Eliazar on Bitcoinismo (Spanish), 2:39",
+       "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=159s"
+      },
+      {
+       "t": "Reverend Hodl video, 5:02",
+       "u": "https://www.youtube.com/watch?v=AkaHBhfKQhk&t=302s"
+      },
+      {
+       "t": "Reverend Hodl video, 2:39",
+       "u": "https://www.youtube.com/watch?v=AkaHBhfKQhk&t=159s"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "pay-what",
+     "q_en": "What can I pay for with bitcoin?",
+     "a_en": "Eliazar names coffee and chocolate tours, food, cycling, paragliding, ATVs and a boat to other towns, and says you can rent an apartment or pay a hotel in bitcoin. Our map lists 21 restaurants, 15 cafes and 13 hotels among its 117 places. A 2023 radio guest also mentioned a bitcoin boat, a tuk tuk, grill restaurants and a way to buy supermarket gift cards.",
+     "q_es": "¿Qué puedo pagar con bitcoin?",
+     "a_es": "Eliazar menciona tours de café y chocolate, comida, bicicleta, parapente, cuatrimotos y un bote a otros pueblos, y dice que se puede alquilar un apartamento o pagar un hotel con bitcoin. Nuestro mapa lista 21 restaurantes, 15 cafés y 13 hoteles entre sus 117 lugares. Un invitado de radio en 2023 también habló de una lancha bitcoin, un tuc tuc, churrasquerías y una forma de comprar tarjetas de regalo para supermercados.",
+     "src": [
+      {
+       "t": "Eliazar on Bitcoinismo (Spanish), 18:36",
+       "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=1116s"
+      },
+      {
+       "t": "Eliazar on the Ordermoon podcast, 34:12",
+       "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=2052s"
+      },
+      {
+       "t": "Bitcoin Economics radio, 9:55",
+       "u": "https://www.youtube.com/watch?v=0NjEr4251uM&t=595s"
+      },
+      {
+       "t": "BTC Map, Bitcoin Lago community",
+       "u": "https://btcmap.org/community/lago-bitcoin/merchants"
+      }
+     ],
+     "confirm": false
+    }
+   ]
+  },
+  {
+   "id": "wallets",
+   "h_en": "Wallets and getting sats",
+   "h_es": "Billeteras y cómo conseguir sats",
+   "items": [
+    {
+     "id": "wallet-which",
+     "q_en": "Which wallet should I use?",
+     "a_en": "We do not recommend one. The sources show these used at the lake: Blink (formerly the Bitcoin Beach wallet), Wallet of Satoshi, Fedi and Tiankii. A visitor paid from Wallet of Satoshi to a restaurant on the Bitcoin Beach wallet, so you do not need the same wallet as the merchant.",
+     "q_es": "¿Qué billetera debo usar?",
+     "a_es": "No recomendamos una en particular. Las fuentes muestran que en el lago se usan Blink (antes la billetera de Bitcoin Beach), Wallet of Satoshi, Fedi y Tiankii. Un visitante pagó desde Wallet of Satoshi a un restaurante que usaba la billetera de Bitcoin Beach, así que no necesitas la misma billetera que el comercio.",
+     "src": [
+      {
+       "t": "Blink at Lago Summit video, description",
+       "u": "https://www.youtube.com/watch?v=pm4mZxMzvCU&t=0s"
+      },
+      {
+       "t": "Eliazar on the Ordermoon podcast, 18:32",
+       "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=1112s"
+      },
+      {
+       "t": "Reverend Hodl video, 6:25",
+       "u": "https://www.youtube.com/watch?v=AkaHBhfKQhk&t=385s"
+      },
+      {
+       "t": "Eliazar's tuk tuk post, March 2026",
+       "u": "https://x.com/i/status/2034364417358336179"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "wallet-get-sats",
+     "q_en": "How do I get sats for my trip?",
+     "a_en": "The simplest plan is to arrive with sats already in a Lightning wallet. Eliazar said in an interview published in January 2026 that there is an exchange in the city but not on the lake, and that local merchants have mostly bought their bitcoin from other bitcoiners. See the ATM question below for the machine at the lake.",
+     "q_es": "¿Cómo consigo sats para mi viaje?",
+     "a_es": "Lo más sencillo es llegar con sats ya en una billetera Lightning. Eliazar dijo en una entrevista publicada en enero de 2026 que en la ciudad hay un lugar para cambiar, pero en el lago no, y que los comercios locales han comprado casi todo su bitcoin a otros bitcoiners. Mira la pregunta del cajero más abajo.",
+     "src": [
+      {
+       "t": "Eliazar on the Ordermoon podcast, 31:23",
+       "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=1883s"
+      },
+      {
+       "t": "Bitcoin ATMs on this page",
+       "u": "#atm"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "wallet-new",
+     "q_en": "I have never used bitcoin. Can someone help me get started?",
+     "a_en": "Yes. The team teaches: Eliazar says someone who knows nothing about bitcoin can be taught, and the meetups mix bitcoiners with locals who are new to it. The easiest way to ask is the community WhatsApp group on this site.",
+     "q_es": "Nunca he usado bitcoin. ¿Alguien puede ayudarme a empezar?",
+     "a_es": "Sí. El equipo enseña: Eliazar dice que a quien no sabe nada de bitcoin se le puede enseñar, y los encuentros mezclan bitcoiners con vecinos que apenas empiezan. La forma más fácil de preguntar es el grupo de WhatsApp de la comunidad en este sitio.",
+     "src": [
+      {
+       "t": "Eliazar on Bitcoinismo (Spanish), 6:58",
+       "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=418s"
+      },
+      {
+       "t": "Adopting Bitcoin 2023 talk, 7:48",
+       "u": "https://www.youtube.com/watch?v=79cIKf_T3N0&t=468s"
+      },
+      {
+       "t": "WhatsApp group and meetups",
+       "u": "#community"
+      }
+     ],
+     "confirm": false
+    }
+   ]
+  },
+  {
+   "id": "cash",
+   "h_en": "Cash, ATMs and cashing out",
+   "h_es": "Efectivo, cajeros y cambiar dinero",
+   "items": [
+    {
+     "id": "cash-atm",
+     "q_en": "Is there a Bitcoin ATM?",
+     "a_en": "Yes. A Lightning Bitcoin ATM was installed at the lake in 2023, and it came up again in the Bitcoinismo interview published in May 2026. In the 2023 talk the team demonstrated selling 100 quetzales from a Blink wallet and said you can buy and sell. We do not have a verified address, hours or fees, so ask the team before you plan around it.",
+     "q_es": "¿Hay un cajero automático de Bitcoin?",
+     "a_es": "Sí. En 2023 se instaló en el lago un cajero de Bitcoin con Lightning, y volvió a mencionarse en la entrevista de Bitcoinismo publicada en mayo de 2026. En la charla de 2023 el equipo mostró cómo vender 100 quetzales desde una billetera Blink y dijo que se puede comprar y vender. No tenemos una dirección, horario ni comisiones confirmados, así que pregunta al equipo antes de contar con él.",
+     "src": [
+      {
+       "t": "Adopting Bitcoin 2023 talk, 10:20",
+       "u": "https://www.youtube.com/watch?v=79cIKf_T3N0&t=620s"
+      },
+      {
+       "t": "Adopting Bitcoin 2023 talk, buy and sell, 11:53",
+       "u": "https://www.youtube.com/watch?v=79cIKf_T3N0&t=713s"
+      },
+      {
+       "t": "Post on X about the ATM, May 2023",
+       "u": "https://x.com/i/status/1657808192804462593"
+      },
+      {
+       "t": "Eliazar on Bitcoinismo (Spanish), 10:04",
+       "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=604s"
+      },
+      {
+       "t": "Bitcoin ATMs on this page",
+       "u": "#atm"
+      }
+     ],
+     "confirm": true
+    },
+    {
+     "id": "cash-change",
+     "q_en": "Can I turn bitcoin into quetzales, or leftover quetzales back into bitcoin?",
+     "a_en": "The Bitcoinismo host described it this way: arrive with bitcoin, change some into quetzales at the ATM, pay where bitcoin is not accepted, and change leftover quetzales back before you leave. Many places do not take bitcoin, so some quetzales are still useful. We have not confirmed how this works today.",
+     "q_es": "¿Puedo cambiar bitcoin por quetzales, o los quetzales que me sobren por bitcoin?",
+     "a_es": "El presentador de Bitcoinismo lo describió así: llegas con bitcoin, cambias una parte por quetzales en el cajero, pagas donde no aceptan bitcoin y, antes de irte, cambias de vuelta los quetzales que te sobren. Muchos lugares no aceptan bitcoin, así que algunos quetzales siguen siendo útiles. No hemos confirmado cómo funciona hoy.",
+     "src": [
+      {
+       "t": "Eliazar on Bitcoinismo (Spanish), 10:13",
+       "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=613s"
+      },
+      {
+       "t": "Reverend Hodl video, 5:02",
+       "u": "https://www.youtube.com/watch?v=AkaHBhfKQhk&t=302s"
+      }
+     ],
+     "confirm": true
+    },
+    {
+     "id": "cash-merchants",
+     "q_en": "Do merchants turn my bitcoin into quetzales?",
+     "a_en": "It varies. In 2022 Eliazar cashed merchants out almost daily as a walking ATM, according to Ricky of the founding group. Today, Eliazar says the businesses that stayed have kept their bitcoin since 2022, and a couple have moved it to a cold wallet. So the sats you spend may be saved, not spent again.",
+     "q_es": "¿Los comercios convierten mi bitcoin a quetzales?",
+     "a_es": "Depende. En 2022 Eliazar les cambiaba el dinero a los comercios casi todos los días, como un cajero ambulante, según Ricky, del grupo fundador. Hoy Eliazar dice que los negocios que se quedaron guardan su bitcoin desde 2022, y un par ya lo pasó a una billetera fría. Así que los sats que gastes pueden quedarse ahorrados y no volver a gastarse.",
+     "src": [
+      {
+       "t": "Ricky, The Orange Journey, 67:11",
+       "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=4031s"
+      },
+      {
+       "t": "Eliazar on Bitcoinismo (Spanish), 2:07",
+       "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=127s"
+      },
+      {
+       "t": "Eliazar on the Ordermoon podcast, 11:33",
+       "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=693s"
+      }
+     ],
+     "confirm": false
+    }
+   ]
+  },
+  {
+   "id": "transport",
+   "h_en": "Getting around",
+   "h_es": "Cómo moverse",
+   "items": [
+    {
+     "id": "transport-airport",
+     "q_en": "How do I get from the airport to the lake, and can I pay in bitcoin?",
+     "a_en": "Eliazar says the drive from Guatemala City's airport takes about 2 to 3 hours. He says you can contact him to arrange a shuttle or a taxi that you pay in bitcoin. We have no prices or booking contact to publish, so use the Ask form on this site.",
+     "q_es": "¿Cómo llego del aeropuerto al lago y puedo pagar en bitcoin?",
+     "a_es": "Eliazar dice que el viaje desde el aeropuerto de la Ciudad de Guatemala toma entre 2 y 3 horas. Dice que puedes escribirle para que te organice un shuttle o un taxi que se paga en bitcoin. No tenemos precios ni un contacto de reserva para publicar, así que usa el formulario de consultas de este sitio.",
+     "src": [
+      {
+       "t": "Eliazar on the Ordermoon podcast, the drive, 12:16",
+       "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=736s"
+      },
+      {
+       "t": "Eliazar on the Ordermoon podcast, shuttle or taxi, 13:22",
+       "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=802s"
+      },
+      {
+       "t": "Eliazar on One Love Bitcoin, about two hours, 24:27",
+       "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=1467s"
+      },
+      {
+       "t": "Ask form",
+       "u": "#ask"
+      }
+     ],
+     "confirm": true
+    },
+    {
+     "id": "transport-boat",
+     "q_en": "Can I take a boat to other lake towns and pay in bitcoin?",
+     "a_en": "Panajachel has a Bitcoin boat and a boat taxi listed on BTC Map, both tagged Lightning. A visiting creator rode a bitcoin boat to San Juan La Laguna, and Santa Cruz La Laguna is about 7 minutes from Panajachel by boat. Ask the fare before you go, since we have no schedule or prices.",
+     "q_es": "¿Puedo tomar una lancha a otros pueblos del lago y pagar en bitcoin?",
+     "a_es": "En Panajachel hay una lancha Bitcoin y un taxi acuático registrados en BTC Map, ambos con Lightning. Un creador de videos que visitó el lago viajó en una lancha bitcoin a San Juan La Laguna, y Santa Cruz La Laguna queda a unos 7 minutos en lancha desde Panajachel. Pregunta la tarifa antes de salir, porque no tenemos horarios ni precios.",
+     "src": [
+      {
+       "t": "Getting around with Bitcoin on this page",
+       "u": "#transport"
+      },
+      {
+       "t": "Get Based video, 8:28",
+       "u": "https://www.youtube.com/watch?v=vYdp8yS1exU&t=508s"
+      },
+      {
+       "t": "Tours account post on Santa Cruz La Laguna, July 2026",
+       "u": "https://x.com/i/status/2074187428013691030"
+      },
+      {
+       "t": "BTC Map, Bitcoin Lago community",
+       "u": "https://btcmap.org/community/lago-bitcoin/merchants"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "transport-tuktuk",
+     "q_en": "Can I pay for a tuk tuk with bitcoin?",
+     "a_en": "Yes, three tuk tuks are listed in Panajachel on BTC Map with Lightning. Tuk tuks are the usual way to get around town, and Eliazar posted in March 2026 that he pays his tuk tuk rides with Lightning. Ask the fare before you get in.",
+     "q_es": "¿Puedo pagar un tuc tuc con bitcoin?",
+     "a_es": "Sí, hay tres tuc tucs registrados en Panajachel en BTC Map con Lightning. Los tuc tucs son la forma habitual de moverse por el pueblo, y Eliazar publicó en marzo de 2026 que paga sus viajes en tuc tuc con Lightning. Pregunta la tarifa antes de subir.",
+     "src": [
+      {
+       "t": "Getting around with Bitcoin on this page",
+       "u": "#transport"
+      },
+      {
+       "t": "Get Based video, tuk tuk ride, 4:15",
+       "u": "https://www.youtube.com/watch?v=vYdp8yS1exU&t=255s"
+      },
+      {
+       "t": "Eliazar's post, March 2026",
+       "u": "https://x.com/i/status/2034364417358336179"
+      }
+     ],
+     "confirm": false
+    }
+   ]
+  },
+  {
+   "id": "tours",
+   "h_en": "Tours and experiences",
+   "h_es": "Tours y experiencias",
+   "items": [
+    {
+     "id": "tours-what",
+     "q_en": "What tours and activities can I pay for in bitcoin?",
+     "a_en": "Atitlán Bitcoin Tours posts hikes and volcano climbs, ATV rides, paragliding, a honey tour, a chocolate tour, coffee tours, weaving and natural dyes, the Palopó towns and the Chichicastenango market. Several posts say you pay with bitcoin or sats. Eliazar also lists cycling and kayaks.",
+     "q_es": "¿Qué tours y actividades puedo pagar con bitcoin?",
+     "a_es": "Atitlán Bitcoin Tours publica caminatas y ascensos a volcanes, recorridos en cuatrimoto, parapente, un tour de miel, un tour de chocolate, tours de café, tejido con tintes naturales, los pueblos de Palopó y el mercado de Chichicastenango. Varias publicaciones dicen que se paga con bitcoin o sats. Eliazar también menciona bicicleta y kayak.",
+     "src": [
+      {
+       "t": "Tours on this page",
+       "u": "#tours"
+      },
+      {
+       "t": "Hikes post, April 2026",
+       "u": "https://x.com/i/status/2041733259575304609"
+      },
+      {
+       "t": "ATV post, April 2026",
+       "u": "https://x.com/i/status/2041269473747870023"
+      },
+      {
+       "t": "Paragliding post, May 2026",
+       "u": "https://x.com/i/status/2052803661747658881"
+      },
+      {
+       "t": "Honey tour post, March 2026",
+       "u": "https://x.com/i/status/2037560411810099630"
+      },
+      {
+       "t": "Eliazar on the Ordermoon podcast, bicycles and kayaks, 15:03",
+       "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=903s"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "tours-book",
+     "q_en": "How do I book a tour, and how much does it cost?",
+     "a_en": "We do not have prices, a booking contact or a phone number to publish yet, and no tour post we found states a price. The tours account is @AtitlanTours21 on X, and you can also write to Eliazar (@JUN_AJPU_btc) or use the Ask form on this site. Sending the form does not book or charge anything.",
+     "q_es": "¿Cómo reservo un tour y cuánto cuesta?",
+     "a_es": "Todavía no tenemos precios, un contacto de reserva ni un teléfono para publicar, y ninguna publicación de tours que encontramos indica un precio. La cuenta de tours es @AtitlanTours21 en X, y también puedes escribirle a Eliazar (@JUN_AJPU_btc) o usar el formulario de consultas de este sitio. Enviar el formulario no reserva ni cobra nada.",
+     "src": [
+      {
+       "t": "Tours on this page",
+       "u": "#tours"
+      },
+      {
+       "t": "Ask form",
+       "u": "#ask"
+      },
+      {
+       "t": "Atitlán Bitcoin Tours introduction on X, October 2026",
+       "u": "https://x.com/i/status/2112735223527899506"
+      }
+     ],
+     "confirm": true
+    },
+    {
+     "id": "tours-maya",
+     "q_en": "Can I meet Maya artisans and see how things are made?",
+     "a_en": "The tours account posts about how Maya and indigenous weavers make yarn and dye it with fruits, seeds and vegetables. In a visiting creator's video, a boat trip to San Juan La Laguna included a chocolate workshop and a weaving cooperative. Ask the team which visits can be arranged.",
+     "q_es": "¿Puedo conocer a artesanos mayas y ver cómo hacen sus productos?",
+     "a_es": "La cuenta de tours publica sobre cómo las tejedoras mayas e indígenas hacen el hilo y lo tiñen con frutas, semillas y verduras. En el video de un creador que visitó el lago, un viaje en lancha a San Juan La Laguna incluyó un taller de chocolate y una cooperativa de tejido. Pregunta al equipo qué visitas se pueden organizar.",
+     "src": [
+      {
+       "t": "Weaving and dyes post, May 2026",
+       "u": "https://x.com/i/status/2052795711553409048"
+      },
+      {
+       "t": "Get Based video, chocolate workshop, 9:24",
+       "u": "https://www.youtube.com/watch?v=vYdp8yS1exU&t=564s"
+      },
+      {
+       "t": "Get Based video, weaving cooperative, 10:41",
+       "u": "https://www.youtube.com/watch?v=vYdp8yS1exU&t=641s"
+      }
+     ],
+     "confirm": true
+    },
+    {
+     "id": "tours-kaboom",
+     "q_en": "Can I visit Kaboom, the cooking oil mining project?",
+     "a_en": "Kaboom ran an old diesel generator on used restaurant oil to power bitcoin miners, with no link to the power grid. Visitors and school groups saw it in 2022 and 2023. We found no 2025 or 2026 source saying it still runs, and we have no address or visiting hours, so ask the team first.",
+     "q_es": "¿Puedo visitar Kaboom, el proyecto de minería con aceite usado?",
+     "a_es": "Kaboom hacía funcionar un viejo generador diésel con aceite usado de restaurantes para alimentar mineros de bitcoin, sin conexión a la red eléctrica. Visitantes y grupos de estudiantes lo vieron en 2022 y 2023. No encontramos ninguna fuente de 2025 o 2026 que diga que sigue funcionando, y no tenemos dirección ni horario de visitas, así que pregunta primero al equipo.",
+     "src": [
+      {
+       "t": "The Kaboom story",
+       "u": "blog/kaboom-cooking-oil-generator/"
+      },
+      {
+       "t": "Eliazar on One Love Bitcoin, 36:35",
+       "u": "https://www.youtube.com/watch?v=1ktrkr1tg6g&t=2195s"
+      },
+      {
+       "t": "Bitcoin Economics radio, May 2023, 30:30",
+       "u": "https://www.youtube.com/watch?v=0NjEr4251uM&t=1830s"
+      }
+     ],
+     "confirm": true
+    },
+    {
+     "id": "tours-save",
+     "q_en": "Can you help me spend less on my trip?",
+     "q_es": "¿Me pueden ayudar a gastar menos en mi viaje?",
+     "a_en": "Yes, that is our strength. We connect you directly with local providers we know, for stays, boats, drivers, guides, food and more, with no agency in the middle, so you pay local prices. Tell us what you need in the Ask form.",
+     "a_es": "Sí, es nuestra fortaleza. Te conectamos directamente con proveedores locales que conocemos, para hospedaje, lanchas, choferes, guías, comida y más, sin agencias de por medio, así pagas precios locales. Cuéntanos qué necesitas en el formulario.",
+     "src": [
+      {
+       "t": "Plan your stay",
+       "u": "#tours"
+      },
+      {
+       "t": "Ask form",
+       "u": "#ask"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "tours-realestate",
+     "q_en": "Can you help me buy land or a house at the lake?",
+     "q_es": "¿Me pueden ayudar a comprar un terreno o una casa en el lago?",
+     "a_en": "Yes. We help with real estate investment through local owners rather than agencies, and introduce you to local lawyers and notaries to check titles, plus builders and people to look after the property. Tell us what you are looking for in the Ask form.",
+     "a_es": "Sí. Ayudamos con inversión en bienes raíces a través de dueños locales y no de agencias, y te presentamos abogados y notarios locales para revisar títulos, además de constructores y gente que cuide la propiedad. Cuéntanos qué buscas en el formulario.",
+     "src": [
+      {
+       "t": "Real estate and investing",
+       "u": "#tours"
+      },
+      {
+       "t": "Ask form",
+       "u": "#ask"
+      }
+     ],
+     "confirm": false
+    }
+   ]
+  },
+  {
+   "id": "community",
+   "h_en": "Schools, meetups and community",
+   "h_es": "Escuelas, encuentros y comunidad",
+   "items": [
+    {
+     "id": "community-who",
+     "q_en": "Who is behind Bitcoin Lago?",
+     "a_en": "Bitcoin Lago began in Panajachel in 2021. Patrick Melder founded it with friends and supporters, and Eliazar Ajquijay leads the work on the ground with volunteers, teachers and merchants. Eliazar describes it as a nonprofit that lives on donations.",
+     "q_es": "¿Quién está detrás de Bitcoin Lago?",
+     "a_es": "Bitcoin Lago empezó en Panajachel en 2021. Lo fundó Patrick Melder junto con amigos y colaboradores, y Eliazar Ajquijay dirige el trabajo en el terreno, con voluntarios, maestros y comerciantes. Eliazar lo describe como un proyecto sin fines de lucro que vive de donaciones.",
+     "src": [
+      {
+       "t": "How Bitcoin Lago started",
+       "u": "blog/how-bitcoin-lago-started/"
+      },
+      {
+       "t": "Our story on this page",
+       "u": "#about"
+      },
+      {
+       "t": "Eliazar on the Ordermoon podcast, 22:35",
+       "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=1355s"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "community-meetup",
+     "q_en": "Is there a meetup I can join?",
+     "a_en": "The community meets once a month in Panajachel to talk bitcoin, swap sats and drink local coffee. Each date and venue is posted on X by @JUN_AJPU_btc. Past meetups were held at the Amaranto hotel in October 2024 and November 2025.",
+     "q_es": "¿Hay algún encuentro al que pueda ir?",
+     "a_es": "La comunidad se reúne una vez al mes en Panajachel para hablar de bitcoin, intercambiar sats y tomar café local. Cada fecha y lugar se publica en X en @JUN_AJPU_btc. Los últimos encuentros fueron en el hotel Amaranto, en octubre de 2024 y noviembre de 2025.",
+     "src": [
+      {
+       "t": "Meetups on this page",
+       "u": "#community"
+      },
+      {
+       "t": "Meetup post, October 2024",
+       "u": "https://x.com/i/status/1847409108837662932"
+      },
+      {
+       "t": "Meetup post, November 2025",
+       "u": "https://x.com/i/status/1990916202411987017"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "community-schools",
+     "q_en": "Does Bitcoin Lago teach in schools?",
+     "a_en": "Yes. Since 2023 the team has taught a Bitcoin diploma, from primary schools to universities, and students make their first Lightning payment in class. Eliazar says the goal is to educate 300,000 people around the lake. We have no published way to sit in on a class, so please ask first.",
+     "q_es": "¿Bitcoin Lago da clases en las escuelas?",
+     "a_es": "Sí. Desde 2023 el equipo da un diplomado de Bitcoin, desde escuelas primarias hasta universidades, y los estudiantes hacen su primer pago con Lightning en clase. Eliazar dice que la meta es educar a 300,000 personas alrededor del lago. No tenemos una forma publicada de asistir a una clase, así que por favor pregunta antes.",
+     "src": [
+      {
+       "t": "Bitcoin in schools on this page",
+       "u": "#community"
+      },
+      {
+       "t": "Adopting Bitcoin 2023 talk, 10 week diploma, 5:10",
+       "u": "https://www.youtube.com/watch?v=79cIKf_T3N0&t=310s"
+      },
+      {
+       "t": "Eliazar on Bitcoinismo (Spanish), 300,000 goal, 3:04",
+       "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=184s"
+      }
+     ],
+     "confirm": true
+    },
+    {
+     "id": "community-newcomers",
+     "q_en": "I am staying a while. How do I meet people and settle in?",
+     "a_en": "Join the community WhatsApp group, the easiest way to ask questions and hear about the next meetup. There is also a group of expats on the lake, and the team says it helps visitors, seasonal stays and people settling in to join the local bitcoin community.",
+     "q_es": "Me voy a quedar un tiempo. ¿Cómo conozco gente y me instalo?",
+     "a_es": "Únete al grupo de WhatsApp de la comunidad, la forma más fácil de hacer preguntas y enterarte del próximo encuentro. También hay un grupo de extranjeros que viven en el lago, y el equipo dice que ayuda a quienes visitan, se quedan una temporada o se instalan a integrarse a la comunidad bitcoin local.",
+     "src": [
+      {
+       "t": "WhatsApp group on this page",
+       "u": "#community"
+      },
+      {
+       "t": "New on the lake?",
+       "u": "#expats"
+      }
+     ],
+     "confirm": false
+    }
+   ]
+  },
+  {
+   "id": "help",
+   "h_en": "Helping the project",
+   "h_es": "Cómo ayudar al proyecto",
+   "items": [
+    {
+     "id": "help-spend",
+     "q_en": "What is the best way to help?",
+     "a_en": "Spend bitcoin at the businesses that accept it. Patrick Melder said in 2022 that the number one way is to visit the lake communities and ask to pay in bitcoin, and Ricky of the founding group asks visitors to spend and replace. Eliazar visits accepting businesses himself and takes visiting bitcoiners to spend there.",
+     "q_es": "¿Cuál es la mejor forma de ayudar?",
+     "a_es": "Gasta bitcoin en los negocios que lo aceptan. Patrick Melder dijo en 2022 que la forma número uno es visitar las comunidades del lago y pedir pagar con bitcoin, y Ricky, del grupo fundador, pide a los visitantes que gasten y repongan. Eliazar visita él mismo a los negocios que aceptan y lleva a los bitcoiners que lo visitan a gastar ahí.",
+     "src": [
+      {
+       "t": "Patrick Melder, March 2022, 24:48",
+       "u": "https://www.youtube.com/watch?v=MjDnc7ZzQwA&t=1488s"
+      },
+      {
+       "t": "Ricky, The Orange Journey, 68:54",
+       "u": "https://www.youtube.com/watch?v=mJf9LcwfaTU&t=4134s"
+      },
+      {
+       "t": "Eliazar on Bitcoinismo (Spanish), 14:33",
+       "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=873s"
+      },
+      {
+       "t": "Why spenders matter",
+       "u": "blog/merchants-over-time/"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "help-tip",
+     "q_en": "Should I tip in bitcoin?",
+     "a_en": "Tips are welcome. The payment app a 2023 visitor used prompted him for a tip. In the Bitcoinismo interview, hotel staff came to understand bitcoin by seeing meetup tips of 20, 50 and 100 quetzales rise in value, and at other businesses staff now prefer bitcoin tips and save them.",
+     "q_es": "¿Debo dejar propina en bitcoin?",
+     "a_es": "Las propinas son bienvenidas. La aplicación de pago que usó un visitante en 2023 le sugirió dejar propina. En la entrevista de Bitcoinismo, el personal de un hotel entendió bitcoin al ver subir de valor las propinas de 20, 50 y 100 quetzales de los encuentros, y en otros negocios los empleados ahora prefieren la propina en bitcoin y la ahorran.",
+     "src": [
+      {
+       "t": "Reverend Hodl video, 7:54",
+       "u": "https://www.youtube.com/watch?v=AkaHBhfKQhk&t=474s"
+      },
+      {
+       "t": "Eliazar on Bitcoinismo (Spanish), 10:50",
+       "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=650s"
+      },
+      {
+       "t": "Bitcoin Economics radio, May 2023, 23:39",
+       "u": "https://www.youtube.com/watch?v=0NjEr4251uM&t=1419s"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "help-btcmap",
+     "q_en": "I found a place that no longer takes bitcoin. What should I do?",
+     "a_en": "Update BTC Map so the next visitor is not misled. In 2023 a visitor who was stopped at the door of a listed place said he would report it so the map got updated, and another visitor added a Bitcoin Lago shop to BTC Map himself. You can also tell the team through the Ask form.",
+     "q_es": "Encontré un lugar que ya no acepta bitcoin. ¿Qué hago?",
+     "a_es": "Actualiza BTC Map para que el próximo visitante no se confunda. En 2023 un visitante a quien no dejaron pasar en un lugar del mapa dijo que lo reportaría para que actualizaran el mapa, y otro visitante agregó él mismo un negocio de Bitcoin Lago a BTC Map. También puedes avisar al equipo con el formulario de consultas.",
+     "src": [
+      {
+       "t": "Reverend Hodl video, 2:39",
+       "u": "https://www.youtube.com/watch?v=AkaHBhfKQhk&t=159s"
+      },
+      {
+       "t": "A visitor adds a Bitcoin Lago shop to BTC Map, March 2023",
+       "u": "https://x.com/i/status/1639960654391005185"
+      },
+      {
+       "t": "BTC Map, Bitcoin Lago community",
+       "u": "https://btcmap.org/community/lago-bitcoin/merchants"
+      },
+      {
+       "t": "Ask form",
+       "u": "#ask"
+      }
+     ],
+     "confirm": false
+    },
+    {
+     "id": "help-volunteer",
+     "q_en": "Can I volunteer?",
+     "a_en": "Yes, Eliazar invites volunteers. In an interview published in January 2026 he described stays of six weeks to two months, teaching English and bitcoin and being around local people. Anyone who knows nothing about bitcoin will be taught. We have no published terms for cost, housing or applying, so write to him (@JUN_AJPU_btc) or use the Ask form.",
+     "q_es": "¿Puedo ser voluntario?",
+     "a_es": "Sí, Eliazar invita a voluntarios. En una entrevista publicada en enero de 2026 habló de estadías de seis semanas a dos meses para enseñar inglés y bitcoin y convivir con la gente local. A quien no sabe nada de bitcoin se le enseña. No tenemos condiciones publicadas sobre costo, hospedaje ni cómo aplicar, así que escríbele (@JUN_AJPU_btc) o usa el formulario de consultas.",
+     "src": [
+      {
+       "t": "Eliazar on the Ordermoon podcast, 15:16",
+       "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=916s"
+      },
+      {
+       "t": "Eliazar on Bitcoinismo (Spanish), 6:44",
+       "u": "https://www.youtube.com/watch?v=iU7EruLMre0&t=404s"
+      },
+      {
+       "t": "Ask form",
+       "u": "#ask"
+      }
+     ],
+     "confirm": true
+    },
+    {
+     "id": "help-donate",
+     "q_en": "Can I donate?",
+     "a_en": "Eliazar describes Bitcoin Lago as a nonprofit that lives on donations, which pay for things like printed signs for merchants. We have no donation address or method to publish yet, and we will not guess one. Ask on X (@JUN_AJPU_btc) before sending anything. A 2025 post also welcomed donated bitcoin books for a shelf in the public library.",
+     "q_es": "¿Puedo donar?",
+     "a_es": "Eliazar describe a Bitcoin Lago como un proyecto sin fines de lucro que vive de donaciones, que sirven para cosas como imprimir letreros para los comercios. Todavía no tenemos una dirección ni un método de donación para publicar, y no vamos a adivinar uno. Pregunta en X (@JUN_AJPU_btc) antes de enviar algo. Una publicación de 2025 también aceptaba libros de bitcoin donados para un estante de la biblioteca pública.",
+     "src": [
+      {
+       "t": "Eliazar on the Ordermoon podcast, 22:35",
+       "u": "https://www.youtube.com/watch?v=4SxWlCcMDiU&t=1355s"
+      },
+      {
+       "t": "Post on donated books, February 2025",
+       "u": "https://x.com/i/status/1886870351314928014"
+      },
+      {
+       "t": "Ask form",
+       "u": "#ask"
+      }
+     ],
+     "confirm": true
+    }
+   ]
+  }
+ ]
+}

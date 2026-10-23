@@ -159,7 +159,8 @@ def timeline(T):
 def story_cta(T):
     S = C.STORY[T["lang"]]
     return (f'<div class="story-cta reveal"><a class="btn btn-primary" href="story/">{S["st_cta"]}</a><p>{S["st_cta_p"]}</p></div>'
-            f'<div class="story-cta reveal"><a class="btn btn-primary" href="blog/">{S["bl_cta"]}</a><p>{S["bl_cta_p"]}</p></div>')
+            f'<div class="story-cta reveal"><a class="btn btn-primary" href="blog/">{S["bl_cta"]}</a><p>{S["bl_cta_p"]}</p></div>'
+            + (f'<div class="story-cta reveal"><a class="btn btn-primary" href="faq/">{FAQ_T[T["lang"]]["cta"]}</a><p>{FAQ_T[T["lang"]]["cta_p"]}</p></div>' if FAQ_FILE.exists() else ""))
 
 
 def partners(T):
@@ -826,6 +827,62 @@ def build_blog():
     print("wrote blog:", len(arts), "articles +", len(topic_articles()), "topics x 2 languages")
 
 
+# ---------- Visitor FAQ (/faq/) ----------
+FAQ_FILE = ROOT / "tools" / "faq.json"
+FAQ_T = {
+    "en": {"h1": "Visitor questions", "title": "Visitor questions | Bitcoin Lago",
+           "lead": "Practical answers for your trip to Lake Atitlán with bitcoin: paying, wallets, cash, getting around, tours and how to help. Each answer links to its source.",
+           "confirm": "We are still confirming this with the team.", "src": "Sources", "ask": "Did not find your question? Ask us.",
+           "cta": "Visitor questions", "cta_p": "Paying, wallets, cash, getting around and how to help, in short answers."},
+    "es": {"h1": "Preguntas de visitantes", "title": "Preguntas de visitantes | Bitcoin Lago",
+           "lead": "Respuestas prácticas para tu viaje al Lago de Atitlán con bitcoin: pagos, billeteras, efectivo, transporte, tours y cómo ayudar. Cada respuesta enlaza a su fuente.",
+           "confirm": "Todavía lo estamos confirmando con el equipo.", "src": "Fuentes", "ask": "¿No encontraste tu pregunta? Pregúntanos.",
+           "cta": "Preguntas de visitantes", "cta_p": "Pagos, billeteras, efectivo, transporte y cómo ayudar, en respuestas cortas."},
+}
+
+
+def render_faq(lang, faq):
+    F = FAQ_T[lang]
+    T = page_T(lang, "faq/", "es/faq/", F["title"], F["lead"])
+    groups, ld = [], []
+    for g in faq["groups"]:
+        items = []
+        for it in g["items"]:
+            srcs = []
+            for s in it.get("src", []):
+                u = s.get("u") or ""
+                if u.startswith("#"):
+                    u = T["home"] + u
+                elif u and not u.startswith("http"):
+                    u = T["home"] + u
+                srcs.append(f'<a href="{escape(u, quote=True)}" rel="noopener">{escape(s["t"])}</a>' if u else escape(s["t"]))
+            conf = f'<p class="faq-confirm">{F["confirm"]}</p>' if it.get("confirm") else ""
+            src = f'<p class="src">{F["src"]}: {"; ".join(srcs)}</p>' if srcs else ""
+            items.append(f'<details class="faq-item" id="{escape(it["id"], quote=True)}"><summary>{escape(it["q_" + lang])}</summary>'
+                         f'<div class="faq-a"><p>{escape(it["a_" + lang])}</p>{conf}{src}</div></details>')
+            ld.append({"@type": "Question", "name": it["q_" + lang], "acceptedAnswer": {"@type": "Answer", "text": it["a_" + lang]}})
+        groups.append(f'<section class="faq-group" aria-labelledby="fq-{g["id"]}"><h2 id="fq-{g["id"]}">{escape(g["h_" + lang])}</h2>{"".join(items)}</section>')
+    toc = "".join(f'<a href="#fq-{g["id"]}">{escape(g["h_" + lang])}</a>' for g in faq["groups"])
+    jsonld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": ld}, ensure_ascii=False).replace("</", "<\\/")
+    main = (f'<section class="scr story-hero" id="hero" aria-labelledby="faq-h1"><p><a class="link-arrow" href="{T["home"]}">{T["st_back"]}</a></p>'
+            f'<h1 id="faq-h1">{F["h1"]}</h1><p class="lede">{F["lead"]}</p><nav class="year-chips" aria-label="{F["h1"]}">{toc}</nav></section>'
+            f'<div class="scr post-body topic-body faq"><div class="post-text">{"".join(groups)}'
+            f'<p class="post-note"><a href="{T["home"]}#community">{F["ask"]}</a></p></div></div>'
+            f'<script type="application/ld+json">{jsonld}</script>')
+    return render_page(T, lang, main, f"faq/{lang}")
+
+
+def build_faq():
+    if not FAQ_FILE.exists():
+        return
+    faq = json.loads(FAQ_FILE.read_text(encoding="utf-8"))
+    for lang in ("en", "es"):
+        d = ROOT / ("faq" if lang == "en" else "es/faq")
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "index.html").write_text(render_faq(lang, faq), encoding="utf-8")
+    print("wrote faq:", sum(len(g["items"]) for g in faq["groups"]), "questions x 2 languages")
+
+
 REDIRECT = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
 <title>Bitcoin Lago Community</title><meta http-equiv="refresh" content="0; url={to}">
@@ -850,6 +907,7 @@ def main():
         out.write_text(render_story(lang), encoding="utf-8")
         print("wrote", out.relative_to(ROOT))
     build_blog()
+    build_faq()
     for rel, to in OLD_PAGES.items():
         out = ROOT / rel / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)

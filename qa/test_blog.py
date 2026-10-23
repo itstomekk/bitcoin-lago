@@ -16,7 +16,7 @@ root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 slugs = [json.load(open(f, encoding="utf-8"))["slug"] for f in glob.glob(os.path.join(root, "tools", "blog", "*.json"))]
 slugs += [json.load(open(f, encoding="utf-8"))["slug"] for f in glob.glob(os.path.join(root, "tools", "topics", "*.json"))
           if not f.endswith("merchant_counts.json")]
-paths = ["blog/", "es/blog/"] + [f"blog/{s}/" for s in slugs] + [f"es/blog/{s}/" for s in slugs]
+paths = ["faq/", "es/faq/", "blog/", "es/blog/"] + [f"blog/{s}/" for s in slugs] + [f"es/blog/{s}/" for s in slugs]
 fails = 0
 
 
@@ -54,6 +54,9 @@ with sync_playwright() as p:
             if "merchants-over-time" in path:
                 ch = pg.evaluate("[document.querySelectorAll('#chart-merchants svg a').length, document.querySelectorAll('#chart-checks li').length]")
                 gate(f"{L} merchant charts drawn (14 linked claims, 6 check bars)", ch == [14, 6], ch)
+            if path.endswith("faq/"):
+                n = pg.evaluate("document.querySelectorAll('.faq-item').length")
+                gate(f"{L} FAQ lists 28 questions", n == 28, n)
             if path in ("blog/", "es/blog/"):
                 gate(f"{L} topics section lists 3 stories", pg.evaluate("document.querySelectorAll('.topic-card').length") == 3)
             gate(f"{L} no failed requests", not bad, bad[:2])
