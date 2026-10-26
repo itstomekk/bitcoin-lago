@@ -11,6 +11,12 @@ link to https://x.com/LakeBitcoin.
 
 The English and Spanish canonical pages (home, story, blog index, FAQ, 12 video stories and 6 topic pages) use page-specific titles, descriptions, canonical/hreflang, Open Graph, Twitter, and JSON-LD metadata from `tools/seo.py`. Matching 1200×630 JPEG share cards live in `images/og/`; their provenance and page mapping are in `images/og/manifest.json`. After changing page content or adding a story, update `tools/seo.py`, run `python tools/build_variants.py`, then `C:/Python314/python.exe tools/build_og.py` and `python qa/test_seo.py`. The site remains `noindex,nofollow` and `robots.txt` remains disallowed until Tomek explicitly says go public. Status 2026-10-23: Eliazar approved the public preview on GitHub Pages; indexing waits until a good custom domain is connected (then change SITE_URL, rebuild, drop noindex/Disallow, add sitemap).
 
+## Kaqchikel (KAQ) page, added 2026-10-23
+- Short page at `/kaq/` plus a third KAQ entry in the language switch, built by `tools/kaq.py` from `tools/kaq.json` (lang `cak`, noindex like the rest).
+- **Gate:** page and switch exist only when every `kaq` string, `translator` and `reviewed_on` are filled. Until then `python tools/build_variants.py` writes only a DRAFT to `source-archive/kaq-draft/` (gitignored). Never machine-translate: texts come from a native speaker. Brief to send them: `C:/Users/Lenovo/Hermes/projects/community/lago-bitcoin/content/kaqchikel-translation-brief.md`.
+- When it goes live, the `qa/test_story.py` language-link check will see a third link (KAQ); update that expectation then. Test: `python qa/test_kaq.py`.
+- Tz'utujil (south shore) would follow the same pattern if wanted.
+
 ## How the site is built (plain language)
 
 | File or folder | What it is | Edit here? |
