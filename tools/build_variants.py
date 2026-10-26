@@ -31,7 +31,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import content as C  # noqa: E402
 import build_pages as BP  # noqa: E402
-import seo as SEO  # noqa: E402
+import seo as SEO
+import kaq as KAQ  # noqa: E402
 
 ROOT = BP.ROOT
 VDIR = ROOT / "tools" / "variants"
@@ -364,7 +365,7 @@ def render(vid, lang):
 
 def fill(html, T, blocks, lang, label):
     T = SEO.prepare(T)
-    blocks = dict(blocks, seo=SEO.extra_meta(T))
+    blocks = dict(blocks, seo=SEO.extra_meta(T), kaq_link=KAQ.kaq_link(T))
     html = re.sub(r"\{\{@(\w+)\}\}", lambda m: blocks[m.group(1)], html)
     html = re.sub(r"\{\{icon:([\w-]+)\}\}", lambda m: BP.icon(m.group(1)), html)
     html = re.sub(r"\{\{fig:([\w-]+)((?:\|[^|}]*){0,3})\}\}",
@@ -945,6 +946,7 @@ def main():
         print("wrote", out.relative_to(ROOT))
     build_blog()
     build_faq()
+    print("wrote kaq page ->", KAQ.build(C.SITE_URL).relative_to(ROOT), "(live)" if KAQ.is_live() else "(DRAFT, not published)")
     for rel, to in OLD_PAGES.items():
         out = ROOT / rel / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)

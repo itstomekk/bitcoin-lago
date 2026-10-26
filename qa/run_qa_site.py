@@ -264,7 +264,7 @@ def variant(browser, vid):
                 return
             weight["t" if "tile.openstreetmap.org" in r.url else "b"] += n
         pg.on("response", on_resp)
-        pg.on("console", lambda m, errs=errs: errs.append(m.text) if m.type in ("error", "warning") else None)
+        pg.on("console", lambda m, errs=errs: errs.append(m.text) if m.type in ("error", "warning") and "goatcounter: not counting" not in m.text else None)
         pg.on("pageerror", lambda e, errs=errs: errs.append(str(e)))
         pg.on("requestfailed", lambda r, failed=failed: failed.append(r.url))
         pg.goto(url, wait_until="networkidle")
@@ -366,7 +366,7 @@ def variant(browser, vid):
         ctx = browser.new_context(viewport={"width": 390, "height": 844}, locale="en-US" if lang == "en" else "es-GT", is_mobile=True, device_scale_factor=2)
         pg = ctx.new_page()
         merrs = []
-        pg.on("console", lambda m, merrs=merrs: merrs.append(m.text) if m.type in ("error", "warning") else None)
+        pg.on("console", lambda m, merrs=merrs: merrs.append(m.text) if m.type in ("error", "warning") and "goatcounter: not counting" not in m.text else None)
         pg.on("pageerror", lambda e, merrs=merrs: merrs.append(str(e)))
         pg.goto(url, wait_until="networkidle")
         pg.wait_for_timeout(1500)

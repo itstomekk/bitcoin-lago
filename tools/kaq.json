@@ -1,0 +1,19 @@
+{
+  "_readme": "Kaqchikel page source. en and es are the source texts. kaq is filled ONLY by a native Kaqchikel speaker. The page and the KAQ switch go live only when every kaq field is filled and translator + reviewed_on are set. Never machine-translate.",
+  "translator": "",
+  "reviewed_on": "",
+  "strings": [
+    {"key": "title", "en": "Bitcoin at Lake Atitlán", "es": "Bitcoin en el Lago de Atitlán", "kaq": ""},
+    {"key": "description", "en": "Bitcoin Lago is a community of people and shops around Lake Atitlán who use bitcoin every day. How to pay with bitcoin, in Kaqchikel.", "es": "Bitcoin Lago es una comunidad de personas y negocios alrededor del Lago de Atitlán que usan bitcoin todos los días. Cómo pagar con bitcoin, en kaqchikel.", "kaq": ""},
+    {"key": "lead", "en": "Bitcoin Lago is a community of people and shops around Lake Atitlán who use bitcoin every day.", "es": "Bitcoin Lago es una comunidad de personas y negocios alrededor del Lago de Atitlán que usan bitcoin todos los días.", "kaq": ""},
+    {"key": "how_h", "en": "How to pay with bitcoin", "es": "Cómo pagar con bitcoin", "kaq": ""},
+    {"key": "step1", "en": "Put a Lightning wallet on your phone.", "es": "Instala una billetera Lightning en tu teléfono.", "kaq": ""},
+    {"key": "step2", "en": "Look for the bitcoin sign at the shop.", "es": "Busca el letrero de bitcoin en el negocio.", "kaq": ""},
+    {"key": "step3", "en": "Scan the shop's QR code, check the amount and pay.", "es": "Escanea el código QR del negocio, revisa el monto y paga.", "kaq": ""},
+    {"key": "where_h", "en": "Where can I pay?", "es": "¿Dónde puedo pagar?", "kaq": ""},
+    {"key": "where_p", "en": "The map of places that take bitcoin is on the full site.", "es": "El mapa de lugares que aceptan bitcoin está en el sitio completo.", "kaq": ""},
+    {"key": "full_h", "en": "Read the full site", "es": "Lee el sitio completo", "kaq": ""},
+    {"key": "full_p", "en": "The full site is in English and Spanish.", "es": "El sitio completo está en inglés y español.", "kaq": ""},
+    {"key": "credit", "en": "Translation", "es": "Traducción", "kaq": ""}
+  ]
+}

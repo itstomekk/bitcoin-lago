@@ -23,7 +23,7 @@ with sync_playwright() as p:
         for w in (1440, 390):
             pg = b.new_page(viewport={"width": w, "height": 900}, locale="es-ES" if path.startswith("es/") else "en-US")
             errs, bad = [], []
-            pg.on("console", lambda m: errs.append(m.text) if m.type in ("error", "warning") else None)
+            pg.on("console", lambda m: errs.append(m.text) if m.type in ("error", "warning") and "goatcounter: not counting" not in m.text else None)
             pg.on("requestfailed", lambda r: bad.append(r.url))
             pg.on("response", lambda r: bad.append(f"{r.status} {r.url}") if r.status >= 400 else None)
             pg.goto(base + path, wait_until="load")
