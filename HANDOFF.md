@@ -170,3 +170,7 @@ generated from that design's layout (path prefix changes from `../../` to `./`);
 - Story page `/story/` and `/es/story/`: built from `tools/story_data.json`, which `python tools/import_x_harvest.py` makes from the gitignored X harvest `source-archive/x-harvest-2026-10-21.json` (1,660 tweets of @JUN_AJPU_btc, 2022 to 2026). Only photos with child_faces false are published (7 withheld).
 - Main page: Atitlán Bitcoin Tours offer list (`C.TOURS_OFFER`), link to the story page under the timeline.
 - QA: `python qa/run_qa_site.py <base> <shots>` (main pages) and `python qa/test_story.py <base> <shots>` (story pages).
+
+
+## 2026-10-26: GoatCounter analytics
+- GoatCounter site `bitcoinlago` (https://bitcoinlago.goatcounter.com, cookieless). The snippet is in `FOOT` in `tools/build_variants.py`, so all 48 content pages (EN and ES: home, story, FAQ, blog index, 12 stories, 8 topics) get it after `python tools/build_variants.py`. The 5 redirect stubs (`v/`, `variants/`) do not carry it. The site stays `noindex,nofollow`.
