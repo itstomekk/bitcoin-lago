@@ -17,6 +17,9 @@ The English and Spanish canonical pages (home, story, blog index, FAQ, 12 video 
 - When it goes live, the `qa/test_story.py` language-link check will see a third link (KAQ); update that expectation then. Test: `python qa/test_kaq.py`.
 - Tz'utujil (south shore) would follow the same pattern if wanted.
 
+## Review page `/review/`, added 2026-10-26
+- Single-file page (Kaqchikel line review + 26 questions for Eliazar, `#eliazar`). Source and tests live in `C:/Users/Lenovo/Hermes/projects/community/lago-bitcoin/translation-review/`; rebuild there (`python build.py`), then copy `dist/index.html` to `review/index.html` here. noindex; `robots.txt` already disallows all. Answers go to Tomek as encrypted Nostr DMs; no server.
+
 ## How the site is built (plain language)
 
 | File or folder | What it is | Edit here? |
