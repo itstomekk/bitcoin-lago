@@ -182,4 +182,4 @@ generated from that design's layout (path prefix changes from `../../` to `./`);
 
 
 ## 2026-10-26: GoatCounter analytics
-- GoatCounter site `bitcoinlago` (https://bitcoinlago.goatcounter.com, cookieless). The snippet is in `FOOT` in `tools/build_variants.py`, so all 48 content pages (EN and ES: home, story, FAQ, blog index, 12 stories, 8 topics) get it after `python tools/build_variants.py`. The 5 redirect stubs (`v/`, `variants/`) do not carry it. The site stays `noindex,nofollow`.
+- GoatCounter site `btclago` (https://btclago.goatcounter.com, cookieless) since 2026-10-27. The old code `bitcoinlago` was created nested under roatanlive and is unreadable in GoatCounter, so do not use it. The snippet is in `FOOT` in `tools/build_variants.py`, so all 48 content pages (EN and ES: home, story, FAQ, blog index, 12 stories, 8 topics) get it after `python tools/build_variants.py`. The 5 redirect stubs (`v/`, `variants/`) do not carry it. The site stays `noindex,nofollow`.

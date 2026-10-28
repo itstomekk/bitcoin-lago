@@ -282,7 +282,7 @@ FOOT = '''
 <script src="{{p}}config.js"></script>
 <script src="{{p}}vendor/leaflet/leaflet.js"></script>
 <script src="{{p}}v/app.js" defer></script>
-<script data-goatcounter="https://bitcoinlago.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://btclago.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 '''
