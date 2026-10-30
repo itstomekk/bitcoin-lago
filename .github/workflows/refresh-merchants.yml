@@ -1,0 +1,43 @@
+# Weekly refresh of data/merchants.json from BTC Map and OpenStreetMap.
+# The map loads data/merchants.json at runtime, so a commit here updates the live map
+# without rebuilding the pages. A week with no changed place commits nothing.
+name: Refresh merchants
+
+on:
+  schedule:
+    - cron: "0 12 * * 1"   # Mondays 12:00 UTC (6:00am in Guatemala)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch from BTC Map and OpenStreetMap
+        run: python tools/fetch_btcmap.py
+
+      - name: Build data/merchants.json
+        run: python tools/build_data.py --latest
+
+      - name: Freshness report
+        run: python tools/merchant_freshness.py >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit if any place changed
+        run: |
+          # data_date moves every run; only a changed place is worth a commit.
+          if git show HEAD:data/merchants.json | python -c "import json,sys; a=json.load(sys.stdin)['places']; b=json.load(open('data/merchants.json'))['places']; sys.exit(0 if a==b else 1)"; then
+            echo "No place changed. Nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data/merchants.json
+          git commit -m "Merchants: weekly refresh from BTC Map ($(date -u +%F))"
+          git push

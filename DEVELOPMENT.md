@@ -22,7 +22,7 @@ Other build steps, each described in HANDOFF.md:
 
 - Blog stories: `tools/blog/*.json`. Topic stories: `tools/topics/*.json`. Visitor FAQ: `tools/faq.json`.
 - Page metadata and share cards: `tools/seo.py`, then `python tools/build_og.py`.
-- Merchant data: `data/merchants.json`, rebuilt with `tools/build_data.py`.
+- Merchant data: `data/merchants.json`, refreshed every Monday by the Refresh merchants action. By hand: `python tools/fetch_btcmap.py`, then `python tools/build_data.py --latest`. `python tools/merchant_freshness.py` shows which places are overdue for a check on the ground.
 - Site settings and placeholder links: `config.js`.
 
 ## Preview locally
