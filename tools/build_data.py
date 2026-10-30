@@ -23,15 +23,19 @@ DERIVATIONS (the only things not copied 1:1)
               and removed from the display name. Value is unchanged.
 
 The raw export lives in source-archive/ which is NOT published (see .gitignore).
-Run:  python tools/build_data.py
+Run:  python tools/build_data.py            (the 2026-10-19 export)
+      python tools/build_data.py --latest   (the newest export from tools/fetch_btcmap.py)
 """
 import json
 import math
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "source-archive" / "data" / "merchants-osm-2026-10-19.json"
+if "--latest" in sys.argv:
+    RAW = sorted(RAW.parent.glob("merchants-osm-*.json"))[-1]
 OUT = ROOT / "data" / "merchants.json"
 
 # Village centres (approximate lat, lon) used only to label each place with a town.
@@ -119,7 +123,7 @@ def main():
     payload = {
         "source": "OpenStreetMap contributors (ODbL), as shown on BTC Map",
         "licence": "https://www.openstreetmap.org/copyright",
-        "data_date": "2026-10-19",
+        "data_date": RAW.stem.removeprefix("merchants-osm-"),
         "count": len(out),
         "places": out,
     }
