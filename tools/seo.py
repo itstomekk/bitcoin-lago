@@ -69,6 +69,12 @@ def records():
         'heading': ('Visit with bitcoin.', 'Visita con bitcoin.'),
         'label': ('THE VISITOR GUIDE', 'LA GUÍA PARA VISITANTES'),
         'path': 'faq/', 'type': 'WebPage'},
+      'whitepaper': {
+        'title': ('Bitcoin white paper by Satoshi Nakamoto | Bitcoin Lago', 'Libro blanco de Bitcoin, de Satoshi Nakamoto | Bitcoin Lago'),
+        'description': ('Read the Bitcoin white paper by Satoshi Nakamoto (2008) in full, unmodified, with a link to the original PDF.', 'Lee completo el libro blanco de Bitcoin de Satoshi Nakamoto (2008), sin modificar, con enlace al PDF original.'),
+        'heading': ('The Bitcoin white paper.', 'El libro blanco de Bitcoin.'),
+        'label': ('SATOSHI NAKAMOTO · 2008', 'SATOSHI NAKAMOTO · 2008'),
+        'path': 'whitepaper/', 'type': 'WebPage'},
     }
     result = {}
     for key, a in core.items():

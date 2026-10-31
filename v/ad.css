@@ -495,3 +495,52 @@ input[type="search"], select { border-radius: 2px; }
 .faq-a p { margin: 0 0 0.6rem; }
 .faq-a .src { font-family: var(--mono); font-size: 0.82rem; color: var(--muted); }
 .faq-confirm { display: inline-block; font-size: 0.88rem; padding: 0.2rem 0.6rem; background: var(--tint); border-left: 4px solid var(--marigold); }
+
+/* WHITE PAPER reading page (/whitepaper/): scoped to .wp and .wp-thanks */
+.wp-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1.4rem 0 0; }
+.wp-actions .btn { text-decoration: none; padding: 0.8rem 1.3rem; display: inline-block; }
+.wp-actions .btn-ghost { color: #fff; border: 1px solid #fff; }
+.wp-wrap .wp { max-width: 70ch; width: 100%; font-size: 1.0625rem; line-height: 1.7; overflow-wrap: break-word; }
+.wp h1, .wp h2, .wp h3, .wp h4 { font-family: var(--font-display); color: var(--indigo); letter-spacing: -0.02em; line-height: 1.15; }
+.wp h1 { font-size: clamp(1.6rem, 4vw, 2.3rem); margin: 0 0 0.6rem; }
+.wp h2 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); margin: 2.4rem 0 0.7rem; padding-top: 1.1rem; border-top: 4px solid var(--marigold); }
+.wp h2.wp-title { font-size: clamp(1.6rem, 4vw, 2.3rem); margin: 0 0 0.6rem; padding-top: 0; border-top: 0; }
+.wp h3 { font-size: 1.1rem; margin: 1.6rem 0 0.5rem; }
+.wp p, .wp li { font-size: 1.0625rem; line-height: 1.7; margin: 0 0 1rem; hyphens: auto; }
+.wp ol, .wp ul { padding-left: 1.4rem; margin: 0 0 1rem; }
+.wp li { margin-bottom: 0.5rem; }
+.wp a { color: var(--link); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.wp figure { margin: 1.6rem 0; padding: 0; }
+.wp figure img, .wp img { display: block; max-width: 100%; height: auto; margin: 0 auto; background: #fff; }
+.wp figcaption { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; text-align: center; }
+.wp .abstract, .wp .authors, .wp .byline { color: var(--muted); }
+.wp .eq, .wp .equation, .wp pre, .wp code { font-family: var(--mono); font-size: 0.92rem; }
+.wp .eq, .wp .equation, .wp pre { display: block; overflow-x: auto; max-width: 100%; margin: 1.2rem 0; padding: 0.8rem 1rem; background: var(--tint); border-left: 4px solid var(--indigo); white-space: pre-wrap; }
+.wp table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.2rem 0; }
+.wp td, .wp th { border: 1px solid var(--line); padding: 0.35rem 0.6rem; }
+.wp sub, .wp sup { line-height: 0; }
+.wp-thanks { position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem 1.6rem; padding: calc(0.8rem + 6px) var(--pad) 0.9rem; background: var(--indigo); color: #fff; font-size: 0.95rem; line-height: 1.35; }
+.wp-thanks::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; background: var(--stripes); }
+.wp-thanks .say strong { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.02em; font-size: 1.05rem; }
+.wp-thanks .say span { color: rgb(255 255 255 / 0.82); }
+.wp-thanks .links { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.3rem 1.4rem; }
+.wp-thanks a { color: #fff; font-weight: 600; text-decoration-color: var(--marigold); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.wp-thanks a:hover { color: var(--marigold); }
+.wp-thanks .hash { font-family: var(--mono); font-size: 0.78rem; color: rgb(255 255 255 / 0.75); }
+.wp-thanks .quiet { display: inline-flex; gap: 1rem; }
+.wp-thanks .quiet a { font-weight: 500; font-size: 0.85rem; color: rgb(255 255 255 / 0.75); text-decoration-thickness: 1px; text-decoration-color: rgb(255 255 255 / 0.4); }
+@media (max-width: 700px) { .wp-thanks { flex-direction: column; text-align: center; gap: 0.3rem; } .wp h2 { margin-top: 2rem; } }
+/* Shared rules for the white paper fragment (text/<lang>.html). Paste inside each
+   site's own <style>, after its .wp rules; uses inherited colours and fonts only. */
+.wp-paper .wp-author, .wp-paper .wp-translator { text-align: center; }
+.wp-paper .wp-translator { font-size: .9em; opacity: .85; }
+.wp-paper .wp-abstract { margin: 1.4em 0 1.8em; padding: .9em 1.1em; border-left: 3px solid currentColor; font-size: .96em; }
+.wp-paper .wp-abstract p { margin: 0; }
+.wp-paper .wp-fig { margin: 1.75em auto; text-align: center; }
+.wp-paper .wp-fig img { display: block; max-width: 100%; height: auto; margin: 0 auto; background: #fff; padding: 6px; box-sizing: border-box; }
+.wp-paper .wp-fig figcaption { font-size: .85em; margin-top: .4em; }
+.wp-paper math[display="block"] { display: block; margin: 1.2em 0; max-width: 100%; overflow-x: auto; overflow-y: hidden; font-size: 1.12em; }
+.wp-paper pre { max-width: 100%; overflow-x: auto; font-size: .82em; line-height: 1.45; padding: .8em 1em; }
+.wp-paper .wp-refs, .wp-paper .wp-fns { font-size: .92em; overflow-wrap: anywhere; }
+.wp-paper .wp-tnote { margin-top: 2em; font-size: .92em; }
+.wp-paper .wp-fnref a { text-decoration: none; }

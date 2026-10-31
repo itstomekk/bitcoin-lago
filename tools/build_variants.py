@@ -921,6 +921,67 @@ def build_faq():
     print("wrote faq:", sum(len(g["items"]) for g in faq["groups"]), "questions x 2 languages")
 
 
+# ---------- Bitcoin white paper: /bitcoin.pdf (committed, never modified) and the /whitepaper/ reading page ----------
+# The paper text is an HTML fragment per language in tools/whitepaper/{en,es}.html, embedded verbatim (only the
+# figure paths are rewritten to images/whitepaper/). Figures live in images/whitepaper/. Without a fragment the page
+# shows a clearly marked placeholder, so a missing text can never ship silently (qa/test_whitepaper.py fails on it).
+WP_DIR = ROOT / "tools" / "whitepaper"
+WP_SHA = "b1674191a88ec5cdd733e4240a81803105dc412d6c6708d53ab94fc248f4f553"
+WP_T = {
+    "en": {"h1": "The Bitcoin white paper.", "lede": "Satoshi Nakamoto, 31 October 2008. The full text, unmodified.",
+           "pdf": "Original PDF", "pdf_es": "", "thanks": "Thank you, Satoshi.",
+           "line": "One more copy, so the paper never depends on one place.",
+           "unmod": "Unmodified", "alt_note": "", "aria": "Gratitude and source of this copy"},
+    "es": {"h1": "El libro blanco de Bitcoin.", "lede": "Satoshi Nakamoto, 31 de octubre de 2008. El texto completo, sin modificar.",
+           "pdf": "PDF original (inglés)", "pdf_es": "PDF en español (bitcoin.org)", "thanks": "Gracias, Satoshi.",
+           "line": "Una copia más, para que el documento nunca dependa de un solo lugar.",
+           "unmod": "Sin modificar", "alt_note": "", "aria": "Agradecimiento y fuente de esta copia"},
+}
+WP_PLACEHOLDER = ('<!--WHITEPAPER_TEXT--><section><h2>TEXT PENDING</h2><p>Placeholder: the paper text fragment '
+                  '(tools/whitepaper/{lang}.html) has not been added yet.</p></section>')
+
+
+def whitepaper_body(lang, p):
+    f = WP_DIR / f"{lang}.html"
+    if not f.is_file():
+        return WP_PLACEHOLDER.format(lang=lang)
+    html = f.read_text(encoding="utf-8").replace('src="figures/', f'src="{p}images/whitepaper/')
+    # The page already has its one h1 (hero); the paper's own title becomes an h2 (markup only, text untouched).
+    return re.sub(r"<h1\b([^>]*)>(.*?)</h1>", lambda m: '<h2 class="wp-title"' + m.group(1) + ">" + m.group(2) + "</h2>", html, flags=re.S)
+
+
+def render_whitepaper(lang):
+    path_en, path_es = "whitepaper/", "es/whitepaper/"
+    W = WP_T[lang]
+    T = page_T(lang, path_en, path_es, "", "")
+    p = T["p"]
+    pdf = p + "bitcoin.pdf"
+    pdf_es = p + "bitcoin_es.pdf"
+    es_link = f'<a class="btn btn-ghost" href="{pdf_es}" download>{W["pdf_es"]}</a>' if lang == "es" else ""
+    es_foot = f'<a href="{pdf_es}" download>{W["pdf_es"]}</a>' if lang == "es" else ""
+    alt = ('<a href="' + T["alt_lang_href"] + '" lang="' + ("es" if lang == "en" else "en") + '" hreflang="' + ("es" if lang == "en" else "en")
+           + '" data-lang="' + ("es" if lang == "en" else "en") + '">' + ("Español" if lang == "en" else "English") + '</a>')
+    main = (
+        f'<section class="scr story-hero" id="hero" aria-labelledby="wp-h1"><p><a class="link-arrow" href="{T["home"]}">{T["st_back"]}</a></p>'
+        f'<h1 id="wp-h1">{W["h1"]}</h1><p class="lede">{W["lede"]}</p>'
+        f'<p class="wp-actions"><a class="btn btn-primary" href="{pdf}" download>{W["pdf"]}</a>{es_link}</p></section>'
+        f'<div class="scr post-body topic-body wp-wrap"><article class="wp post-text" lang="{lang}" id="wp-text">{whitepaper_body(lang, p)}</article></div>'
+        f'<aside class="wp-thanks" aria-label="{W["aria"]}"><span class="say"><strong>{W["thanks"]}</strong> <span>{W["line"]}</span></span>'
+        f'<span class="links"><a href="{pdf}" download>{W["pdf"]}</a>{es_foot}'
+        f'<span class="hash" title="SHA-256 {WP_SHA}">{W["unmod"]} · SHA-256 b167…f553</span>'
+        f'<span class="quiet"><a href="{T["home"]}">Bitcoin Lago</a>{alt}</span></span></aside>'
+    )
+    return render_page(T, lang, main, f"whitepaper/{lang}")
+
+
+def build_whitepaper():
+    for lang in ("en", "es"):
+        d = ROOT / ("whitepaper" if lang == "en" else "es/whitepaper")
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "index.html").write_text(render_whitepaper(lang), encoding="utf-8")
+    print("wrote whitepaper: 2 pages", "(TEXT PENDING)" if not all((WP_DIR / f"{l}.html").is_file() for l in ("en", "es")) else "")
+
+
 REDIRECT = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
 <title>Bitcoin Lago Community</title><meta http-equiv="refresh" content="0; url={to}">
@@ -946,6 +1007,7 @@ def main():
         print("wrote", out.relative_to(ROOT))
     build_blog()
     build_faq()
+    build_whitepaper()
     print("wrote kaq page ->", KAQ.build(C.SITE_URL).relative_to(ROOT), "(live)" if KAQ.is_live() else "(DRAFT, not published)")
     for rel, to in OLD_PAGES.items():
         out = ROOT / rel / "index.html"

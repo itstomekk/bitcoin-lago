@@ -34,7 +34,7 @@ class Page(HTMLParser):
 
 
 def pages():
-    paths = ['index.html', 'es/index.html', 'story/index.html', 'es/story/index.html', 'blog/index.html', 'es/blog/index.html', 'faq/index.html', 'es/faq/index.html']
+    paths = ['index.html', 'es/index.html', 'story/index.html', 'es/story/index.html', 'blog/index.html', 'es/blog/index.html', 'faq/index.html', 'es/faq/index.html', 'whitepaper/index.html', 'es/whitepaper/index.html']
     for folder in ('blog', 'topics'):
         for f in sorted((ROOT / 'tools' / folder).glob('*.json')):
             a = json.loads(f.read_text(encoding='utf-8'))
