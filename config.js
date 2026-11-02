@@ -11,7 +11,7 @@
                    The "Tell us what you need" form opens a chat with this number.
 */
 window.LBC_CONFIG = {
-  whatsapp: "",
+  whatsapp: "https://chat.whatsapp.com/ImfVTV9pP1zBbc0yGD7Hhl?s=cl&p=a&mlu=4&ilr=4&iam=2",
   facebook: "",
   email: "",
   tourBooking: "",
