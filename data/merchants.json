@@ -1,7 +1,7 @@
 {
  "source": "OpenStreetMap contributors (ODbL), as shown on BTC Map",
  "licence": "https://www.openstreetmap.org/copyright",
- "data_date": "2026-10-19",
+ "data_date": "2026-11-06",
  "count": 117,
  "places": [
   {
@@ -181,8 +181,8 @@
    "category": "cafe",
    "group": "eat",
    "town": "San Marcos La Laguna",
-   "lat": 14.722853,
-   "lon": -91.258585,
+   "lat": 14.72286,
+   "lon": -91.258587,
    "phone": null,
    "website": "https://www.facebook.com/emporium.atitlan",
    "facebook": null,
