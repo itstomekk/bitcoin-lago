@@ -13,7 +13,7 @@
 window.LBC_CONFIG = {
   whatsapp: "https://chat.whatsapp.com/ImfVTV9pP1zBbc0yGD7Hhl?s=cl&p=a&mlu=4&ilr=4&iam=2",
   facebook: "",
-  email: "",
+  email: "lago_bitcoin_atitlan@proton.me",
   tourBooking: "",
   expatContact: "",
   whatsappNumber: ""
