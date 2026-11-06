@@ -28,7 +28,7 @@ The English and Spanish canonical pages (home, story, blog index, FAQ, 12 video 
 | `tools/content.py` | Every visible word, EN and ES, in one file. Photo captions, press list. | **Yes, for wording.** |
 | `tools/build_variants.py` | Builds both pages (design AD). `python tools/build_variants.py` | Run after any edit. |
 | `config.js` | **Switches placeholder links on** (WhatsApp, Facebook, email, tour booking, newcomers contact). | **Yes. Start here.** |
-| `data/merchants.json` | The 117 places (trimmed OpenStreetMap export, dated 2026-10-19). | Rebuild with `tools/build_data.py`. |
+| `data/merchants.json` | The 117 places (trimmed OpenStreetMap export; its `data_date` says which day). | Refreshed every Monday by `.github/workflows/refresh-merchants.yml` (`tools/fetch_btcmap.py`, then `tools/build_data.py --latest`). By hand: the same two commands. |
 | `data/photos.json` | Credit line for each photo (artist, licence, Commons page). | Via `tools/optimize_images.py`. |
 | `images/` | Optimized Wikimedia Commons and Tomek-supplied community photos, WebP + JPG. | Via `tools/optimize_images.py` and `tools/optimize_community_photos.py`. |
 | `vendor/leaflet/`, `fonts/`, `icons.svg` | Leaflet map library (BSD), Geist font (OFL), Phosphor icons (MIT). | No. |
