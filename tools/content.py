@@ -207,7 +207,7 @@ EN = {
     "facebook": "Facebook",
     "email": "Email",
     "who_h": "Who we are",
-    "who_p": "Bitcoin Lago was founded in 2021 by Patrick Melder together with friends and supporters. Eliazar is the local base and does the work around the lake. In November 2026 he said Ricky helps from far away, volunteers join from time to time, and for now he is the only one on the ground (voice answers, November 2026).",
+    "who_p": "Bitcoin Lago was founded in 2021 by Patrick Melder together with friends and supporters. Eliazar, known as Eli, is the local base and does the work around the lake. In November 2026 he said Ricky helps from far away, volunteers join from time to time, and for now he is the only one on the ground (voice answers, November 2026).",
     "who_bio": "Photo and short bio of Eliazar to be added.",
 
     "tours_h2": "Plan your stay with Bitcoin Lago",
@@ -381,7 +381,7 @@ ES = {
     "facebook": "Facebook",
     "email": "Correo",
     "who_h": "Quiénes somos",
-    "who_p": "Bitcoin Lago fue fundado en 2021 por Patrick Melder junto con amigos y colaboradores. Eliazar es la base local del proyecto y hace el trabajo alrededor del lago. En noviembre de 2026 dijo que Ricky ayuda desde lejos, que de vez en cuando se suman voluntarios y que, por ahora, él es el único en el terreno (respuestas de voz, noviembre de 2026).",
+    "who_p": "Bitcoin Lago fue fundado en 2021 por Patrick Melder junto con amigos y colaboradores. Eliazar, conocido como Eli, es la base local del proyecto y hace el trabajo alrededor del lago. En noviembre de 2026 dijo que Ricky ayuda desde lejos, que de vez en cuando se suman voluntarios y que, por ahora, él es el único en el terreno (respuestas de voz, noviembre de 2026).",
     "who_bio": "La foto y una breve biografía de Eliazar se agregarán.",
 
     "tours_h2": "Planea tu visita con Bitcoin Lago",
@@ -530,7 +530,7 @@ GALLERY = ["boat", "steelcraft", "santacruz", "chuijuyub", "library", "huipil", 
 
 LB_CAPTIONS = {
     "en": {
-        "boat": "A Bitcoin boat at a pier on Lake Atitlán",
+        "boat": "The Bitcoin Lago boat at a pier on Lake Atitlán",
         "tuktuk": "A tuk tuk outside a business painted with \u201cBitcoin aceptado aquí\u201d",
         "sign": "An \u201cAceptamos Bitcoin\u201d sign with Blink and Fedi",
         "uvg": "Our banner at a Bitcoin talk at UVG in Sololá, 2024",
@@ -544,7 +544,7 @@ LB_CAPTIONS = {
         "painting": "A painting of the lake, shared by Eliazar",
     },
     "es": {
-        "boat": "Una lancha de Bitcoin en un muelle del Lago de Atitlán",
+        "boat": "La lancha de Bitcoin Lago en un muelle del Lago de Atitlán",
         "tuktuk": "Un tuk tuk frente a un negocio pintado con \u201cBitcoin aceptado aquí\u201d",
         "sign": "Un letrero de \u201cAceptamos Bitcoin\u201d con Blink y Fedi",
         "uvg": "Nuestro banner en una charla de Bitcoin en la UVG de Sololá, 2024",
