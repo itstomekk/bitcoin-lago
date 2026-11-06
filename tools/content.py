@@ -147,7 +147,7 @@ EN = {
     "btc_h2": "Bitcoin on the lake",
     "btc_lead": "117 places around Lake Atitlán have been listed on BTC Map over the years. About 50 of them take bitcoin actively today, from cafes and hotels to pharmacies and boat taxis.",
     "btc_stat_active": "active today",
-    "btc_active_note": "Active count: Eliazar, interviews of January and May 2026, and voice answers to Tomek of November 2026 (about 50, still growing). Listed places: BTC Map.",
+    "btc_active_note": "Active count: Eliazar, interviews of January and May 2026, and voice answers of November 2026 (about 50, still growing). Listed places: BTC Map.",
     "btc_count_link": "How the count changed since 2022",
     "btc_listed": "117 places listed on BTC Map / OpenStreetMap, data of 2026-10-19.",
     "btc_stat_places": "places listed",
@@ -184,13 +184,13 @@ EN = {
     "map_error": "The map could not load. Open it on BTC Map instead.",
 
     "transport_h2": "Getting around with Bitcoin",
-    "transport_p": "A Bitcoin boat, a boat taxi and three tuk tuks are listed in Panajachel. In November 2026 Eliazar said the Bitcoin boat is a private boat that visitors can hire through him, and that two of the tuk tuks still accept bitcoin (voice answers to Tomek, November 2026). Contact details are copied from the listings. Ask about the fare before you go.",
+    "transport_p": "A Bitcoin boat, a boat taxi and three tuk tuks are listed in Panajachel. In November 2026 Eliazar said the Bitcoin boat is a private boat that visitors can hire through him, and that two of the tuk tuks still accept bitcoin (voice answers, November 2026). Contact details are copied from the listings. Ask about the fare before you go.",
     "transport_boat": "Boat",
     "transport_tuk": "Tuk tuk",
     "operator": "Operator on the listing",
     "phone": "Phone",
     "atm_h3": "Bitcoin ATMs",
-    "atm_p": "The walking Bitcoin ATM is rare now. In November 2026 Eliazar said he is not sure the Lightning ATM at Amaranto still works (voice answers to Tomek, November 2026). Confirm before you rely on any machine.",
+    "atm_p": "The walking Bitcoin ATM is rare now. In November 2026 Eliazar said he is not sure the Lightning ATM at Amaranto still works (voice answers, November 2026). Confirm before you rely on any machine.",
     "atm_loc": "Locations to be added.",
 
     "community_h2": "A community that meets, teaches and welcomes",
@@ -207,7 +207,7 @@ EN = {
     "facebook": "Facebook",
     "email": "Email",
     "who_h": "Who we are",
-    "who_p": "Bitcoin Lago was founded in 2021 by Patrick Melder together with friends and supporters. Eliazar is the local base and does the work around the lake. In November 2026 he said Ricky helps from far away, volunteers join from time to time, and for now he is the only one on the ground (voice answers to Tomek, November 2026).",
+    "who_p": "Bitcoin Lago was founded in 2021 by Patrick Melder together with friends and supporters. Eliazar is the local base and does the work around the lake. In November 2026 he said Ricky helps from far away, volunteers join from time to time, and for now he is the only one on the ground (voice answers, November 2026).",
     "who_bio": "Photo and short bio of Eliazar to be added.",
 
     "tours_h2": "Plan your stay with Bitcoin Lago",
@@ -321,7 +321,7 @@ ES = {
     "btc_h2": "Bitcoin en el lago",
     "btc_lead": "117 lugares alrededor del Lago de Atitlán se han registrado en BTC Map con los años. Unos 50 aceptan bitcoin activamente hoy, desde cafés y hoteles hasta farmacias y lanchas.",
     "btc_stat_active": "activos hoy",
-    "btc_active_note": "Comercios activos: Eliazar, entrevistas de enero y mayo de 2026, y respuestas de voz a Tomek de noviembre de 2026 (unos 50, y en aumento). Lugares registrados: BTC Map.",
+    "btc_active_note": "Comercios activos: Eliazar, entrevistas de enero y mayo de 2026, y respuestas de voz de noviembre de 2026 (unos 50, y en aumento). Lugares registrados: BTC Map.",
     "btc_count_link": "Cómo cambió la cifra desde 2022",
     "btc_listed": "117 lugares registrados en BTC Map / OpenStreetMap, datos del 2026-10-19.",
     "btc_stat_places": "lugares registrados",
@@ -358,13 +358,13 @@ ES = {
     "map_error": "No se pudo cargar el mapa. Ábrelo mejor en BTC Map.",
 
     "transport_h2": "Cómo moverse con Bitcoin",
-    "transport_p": "En Panajachel hay registrados una lancha Bitcoin, un taxi acuático y tres tuc tucs. En noviembre de 2026 Eliazar dijo que la lancha Bitcoin es privada, que los visitantes pueden contratarla con él, y que dos de los tuc tucs todavía aceptan bitcoin (respuestas de voz a Tomek, noviembre de 2026). Los datos de contacto están copiados de los registros. Pregunta la tarifa antes de salir.",
+    "transport_p": "En Panajachel hay registrados una lancha Bitcoin, un taxi acuático y tres tuc tucs. En noviembre de 2026 Eliazar dijo que la lancha Bitcoin es privada, que los visitantes pueden contratarla con él, y que dos de los tuc tucs todavía aceptan bitcoin (respuestas de voz, noviembre de 2026). Los datos de contacto están copiados de los registros. Pregunta la tarifa antes de salir.",
     "transport_boat": "Lancha",
     "transport_tuk": "Tuc tuc",
     "operator": "Operador según el registro",
     "phone": "Teléfono",
     "atm_h3": "Cajeros automáticos de Bitcoin",
-    "atm_p": "El cajero ambulante casi no se usa hoy. En noviembre de 2026 Eliazar dijo que no está seguro de que el cajero Lightning de Amaranto siga funcionando (respuestas de voz a Tomek, noviembre de 2026). Confirma antes de depender de cualquier máquina.",
+    "atm_p": "El cajero ambulante casi no se usa hoy. En noviembre de 2026 Eliazar dijo que no está seguro de que el cajero Lightning de Amaranto siga funcionando (respuestas de voz, noviembre de 2026). Confirma antes de depender de cualquier máquina.",
     "atm_loc": "Las ubicaciones se agregarán.",
 
     "community_h2": "Una comunidad que se reúne, enseña y da la bienvenida",
@@ -381,7 +381,7 @@ ES = {
     "facebook": "Facebook",
     "email": "Correo",
     "who_h": "Quiénes somos",
-    "who_p": "Bitcoin Lago fue fundado en 2021 por Patrick Melder junto con amigos y colaboradores. Eliazar es la base local del proyecto y hace el trabajo alrededor del lago. En noviembre de 2026 dijo que Ricky ayuda desde lejos, que de vez en cuando se suman voluntarios y que, por ahora, él es el único en el terreno (respuestas de voz a Tomek, noviembre de 2026).",
+    "who_p": "Bitcoin Lago fue fundado en 2021 por Patrick Melder junto con amigos y colaboradores. Eliazar es la base local del proyecto y hace el trabajo alrededor del lago. En noviembre de 2026 dijo que Ricky ayuda desde lejos, que de vez en cuando se suman voluntarios y que, por ahora, él es el único en el terreno (respuestas de voz, noviembre de 2026).",
     "who_bio": "La foto y una breve biografía de Eliazar se agregarán.",
 
     "tours_h2": "Planea tu visita con Bitcoin Lago",
@@ -562,8 +562,8 @@ LB_CAPTIONS = {
 TIMELINE = [
     # year, sources (tweet urls), EN, ES
     ("2021", [],
-     "Bitcoin Lago starts in Panajachel in late 2021. From March 2022 Eliazar visited businesses one by one, and the first merchants accepted bitcoin: Amaranto, Coffee Art and an ice cream shop (voice answers to Tomek, November 2026).",
-     "Bitcoin Lago nace en Panajachel a finales de 2021. Desde marzo de 2022 Eliazar visitó los negocios uno por uno, y los primeros comercios que aceptaron bitcoin fueron Amaranto, Coffee Art y una heladería (respuestas de voz a Tomek, noviembre de 2026)."),
+     "Bitcoin Lago starts in Panajachel in late 2021. From March 2022 Eliazar visited businesses one by one, and the first merchants accepted bitcoin: Amaranto, Coffee Art and an ice cream shop (voice answers, November 2026).",
+     "Bitcoin Lago nace en Panajachel a finales de 2021. Desde marzo de 2022 Eliazar visitó los negocios uno por uno, y los primeros comercios que aceptaron bitcoin fueron Amaranto, Coffee Art y una heladería (respuestas de voz, noviembre de 2026)."),
     ("2022", [_x("JUN_AJPU_btc", "1568416150765113344"), _x("JUN_AJPU_btc", "1592607133664940032")],
      "Kaboom: used cooking oil ran a generator that mined bitcoin. In November 2026 Eliazar said it has stopped, because the team could not cover the running costs. The lake team travels to Adopting Bitcoin in El Salvador.",
      "Kaboom: aceite de cocina usado movió un generador que minaba bitcoin. En noviembre de 2026 Eliazar dijo que se detuvo, porque el equipo no pudo cubrir los gastos de operación. El equipo del lago viaja a Adopting Bitcoin en El Salvador."),
@@ -764,7 +764,7 @@ STORY = {
         "bl_watch": "Watch on YouTube",
         "bl_more_h": "More videos",
         "bl_note": "This summary is based on the video's automatic captions. If something is wrong, tell us and we will fix it.",
-        "st_2021": "Bitcoin Lago starts in Panajachel in late 2021 (voice answers to Tomek, November 2026: November or December). Merchant onboarding began in March 2022, when Eliazar visited businesses one by one.",
+        "st_2021": "Bitcoin Lago starts in Panajachel in late 2021 (voice answers, November 2026: November or December). Merchant onboarding began in March 2022, when Eliazar visited businesses one by one.",
     },
     "es": {
         "st_title": "Nuestra historia, año por año | Bitcoin Lago, Lago de Atitlán",
@@ -798,7 +798,7 @@ STORY = {
         "bl_watch": "Ver en YouTube",
         "bl_more_h": "Más videos",
         "bl_note": "Este resumen se basa en los subtítulos automáticos del video. Si algo está mal, avísanos y lo corregimos.",
-        "st_2021": "Bitcoin Lago nace en Panajachel a finales de 2021 (respuestas de voz a Tomek, noviembre de 2026: noviembre o diciembre). La incorporación de comercios empezó en marzo de 2022, cuando Eliazar visitó los negocios uno por uno.",
+        "st_2021": "Bitcoin Lago nace en Panajachel a finales de 2021 (respuestas de voz, noviembre de 2026: noviembre o diciembre). La incorporación de comercios empezó en marzo de 2022, cuando Eliazar visitó los negocios uno por uno.",
     },
 }
 

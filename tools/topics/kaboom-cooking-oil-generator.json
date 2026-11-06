@@ -10,7 +10,7 @@
   {
    "h": "What Kaboom is",
    "p": "Kaboom was a used-cooking-oil mining experiment in Panajachel. In the documented working setup, an old diesel generator burned restaurant oil to power bitcoin miners off the grid. In a video published in June 2025, Eliazar said the engine was not working. In November 2026 he said Kaboom has stopped: the generator worked, but the team could not cover the running costs. He called it a test, and a proof that anyone can mine with used cooking oil. A miner performs repeated cryptographic calculations to compete for block rewards; a small setup may share rewards through a pool. Patrick Melder described Kaboom in September 2022 as a way to reuse waste oil and help fund the community. The sources below document its history, not a currently operating visitor attraction.",
-      "src": [{"t": "Eliazar, voice answers to Tomek, November 2026", "u": ""},
+      "src": [{"t": "Eliazar, voice answers, November 2026", "u": ""},
        {"t": "Eliazar, video published June 2025: engine not working", "u": "https://www.youtube.com/watch?v=f2Q1_bRi_Sc&t=344s"},
     {
      "t": "Bitcoin Eco. podcast, 30:34",
@@ -213,7 +213,7 @@
   {
    "h": "Does it still run?",
    "p": "A May 2023 video shows Kaboom running and powering two miners. In January 2025, the engine would not start on camera, although two miners were connected. In June 2025 Eliazar said it was not working and that the team was now working on making diesel from plastic. So, as of Eliazar’s June 2025 update, Kaboom was not running. In November 2026 Eliazar said it has stopped, because the team could not cover the running costs. The earlier 2022 biogas plans for the wastewater plant were separate; see the project’s 2022 waste-to-energy plan.",
-   "src": [{"t": "Eliazar, voice answers to Tomek, November 2026", "u": ""},
+   "src": [{"t": "Eliazar, voice answers, November 2026", "u": ""},
    {
      "t": "Bitcoin Eco. podcast, 30:57",
      "u": "https://www.youtube.com/watch?v=0NjEr4251uM&t=1857s"
@@ -287,7 +287,7 @@
   {
    "h": "Qué es Kaboom",
    "p": "Kaboom fue un experimento de minería con aceite de cocina usado en Panajachel. En el equipo cuyo funcionamiento está documentado, un viejo generador diésel quemaba aceite de restaurantes para alimentar mineros de bitcoin sin conectarse a la red eléctrica. En un video publicado en junio de 2025, Eliazar dijo que el motor no funcionaba. En noviembre de 2026 dijo que Kaboom se detuvo: el generador funcionaba, pero el equipo no pudo cubrir los gastos de operación. Lo describió como una prueba y una muestra de que cualquiera puede minar con aceite de cocina usado. Un minero realiza cálculos criptográficos repetidos para competir por las recompensas de los bloques; un equipo pequeño puede compartir recompensas mediante un pool. Patrick Melder describió Kaboom en septiembre de 2022 como una forma de reutilizar aceite y ayudar a financiar a la comunidad. Las fuentes documentan su historia, no una atracción turística que esté funcionando hoy.",
-      "src": [{"t": "Eliazar, respuestas de voz a Tomek, noviembre de 2026", "u": ""},
+      "src": [{"t": "Eliazar, respuestas de voz, noviembre de 2026", "u": ""},
        {"t": "Eliazar, video publicado en junio de 2025: motor fuera de servicio", "u": "https://www.youtube.com/watch?v=f2Q1_bRi_Sc&t=344s"},
     {
      "t": "Podcast Bitcoin Economics, 30:34",
@@ -490,7 +490,7 @@
   {
    "h": "¿Sigue funcionando?",
    "p": "Un video de mayo de 2023 muestra Kaboom en marcha y alimentando dos mineros. En enero de 2025, el motor no arrancó ante la cámara, aunque había dos mineros conectados. En junio de 2025 Eliazar dijo que no funcionaba y que ahora trabajaban en producir diésel a partir de plástico. Así que, según la actualización de Eliazar de junio de 2025, Kaboom no estaba funcionando. En noviembre de 2026 Eliazar dijo que Kaboom se detuvo, porque el equipo no pudo cubrir los gastos de operación. Los planes de biogás de 2022 para la planta de aguas residuales eran distintos; consulta el plan de conversión de residuos en energía de 2022.",
-   "src": [{"t": "Eliazar, respuestas de voz a Tomek, noviembre de 2026", "u": ""},
+   "src": [{"t": "Eliazar, respuestas de voz, noviembre de 2026", "u": ""},
    {
      "t": "Podcast Bitcoin Economics, 30:57",
      "u": "https://www.youtube.com/watch?v=0NjEr4251uM&t=1857s"
